@@ -24,8 +24,7 @@ export default {
       configFile: "./.babelrc"
     }),
     postcss({
-      extract: true,
-      minimize: minimizeCss
+      minimize: minimizeCss,
     }),
     resolve(),
     minimizeJs ? terser() : null
