@@ -1,7 +1,1 @@
-import React from 'react';
-
-var Button = function Button(props) {
-  return React.createElement("button", null, props.label);
-};
-
-export { Button };
+import t from"react";var e=function(e){return t.createElement("button",null,e.label)};export{e as Button};

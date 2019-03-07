@@ -55,6 +55,7 @@
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-replace": "^2.1.0",
+    "rollup-plugin-terser": "^4.0.4",
     "styled-jsx": "^3.2.1"
   }
 }
