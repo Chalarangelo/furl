@@ -8,8 +8,7 @@
   "main": "./dist/bundle.js",
   "peerDependencies": {
     "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "styled-jsx": ">= 3.x.x"
+    "react-dom": "^16.8.4"
   },
   "dependencies": {},
   "scripts": {
