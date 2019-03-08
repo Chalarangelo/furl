@@ -1,3 +1,3 @@
-import Button from "./button/Button";
-import Card from "./card/Card";
+import Button from "./Button";
+import Card from "./Card";
 export { Button, Card };

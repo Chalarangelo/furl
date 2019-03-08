@@ -1,9 +1,10 @@
 import React from 'react';
 
+import "../../dist/styles/index.css";
+
 import { storiesOf } from '@storybook/react';
 
-import Button from "../../src/components/button/Button";
-import Card from "../../src/components/card/Card";
+import {Button,Card} from "../../dist/components";
 
 storiesOf('Button', module)
   .add("with text", () => (

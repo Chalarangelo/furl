@@ -13,17 +13,18 @@
   },
   "dependencies": {},
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start-react": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-react",
-    "build-react": "react-scripts build",
-    "build": "npm-run-all -s build-css build-react",
-    "build-package:dev": "NODE_ENV=development rollup -c",
-    "build-package:prod": "NODE_ENV=production rollup -c",
+    "build-js": "NODE_ENV=production rollup -c",
+    "build-css": "node-sass-chokidar ./src/styles/index.scss ./dist/styles/index.css --output-style compressed",
+    "build-packages": "npm-run-all build-js build-css",
+    "watch-js": "NODE_ENV=production rollup -c -w",
+    "watch-css": "npm run build-css && node-sass-chokidar ./src/styles/index.scss ./dist/styles/index.css --watch --recursive",
     "test": "react-scripts test --env=jsdom --watchAll",
-    "storybook": "start-storybook -p 9009 -c .storybook",
-    "build-storybook": "build-storybook -c .storybook"
+    "build-storybook": "build-storybook -c .storybook",
+    "build-react": "react-scripts build",
+    "build-docs": "npm-run-all -s build-css build-js build-react",
+    "start-storybook": "start-storybook -p 9009 -c .storybook",
+    "start-react": "react-scripts start",
+    "start-docs": "npm-run-all -p watch-css watch-js start-react"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,9 +54,7 @@
     "rollup": "^1.5.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-node-resolve": "^4.0.1",
-    "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-replace": "^2.1.0",
-    "rollup-plugin-terser": "^4.0.4",
-    "styled-jsx": "^3.2.1"
+    "rollup-plugin-terser": "^4.0.4"
   }
 }

@@ -1,0 +1,13 @@
+{
+  "name": "react-component-library-styles",
+  "version": "0.1.0",
+  "main": "index.css",
+  "peerDependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-component-library": "^0.1.0"
+  },
+  "dependencies": {},
+  "scripts": {
+  }
+}
