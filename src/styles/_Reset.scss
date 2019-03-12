@@ -1,7 +1,10 @@
+// Consistent line spacing and improved spacing of punctuation marks
+:root {
+  line-sizing: normal;
+  text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
+}
+
 html {
-  // Consistent line height, prevent font size adjustments
-  line-height: 1.5;
-  -webkit-text-size-adjust: 100%;
   // Smooth scrolling
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -16,13 +19,25 @@ html {
   word-break: break-word;
 }
 
+body {
+  // Set font rendering
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  // Prevent horizontal scrolling
+  overflow-x: hidden;
+}
+
 * {
   // Reset margin, padding and border, set font size of everything
   margin: 0;
   padding: 0;
   border: 0;
   font-size: 1rem; 
-
+  // Consistent line height, prevent font size adjustments
+  &, html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+  }
   // Box sizing and background for everything
   &, ::before, ::after {
     background-repeat: no-repeat;
@@ -42,21 +57,19 @@ html {
   vertical-align: inherit;
 }
 
-// Consistent line spacing and improved spacing of punctuation marks
-:root {
-  line-sizing: normal;
-  text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
-}
-
 // Fix issues in all browsers
 hr {
   box-sizing: content-box;
   height: 0;
 }
 
-// Set vertical alignment of media elements
 audio, canvas, iframe, img, svg, video {
+  // Set vertical alignment of media elements
   vertical-align: middle;
+  // Make media elements responsive
+  display: block;
+  height: auto;
+  max-width: 100%;
 }
 
 // Set fill color to match text color in all browsers
@@ -68,6 +81,11 @@ svg:not([fill]) {
 pre, code, kbd, samp {
   font-family: monospace, monospace;
   font-size: 1em;
+}
+
+// Fix text wrapping
+pre {
+  white-space: pre-wrap;
 }
 
 // Fix display in all browsers
@@ -102,9 +120,18 @@ sup {
   top: -0.5em;
 }
 
+// Fix link styles 
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  background-color: transparent;
+}
+
 // Collapse border spacing in all browsers
 table {
   border-collapse: collapse;
+  border-spacing: 0;  
 }
 
 // Consistent fonts and styles in all browsers
@@ -176,8 +203,17 @@ summary {
   display: list-item;
 }
 
-// Remove tap delay in all browsers
-a, area, button, input, label, select, summary, textarea, [tabindex] {
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
+a, area, button, input, label, select, summary, textarea {
+  // Change cursor
+  cursor: pointer;
+  // Remove tap delay in all browsers
+  &, [tabindex] {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+  }
+}
+
+// Change cursor
+[aria-disabled="true"], [disabled] {
+  cursor: not-allowed;
 }
