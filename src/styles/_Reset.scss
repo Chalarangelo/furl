@@ -7,6 +7,13 @@ html {
   scroll-behavior: smooth;
   // Set base font size
   font-size: 16px;
+  // Use the default cursor
+  cursor: default;
+  // Set tab sizing
+  -moz-tab-size: 4;
+  tab-size: 4;
+  // Word breaks to prevent overflows
+  word-break: break-word;
 }
 
 * {
@@ -29,6 +36,12 @@ html {
   }
 }
 
+// Inherit text decoration and vertical alignment
+::before, ::after { 
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
 // Consistent line spacing and improved spacing of punctuation marks
 :root {
   line-sizing: normal;
@@ -41,8 +54,130 @@ hr {
   height: 0;
 }
 
+// Set vertical alignment of media elements
+audio, canvas, iframe, img, svg, video {
+  vertical-align: middle;
+}
+
+// Set fill color to match text color in all browsers
+svg:not([fill]) {
+  fill: currentColor;
+}
+
 // Fix font and scaling in all browsers
-pre {
+pre, code, kbd, samp {
   font-family: monospace, monospace;
   font-size: 1em;
+}
+
+// Fix display in all browsers
+abbr[title] {
+  border-bottom: none; 
+  text-decoration: underline; 
+  text-decoration: underline dotted; 
+}
+
+// Fix font weight in all browsers
+b, strong {
+  font-weight: bolder;
+}
+
+// Fix font size
+small {
+  font-size: 0.8em;
+}
+
+// Prevent elements from affecting line height
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+
+// Collapse border spacing in all browsers
+table {
+  border-collapse: collapse;
+}
+
+// Consistent fonts and styles in all browsers
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.5;
+  margin: 0;
+}
+
+// Remove text transform inheritance
+button, select {
+  text-transform: none;
+}
+
+// Correctly style clickable types
+button, [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button;
+}
+
+// Remove inner border and padding (Firefox)
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+// Set resize direction
+textarea {
+  resize: vertical;
+}
+
+// Reset focus styles to be redefined later down the line
+:focus {
+  outline: 0;
+}
+
+// Fix vertical alignment
+progress {
+  vertical-align: baseline;
+}
+
+// Fix cursor style
+[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+// Fix appearance and outline
+[type="search"] {
+  -webkit-appearance: textfield; 
+  outline-offset: -2px; 
+}
+
+// Remove inner padding
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+// Correctly style clickable types, fix font 
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+// Fix display
+details {
+  display: block;
+}
+summary {
+  display: list-item;
+}
+
+// Remove tap delay in all browsers
+a, area, button, input, label, select, summary, textarea, [tabindex] {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }
