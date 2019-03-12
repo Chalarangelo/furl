@@ -1,0 +1,48 @@
+html {
+  // Consistent line height, prevent font size adjustments
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  // Smooth scrolling
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  // Set base font size
+  font-size: 16px;
+}
+
+* {
+  // Reset margin, padding and border, set font size of everything
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 1rem; 
+
+  // Box sizing and background for everything
+  &, ::before, ::after {
+    background-repeat: no-repeat;
+    box-sizing: border-box; 
+  }
+
+  // Immediately complete animations if "prefers reduced motion" is enabled
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
+
+// Consistent line spacing and improved spacing of punctuation marks
+:root {
+  line-sizing: normal;
+  text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric;
+}
+
+// Fix issues in all browsers
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+// Fix font and scaling in all browsers
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
