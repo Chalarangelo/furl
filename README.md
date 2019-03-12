@@ -1,3 +1,25 @@
+### Remarks
+
+You must import the fonts yourself (check weight):
+
+```html
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500">
+```
+
+
+
+
+
+
+
+
+
+------
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

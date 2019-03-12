@@ -5,11 +5,11 @@
 }
 
 :root {
+  // Define the color palettes
   @include define-color-vars('cool-gray',
     (900: #111517, 800: #292E33, 700: #3F4850, 600: #55626D, 500: #6E7E8C,
     400: #8897A5, 300: #A9B6C1, 200: #C9D2D9, 100: #E7EBEF, 50: #F9FAFA)
   );
-
   @include define-color-vars('success-green',
     (900: #043E0A, 800: #075F10, 700: #107A1A, 600: #24942D, 500: #4AB151,
     400: #61CC68, 300: #81E486, 200: #A3EFAA, 100: #CCF5D0, 50: #F5FEF6)

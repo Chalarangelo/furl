@@ -1,0 +1,37 @@
+@mixin define-type-vars($type-scale-map) {
+  @each $step-name, $step-size in $type-scale-map {
+    #{'--'}#{$step-name}ltp: #{$step-size}px;
+  }
+}
+
+:root {
+  // Define the type scale
+  @include define-type-vars((
+    25: 12, 
+    50: 14, 
+    100: 16, 
+    200: 18, 
+    300: 20, 
+    400: 24, 
+    500: 30, 
+    600: 36, 
+    700: 48, 
+    800: 60, 
+    900: 72
+  ));
+  // Define the system font stack and the custom fonts
+  --system-font-stack: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-A: Roboto;
+  --font-B: "Open Sans";
+}
+
+// Define the font family and the maximum line length
+* {
+  font-family: var(--font-A), var(--system-font-stack);
+  max-width: 60ch;
+}
+
+// Define a class for elements using the secondary font
+.font-B {
+  font-family: var(--font-B), var(--font-A), var(--system-font-stack);
+}

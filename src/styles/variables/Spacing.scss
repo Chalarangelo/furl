@@ -1,0 +1,27 @@
+@mixin define-space-vars($space-scale-map) {
+  @each $step-name, $step-size in $space-scale-map {
+    #{'--'}#{$step-name}lsp: #{$step-size}px;
+  }
+}
+
+:root {
+  // Define the spacing and sizing scale
+  @include define-space-vars((
+    25: 4, 
+    50: 8, 
+    75: 12,
+    100: 16, 
+    150: 24,
+    200: 32,
+    250: 48,
+    300: 64,
+    350: 96,
+    400: 128,
+    450: 192,
+    500: 256, 
+    600: 384, 
+    700: 512, 
+    800: 640, 
+    900: 768
+  ));
+}
