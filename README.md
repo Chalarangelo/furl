@@ -7,6 +7,8 @@ You must import the fonts yourself (check weight):
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500">
 ```
 
+`tsp` - Type Scale Presets
+`lsp` - Layout Scale Presets
 
 
 
