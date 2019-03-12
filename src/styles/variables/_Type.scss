@@ -1,6 +1,7 @@
 @mixin define-type-vars($type-scale-map) {
+  $base-scale-value: map-get($type-scale-map, 100);
   @each $step-name, $step-size in $type-scale-map {
-    #{'--'}#{$step-name}ltp: #{$step-size}px;
+    #{'--'}#{$step-name}ltp: #{($step-size/$base-scale-value)}rem;
   }
 }
 

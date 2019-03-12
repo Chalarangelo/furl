@@ -1,6 +1,7 @@
 @mixin define-space-vars($space-scale-map) {
+  $base-scale-value: map-get($space-scale-map, 100);
   @each $step-name, $step-size in $space-scale-map {
-    #{'--'}#{$step-name}lsp: #{$step-size}px;
+    #{'--'}#{$step-name}lsp: #{($step-size/$base-scale-value)}rem;
   }
 }
 
