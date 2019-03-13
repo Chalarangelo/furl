@@ -1,6 +1,6 @@
 * {
   // Define the font family and the maximum line length
-  font-family: var(--font-A), var(--system-font-stack);
+  font-family: var(--font-a), var(--system-font-stack);
   max-width: 60ch;
   // Define the font size for all elements
   font-size: var(--font-size);
@@ -8,35 +8,65 @@
 
 // Define a class for elements using the secondary font
 .font-B {
-  font-family: var(--font-B), var(--font-A), var(--system-font-stack);
+  font-family: var(--font-b), var(--font-a), var(--system-font-stack);
 }
 
 // Define font size for headings and title classes
 h1, .title1 {
-  --font-size: var(--700tsp);
+  --font-size: var(--800tsp);
   line-height: 1;
+  & small {
+    --font-size: var(--600tsp);
+  }
 }
 h2, .title2 {
-  --font-size: var(--600tsp);
+  --font-size: var(--700tsp);
   line-height: 1;
+  & small {
+    --font-size: var(--500tsp);
+  }
 }
 h3, .title3 {
-  --font-size: var(--500tsp);
+  --font-size: var(--600tsp);
   line-height: 1.25;
+  & small {
+    --font-size: var(--400tsp);
+  }
 }
 h4, .title4 {
-  --font-size: var(--400tsp);
+  --font-size: var(--500tsp);
   line-height: 1.25;
+  & small {
+    --font-size: var(--300tsp);
+  }
 }
 h5, .title5 {
-  --font-size: var(--300tsp);
+  --font-size: var(--400tsp);
   line-height: 1.5;
+  & small {
+    --font-size: var(--200tsp);
+  }
 }
 h6, .title6 {
-  --font-size: var(--200tsp);
+  --font-size: var(--300tsp);
   line-height: 1.5;
+  & small {
+    --font-size: var(--100tsp);
+  }
 }
 
 h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   letter-spacing: -0.05em;
+  font-family: var(--font-b), var(--font-a), var(--system-font-stack);
+  font-weight: 600;
+  & small {
+    display: block;
+    letter-spacing: -0.075em;
+    font-weight: 400;
+    font-family: var(--font-a), var(--system-font-stack);
+  }
+}
+
+small {
+  --font-size: var(--50tsp);
 }
