@@ -7,6 +7,7 @@ import Button from "./components/Button";
 import Card from "./components/Card";
 
 import "./styles/index.scss";
+import "./index.scss";
 
 ReactDOM.render(<div>
   <Type></Type>

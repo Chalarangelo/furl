@@ -1,13 +1,14 @@
 @mixin define-space-vars($space-scale-map) {
   $base-scale-value: map-get($space-scale-map, 100);
   @each $step-name, $step-size in $space-scale-map {
-    #{'--'}#{$step-name}lsp: #{($step-size/$base-scale-value)}rem;
+    #{'--ls-'}#{$step-name}p: #{($step-size/$base-scale-value)}rem;
   }
 }
 
 :root {
   // Define the spacing and sizing scale
   @include define-space-vars((
+    0: 0,
     25: 4, 
     50: 8, 
     75: 12,
@@ -25,4 +26,6 @@
     800: 640, 
     900: 768
   ));
+  margin: var(--margin);
+  padding: var(--padding);
 }

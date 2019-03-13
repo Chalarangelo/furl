@@ -1,7 +1,7 @@
 @mixin define-type-vars($type-scale-map) {
   $base-scale-value: map-get($type-scale-map, 100);
   @each $step-name, $step-size in $type-scale-map {
-    #{'--'}#{$step-name}tsp: #{($step-size/$base-scale-value)}rem;
+    #{'--ts-'}#{$step-name}p: #{($step-size/$base-scale-value)}rem;
   }
 }
 
@@ -24,6 +24,7 @@
   --system-font-stack: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-a: Roboto;
   --font-b: "Open Sans";
-  // Define the font size variable
-  --font-size: var(--100tsp);
+  // Define the font size and weight variables
+  --font-size: var(--ts-100p);
+  --font-weight: 400;
 }

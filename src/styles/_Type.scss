@@ -4,6 +4,9 @@
   max-width: 60ch;
   // Define the font size for all elements
   font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  --margin: var(--ls-0p);
+  --padding: var(--ls-0p);
 }
 
 // Define a class for elements using the secondary font
@@ -13,60 +16,70 @@
 
 // Define font size for headings and title classes
 h1, .title1 {
-  --font-size: var(--800tsp);
+  --font-size: var(--ts-800p);
+  --font-weight: 300;
   line-height: 1;
   & small {
-    --font-size: var(--600tsp);
+    --font-size: var(--ts-600p);
   }
 }
 h2, .title2 {
-  --font-size: var(--700tsp);
+  --font-size: var(--ts-700p);
+  --font-weight: 300;
   line-height: 1;
   & small {
-    --font-size: var(--500tsp);
+    --font-size: var(--ts-500p);
   }
 }
 h3, .title3 {
-  --font-size: var(--600tsp);
+  --font-size: var(--ts-600p);
+  --font-weight: 300;
   line-height: 1.25;
   & small {
-    --font-size: var(--400tsp);
+    --font-size: var(--ts-400p);
   }
 }
 h4, .title4 {
-  --font-size: var(--500tsp);
+  --font-size: var(--ts-500p);
+  --font-weight: 300;
   line-height: 1.25;
   & small {
-    --font-size: var(--300tsp);
+    --font-size: var(--ts-300p);
   }
 }
 h5, .title5 {
-  --font-size: var(--400tsp);
+  --font-size: var(--ts-400p);
+  --font-weight: 400;
   line-height: 1.5;
   & small {
-    --font-size: var(--200tsp);
+    --font-size: var(--ts-200p);
   }
 }
 h6, .title6 {
-  --font-size: var(--300tsp);
+  --font-size: var(--ts-300p);
+  --font-weight: 500;
   line-height: 1.5;
   & small {
-    --font-size: var(--100tsp);
+    --font-size: var(--ts-100p);
   }
 }
 
 h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   letter-spacing: -0.05em;
   font-family: var(--font-b), var(--font-a), var(--system-font-stack);
-  font-weight: 600;
+  margin: var(--ls-75p);
   & small {
+    margin-top: var(--ls-25p);
     display: block;
     letter-spacing: -0.075em;
-    font-weight: 400;
     font-family: var(--font-a), var(--system-font-stack);
   }
 }
 
+p {
+  margin: var(--ls-75p);
+}
+
 small {
-  --font-size: var(--50tsp);
+  --font-size: var(--ts-50p);
 }
