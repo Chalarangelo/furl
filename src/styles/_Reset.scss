@@ -28,27 +28,23 @@ body {
 }
 
 * {
-  // Reset margin, padding and border, set font size of everything
-  margin: 0;
-  padding: 0;
+  // Reset border of everything
   border: 0;
-  font-size: 1rem; 
-  // Consistent line height, prevent font size adjustments
-  &, html {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%;
-  }
-  // Box sizing and background for everything
-  &, ::before, ::after {
-    background-repeat: no-repeat;
-    box-sizing: border-box; 
-  }
-
   // Immediately complete animations if "prefers reduced motion" is enabled
   @media (prefers-reduced-motion: reduce) {
     animation-duration: 0.001s !important;
     transition-duration: 0.001s !important;
   }
+}
+// Consistent line height, prevent font size adjustments
+*, html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+// Box sizing and background for everything
+*, ::before, ::after {
+  background-repeat: no-repeat;
+  box-sizing: border-box; 
 }
 
 // Inherit text decoration and vertical alignment
@@ -77,27 +73,11 @@ svg:not([fill]) {
   fill: currentColor;
 }
 
-// Fix font and scaling in all browsers
-pre, code, kbd, samp {
-  font-family: monospace, monospace;
-  font-size: 1em;
-}
-
-// Fix text wrapping
-pre {
-  white-space: pre-wrap;
-}
-
 // Fix display in all browsers
 abbr[title] {
   border-bottom: none; 
   text-decoration: underline; 
   text-decoration: underline dotted; 
-}
-
-// Fix font weight in all browsers
-b, strong {
-  font-weight: bolder;
 }
 
 // Prevent elements from affecting line height

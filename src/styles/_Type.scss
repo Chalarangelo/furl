@@ -1,12 +1,10 @@
 * {
   // Define the font family and the maximum line length
   font-family: var(--font-a), var(--system-font-stack);
-  max-width: 60ch;
+  max-width: 60ch;  // TODO: Make this only apply to textual content elements and see how it works with padding
   // Define the font size for all elements
   font-size: var(--font-size);
   font-weight: var(--font-weight);
-  --margin: var(--ls-0p);
-  --padding: var(--ls-0p);
 }
 
 // Define a class for elements using the secondary font
@@ -30,6 +28,9 @@ h2, .title2 {
   & small {
     --font-size: var(--ts-500p);
   }
+  & b, & strong {
+    --font-weight: 400;
+  }
 }
 h3, .title3 {
   --font-size: var(--ts-600p);
@@ -37,6 +38,9 @@ h3, .title3 {
   line-height: 1.25;
   & small {
     --font-size: var(--ts-400p);
+  }
+  & b, & strong {
+    --font-weight: 400;
   }
 }
 h4, .title4 {
@@ -46,30 +50,39 @@ h4, .title4 {
   & small {
     --font-size: var(--ts-300p);
   }
+  & b, & strong {
+    --font-weight: 400;
+  }
 }
 h5, .title5 {
   --font-size: var(--ts-400p);
-  --font-weight: 400;
+  --font-weight: 300;
   line-height: 1.5;
   & small {
     --font-size: var(--ts-200p);
   }
+  & b, & strong {
+    --font-weight: 400;
+  }
 }
 h6, .title6 {
   --font-size: var(--ts-300p);
-  --font-weight: 500;
+  --font-weight: 400;
   line-height: 1.5;
   & small {
     --font-size: var(--ts-100p);
+  }
+  & b, & strong {
+    --font-weight: 500;
   }
 }
 
 h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   letter-spacing: -0.05em;
   font-family: var(--font-b), var(--font-a), var(--system-font-stack);
-  margin: var(--ls-75p);
+  --margin: var(--ls-75p);
   & small {
-    margin-top: var(--ls-25p);
+    --margin-vertical: var(--ls-25p);
     display: block;
     letter-spacing: -0.075em;
     font-family: var(--font-a), var(--system-font-stack);
@@ -77,9 +90,41 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
 }
 
 p {
-  margin: var(--ls-75p);
+  --margin: var(--ls-75p);
 }
 
 small {
   --font-size: var(--ts-50p);
+}
+
+ol, ul {
+  //
+}
+
+b, strong {
+  font-weight: 500;
+}
+
+// Fix font and scaling in all browsers
+pre, code, kbd, samp {
+  font-family: var(--font-c), monospace;
+  --font-size: var(--ts-50p);
+}
+
+// Fix text wrapping
+pre {
+  white-space: pre-wrap;
+}
+
+code {
+  --background-color: var(--cool-gray-100);
+  --padding-horizontal: var(--ls-25p);
+  --border-radius: var(--ls-25p);
+}
+
+kbd {
+  --background-color: var(--cool-gray-900);
+  --color: var(--cool-gray-50);
+  --padding-horizontal: var(--ls-25p);
+  --border-radius: var(--ls-25p);
 }

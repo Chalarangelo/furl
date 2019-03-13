@@ -55,6 +55,7 @@
   --system-font-stack: -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-a: Roboto;
   --font-b: "Open Sans";
+  --font-c: "Roboto Mono";
   --font-size: var(--ts-100p);
   --font-weight: 400; }
 
@@ -75,9 +76,7 @@
   --ls-600p: 24rem;
   --ls-700p: 32rem;
   --ls-800p: 40rem;
-  --ls-900p: 48rem;
-  margin: var(--margin);
-  padding: var(--padding); }
+  --ls-900p: 48rem; }
 
 :root {
   line-sizing: normal;
@@ -98,20 +97,19 @@ body {
   overflow-x: hidden; }
 
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 1rem; }
-  *, * html {
-    line-height: 1.5;
-    -webkit-text-size-adjust: 100%; }
-  *, * ::before, * ::after {
-    background-repeat: no-repeat;
-    box-sizing: border-box; }
+  border: 0; }
   @media (prefers-reduced-motion: reduce) {
     * {
       animation-duration: 0.001s !important;
       transition-duration: 0.001s !important; } }
+
+*, html {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%; }
+
+*, ::before, ::after {
+  background-repeat: no-repeat;
+  box-sizing: border-box; }
 
 ::before, ::after {
   text-decoration: inherit;
@@ -130,20 +128,10 @@ audio, canvas, iframe, img, svg, video {
 svg:not([fill]) {
   fill: currentColor; }
 
-pre, code, kbd, samp {
-  font-family: monospace, monospace;
-  font-size: 1em; }
-
-pre {
-  white-space: pre-wrap; }
-
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
   text-decoration: underline dotted; }
-
-b, strong {
-  font-weight: bolder; }
 
 sub,
 sup {
@@ -229,9 +217,7 @@ a, area, button, input, label, select, summary, textarea {
   font-family: var(--font-a), var(--system-font-stack);
   max-width: 60ch;
   font-size: var(--font-size);
-  font-weight: var(--font-weight);
-  --margin: var(--ls-0p);
-  --padding: var(--ls-0p); }
+  font-weight: var(--font-weight); }
 
 .font-B {
   font-family: var(--font-b), var(--font-a), var(--system-font-stack); }
@@ -249,6 +235,8 @@ h2, .title2 {
   line-height: 1; }
   h2 small, .title2 small {
     --font-size: var(--ts-500p); }
+  h2 b, h2 strong, .title2 b, .title2 strong {
+    --font-weight: 400; }
 
 h3, .title3 {
   --font-size: var(--ts-600p);
@@ -256,6 +244,8 @@ h3, .title3 {
   line-height: 1.25; }
   h3 small, .title3 small {
     --font-size: var(--ts-400p); }
+  h3 b, h3 strong, .title3 b, .title3 strong {
+    --font-weight: 400; }
 
 h4, .title4 {
   --font-size: var(--ts-500p);
@@ -263,36 +253,79 @@ h4, .title4 {
   line-height: 1.25; }
   h4 small, .title4 small {
     --font-size: var(--ts-300p); }
+  h4 b, h4 strong, .title4 b, .title4 strong {
+    --font-weight: 400; }
 
 h5, .title5 {
   --font-size: var(--ts-400p);
-  --font-weight: 400;
+  --font-weight: 300;
   line-height: 1.5; }
   h5 small, .title5 small {
     --font-size: var(--ts-200p); }
+  h5 b, h5 strong, .title5 b, .title5 strong {
+    --font-weight: 400; }
 
 h6, .title6 {
   --font-size: var(--ts-300p);
-  --font-weight: 500;
+  --font-weight: 400;
   line-height: 1.5; }
   h6 small, .title6 small {
     --font-size: var(--ts-100p); }
+  h6 b, h6 strong, .title6 b, .title6 strong {
+    --font-weight: 500; }
 
 h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   letter-spacing: -0.05em;
   font-family: var(--font-b), var(--font-a), var(--system-font-stack);
-  margin: var(--ls-75p); }
+  --margin: var(--ls-75p); }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .title1 small, .title2 small, .title3 small, .title4 small, .title5 small, .title6 small {
-    margin-top: var(--ls-25p);
+    --margin-vertical: var(--ls-25p);
     display: block;
     letter-spacing: -0.075em;
     font-family: var(--font-a), var(--system-font-stack); }
 
 p {
-  margin: var(--ls-75p); }
+  --margin: var(--ls-75p); }
 
 small {
   --font-size: var(--ts-50p); }
+
+b, strong {
+  font-weight: 500; }
+
+pre, code, kbd, samp {
+  font-family: var(--font-c), monospace;
+  --font-size: var(--ts-50p); }
+
+pre {
+  white-space: pre-wrap; }
+
+code {
+  --background-color: var(--cool-gray-100);
+  --padding-horizontal: var(--ls-25p);
+  --border-radius: var(--ls-25p); }
+
+kbd {
+  --background-color: var(--cool-gray-900);
+  --color: var(--cool-gray-50);
+  --padding-horizontal: var(--ls-25p);
+  --border-radius: var(--ls-25p); }
+
+* {
+  --margin: var(--ls-0p);
+  --margin-vertical: var(--margin);
+  --margin-horizontal: var(--margin);
+  --padding: var(--ls-0p);
+  --padding-vertical: var(--padding);
+  --padding-horizontal: var(--padding);
+  --border-radius: var(--ls-0p);
+  margin: var(--margin-vertical) var(--margin-horizontal);
+  padding: var(--padding-vertical) var(--padding-horizontal);
+  border-radius: var(--border-radius);
+  --color: var(--cool-gray-900);
+  --background-color: var(--cool-gray-50);
+  color: var(--color);
+  background-color: var(--background-color); }
 
 button {
   border: 1px solid #ddd;

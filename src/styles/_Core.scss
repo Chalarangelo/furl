@@ -1,0 +1,18 @@
+* {
+  // Define padding, margin and border radius for all elements
+  --margin: var(--ls-0p);
+  --margin-vertical: var(--margin);
+  --margin-horizontal: var(--margin);
+  --padding: var(--ls-0p);
+  --padding-vertical: var(--padding);
+  --padding-horizontal: var(--padding);
+  --border-radius: var(--ls-0p);
+  margin: var(--margin-vertical) var(--margin-horizontal);
+  padding: var(--padding-vertical) var(--padding-horizontal);
+  border-radius: var(--border-radius);
+  // Define colors for all elements
+  --color: var(--cool-gray-900);
+  --background-color: var(--cool-gray-50);
+  color: var(--color);
+  background-color: var(--background-color);
+}
