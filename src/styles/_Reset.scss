@@ -81,24 +81,15 @@ abbr[title] {
 }
 
 // Prevent elements from affecting line height
-sub,
-sup {
-  font-size: 75%;
+sub, sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
 }
 
 // Fix link styles 
 a {
   text-decoration: none;
-  color: inherit;
   display: inline-block;
   background-color: transparent;
 }

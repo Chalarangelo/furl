@@ -17,7 +17,7 @@ h1, .title1 {
   --font-size: var(--ts-800p);
   --font-weight: 300;
   line-height: 1;
-  & small {
+  & small, sup, sub {
     --font-size: var(--ts-600p);
   }
 }
@@ -93,8 +93,14 @@ p {
   --margin: var(--ls-75p);
 }
 
-small {
+small, sup, sub, figcaption {
   --font-size: var(--ts-50p);
+}
+sub {
+  bottom: calc(var(--ls-0p) - var(--sp-25p));
+}
+sup {
+  top: calc(var(--ls-0p) - var(--sp-25p));
 }
 
 ol, ul {
@@ -158,5 +164,25 @@ blockquote {
     --color: var(--cool-gray-600);
     letter-spacing: 0.0125em;
     white-space: pre;
+  }
+}
+
+figure {
+  --margin: var(--ls-50p);
+}
+figcaption {
+  --color: var(--cool-gray-700);
+}
+
+a {
+  text-decoration: none;
+  &:link{
+    color: var(--focus-blue-600);
+  }
+  &:visited {
+    color: var(--focus-blue-800);
+  }
+  &:hover, &:focus {
+    text-decoration: underline;
   }
 }
