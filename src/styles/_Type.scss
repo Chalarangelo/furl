@@ -1,7 +1,7 @@
-* {
+*, ::before, ::after {
   // Define the font family and the maximum line length
   font-family: var(--font-a), var(--system-font-stack);
-  max-width: 60ch;  // TODO: Make this only apply to textual content elements and see how it works with padding
+  max-width: calc(60ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal));  // TODO: Make this only apply to textual content elements and see how it works with padding
   // Define the font size for all elements
   font-size: var(--font-size);
   font-weight: var(--font-weight);
@@ -98,7 +98,9 @@ small {
 }
 
 ol, ul {
-  //
+  --margin-horizontal: var(--ls-50p);
+  --margin-vertical: var(--ls-75p);
+  --padding-horizontal: var(--ls-75p);
 }
 
 b, strong {
@@ -117,14 +119,44 @@ pre {
 }
 
 code {
+  display: inline-block;
   --background-color: var(--cool-gray-100);
   --padding-horizontal: var(--ls-25p);
   --border-radius: var(--ls-25p);
 }
 
 kbd {
+  display: inline-block;
   --background-color: var(--cool-gray-900);
   --color: var(--cool-gray-50);
   --padding-horizontal: var(--ls-25p);
   --border-radius: var(--ls-25p);
+}
+
+blockquote {
+  position: relative;
+  --font-size: var(--ts-300p);
+  --padding-horizontal: var(--ls-200p);
+  --margin-vertical: var(--ls-50p);
+  font-style: italic;
+  --color: var(--cool-gray-700);
+  &:before {
+    position: absolute;
+    --margin-vertical: var(--ls-75p);
+    --margin-horizontal: var(--ls-50p);
+    top: calc(var(--ls-0p) - 2 * var(--padding-vertical) - 2 * var(--margin-vertical));
+    left: 0;
+    --font-size: var(--ts-700p);
+    --color: var(--cool-gray-300);
+    content: open-quote;
+  }
+  &[cite]:after{
+    font-style: normal;
+    --font-size: var(--ts-200p);
+    --font-weight: 500;
+    content: "\a\2014\2009" attr(cite);
+    --color: var(--cool-gray-600);
+    letter-spacing: 0.0125em;
+    white-space: pre;
+  }
 }

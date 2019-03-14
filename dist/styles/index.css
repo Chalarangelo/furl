@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --cool-gray-900: #111517;
   --cool-gray-800: #292E33;
@@ -213,9 +214,9 @@ a, area, button, input, label, select, summary, textarea {
 [aria-disabled="true"], [disabled] {
   cursor: not-allowed; }
 
-* {
+*, ::before, ::after {
   font-family: var(--font-a), var(--system-font-stack);
-  max-width: 60ch;
+  max-width: calc(60ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal));
   font-size: var(--font-size);
   font-weight: var(--font-weight); }
 
@@ -290,6 +291,11 @@ p {
 small {
   --font-size: var(--ts-50p); }
 
+ol, ul {
+  --margin-horizontal: var(--ls-50p);
+  --margin-vertical: var(--ls-75p);
+  --padding-horizontal: var(--ls-75p); }
+
 b, strong {
   font-weight: 500; }
 
@@ -301,17 +307,44 @@ pre {
   white-space: pre-wrap; }
 
 code {
+  display: inline-block;
   --background-color: var(--cool-gray-100);
   --padding-horizontal: var(--ls-25p);
   --border-radius: var(--ls-25p); }
 
 kbd {
+  display: inline-block;
   --background-color: var(--cool-gray-900);
   --color: var(--cool-gray-50);
   --padding-horizontal: var(--ls-25p);
   --border-radius: var(--ls-25p); }
 
-* {
+blockquote {
+  position: relative;
+  --font-size: var(--ts-300p);
+  --padding-horizontal: var(--ls-200p);
+  --margin-vertical: var(--ls-50p);
+  font-style: italic;
+  --color: var(--cool-gray-700); }
+  blockquote:before {
+    position: absolute;
+    --margin-vertical: var(--ls-75p);
+    --margin-horizontal: var(--ls-50p);
+    top: calc(var(--ls-0p) - 2 * var(--padding-vertical) - 2 * var(--margin-vertical));
+    left: 0;
+    --font-size: var(--ts-700p);
+    --color: var(--cool-gray-300);
+    content: open-quote; }
+  blockquote[cite]:after {
+    font-style: normal;
+    --font-size: var(--ts-200p);
+    --font-weight: 500;
+    content: "\a— " attr(cite);
+    --color: var(--cool-gray-600);
+    letter-spacing: 0.0125em;
+    white-space: pre; }
+
+*, ::before, ::after {
   --margin: var(--ls-0p);
   --margin-vertical: var(--margin);
   --margin-horizontal: var(--margin);
