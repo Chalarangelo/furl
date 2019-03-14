@@ -3,16 +3,33 @@
     --background-color: var(--#{$color-name}-500);
     --secondary-background-color: var(--#{$color-name}-300);
     --color: var(--#{$color-name}-50);
+    &[disabled] {
+      --background-color: var(--#{$color-name}-300);
+      --secondary-background-color: var(--#{$color-name}-200);
+    }
     &.ghost, &.outline {
       --color: var(--#{$color-name}-800);
+      &[disabled]{
+        --color: var(--#{$color-name}-700);
+      }
       &:hover, &:focus {
         --color: var(--#{$color-name}-50);
+        &[disabled]{
+          --color: var(--#{$color-name}-700);
+        }
       }
     }
   }
 }
 
-button, .button {
+button, .button, a.button {
+  line-height: 1.5;
+  border: 0;
+  background: var(--background-color);
+  &:hover, &:focus {
+    border: 0;
+  }
+
   --margin: var(--ls-75p);
   --padding-horizontal: var(--ls-75p);
   --padding-vertical: var(--ls-50p);
@@ -21,6 +38,10 @@ button, .button {
   --background-color: var(--cool-gray-500);
   --secondary-background-color: var(--cool-gray-300);
   --color: var(--cool-gray-50);
+  &[disabled] {
+    --background-color: var(--cool-gray-300);
+    --secondary-background-color: var(--cool-gray-200);
+  }
 
   transition: all 0.3s ease;
 
@@ -47,6 +68,9 @@ button, .button {
     --box-shadow: var(--shadow-100); 
     &:hover, &:focus {
       --box-shadow: var(--shadow-300);
+      &[disabled]{
+        --box-shadow: var(--shadow-100); 
+      }
     }
   }
   &.gradient {
@@ -54,23 +78,40 @@ button, .button {
     --box-shadow: var(--shadow-100); 
     &:hover, &:focus {
       --box-shadow: var(--shadow-300);
+      &[disabled]{
+        --box-shadow: var(--shadow-100); 
+      }
     }
   }
   &.outline {
     border: 1px solid var(--background-color);
     background: transparent;
     --color: var(--cool-gray-800);
+    &[disabled]{
+      --color: var(--cool-gray-700);
+    }
     &:hover, &:focus {
       background: var(--background-color);
-      --color: var(--cool-gray-50);
+      --color: var(--cool-gray-50); 
+      &[disabled]{
+        background: transparent;
+        --color: var(--cool-gray-700);
+      }
     }
   }
   &.ghost {
     background: transparent;
     --color: var(--cool-gray-800);
+    &[disabled]{
+      --color: var(--cool-gray-700);
+    }
     &:hover, &:focus {
       background: var(--background-color);
       --color: var(--cool-gray-50);
+      &[disabled]{
+        background: transparent;
+        --color: var(--cool-gray-700);
+      }
     }
   }
 

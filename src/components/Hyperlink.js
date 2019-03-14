@@ -1,7 +1,7 @@
 import React from "react";
 
 const Hyperlink = ({openIn = 'self', href, children }) => 
-  ['external', '_external'].includes(openIn) 
+  (['external', '_external'].includes(openIn) 
   ?
     <a
       href={href} 
@@ -16,7 +16,7 @@ const Hyperlink = ({openIn = 'self', href, children }) =>
       target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
     >
       {children}
-    </a>
+    </a>)
 ;
 
 export default Hyperlink;

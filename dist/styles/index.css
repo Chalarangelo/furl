@@ -418,7 +418,10 @@ a {
   a:hover, a:focus {
     border-bottom: 2px solid var(--focus-blue-300); }
 
-button, .button {
+button, .button, a.button {
+  line-height: 1.5;
+  border: 0;
+  background: var(--background-color);
   --margin: var(--ls-75p);
   --padding-horizontal: var(--ls-75p);
   --padding-vertical: var(--ls-50p);
@@ -427,65 +430,108 @@ button, .button {
   --secondary-background-color: var(--cool-gray-300);
   --color: var(--cool-gray-50);
   transition: all 0.3s ease; }
-  button.small, .button.small {
+  button:hover, button:focus, .button:hover, .button:focus, a.button:hover, a.button:focus {
+    border: 0; }
+  button[disabled], .button[disabled], a.button[disabled] {
+    --background-color: var(--cool-gray-300);
+    --secondary-background-color: var(--cool-gray-200); }
+  button.small, .button.small, a.button.small {
     --padding-horizontal: var(--ls-50p);
     --padding-vertical: var(--ls-25p); }
-  button.large, .button.large {
+  button.large, .button.large, a.button.large {
     --padding-horizontal: var(--ls-100p);
     --padding-vertical: var(--ls-75p); }
-  button.rounded, .button.rounded {
+  button.rounded, .button.rounded, a.button.rounded {
     border-radius: 20%/50%; }
-  button.circle, .button.circle {
+  button.circle, .button.circle, a.button.circle {
     border-radius: 100%; }
-  button.solid, .button.solid {
+  button.solid, .button.solid, a.button.solid {
     --box-shadow: var(--shadow-100); }
-    button.solid:hover, button.solid:focus, .button.solid:hover, .button.solid:focus {
+    button.solid:hover, button.solid:focus, .button.solid:hover, .button.solid:focus, a.button.solid:hover, a.button.solid:focus {
       --box-shadow: var(--shadow-300); }
-  button.gradient, .button.gradient {
+      button.solid:hover[disabled], button.solid:focus[disabled], .button.solid:hover[disabled], .button.solid:focus[disabled], a.button.solid:hover[disabled], a.button.solid:focus[disabled] {
+        --box-shadow: var(--shadow-100); }
+  button.gradient, .button.gradient, a.button.gradient {
     background: linear-gradient(var(--secondary-background-color), var(--background-color));
     --box-shadow: var(--shadow-100); }
-    button.gradient:hover, button.gradient:focus, .button.gradient:hover, .button.gradient:focus {
+    button.gradient:hover, button.gradient:focus, .button.gradient:hover, .button.gradient:focus, a.button.gradient:hover, a.button.gradient:focus {
       --box-shadow: var(--shadow-300); }
-  button.outline, .button.outline {
+      button.gradient:hover[disabled], button.gradient:focus[disabled], .button.gradient:hover[disabled], .button.gradient:focus[disabled], a.button.gradient:hover[disabled], a.button.gradient:focus[disabled] {
+        --box-shadow: var(--shadow-100); }
+  button.outline, .button.outline, a.button.outline {
     border: 1px solid var(--background-color);
     background: transparent;
     --color: var(--cool-gray-800); }
-    button.outline:hover, button.outline:focus, .button.outline:hover, .button.outline:focus {
+    button.outline[disabled], .button.outline[disabled], a.button.outline[disabled] {
+      --color: var(--cool-gray-700); }
+    button.outline:hover, button.outline:focus, .button.outline:hover, .button.outline:focus, a.button.outline:hover, a.button.outline:focus {
       background: var(--background-color);
       --color: var(--cool-gray-50); }
-  button.ghost, .button.ghost {
+      button.outline:hover[disabled], button.outline:focus[disabled], .button.outline:hover[disabled], .button.outline:focus[disabled], a.button.outline:hover[disabled], a.button.outline:focus[disabled] {
+        background: transparent;
+        --color: var(--cool-gray-700); }
+  button.ghost, .button.ghost, a.button.ghost {
     background: transparent;
     --color: var(--cool-gray-800); }
-    button.ghost:hover, button.ghost:focus, .button.ghost:hover, .button.ghost:focus {
+    button.ghost[disabled], .button.ghost[disabled], a.button.ghost[disabled] {
+      --color: var(--cool-gray-700); }
+    button.ghost:hover, button.ghost:focus, .button.ghost:hover, .button.ghost:focus, a.button.ghost:hover, a.button.ghost:focus {
       background: var(--background-color);
       --color: var(--cool-gray-50); }
-  button.danger, .button.danger {
+      button.ghost:hover[disabled], button.ghost:focus[disabled], .button.ghost:hover[disabled], .button.ghost:focus[disabled], a.button.ghost:hover[disabled], a.button.ghost:focus[disabled] {
+        background: transparent;
+        --color: var(--cool-gray-700); }
+  button.danger, .button.danger, a.button.danger {
     --background-color: var(--danger-red-500);
     --secondary-background-color: var(--danger-red-300);
     --color: var(--danger-red-50); }
-    button.danger.ghost, button.danger.outline, .button.danger.ghost, .button.danger.outline {
+    button.danger[disabled], .button.danger[disabled], a.button.danger[disabled] {
+      --background-color: var(--danger-red-300);
+      --secondary-background-color: var(--danger-red-200); }
+    button.danger.ghost, button.danger.outline, .button.danger.ghost, .button.danger.outline, a.button.danger.ghost, a.button.danger.outline {
       --color: var(--danger-red-800); }
-      button.danger.ghost:hover, button.danger.ghost:focus, button.danger.outline:hover, button.danger.outline:focus, .button.danger.ghost:hover, .button.danger.ghost:focus, .button.danger.outline:hover, .button.danger.outline:focus {
+      button.danger.ghost[disabled], button.danger.outline[disabled], .button.danger.ghost[disabled], .button.danger.outline[disabled], a.button.danger.ghost[disabled], a.button.danger.outline[disabled] {
+        --color: var(--danger-red-700); }
+      button.danger.ghost:hover, button.danger.ghost:focus, button.danger.outline:hover, button.danger.outline:focus, .button.danger.ghost:hover, .button.danger.ghost:focus, .button.danger.outline:hover, .button.danger.outline:focus, a.button.danger.ghost:hover, a.button.danger.ghost:focus, a.button.danger.outline:hover, a.button.danger.outline:focus {
         --color: var(--danger-red-50); }
-  button.success, .button.success {
+        button.danger.ghost:hover[disabled], button.danger.ghost:focus[disabled], button.danger.outline:hover[disabled], button.danger.outline:focus[disabled], .button.danger.ghost:hover[disabled], .button.danger.ghost:focus[disabled], .button.danger.outline:hover[disabled], .button.danger.outline:focus[disabled], a.button.danger.ghost:hover[disabled], a.button.danger.ghost:focus[disabled], a.button.danger.outline:hover[disabled], a.button.danger.outline:focus[disabled] {
+          --color: var(--danger-red-700); }
+  button.success, .button.success, a.button.success {
     --background-color: var(--success-green-500);
     --secondary-background-color: var(--success-green-300);
     --color: var(--success-green-50); }
-    button.success.ghost, button.success.outline, .button.success.ghost, .button.success.outline {
+    button.success[disabled], .button.success[disabled], a.button.success[disabled] {
+      --background-color: var(--success-green-300);
+      --secondary-background-color: var(--success-green-200); }
+    button.success.ghost, button.success.outline, .button.success.ghost, .button.success.outline, a.button.success.ghost, a.button.success.outline {
       --color: var(--success-green-800); }
-      button.success.ghost:hover, button.success.ghost:focus, button.success.outline:hover, button.success.outline:focus, .button.success.ghost:hover, .button.success.ghost:focus, .button.success.outline:hover, .button.success.outline:focus {
+      button.success.ghost[disabled], button.success.outline[disabled], .button.success.ghost[disabled], .button.success.outline[disabled], a.button.success.ghost[disabled], a.button.success.outline[disabled] {
+        --color: var(--success-green-700); }
+      button.success.ghost:hover, button.success.ghost:focus, button.success.outline:hover, button.success.outline:focus, .button.success.ghost:hover, .button.success.ghost:focus, .button.success.outline:hover, .button.success.outline:focus, a.button.success.ghost:hover, a.button.success.ghost:focus, a.button.success.outline:hover, a.button.success.outline:focus {
         --color: var(--success-green-50); }
-  button.warning, .button.warning {
+        button.success.ghost:hover[disabled], button.success.ghost:focus[disabled], button.success.outline:hover[disabled], button.success.outline:focus[disabled], .button.success.ghost:hover[disabled], .button.success.ghost:focus[disabled], .button.success.outline:hover[disabled], .button.success.outline:focus[disabled], a.button.success.ghost:hover[disabled], a.button.success.ghost:focus[disabled], a.button.success.outline:hover[disabled], a.button.success.outline:focus[disabled] {
+          --color: var(--success-green-700); }
+  button.warning, .button.warning, a.button.warning {
     --background-color: var(--warning-yellow-500);
     --secondary-background-color: var(--warning-yellow-300);
     --color: var(--warning-yellow-50); }
-    button.warning.ghost, button.warning.outline, .button.warning.ghost, .button.warning.outline {
+    button.warning[disabled], .button.warning[disabled], a.button.warning[disabled] {
+      --background-color: var(--warning-yellow-300);
+      --secondary-background-color: var(--warning-yellow-200); }
+    button.warning.ghost, button.warning.outline, .button.warning.ghost, .button.warning.outline, a.button.warning.ghost, a.button.warning.outline {
       --color: var(--warning-yellow-800); }
-      button.warning.ghost:hover, button.warning.ghost:focus, button.warning.outline:hover, button.warning.outline:focus, .button.warning.ghost:hover, .button.warning.ghost:focus, .button.warning.outline:hover, .button.warning.outline:focus {
+      button.warning.ghost[disabled], button.warning.outline[disabled], .button.warning.ghost[disabled], .button.warning.outline[disabled], a.button.warning.ghost[disabled], a.button.warning.outline[disabled] {
+        --color: var(--warning-yellow-700); }
+      button.warning.ghost:hover, button.warning.ghost:focus, button.warning.outline:hover, button.warning.outline:focus, .button.warning.ghost:hover, .button.warning.ghost:focus, .button.warning.outline:hover, .button.warning.outline:focus, a.button.warning.ghost:hover, a.button.warning.ghost:focus, a.button.warning.outline:hover, a.button.warning.outline:focus {
         --color: var(--warning-yellow-50); }
-  button.uppercase, .button.uppercase {
+        button.warning.ghost:hover[disabled], button.warning.ghost:focus[disabled], button.warning.outline:hover[disabled], button.warning.outline:focus[disabled], .button.warning.ghost:hover[disabled], .button.warning.ghost:focus[disabled], .button.warning.outline:hover[disabled], .button.warning.outline:focus[disabled], a.button.warning.ghost:hover[disabled], a.button.warning.ghost:focus[disabled], a.button.warning.outline:hover[disabled], a.button.warning.outline:focus[disabled] {
+          --color: var(--warning-yellow-700); }
+  button.uppercase, .button.uppercase, a.button.uppercase {
     text-transform: uppercase;
     letter-spacing: 0.0375em; }
+
+a.button[disabled] {
+  pointer-events: none; }
 
 .card {
   border: 1px solid #ddd;

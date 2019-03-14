@@ -28,7 +28,7 @@ storiesOf('Hyperlink', module)
 ;
 
 storiesOf('Button', module)
-  .add("default", () => (
+  .add("normal", () => (
     <Button>
       Continue
     </Button>
@@ -58,102 +58,78 @@ storiesOf('Button', module)
     </Button>
   )
 )
-  .add("gradient", () => (
-    <Button fill='gradient'>
-      Continue
-    </Button>
-  )
-)
-  .add("outline", () => (
-    <Button fill='outline'>
-      Continue
-    </Button>
-  )
-)
-  .add("ghost", () => (
-    <Button fill='ghost'>
-      Continue
-    </Button>
-  )
-)
   .add("uppercase", () => (
     <Button text='uppercase'>
       Continue
     </Button>
   )
 )
+  .add("default", () => (
+    <React.Fragment>
+      <Button >Continue</Button>
+      <Button fill='gradient'>Continue</Button>
+      <Button fill='outline'>Continue</Button>
+      <Button fill='ghost'>Continue</Button>
+      <Button disabled>Continue</Button>
+      <Button fill='gradient' disabled>Continue</Button>
+      <Button fill='outline' disabled>Continue</Button>
+      <Button fill='ghost' disabled>Continue</Button>
+    </React.Fragment>
+  )
+)
   .add("danger", () => (
-    <Button color='danger'>
-      Continue
-    </Button>
-  )
-)
-  .add("danger gradient", () => (
-    <Button color='danger' fill='gradient'>
-      Continue
-    </Button>
-  )
-)
-  .add("danger outline", () => (
-    <Button color='danger' fill='outline'>
-      Continue
-    </Button>
-  )
-)
-  .add("danger ghost", () => (
-    <Button color='danger' fill='ghost'>
-      Continue
-    </Button>
+    <React.Fragment>
+      <Button color='danger'>Continue</Button>
+      <Button color='danger' fill='gradient'>Continue</Button>
+      <Button color='danger' fill='outline'>Continue</Button>
+      <Button color='danger' fill='ghost'>Continue</Button>
+      <Button color='danger' disabled>Continue</Button>
+      <Button color='danger' fill='gradient' disabled>Continue</Button>
+      <Button color='danger' fill='outline' disabled>Continue</Button>
+      <Button color='danger' fill='ghost' disabled>Continue</Button>
+    </React.Fragment>
   )
 )
   .add("success", () => (
-    <Button color='success'>
-      Continue
-    </Button>
-  )
-)
-  .add("success gradient", () => (
-    <Button color='success' fill='gradient'>
-      Continue
-    </Button>
-  )
-)
-  .add("success outline", () => (
-    <Button color='success' fill='outline'>
-      Continue
-    </Button>
-  )
-)
-  .add("success ghost", () => (
-    <Button color='success' fill='ghost'>
-      Continue
-    </Button>
+    <React.Fragment>
+      <Button color='success'>Continue</Button>
+      <Button color='success' fill='gradient'>Continue</Button>
+      <Button color='success' fill='outline'>Continue</Button>
+      <Button color='success' fill='ghost'>Continue</Button>
+      <Button color='success' disabled>Continue</Button>
+      <Button color='success' fill='gradient' disabled>Continue</Button>
+      <Button color='success' fill='outline' disabled>Continue</Button>
+      <Button color='success' fill='ghost' disabled>Continue</Button>
+    </React.Fragment>
   )
 )
   .add("warning", () => (
-    <Button color='warning'>
-      Continue
-    </Button>
+    <React.Fragment>
+      <Button color='warning'>Continue</Button>
+      <Button color='warning' fill='gradient'>Continue</Button>
+      <Button color='warning' fill='outline'>Continue</Button>
+      <Button color='warning' fill='ghost'>Continue</Button>
+      <Button color='warning' disabled>Continue</Button>
+      <Button color='warning' fill='gradient' disabled>Continue</Button>
+      <Button color='warning' fill='outline' disabled>Continue</Button>
+      <Button color='warning' fill='ghost' disabled>Continue</Button>
+    </React.Fragment>
   )
 )
-  .add("warning gradient", () => (
-    <Button color='warning' fill='gradient'>
-      Continue
-    </Button>
+  .add("link", () => (
+    <React.Fragment>
+      <Button type="link" href="https://google.com">Continue</Button>
+      <Button type="link" href="https://google.com" fill='gradient'>Continue</Button>
+      <Button type="link" href="https://google.com" fill='outline'>Continue</Button>
+      <Button type="link" href="https://google.com" fill='ghost'>Continue</Button>
+      <Button type="link" href="https://google.com" disabled>Continue</Button>
+      <Button type="link" href="https://google.com" fill='gradient' disabled>Continue</Button>
+      <Button type="link" href="https://google.com" fill='outline' disabled>Continue</Button>
+      <Button type="link" href="https://google.com" fill='ghost' disabled>Continue</Button>
+    </React.Fragment>
   )
-)
-  .add("warning outline", () => (
-    <Button color='warning' fill='outline'>
-      Continue
-    </Button>
   )
-)
-  .add("warning ghost", () => (
-    <Button color='warning' fill='ghost'>
-      Continue
-    </Button>
-  )
-)
+
 ;
 storiesOf('Card', module)
   .add("with text", () => (

@@ -8,6 +8,8 @@ const Button = ({
   shape='normal',
   type='button', 
   disabled = false,
+  openIn,
+  href,
   onClick,
   children}) => {
   let classNames = [];
@@ -16,11 +18,61 @@ const Button = ({
   if (size !== 'normal') classNames.push(size);
   if (color !== 'plain') classNames.push(color);
   if (shape !== 'normal') classNames.push(shape);
-  return (
-    <button className={classNames.join(' ')}>
-      {children}
-    </button>
-  )
+  switch (type) {
+    case 'link':
+      return (['external', '_external'].includes(openIn)
+        ?
+        <a
+          href={disabled ? '' : href}
+          className={['button', ...classNames].join(' ')}
+          rel='noopener noreferrer'
+          target='_blank'
+          onClick={onClick}
+        >
+          {children}
+        </a>
+        :
+        <a
+          href={isabled ? '' : href}
+          className={['button', ...classNames].join(' ')}
+          target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
+          onClick={onClick}
+        >
+          {children}
+        </a>);
+    case 'submit':
+      return (
+        <button 
+          type='submit' 
+          className={classNames.join(' ')} 
+          disabled={disabled} 
+          onClick={onClick}
+        >
+          {children}
+        </button>
+      );
+    case 'reset':
+      return (
+        <button 
+          type='reset' 
+          className={classNames.join(' ')} 
+          disabled={disabled} 
+          onClick={onClick}
+        >
+          {children}
+        </button>
+      );
+    default:
+      return (
+        <button 
+          className={classNames.join(' ')} 
+          disabled={disabled} 
+          onClick={onClick}
+        >
+          {children}
+        </button>
+      );
+  }
 };
 
 export default Button;
