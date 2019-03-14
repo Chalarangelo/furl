@@ -358,13 +358,17 @@ figcaption {
   --color: var(--cool-gray-700); }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  transition: all 0.3s ease;
+  line-height: 0.75; }
   a:link {
-    color: var(--focus-blue-600); }
+    --color: var(--focus-blue-600);
+    border-bottom: 2px solid transparent;
+    --padding-vertical: 0; }
   a:visited {
-    color: var(--focus-blue-800); }
+    --color: var(--focus-blue-800); }
   a:hover, a:focus {
-    text-decoration: underline; }
+    border-bottom: 2px solid var(--focus-blue-400); }
 
 *, ::before, ::after {
   --margin: var(--ls-0p);

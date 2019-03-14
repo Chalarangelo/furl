@@ -176,13 +176,17 @@ figcaption {
 
 a {
   text-decoration: none;
+  transition: all 0.3s ease;
+  line-height: 0.75;
   &:link{
-    color: var(--focus-blue-600);
+    --color: var(--focus-blue-600);
+    border-bottom: 2px solid transparent;
+    --padding-vertical: 0;
   }
   &:visited {
-    color: var(--focus-blue-800);
+    --color: var(--focus-blue-800);
   }
   &:hover, &:focus {
-    text-decoration: underline;
+    border-bottom: 2px solid var(--focus-blue-400);
   }
 }
