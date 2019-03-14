@@ -1,14 +1,16 @@
 *, ::before, ::after {
-  // Define padding, margin and border radius for all elements
+  // Define padding, margin, box shadow and border radius for all elements
   --margin: var(--ls-0p);
   --margin-vertical: var(--margin);
   --margin-horizontal: var(--margin);
   --padding: var(--ls-0p);
   --padding-vertical: var(--padding);
   --padding-horizontal: var(--padding);
+  --box-shadow: var(--shadow-0);
   --border-radius: var(--ls-0p);
   margin: var(--margin-vertical) var(--margin-horizontal);
   padding: var(--padding-vertical) var(--padding-horizontal);
+  box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   // Define colors for all elements
   --color: var(--cool-gray-900);

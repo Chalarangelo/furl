@@ -90,6 +90,14 @@
   --ls-900p: 48rem; }
 
 :root {
+  --shadow-0: none;
+  --shadow-100: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+  --shadow-300: 0 3px 6px rgba(0,0,0,.15), 0 2px 4px rgba(0,0,0,.12);
+  --shadow-500: 0 10px 20px rgba(0,0,0,.15), 0 3px 6px rgba(0,0,0.1);
+  --shadow-700: 0 15px 25px rgba(0,0,0,.15), 0 5px 10px rgba(0,0,0,.5);
+  --shadow-900: 0 20px 40px rgba(0,0,0,.2); }
+
+:root {
   line-sizing: normal;
   text-spacing: trim-start allow-end trim-adjacent ideograph-alpha ideograph-numeric; }
 
@@ -160,8 +168,7 @@ table {
 button, input, optgroup, select, textarea {
   font-family: inherit;
   font-size: inherit;
-  line-height: 1.5;
-  margin: 0; }
+  line-height: 1.5; }
 
 button, select {
   text-transform: none; }
@@ -378,9 +385,11 @@ figcaption {
   --padding: var(--ls-0p);
   --padding-vertical: var(--padding);
   --padding-horizontal: var(--padding);
+  --box-shadow: var(--shadow-0);
   --border-radius: var(--ls-0p);
   margin: var(--margin-vertical) var(--margin-horizontal);
   padding: var(--padding-vertical) var(--padding-horizontal);
+  box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   --color: var(--cool-gray-900);
   --background-color: var(--cool-gray-50);
@@ -405,17 +414,78 @@ a {
     border-bottom: 2px solid transparent;
     --padding-vertical: 0; }
   a:visited {
-    --color: var(--focus-blue-800); }
+    --color: var(--focus-blue-700); }
   a:hover, a:focus {
     border-bottom: 2px solid var(--focus-blue-300); }
 
-button {
-  border: 1px solid #ddd;
-  background: white;
-  color: black;
-  padding: 4px;
-  border-radius: 4px;
-  text-transform: uppercase; }
+button, .button {
+  --margin: var(--ls-75p);
+  --padding-horizontal: var(--ls-75p);
+  --padding-vertical: var(--ls-50p);
+  --border-radius: var(--ls-25p);
+  --background-color: var(--cool-gray-500);
+  --secondary-background-color: var(--cool-gray-300);
+  --color: var(--cool-gray-50);
+  transition: all 0.3s ease; }
+  button.small, .button.small {
+    --padding-horizontal: var(--ls-50p);
+    --padding-vertical: var(--ls-25p); }
+  button.large, .button.large {
+    --padding-horizontal: var(--ls-100p);
+    --padding-vertical: var(--ls-75p); }
+  button.rounded, .button.rounded {
+    border-radius: 20%/50%; }
+  button.circle, .button.circle {
+    border-radius: 100%; }
+  button.solid, .button.solid {
+    --box-shadow: var(--shadow-100); }
+    button.solid:hover, button.solid:focus, .button.solid:hover, .button.solid:focus {
+      --box-shadow: var(--shadow-300); }
+  button.gradient, .button.gradient {
+    background: linear-gradient(var(--secondary-background-color), var(--background-color));
+    --box-shadow: var(--shadow-100); }
+    button.gradient:hover, button.gradient:focus, .button.gradient:hover, .button.gradient:focus {
+      --box-shadow: var(--shadow-300); }
+  button.outline, .button.outline {
+    border: 1px solid var(--background-color);
+    background: transparent;
+    --color: var(--cool-gray-800); }
+    button.outline:hover, button.outline:focus, .button.outline:hover, .button.outline:focus {
+      background: var(--background-color);
+      --color: var(--cool-gray-50); }
+  button.ghost, .button.ghost {
+    background: transparent;
+    --color: var(--cool-gray-800); }
+    button.ghost:hover, button.ghost:focus, .button.ghost:hover, .button.ghost:focus {
+      background: var(--background-color);
+      --color: var(--cool-gray-50); }
+  button.danger, .button.danger {
+    --background-color: var(--danger-red-500);
+    --secondary-background-color: var(--danger-red-300);
+    --color: var(--danger-red-50); }
+    button.danger.ghost, button.danger.outline, .button.danger.ghost, .button.danger.outline {
+      --color: var(--danger-red-800); }
+      button.danger.ghost:hover, button.danger.ghost:focus, button.danger.outline:hover, button.danger.outline:focus, .button.danger.ghost:hover, .button.danger.ghost:focus, .button.danger.outline:hover, .button.danger.outline:focus {
+        --color: var(--danger-red-50); }
+  button.success, .button.success {
+    --background-color: var(--success-green-500);
+    --secondary-background-color: var(--success-green-300);
+    --color: var(--success-green-50); }
+    button.success.ghost, button.success.outline, .button.success.ghost, .button.success.outline {
+      --color: var(--success-green-800); }
+      button.success.ghost:hover, button.success.ghost:focus, button.success.outline:hover, button.success.outline:focus, .button.success.ghost:hover, .button.success.ghost:focus, .button.success.outline:hover, .button.success.outline:focus {
+        --color: var(--success-green-50); }
+  button.warning, .button.warning {
+    --background-color: var(--warning-yellow-500);
+    --secondary-background-color: var(--warning-yellow-300);
+    --color: var(--warning-yellow-50); }
+    button.warning.ghost, button.warning.outline, .button.warning.ghost, .button.warning.outline {
+      --color: var(--warning-yellow-800); }
+      button.warning.ghost:hover, button.warning.ghost:focus, button.warning.outline:hover, button.warning.outline:focus, .button.warning.ghost:hover, .button.warning.ghost:focus, .button.warning.outline:hover, .button.warning.outline:focus {
+        --color: var(--warning-yellow-50); }
+  button.uppercase, .button.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.0375em; }
 
 .card {
   border: 1px solid #ddd;

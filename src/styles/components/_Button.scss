@@ -1,8 +1,87 @@
-button {
-  border: 1px solid #ddd;
-  background: white;
-  color: black;
-  padding: 4px;
-  border-radius: 4px;
-  text-transform: uppercase;
+@mixin define-button-color-variant ($class-name, $color-name) {
+  &.#{$class-name} {
+    --background-color: var(--#{$color-name}-500);
+    --secondary-background-color: var(--#{$color-name}-300);
+    --color: var(--#{$color-name}-50);
+    &.ghost, &.outline {
+      --color: var(--#{$color-name}-800);
+      &:hover, &:focus {
+        --color: var(--#{$color-name}-50);
+      }
+    }
+  }
+}
+
+button, .button {
+  --margin: var(--ls-75p);
+  --padding-horizontal: var(--ls-75p);
+  --padding-vertical: var(--ls-50p);
+
+  --border-radius: var(--ls-25p);
+  --background-color: var(--cool-gray-500);
+  --secondary-background-color: var(--cool-gray-300);
+  --color: var(--cool-gray-50);
+
+  transition: all 0.3s ease;
+
+  // Size variants
+  &.small {
+    --padding-horizontal: var(--ls-50p);
+    --padding-vertical: var(--ls-25p);
+  }
+  &.large {
+    --padding-horizontal: var(--ls-100p);
+    --padding-vertical: var(--ls-75p);
+  }
+
+  // Shape variants
+  &.rounded {
+    border-radius: 20%/50%;
+  }
+  &.circle {
+    border-radius: 100%;
+  }
+
+  // Fill variants
+  &.solid {
+    --box-shadow: var(--shadow-100); 
+    &:hover, &:focus {
+      --box-shadow: var(--shadow-300);
+    }
+  }
+  &.gradient {
+    background: #{'linear-gradient(var(--secondary-background-color), var(--background-color))'};
+    --box-shadow: var(--shadow-100); 
+    &:hover, &:focus {
+      --box-shadow: var(--shadow-300);
+    }
+  }
+  &.outline {
+    border: 1px solid var(--background-color);
+    background: transparent;
+    --color: var(--cool-gray-800);
+    &:hover, &:focus {
+      background: var(--background-color);
+      --color: var(--cool-gray-50);
+    }
+  }
+  &.ghost {
+    background: transparent;
+    --color: var(--cool-gray-800);
+    &:hover, &:focus {
+      background: var(--background-color);
+      --color: var(--cool-gray-50);
+    }
+  }
+
+  // Color variants
+  @include define-button-color-variant('danger', 'danger-red');
+  @include define-button-color-variant('success', 'success-green');
+  @include define-button-color-variant('warning', 'warning-yellow');
+
+  // Text variants
+  &.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.0375em;
+  }
 }
