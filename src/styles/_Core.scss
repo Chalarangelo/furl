@@ -16,3 +16,15 @@
   color: var(--color);
   background-color: var(--background-color);
 }
+
+hr {
+  // Fixes and defaults for styling
+  border: 0;
+  box-sizing: content-box;
+  // Actual styling using variables
+  line-height: 1.25;
+  --margin-vertical: var(--ls-50p);
+  --margin-horizontal: var(--ls-25p);
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--cool-gray-400) 25%, var(--cool-gray-400) 75%, transparent);
+}

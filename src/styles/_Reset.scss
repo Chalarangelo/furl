@@ -53,12 +53,6 @@ body {
   vertical-align: inherit;
 }
 
-// Fix issues in all browsers
-hr {
-  box-sizing: content-box;
-  height: 0;
-}
-
 audio, canvas, iframe, img, svg, video {
   // Set vertical alignment of media elements
   vertical-align: middle;

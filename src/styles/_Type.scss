@@ -1,10 +1,20 @@
 *, ::before, ::after {
   // Define the font family and the maximum line length
   font-family: var(--font-a), var(--system-font-stack);
-  max-width: calc(60ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal));  // TODO: Make this only apply to textual content elements and see how it works with padding
   // Define the font size for all elements
   font-size: var(--font-size);
   font-weight: var(--font-weight);
+}
+
+// Apply a sensible line length
+p, li, td {
+  max-width: calc(60ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal));
+}
+blockquote {
+  max-width: calc(49.5ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal));
+}
+h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
+  max-width: 80ch;
 }
 
 // Define a class for elements using the secondary font
@@ -83,8 +93,8 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   --margin: var(--ls-75p);
   & small {
     --margin-vertical: var(--ls-25p);
+    letter-spacing: -0.05em;
     display: block;
-    letter-spacing: -0.075em;
     font-family: var(--font-a), var(--system-font-stack);
   }
 }
@@ -104,9 +114,13 @@ sup {
 }
 
 ol, ul {
-  --margin-horizontal: var(--ls-50p);
+  --margin-horizontal: var(--ls-150p);
   --margin-vertical: var(--ls-75p);
   --padding-horizontal: var(--ls-75p);
+}
+
+li {
+  --padding-horizontal: var(--ls-50p);
 }
 
 b, strong {
@@ -144,6 +158,7 @@ blockquote {
   --font-size: var(--ts-300p);
   --padding-horizontal: var(--ls-200p);
   --margin-vertical: var(--ls-50p);
+  font-family: var(--font-b), var(--font-a), var(--system-font-stack);
   font-style: italic;
   --color: var(--cool-gray-700);
   &:before {
@@ -187,6 +202,6 @@ a {
     --color: var(--focus-blue-800);
   }
   &:hover, &:focus {
-    border-bottom: 2px solid var(--focus-blue-400);
+    border-bottom: 2px solid var(--focus-blue-300);
   }
 }

@@ -126,10 +126,6 @@ body {
   text-decoration: inherit;
   vertical-align: inherit; }
 
-hr {
-  box-sizing: content-box;
-  height: 0; }
-
 audio, canvas, iframe, img, svg, video {
   vertical-align: middle;
   display: block;
@@ -217,9 +213,17 @@ a, area, button, input, label, select, summary, textarea {
 
 *, ::before, ::after {
   font-family: var(--font-a), var(--system-font-stack);
-  max-width: calc(60ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal));
   font-size: var(--font-size);
   font-weight: var(--font-weight); }
+
+p, li, td {
+  max-width: calc(60ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal)); }
+
+blockquote {
+  max-width: calc(49.5ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal)); }
+
+h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
+  max-width: 80ch; }
 
 .font-B {
   font-family: var(--font-b), var(--font-a), var(--system-font-stack); }
@@ -282,8 +286,8 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   --margin: var(--ls-75p); }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .title1 small, .title2 small, .title3 small, .title4 small, .title5 small, .title6 small {
     --margin-vertical: var(--ls-25p);
+    letter-spacing: -0.05em;
     display: block;
-    letter-spacing: -0.075em;
     font-family: var(--font-a), var(--system-font-stack); }
 
 p {
@@ -299,9 +303,12 @@ sup {
   top: calc(var(--ls-0p) - var(--sp-25p)); }
 
 ol, ul {
-  --margin-horizontal: var(--ls-50p);
+  --margin-horizontal: var(--ls-150p);
   --margin-vertical: var(--ls-75p);
   --padding-horizontal: var(--ls-75p); }
+
+li {
+  --padding-horizontal: var(--ls-50p); }
 
 b, strong {
   font-weight: 500; }
@@ -331,6 +338,7 @@ blockquote {
   --font-size: var(--ts-300p);
   --padding-horizontal: var(--ls-200p);
   --margin-vertical: var(--ls-50p);
+  font-family: var(--font-b), var(--font-a), var(--system-font-stack);
   font-style: italic;
   --color: var(--cool-gray-700); }
   blockquote:before {
@@ -368,7 +376,7 @@ a {
   a:visited {
     --color: var(--focus-blue-800); }
   a:hover, a:focus {
-    border-bottom: 2px solid var(--focus-blue-400); }
+    border-bottom: 2px solid var(--focus-blue-300); }
 
 *, ::before, ::after {
   --margin: var(--ls-0p);
@@ -385,6 +393,15 @@ a {
   --background-color: var(--cool-gray-50);
   color: var(--color);
   background-color: var(--background-color); }
+
+hr {
+  border: 0;
+  box-sizing: content-box;
+  line-height: 1.25;
+  --margin-vertical: var(--ls-50p);
+  --margin-horizontal: var(--ls-25p);
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--cool-gray-400) 25%, var(--cool-gray-400) 75%, transparent); }
 
 button {
   border: 1px solid #ddd;

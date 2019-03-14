@@ -8,6 +8,16 @@ const Type = props => (
     <blockquote cite="Ronald Testerman">
       Integer sapien mi, pellentesque pellentesque consequat in, rhoncus id risus. In eu tortor eu orci malesuada viverra ac vitae sem.
     </blockquote>
+    <ul>
+      <li>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed ultrices sem ante, porta porta lorem porttitor in. </li>
+      <li>Fusce vel tortor vitae lacus feugiat sodales sit <kbd>amet</kbd> eu enim. Donec rhoncus nunc faucibus nunc eleifend, non tincidunt dolor suscipit.</li>
+      <li>Duis efficitur enim ut velit accumsan mollis vel non turpis. Nunc tempus augue nibh.</li>
+    </ul>
+    <ol>
+      <li>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed ultrices sem ante, porta porta lorem porttitor in. </li>
+      <li>Fusce vel tortor vitae lacus feugiat sodales sit <kbd>amet</kbd> eu enim. Donec rhoncus nunc faucibus nunc eleifend, non tincidunt dolor suscipit.</li>
+      <li>Duis efficitur enim ut velit accumsan mollis vel non turpis. Nunc tempus augue nibh.</li>
+    </ol>
     <h1>
     Typography <small>Yada yada yada</small>
     </h1>
