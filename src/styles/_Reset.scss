@@ -168,14 +168,16 @@ summary {
   display: list-item;
 }
 
+// Change cursor
 a, area, button, input, label, select, summary, textarea {
-  // Change cursor
+
   cursor: pointer;
-  // Remove tap delay in all browsers
-  &, [tabindex] {
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-  }
+}
+
+// Remove tap delay in all browsers
+a, area, button, input, label, select, summary, textarea, [tabindex] {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
 }
 
 // Change cursor

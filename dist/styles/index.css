@@ -204,9 +204,10 @@ summary {
 
 a, area, button, input, label, select, summary, textarea {
   cursor: pointer; }
-  a, a [tabindex], area, area [tabindex], button, button [tabindex], input, input [tabindex], label, label [tabindex], select, select [tabindex], summary, summary [tabindex], textarea, textarea [tabindex] {
-    -ms-touch-action: manipulation;
-    touch-action: manipulation; }
+
+a, area, button, input, label, select, summary, textarea, [tabindex] {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation; }
 
 [aria-disabled="true"], [disabled] {
   cursor: not-allowed; }
@@ -318,7 +319,12 @@ pre, code, kbd, samp {
   --font-size: var(--ts-50p); }
 
 pre {
-  white-space: pre-wrap; }
+  white-space: pre-wrap;
+  --background-color: var(--cool-gray-100);
+  --padding-horizontal: var(--ls-100p);
+  --padding-vertical: var(--ls-150p);
+  --margin-horizontal: var(--ls-75p);
+  --border-radius: var(--ls-25p); }
 
 code {
   display: inline-block;
@@ -398,8 +404,8 @@ hr {
   border: 0;
   box-sizing: content-box;
   line-height: 1.25;
-  --margin-vertical: var(--ls-50p);
-  --margin-horizontal: var(--ls-25p);
+  --margin-vertical: var(--ls-100p);
+  --margin-horizontal: var(--ls-75p);
   height: 1px;
   background: linear-gradient(to right, transparent, var(--cool-gray-400) 25%, var(--cool-gray-400) 75%, transparent); }
 

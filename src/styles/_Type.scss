@@ -136,6 +136,11 @@ pre, code, kbd, samp {
 // Fix text wrapping
 pre {
   white-space: pre-wrap;
+  --background-color: var(--cool-gray-100);
+  --padding-horizontal: var(--ls-100p);
+  --padding-vertical: var(--ls-150p);
+  --margin-horizontal: var(--ls-75p);
+  --border-radius: var(--ls-25p);
 }
 
 code {
