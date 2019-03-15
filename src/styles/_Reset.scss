@@ -23,8 +23,8 @@ body {
   // Set font rendering
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  // Prevent horizontal scrolling
-  overflow-x: hidden;
+  // Prevent horizontal scrolling - TODO: messed up stickies, this has to be figured out eventually
+  // overflow-x: hidden;
 }
 
 * {

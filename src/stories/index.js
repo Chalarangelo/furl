@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import {Hyperlink,Button,List,Card} from "../../dist/components";
+import { Hyperlink, Button, List, Layout, Content, Sidebar, Header ,Card} from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -135,8 +135,21 @@ storiesOf('Button', module)
     </React.Fragment>
   )
 )
-
 ;
+
+storiesOf('Layout', module)
+  .add("Normal", () => (
+    <Layout>
+      <Header>Header</Header>
+      <Sidebar>Sidebar</Sidebar>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+)
+;
+
+
 
 storiesOf('List', module)
   .add("with text", () => (
