@@ -580,7 +580,7 @@ ol.upper-roman {
   height: 64px;
   position: sticky;
   top: 0;
-  z-index: 1; }
+  z-index: 100; }
 
 .layout-sidebar {
   background: #70BCFA;
@@ -589,12 +589,12 @@ ol.upper-roman {
   top: 64px;
   width: 25%;
   height: calc(100% - 64px);
-  z-index: 1; }
+  z-index: 100; }
 
 .layout-content {
   background: #61CC68;
   grid-area: main;
-  min-height: 100vh; }
+  min-height: calc(100vh - 64px); }
 
 .card {
   border: 1px solid #ddd;
