@@ -427,7 +427,7 @@ button, .button, a.button {
   --padding-vertical: var(--ls-50p);
   --border-radius: var(--ls-25p);
   --background-color: var(--cool-gray-500);
-  --secondary-background-color: var(--cool-gray-300);
+  --secondary-background-color: var(--cool-gray-400);
   --color: var(--cool-gray-50);
   transition: all 0.3s ease; }
   button:hover, button:focus, .button:hover, .button:focus, a.button:hover, a.button:focus {
@@ -445,6 +445,8 @@ button, .button, a.button {
     border-radius: 20%/50%; }
   button.circle, .button.circle, a.button.circle {
     border-radius: 100%; }
+  button.flat:hover, button.flat:focus, .button.flat:hover, .button.flat:focus, a.button.flat:hover, a.button.flat:focus {
+    background: var(--secondary-background-color); }
   button.solid, .button.solid, a.button.solid {
     --box-shadow: var(--shadow-100); }
     button.solid:hover, button.solid:focus, .button.solid:hover, .button.solid:focus, a.button.solid:hover, a.button.solid:focus {
@@ -483,7 +485,7 @@ button, .button, a.button {
         --color: var(--cool-gray-700); }
   button.danger, .button.danger, a.button.danger {
     --background-color: var(--danger-red-500);
-    --secondary-background-color: var(--danger-red-300);
+    --secondary-background-color: var(--danger-red-400);
     --color: var(--danger-red-50); }
     button.danger[disabled], .button.danger[disabled], a.button.danger[disabled] {
       --background-color: var(--danger-red-300);
@@ -498,7 +500,7 @@ button, .button, a.button {
           --color: var(--danger-red-700); }
   button.success, .button.success, a.button.success {
     --background-color: var(--success-green-500);
-    --secondary-background-color: var(--success-green-300);
+    --secondary-background-color: var(--success-green-400);
     --color: var(--success-green-50); }
     button.success[disabled], .button.success[disabled], a.button.success[disabled] {
       --background-color: var(--success-green-300);
@@ -513,7 +515,7 @@ button, .button, a.button {
           --color: var(--success-green-700); }
   button.warning, .button.warning, a.button.warning {
     --background-color: var(--warning-yellow-500);
-    --secondary-background-color: var(--warning-yellow-300);
+    --secondary-background-color: var(--warning-yellow-400);
     --color: var(--warning-yellow-50); }
     button.warning[disabled], .button.warning[disabled], a.button.warning[disabled] {
       --background-color: var(--warning-yellow-300);
@@ -529,9 +531,6 @@ button, .button, a.button {
   button.uppercase, .button.uppercase, a.button.uppercase {
     text-transform: uppercase;
     letter-spacing: 0.0375em; }
-
-a.button[disabled] {
-  pointer-events: none; }
 
 .card {
   border: 1px solid #ddd;

@@ -1,7 +1,7 @@
 @mixin define-button-color-variant ($class-name, $color-name) {
   &.#{$class-name} {
     --background-color: var(--#{$color-name}-500);
-    --secondary-background-color: var(--#{$color-name}-300);
+    --secondary-background-color: var(--#{$color-name}-400);
     --color: var(--#{$color-name}-50);
     &[disabled] {
       --background-color: var(--#{$color-name}-300);
@@ -36,7 +36,7 @@ button, .button, a.button {
 
   --border-radius: var(--ls-25p);
   --background-color: var(--cool-gray-500);
-  --secondary-background-color: var(--cool-gray-300);
+  --secondary-background-color: var(--cool-gray-400);
   --color: var(--cool-gray-50);
   &[disabled] {
     --background-color: var(--cool-gray-300);
@@ -64,6 +64,11 @@ button, .button, a.button {
   }
 
   // Fill variants
+  &.flat {
+    &:hover, &:focus {
+      background: var(--secondary-background-color);
+    }
+  }
   &.solid {
     --box-shadow: var(--shadow-100); 
     &:hover, &:focus {

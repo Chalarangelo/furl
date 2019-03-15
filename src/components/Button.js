@@ -1,7 +1,7 @@
 import React from "react";
 
 const Button = ({
-  fill = 'solid', 
+  fill = 'flat', 
   text ='normal', 
   size = 'normal', 
   color='plain', 
@@ -27,15 +27,17 @@ const Button = ({
           className={['button', ...classNames].join(' ')}
           rel='noopener noreferrer'
           target='_blank'
+          disabled={disabled} 
           onClick={onClick}
         >
           {children}
         </a>
         :
         <a
-          href={isabled ? '' : href}
+          href={disabled ? '' : href}
           className={['button', ...classNames].join(' ')}
           target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
+          disabled={disabled} 
           onClick={onClick}
         >
           {children}
