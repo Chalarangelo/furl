@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import {Hyperlink,Button,Card} from "../../dist/components";
+import {Hyperlink,Button,List,Card} from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -89,6 +89,7 @@ storiesOf('Button', module)
       <Button color='danger' fill='gradient' disabled>Continue</Button>
       <Button color='danger' fill='outline' disabled>Continue</Button>
       <Button color='danger' fill='ghost' disabled>Continue</Button>
+      <Button color='danger' fill='outline' shape='rounded' text='uppercase' size='large'>Continue</Button>
     </React.Fragment>
   )
 )
@@ -133,9 +134,21 @@ storiesOf('Button', module)
       <Button type="link" href="https://google.com" fill='ghost' disabled>Continue</Button>
     </React.Fragment>
   )
-  )
+)
 
 ;
+
+storiesOf('List', module)
+  .add("with text", () => (
+    <List data={['a','b','c']}/>
+  )
+)
+  .add("with objects", () => (
+    <List data={[{a: 'a', v: 'b'}, {a: 'b', v: 'c'}]} render={({a,v}) => <li>{`${a}: ${v}`}</li>}/>
+  )
+)
+;
+
 storiesOf('Card', module)
   .add("with text", () => (
     <Card>Hello</Card>

@@ -310,14 +310,6 @@ sub {
 sup {
   top: calc(var(--ls-0p) - var(--sp-25p)); }
 
-ol, ul {
-  --margin-horizontal: var(--ls-200p);
-  --margin-vertical: var(--ls-75p);
-  --padding-horizontal: var(--ls-75p); }
-
-li {
-  --padding-horizontal: var(--ls-50p); }
-
 b, strong {
   font-weight: 500; }
 
@@ -531,6 +523,15 @@ button, .button, a.button {
   button.uppercase, .button.uppercase, a.button.uppercase {
     text-transform: uppercase;
     letter-spacing: 0.0375em; }
+
+ol, ul {
+  --margin-horizontal: var(--ls-200p);
+  --margin-vertical: var(--ls-75p);
+  --padding-horizontal: var(--ls-75p);
+  list-style: none; }
+
+li {
+  --padding-horizontal: var(--ls-50p); }
 
 .card {
   border: 1px solid #ddd;
