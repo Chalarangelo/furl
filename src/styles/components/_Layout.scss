@@ -8,22 +8,52 @@
 
 .layout-header {
   // background: #F35A4F;
-  height: 64px;
-  z-index: 100;
+  height: var(--ls-300p);
+  z-index: 101;
   position: sticky;
   grid-area: header;
+  --box-shadow: var(--shadow-100);
 }
 
 .layout-sidebar {
   // background: #70BCFA;
   position: fixed;
-  height: calc(100% - 64px);
+  height: calc(100% - var(--ls-300p));
   z-index: 100;
   transition: all 0.3s ease;
+  --box-shadow: var(--shadow-100);
 }
 
 .layout-content {
   // background: #61CC68;
   grid-area: content;
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh - var(--ls-300p));
+}
+
+.layout-sidebar-tab {
+  position: fixed;
+  --margin-horizontal: var(--ls-0p);
+  --margin-vertical: var(--ls-50p);
+  height: var(--ls-250p);
+  width: var(--ls-250p);
+  z-index: 99;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  --background-color: var(--cool-gray-50);
+  --box-shadow: var(--shadow-300);
+  transition: all 0.3s ease;
+  &:hover, &:focus {
+    --box-shadow: var(--shadow-500);
+  }
+}
+
+.layout-sidebar-overlay {
+  z-index: 98;
+  --background-color: var(--cool-gray-800);
+  opacity: 0.24;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }

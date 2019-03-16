@@ -93,7 +93,7 @@
   --shadow-0: none;
   --shadow-100: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
   --shadow-300: 0 3px 6px rgba(0,0,0,.15), 0 2px 4px rgba(0,0,0,.12);
-  --shadow-500: 0 10px 20px rgba(0,0,0,.15), 0 3px 6px rgba(0,0,0.1);
+  --shadow-500: 0 10px 20px rgba(0,0,0,.15), 0 3px 6px rgba(0,0,0,.1);
   --shadow-700: 0 15px 25px rgba(0,0,0,.15), 0 5px 10px rgba(0,0,0,.5);
   --shadow-900: 0 20px 40px rgba(0,0,0,.2); }
 
@@ -573,20 +573,47 @@ ol.upper-roman {
   grid-template-rows: auto; }
 
 .layout-header {
-  height: 64px;
-  z-index: 100;
+  height: var(--ls-300p);
+  z-index: 101;
   position: sticky;
-  grid-area: header; }
+  grid-area: header;
+  --box-shadow: var(--shadow-100); }
 
 .layout-sidebar {
   position: fixed;
-  height: calc(100% - 64px);
+  height: calc(100% - var(--ls-300p));
   z-index: 100;
-  transition: all 0.3s ease; }
+  transition: all 0.3s ease;
+  --box-shadow: var(--shadow-100); }
 
 .layout-content {
   grid-area: content;
-  min-height: calc(100vh - 64px); }
+  min-height: calc(100vh - var(--ls-300p)); }
+
+.layout-sidebar-tab {
+  position: fixed;
+  --margin-horizontal: var(--ls-0p);
+  --margin-vertical: var(--ls-50p);
+  height: var(--ls-250p);
+  width: var(--ls-250p);
+  z-index: 99;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  --background-color: var(--cool-gray-50);
+  --box-shadow: var(--shadow-300);
+  transition: all 0.3s ease; }
+  .layout-sidebar-tab:hover, .layout-sidebar-tab:focus {
+    --box-shadow: var(--shadow-500); }
+
+.layout-sidebar-overlay {
+  z-index: 98;
+  --background-color: var(--cool-gray-800);
+  opacity: 0.24;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh; }
 
 .card {
   border: 1px solid #ddd;

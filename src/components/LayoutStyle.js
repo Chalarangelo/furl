@@ -75,8 +75,6 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
     sidebarWidth = [100 - contentSize[0] * 100, 100 - contentSize[1] * 100, 100 - contentSize[2] * 100, 100 - contentSize[3] * 100];
   }
 
-
-
   return `
   .${layoutName} {
     grid-template-areas: ${gridAreas};
@@ -91,13 +89,28 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
     `.${layoutName} .layout-sidebar {
       ${sidebarWidth[0] == 0 ? 
         `${sidebar == 'left' ? 'left: -100%;' : 'right: -100%;'}
-        width: 100%;`:
+        width: calc(100% - var(--ls-250p));`:
         `${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
         width: ${sidebarWidth[0]}%;`
       }
       ${header == 'none' ? 'min-height: 100vh;' : ''}
-      ${header == 'top' ? 'top: 64px;' : header == 'bottom' ? 'bottom: 64px;' : ''}
+      ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
     }`
+  }
+  ${sidebar !== 'none' && sidebarWidth[0] == 0 ? 
+    `.${layoutName} .layout-sidebar-tab {
+      ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
+      ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+    }`:
+    `.${layoutName} .layout-sidebar-tab {
+      display: none;
+    }`
+  }
+  .${layoutName}.sidebar-visible .layout-sidebar {
+    ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+  }
+  .${layoutName}.sidebar-visible .layout-sidebar-tab {
+    ${sidebar == 'left' ? 'left: calc(100% - var(--ls-250p));' : 'right: calc(100% - var(--ls-250p));'}
   }
   @media screen and (min-width: 600px) {
     .${layoutName} {
@@ -107,12 +120,21 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
       `.${layoutName} .layout-sidebar {
       ${sidebarWidth[1] == 0 ?
         `${sidebar == 'left' ? 'left: -100%;' : 'right: -100%;'}
-        width: 100%;`:
+        width: calc(100% - var(--ls-250p));`:
         `${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
         width: ${sidebarWidth[1]}%;`
       }
     }`
-  }
+    }
+    ${sidebar !== 'none' && sidebarWidth[1] == 0 ?
+      `.${layoutName} .layout-sidebar-tab {
+        ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
+        ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+      }`:
+      `.${layoutName} .layout-sidebar-tab {
+        display: none;
+      }`
+    }
   }
   @media screen and (min-width: 900px) {
     .${layoutName} {
@@ -122,10 +144,19 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
       `.${layoutName} .layout-sidebar {
       ${sidebarWidth[2] == 0 ?
         `${sidebar == 'left' ? 'left: -100%;' : 'right: -100%;'}
-        width: 100%;`:
+        width: calc(100% - var(--ls-250p))%;`:
         `${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
         width: ${sidebarWidth[2]}%;`
       }
+    }`
+    }
+    ${sidebar !== 'none' && sidebarWidth[2] == 0 ?
+    `.${layoutName} .layout-sidebar-tab {
+      ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
+      ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+    }`:
+    `.${layoutName} .layout-sidebar-tab {
+      display: none;
     }`
   }
   }
@@ -134,13 +165,22 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
       grid-template-columns: ${gridColumns[3]};
     }
     ${sidebar == 'none' ? '' :
-      `.${layoutName} .layout-sidebar {
+    `.${layoutName} .layout-sidebar {
       ${sidebarWidth[3] == 0 ?
         `${sidebar == 'left' ? 'left: -100%;' : 'right: -100%;'}
-        width: 100%;`:
+        width: calc(100% - var(--ls-250p))%;`:
         `${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
         width: ${sidebarWidth[3]}%;`
       }
+    }`
+    }
+    ${sidebar !== 'none' && sidebarWidth[3] == 0 ?
+     `.${layoutName} .layout-sidebar-tab {
+      ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
+      ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+    }`:
+    `.${layoutName} .layout-sidebar-tab {
+      display: none;
     }`
   }
   }
