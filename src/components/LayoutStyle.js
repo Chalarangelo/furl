@@ -102,7 +102,7 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
       ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
       ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
     }`:
-    `.${layoutName} .layout-sidebar-tab {
+    `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
       display: none;
     }`
   }
@@ -131,7 +131,7 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
         ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
         ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
       }`:
-      `.${layoutName} .layout-sidebar-tab {
+      `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
         display: none;
       }`
     }
@@ -155,7 +155,7 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
       ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
       ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
     }`:
-    `.${layoutName} .layout-sidebar-tab {
+    `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
       display: none;
     }`
   }
@@ -179,7 +179,7 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
       ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
       ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
     }`:
-    `.${layoutName} .layout-sidebar-tab {
+    `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
       display: none;
     }`
   }
