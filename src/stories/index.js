@@ -138,10 +138,76 @@ storiesOf('Button', module)
 ;
 
 storiesOf('Layout', module)
-  .add("Normal", () => (
+  .add("Default", () => (
     <Layout>
       <Header>Header</Header>
       <Sidebar>Sidebar</Sidebar>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+)
+  .add("Right sidebar", () => (
+    <Layout sidebar='right'>
+      <Header>Header</Header>
+      <Sidebar>Sidebar</Sidebar>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+)
+  .add("Bottom header", () => (
+    <Layout header='bottom'>
+      <Header>Header</Header>
+      <Sidebar>Sidebar</Sidebar>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+)
+  .add("Bottom header right sidebar", () => (
+    <Layout header='bottom' sidebar='right'>
+      <Header>Header</Header>
+      <Sidebar>Sidebar</Sidebar>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+)
+  .add("No sidebar", () => (
+    <Layout sidebar='none'>
+      <Header>Header</Header>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+)
+  .add("Bottom header no sidebar", () => (
+    <Layout header='bottom' sidebar='none'>
+      <Header>Header</Header>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+)
+  .add("No header", () => (
+    <Layout header='none'>
+      <Sidebar>Sidebar</Sidebar>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+)
+  .add("No header right sidebar", () => (
+    <Layout header='none' sidebar='right'>
+      <Sidebar>Sidebar</Sidebar>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+)
+  .add("Just content", () => (
+    <Layout header='none' sidebar='none'>
       <Content>Content</Content>
       <Button>Invalid content</Button>
     </Layout>
