@@ -15,7 +15,7 @@
     margin-left: var(--margin-left);
   }
   @for $i from 1 through 12 {
-    .grid-col-#{$size-name}-#{$i}, [class*='-c0'].grid-col-#{$size-name}-#{$i} {
+    .grid-col-#{$size-name}-#{$i}, div.grid-col-#{$size-name}-#{$i} {
       --col-size: #{($i * 100% / 12)};
     }
     .grid-col-#{$size-name}-offset-#{($i - 1)} {

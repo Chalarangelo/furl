@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Button, List, Layout, Grid, Row, Column as Col, Content, Sidebar, Header ,Card} from "../../dist/components";
+import { Hyperlink, Button, List, Layout, Grid, Row, Column as Col, Content, Sidebar, Header ,Card, CardSection} from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -328,6 +328,53 @@ storiesOf('List', module)
 
 storiesOf('Card', module)
   .add("with text", () => (
-    <Card>Hello</Card>
+    <Card width={320}>
+      <CardSection>
+        <h5>Hello world<small>Lorem ipsum</small></h5>
+        <p>This is some demo content that I want to test the Card with.</p>
+      </CardSection>
+    </Card>
+  )
+)
+  .add("with media", () => (
+    <Card width={320}>
+      <CardSection>
+        <h5>Hello world<small>Lorem ipsum</small></h5>
+      </CardSection>
+      <CardSection media="https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80" height={200}/>
+      <CardSection>
+        <p>This is some demo content that I want to test the Card with.</p>
+      </CardSection>
+    </Card>
+  )
+)
+  .add("with grid", () => (
+    <Grid justify='center' align='center'><Row><Col size={[12, 6, 5, 4]}>
+    <Card width={320}>
+      <CardSection media="https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80" height={200} />
+      <CardSection>
+        <Grid justify={"between"}>
+          <Row>
+            <Col size={8}><h5>Hello world<small>Lorem ipsum</small></h5></Col>
+            <Col size={3}><Button fill="ghost" size="small">Next</Button></Col>
+          </Row>
+        </Grid>
+      </CardSection>
+      <CardSection>
+        <p>This is some demo content that I want to test the Card with.</p>
+      </CardSection>
+    </Card>
+    </Col><Col size={[12, 6, 5, 4]}>
+    <Card width={320}>
+      <CardSection>
+        <Grid align="stretch">
+          <Row>
+            <Col><h5>Hello world<small>Lorem ipsum</small></h5><p>This is some demo content that I want to test the Card with.</p></Col>
+              <Col size={'120px'}><div style={{ height: '100%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundImage: `url(${encodeURI("https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80")})` }}/></Col>
+          </Row>
+        </Grid>
+      </CardSection>
+    </Card>
+    </Col></Row></Grid>
   )
 );

@@ -19,7 +19,7 @@ const Column = ({
     if (+v >= 1 && +v <= 12 || v == 'fluid') {
       return acc;
     }
-    else {
+    else if (+v < 1) {
       switch (i) {
         case 0:
           return acc + `.grid-col-xs-c${`${v}`.replace('.','')} { --col-size: ${v * 100}%; } `;
@@ -33,9 +33,23 @@ const Column = ({
           return acc;
       }
     }
+    else {
+      switch (i) {
+        case 0:
+          return acc + `.grid-col-xs-p${`${v}`.replace('.', '')} { --col-size: ${v}; } `;
+        case 1:
+          return acc + `@media screen and (min-width: 600px) { .grid-col-sm-p${`${v}`.replace('.', '')} { --col-size: ${v}; }} `;
+        case 2:
+          return acc + `@media screen and (min-width: 900px) {.grid-col-md-p${`${v}`.replace('.', '')} { --col-size: ${v}; }} `;
+        case 3:
+          return acc + `@media screen and (min-width: 1200px) {.grid-col-lg-p${`${v}`.replace('.', '')} { --col-size: ${v}; }} `;
+        default:
+          return acc;
+      }
+    }
   }, '');
 
-  classNames = sizes.map((v, i) => `grid-col-${sizeNames[i]}-${(+v >= 1 && +v <= 12 || v == 'fluid') ? `${v}`: `c${`${v}`.replace('.', '')}`}`);
+  classNames = sizes.map((v, i) => `grid-col-${sizeNames[i]}-${(+v >= 1 && +v <= 12 || v == 'fluid') ? `${v}` : (+v < 1) ? `c${`${v}`.replace('.', '')}` :  `p${`${v}`.replace('.', '')}`}`);
   classNames = [...classNames, ...offsets.map((v, i) => `grid-col-${sizeNames[i]}-offset-${v}`)];
   classNames = [...classNames, ...orders.map((v, i) => `grid-col-${sizeNames[i]}-${v}`)];
   if(style.length > 0) 

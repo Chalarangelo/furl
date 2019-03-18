@@ -4,12 +4,12 @@ import List from "./List";
 import { Layout, Content, Sidebar, Header } from "./Layout";
 import { Grid, Row, Column } from "./Grid";
 
-import Card from "./Card";
+import { Card, CardSection } from "./Card";
 export { 
   Hyperlink,
   Button, 
   List,
   Layout, Content, Sidebar, Header,
   Grid, Row, Column,
-  Card 
+  Card, CardSection
 };

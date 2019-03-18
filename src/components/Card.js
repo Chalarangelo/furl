@@ -1,6 +1,15 @@
 import React from "react";
-// import "./Card.css";
+import CardSection from "./CardSection";
 
-const Card = props => <div className="card">{props.children}</div>;
+const Card = ({
+  width = 'auto',
+  children
+}) => {
+  if (!Array.isArray(children)) children = [children];
+  const sections = children.filter(item => CardSection.name == item.type.name);
+  return (<div className="card" style={{width: width}}>
+    {sections}
+  </div>)
+}
 
-export default Card;
+export { Card, CardSection };

@@ -1,7 +1,24 @@
 .card {
-  border: 1px solid #ddd;
-  background: white;
-  color: black;
-  padding: 6px 8px;
-  border-radius: 4px;
+  --box-shadow: var(--shadow-100);
+  --margin: var(--ls-50p);
+  --border-radius: var(--ls-25p);
+  overflow: hidden;
+}
+
+.card-section {
+  --padding: var(--ls-25p);
+}
+
+.card-media-section {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card-section:not(:first-child) {
+  border-top: 1px solid var(--cool-gray-200);
+}
+
+.card-media-section + .card-section {
+  border-top: 0;
 }
