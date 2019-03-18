@@ -34,7 +34,39 @@
 }
 
 .grid-container {
-
+  &.justify-start .grid-row {
+    justify-content: flex-start;
+  }
+  &.justify-end .grid-row {
+    justify-content: flex-end;
+  }
+  &.justify-center .grid-row {
+    justify-content: center;
+  }
+  &.justify-between .grid-row {
+    justify-content: space-between;
+  }
+  &.justify-around .grid-row {
+    justify-content: space-around;
+  }
+  &.justify-evenly .grid-row {
+    justify-content: space-evenly;
+  }
+  &.align-start .grid-row {
+    align-items: flex-start;
+  }
+  &.align-end .grid-row {
+    align-items: flex-end;
+  }
+  &.align-center .grid-row {
+    align-items: center;
+  }
+  &.align-stretch .grid-row {
+    align-items: stretch;
+  }
+  &.align-baseline .grid-row {
+    align-items: baseline;
+  }
 }
 // Grid row definition.
 .grid-row {

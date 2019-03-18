@@ -615,6 +615,39 @@ ol.upper-roman {
   width: 100vw;
   height: 100vh; }
 
+.grid-container.justify-start .grid-row {
+  justify-content: flex-start; }
+
+.grid-container.justify-end .grid-row {
+  justify-content: flex-end; }
+
+.grid-container.justify-center .grid-row {
+  justify-content: center; }
+
+.grid-container.justify-between .grid-row {
+  justify-content: space-between; }
+
+.grid-container.justify-around .grid-row {
+  justify-content: space-around; }
+
+.grid-container.justify-evenly .grid-row {
+  justify-content: space-evenly; }
+
+.grid-container.align-start .grid-row {
+  align-items: flex-start; }
+
+.grid-container.align-end .grid-row {
+  align-items: flex-end; }
+
+.grid-container.align-center .grid-row {
+  align-items: center; }
+
+.grid-container.align-stretch .grid-row {
+  align-items: stretch; }
+
+.grid-container.align-baseline .grid-row {
+  align-items: baseline; }
+
 .grid-row {
   box-sizing: border-box;
   display: flex;
