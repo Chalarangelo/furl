@@ -1,0 +1,58 @@
+@mixin generate-grid-size($size-name) {
+  [class*='grid-col-#{$size-name}']{
+    flex: 0 0 var(--col-size);
+    max-width: var(--col-size);
+    order: var(--order);
+    --order: initial;
+  }
+  .grid-col-#{$size-name}-fluid {
+    --col-size: 100%;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+  [class*='grid-col-#{$size-name}-offset']{ 
+    --margin-left: var(--ls-0p);
+    margin-left: var(--margin-left);
+  }
+  @for $i from 1 through 12 {
+    .grid-col-#{$size-name}-#{$i}, [class*='-c0'].grid-col-#{$size-name}-#{$i} {
+      --col-size: #{($i * 100% / 12)};
+    }
+    .grid-col-#{$size-name}-offset-#{($i - 1)} {
+      --margin-left: #{(($i - 1) * 100% / 12)};
+    }
+  }
+  .grid-col-#{$size-name}-normal {
+    --order: initial;
+  }
+  .grid-col-#{$size-name}-first {
+    --order: -999;
+  }
+  .grid-col-#{$size-name}-last {
+    --order: 999;
+  }
+}
+
+.grid-container {
+
+}
+// Grid row definition.
+.grid-row {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-flow: row wrap;
+}
+
+@include generate-grid-size('xs');
+@media screen and (min-width: 600px) {  
+  @include generate-grid-size('sm');
+}
+@media screen and (min-width: 900px) {  
+  @include generate-grid-size('md');
+}
+@media screen and (min-width: 1200px) {  
+  @include generate-grid-size('lg');
+}
+
+
