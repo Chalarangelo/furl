@@ -3,11 +3,13 @@ import CardSection from "./CardSection";
 
 const Card = ({
   width = 'auto',
-  children
+  id,
+  children,
 }) => {
   if (!Array.isArray(children)) children = [children];
   const sections = children.filter(item => CardSection.name == item.type.name);
-  return (<div className="card" style={{width: width}}>
+  return (<div className="card"
+    id={id !== undefined ? id : false} style={{width: width}}>
     {sections}
   </div>)
 }

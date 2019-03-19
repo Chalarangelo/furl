@@ -1,7 +1,8 @@
 import React from "react";
 
-const Sidebar = ({ children }) => {
-  return (<aside className='layout-sidebar'>{children}</aside>);
+const Sidebar = ({ id, children }) => {
+  return (<aside
+    id={id !== undefined ? id : false} className='layout-sidebar'>{children}</aside>);
 }
 
 const SidebarTab = ({open, onClick}) => 

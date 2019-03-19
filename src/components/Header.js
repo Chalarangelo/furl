@@ -1,7 +1,8 @@
 import React from "react";
 
-const Header = ({ children }) => {
-  return (<header className='layout-header'>{children}</header>);
+const Header = ({ id, children }) => {
+  return (<header 
+          id={id !== undefined ? id : false} className='layout-header'>{children}</header>);
 }
 
 export default Header;

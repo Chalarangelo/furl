@@ -3,8 +3,7 @@ import React from "react";
 const sizeNames = ['xs','sm','md','lg'];
 const Column = ({ 
   size = 'fluid',
-  offset = '0',
-  order = 'normal', 
+  id,
   children 
 }) => {
   let sizes, classNames = [], style;
@@ -49,12 +48,14 @@ const Column = ({
   if(style.length > 0) 
     return (<React.Fragment>
       <style>{style}</style>
-      <div className={classNames.join(' ')}>
+      <div className={classNames.join(' ')}
+        id={id !== undefined ? id : false}>
           {children}
       </div>
     </React.Fragment>);
   else
-    return (<div className={classNames.join(' ')}>
+    return (<div className={classNames.join(' ')}
+      id={id !== undefined ? id : false}>
       {children}
     </div>);
 }

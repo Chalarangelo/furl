@@ -11,6 +11,7 @@ const Button = ({
   openIn,
   href,
   onClick,
+  id,
   children}) => {
   let classNames = [];
   classNames.push(fill);
@@ -29,6 +30,7 @@ const Button = ({
           target='_blank'
           disabled={disabled} 
           onClick={onClick}
+          id={id !== undefined ? id : false}
         >
           {children}
         </a>
@@ -39,6 +41,7 @@ const Button = ({
           target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
           disabled={disabled} 
           onClick={onClick}
+          id={id !== undefined ? id : false}
         >
           {children}
         </a>);
@@ -49,6 +52,7 @@ const Button = ({
           className={classNames.join(' ')} 
           disabled={disabled} 
           onClick={onClick}
+          id={id !== undefined ? id : false}
         >
           {children}
         </button>
@@ -60,6 +64,7 @@ const Button = ({
           className={classNames.join(' ')} 
           disabled={disabled} 
           onClick={onClick}
+          id={id !== undefined ? id : false}
         >
           {children}
         </button>
@@ -70,6 +75,7 @@ const Button = ({
           className={classNames.join(' ')} 
           disabled={disabled} 
           onClick={onClick}
+          id={id !== undefined ? id : false}
         >
           {children}
         </button>
