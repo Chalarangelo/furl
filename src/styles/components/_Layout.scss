@@ -12,6 +12,10 @@
   z-index: 101;
   position: sticky;
   grid-area: header;
+  // --box-shadow: var(--shadow-100);
+}
+
+.sidebar-visible .layout-sidebar {
   --box-shadow: var(--shadow-100);
 }
 
@@ -21,7 +25,6 @@
   height: calc(100% - var(--ls-300p));
   z-index: 100;
   transition: all 0.3s ease;
-  --box-shadow: var(--shadow-100);
 }
 
 .layout-content {
@@ -57,5 +60,3 @@
   width: 100vw;
   height: 100vh;
 }
-
-// TODO: Check if we should move shadows to another component or a class-based utility

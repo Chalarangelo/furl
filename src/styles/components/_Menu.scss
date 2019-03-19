@@ -1,6 +1,8 @@
 .menu {
+  --font-size: var(--ts-50p);
   // background: #F35A4F;
   &.vertical {
+    border-right: 1px solid var(--cool-gray-200);
     display: flex;
     flex-flow: column;
     height: 100%;
@@ -8,6 +10,7 @@
     & .menu-item {
       display: block;
       border-right: 3px solid transparent;
+      text-align: left;
       &:hover, &:focus {
         border-right-color: var(--focus-blue-500);
       }
@@ -17,6 +20,7 @@
     }
   }
   &.horizontal {
+    border-bottom: 1px solid var(--cool-gray-200);
     height: var(--ls-250p);
     margin-top: var(--ls-100p);
     display: flex;
@@ -41,7 +45,6 @@
 
 .menu-item, a.menu-item {
   --color: var(--cool-gray-600);
-  --font-size: var(--ts-50p);
   cursor: pointer;
   transition: all 0.3s ease;
   --padding-vertical: var(--ls-75p);
