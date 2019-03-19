@@ -1,8 +1,8 @@
 import React from "react";
 
-const Sidebar = ({ id, children }) => {
+const Sidebar = ({ id, className, children }) => {
   return (<aside
-    id={id !== undefined ? id : false} className='layout-sidebar'>{children}</aside>);
+    id={id !== undefined ? id : false} className={[className, 'layout-sidebar'].join(' ').trim()}>{children}</aside>);
 }
 
 const SidebarTab = ({open, onClick}) => 

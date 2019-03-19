@@ -12,6 +12,7 @@ const Button = ({
   href,
   onClick,
   id,
+  className,
   children}) => {
   let classNames = [];
   classNames.push(fill);
@@ -25,7 +26,7 @@ const Button = ({
         ?
         <a
           href={disabled ? '' : href}
-          className={['button', ...classNames].join(' ')}
+          className={['button', className, ...classNames].join(' ').trim()}
           rel='noopener noreferrer'
           target='_blank'
           disabled={disabled} 
@@ -37,7 +38,7 @@ const Button = ({
         :
         <a
           href={disabled ? '' : href}
-          className={['button', ...classNames].join(' ')}
+          className={['button', className, ...classNames].join(' ').trim()}
           target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
           disabled={disabled} 
           onClick={onClick}
@@ -49,7 +50,7 @@ const Button = ({
       return (
         <button 
           type='submit' 
-          className={classNames.join(' ')} 
+          className={[className, ...classNames].join(' ').trim()} 
           disabled={disabled} 
           onClick={onClick}
           id={id !== undefined ? id : false}
@@ -61,7 +62,7 @@ const Button = ({
       return (
         <button 
           type='reset' 
-          className={classNames.join(' ')} 
+          className={[className, ...classNames].join(' ').trim()} 
           disabled={disabled} 
           onClick={onClick}
           id={id !== undefined ? id : false}
@@ -72,7 +73,7 @@ const Button = ({
     default:
       return (
         <button 
-          className={classNames.join(' ')} 
+          className={[className, ...classNames].join(' ').trim()} 
           disabled={disabled} 
           onClick={onClick}
           id={id !== undefined ? id : false}
