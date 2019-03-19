@@ -5,8 +5,8 @@ const Menu = ({ type, id, className, children }) => {
   if (!Array.isArray(children)) children = [children];
   const menuItems = children.filter(item => MenuItem.name == item.type.name);
   let classNames = [type, className, "menu"];
-  return (<div
-    id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>{menuItems}</div>)
+  return (<nav
+    id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>{menuItems}</nav>)
 };
 
 export {Menu, MenuItem};

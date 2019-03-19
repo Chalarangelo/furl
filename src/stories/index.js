@@ -356,8 +356,8 @@ storiesOf('Menu', module)
     <Layout>
       <Header><Menu type="horizontal">
         <MenuItem>Item 1</MenuItem>
-        <MenuItem selected><Hyperlink href="#">Item 2</Hyperlink></MenuItem>
-        <MenuItem><Hyperlink href="#">Item 3</Hyperlink></MenuItem>
+        <MenuItem selected  href="#">Item 2</MenuItem>
+        <MenuItem href="#a">Item 3</MenuItem>
         <MenuItem>Item 4</MenuItem>
       </Menu></Header>
       <Sidebar><Menu type="vertical">

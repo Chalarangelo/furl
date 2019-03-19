@@ -39,13 +39,16 @@
   }
 }
 
-.menu-item {
+.menu-item, a.menu-item {
   --color: var(--cool-gray-600);
   --font-size: var(--ts-50p);
   cursor: pointer;
   transition: all 0.3s ease;
   --padding-vertical: var(--ls-75p);
   --padding-horizontal: var(--ls-150p);
+  --margin: var(--ls-0p);
+  --border-radius: var(--ls-0p);
+  --background-color: transparent;
   &:hover, &:focus {
     --color: var(--focus-blue-500);
   }
