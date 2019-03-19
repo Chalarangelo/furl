@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Button, List, Layout, Grid, Row, Column as Col, Content, Sidebar, Header ,Card, CardSection} from "../../dist/components";
+import { Hyperlink, Button, List, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -350,3 +350,25 @@ storiesOf('Card', module)
     </Col></Row></Grid>
   )
 );
+
+storiesOf('Menu', module)
+  .add("Top header left sidebar", () => (
+    <Layout>
+      <Header><Menu type="horizontal">
+        <MenuItem>Item 1</MenuItem>
+        <MenuItem selected><Hyperlink href="#">Item 2</Hyperlink></MenuItem>
+        <MenuItem><Hyperlink href="#">Item 3</Hyperlink></MenuItem>
+        <MenuItem>Item 4</MenuItem>
+      </Menu></Header>
+      <Sidebar><Menu type="vertical">
+        <MenuItem>Item 1</MenuItem>
+        <MenuItem>Item 2</MenuItem>
+        <MenuItem>Item 3</MenuItem>
+        <MenuItem>Item 4</MenuItem>
+      </Menu></Sidebar>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+)
+;
