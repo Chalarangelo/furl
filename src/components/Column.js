@@ -7,13 +7,9 @@ const Column = ({
   order = 'normal', 
   children 
 }) => {
-  let sizes, offsets, orders, classNames = [], style;
+  let sizes, classNames = [], style;
   if (!Array.isArray(size)) sizes = [size, size, size, size];
   else sizes = size;
-  if (!Array.isArray(offset)) offsets = [offset, offset, offset, offset];
-  else offsets = offset;
-  if (!Array.isArray(order)) orders = [order, order, order, order];
-  else orders = order;
 
   style = sizes.reduce((acc,v,i) => {
     if (+v >= 1 && +v <= 12 || v == 'fluid') {
@@ -50,8 +46,6 @@ const Column = ({
   }, '');
 
   classNames = sizes.map((v, i) => `grid-col-${sizeNames[i]}-${(+v >= 1 && +v <= 12 || v == 'fluid') ? `${v}` : (+v < 1) ? `c${`${v}`.replace('.', '')}` :  `p${`${v}`.replace('.', '')}`}`);
-  classNames = [...classNames, ...offsets.map((v, i) => `grid-col-${sizeNames[i]}-offset-${v}`)];
-  classNames = [...classNames, ...orders.map((v, i) => `grid-col-${sizeNames[i]}-${v}`)];
   if(style.length > 0) 
     return (<React.Fragment>
       <style>{style}</style>
