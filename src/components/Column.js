@@ -22,13 +22,13 @@ const Column = ({
     else if (+v < 1) {
       switch (i) {
         case 0:
-          return acc + `.grid-col-xs-c${`${v}`.replace('.','')} { --col-size: ${v * 100}%; } `;
+          return acc + `.grid-col-xs-c${`${v}`.replace('.','')} { --col-xs-size: ${v * 100}%; } `;
         case 1:
-          return acc + `@media screen and (min-width: 600px) { .grid-col-sm-c${`${v}`.replace('.', '')} { --col-size: ${v * 100}%; }} `;
+          return acc + `.grid-col-sm-c${`${v}`.replace('.', '')} { --col-sm-size: ${v * 100}%; } `;
         case 2:
-          return acc + `@media screen and (min-width: 900px) {.grid-col-md-c${`${v}`.replace('.', '')} { --col-size: ${v * 100}%; }} `;
+          return acc + `.grid-col-md-c${`${v}`.replace('.', '')} { --col-md-size: ${v * 100}%; } `;
         case 3:
-          return acc + `@media screen and (min-width: 1200px) {.grid-col-lg-c${`${v}`.replace('.', '')} { --col-size: ${v * 100}%; }} `;
+          return acc + `.grid-col-lg-c${`${v}`.replace('.', '')} { --col-lg-size: ${v * 100}%; } `;
         default:
           return acc;
       }
@@ -36,13 +36,13 @@ const Column = ({
     else {
       switch (i) {
         case 0:
-          return acc + `.grid-col-xs-p${`${v}`.replace('.', '')} { --col-size: ${v}; } `;
+          return acc + `.grid-col-xs-p${`${v}`.replace('.', '')} { --col-xs-size: ${v}; } `;
         case 1:
-          return acc + `@media screen and (min-width: 600px) { .grid-col-sm-p${`${v}`.replace('.', '')} { --col-size: ${v}; }} `;
+          return acc + `.grid-col-sm-p${`${v}`.replace('.', '')} { --col-sm-size: ${v}; } `;
         case 2:
-          return acc + `@media screen and (min-width: 900px) {.grid-col-md-p${`${v}`.replace('.', '')} { --col-size: ${v}; }} `;
+          return acc + `.grid-col-md-p${`${v}`.replace('.', '')} { --col-md-size: ${v}; } `;
         case 3:
-          return acc + `@media screen and (min-width: 1200px) {.grid-col-lg-p${`${v}`.replace('.', '')} { --col-size: ${v}; }} `;
+          return acc + `.grid-col-lg-p${`${v}`.replace('.', '')} { --col-lg-size: ${v}; } `;
         default:
           return acc;
       }

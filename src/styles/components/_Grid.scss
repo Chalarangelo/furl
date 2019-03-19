@@ -1,36 +1,59 @@
 @mixin generate-grid-size($size-name) {
-  [class*='grid-col-#{$size-name}']{
-    flex: 0 0 var(--col-size);
-    max-width: var(--col-size);
-    order: var(--order);
-    --order: initial;
+  @for $i from 1 through 12 {
+    .grid-col-#{$size-name}-#{$i} {
+      --col-#{$size-name}-size: #{($i * 100% / 12)};
+    }
   }
-  .grid-col-#{$size-name}-fluid {
-    --col-size: 100%;
+}
+
+[class*='grid-col-'] {
+  --col-xs-size: auto;
+  --col-sm-size: auto;
+  --col-md-size: auto;
+  --col-lg-size: auto;
+  flex: 0 0 var(--col-xs-size);
+  max-width: var(--col-xs-size);
+  @media screen and (min-width: 600px) {
+    flex: 0 0 var(--col-sm-size);
+    max-width: var(--col-sm-size);
+  }
+  @media screen and (min-width: 900px) {
+    flex: 0 0 var(--col-md-size);
+    max-width: var(--col-md-size);  
+  }
+  @media screen and (min-width: 1200px) {
+    flex: 0 0 var(--col-lg-size);
+    max-width: var(--col-lg-size);   
+  }
+}
+
+.grid-col-xs-fluid {
+  --col-xs-size: 100%;
+  @media screen and (max-width: 599px) {
     flex-grow: 1;
     flex-basis: 0;
   }
-  [class*='grid-col-#{$size-name}-offset']{ 
-    --margin-left: var(--ls-0p);
-    margin-left: var(--margin-left);
+}
+.grid-col-sm-fluid {
+  --col-sm-size: 100%;
+  @media screen and (min-width: 600px) {
+    flex-grow: 1;
+    flex-basis: 0;
   }
-  @for $i from 1 through 12 {
-    .grid-col-#{$size-name}-#{$i}, div.grid-col-#{$size-name}-#{$i} {
-      --col-size: #{($i * 100% / 12)};
-    }
-    .grid-col-#{$size-name}-offset-#{($i - 1)} {
-      --margin-left: #{(($i - 1) * 100% / 12)};
-    }
+}
+.grid-col-md-fluid {
+  --col-md-size: 100%;
+  @media screen and (min-width: 900px) {
+    flex-grow: 1;
+    flex-basis: 0;
   }
-  .grid-col-#{$size-name}-normal {
-    --order: initial;
-  }
-  .grid-col-#{$size-name}-first {
-    --order: -999;
-  }
-  .grid-col-#{$size-name}-last {
-    --order: 999;
-  }
+}
+.grid-col-lg-fluid {
+  --col-lg-size: 100%;
+  @media screen and (min-width: 1200px) {
+    flex-grow: 1;
+    flex-basis: 0;
+  }  
 }
 
 .grid-container {
@@ -77,14 +100,8 @@
 }
 
 @include generate-grid-size('xs');
-@media screen and (min-width: 600px) {  
-  @include generate-grid-size('sm');
-}
-@media screen and (min-width: 900px) {  
-  @include generate-grid-size('md');
-}
-@media screen and (min-width: 1200px) {  
-  @include generate-grid-size('lg');
-}
+@include generate-grid-size('sm');
+@include generate-grid-size('md');
+@include generate-grid-size('lg');
 
 

@@ -206,34 +206,6 @@ min-height: 0.875rem;color: #f8f8f8;}`}</style>
     </React.Fragment>
   )
 )
-.add("Offset columns", () => (
-    <React.Fragment>
-      <style>{`.box-colored {background: #0277bd;border-radius: 0.125rem;padding: 0.875rem;margin: 0.1rem;margin-bottom: 0.5rem;
-min-height: 0.875rem;color: #f8f8f8;}`}</style>
-    <Grid>
-      <Row>
-        <Col size={0.23} offset={5}><div className="box-colored">23%</div></Col>
-        <Col size={0.28} offset={[5,2,3,3]}><div className="box-colored">28%</div></Col>
-        <Col size={0.49} offset={[1,2,0,0]}><div className="box-colored">49%</div></Col>
-      </Row>
-    </Grid>
-    </React.Fragment>
-  )
-)
-.add("Ordered columns", () => (
-    <React.Fragment>
-      <style>{`.box-colored {background: #0277bd;border-radius: 0.125rem;padding: 0.875rem;margin: 0.1rem;margin-bottom: 0.5rem;
-min-height: 0.875rem;color: #f8f8f8;}`}</style>
-    <Grid>
-      <Row>
-        <Col size={0.23} order={'normal'}><div className="box-colored">23%</div></Col>
-        <Col size={0.28} order={['normal','first','normal', 'last']}><div className="box-colored">28%</div></Col>
-        <Col size={0.49} order={['first','normal','last', 'last']}><div className="box-colored">49%</div></Col>
-      </Row>
-    </Grid>
-    </React.Fragment>
-  )
-)
 ;
 
 storiesOf('Layout', module)
