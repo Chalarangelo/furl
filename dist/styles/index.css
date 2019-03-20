@@ -532,14 +532,28 @@ ol, ul {
 li {
   --padding-horizontal: var(--ls-50p); }
 
-ul.circle {
-  list-style: circle; }
+ul.circle li::before, ul.disc li::before, ul.square li::before, ul.triangle li::before {
+  --color: var(--cool-gray-400);
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 0.75;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  margin-left: -1.125em;
+  margin-right: 0.125em; }
 
-ul.disc {
-  list-style: disc; }
+ul.circle li::before {
+  content: "\25e6"; }
 
-ul.square {
-  list-style: square; }
+ul.disc li::before {
+  content: "\2022"; }
+
+ul.square li::before {
+  content: "\25aa"; }
+
+ul.triangle li::before {
+  content: "\2023"; }
 
 ol.decimal {
   list-style: decimal; }
@@ -547,17 +561,11 @@ ol.decimal {
 ol.decimal-leading-zero {
   list-style: decimal-leading-zero; }
 
-ol.lower-greek {
-  list-style: lower-greek; }
-
 ol.lower-latin {
   list-style: lower-latin; }
 
 ol.lower-roman {
   list-style: lower-roman; }
-
-ol.upper-greek {
-  list-style: upper-greek; }
 
 ol.upper-latin {
   list-style: upper-latin; }

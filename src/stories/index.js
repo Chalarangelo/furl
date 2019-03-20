@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Button, List, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem } from "../../dist/components";
+import { Hyperlink, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -288,12 +288,62 @@ storiesOf('Layout', module)
 
 
 storiesOf('List', module)
-  .add("with text", () => (
-    <List data={['a','b','c']}/>
+  .add("unordered", () => (
+    <React.Fragment>
+      <List>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List listStyle="circle">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List listStyle="disc">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List listStyle="square">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List listStyle="triangle">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+    </React.Fragment>
   )
 )
-  .add("with objects", () => (
-    <List data={[{a: 'a', v: 'b'}, {a: 'b', v: 'c'}]} render={({a,v}) => <li>{`${a}: ${v}`}</li>}/>
+  .add("ordered", () => (
+    <React.Fragment>
+      <List ordered>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List ordered listStyle="decimal">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List ordered listStyle="decimal-leading-zero">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List ordered listStyle="lower-latin">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List ordered listStyle="lower-roman">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List ordered listStyle="upper-latin">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List ordered listStyle="upper-roman">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+    </React.Fragment>
   )
 )
 ;
