@@ -10,7 +10,7 @@ li {
 }
 
 ul {
-  &.circle, &.disc, &.square, &.triangle {
+  &.circle, &.disc, &.square, &.triangle, &.checkbox {
     li::before {
       --color: var(--cool-gray-400);
       display: inline-block;
@@ -41,6 +41,17 @@ ul {
   &.triangle {
     li::before {
       content: "\2023";
+    }
+  }
+  &.checkbox {
+    li::before {
+      content: "\2713";
+      font-size: 1rem;
+      margin-left: -1.75em;
+      margin-right: 0.75em;
+      --background-color: var(--focus-blue-100);
+      --border-radius: 50%;
+      text-align: center;
     }
   }
 }

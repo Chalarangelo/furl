@@ -310,6 +310,10 @@ storiesOf('List', module)
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
+      <List listStyle="checkbox">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
     </React.Fragment>
   )
 )
