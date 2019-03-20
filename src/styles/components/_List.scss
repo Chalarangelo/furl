@@ -57,23 +57,55 @@ ul {
 }
 
 ol {
+  &.decimal, &.decimal-leading-zero, &.lower-latin, &.lower-roman, &.upper-latin, &.upper-roman {  
+    li {
+      counter-increment: step-counter;
+      position: relative;
+    }
+    li::before {
+      content: counter(step-counter)'.';
+      display: inline-block;
+      line-height: 2.25;
+      font-size: 0.75em;
+      text-align: right;
+      vertical-align: baseline;
+      position: absolute;
+      left: 0;
+      width: 2.5em;
+      height: 1em;
+      margin-left: -2.375em;
+      margin-right: 0.125em;
+    }
+  }
   &.decimal {
-    list-style: decimal;
+    li::before {
+      content: counter(step-counter, decimal);
+    }
   }
   &.decimal-leading-zero {
-    list-style: decimal-leading-zero;
+    li::before {
+      content: counter(step-counter, decimal-leading-zero);
+    }
   }
   &.lower-latin {
-    list-style: lower-latin;
+    li::before {
+      content: counter(step-counter, lower-latin);
+    }
   }
   &.lower-roman {
-    list-style: lower-roman;
+    li::before {
+      content: counter(step-counter, lower-roman);
+    }
   }
   &.upper-latin {
-    list-style: upper-latin;
+    li::before {
+      content: counter(step-counter, upper-latin);
+    }
   }
   &.upper-roman {
-    list-style: upper-roman;
+    li::before {
+      content: counter(step-counter, upper-roman);
+    }
   }
 }
 

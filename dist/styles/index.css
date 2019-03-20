@@ -564,23 +564,41 @@ ul.checkbox li::before {
   --border-radius: 50%;
   text-align: center; }
 
-ol.decimal {
-  list-style: decimal; }
+ol.decimal li, ol.decimal-leading-zero li, ol.lower-latin li, ol.lower-roman li, ol.upper-latin li, ol.upper-roman li {
+  counter-increment: step-counter;
+  position: relative; }
 
-ol.decimal-leading-zero {
-  list-style: decimal-leading-zero; }
+ol.decimal li::before, ol.decimal-leading-zero li::before, ol.lower-latin li::before, ol.lower-roman li::before, ol.upper-latin li::before, ol.upper-roman li::before {
+  content: counter(step-counter) ".";
+  display: inline-block;
+  line-height: 2.25;
+  font-size: 0.75em;
+  text-align: right;
+  vertical-align: baseline;
+  position: absolute;
+  left: 0;
+  width: 2.5em;
+  height: 1em;
+  margin-left: -2.375em;
+  margin-right: 0.125em; }
 
-ol.lower-latin {
-  list-style: lower-latin; }
+ol.decimal li::before {
+  content: counter(step-counter, decimal); }
 
-ol.lower-roman {
-  list-style: lower-roman; }
+ol.decimal-leading-zero li::before {
+  content: counter(step-counter, decimal-leading-zero); }
 
-ol.upper-latin {
-  list-style: upper-latin; }
+ol.lower-latin li::before {
+  content: counter(step-counter, lower-latin); }
 
-ol.upper-roman {
-  list-style: upper-roman; }
+ol.lower-roman li::before {
+  content: counter(step-counter, lower-roman); }
+
+ol.upper-latin li::before {
+  content: counter(step-counter, upper-latin); }
+
+ol.upper-roman li::before {
+  content: counter(step-counter, upper-roman); }
 
 .layout-container {
   display: grid;
