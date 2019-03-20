@@ -63,7 +63,7 @@ ol {
       position: relative;
     }
     li::before {
-      content: counter(step-counter)'.';
+      content: counter(step-counter);
       display: inline-block;
       line-height: 2.25;
       font-size: 0.75em;
@@ -73,7 +73,7 @@ ol {
       left: 0;
       width: 2.5em;
       height: 1em;
-      margin-left: -2.375em;
+      margin-left: -3.375em;
       margin-right: 0.125em;
     }
   }

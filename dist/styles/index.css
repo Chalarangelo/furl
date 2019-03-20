@@ -569,7 +569,7 @@ ol.decimal li, ol.decimal-leading-zero li, ol.lower-latin li, ol.lower-roman li,
   position: relative; }
 
 ol.decimal li::before, ol.decimal-leading-zero li::before, ol.lower-latin li::before, ol.lower-roman li::before, ol.upper-latin li::before, ol.upper-roman li::before {
-  content: counter(step-counter) ".";
+  content: counter(step-counter);
   display: inline-block;
   line-height: 2.25;
   font-size: 0.75em;
@@ -579,7 +579,7 @@ ol.decimal li::before, ol.decimal-leading-zero li::before, ol.lower-latin li::be
   left: 0;
   width: 2.5em;
   height: 1em;
-  margin-left: -2.375em;
+  margin-left: -3.375em;
   margin-right: 0.125em; }
 
 ol.decimal li::before {
