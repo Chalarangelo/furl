@@ -5,6 +5,7 @@ import { Layout, Content, Sidebar, Header } from "./Layout";
 import { Grid, Row, Column } from "./Grid";
 import { Menu, MenuItem } from "./Menu";
 import { Card, CardSection } from "./Card";
+import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "./Table";
 
 export { 
   Hyperlink,
@@ -13,5 +14,6 @@ export {
   Layout, Content, Sidebar, Header,
   Grid, Row, Column,
   Card, CardSection,
-  Menu, MenuItem
+  Menu, MenuItem,
+  Table, TableCaption, TableHead, TableBody, TableRow, TableCell
 };

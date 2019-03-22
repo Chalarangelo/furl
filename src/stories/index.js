@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem } from "../../dist/components";
+import { Hyperlink, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -353,121 +353,121 @@ storiesOf('List', module)
 
 storiesOf('Table', module)
   .add("default", () => (
-    <table>
-    <caption>Table of People</caption>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Surname</th>
-          <th>Age</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>John</td>
-          <td>Smith</td>
-          <td>27</td>
-        </tr>
-        <tr>
-          <td>Adam</td>
-          <td>Smith</td>
-          <td>32</td>
-        </tr>
-        <tr>
-          <td>Jane</td>
-          <td>Doe</td>
-          <td>40</td>
-        </tr>
-        <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>51</td>
-        </tr>
-        <tr>
-          <td>Mary</td>
-          <td>Gary</td>
-          <td>67</td>
-        </tr>
-      </tbody>
-    </table>
+    <Table>
+    <TableCaption>Table of People</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Surname</TableCell>
+          <TableCell heading>Age</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>27</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Adam</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>32</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Jane</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>40</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>51</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Mary</TableCell>
+          <TableCell>Gary</TableCell>
+          <TableCell>67</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
   )
 )
 .add("horizontal", () => (
-    <table>
-    <caption>Table of People</caption>
-      <tbody>
-        <tr>
-          <th>Name</th>
-          <td>John</td>
-          <td>Adam</td>
-          <td>Jane</td>
-          <td>John</td>
-          <td>Mary</td>
-        </tr>
-        <tr>
-          <th>Surname</th>
-          <td>Smith</td>
-          <td>Smith</td>
-          <td>Doe</td>
-          <td>Doe</td>
-          <td>Gary</td>
-        </tr>
-        <tr>
-          <th>Age</th>
-          <td>27</td>
-          <td>32</td>
-          <td>40</td>
-          <td>51</td>
-          <td>67</td>
-        </tr>
-      </tbody>
-    </table>
+    <Table>
+    <TableCaption>Table of People</TableCaption>
+      <TableBody>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell>John</TableCell>
+          <TableCell>Adam</TableCell>
+          <TableCell>Jane</TableCell>
+          <TableCell>John</TableCell>
+          <TableCell>Mary</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>Surname</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>Gary</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>Age</TableCell>
+          <TableCell>27</TableCell>
+          <TableCell>32</TableCell>
+          <TableCell>40</TableCell>
+          <TableCell>51</TableCell>
+          <TableCell>67</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
   )
 )
 .add("grouping column", () => (
-    <table>
-    <caption>Table of People</caption>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Surname</th>
-          <th>Age</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>1</th>
-          <td>John</td>
-          <td>Smith</td>
-          <td>27</td>
-        </tr>
-        <tr>
-          <th>1</th>
-          <td>Adam</td>
-          <td>Smith</td>
-          <td>32</td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>Jane</td>
-          <td>Doe</td>
-          <td>40</td>
-        </tr>
-        <tr>
-          <th>2</th>
-          <td>John</td>
-          <td>Doe</td>
-          <td>51</td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>Mary</td>
-          <td>Gary</td>
-          <td>67</td>
-        </tr>
-      </tbody>
-    </table>
+    <Table>
+    <TableCaption>Table of People</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>#</TableCell>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Surname</TableCell>
+          <TableCell heading>Age</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell heading>1</TableCell>
+          <TableCell>John</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>27</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>1</TableCell>
+          <TableCell>Adam</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>32</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>2</TableCell>
+          <TableCell>Jane</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>40</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>2</TableCell>
+          <TableCell>John</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>51</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>3</TableCell>
+          <TableCell>Mary</TableCell>
+          <TableCell>Gary</TableCell>
+          <TableCell>67</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
   )
 )
 ;
