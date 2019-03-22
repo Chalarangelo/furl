@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import Dropdown from "./Dropdown";
 
 const MenuItem = ({ 
   selected = false, 
@@ -10,7 +11,8 @@ const MenuItem = ({
   id, 
   className, 
   children }) => {
-  let classNames = [selected ? "selected" : "", className, "menu-item"];
+  if (!Array.isArray(children)) children = [children];
+  let classNames = [selected ? "selected" : "", className, "menu-item", children.some(item => item.type && item.type.name && Dropdown.name == item.type.name) ? "with-dropdown" : ""];
   return (
     <Button
       id={id}

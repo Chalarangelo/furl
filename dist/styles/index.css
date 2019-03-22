@@ -519,6 +519,35 @@ button, .button, a.button {
     text-transform: uppercase;
     letter-spacing: 0.0375em; }
 
+.dropdown {
+  background: inherit;
+  color: inherit;
+  position: relative; }
+  .dropdown > summary {
+    background: inherit;
+    color: inherit; }
+  .dropdown > summary > svg {
+    background: inherit;
+    color: inherit;
+    transform: scale(0.66667);
+    display: inline;
+    position: absolute; }
+  .dropdown .dropdown-content {
+    position: absolute;
+    top: var(--ls-150p);
+    left: 0;
+    width: 100%;
+    --padding: var(--ls-50p);
+    --border-radius: var(--ls-50p);
+    --box-shadow: var(--shadow-100); }
+  .dropdown > summary:first-of-type {
+    list-style-type: none; }
+  .dropdown > summary::-webkit-details-marker {
+    display: none; }
+
+.menu-item.with-dropdown .dropdown > summary > svg {
+  right: calc(0 - var(--ls-150p)); }
+
 ol, ul {
   --margin-horizontal: var(--ls-200p);
   --margin-vertical: var(--ls-75p);

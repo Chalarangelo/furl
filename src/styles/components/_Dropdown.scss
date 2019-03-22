@@ -1,0 +1,39 @@
+.dropdown {
+  background: inherit;
+  color: inherit;
+  position: relative;
+  & > summary {
+  background: inherit;
+  color: inherit;
+  }
+  & > summary > svg {
+    background: inherit;
+    color: inherit;
+    transform: scale(0.666667);
+    display: inline;
+    position: absolute;
+  }
+
+  & .dropdown-content {
+    position: absolute;
+    top: var(--ls-150p);
+    left: 0;
+    width: 100%;
+    --padding: var(--ls-50p);
+    --border-radius: var(--ls-50p);
+    --box-shadow: var(--shadow-100);
+  }
+
+  & > summary:first-of-type {
+    list-style-type: none;
+  }
+  & > summary::-webkit-details-marker {
+    display:none;
+  }
+}
+
+.menu-item.with-dropdown {
+  & .dropdown > summary > svg {
+    right: calc(0 - var(--ls-150p));
+  }
+}

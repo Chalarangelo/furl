@@ -1,5 +1,6 @@
 import Hyperlink from './Hyperlink';
 import Button from "./Button";
+import Dropdown from "./Dropdown";
 import { List, ListItem } from "./List";
 import { Layout, Content, Sidebar, Header } from "./Layout";
 import { Grid, Row, Column } from "./Grid";
@@ -15,5 +16,6 @@ export {
   Grid, Row, Column,
   Card, CardSection,
   Menu, MenuItem,
-  Table, TableCaption, TableHead, TableBody, TableRow, TableCell
+  Table, TableCaption, TableHead, TableBody, TableRow, TableCell,
+  Dropdown
 };

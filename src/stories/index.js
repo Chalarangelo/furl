@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption } from "../../dist/components";
+import { Hyperlink, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -135,6 +135,45 @@ storiesOf('Button', module)
     </React.Fragment>
   )
 )
+;
+
+storiesOf('Dropdown', module)
+  .add("Top header left sidebar", () => (
+    <Layout>
+      <Header>
+        <style>{`
+        .borderBottom {height: 64px ; align-self:flex-end; border-bottom: 1px solid var(--cool-gray-200); }
+        .title { padding: 8px 24px; line-height: 64px;}
+        `}</style>
+        <Grid>
+          <Row>
+            <Col size={4} className="borderBottom">
+              <span className="title">Page Title</span>
+            </Col>
+            <Col size={2} className="borderBottom">
+            </Col>
+            <Col size={6}>
+              <Menu type="horizontal">
+                <MenuItem>Item 1</MenuItem>
+                <MenuItem selected href="#">Item 2</MenuItem>
+                <MenuItem><Dropdown/></MenuItem>
+                <MenuItem>Item 4</MenuItem>
+              </Menu>
+            </Col>
+          </Row>
+        </Grid>
+      </Header>
+      <Sidebar><Menu type="vertical">
+        <MenuItem>Item 1</MenuItem>
+        <MenuItem>Item 2</MenuItem>
+        <MenuItem><Dropdown /></MenuItem>
+        <MenuItem>Item 4</MenuItem>
+      </Menu></Sidebar>
+      <Content><p>Lorem ipsum dolor sit amet...</p><Button><Dropdown/></Button></Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+  )
 ;
 
 storiesOf('Grid', module)
