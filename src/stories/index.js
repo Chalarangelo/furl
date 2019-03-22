@@ -392,6 +392,84 @@ storiesOf('Table', module)
     </table>
   )
 )
+.add("horizontal", () => (
+    <table>
+    <caption>Table of People</caption>
+      <tbody>
+        <tr>
+          <th>Name</th>
+          <td>John</td>
+          <td>Adam</td>
+          <td>Jane</td>
+          <td>John</td>
+          <td>Mary</td>
+        </tr>
+        <tr>
+          <th>Surname</th>
+          <td>Smith</td>
+          <td>Smith</td>
+          <td>Doe</td>
+          <td>Doe</td>
+          <td>Gary</td>
+        </tr>
+        <tr>
+          <th>Age</th>
+          <td>27</td>
+          <td>32</td>
+          <td>40</td>
+          <td>51</td>
+          <td>67</td>
+        </tr>
+      </tbody>
+    </table>
+  )
+)
+.add("grouping column", () => (
+    <table>
+    <caption>Table of People</caption>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>John</td>
+          <td>Smith</td>
+          <td>27</td>
+        </tr>
+        <tr>
+          <th>1</th>
+          <td>Adam</td>
+          <td>Smith</td>
+          <td>32</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>Jane</td>
+          <td>Doe</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>John</td>
+          <td>Doe</td>
+          <td>51</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>Mary</td>
+          <td>Gary</td>
+          <td>67</td>
+        </tr>
+      </tbody>
+    </table>
+  )
+)
 ;
 
 storiesOf('Card', module)
