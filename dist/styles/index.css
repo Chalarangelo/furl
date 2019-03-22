@@ -160,10 +160,6 @@ a {
 a, b, del, em, i, ins, q, span, strong, u {
   font-size: 1em; }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
 button, input, optgroup, select, textarea {
   font-family: inherit;
   font-size: inherit;
@@ -950,3 +946,41 @@ ol.upper-roman li::before {
     --color: var(--focus-blue-500); }
   .menu-item.selected, a.menu-item.selected {
     --color: var(--focus-blue-500); }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: calc(100% - 2 * var(--margin-horizontal));
+  border: 1px solid var(--cool-gray-200);
+  --border-radius: var(--ls-50p);
+  --margin: var(--ls-75p); }
+  table caption {
+    --font-size: var(--ts-400p);
+    --margin-vertical: var(--ls-50p); }
+  table th {
+    text-align: left;
+    --font-weight: 500;
+    --font-size: var(--ts-50p);
+    text-transform: uppercase;
+    --color: var(--cool-gray-700); }
+  table thead, table tbody {
+    --border-radius: var(--ls-50p); }
+  table tr:nth-of-type(2n-1) > td {
+    --background-color: var(--cool-gray-100); }
+  table th, table td {
+    --padding-horizontal: var(--ls-50p);
+    --padding-vertical: var(--ls-50p); }
+  table th {
+    --padding-vertical: var(--ls-75p); }
+  table th:first-child, table td:first-child {
+    padding-left: var(--ls-75p); }
+  table th:last-child, table td:last-child {
+    padding-right: var(--ls-75p); }
+  table thead tr:first-child *:first-child {
+    border-top-left-radius: var(--ls-50p); }
+  table thead tr:first-child *:last-child {
+    border-top-right-radius: var(--ls-50p); }
+  table tbody tr:last-child *:first-child {
+    border-bottom-left-radius: var(--ls-50p); }
+  table tbody tr:last-child *:last-child {
+    border-bottom-right-radius: var(--ls-50p); }

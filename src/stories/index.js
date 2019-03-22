@@ -286,7 +286,6 @@ storiesOf('Layout', module)
 )
 ;
 
-
 storiesOf('List', module)
   .add("unordered", () => (
     <React.Fragment>
@@ -348,6 +347,49 @@ storiesOf('List', module)
         <ListItem>Dolor sit amet</ListItem>
       </List>
     </React.Fragment>
+  )
+)
+;
+
+storiesOf('Table', module)
+  .add("default", () => (
+    <table>
+    <caption>Table of People</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Smith</td>
+          <td>27</td>
+        </tr>
+        <tr>
+          <td>Adam</td>
+          <td>Smith</td>
+          <td>32</td>
+        </tr>
+        <tr>
+          <td>Jane</td>
+          <td>Doe</td>
+          <td>40</td>
+        </tr>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+          <td>51</td>
+        </tr>
+        <tr>
+          <td>Mary</td>
+          <td>Gary</td>
+          <td>67</td>
+        </tr>
+      </tbody>
+    </table>
   )
 )
 ;

@@ -28,7 +28,7 @@ const Type = props => (
     <p>Using a typographic scale and great fonts can help communicate content more efficiently, while making design easier.</p>
     <h2>Variables</h2>
     <p>Typography presets are fully customizable via the use of variables. You can easily alter the fonts used and the type scale's presets as desired.</p>
-    <table className="doc-table">
+    <table>
       <thead>
         <tr>
           <th>Variable name</th>

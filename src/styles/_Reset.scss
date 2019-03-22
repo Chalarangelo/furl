@@ -93,12 +93,6 @@ a, b, del, em, i, ins, q, span, strong, u {
   font-size: 1em; 
 }
 
-// Collapse border spacing in all browsers
-table {
-  border-collapse: collapse;
-  border-spacing: 0;  
-}
-
 // Consistent fonts and styles in all browsers
 button, input, optgroup, select, textarea {
   font-family: inherit;
