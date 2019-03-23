@@ -1,19 +1,23 @@
 .dropdown {
   background: inherit;
-  color: inherit;
+  --color: inherit;
   position: relative;
+  display: inline-block;
+  --margin-horizontal: var(--ls-75p);
   & > summary {
   background: inherit;
-  color: inherit;
+  --color: inherit;
   }
   & > summary > svg {
     background: inherit;
-    color: inherit;
+    --color: inherit;
     transform: scale(0.666667);
     display: inline;
-    position: absolute;
+    & > path {
+      --color: inherit;
+      fill: var(--color);
+    }
   }
-
   & .dropdown-content {
     position: absolute;
     top: var(--ls-150p);
@@ -22,6 +26,7 @@
     --padding: var(--ls-50p);
     --border-radius: var(--ls-50p);
     --box-shadow: var(--shadow-100);
+    z-index: 98;
   }
 
   & > summary:first-of-type {
@@ -32,8 +37,24 @@
   }
 }
 
-.menu-item.with-dropdown {
-  & .dropdown > summary > svg {
-    right: calc(0 - var(--ls-150p));
+.menu-item .dropdown, .button .dropdown, button .dropdown {
+  --margin-horizontal: var(--ls-0p);  
+}
+
+.menu.vertical .menu-item .dropdown {
+  width: 100%;
+  & > summary {
+    & > svg {
+      float: right;
+    }
+  }
+  & .dropdown-content {
+    position: relative;
+    width: 100%;
+    top: var(--ls-75p);
+    --padding-vertical: var(--ls-0p);
+    --border-radius: var(--ls-0p);
+    --box-shadow: var(--shadow-0);
+    z-index: 98;
   }
 }

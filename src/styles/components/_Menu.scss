@@ -9,14 +9,14 @@
     --padding-vertical: var(--ls-100p);
     & .menu-item {
       display: block;
-      border-right: 3px solid transparent;
+      //border-right: 3px solid transparent;
       text-align: left;
-      &:hover, &:focus {
-        border-right-color: var(--focus-blue-500);
-      }
-      &.selected {
-        border-right: 3px solid var(--focus-blue-500);
-      }
+      // &:hover, &:focus {
+      //   border-right-color: var(--focus-blue-500);
+      // }
+      // &.selected {
+      //   border-right: 3px solid var(--focus-blue-500);
+      // }
     }
   }
   &.horizontal {

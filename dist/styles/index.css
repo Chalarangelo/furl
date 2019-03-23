@@ -521,17 +521,21 @@ button, .button, a.button {
 
 .dropdown {
   background: inherit;
-  color: inherit;
-  position: relative; }
+  --color: inherit;
+  position: relative;
+  display: inline-block;
+  --margin-horizontal: var(--ls-75p); }
   .dropdown > summary {
     background: inherit;
-    color: inherit; }
+    --color: inherit; }
   .dropdown > summary > svg {
     background: inherit;
-    color: inherit;
+    --color: inherit;
     transform: scale(0.66667);
-    display: inline;
-    position: absolute; }
+    display: inline; }
+    .dropdown > summary > svg > path {
+      --color: inherit;
+      fill: var(--color); }
   .dropdown .dropdown-content {
     position: absolute;
     top: var(--ls-150p);
@@ -539,14 +543,28 @@ button, .button, a.button {
     width: 100%;
     --padding: var(--ls-50p);
     --border-radius: var(--ls-50p);
-    --box-shadow: var(--shadow-100); }
+    --box-shadow: var(--shadow-100);
+    z-index: 98; }
   .dropdown > summary:first-of-type {
     list-style-type: none; }
   .dropdown > summary::-webkit-details-marker {
     display: none; }
 
-.menu-item.with-dropdown .dropdown > summary > svg {
-  right: calc(0 - var(--ls-150p)); }
+.menu-item .dropdown, .button .dropdown, button .dropdown {
+  --margin-horizontal: var(--ls-0p); }
+
+.menu.vertical .menu-item .dropdown {
+  width: 100%; }
+  .menu.vertical .menu-item .dropdown > summary > svg {
+    float: right; }
+  .menu.vertical .menu-item .dropdown .dropdown-content {
+    position: relative;
+    width: 100%;
+    top: var(--ls-75p);
+    --padding-vertical: var(--ls-0p);
+    --border-radius: var(--ls-0p);
+    --box-shadow: var(--shadow-0);
+    z-index: 98; }
 
 ol, ul {
   --margin-horizontal: var(--ls-200p);
@@ -937,12 +955,7 @@ ol.upper-roman li::before {
     --padding-vertical: var(--ls-100p); }
     .menu.vertical .menu-item {
       display: block;
-      border-right: 3px solid transparent;
       text-align: left; }
-      .menu.vertical .menu-item:hover, .menu.vertical .menu-item:focus {
-        border-right-color: var(--focus-blue-500); }
-      .menu.vertical .menu-item.selected {
-        border-right: 3px solid var(--focus-blue-500); }
   .menu.horizontal {
     border-bottom: 1px solid var(--cool-gray-200);
     height: var(--ls-250p);

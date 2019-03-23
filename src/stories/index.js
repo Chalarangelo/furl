@@ -156,7 +156,11 @@ storiesOf('Dropdown', module)
               <Menu type="horizontal">
                 <MenuItem>Item 1</MenuItem>
                 <MenuItem selected href="#">Item 2</MenuItem>
-                <MenuItem><Dropdown/></MenuItem>
+                <MenuItem><Dropdown>
+                  <MenuItem>Item 3.1</MenuItem>
+                  <MenuItem>Item 3.2</MenuItem>
+                  <MenuItem>Item 3.3</MenuItem>
+                  </Dropdown></MenuItem>
                 <MenuItem>Item 4</MenuItem>
               </Menu>
             </Col>
@@ -166,10 +170,22 @@ storiesOf('Dropdown', module)
       <Sidebar><Menu type="vertical">
         <MenuItem>Item 1</MenuItem>
         <MenuItem>Item 2</MenuItem>
-        <MenuItem><Dropdown /></MenuItem>
+        <MenuItem><Dropdown>
+          <MenuItem>Item 3.1</MenuItem>
+          <MenuItem>Item 3.2</MenuItem>
+          <MenuItem>Item 3.3</MenuItem>
+        </Dropdown></MenuItem>
         <MenuItem>Item 4</MenuItem>
       </Menu></Sidebar>
-      <Content><p>Lorem ipsum dolor sit amet...</p><Button><Dropdown/></Button></Content>
+      <Content><p>Lorem ipsum dolor sit amet...</p><Button><Dropdown>
+        <Button>Item 3.1</Button>
+        <Button>Item 3.2</Button>
+        <Button>Item 3.3</Button>
+      </Dropdown></Button><br /><Dropdown>
+          <Button>Item 3.1</Button>
+          <Button>Item 3.2</Button>
+          <Button>Item 3.3</Button>
+        </Dropdown></Content>
       <Button>Invalid content</Button>
     </Layout>
   )
