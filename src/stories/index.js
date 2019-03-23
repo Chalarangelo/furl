@@ -67,7 +67,11 @@ storiesOf('Button', module)
   .add("default", () => (
     <React.Fragment>
       <Button >Continue</Button>
+      <Button fill='solid flat'>Continue</Button>
+      <Button fill='light flat'>Continue</Button>
+      <Button fill='gradient flat'>Continue</Button>
       <Button fill='solid'>Continue</Button>
+      <Button fill='light'>Continue</Button>
       <Button fill='gradient'>Continue</Button>
       <Button fill='outline'>Continue</Button>
       <Button fill='ghost'>Continue</Button>
@@ -80,8 +84,12 @@ storiesOf('Button', module)
 )
   .add("danger", () => (
     <React.Fragment>
-      <Button color='danger'>Continue</Button>
+      <Button color='danger' >Continue</Button>
+      <Button color='danger' fill='solid flat'>Continue</Button>
+      <Button color='danger' fill='light flat'>Continue</Button>
+      <Button color='danger' fill='gradient flat'>Continue</Button>
       <Button color='danger' fill='solid'>Continue</Button>
+      <Button color='danger' fill='light'>Continue</Button>
       <Button color='danger' fill='gradient'>Continue</Button>
       <Button color='danger' fill='outline'>Continue</Button>
       <Button color='danger' fill='ghost'>Continue</Button>
@@ -95,8 +103,12 @@ storiesOf('Button', module)
 )
   .add("success", () => (
     <React.Fragment>
-      <Button color='success'>Continue</Button>
+      <Button color='success' >Continue</Button>
+      <Button color='success' fill='solid flat'>Continue</Button>
+      <Button color='success' fill='light flat'>Continue</Button>
+      <Button color='success' fill='gradient flat'>Continue</Button>
       <Button color='success' fill='solid'>Continue</Button>
+      <Button color='success' fill='light'>Continue</Button>
       <Button color='success' fill='gradient'>Continue</Button>
       <Button color='success' fill='outline'>Continue</Button>
       <Button color='success' fill='ghost'>Continue</Button>
@@ -109,8 +121,12 @@ storiesOf('Button', module)
 )
   .add("warning", () => (
     <React.Fragment>
-      <Button color='warning'>Continue</Button>
+      <Button color='warning' >Continue</Button>
+      <Button color='warning' fill='solid flat'>Continue</Button>
+      <Button color='warning' fill='light flat'>Continue</Button>
+      <Button color='warning' fill='gradient flat'>Continue</Button>
       <Button color='warning' fill='solid'>Continue</Button>
+      <Button color='warning' fill='light'>Continue</Button>
       <Button color='warning' fill='gradient'>Continue</Button>
       <Button color='warning' fill='outline'>Continue</Button>
       <Button color='warning' fill='ghost'>Continue</Button>
@@ -123,7 +139,12 @@ storiesOf('Button', module)
 )
   .add("link", () => (
     <React.Fragment>
-      <Button type="link" href="https://google.com">Continue</Button>
+      <Button type="link" href="https://google.com" >Continue</Button>
+      <Button type="link" href="https://google.com" fill='solid flat'>Continue</Button>
+      <Button type="link" href="https://google.com" fill='light flat'>Continue</Button>
+      <Button type="link" href="https://google.com" fill='gradient flat'>Continue</Button>
+      <Button type="link" href="https://google.com" fill='solid'>Continue</Button>
+      <Button type="link" href="https://google.com" fill='light'>Continue</Button>
       <Button type="link" href="https://google.com" fill='solid'>Continue</Button>
       <Button type="link" href="https://google.com" fill='gradient'>Continue</Button>
       <Button type="link" href="https://google.com" fill='outline'>Continue</Button>
