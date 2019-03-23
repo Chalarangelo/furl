@@ -424,7 +424,8 @@ button, .button, a.button {
   --padding-vertical: var(--ls-50p);
   --border-radius: var(--ls-25p);
   --background-color: var(--cool-gray-500);
-  --secondary-background-color: var(--cool-gray-300);
+  --secondary-background-color: var(--cool-gray-600);
+  --tertiary-background-color: var(--cool-gray-200);
   --color: var(--cool-gray-50);
   --secondary-color: var(--cool-gray-900);
   transition: all 0.3s ease; }
@@ -452,7 +453,7 @@ button, .button, a.button {
       button.solid:hover[disabled], button.solid:focus[disabled], .button.solid:hover[disabled], .button.solid:focus[disabled], a.button.solid:hover[disabled], a.button.solid:focus[disabled] {
         --box-shadow: var(--shadow-100); }
   button.light, .button.light, a.button.light {
-    background: var(--secondary-background-color);
+    background: var(--tertiary-background-color);
     color: var(--secondary-color);
     --box-shadow: var(--shadow-100); }
     button.light:hover, button.light:focus, .button.light:hover, .button.light:focus, a.button.light:hover, a.button.light:focus {
@@ -460,7 +461,7 @@ button, .button, a.button {
       button.light:hover[disabled], button.light:focus[disabled], .button.light:hover[disabled], .button.light:focus[disabled], a.button.light:hover[disabled], a.button.light:focus[disabled] {
         --box-shadow: var(--shadow-100); }
   button.gradient, .button.gradient, a.button.gradient {
-    background: linear-gradient(var(--secondary-background-color), var(--background-color));
+    background: linear-gradient(var(--background-color), var(--secondary-background-color));
     --box-shadow: var(--shadow-100); }
     button.gradient:hover, button.gradient:focus, .button.gradient:hover, .button.gradient:focus, a.button.gradient:hover, a.button.gradient:focus {
       --box-shadow: var(--shadow-300); }
@@ -497,7 +498,8 @@ button, .button, a.button {
         --box-shadow: var(--shadow-0); }
   button.danger, .button.danger, a.button.danger {
     --background-color: var(--danger-red-500);
-    --secondary-background-color: var(--danger-red-300);
+    --secondary-background-color: var(--danger-red-600);
+    --tertiary-background-color: var(--danger-red-200);
     --secondary-color: var(--danger-red-900);
     --color: var(--danger-red-50); }
     button.danger[disabled], .button.danger[disabled], a.button.danger[disabled] {
@@ -513,7 +515,8 @@ button, .button, a.button {
           --color: var(--danger-red-700); }
   button.success, .button.success, a.button.success {
     --background-color: var(--success-green-500);
-    --secondary-background-color: var(--success-green-300);
+    --secondary-background-color: var(--success-green-600);
+    --tertiary-background-color: var(--success-green-200);
     --secondary-color: var(--success-green-900);
     --color: var(--success-green-50); }
     button.success[disabled], .button.success[disabled], a.button.success[disabled] {
@@ -529,7 +532,8 @@ button, .button, a.button {
           --color: var(--success-green-700); }
   button.warning, .button.warning, a.button.warning {
     --background-color: var(--warning-yellow-500);
-    --secondary-background-color: var(--warning-yellow-300);
+    --secondary-background-color: var(--warning-yellow-600);
+    --tertiary-background-color: var(--warning-yellow-200);
     --secondary-color: var(--warning-yellow-900);
     --color: var(--warning-yellow-50); }
     button.warning[disabled], .button.warning[disabled], a.button.warning[disabled] {
@@ -545,7 +549,8 @@ button, .button, a.button {
           --color: var(--warning-yellow-700); }
   button.primary, .button.primary, a.button.primary {
     --background-color: var(--focus-blue-500);
-    --secondary-background-color: var(--focus-blue-300);
+    --secondary-background-color: var(--focus-blue-600);
+    --tertiary-background-color: var(--focus-blue-200);
     --secondary-color: var(--focus-blue-900);
     --color: var(--focus-blue-50); }
     button.primary[disabled], .button.primary[disabled], a.button.primary[disabled] {
@@ -561,7 +566,8 @@ button, .button, a.button {
           --color: var(--focus-blue-700); }
   button.secondary, .button.secondary, a.button.secondary {
     --background-color: var(--deep-purple-500);
-    --secondary-background-color: var(--deep-purple-300);
+    --secondary-background-color: var(--deep-purple-600);
+    --tertiary-background-color: var(--deep-purple-200);
     --secondary-color: var(--deep-purple-900);
     --color: var(--deep-purple-50); }
     button.secondary[disabled], .button.secondary[disabled], a.button.secondary[disabled] {

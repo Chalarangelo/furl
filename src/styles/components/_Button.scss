@@ -1,7 +1,8 @@
 @mixin define-button-color-variant ($class-name, $color-name) {
   &.#{$class-name} {
     --background-color: var(--#{$color-name}-500);
-    --secondary-background-color: var(--#{$color-name}-300);
+    --secondary-background-color: var(--#{$color-name}-600);
+    --tertiary-background-color: var(--#{$color-name}-200);
     --secondary-color: var(--#{$color-name}-900);
     --color: var(--#{$color-name}-50);
     &[disabled] {
@@ -37,7 +38,8 @@ button, .button, a.button {
 
   --border-radius: var(--ls-25p);
   --background-color: var(--cool-gray-500);
-  --secondary-background-color: var(--cool-gray-300);
+  --secondary-background-color: var(--cool-gray-600);
+  --tertiary-background-color: var(--cool-gray-200);
   --color: var(--cool-gray-50);
   --secondary-color: var(--cool-gray-900);
   &[disabled] {
@@ -81,7 +83,7 @@ button, .button, a.button {
     }
   }
   &.light {
-    background: var(--secondary-background-color);
+    background: var(--tertiary-background-color);
     color: var(--secondary-color);
     --box-shadow: var(--shadow-100);
     &:hover, &:focus {
@@ -92,7 +94,7 @@ button, .button, a.button {
     }
   }
   &.gradient {
-    background: #{'linear-gradient(var(--secondary-background-color), var(--background-color))'};
+    background: #{'linear-gradient(var(--background-color), var(--secondary-background-color))'};
     --box-shadow: var(--shadow-100); 
     &:hover, &:focus {
       --box-shadow: var(--shadow-300);
