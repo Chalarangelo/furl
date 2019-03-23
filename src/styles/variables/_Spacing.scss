@@ -5,6 +5,33 @@
   }
 }
 
+@mixin define-space-utils($space-scale-map) {
+  $base-scale-value: map-get($space-scale-map, 100);
+  @each $step-name, $step-size in $space-scale-map {
+    $step-value: #{($step-size/$base-scale-value)}rem;
+    #{'.padding-ls-'}#{$step-name}p {
+      --padding-vertical: #{$step-value} !important;
+      --padding-horizontal: #{$step-value}!important;
+    }
+    #{'.padding-v-ls-'}#{$step-name}p {
+      --padding-vertical: #{$step-value} !important;
+    }
+    #{'.padding-h-ls-'}#{$step-name}p {
+      --padding-horizontal: #{$step-value} !important;
+    }
+    #{'.margin-ls-'}#{$step-name}p {
+      --margin-vertical: #{$step-value} !important;
+      --margin-horizontal: #{$step-value} !important;
+    }
+    #{'.margin-v-ls-'}#{$step-name}p {
+      --margin-vertical: #{$step-value} !important;
+    }
+    #{'.margin-h-ls-'}#{$step-name}p {
+      --margin-horizontal: #{$step-value} !important;
+    }
+  }
+}
+
 :root {
   // Define the spacing and sizing scale
   @include define-space-vars((
@@ -27,3 +54,23 @@
     900: 768
   ));
 }
+
+@include define-space-utils((
+  0: 0,
+  25: 4, 
+  50: 8, 
+  75: 12,
+  100: 16, 
+  150: 24,
+  200: 32,
+  250: 48,
+  300: 64,
+  350: 96,
+  400: 128,
+  450: 192,
+  500: 256, 
+  600: 384, 
+  700: 512, 
+  800: 640, 
+  900: 768
+));
