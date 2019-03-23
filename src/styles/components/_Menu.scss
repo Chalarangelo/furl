@@ -57,5 +57,14 @@
   }
   &.selected {
     --color: var(--focus-blue-500);
+    // Add side border for selected item in vertical menus
+  }
+}
+
+.menu.horizontal .dropdown .menu-item {
+  --padding-vertical: var(--ls-25p);
+  --padding-horizontal: 0;
+  &:hover, &:focus {
+    border-bottom: 3px solid transparent;
   }
 }

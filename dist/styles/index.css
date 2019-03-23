@@ -524,7 +524,8 @@ button, .button, a.button {
   --color: inherit;
   position: relative;
   display: inline-block;
-  --margin-horizontal: var(--ls-75p); }
+  --margin-horizontal: var(--ls-25p);
+  --padding-horizontal: var(--ls-50p); }
   .dropdown > summary {
     background: inherit;
     --color: inherit; }
@@ -532,13 +533,17 @@ button, .button, a.button {
     background: inherit;
     --color: inherit;
     transform: scale(0.66667);
+    transition: all 0.3s ease;
     display: inline; }
     .dropdown > summary > svg > path {
       --color: inherit;
       fill: var(--color); }
+  .dropdown[open] > summary > svg {
+    transform: scale(-0.66667, -0.66667); }
   .dropdown .dropdown-content {
+    text-align: center;
     position: absolute;
-    top: var(--ls-150p);
+    top: var(--ls-200p);
     left: 0;
     width: 100%;
     --padding: var(--ls-50p);
@@ -551,6 +556,8 @@ button, .button, a.button {
     display: none; }
 
 .menu-item .dropdown, .button .dropdown, button .dropdown {
+  --padding-horizontal: var(--ls-0p);
+  --padding-vertical: var(--ls-0p);
   --margin-horizontal: var(--ls-0p); }
 
 .menu.vertical .menu-item .dropdown {
@@ -565,6 +572,17 @@ button, .button, a.button {
     --border-radius: var(--ls-0p);
     --box-shadow: var(--shadow-0);
     z-index: 98; }
+
+.menu.horizontal .menu-item .dropdown {
+  --margin-horizontal: calc(0 - var(--ls-150p));
+  width: calc(100% + 2* var(--ls-150p)); }
+
+.dropdown a, .dropdown button, .dropdown .button, .dropdown .menu-item {
+  display: block;
+  width: 100%; }
+
+.dropdown a:not(.menu-item), .dropdown button:not(.menu-item), .dropdown .button:not(.menu-item) {
+  --margin-vertical: var(--ls-75p); }
 
 ol, ul {
   --margin-horizontal: var(--ls-200p);
@@ -988,6 +1006,12 @@ ol.upper-roman li::before {
     --color: var(--focus-blue-500); }
   .menu-item.selected, a.menu-item.selected {
     --color: var(--focus-blue-500); }
+
+.menu.horizontal .dropdown .menu-item {
+  --padding-vertical: var(--ls-25p);
+  --padding-horizontal: 0; }
+  .menu.horizontal .dropdown .menu-item:hover, .menu.horizontal .dropdown .menu-item:focus {
+    border-bottom: 3px solid transparent; }
 
 table {
   border-collapse: separate;
