@@ -82,6 +82,44 @@ storiesOf('Button', module)
     </React.Fragment>
   )
 )
+  .add("primary", () => (
+    <React.Fragment>
+      <Button color='primary' >Continue</Button>
+      <Button color='primary' fill='solid flat'>Continue</Button>
+      <Button color='primary' fill='light flat'>Continue</Button>
+      <Button color='primary' fill='gradient flat'>Continue</Button>
+      <Button color='primary' fill='solid'>Continue</Button>
+      <Button color='primary' fill='light'>Continue</Button>
+      <Button color='primary' fill='gradient'>Continue</Button>
+      <Button color='primary' fill='outline'>Continue</Button>
+      <Button color='primary' fill='ghost'>Continue</Button>
+      <Button color='primary' disabled>Continue</Button>
+      <Button color='primary' fill='gradient' disabled>Continue</Button>
+      <Button color='primary' fill='outline' disabled>Continue</Button>
+      <Button color='primary' fill='ghost' disabled>Continue</Button>
+      <Button color='primary' fill='outline' shape='rounded' text='uppercase' size='large'>Continue</Button>
+    </React.Fragment>
+  )
+)
+  .add("secondary", () => (
+    <React.Fragment>
+      <Button color='secondary' >Continue</Button>
+      <Button color='secondary' fill='solid flat'>Continue</Button>
+      <Button color='secondary' fill='light flat'>Continue</Button>
+      <Button color='secondary' fill='gradient flat'>Continue</Button>
+      <Button color='secondary' fill='solid'>Continue</Button>
+      <Button color='secondary' fill='light'>Continue</Button>
+      <Button color='secondary' fill='gradient'>Continue</Button>
+      <Button color='secondary' fill='outline'>Continue</Button>
+      <Button color='secondary' fill='ghost'>Continue</Button>
+      <Button color='secondary' disabled>Continue</Button>
+      <Button color='secondary' fill='gradient' disabled>Continue</Button>
+      <Button color='secondary' fill='outline' disabled>Continue</Button>
+      <Button color='secondary' fill='ghost' disabled>Continue</Button>
+      <Button color='secondary' fill='outline' shape='rounded' text='uppercase' size='large'>Continue</Button>
+    </React.Fragment>
+  )
+)
   .add("danger", () => (
     <React.Fragment>
       <Button color='danger' >Continue</Button>

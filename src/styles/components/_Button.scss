@@ -146,6 +146,8 @@ button, .button, a.button {
   @include define-button-color-variant('danger', 'danger-red');
   @include define-button-color-variant('success', 'success-green');
   @include define-button-color-variant('warning', 'warning-yellow');
+  @include define-button-color-variant('primary', 'focus-blue');
+  @include define-button-color-variant('secondary', 'deep-purple');
 
   // Text variants
   &.uppercase {

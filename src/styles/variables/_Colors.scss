@@ -26,4 +26,8 @@
     (900: #061C4B, 800: #07327E, 700: #096BE1, 600: #096BE1, 500: #2C8CF1,
     400: #70BCFA, 300: #98D5FB, 200: #ABE2FC, 100: #D4F1FC, 50: #F5FCFE)
   );
+  @include define-color-vars('deep-purple',
+    (900: #33046C, 800: #4D0797, 700: #6706C1, 600: #7D08E2, 500: #A02EFA,
+    400: #B450F7, 300: #CA78FC, 200: #DEA6FC, 100: #F0D2FE, 50: #FCF5FF)
+  );
 }
