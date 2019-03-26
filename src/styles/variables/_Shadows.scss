@@ -6,3 +6,22 @@
   --shadow-700: 0 15px 25px rgba(0,0,0,.15), 0 5px 10px rgba(0,0,0,.5);
   --shadow-900: 0 20px 40px rgba(0,0,0,.2);
 }
+
+.shadow-0 {
+  --box-shadow: var(--shadow-0) !important;
+}
+.shadow-100 {
+  --box-shadow: var(--shadow-100) !important;
+}
+.shadow-300 {
+  --box-shadow: var(--shadow-300) !important;
+}
+.shadow-500 {
+  --box-shadow: var(--shadow-500) !important;
+}
+.shadow-700 {
+  --box-shadow: var(--shadow-700) !important;
+}
+.shadow-900 {
+  --box-shadow: var(--shadow-900) !important;
+}
