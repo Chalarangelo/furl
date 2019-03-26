@@ -7,8 +7,7 @@
 }
 
 .layout-header {
-  // background: #F35A4F;
-  height: var(--ls-300p);
+  height: var(--ls-250p);
   z-index: 101;
   position: sticky;
   grid-area: header;
@@ -28,9 +27,8 @@
 }
 
 .layout-sidebar {
-  // background: #70BCFA;
   position: fixed;
-  height: calc(100% - var(--ls-300p));
+  height: calc(100% - var(--ls-250p));
   z-index: 100;
   transition: all 0.3s ease;
   &.border-left {
@@ -42,9 +40,8 @@
 }
 
 .layout-content {
-  // background: #61CC68;
   grid-area: content;
-  min-height: calc(100vh - var(--ls-300p));
+  min-height: calc(100vh - var(--ls-250p));
 }
 
 .layout-sidebar-tab {

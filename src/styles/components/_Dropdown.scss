@@ -24,6 +24,7 @@
     transform: scale(-0.666667, -0.666667);
   }
   & .dropdown-content {
+    --background-color: var(--cool-gray-50);
     text-align: center;
     position: absolute;
     top: var(--ls-200p);

@@ -94,12 +94,12 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
         width: ${sidebarWidth[0]}%;`
       }
       ${header == 'none' ? 'min-height: 100vh;' : ''}
-      ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
+      ${header == 'top' ? 'top: var(--ls-250p);' : header == 'bottom' ? 'bottom: var(--ls-250p);' : ''}
     }`
   }
   ${sidebar !== 'none' && sidebarWidth[0] == 0 ? 
     `.${layoutName} .layout-sidebar-tab {
-      ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
+      ${header == 'top' ? 'top: var(--ls-250p);' : header == 'bottom' ? 'bottom: var(--ls-250p);' : ''}
       ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
     }`:
     `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
@@ -132,7 +132,7 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
     }
     ${sidebar !== 'none' && sidebarWidth[1] == 0 ?
       `.${layoutName} .layout-sidebar-tab {
-        ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
+        ${header == 'top' ? 'top: var(--ls-250p);' : header == 'bottom' ? 'bottom: var(--ls-250p);' : ''}
         ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
       }`:
       `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
@@ -160,7 +160,7 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
     }
     ${sidebar !== 'none' && sidebarWidth[2] == 0 ?
     `.${layoutName} .layout-sidebar-tab {
-      ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
+      ${header == 'top' ? 'top: var(--ls-250p);' : header == 'bottom' ? 'bottom: var(--ls-250p);' : ''}
       ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
     }`:
     `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
@@ -188,7 +188,7 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
     }
     ${sidebar !== 'none' && sidebarWidth[3] == 0 ?
      `.${layoutName} .layout-sidebar-tab {
-      ${header == 'top' ? 'top: var(--ls-300p);' : header == 'bottom' ? 'bottom: var(--ls-300p);' : ''}
+      ${header == 'top' ? 'top: var(--ls-250p);' : header == 'bottom' ? 'bottom: var(--ls-250p);' : ''}
       ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
     }`:
     `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {

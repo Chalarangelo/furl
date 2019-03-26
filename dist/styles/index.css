@@ -1838,10 +1838,12 @@ figcaption {
   padding: var(--padding-vertical) var(--padding-horizontal);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
-  --color: var(--cool-gray-900);
-  --background-color: var(--cool-gray-50);
   color: var(--color);
   background-color: var(--background-color); }
+
+body {
+  --color: var(--cool-gray-900);
+  --background-color: var(--cool-gray-50); }
 
 hr {
   border: 0;
@@ -2132,6 +2134,7 @@ button, .button, a.button {
   .dropdown[open] > summary > svg {
     transform: scale(-0.66667, -0.66667); }
   .dropdown .dropdown-content {
+    --background-color: var(--cool-gray-50);
     text-align: center;
     position: absolute;
     top: var(--ls-200p);
@@ -2264,7 +2267,7 @@ ol.upper-roman li::before {
   grid-template-rows: auto; }
 
 .layout-header {
-  height: var(--ls-300p);
+  height: var(--ls-250p);
   z-index: 101;
   position: sticky;
   grid-area: header; }
@@ -2280,7 +2283,7 @@ ol.upper-roman li::before {
 
 .layout-sidebar {
   position: fixed;
-  height: calc(100% - var(--ls-300p));
+  height: calc(100% - var(--ls-250p));
   z-index: 100;
   transition: all 0.3s ease; }
   .layout-sidebar.border-left {
@@ -2290,7 +2293,7 @@ ol.upper-roman li::before {
 
 .layout-content {
   grid-area: content;
-  min-height: calc(100vh - var(--ls-300p)); }
+  min-height: calc(100vh - var(--ls-250p)); }
 
 .layout-sidebar-tab {
   position: fixed;
@@ -2598,15 +2601,13 @@ ol.upper-roman li::before {
       flex: 1 1 0;
       text-align: center; }
     .menu.horizontal.top-highlight {
-      align-items: flex-start;
-      margin-bottom: var(--ls-100p); }
+      align-items: flex-start; }
       .menu.horizontal.top-highlight > .menu-item {
         border-top: 3px solid transparent; }
         .menu.horizontal.top-highlight > .menu-item.selected {
           border-top: 3px solid var(--focus-blue-500); }
     .menu.horizontal.bottom-highlight {
-      align-items: flex-end;
-      margin-top: var(--ls-100p); }
+      align-items: flex-end; }
       .menu.horizontal.bottom-highlight > .menu-item {
         border-bottom: 3px solid transparent; }
         .menu.horizontal.bottom-highlight > .menu-item.selected {

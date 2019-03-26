@@ -12,11 +12,14 @@
   padding: var(--padding-vertical) var(--padding-horizontal);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
+  color: var(--color);
+  background-color: var(--background-color);
+}
+
+body {
   // Define colors for all elements
   --color: var(--cool-gray-900);
   --background-color: var(--cool-gray-50);
-  color: var(--color);
-  background-color: var(--background-color);
 }
 
 hr {

@@ -40,7 +40,6 @@
     }
     &.top-highlight {
       align-items: flex-start;
-      margin-bottom: var(--ls-100p);
       & > .menu-item {
         border-top: 3px solid transparent;
         &.selected {
@@ -50,7 +49,6 @@
     }
     &.bottom-highlight {
       align-items: flex-end;
-      margin-top: var(--ls-100p);
       & > .menu-item {
         border-bottom: 3px solid transparent;
         &.selected {
