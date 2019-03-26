@@ -72,6 +72,13 @@
   width: calc(100% + 2* var(--ls-150p));
 }
 
+.dropdown.reverse {
+  & .dropdown-content { 
+    top: auto;
+    bottom: var(--ls-200p);
+  }
+}
+
 .dropdown a, .dropdown button, .dropdown .button, .dropdown .menu-item {
   display: block;
   width: 100%;

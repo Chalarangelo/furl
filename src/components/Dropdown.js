@@ -5,9 +5,10 @@ const Dropdown = ({
   id,
   isOpen = false,
   text,
+  reverse = false,
   className,
   children }) => {
-  let classNames = ["dropdown", className];
+  let classNames = ["dropdown", reverse ? "reverse" : "", className];
   return (
     <details className={classNames.join(' ').trim()} id={id !== undefined ? id : false} open={isOpen}>
       <summary>{text}

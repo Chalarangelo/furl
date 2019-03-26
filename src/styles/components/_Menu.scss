@@ -81,4 +81,20 @@
 .menu.horizontal .dropdown .menu-item {
   --padding-vertical: var(--ls-25p);
   --padding-horizontal: 0;
+  &.selected {
+    font-weight: 500;
+  }
+}
+
+.menu.vertical .dropdown .menu-item {
+  text-align: left;
+  &.selected {
+    font-weight: 500;
+  }
+}
+
+.layout-header.border-bottom, .layout-header.border-top {
+  & .menu.horizontal {
+    height: calc(var(--ls-250p) - 1px);
+  }
 }

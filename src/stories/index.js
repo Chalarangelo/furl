@@ -198,12 +198,8 @@ storiesOf('Button', module)
 
 storiesOf('Dropdown', module)
   .add("Top header left sidebar", () => (
-    <Layout>
-      <Header>
-        <style>{`
-        .borderBottom {height: 64px ; align-self:flex-end; border-bottom: 1px solid var(--cool-gray-200); }
-        .title { padding: 8px 24px; line-height: 64px;}
-        `}</style>
+    <Layout header="bottom">
+      <Header outline="border-top">
         <Grid>
           <Row>
             <Col size={4} className="borderBottom">
@@ -215,9 +211,9 @@ storiesOf('Dropdown', module)
               <Menu type="horizontal" highlight="top">
                 <MenuItem>Item 1</MenuItem>
                 <MenuItem selected href="#">Item 2</MenuItem>
-                <MenuItem><Dropdown text="DropD">
+                <MenuItem><Dropdown text="DropD" reverse>
                   <MenuItem>Item 3.1</MenuItem>
-                  <MenuItem>Item 3.2</MenuItem>
+                  <MenuItem selected>Item 3.2</MenuItem>
                   <MenuItem>Item 3.3</MenuItem>
                   </Dropdown></MenuItem>
                 <MenuItem>Item 4</MenuItem>
@@ -226,12 +222,12 @@ storiesOf('Dropdown', module)
           </Row>
         </Grid>
       </Header>
-      <Sidebar><Menu type="vertical" highlight="left">
+      <Sidebar outline="border-right"><Menu type="vertical" highlight="left">
         <MenuItem selected>Item 1</MenuItem>
         <MenuItem>Item 2</MenuItem>
         <MenuItem><Dropdown text="DropD">
           <MenuItem>Item 3.1</MenuItem>
-          <MenuItem>Item 3.2</MenuItem>
+          <MenuItem selected>Item 3.2</MenuItem>
           <MenuItem>Item 3.3</MenuItem>
         </Dropdown></MenuItem>
         <MenuItem>Item 4</MenuItem>
@@ -244,7 +240,12 @@ storiesOf('Dropdown', module)
           <Hyperlink href="#">Item 3.1</Hyperlink>
           <Hyperlink href="#">Item 3.2</Hyperlink>
           <Hyperlink href="#">Item 3.3</Hyperlink>
-        </Dropdown></Content>
+        </Dropdown><br /><Dropdown text="DropD" reverse>
+          <Hyperlink href="#">Item 3.1</Hyperlink>
+          <Hyperlink href="#">Item 3.2</Hyperlink>
+          <Hyperlink href="#">Item 3.3</Hyperlink>
+        </Dropdown>
+        </Content>
       <Button>Invalid content</Button>
     </Layout>
   )

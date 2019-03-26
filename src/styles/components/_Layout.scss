@@ -12,7 +12,15 @@
   z-index: 101;
   position: sticky;
   grid-area: header;
-  // --box-shadow: var(--shadow-100);
+  &.border-top {
+    border-top: 1px solid var(--cool-gray-200);
+  }
+  &.border-bottom {
+    border-bottom: 1px solid var(--cool-gray-200);
+  }
+  &.shadow {
+    --box-shadow: var(--shadow-100);
+  }
 }
 
 .sidebar-visible .layout-sidebar {
@@ -25,6 +33,12 @@
   height: calc(100% - var(--ls-300p));
   z-index: 100;
   transition: all 0.3s ease;
+  &.border-left {
+    border-left: 1px solid var(--cool-gray-200);
+  }
+  &.border-right {
+    border-right: 1px solid var(--cool-gray-200);
+  }
 }
 
 .layout-content {
