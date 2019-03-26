@@ -212,7 +212,7 @@ storiesOf('Dropdown', module)
             <Col size={2} className="borderBottom">
             </Col>
             <Col size={6}>
-              <Menu type="horizontal">
+              <Menu type="horizontal" highlight="top">
                 <MenuItem>Item 1</MenuItem>
                 <MenuItem selected href="#">Item 2</MenuItem>
                 <MenuItem><Dropdown text="DropD">
@@ -226,8 +226,8 @@ storiesOf('Dropdown', module)
           </Row>
         </Grid>
       </Header>
-      <Sidebar><Menu type="vertical">
-        <MenuItem>Item 1</MenuItem>
+      <Sidebar><Menu type="vertical" highlight="left">
+        <MenuItem selected>Item 1</MenuItem>
         <MenuItem>Item 2</MenuItem>
         <MenuItem><Dropdown text="DropD">
           <MenuItem>Item 3.1</MenuItem>

@@ -1,44 +1,61 @@
 .menu {
   --font-size: var(--ts-50p);
-  // background: #F35A4F;
   &.vertical {
-    border-right: 1px solid var(--cool-gray-200);
     display: flex;
     flex-flow: column;
     height: 100%;
     --padding-vertical: var(--ls-100p);
-    & .menu-item {
+    & > .menu-item {
       display: block;
-      //border-right: 3px solid transparent;
       text-align: left;
-      // &:hover, &:focus {
-      //   border-right-color: var(--focus-blue-500);
-      // }
-      // &.selected {
-      //   border-right: 3px solid var(--focus-blue-500);
-      // }
+    }
+    &.right-highlight {
+      & > .menu-item {
+        border-right: 3px solid transparent;
+        &.selected {
+          border-right: 3px solid var(--focus-blue-500);
+        }
+      }
+    }
+    &.left-highlight {
+      & > .menu-item {
+        border-left: 3px solid transparent;
+        &.selected {
+          border-left: 3px solid var(--focus-blue-500);
+        }
+      }
     }
     overflow-y: auto;
   }
   &.horizontal {
-    border-bottom: 1px solid var(--cool-gray-200);
     height: var(--ls-250p);
-    margin-top: var(--ls-100p);
     display: flex;
     flex-flow: row;
-    align-items: flex-end;
     width: 100%;
     --padding-horizontal: var(--ls-100p);
-    & .menu-item {
+    & > .menu-item {
       display: inline-block;
-      border-bottom: 3px solid transparent;
       flex: 1 1 0;
       text-align: center;
-      &:hover, &:focus {
-        border-bottom-color: var(--focus-blue-500);
+    }
+    &.top-highlight {
+      align-items: flex-start;
+      margin-bottom: var(--ls-100p);
+      & > .menu-item {
+        border-top: 3px solid transparent;
+        &.selected {
+          border-top: 3px solid var(--focus-blue-500);
+        }
       }
-      &.selected {
-        border-bottom: 3px solid var(--focus-blue-500);
+    }
+    &.bottom-highlight {
+      align-items: flex-end;
+      margin-top: var(--ls-100p);
+      & > .menu-item {
+        border-bottom: 3px solid transparent;
+        &.selected {
+          border-bottom: 3px solid var(--focus-blue-500);
+        }
       }
     }
   }
@@ -58,14 +75,10 @@
   }
   &.selected {
     --color: var(--focus-blue-500);
-    // Add side border for selected item in vertical menus
   }
 }
 
 .menu.horizontal .dropdown .menu-item {
   --padding-vertical: var(--ls-25p);
   --padding-horizontal: 0;
-  &:hover, &:focus {
-    border-bottom: 3px solid transparent;
-  }
 }

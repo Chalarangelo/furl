@@ -2557,33 +2557,46 @@ ol.upper-roman li::before {
 .menu {
   --font-size: var(--ts-50p); }
   .menu.vertical {
-    border-right: 1px solid var(--cool-gray-200);
     display: flex;
     flex-flow: column;
     height: 100%;
     --padding-vertical: var(--ls-100p);
     overflow-y: auto; }
-    .menu.vertical .menu-item {
+    .menu.vertical > .menu-item {
       display: block;
       text-align: left; }
+    .menu.vertical.right-highlight > .menu-item {
+      border-right: 3px solid transparent; }
+      .menu.vertical.right-highlight > .menu-item.selected {
+        border-right: 3px solid var(--focus-blue-500); }
+    .menu.vertical.left-highlight > .menu-item {
+      border-left: 3px solid transparent; }
+      .menu.vertical.left-highlight > .menu-item.selected {
+        border-left: 3px solid var(--focus-blue-500); }
   .menu.horizontal {
-    border-bottom: 1px solid var(--cool-gray-200);
     height: var(--ls-250p);
-    margin-top: var(--ls-100p);
     display: flex;
     flex-flow: row;
-    align-items: flex-end;
     width: 100%;
     --padding-horizontal: var(--ls-100p); }
-    .menu.horizontal .menu-item {
+    .menu.horizontal > .menu-item {
       display: inline-block;
-      border-bottom: 3px solid transparent;
       flex: 1 1 0;
       text-align: center; }
-      .menu.horizontal .menu-item:hover, .menu.horizontal .menu-item:focus {
-        border-bottom-color: var(--focus-blue-500); }
-      .menu.horizontal .menu-item.selected {
-        border-bottom: 3px solid var(--focus-blue-500); }
+    .menu.horizontal.top-highlight {
+      align-items: flex-start;
+      margin-bottom: var(--ls-100p); }
+      .menu.horizontal.top-highlight > .menu-item {
+        border-top: 3px solid transparent; }
+        .menu.horizontal.top-highlight > .menu-item.selected {
+          border-top: 3px solid var(--focus-blue-500); }
+    .menu.horizontal.bottom-highlight {
+      align-items: flex-end;
+      margin-top: var(--ls-100p); }
+      .menu.horizontal.bottom-highlight > .menu-item {
+        border-bottom: 3px solid transparent; }
+        .menu.horizontal.bottom-highlight > .menu-item.selected {
+          border-bottom: 3px solid var(--focus-blue-500); }
 
 .menu-item, a.menu-item {
   --color: var(--cool-gray-600);
@@ -2602,8 +2615,6 @@ ol.upper-roman li::before {
 .menu.horizontal .dropdown .menu-item {
   --padding-vertical: var(--ls-25p);
   --padding-horizontal: 0; }
-  .menu.horizontal .dropdown .menu-item:hover, .menu.horizontal .dropdown .menu-item:focus {
-    border-bottom: 3px solid transparent; }
 
 table {
   border-collapse: separate;
