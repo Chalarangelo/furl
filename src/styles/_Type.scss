@@ -26,6 +26,11 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   --color: var(--cool-gray-700) !important;
 }
 
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.0375em;
+}
+
 // Define font size for headings and title classes
 h1, .title1 {
   --font-size: var(--ts-800p);

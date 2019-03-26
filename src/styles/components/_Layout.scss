@@ -56,6 +56,7 @@
   --background-color: var(--cool-gray-50);
   --box-shadow: var(--shadow-300);
   transition: all 0.3s ease;
+  --color: var(--cool-gray-900);
   &:hover, &:focus {
     --box-shadow: var(--shadow-500);
   }

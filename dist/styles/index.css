@@ -1691,6 +1691,10 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
 .lighter {
   --color: var(--cool-gray-700) !important; }
 
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.0375em; }
+
 h1, .title1 {
   --font-size: var(--ts-800p);
   --font-weight: 300;
@@ -2306,7 +2310,8 @@ ol.upper-roman li::before {
   border-bottom-left-radius: 0;
   --background-color: var(--cool-gray-50);
   --box-shadow: var(--shadow-300);
-  transition: all 0.3s ease; }
+  transition: all 0.3s ease;
+  --color: var(--cool-gray-900); }
   .layout-sidebar-tab:hover, .layout-sidebar-tab:focus {
     --box-shadow: var(--shadow-500); }
 
