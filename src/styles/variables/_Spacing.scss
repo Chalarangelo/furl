@@ -10,24 +10,24 @@
   @each $step-name, $step-size in $space-scale-map {
     $step-value: #{($step-size/$base-scale-value)}rem;
     #{'.padding-'}#{$screen-size}#{'ls-'}#{$step-name}p {
-      --padding-vertical: #{$step-value} !important;
-      --padding-horizontal: #{$step-value}!important;
+      --padding-vertical: var(#{'--ls-'}#{$step-name}p) !important;
+      --padding-horizontal: var(#{'--ls-'}#{$step-name}p)!important;
     }
     #{'.padding-v-'}#{$screen-size}#{'ls-'}#{$step-name}p {
-      --padding-vertical: #{$step-value} !important;
+      --padding-vertical: var(#{'--ls-'}#{$step-name}p) !important;
     }
     #{'.padding-h-'}#{$screen-size}#{'ls-'}#{$step-name}p {
-      --padding-horizontal: #{$step-value} !important;
+      --padding-horizontal: var(#{'--ls-'}#{$step-name}p) !important;
     }
     #{'.margin-'}#{$screen-size}#{'ls-'}#{$step-name}p {
-      --margin-vertical: #{$step-value} !important;
-      --margin-horizontal: #{$step-value} !important;
+      --margin-vertical: var(#{'--ls-'}#{$step-name}p) !important;
+      --margin-horizontal: var(#{'--ls-'}#{$step-name}p) !important;
     }
     #{'.margin-v-'}#{$screen-size}#{'ls-'}#{$step-name}p {
-      --margin-vertical: #{$step-value} !important;
+      --margin-vertical: var(#{'--ls-'}#{$step-name}p) !important;
     }
     #{'.margin-h-'}#{$screen-size}#{'ls-'}#{$step-name}p {
-      --margin-horizontal: #{$step-value} !important;
+      --margin-horizontal: var(#{'--ls-'}#{$step-name}p) !important;
     }
   }
 }

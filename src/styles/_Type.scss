@@ -19,7 +19,11 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
 
 // Define a class for elements using the secondary font
 .font-B {
-  font-family: var(--font-b), var(--font-a), var(--system-font-stack);
+  font-family: var(--font-b), var(--font-a), var(--system-font-stack) !important;
+}
+
+.lighter {
+  --color: var(--cool-gray-700) !important;
 }
 
 // Define font size for headings and title classes

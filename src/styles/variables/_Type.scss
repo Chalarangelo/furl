@@ -5,6 +5,16 @@
   }
 }
 
+@mixin define-type-utils($type-scale-map, $screen-size) {
+  $base-scale-value: map-get($type-scale-map, 100);
+  @each $step-name, $step-size in $type-scale-map {
+    $step-value: #{($step-size/$base-scale-value)}rem;
+    #{'.font-'}#{$screen-size}#{'ts-'}#{$step-name}p {
+      --font-size: var(#{'--ts-'}#{$step-name}p) !important;
+    }
+  }
+}
+
 :root {
   // Define the type scale
   @include define-type-vars((
@@ -28,4 +38,82 @@
   // Define the font size and weight variables
   --font-size: var(--ts-100p);
   --font-weight: 400;
+}
+
+@include define-type-utils((
+  25: 12, 
+  50: 14, 
+  100: 16, 
+  200: 18, 
+  300: 20, 
+  400: 24, 
+  500: 30, 
+  600: 36, 
+  700: 48, 
+  800: 60, 
+  900: 72
+),'');
+
+@media screen and (max-width: 599px) {
+  @include define-type-utils((
+    25: 12, 
+    50: 14, 
+    100: 16, 
+    200: 18, 
+    300: 20, 
+    400: 24, 
+    500: 30, 
+    600: 36, 
+    700: 48, 
+    800: 60, 
+    900: 72
+  ),'xs-');
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px) {
+  @include define-type-utils((
+    25: 12, 
+    50: 14, 
+    100: 16, 
+    200: 18, 
+    300: 20, 
+    400: 24, 
+    500: 30, 
+    600: 36, 
+    700: 48, 
+    800: 60, 
+    900: 72
+  ),'sm-');
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  @include define-type-utils((
+    25: 12, 
+    50: 14, 
+    100: 16, 
+    200: 18, 
+    300: 20, 
+    400: 24, 
+    500: 30, 
+    600: 36, 
+    700: 48, 
+    800: 60, 
+    900: 72
+  ),'md-');
+}
+
+@media screen and (min-width: 1200px) {
+  @include define-type-utils((
+    25: 12, 
+    50: 14, 
+    100: 16, 
+    200: 18, 
+    300: 20, 
+    400: 24, 
+    500: 30, 
+    600: 36, 
+    700: 48, 
+    800: 60, 
+    900: 72
+  ),'lg-');
 }
