@@ -10,7 +10,7 @@
   --cool-gray-300: #A9B6C1;
   --cool-gray-200: #C9D2D9;
   --cool-gray-100: #E7EBEF;
-  --cool-gray-50: #F9FAFA;
+  --cool-gray-50: #F6F7F8;
   --cool-gray-0: #FFFFFF;
   --warm-gray-1000: #000000;
   --warm-gray-900: #1A1814;
@@ -21,8 +21,8 @@
   --warm-gray-400: #AAA192;
   --warm-gray-300: #C3BDB1;
   --warm-gray-200: #DEDAD4;
-  --warm-gray-100: #F0EEEA;
-  --warm-gray-50: #FBFAF9;
+  --warm-gray-100: #EEECE7;
+  --warm-gray-50: #F6F5F3;
   --warm-gray-0: #FFFFFF;
   --true-gray-1000: #000000;
   --true-gray-900: #050505;
@@ -33,8 +33,8 @@
   --true-gray-400: #9E9E9E;
   --true-gray-300: #BDBDBD;
   --true-gray-200: #DBDBDB;
-  --true-gray-100: #F5F5F5;
-  --true-gray-50: #FCFCFC;
+  --true-gray-100: #EBEBEB;
+  --true-gray-50: #F5F5F5;
   --true-gray-0: #FFFFFF;
   --interface-gray-1000: var(--cool-gray-1000);
   --interface-gray-900: var(--cool-gray-900);
