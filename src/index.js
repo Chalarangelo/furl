@@ -15,25 +15,24 @@ import "./styles/index.scss";
 import "./index.scss";
 
 ReactDOM.render(<Layout>
-  <Header>
-    
+  <Header outline="shadow">
     <Grid>
       <Row>
-        <Col size={[0,32,48,64]} className="borderBottom">&nbsp;</Col>
-        <Col size={48} className="borderBottom">
-          <Image width={48} height={48} src={process.env.PUBLIC_URL + '/logo.png'} className="margin-ls-50p" />
+        <Col size={[0,32,48,64]}>&nbsp;</Col>
+        <Col size={48}>
+          <Image width={40} height={40} src={process.env.PUBLIC_URL + '/logo.png'} className="margin-v-ls-25p"/>
         </Col>
-        <Col size={'fluid'} className="borderBottom"><h2>Furl</h2></Col>
+        <Col size={'fluid'} ><h2 className="margin-v-ls-0p">Furl</h2></Col>
         <Col size={128}>
           <Menu type="horizontal">
             <MenuItem href="https://github.com/Chalarangelo/react-component-library" openIn="external">Github</MenuItem>
           </Menu>
         </Col>
-        <Col size={[0, 32, 48, 64]} className="borderBottom">&nbsp;</Col>
+        <Col size={[0, 32, 48, 64]}>&nbsp;</Col>
       </Row>
     </Grid>
     </Header>
-  <Sidebar>
+  <Sidebar outline="border-right">
     <Menu type="vertical">
       <MenuItem>Getting Started</MenuItem>
       <MenuItem>
