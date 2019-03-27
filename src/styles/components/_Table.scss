@@ -16,7 +16,7 @@ table {
     border-bottom: 1px solid var(--interface-gray-100);
   }
   & tr:nth-of-type(2n-1) > td {
-    --background-color: var(--interface-gray-100);
+    --background-color: var(--interface-gray-50);
   }
   & th, & td {
     --padding-horizontal: var(--ls-50p);

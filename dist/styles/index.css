@@ -2699,7 +2699,7 @@ table {
   table thead th {
     border-bottom: 1px solid var(--interface-gray-100); }
   table tr:nth-of-type(2n-1) > td {
-    --background-color: var(--interface-gray-100); }
+    --background-color: var(--interface-gray-50); }
   table th, table td {
     --padding-horizontal: var(--ls-50p);
     --padding-vertical: var(--ls-50p); }
