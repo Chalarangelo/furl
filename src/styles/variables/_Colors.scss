@@ -7,8 +7,24 @@
 :root {
   // Define the color palettes
   @include define-color-vars('cool-gray',
-    (900: #111517, 800: #292E33, 700: #3F4850, 600: #55626D, 500: #6E7E8C,
-    400: #8897A5, 300: #A9B6C1, 200: #C9D2D9, 100: #E7EBEF, 50: #F9FAFA)
+    (1000: #000000, 900: #111517, 800: #292E33, 700: #3F4850, 600: #55626D, 500: #6E7E8C,
+    400: #8897A5, 300: #A9B6C1, 200: #C9D2D9, 100: #E7EBEF, 50: #F9FAFA, 0: #FFFFFF)
+  );
+  @include define-color-vars('warm-gray',
+    (1000: #000000, 900: #1A1814, 800: #37322A, 700: #585146, 600: #766E60, 500: #928877,
+    400: #AAA192, 300: #C3BDB1, 200: #DEDAD4, 100: #F0EEEA, 50: #FBFAF9, 0: #FFFFFF)
+  );
+  @include define-color-vars('true-gray',
+    (1000: #000000, 900: #050505, 800: #262626, 700: #424242, 600: #636363, 500: #808080,
+    400: #9E9E9E, 300: #BDBDBD, 200: #DBDBDB, 100: #F5F5F5, 50: #FCFCFC, 0: #FFFFFF)
+  );
+  @include define-color-vars('interface-gray',
+    (1000: var(--cool-gray-1000), 900:var(--cool-gray-900), 
+    800: var(--cool-gray-800), 700: var(--cool-gray-700), 
+    600: var(--cool-gray-600), 500: var(--cool-gray-500),
+    400: var(--cool-gray-400), 300: var(--cool-gray-300), 
+    200: var(--cool-gray-200), 100: var(--cool-gray-100), 
+    50: var(--cool-gray-50), 0: var(--cool-gray-0))
   );
   @include define-color-vars('success-green',
     (900: #043E0A, 800: #075F10, 700: #107A1A, 600: #24942D, 500: #4AB151,

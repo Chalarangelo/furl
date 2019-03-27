@@ -18,8 +18,8 @@
 
 body {
   // Define colors for all elements
-  --color: var(--cool-gray-900);
-  --background-color: var(--cool-gray-50);
+  --color: var(--interface-gray-900);
+  --background-color: var(--interface-gray-0);
 }
 
 hr {
@@ -31,5 +31,5 @@ hr {
   --margin-vertical: var(--ls-100p);
   --margin-horizontal: var(--ls-75p);
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--cool-gray-400) 25%, var(--cool-gray-400) 75%, transparent);
+  background: linear-gradient(to right, transparent, var(--interface-gray-400) 25%, var(--interface-gray-400) 75%, transparent);
 }

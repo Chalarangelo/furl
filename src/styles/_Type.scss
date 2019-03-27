@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
 }
 
 .lighter {
-  --color: var(--cool-gray-700) !important;
+  --color: var(--interface-gray-700) !important;
 }
 
 .uppercase {
@@ -135,7 +135,7 @@ pre, code, kbd, samp {
 // Fix text wrapping
 pre {
   white-space: pre-wrap;
-  --background-color: var(--cool-gray-100);
+  --background-color: var(--interface-gray-100);
   --padding-horizontal: var(--ls-100p);
   --padding-vertical: var(--ls-150p);
   --margin-horizontal: var(--ls-75p);
@@ -144,15 +144,15 @@ pre {
 
 code {
   display: inline-block;
-  --background-color: var(--cool-gray-100);
+  --background-color: var(--interface-gray-100);
   --padding-horizontal: var(--ls-25p);
   --border-radius: var(--ls-25p);
 }
 
 kbd {
   display: inline-block;
-  --background-color: var(--cool-gray-900);
-  --color: var(--cool-gray-50);
+  --background-color: var(--interface-gray-900);
+  --color: var(--interface-gray-50);
   --padding-horizontal: var(--ls-25p);
   --border-radius: var(--ls-25p);
 }
@@ -164,7 +164,7 @@ blockquote {
   --margin-vertical: var(--ls-50p);
   font-family: var(--font-b), var(--font-a), var(--system-font-stack);
   font-style: italic;
-  --color: var(--cool-gray-700);
+  --color: var(--interface-gray-700);
   &:before {
     position: absolute;
     --margin-vertical: var(--ls-75p);
@@ -172,7 +172,7 @@ blockquote {
     top: calc(var(--ls-0p) - 2 * var(--padding-vertical) - 2 * var(--margin-vertical));
     left: 0;
     --font-size: var(--ts-700p);
-    --color: var(--cool-gray-300);
+    --color: var(--interface-gray-300);
     content: open-quote;
   }
   &[cite]:after{
@@ -180,7 +180,7 @@ blockquote {
     --font-size: var(--ts-200p);
     --font-weight: 500;
     content: "\a\2014\2009" attr(cite);
-    --color: var(--cool-gray-600);
+    --color: var(--interface-gray-600);
     letter-spacing: 0.0125em;
     white-space: pre;
   }
@@ -190,5 +190,5 @@ figure {
   --margin: var(--ls-50p);
 }
 figcaption {
-  --color: var(--cool-gray-700);
+  --color: var(--interface-gray-700);
 }

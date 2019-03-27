@@ -12,10 +12,10 @@
   position: sticky;
   grid-area: header;
   &.border-top {
-    border-top: 1px solid var(--cool-gray-200);
+    border-top: 1px solid var(--interface-gray-200);
   }
   &.border-bottom {
-    border-bottom: 1px solid var(--cool-gray-200);
+    border-bottom: 1px solid var(--interface-gray-200);
   }
   &.shadow {
     --box-shadow: var(--shadow-100);
@@ -32,10 +32,10 @@
   z-index: 100;
   transition: all 0.3s ease;
   &.border-left {
-    border-left: 1px solid var(--cool-gray-200);
+    border-left: 1px solid var(--interface-gray-200);
   }
   &.border-right {
-    border-right: 1px solid var(--cool-gray-200);
+    border-right: 1px solid var(--interface-gray-200);
   }
 }
 
@@ -53,10 +53,10 @@
   z-index: 99;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  --background-color: var(--cool-gray-50);
+  --background-color: var(--interface-gray-50);
   --box-shadow: var(--shadow-300);
   transition: all 0.3s ease;
-  --color: var(--cool-gray-900);
+  --color: var(--interface-gray-900);
   &:hover, &:focus {
     --box-shadow: var(--shadow-500);
   }
@@ -64,7 +64,7 @@
 
 .layout-sidebar-overlay {
   z-index: 98;
-  --background-color: var(--cool-gray-800);
+  --background-color: var(--interface-gray-800);
   opacity: 0.24;
   position: fixed;
   top: 0;

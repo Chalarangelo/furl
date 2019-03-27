@@ -12,7 +12,7 @@ li {
 ul {
   &.circle, &.disc, &.square, &.triangle, &.checkbox {
     li::before {
-      --color: var(--cool-gray-400);
+      --color: var(--interface-gray-400);
       display: inline-block;
       font-size: 1.5rem;
       line-height: 0.75;

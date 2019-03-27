@@ -1,5 +1,6 @@
 @charset "UTF-8";
 :root {
+  --cool-gray-1000: #000000;
   --cool-gray-900: #111517;
   --cool-gray-800: #292E33;
   --cool-gray-700: #3F4850;
@@ -10,6 +11,43 @@
   --cool-gray-200: #C9D2D9;
   --cool-gray-100: #E7EBEF;
   --cool-gray-50: #F9FAFA;
+  --cool-gray-0: #FFFFFF;
+  --warm-gray-1000: #000000;
+  --warm-gray-900: #1A1814;
+  --warm-gray-800: #37322A;
+  --warm-gray-700: #585146;
+  --warm-gray-600: #766E60;
+  --warm-gray-500: #928877;
+  --warm-gray-400: #AAA192;
+  --warm-gray-300: #C3BDB1;
+  --warm-gray-200: #DEDAD4;
+  --warm-gray-100: #F0EEEA;
+  --warm-gray-50: #FBFAF9;
+  --warm-gray-0: #FFFFFF;
+  --true-gray-1000: #000000;
+  --true-gray-900: #050505;
+  --true-gray-800: #262626;
+  --true-gray-700: #424242;
+  --true-gray-600: #636363;
+  --true-gray-500: #808080;
+  --true-gray-400: #9E9E9E;
+  --true-gray-300: #BDBDBD;
+  --true-gray-200: #DBDBDB;
+  --true-gray-100: #F5F5F5;
+  --true-gray-50: #FCFCFC;
+  --true-gray-0: #FFFFFF;
+  --interface-gray-1000: var(--cool-gray-1000);
+  --interface-gray-900: var(--cool-gray-900);
+  --interface-gray-800: var(--cool-gray-800);
+  --interface-gray-700: var(--cool-gray-700);
+  --interface-gray-600: var(--cool-gray-600);
+  --interface-gray-500: var(--cool-gray-500);
+  --interface-gray-400: var(--cool-gray-400);
+  --interface-gray-300: var(--cool-gray-300);
+  --interface-gray-200: var(--cool-gray-200);
+  --interface-gray-100: var(--cool-gray-100);
+  --interface-gray-50: var(--cool-gray-50);
+  --interface-gray-0: var(--cool-gray-0);
   --success-green-900: #043E0A;
   --success-green-800: #075F10;
   --success-green-700: #107A1A;
@@ -1689,7 +1727,7 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   font-family: var(--font-b), var(--font-a), var(--system-font-stack) !important; }
 
 .lighter {
-  --color: var(--cool-gray-700) !important; }
+  --color: var(--interface-gray-700) !important; }
 
 .uppercase {
   text-transform: uppercase;
@@ -1778,7 +1816,7 @@ pre, code, kbd, samp {
 
 pre {
   white-space: pre-wrap;
-  --background-color: var(--cool-gray-100);
+  --background-color: var(--interface-gray-100);
   --padding-horizontal: var(--ls-100p);
   --padding-vertical: var(--ls-150p);
   --margin-horizontal: var(--ls-75p);
@@ -1786,14 +1824,14 @@ pre {
 
 code {
   display: inline-block;
-  --background-color: var(--cool-gray-100);
+  --background-color: var(--interface-gray-100);
   --padding-horizontal: var(--ls-25p);
   --border-radius: var(--ls-25p); }
 
 kbd {
   display: inline-block;
-  --background-color: var(--cool-gray-900);
-  --color: var(--cool-gray-50);
+  --background-color: var(--interface-gray-900);
+  --color: var(--interface-gray-50);
   --padding-horizontal: var(--ls-25p);
   --border-radius: var(--ls-25p); }
 
@@ -1804,7 +1842,7 @@ blockquote {
   --margin-vertical: var(--ls-50p);
   font-family: var(--font-b), var(--font-a), var(--system-font-stack);
   font-style: italic;
-  --color: var(--cool-gray-700); }
+  --color: var(--interface-gray-700); }
   blockquote:before {
     position: absolute;
     --margin-vertical: var(--ls-75p);
@@ -1812,14 +1850,14 @@ blockquote {
     top: calc(var(--ls-0p) - 2 * var(--padding-vertical) - 2 * var(--margin-vertical));
     left: 0;
     --font-size: var(--ts-700p);
-    --color: var(--cool-gray-300);
+    --color: var(--interface-gray-300);
     content: open-quote; }
   blockquote[cite]:after {
     font-style: normal;
     --font-size: var(--ts-200p);
     --font-weight: 500;
     content: "\a— " attr(cite);
-    --color: var(--cool-gray-600);
+    --color: var(--interface-gray-600);
     letter-spacing: 0.0125em;
     white-space: pre; }
 
@@ -1827,7 +1865,7 @@ figure {
   --margin: var(--ls-50p); }
 
 figcaption {
-  --color: var(--cool-gray-700); }
+  --color: var(--interface-gray-700); }
 
 *, ::before, ::after {
   --margin: var(--ls-0p);
@@ -1846,8 +1884,8 @@ figcaption {
   background-color: var(--background-color); }
 
 body {
-  --color: var(--cool-gray-900);
-  --background-color: var(--cool-gray-50); }
+  --color: var(--interface-gray-900);
+  --background-color: var(--interface-gray-0); }
 
 hr {
   border: 0;
@@ -1856,7 +1894,7 @@ hr {
   --margin-vertical: var(--ls-100p);
   --margin-horizontal: var(--ls-75p);
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--cool-gray-400) 25%, var(--cool-gray-400) 75%, transparent); }
+  background: linear-gradient(to right, transparent, var(--interface-gray-400) 25%, var(--interface-gray-400) 75%, transparent); }
 
 .hidden {
   display: none !important; }
@@ -1954,17 +1992,17 @@ button, .button, a.button {
   --padding-horizontal: var(--ls-75p);
   --padding-vertical: var(--ls-50p);
   --border-radius: var(--ls-25p);
-  --background-color: var(--cool-gray-500);
-  --secondary-background-color: var(--cool-gray-600);
-  --tertiary-background-color: var(--cool-gray-200);
-  --color: var(--cool-gray-50);
-  --secondary-color: var(--cool-gray-900);
+  --background-color: var(--interface-gray-500);
+  --secondary-background-color: var(--interface-gray-600);
+  --tertiary-background-color: var(--interface-gray-200);
+  --color: var(--interface-gray-50);
+  --secondary-color: var(--interface-gray-900);
   transition: all 0.3s ease; }
   button:hover, button:focus, .button:hover, .button:focus, a.button:hover, a.button:focus {
     border: 0; }
   button[disabled], .button[disabled], a.button[disabled] {
-    --background-color: var(--cool-gray-300);
-    --secondary-background-color: var(--cool-gray-200); }
+    --background-color: var(--interface-gray-200);
+    --secondary-background-color: var(--interface-gray-300); }
   button.small, .button.small, a.button.small {
     --padding-horizontal: var(--ls-50p);
     --padding-vertical: var(--ls-25p); }
@@ -2001,26 +2039,26 @@ button, .button, a.button {
   button.outline, .button.outline, a.button.outline {
     border: 1px solid var(--background-color);
     background: transparent;
-    --color: var(--cool-gray-800); }
+    --color: var(--interface-gray-800); }
     button.outline[disabled], .button.outline[disabled], a.button.outline[disabled] {
-      --color: var(--cool-gray-700); }
+      --color: var(--interface-gray-700); }
     button.outline:hover, button.outline:focus, .button.outline:hover, .button.outline:focus, a.button.outline:hover, a.button.outline:focus {
       background: var(--background-color);
-      --color: var(--cool-gray-50); }
+      --color: var(--interface-gray-50); }
       button.outline:hover[disabled], button.outline:focus[disabled], .button.outline:hover[disabled], .button.outline:focus[disabled], a.button.outline:hover[disabled], a.button.outline:focus[disabled] {
         background: transparent;
-        --color: var(--cool-gray-700); }
+        --color: var(--interface-gray-700); }
   button.ghost, .button.ghost, a.button.ghost {
     background: transparent;
-    --color: var(--cool-gray-800); }
+    --color: var(--interface-gray-800); }
     button.ghost[disabled], .button.ghost[disabled], a.button.ghost[disabled] {
-      --color: var(--cool-gray-700); }
+      --color: var(--interface-gray-700); }
     button.ghost:hover, button.ghost:focus, .button.ghost:hover, .button.ghost:focus, a.button.ghost:hover, a.button.ghost:focus {
       background: var(--background-color);
-      --color: var(--cool-gray-50); }
+      --color: var(--interface-gray-50); }
       button.ghost:hover[disabled], button.ghost:focus[disabled], .button.ghost:hover[disabled], .button.ghost:focus[disabled], a.button.ghost:hover[disabled], a.button.ghost:focus[disabled] {
         background: transparent;
-        --color: var(--cool-gray-700); }
+        --color: var(--interface-gray-700); }
   button.flat, .button.flat, a.button.flat {
     --box-shadow: var(--shadow-0); }
     button.flat:hover, button.flat:focus, .button.flat:hover, .button.flat:focus, a.button.flat:hover, a.button.flat:focus {
@@ -2034,8 +2072,8 @@ button, .button, a.button {
     --secondary-color: var(--danger-red-900);
     --color: var(--danger-red-50); }
     button.danger[disabled], .button.danger[disabled], a.button.danger[disabled] {
-      --background-color: var(--danger-red-300);
-      --secondary-background-color: var(--danger-red-200); }
+      --background-color: var(--danger-red-200);
+      --secondary-background-color: var(--danger-red-300); }
     button.danger.ghost, button.danger.outline, .button.danger.ghost, .button.danger.outline, a.button.danger.ghost, a.button.danger.outline {
       --color: var(--danger-red-800); }
       button.danger.ghost[disabled], button.danger.outline[disabled], .button.danger.ghost[disabled], .button.danger.outline[disabled], a.button.danger.ghost[disabled], a.button.danger.outline[disabled] {
@@ -2051,8 +2089,8 @@ button, .button, a.button {
     --secondary-color: var(--success-green-900);
     --color: var(--success-green-50); }
     button.success[disabled], .button.success[disabled], a.button.success[disabled] {
-      --background-color: var(--success-green-300);
-      --secondary-background-color: var(--success-green-200); }
+      --background-color: var(--success-green-200);
+      --secondary-background-color: var(--success-green-300); }
     button.success.ghost, button.success.outline, .button.success.ghost, .button.success.outline, a.button.success.ghost, a.button.success.outline {
       --color: var(--success-green-800); }
       button.success.ghost[disabled], button.success.outline[disabled], .button.success.ghost[disabled], .button.success.outline[disabled], a.button.success.ghost[disabled], a.button.success.outline[disabled] {
@@ -2068,8 +2106,8 @@ button, .button, a.button {
     --secondary-color: var(--warning-yellow-900);
     --color: var(--warning-yellow-50); }
     button.warning[disabled], .button.warning[disabled], a.button.warning[disabled] {
-      --background-color: var(--warning-yellow-300);
-      --secondary-background-color: var(--warning-yellow-200); }
+      --background-color: var(--warning-yellow-200);
+      --secondary-background-color: var(--warning-yellow-300); }
     button.warning.ghost, button.warning.outline, .button.warning.ghost, .button.warning.outline, a.button.warning.ghost, a.button.warning.outline {
       --color: var(--warning-yellow-800); }
       button.warning.ghost[disabled], button.warning.outline[disabled], .button.warning.ghost[disabled], .button.warning.outline[disabled], a.button.warning.ghost[disabled], a.button.warning.outline[disabled] {
@@ -2085,8 +2123,8 @@ button, .button, a.button {
     --secondary-color: var(--focus-blue-900);
     --color: var(--focus-blue-50); }
     button.primary[disabled], .button.primary[disabled], a.button.primary[disabled] {
-      --background-color: var(--focus-blue-300);
-      --secondary-background-color: var(--focus-blue-200); }
+      --background-color: var(--focus-blue-200);
+      --secondary-background-color: var(--focus-blue-300); }
     button.primary.ghost, button.primary.outline, .button.primary.ghost, .button.primary.outline, a.button.primary.ghost, a.button.primary.outline {
       --color: var(--focus-blue-800); }
       button.primary.ghost[disabled], button.primary.outline[disabled], .button.primary.ghost[disabled], .button.primary.outline[disabled], a.button.primary.ghost[disabled], a.button.primary.outline[disabled] {
@@ -2102,8 +2140,8 @@ button, .button, a.button {
     --secondary-color: var(--deep-purple-900);
     --color: var(--deep-purple-50); }
     button.secondary[disabled], .button.secondary[disabled], a.button.secondary[disabled] {
-      --background-color: var(--deep-purple-300);
-      --secondary-background-color: var(--deep-purple-200); }
+      --background-color: var(--deep-purple-200);
+      --secondary-background-color: var(--deep-purple-300); }
     button.secondary.ghost, button.secondary.outline, .button.secondary.ghost, .button.secondary.outline, a.button.secondary.ghost, a.button.secondary.outline {
       --color: var(--deep-purple-800); }
       button.secondary.ghost[disabled], button.secondary.outline[disabled], .button.secondary.ghost[disabled], .button.secondary.outline[disabled], a.button.secondary.ghost[disabled], a.button.secondary.outline[disabled] {
@@ -2138,7 +2176,7 @@ button, .button, a.button {
   .dropdown[open] > summary > svg {
     transform: scale(-0.66667, -0.66667); }
   .dropdown .dropdown-content {
-    --background-color: var(--cool-gray-50);
+    --background-color: var(--interface-gray-0);
     text-align: center;
     position: absolute;
     top: var(--ls-200p);
@@ -2196,7 +2234,7 @@ li {
   --padding-horizontal: var(--ls-50p); }
 
 ul.circle li::before, ul.disc li::before, ul.square li::before, ul.triangle li::before, ul.checkbox li::before {
-  --color: var(--cool-gray-400);
+  --color: var(--interface-gray-400);
   display: inline-block;
   font-size: 1.5rem;
   line-height: 0.75;
@@ -2276,9 +2314,9 @@ ol.upper-roman li::before {
   position: sticky;
   grid-area: header; }
   .layout-header.border-top {
-    border-top: 1px solid var(--cool-gray-200); }
+    border-top: 1px solid var(--interface-gray-200); }
   .layout-header.border-bottom {
-    border-bottom: 1px solid var(--cool-gray-200); }
+    border-bottom: 1px solid var(--interface-gray-200); }
   .layout-header.shadow {
     --box-shadow: var(--shadow-100); }
 
@@ -2291,9 +2329,9 @@ ol.upper-roman li::before {
   z-index: 100;
   transition: all 0.3s ease; }
   .layout-sidebar.border-left {
-    border-left: 1px solid var(--cool-gray-200); }
+    border-left: 1px solid var(--interface-gray-200); }
   .layout-sidebar.border-right {
-    border-right: 1px solid var(--cool-gray-200); }
+    border-right: 1px solid var(--interface-gray-200); }
 
 .layout-content {
   grid-area: content;
@@ -2308,16 +2346,16 @@ ol.upper-roman li::before {
   z-index: 99;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  --background-color: var(--cool-gray-50);
+  --background-color: var(--interface-gray-50);
   --box-shadow: var(--shadow-300);
   transition: all 0.3s ease;
-  --color: var(--cool-gray-900); }
+  --color: var(--interface-gray-900); }
   .layout-sidebar-tab:hover, .layout-sidebar-tab:focus {
     --box-shadow: var(--shadow-500); }
 
 .layout-sidebar-overlay {
   z-index: 98;
-  --background-color: var(--cool-gray-800);
+  --background-color: var(--interface-gray-800);
   opacity: 0.24;
   position: fixed;
   top: 0;
@@ -2571,7 +2609,7 @@ ol.upper-roman li::before {
   background-position: center; }
 
 .card-section:not(:first-child) {
-  border-top: 1px solid var(--cool-gray-200); }
+  border-top: 1px solid var(--interface-gray-200); }
 
 .card-media-section + .card-section {
   border-top: 0; }
@@ -2619,7 +2657,7 @@ ol.upper-roman li::before {
           border-bottom: 3px solid var(--focus-blue-500); }
 
 .menu-item, a.menu-item {
-  --color: var(--cool-gray-600);
+  --color: var(--interface-gray-600);
   cursor: pointer;
   transition: all 0.3s ease;
   --padding-vertical: var(--ls-75p);
@@ -2650,7 +2688,7 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   width: calc(100% - 2 * var(--margin-horizontal));
-  border: 1px solid var(--cool-gray-100);
+  border: 1px solid var(--interface-gray-100);
   --border-radius: var(--ls-50p);
   --margin: var(--ls-75p); }
   table caption {
@@ -2659,9 +2697,9 @@ table {
   table thead, table tbody {
     --border-radius: var(--ls-50p); }
   table thead th {
-    border-bottom: 1px solid var(--cool-gray-100); }
+    border-bottom: 1px solid var(--interface-gray-100); }
   table tr:nth-of-type(2n-1) > td {
-    --background-color: var(--cool-gray-100); }
+    --background-color: var(--interface-gray-100); }
   table th, table td {
     --padding-horizontal: var(--ls-50p);
     --padding-vertical: var(--ls-50p); }
@@ -2670,7 +2708,7 @@ table {
     --font-weight: 500;
     --font-size: var(--ts-50p);
     text-transform: uppercase;
-    --color: var(--cool-gray-700);
+    --color: var(--interface-gray-700);
     --padding-vertical: var(--ls-75p); }
   table th:first-child, table td:first-child {
     padding-left: var(--ls-75p); }
@@ -2685,6 +2723,6 @@ table {
   table tbody tr:last-child *:last-child {
     border-bottom-right-radius: var(--ls-50p); }
   table tbody th {
-    border-right: 1px solid var(--cool-gray-100); }
+    border-right: 1px solid var(--interface-gray-100); }
   table tr:hover > td, table tr:focus > td {
     --background-color: var(--focus-blue-100); }

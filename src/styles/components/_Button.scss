@@ -6,8 +6,8 @@
     --secondary-color: var(--#{$color-name}-900);
     --color: var(--#{$color-name}-50);
     &[disabled] {
-      --background-color: var(--#{$color-name}-300);
-      --secondary-background-color: var(--#{$color-name}-200);
+      --background-color: var(--#{$color-name}-200);
+      --secondary-background-color: var(--#{$color-name}-300);
     }
     &.ghost, &.outline {
       --color: var(--#{$color-name}-800);
@@ -37,14 +37,14 @@ button, .button, a.button {
   --padding-vertical: var(--ls-50p);
 
   --border-radius: var(--ls-25p);
-  --background-color: var(--cool-gray-500);
-  --secondary-background-color: var(--cool-gray-600);
-  --tertiary-background-color: var(--cool-gray-200);
-  --color: var(--cool-gray-50);
-  --secondary-color: var(--cool-gray-900);
+  --background-color: var(--interface-gray-500);
+  --secondary-background-color: var(--interface-gray-600);
+  --tertiary-background-color: var(--interface-gray-200);
+  --color: var(--interface-gray-50);
+  --secondary-color: var(--interface-gray-900);
   &[disabled] {
-    --background-color: var(--cool-gray-300);
-    --secondary-background-color: var(--cool-gray-200);
+    --background-color: var(--interface-gray-200);
+    --secondary-background-color: var(--interface-gray-300);
   }
 
   transition: all 0.3s ease;
@@ -106,31 +106,31 @@ button, .button, a.button {
   &.outline {
     border: 1px solid var(--background-color);
     background: transparent;
-    --color: var(--cool-gray-800);
+    --color: var(--interface-gray-800);
     &[disabled]{
-      --color: var(--cool-gray-700);
+      --color: var(--interface-gray-700);
     }
     &:hover, &:focus {
       background: var(--background-color);
-      --color: var(--cool-gray-50); 
+      --color: var(--interface-gray-50); 
       &[disabled]{
         background: transparent;
-        --color: var(--cool-gray-700);
+        --color: var(--interface-gray-700);
       }
     }
   }
   &.ghost {
     background: transparent;
-    --color: var(--cool-gray-800);
+    --color: var(--interface-gray-800);
     &[disabled]{
-      --color: var(--cool-gray-700);
+      --color: var(--interface-gray-700);
     }
     &:hover, &:focus {
       background: var(--background-color);
-      --color: var(--cool-gray-50);
+      --color: var(--interface-gray-50);
       &[disabled]{
         background: transparent;
-        --color: var(--cool-gray-700);
+        --color: var(--interface-gray-700);
       }
     }
   }
