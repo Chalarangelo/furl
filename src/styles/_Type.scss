@@ -8,13 +8,19 @@
 
 // Apply a sensible line length
 p, li, td {
-  max-width: calc(60ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal));
+  &.constrained {
+    max-width: calc(60ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal));
+  }
 }
 blockquote {
-  max-width: calc(49.5ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal));
+  &.constrained {
+    max-width: calc(49.5ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal));
+  }
 }
 h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
-  max-width: 80ch;
+  &.constrained {
+    max-width: 80ch;
+  }
 }
 
 // Define a class for elements using the secondary font
@@ -101,7 +107,7 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   font-family: var(--font-b), var(--font-a), var(--system-font-stack);
   --margin: var(--ls-75p);
   & small {
-    --margin-vertical: calc(var(--ls-0p) - var(--ls-25p));
+    --margin-vertical: calc(var(--ls-0p) - 0.0625em);
     letter-spacing: -0.05em;
     display: block;
     font-family: var(--font-a), var(--system-font-stack);

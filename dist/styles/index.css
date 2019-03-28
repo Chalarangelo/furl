@@ -1714,13 +1714,13 @@ a, area, button, input, label, select, summary, textarea, [tabindex] {
   font-size: var(--font-size);
   font-weight: var(--font-weight); }
 
-p, li, td {
+p.constrained, li.constrained, td.constrained {
   max-width: calc(60ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal)); }
 
-blockquote {
+blockquote.constrained {
   max-width: calc(49.5ch + 2 * var(--padding-horizontal) + 2 * var(--margin-horizontal)); }
 
-h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
+h1.constrained, h2.constrained, h3.constrained, h4.constrained, h5.constrained, h6.constrained, .title1.constrained, .title2.constrained, .title3.constrained, .title4.constrained, .title5.constrained, .title6.constrained {
   max-width: 80ch; }
 
 .font-B {
@@ -1790,7 +1790,7 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   font-family: var(--font-b), var(--font-a), var(--system-font-stack);
   --margin: var(--ls-75p); }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .title1 small, .title2 small, .title3 small, .title4 small, .title5 small, .title6 small {
-    --margin-vertical: calc(var(--ls-0p) - var(--ls-25p));
+    --margin-vertical: calc(var(--ls-0p) - 0.0625em);
     letter-spacing: -0.05em;
     display: block;
     font-family: var(--font-a), var(--system-font-stack); }

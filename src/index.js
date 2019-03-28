@@ -18,17 +18,17 @@ ReactDOM.render(<Layout>
   <Header outline="shadow">
     <Grid>
       <Row>
-        <Col size={[0,32,48,64]}>&nbsp;</Col>
-        <Col size={48}>
+        <Col size={['0px', '32px', '48px', '64px']}>&nbsp;</Col>
+        <Col size={'48px'}>
           <Image width={40} height={40} src={process.env.PUBLIC_URL + '/logo.png'} className="margin-v-ls-25p"/>
         </Col>
         <Col size={'fluid'} ><h2 className="margin-v-ls-0p">Furl</h2></Col>
-        <Col size={128}>
+        <Col size={'128px'}>
           <Menu type="horizontal">
             <MenuItem href="https://github.com/Chalarangelo/react-component-library" openIn="external">Github</MenuItem>
           </Menu>
         </Col>
-        <Col size={[0, 32, 48, 64]}>&nbsp;</Col>
+        <Col size={['0px', '32px', '48px', '64px']}>&nbsp;</Col>
       </Row>
     </Grid>
     </Header>
@@ -59,6 +59,14 @@ ReactDOM.render(<Layout>
     </Menu>
     </Sidebar>
   <Content>
-    <Type></Type>
+    <Grid>
+      <Row>
+        <Col size={["var(--ls-25p)", "var(--ls-70p)", "var(--ls-150p)", "var(--ls-200p)"]}>&nbsp;</Col>
+        <Col size="fluid">
+          <Type></Type>
+        </Col>
+        <Col size={["var(--ls-25p)", "var(--ls-70p)", "var(--ls-150p)", "var(--ls-200p)"]}>&nbsp;</Col>
+      </Row>
+    </Grid>
   </Content>
 </Layout>, document.getElementById("root"));
