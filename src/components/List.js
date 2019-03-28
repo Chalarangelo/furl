@@ -1,4 +1,5 @@
 import React from "react";
+import {normalizeChildren} from "../utilities/utils";
 import ListItem from "./ListItem";
 
 const List = ({ 
@@ -8,7 +9,7 @@ const List = ({
   className, 
   children
 }) => {
-  if (!Array.isArray(children)) children = [children];
+  normalizeChildren(children);
   const listItems = children.filter(item => ListItem.name == item.type.name);
   let classNames = [className, listStyle !== 'none' ? listStyle : ''];
   if (ordered)

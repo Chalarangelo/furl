@@ -1,4 +1,5 @@
 import React from "react";
+import {normalizeChildren} from "../utilities/utils";
 
 const TableCaption = ({ id, className, children}) => (
   <caption id={id !== undefined ? id : false} className={className}>{children}</caption>
@@ -32,7 +33,7 @@ const Table = ({
   className,
   children
 }) => {
-  if (!Array.isArray(children)) children = [children];
+  normalizeChildren(children);
   const tableItems = children.filter(item => TableHead.name == item.type.name || TableBody.name == item.type.name || TableCaption.name == item.type.name);
   let classNames = [className];
   return <table className={classNames.join(' ').trim()} id={id !== undefined ? id : false}>

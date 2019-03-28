@@ -1,4 +1,5 @@
 import React from "react";
+import {normalizeChildren} from "../utilities/utils";
 import Content from "./Content";
 import { Sidebar, SidebarTab } from "./Sidebar";
 import Header from "./Header";
@@ -12,7 +13,7 @@ const Layout = ({
   className,
   children
 }) => {
-  if (!Array.isArray(children)) children = children;
+  normalizeChildren(children);
   const headerEl = children.filter(item => Header.name == item.type.name)[0];
   const sidebarEl = children.filter(item => Sidebar.name == item.type.name)[0];
   const contentEl = children.filter(item => Content.name == item.type.name)[0];
