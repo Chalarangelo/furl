@@ -13,10 +13,10 @@ const Layout = ({
   className,
   children
 }) => {
-  normalizeChildren(children);
-  const headerEl = children.filter(item => Header.name == item.type.name)[0];
-  const sidebarEl = children.filter(item => Sidebar.name == item.type.name)[0];
-  const contentEl = children.filter(item => Content.name == item.type.name)[0];
+  children = normalizeChildren(children);
+  const headerEl = children.filter(item => Header.name === item.type.name)[0];
+  const sidebarEl = children.filter(item => Sidebar.name === item.type.name)[0];
+  const contentEl = children.filter(item => Content.name === item.type.name)[0];
   const layoutName = `layout-${header}-${sidebar}-${contentSize.map(v => `${v}`.replace('.','')).join('-')}`;
   const [sidebarVisible, setSidebarVisible] = React.useState(false);
   return (

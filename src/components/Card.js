@@ -8,8 +8,8 @@ const Card = ({
   className,
   children,
 }) => {
-  normalizeChildren(children);
-  const sections = children.filter(item => CardSection.name == item.type.name);
+  children = normalizeChildren(children);
+  const sections = children.filter(item => CardSection.name === item.type.name);
   return (<div className={[className, "card"].join(' ').trim()}
     id={id !== undefined ? id : false} style={{width: width}}>
     {sections}

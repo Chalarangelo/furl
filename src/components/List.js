@@ -9,7 +9,7 @@ const List = ({
   className, 
   children
 }) => {
-  normalizeChildren(children);
+  children = normalizeChildren(children);
   const listItems = children.filter(item => ListItem.name == item.type.name);
   let classNames = [className, listStyle !== 'none' ? listStyle : ''];
   if (ordered)

@@ -33,7 +33,7 @@ const Table = ({
   className,
   children
 }) => {
-  normalizeChildren(children);
+  children = normalizeChildren(children);
   const tableItems = children.filter(item => TableHead.name == item.type.name || TableBody.name == item.type.name || TableCaption.name == item.type.name);
   let classNames = [className];
   return <table className={classNames.join(' ').trim()} id={id !== undefined ? id : false}>

@@ -12,7 +12,7 @@ const Column = ({
   else sizes = size;
 
   style = sizes.reduce((acc,v,i) => {
-    if (+v >= 1 && +v <= 12 || v == 'fluid') {
+    if ( (+v >= 1 && +v <= 12) || (v === 'fluid') ) {
       return acc;
     }
     else if (+v < 1) {
@@ -45,7 +45,7 @@ const Column = ({
     }
   }, '');
 
-  classNames = sizes.map((v, i) => `grid-col-${sizeNames[i]}-${(+v >= 1 && +v <= 12 || v == 'fluid') ? `${v}` : (+v < 1) ? `c${`${v}`.replace(/\(|\)|\./g, '')}` : `p${`${v}`.replace(/\(|\)|\./g, '')}`}`);
+  classNames = sizes.map((v, i) => `grid-col-${sizeNames[i]}-${( (+v >= 1 && +v <= 12) || (v === 'fluid') ) ? `${v}` : (+v < 1) ? `c${`${v}`.replace(/\(|\)|\./g, '')}` : `p${`${v}`.replace(/\(|\)|\./g, '')}`}`);
   if(style.length > 0) 
     return (<React.Fragment>
       <style>{style}</style>

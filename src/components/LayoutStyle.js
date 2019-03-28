@@ -1,15 +1,15 @@
 const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
   let gridAreas = '';
   let gridColumns = ['','','',''];
-  if (header == 'top') {
-    if (sidebar == 'left') {
+  if (header === 'top') {
+    if (sidebar === 'left') {
       gridAreas = '"header header"\n". content"';
       gridColumns[0] = `${100 - contentSize[0] * 100}% ${contentSize[0] * 100}%`;
       gridColumns[1] = `${100 - contentSize[1] * 100}% ${contentSize[1] * 100}%`;
       gridColumns[2] = `${100 - contentSize[2] * 100}% ${contentSize[2] * 100}%`;
       gridColumns[3] = `${100 - contentSize[3] * 100}% ${contentSize[3] * 100}%`;
     }
-    else if (sidebar == 'right') {
+    else if (sidebar === 'right') {
       gridAreas = '"header header"\n"content ."';
       gridColumns[0] = `${contentSize[0] * 100}% ${100 - contentSize[0] * 100}%`;
       gridColumns[1] = `${contentSize[1] * 100}% ${100 - contentSize[1] * 100}%`;
@@ -24,15 +24,15 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
       gridColumns[3] = `100%`;
     }
   }
-  else if (header == 'bottom') {
-    if (sidebar == 'left') {
+  else if (header === 'bottom') {
+    if (sidebar === 'left') {
       gridAreas = '". content"\n"header header"';
       gridColumns[0] = `${100 - contentSize[0] * 100}% ${contentSize[0] * 100}%`;
       gridColumns[1] = `${100 - contentSize[1] * 100}% ${contentSize[1] * 100}%`;
       gridColumns[2] = `${100 - contentSize[2] * 100}% ${contentSize[2] * 100}%`;
       gridColumns[3] = `${100 - contentSize[3] * 100}% ${contentSize[3] * 100}%`;
     }
-    else if (sidebar == 'right') {
+    else if (sidebar === 'right') {
       gridAreas = '"content ."\n"header header"';
       gridColumns[0] = `${contentSize[0] * 100}% ${100 - contentSize[0] * 100}%`;
       gridColumns[1] = `${contentSize[1] * 100}% ${100 - contentSize[1] * 100}%`;
@@ -48,14 +48,14 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
     }
   }
   else {
-    if (sidebar == 'left') {
+    if (sidebar === 'left') {
       gridAreas = '". content"';
       gridColumns[0] = `${100 - contentSize[0] * 100}% ${contentSize[0] * 100}%`;
       gridColumns[1] = `${100 - contentSize[1] * 100}% ${contentSize[1] * 100}%`;
       gridColumns[2] = `${100 - contentSize[2] * 100}% ${contentSize[2] * 100}%`;
       gridColumns[3] = `${100 - contentSize[3] * 100}% ${contentSize[3] * 100}%`;
     }
-    else if (sidebar == 'right') {
+    else if (sidebar === 'right') {
       gridAreas = '"content ."';
       gridColumns[0] = `${contentSize[0] * 100}% ${100 - contentSize[0] * 100}%`;
       gridColumns[1] = `${contentSize[1] * 100}% ${100 - contentSize[1] * 100}%`;
@@ -80,27 +80,27 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
     grid-template-areas: ${gridAreas};
     grid-template-columns: ${gridColumns[0]};
   }
-  ${header == 'none' ? '' :
+  ${header === 'none' ? '' :
     `.${layoutName} .layout-header {
-      ${header == 'top' ? 'top: 0;' : 'bottom: 0;'}
+      ${header === 'top' ? 'top: 0;' : 'bottom: 0;'}
     }`
   }
-  ${sidebar == 'none' ? '' :
+  ${sidebar === 'none' ? '' :
     `.${layoutName} .layout-sidebar {
-      ${sidebarWidth[0] == 0 ? 
-        `${sidebar == 'left' ? 'left: -100%;' : 'right: -100%;'}
+      ${sidebarWidth[0] === 0 ? 
+        `${sidebar === 'left' ? 'left: -100%;' : 'right: -100%;'}
         width: calc(100% - var(--ls-250p));`:
-        `${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+        `${sidebar === 'left' ? 'left: 0;' : 'right: 0;'}
         width: ${sidebarWidth[0]}%;`
       }
-      ${header == 'none' ? 'min-height: 100vh;' : ''}
-      ${header == 'top' ? 'top: var(--ls-250p);' : header == 'bottom' ? 'bottom: var(--ls-250p);' : ''}
+      ${header === 'none' ? 'min-height: 100vh;' : ''}
+      ${header === 'top' ? 'top: var(--ls-250p);' : header === 'bottom' ? 'bottom: var(--ls-250p);' : ''}
     }`
   }
-  ${sidebar !== 'none' && sidebarWidth[0] == 0 ? 
+  ${sidebar !== 'none' && sidebarWidth[0] === 0 ? 
     `.${layoutName} .layout-sidebar-tab {
-      ${header == 'top' ? 'top: var(--ls-250p);' : header == 'bottom' ? 'bottom: var(--ls-250p);' : ''}
-      ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+      ${header === 'top' ? 'top: var(--ls-250p);' : header === 'bottom' ? 'bottom: var(--ls-250p);' : ''}
+      ${sidebar === 'left' ? 'left: 0;' : 'right: 0;'}
     }`:
     `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
       display: none;
@@ -111,29 +111,29 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
     `
   }
   .${layoutName}.sidebar-visible .layout-sidebar {
-    ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+    ${sidebar === 'left' ? 'left: 0;' : 'right: 0;'}
   }
   .${layoutName}.sidebar-visible .layout-sidebar-tab {
-    ${sidebar == 'left' ? 'left: calc(100% - var(--ls-250p));' : 'right: calc(100% - var(--ls-250p));'}
+    ${sidebar === 'left' ? 'left: calc(100% - var(--ls-250p));' : 'right: calc(100% - var(--ls-250p));'}
   }
   @media screen and (min-width: 600px) {
     .${layoutName} {
       grid-template-columns: ${gridColumns[1]};
     }
-    ${sidebar == 'none' ? '' :
+    ${sidebar === 'none' ? '' :
       `.${layoutName} .layout-sidebar {
-      ${sidebarWidth[1] == 0 ?
-        `${sidebar == 'left' ? 'left: -100%;' : 'right: -100%;'}
+      ${sidebarWidth[1] === 0 ?
+        `${sidebar === 'left' ? 'left: -100%;' : 'right: -100%;'}
         width: calc(100% - var(--ls-250p));`:
-        `${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+        `${sidebar === 'left' ? 'left: 0;' : 'right: 0;'}
         width: ${sidebarWidth[1]}%;`
       }
     }`
     }
-    ${sidebar !== 'none' && sidebarWidth[1] == 0 ?
+    ${sidebar !== 'none' && sidebarWidth[1] === 0 ?
       `.${layoutName} .layout-sidebar-tab {
-        ${header == 'top' ? 'top: var(--ls-250p);' : header == 'bottom' ? 'bottom: var(--ls-250p);' : ''}
-        ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+        ${header === 'top' ? 'top: var(--ls-250p);' : header === 'bottom' ? 'bottom: var(--ls-250p);' : ''}
+        ${sidebar === 'left' ? 'left: 0;' : 'right: 0;'}
       }`:
       `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
         display: none;
@@ -148,20 +148,20 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
     .${layoutName} {
       grid-template-columns: ${gridColumns[2]};
     }
-    ${sidebar == 'none' ? '' :
+    ${sidebar === 'none' ? '' :
       `.${layoutName} .layout-sidebar {
-      ${sidebarWidth[2] == 0 ?
-        `${sidebar == 'left' ? 'left: -100%;' : 'right: -100%;'}
+      ${sidebarWidth[2] === 0 ?
+        `${sidebar === 'left' ? 'left: -100%;' : 'right: -100%;'}
         width: calc(100% - var(--ls-250p))%;`:
-        `${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+        `${sidebar === 'left' ? 'left: 0;' : 'right: 0;'}
         width: ${sidebarWidth[2]}%;`
       }
     }`
     }
-    ${sidebar !== 'none' && sidebarWidth[2] == 0 ?
+    ${sidebar !== 'none' && sidebarWidth[2] === 0 ?
     `.${layoutName} .layout-sidebar-tab {
-      ${header == 'top' ? 'top: var(--ls-250p);' : header == 'bottom' ? 'bottom: var(--ls-250p);' : ''}
-      ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+      ${header === 'top' ? 'top: var(--ls-250p);' : header === 'bottom' ? 'bottom: var(--ls-250p);' : ''}
+      ${sidebar === 'left' ? 'left: 0;' : 'right: 0;'}
     }`:
     `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
       display: none;
@@ -176,20 +176,20 @@ const LayoutStyle = (layoutName, header, sidebar, contentSize) => {
     .${layoutName} {
       grid-template-columns: ${gridColumns[3]};
     }
-    ${sidebar == 'none' ? '' :
+    ${sidebar === 'none' ? '' :
     `.${layoutName} .layout-sidebar {
-      ${sidebarWidth[3] == 0 ?
-        `${sidebar == 'left' ? 'left: -100%;' : 'right: -100%;'}
+      ${sidebarWidth[3] === 0 ?
+        `${sidebar === 'left' ? 'left: -100%;' : 'right: -100%;'}
         width: calc(100% - var(--ls-250p))%;`:
-        `${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+        `${sidebar === 'left' ? 'left: 0;' : 'right: 0;'}
         width: ${sidebarWidth[3]}%;`
       }
     }`
     }
-    ${sidebar !== 'none' && sidebarWidth[3] == 0 ?
+    ${sidebar !== 'none' && sidebarWidth[3] === 0 ?
      `.${layoutName} .layout-sidebar-tab {
-      ${header == 'top' ? 'top: var(--ls-250p);' : header == 'bottom' ? 'bottom: var(--ls-250p);' : ''}
-      ${sidebar == 'left' ? 'left: 0;' : 'right: 0;'}
+      ${header === 'top' ? 'top: var(--ls-250p);' : header === 'bottom' ? 'bottom: var(--ls-250p);' : ''}
+      ${sidebar === 'left' ? 'left: 0;' : 'right: 0;'}
     }`:
     `.${layoutName} .layout-sidebar-tab, .${layoutName} .layout-sidebar-overlay {
       display: none;
