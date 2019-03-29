@@ -2392,14 +2392,14 @@ ol.upper-roman li::before {
 
 .grid-col-sm-fluid {
   --col-sm-size: 100%; }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 600px) and (max-width: 899px) {
     .grid-col-sm-fluid {
       flex-grow: 1;
       flex-basis: 0; } }
 
 .grid-col-md-fluid {
   --col-md-size: 100%; }
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: 900px) and (max-width: 1199px) {
     .grid-col-md-fluid {
       flex-grow: 1;
       flex-basis: 0; } }

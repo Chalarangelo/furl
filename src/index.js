@@ -61,11 +61,11 @@ ReactDOM.render(<Layout>
   <Content>
     <Grid>
       <Row>
-        <Col size={["var(--ls-25p)", "var(--ls-70p)", "var(--ls-150p)", "var(--ls-200p)"]}>&nbsp;</Col>
-        <Col size="fluid">
+        <Col size={["var(--ls-25p)", "var(--ls-75p)", "fluid", "fluid"]}>&nbsp;</Col>
+        <Col size={["fluid", "fluid", "var(--ls-900p)", "var(--ls-900p)"]}>
           <Type></Type>
         </Col>
-        <Col size={["var(--ls-25p)", "var(--ls-70p)", "var(--ls-150p)", "var(--ls-200p)"]}>&nbsp;</Col>
+        <Col size={["var(--ls-25p)", "var(--ls-70p)", "fluid", "fluid"]}>&nbsp;</Col>
       </Row>
     </Grid>
   </Content>
