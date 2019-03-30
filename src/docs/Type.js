@@ -3,10 +3,10 @@ import Hyperlink from "../components/Hyperlink";
 
 const Type = props => (
   <div>
-    <h1>Typography</h1>
+    <h2>Typography</h2>
     <p>Using a typographic scale and great fonts can help communicate content more efficiently, while making design easier.</p>
     <p>Typography presets are fully customizable via the use of variables. You can easily alter the fonts used and the type scale's presets as desired.</p>
-    <h2>Fonts</h2>
+    <h3>Fonts</h3>
     <p>Furl relies upon a 3-font system to provide a great user experience, well-tailored for any type of device and content. Apart from customizable fonts, a native font stack is used as a fallback.</p>
     <Table>
       <TableCaption>Font variables</TableCaption>
@@ -45,7 +45,7 @@ const Type = props => (
     <pre>&lt;link
   href=&quot;https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:400,400i,500,500i&quot;
   rel=&quot;stylesheet&quot;&gt;</pre>
-    <h2>Type Scale</h2>
+    <h3>Type Scale</h3>
     <p>Furl uses a 11-step typographic scale with handcrafted defaults that work for any type of content.</p>
     <Table>
       <TableCaption>Type scale variables</TableCaption>
