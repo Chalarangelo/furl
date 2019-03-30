@@ -3,120 +3,129 @@ import Hyperlink from "../components/Hyperlink";
 
 const Type = props => (
   <div>
-    <h1>Title level 1<small>Subtitle level 1</small></h1>
-    <h2>Title level 2<small>Subtitle level 2</small></h2>
-    <h3>Title level 3<small>Subtitle level 3</small></h3>
-    <h4>Title level 4<small>Subtitle level 4</small></h4>
-    <h5>Title level 5<small>Subtitle level 5</small></h5>
-    <h6>Title level 6<small>Subtitle level 6</small></h6>
-    <h2>Title level 2 <small>Subtitle level 2</small></h2>
-    <p>Lorem ipsum <strong>dolor sit amet</strong>, consectetur adipiscing elit. Sed ultrices sem ante, porta porta lorem porttitor in. Curabitur sagittis accumsan lorem, a consequat dui sodales pulvinar. Morbi a venenatis massa, non congue risus. Ut tellus nunc, <em>ultrices vitae ultricies</em> a, viverra eu libero. In quis sapien in felis tempus tincidunt sit amet vel augue. Integer sapien mi, pellentesque pellentesque consequat in, rhoncus id risus. In eu tortor eu orci malesuada viverra ac vitae sem. Pellentesque nec venenatis urna. Fusce et nisi volutpat, accumsan justo at, malesuada nisi. <Hyperlink href="https://nonono.com">Quisque</Hyperlink> tincidunt arcu eget bibendum faucibus. Aliquam massa metus, bibendum eget diam quis, facilisis <code>ultricies libero</code>. Aenean laoreet nulla ut varius laoreet. Fusce vel tortor vitae lacus feugiat sodales sit <kbd>amet</kbd> eu enim. Donec rhoncus nunc faucibus nunc eleifend, non tincidunt dolor suscipit. Duis efficitur enim ut velit accumsan mollis vel non turpis. Nunc tempus augue nibh. </p>
-    <pre>
-      Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed ultrices sem ante, porta porta lorem porttitor in.
-    </pre>
-    <hr/>
-    <blockquote cite="Ronald Testerman">
-      Integer sapien mi, pellentesque pellentesque consequat in, rhoncus id risus. In eu tortor eu orci malesuada viverra ac vitae sem.
-    </blockquote>
-    <ul>
-      <li>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed ultrices sem ante, porta porta lorem porttitor in. </li>
-      <li>Fusce vel tortor vitae lacus feugiat sodales sit <kbd>amet</kbd> eu enim. Donec rhoncus nunc faucibus nunc eleifend, non tincidunt dolor suscipit.</li>
-      <li>Duis efficitur enim ut velit accumsan mollis vel non turpis. Nunc tempus augue nibh.</li>
-    </ul>
-    <ol>
-      <li>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed ultrices sem ante, porta porta lorem porttitor in. </li>
-      <li>Fusce vel tortor vitae lacus feugiat sodales sit <kbd>amet</kbd> eu enim. Donec rhoncus nunc faucibus nunc eleifend, non tincidunt dolor suscipit.</li>
-      <li>Duis efficitur enim ut velit accumsan mollis vel non turpis. Nunc tempus augue nibh.</li>
-    </ol>
-    <h1>
-    Typography <small>Yada yada yada</small>
-    </h1>
+    <h1>Typography</h1>
     <p>Using a typographic scale and great fonts can help communicate content more efficiently, while making design easier.</p>
-    <h2>Variables</h2>
     <p>Typography presets are fully customizable via the use of variables. You can easily alter the fonts used and the type scale's presets as desired.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Variable name</th>
-          <th>Default value</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>--font-a</code></td>
-          <td><code>Roboto</code></td>
-          <td>The primary font family. Used in most places.</td>
-        </tr>
-        <tr>
-          <td><code>--font-b</code></td>
-          <td><code>Open Sans</code></td>
-          <td>The secondary font family. Used mainly in headings and titles.</td>
-        </tr>
-        <tr>
-          <td><code>--font-c</code></td>
-          <td><code>Roboto Mono</code></td>
-          <td>The code font family. Used in code elements.</td>
-        </tr>
-      </tbody>
-    </table>
-    {/*<h2>Loading fonts</h2>*/}
+    <h2>Fonts</h2>
+    <p>Furl relies upon a 3-font system to provide a great user experience, well-tailored for any type of device and content. Apart from customizable fonts, a native font stack is used as a fallback.</p>
+    <Table>
+      <TableCaption>Font variables</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>Font sample</TableCell>
+          <TableCell heading>Variable name</TableCell>
+          <TableCell heading>Default value</TableCell>
+          <TableCell heading>Description</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell><span className="font-a">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--font-a</code></TableCell>
+          <TableCell><code>Roboto</code></TableCell>
+          <TableCell>The primary font family. Used in most places.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-b">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--font-b</code></TableCell>
+          <TableCell><code>Open Sans</code></TableCell>
+          <TableCell>The secondary font family. Used mainly in headings and titles.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-c">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--font-c</code></TableCell>
+          <TableCell><code>Roboto Mono</code></TableCell>
+          <TableCell>The code font family. Used in code elements.</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+    {/* TODO: Update this to be a sort of alert panel when we get this kind of component added. */}
+    <p><strong>Note:</strong> The default fonts will not be loaded automatically. Instead, it's the developer's responsibility to load all the necessary fonts (including the default ones) in their application.</p>
+    <p>Shown below is a sample link with all the necessary fonts imported via Google Fonts' CDN, which you can include in your application:</p>
+    <pre>&lt;link
+  href=&quot;https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:400,400i,500,500i&quot;
+  rel=&quot;stylesheet&quot;&gt;</pre>
     <h2>Type Scale</h2>
-    <table className="doc-table">
-      <thead>
-        <tr>
-          <th>Scale category</th>
-          <th>Typeface</th>
-          <th>Font</th>
-          <th>Size</th>
-          <th>Letter spacing</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><h1>H1<small>sub</small></h1></td>
-          <td><code>--font-b</code></td>
-          <td><code>300</code></td>
-          <td><code>--ts-700p</code></td>
-          <td><code>-0.05em</code></td>
-        </tr>
-        <tr>
-          <td><h2>H2<small>sub</small></h2></td>
-          <td><code>--font-b</code></td>
-          <td><code>300</code></td>
-          <td><code>--ts-600p</code></td>
-          <td><code>-0.05em</code></td>
-        </tr>
-        <tr>
-          <td><h3>H3<small>sub</small></h3></td>
-          <td><code>--font-b</code></td>
-          <td><code>300</code></td>
-          <td><code>--ts-500p</code></td>
-          <td><code>-0.05em</code></td>
-        </tr>
-        <tr>
-          <td><h4>H4<small>sub</small></h4></td>
-          <td><code>--font-b</code></td>
-          <td><code>300</code></td>
-          <td><code>--ts-400p</code></td>
-          <td><code>-0.05em</code></td>
-        </tr>
-        <tr>
-          <td><h5>H5<small>sub</small></h5></td>
-          <td><code>--font-b</code></td>
-          <td><code>300</code></td>
-          <td><code>--ts-300p</code></td>
-          <td><code>-0.05em</code></td>
-        </tr>
-        <tr>
-          <td><h6>H6<small>sub</small></h6></td>
-          <td><code>--font-b</code></td>
-          <td><code>400</code></td>
-          <td><code>--ts-200p</code></td>
-          <td><code>-0.05em</code></td>
-        </tr>
-      </tbody>
-    </table>
+    <p>Furl uses a 11-step typographic scale with handcrafted defaults that work for any type of content.</p>
+    <Table>
+      <TableCaption>Type scale variables</TableCaption>
+      <TableHead>
+        <TableCell heading>Scale sample</TableCell>
+        <TableCell heading>Variable name</TableCell>
+        <TableCell heading>Default value</TableCell>
+        <TableCell heading>Description</TableCell>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell><span className="font-ts-25p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-25p</code></TableCell>
+          <TableCell><code>12px</code></TableCell>
+          <TableCell>Smallest font size.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-ts-50p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-50p</code></TableCell>
+          <TableCell><code>14px</code></TableCell>
+          <TableCell>Smaller font size. Used mainly in <code>&lt;small&gt;</code> elements.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-ts-100p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-100p</code></TableCell>
+          <TableCell><code>16px</code></TableCell>
+          <TableCell>Base font size (<code>1rem</code>). Used in most places.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-ts-200p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-200p</code></TableCell>
+          <TableCell><code>18px</code></TableCell>
+          <TableCell>Larger font size.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-ts-300p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-300p</code></TableCell>
+          <TableCell><code>20px</code></TableCell>
+          <TableCell>Heading font size. Used in <code>&lt;h6&gt;</code>elements.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-ts-400p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-400p</code></TableCell>
+          <TableCell><code>24px</code></TableCell>
+          <TableCell>Heading font size. Used in <code>&lt;h5&gt;</code>elements.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-ts-500p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-500p</code></TableCell>
+          <TableCell><code>30px</code></TableCell>
+          <TableCell>Heading font size. Used in <code>&lt;h4&gt;</code>elements.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-ts-600p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-600p</code></TableCell>
+          <TableCell><code>36px</code></TableCell>
+          <TableCell>Heading font size. Used in <code>&lt;h3&gt;</code>elements.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-ts-700p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-700p</code></TableCell>
+          <TableCell><code>48px</code></TableCell>
+          <TableCell>Heading font size. Used in <code>&lt;h2&gt;</code>elements.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-ts-800p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-800p</code></TableCell>
+          <TableCell><code>60px</code></TableCell>
+          <TableCell>Heading font size. Used in <code>&lt;h1&gt;</code>elements.</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><span className="font-ts-900p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell><code>--ts-900p</code></TableCell>
+          <TableCell><code>72px</code></TableCell>
+          <TableCell>Main heading font size.</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+    <p><strong>Note:</strong> The default step values above correspond to the calculated values of converting the <code>rem</code> value of each step to <code>px</code>.</p>
+    {/* TODO: Probably missing a few important notes about font colro variants and some other things, like weights etc, but those can be incorporated in the typographic component/module. */}
   </div>
 );
 
