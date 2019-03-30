@@ -1,5 +1,6 @@
 import React from "react";
 import Hyperlink from "../components/Hyperlink";
+import {Table, TableCaption, TableHead, TableRow, TableCell} from "./components/Table";
 
 const Type = props => (
   <div>
