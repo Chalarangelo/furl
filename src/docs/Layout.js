@@ -4,10 +4,10 @@ import {Table, TableCaption, TableHead, TableRow, TableCell} from "./components/
 
 const Layout = props => (
   <div>
-    <h1>Layout</h1>
+    <h2>Layout</h2>
     <p>Responsive layouts, based on a spacing scale can help create natural and easily scannable user interfaces.</p>
     <p>Layout presets are fully customizable via the use of variables. You can easily alter the spacing as desired.</p>
-    <h2>Spacing Scale</h2>
+    <h3>Spacing Scale</h3>
     <p>Furl uses a 17-step spacing scale with handcrafted defaults that work for any combination of device size and content.</p>
     <Table>
       <TableCaption>Spacing scale variables</TableCaption>
