@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import Type from "./docs/Type";
 import ButtonDocs from "./docs/Button";
 import CardDocs from "./docs/Card";
+import DropdownDocs from "./docs/Dropdown";
 import HyperlinkDocs from "./docs/Hyperlink";
 import TableDocs from "./docs/Table";
 import ImageDocs from "./docs/Image";
@@ -75,6 +76,7 @@ ReactDOM.render(<Layout>
           <LayoutDocs />
           <ButtonDocs />
           <CardDocs />
+          <DropdownDocs />
           <HyperlinkDocs />
           <ImageDocs />
           <ListDocs />

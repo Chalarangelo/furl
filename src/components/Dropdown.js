@@ -1,11 +1,10 @@
 import React from "react";
 
 const Dropdown = ({
-  disabled = false,
-  id,
   isOpen = false,
   text,
   reverse = false,
+  id,
   className,
   children }) => {
   let classNames = ["dropdown", reverse ? "reverse" : "", className];
