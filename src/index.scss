@@ -39,6 +39,7 @@
 }
 
 .component-example {
+  overflow: hidden;
   border-radius: var(--ls-25p);
   border: 1px solid var(--interface-gray-100);
   --margin: var(--ls-75p);
