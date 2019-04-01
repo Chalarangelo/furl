@@ -1723,8 +1723,14 @@ blockquote.constrained {
 h1.constrained, h2.constrained, h3.constrained, h4.constrained, h5.constrained, h6.constrained, .title1.constrained, .title2.constrained, .title3.constrained, .title4.constrained, .title5.constrained, .title6.constrained {
   max-width: 80ch; }
 
-.font-B {
-  font-family: var(--font-b), var(--font-a), var(--system-font-stack) !important; }
+.font-a {
+  font-family: var(--font-b), var(--system-font-stack) !important; }
+
+.font-b {
+  font-family: var(--font-b), var(--system-font-stack) !important; }
+
+.font-c {
+  font-family: var(--font-c), var(--system-font-stack) !important; }
 
 .lighter {
   --color: var(--interface-gray-700) !important; }

@@ -1,6 +1,6 @@
 import React from "react";
 import Hyperlink from "../components/Hyperlink";
-import {Table, TableCaption, TableHead, TableRow, TableCell} from "./components/Table";
+import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
 
 const Layout = props => (
   <div>
@@ -9,11 +9,13 @@ const Layout = props => (
     <p>Layout presets are fully customizable via the use of variables. You can easily alter the spacing as desired.</p>
     <h3>Spacing Scale</h3>
     <p>Furl uses a 17-step spacing scale with handcrafted defaults that work for any combination of device size and content.</p>
-    <Table>
+    <Table className="fixed-table">
       <TableCaption>Spacing scale variables</TableCaption>
       <TableHead>
-        <TableCell heading>Variable name</TableCell>
-        <TableCell heading>Default value</TableCell>
+        <TableRow>
+          <TableCell heading>Variable name</TableCell>
+          <TableCell heading>Default value</TableCell>
+        </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>

@@ -2,6 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import Type from "./docs/Type";
+import ButtonDocs from "./docs/Button";
+import CardDocs from "./docs/Card";
+import HyperlinkDocs from "./docs/Hyperlink";
+import ImageDocs from "./docs/Image";
+import ListDocs from "./docs/List";
+import LayoutDocs from "./docs/Layout";
 
 import Button from "./components/Button";
 import Image from "./components/Image";
@@ -63,7 +69,13 @@ ReactDOM.render(<Layout>
       <Row>
         <Col size={["var(--ls-25p)", "var(--ls-75p)", "fluid", "fluid"]}>&nbsp;</Col>
         <Col size={["fluid", "fluid", "var(--ls-900p)", "var(--ls-900p)"]}>
-          <Type></Type>
+          <Type />
+          <LayoutDocs />
+          <ButtonDocs />
+          <CardDocs />
+          <HyperlinkDocs />
+          <ImageDocs />
+          <ListDocs />
         </Col>
         <Col size={["var(--ls-25p)", "var(--ls-70p)", "fluid", "fluid"]}>&nbsp;</Col>
       </Row>

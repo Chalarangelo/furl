@@ -1,6 +1,6 @@
 import React from "react";
 import Hyperlink from "../components/Hyperlink";
-import {Table, TableCaption, TableHead, TableRow, TableCell} from "./components/Table";
+import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
 
 const Type = props => (
   <div>
@@ -9,7 +9,7 @@ const Type = props => (
     <p>Typography presets are fully customizable via the use of variables. You can easily alter the fonts used and the type scale's presets as desired.</p>
     <h3>Fonts</h3>
     <p>Furl relies upon a 3-font system to provide a great user experience, well-tailored for any type of device and content. Apart from customizable fonts, a native font stack is used as a fallback.</p>
-    <Table>
+    <Table className="fixed-table">
       <TableCaption>Font variables</TableCaption>
       <TableHead>
         <TableRow>
@@ -48,77 +48,79 @@ const Type = props => (
   rel=&quot;stylesheet&quot;&gt;</pre>
     <h3>Type Scale</h3>
     <p>Furl uses a 11-step typographic scale with handcrafted defaults that work for any type of content.</p>
-    <Table>
+    <Table className="fixed-table">
       <TableCaption>Type scale variables</TableCaption>
       <TableHead>
-        <TableCell heading>Scale sample</TableCell>
-        <TableCell heading>Variable name</TableCell>
-        <TableCell heading>Default value</TableCell>
-        <TableCell heading>Description</TableCell>
+        <TableRow>
+          <TableCell heading>Scale sample</TableCell>
+          <TableCell heading>Variable name</TableCell>
+          <TableCell heading>Default value</TableCell>
+          <TableCell heading>Description</TableCell>
+        </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableCell><span className="font-ts-25p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-25p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-25p</code></TableCell>
           <TableCell><code>12px</code></TableCell>
           <TableCell>Smallest font size.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-ts-50p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-50p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-50p</code></TableCell>
           <TableCell><code>14px</code></TableCell>
           <TableCell>Smaller font size. Used mainly in <code>&lt;small&gt;</code> elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-ts-100p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-100p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-100p</code></TableCell>
           <TableCell><code>16px</code></TableCell>
           <TableCell>Base font size (<code>1rem</code>). Used in most places.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-ts-200p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-200p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-200p</code></TableCell>
           <TableCell><code>18px</code></TableCell>
           <TableCell>Larger font size.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-ts-300p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-300p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-300p</code></TableCell>
           <TableCell><code>20px</code></TableCell>
           <TableCell>Heading font size. Used in <code>&lt;h6&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-ts-400p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-400p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-400p</code></TableCell>
           <TableCell><code>24px</code></TableCell>
           <TableCell>Heading font size. Used in <code>&lt;h5&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-ts-500p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-500p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-500p</code></TableCell>
           <TableCell><code>30px</code></TableCell>
           <TableCell>Heading font size. Used in <code>&lt;h4&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-ts-600p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-600p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-600p</code></TableCell>
           <TableCell><code>36px</code></TableCell>
           <TableCell>Heading font size. Used in <code>&lt;h3&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-ts-700p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-700p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-700p</code></TableCell>
           <TableCell><code>48px</code></TableCell>
           <TableCell>Heading font size. Used in <code>&lt;h2&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-ts-800p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-800p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-800p</code></TableCell>
           <TableCell><code>60px</code></TableCell>
           <TableCell>Heading font size. Used in <code>&lt;h1&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-ts-900p">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-900p"><span>Lorem ipsum dolor sit amet</span></TableCell>
           <TableCell><code>--ts-900p</code></TableCell>
           <TableCell><code>72px</code></TableCell>
           <TableCell>Main heading font size.</TableCell>

@@ -1,6 +1,6 @@
 import React from "react";
 import Hyperlink from "../components/Hyperlink";
-import {Table, TableCaption, TableHead, TableRow, TableCell} from "./components/Table";
+import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
 
 const ButtonDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const ButtonDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Buttons are highly customizable, providing a different visual style for every kind of interaction context.</p>
-    <Table>
+    <Table className="fixed-table">
       <TableCaption>Button props</TableCaption>
       <TableHead>
         <TableRow>

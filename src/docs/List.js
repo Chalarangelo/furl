@@ -1,6 +1,6 @@
 import React from "react";
 import Hyperlink from "../components/Hyperlink";
-import {Table, TableCaption, TableHead, TableRow, TableCell} from "./components/Table";
+import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
 
 const ListDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const ListDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Lists are made up of a <code>&lt;List&gt;</code> component, which is the list's container element and one or more <code>&lt;ListItem&gt;</code> components, which are the items of the list, passed as <code>children</code> to the <code>&lt;List&gt;</code> component.</p>
-    <Table>
+    <Table className="fixed-table">
       <TableCaption>List props</TableCaption>
       <TableHead>
         <TableRow>
@@ -53,7 +53,7 @@ const ListDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table>
+    <Table className="fixed-table">
       <TableCaption>ListItem props</TableCaption>
       <TableHead>
         <TableRow>

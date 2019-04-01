@@ -1,6 +1,6 @@
 import React from "react";
 import Hyperlink from "../components/Hyperlink";
-import {Table, TableCaption, TableHead, TableRow, TableCell} from "./components/Table";
+import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
 
 const CardDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const CardDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Cards are made up of a <code>&lt;Card&gt;</code> component, which is the card's container element and one or more <code>&lt;CardSection&gt;</code> components, which are the sections of the card, passed as <code>children</code> to the <code>&lt;Card&gt;</code> component.</p>
-    <Table>
+    <Table className="fixed-table">
       <TableCaption>Card props</TableCaption>
       <TableHead>
         <TableRow>
@@ -47,7 +47,7 @@ const CardDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table>
+    <Table className="fixed-table">
       <TableCaption>CardSection props</TableCaption>
       <TableHead>
         <TableRow>
