@@ -52,3 +52,7 @@
     border: 0;
   }
 }
+
+pre span {
+  font-family: var(--font-c), var(--system-font-stack) !important;
+}

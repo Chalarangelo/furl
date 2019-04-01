@@ -19,6 +19,7 @@ import Card from "./components/Card";
 
 import "./styles/index.scss";
 import "./index.scss";
+import "prismjs/themes/prism.css";
 
 ReactDOM.render(<Layout>
   <Header outline="shadow">

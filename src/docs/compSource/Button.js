@@ -25,7 +25,7 @@ ReactDOM.render(<div>
   <Button shape="circle">Circle</Button>
   <Button text="uppercase">Upper</Button>
 
-  <Button type="link" href="https://google.com" openIn="external>Link</Button>
+  <Button type="link" href="https://google.com" openIn="external">Link</Button>
 
   <Button onClick={(e) => {console.log(e)}}>Event handling</Button>
 </div>);

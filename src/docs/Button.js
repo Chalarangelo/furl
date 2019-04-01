@@ -2,6 +2,8 @@ import React from "react";
 import Button from "../components/Button";
 import ButtonSource from "./compSource/Button";
 import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
+import Prism from 'prismjs';
+import "prismjs/components/prism-jsx";
 
 const ButtonDocs = props => (
   <div>
@@ -33,8 +35,7 @@ const ButtonDocs = props => (
         <Button color="primary" shape="circle">Circle</Button>
         <Button color="primary" text="uppercase">Upper</Button>
       </div>
-      <pre className="component-source">
-        {ButtonSource}
+      <pre className="component-source" dangerouslySetInnerHTML={{__html: Prism.highlight(ButtonSource, Prism.languages.jsx, 'jsx')}}>
       </pre>
     </div>
     <h3>API</h3>

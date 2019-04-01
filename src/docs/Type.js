@@ -1,6 +1,7 @@
 import React from "react";
 import Hyperlink from "../components/Hyperlink";
 import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
+import Prism from 'prismjs';
 
 const Type = props => (
   <div>
@@ -43,9 +44,7 @@ const Type = props => (
     {/* TODO: Update this to be a sort of alert panel when we get this kind of component added. */}
     <p><strong>Note:</strong> The default fonts will not be loaded automatically. Instead, it's the developer's responsibility to load all the necessary fonts (including the default ones) in their application.</p>
     <p>Shown below is a sample link with all the necessary fonts imported via Google Fonts' CDN, which you can include in your application:</p>
-    <pre>&lt;link
-  href=&quot;https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:400,400i,500,500i&quot;
-  rel=&quot;stylesheet&quot;&gt;</pre>
+    <pre dangerouslySetInnerHTML={{__html: Prism.highlight(`<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i|Roboto+Mono:400,400i,500,500i" rel="stylesheet">`, Prism.languages.jsx, 'jsx')}}></pre>
     <h3>Type Scale</h3>
     <p>Furl uses a 11-step typographic scale with handcrafted defaults that work for any type of content.</p>
     <Table className="fixed-table">
