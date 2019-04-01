@@ -9,7 +9,8 @@ import HyperlinkDocs from "./docs/Hyperlink";
 import TableDocs from "./docs/Table";
 import ImageDocs from "./docs/Image";
 import ListDocs from "./docs/List";
-import LayoutDocs from "./docs/Layout";
+import MenuDocs from "./docs/MenuDocs";
+import LayoutSysDocs from "./docs/Layout";
 
 import Button from "./components/Button";
 import Image from "./components/Image";
@@ -73,13 +74,14 @@ ReactDOM.render(<Layout>
         <Col size={["var(--ls-25p)", "var(--ls-75p)", "fluid", "fluid"]}>&nbsp;</Col>
         <Col size={["fluid", "fluid", "var(--ls-800p)", "var(--ls-900p)"]}>
           <Type />
-          <LayoutDocs />
+          <LayoutSysDocs />
           <ButtonDocs />
           <CardDocs />
           <DropdownDocs />
           <HyperlinkDocs />
           <ImageDocs />
           <ListDocs />
+          <MenuDocs />
           <TableDocs />
         </Col>
         <Col size={["var(--ls-25p)", "var(--ls-70p)", "fluid", "fluid"]}>&nbsp;</Col>
