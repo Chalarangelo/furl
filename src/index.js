@@ -5,6 +5,7 @@ import Type from "./docs/Type";
 import ButtonDocs from "./docs/Button";
 import CardDocs from "./docs/Card";
 import HyperlinkDocs from "./docs/Hyperlink";
+import TableDocs from "./docs/Table";
 import ImageDocs from "./docs/Image";
 import ListDocs from "./docs/List";
 import LayoutDocs from "./docs/Layout";
@@ -77,6 +78,7 @@ ReactDOM.render(<Layout>
           <HyperlinkDocs />
           <ImageDocs />
           <ListDocs />
+          <TableDocs />
         </Col>
         <Col size={["var(--ls-25p)", "var(--ls-70p)", "fluid", "fluid"]}>&nbsp;</Col>
       </Row>
