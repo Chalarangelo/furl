@@ -1733,7 +1733,7 @@ h1.constrained, h2.constrained, h3.constrained, h4.constrained, h5.constrained, 
   font-family: var(--font-c), var(--system-font-stack) !important; }
 
 .lighter {
-  --color: var(--interface-gray-700) !important; }
+  --color: var(--interface-gray-600) !important; }
 
 .uppercase {
   text-transform: uppercase;
@@ -1742,14 +1742,16 @@ h1.constrained, h2.constrained, h3.constrained, h4.constrained, h5.constrained, 
 h1, .title1 {
   --font-size: var(--ts-800p);
   --font-weight: 300;
-  line-height: 1; }
+  line-height: 1;
+  --margin-vertical: var(--ls-200p); }
   h1 small, h1 sup, h1 sub, .title1 small, .title1 sup, .title1 sub {
     --font-size: var(--ts-600p); }
 
 h2, .title2 {
   --font-size: var(--ts-700p);
   --font-weight: 300;
-  line-height: 1; }
+  line-height: 1;
+  --margin-vertical: var(--ls-200p); }
   h2 small, .title2 small {
     --font-size: var(--ts-500p); }
   h2 b, h2 strong, .title2 b, .title2 strong {
@@ -1758,7 +1760,8 @@ h2, .title2 {
 h3, .title3 {
   --font-size: var(--ts-600p);
   --font-weight: 300;
-  line-height: 1.25; }
+  line-height: 1.25;
+  --margin-vertical: var(--ls-150p); }
   h3 small, .title3 small {
     --font-size: var(--ts-400p); }
   h3 b, h3 strong, .title3 b, .title3 strong {
@@ -1767,7 +1770,8 @@ h3, .title3 {
 h4, .title4 {
   --font-size: var(--ts-500p);
   --font-weight: 300;
-  line-height: 1.25; }
+  line-height: 1.25;
+  --margin-vertical: var(--ls-150p); }
   h4 small, .title4 small {
     --font-size: var(--ts-300p); }
   h4 b, h4 strong, .title4 b, .title4 strong {
@@ -1776,7 +1780,8 @@ h4, .title4 {
 h5, .title5 {
   --font-size: var(--ts-400p);
   --font-weight: 300;
-  line-height: 1.5; }
+  line-height: 1.5;
+  --margin-vertical: var(--ls-100p); }
   h5 small, .title5 small {
     --font-size: var(--ts-200p); }
   h5 b, h5 strong, .title5 b, .title5 strong {
@@ -1785,7 +1790,8 @@ h5, .title5 {
 h6, .title6 {
   --font-size: var(--ts-300p);
   --font-weight: 400;
-  line-height: 1.5; }
+  line-height: 1.5;
+  --margin-vertical: var(--ls-100p); }
   h6 small, .title6 small {
     --font-size: var(--ts-100p); }
   h6 b, h6 strong, .title6 b, .title6 strong {
@@ -1794,7 +1800,7 @@ h6, .title6 {
 h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
   letter-spacing: -0.05em;
   font-family: var(--font-b), var(--font-a), var(--system-font-stack);
-  --margin: var(--ls-75p); }
+  --margin-horizontal: var(--ls-75p); }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .title1 small, .title2 small, .title3 small, .title4 small, .title5 small, .title6 small {
     --margin-vertical: calc(var(--ls-0p) - 0.0625em);
     letter-spacing: -0.05em;
@@ -1802,7 +1808,11 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
     font-family: var(--font-a), var(--system-font-stack); }
 
 p {
-  --margin: var(--ls-75p); }
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-100p); }
+
+p + p {
+  margin-top: calc(0rem - var(--ls-50p)); }
 
 small, sup, sub, figcaption {
   --font-size: var(--ts-50p); }
@@ -2696,7 +2706,8 @@ table {
   width: calc(100% - 2 * var(--margin-horizontal));
   border: 1px solid var(--interface-gray-100);
   --border-radius: var(--ls-50p);
-  --margin: var(--ls-75p); }
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-150p); }
   table caption {
     --font-size: var(--ts-400p);
     --margin-vertical: var(--ls-50p); }
