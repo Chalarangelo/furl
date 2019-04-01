@@ -1,5 +1,6 @@
 import React from "react";
-import Hyperlink from "../components/Hyperlink";
+import Button from "../components/Button";
+import ButtonSource from "./compSource/Button";
 import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
 
 const ButtonDocs = props => (
@@ -7,7 +8,35 @@ const ButtonDocs = props => (
     <h2>Button</h2>
     <p>Buttons allow users to interact with your application.</p>
     <h3>Examples</h3>
-    {/* TODO: Add component demo */}
+    <div className="component-example">
+      <div classname="component-demo">
+        <Button color="plain">Default</Button>
+        <Button color="primary">Primary</Button>
+        <Button color="secondary">Secondary</Button>
+        <Button color="success">Success</Button>
+        <Button color="warning">Warning</Button>
+        <Button color="danger">Danger</Button>
+        <br />
+        <Button color="primary" fill="flat">Default</Button>
+        <Button color="primary" fill="solid">Solid</Button>
+        <Button color="primary" fill="light">Light</Button>
+        <Button color="primary" fill="gradient">Gradient</Button>
+        <Button color="primary" fill="outline">Outline</Button>
+        <Button color="primary" fill="ghost">Ghost</Button>
+        <Button color="primary" disabled>Disabled</Button>
+        <br />
+        <Button color="primary" size="small">Small</Button>
+        <Button color="primary" size="normal">Medium</Button>
+        <Button color="primary" size="large">Large</Button>
+        <Button color="primary" shape="normal">Normal</Button>
+        <Button color="primary" shape="rounded">Rounded</Button>
+        <Button color="primary" shape="circle">Circle</Button>
+        <Button color="primary" text="uppercase">Upper</Button>
+      </div>
+      <pre className="component-source">
+        {ButtonSource}
+      </pre>
+    </div>
     <h3>API</h3>
     <p>Buttons are highly customizable, providing a different visual style for every kind of interaction context.</p>
     <Table className="fixed-table">

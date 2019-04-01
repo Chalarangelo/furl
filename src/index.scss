@@ -37,3 +37,18 @@
 .fixed-table {
   table-layout: fixed;
 }
+
+.component-example {
+  border-radius: var(--ls-25p);
+  border: 1px solid var(--interface-gray-100);
+  --margin: var(--ls-75p);
+  & .component-demo {
+    --padding-horizontal: var(--ls-75p);
+    --padding-vertical: var(--ls-200p);
+  }
+  & .component-source {
+    --margin-horizontal: var(--ls-0p);
+    border-radius: 0;
+    border: 0;
+  }
+}

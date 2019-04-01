@@ -68,7 +68,7 @@ ReactDOM.render(<Layout>
     <Grid>
       <Row>
         <Col size={["var(--ls-25p)", "var(--ls-75p)", "fluid", "fluid"]}>&nbsp;</Col>
-        <Col size={["fluid", "fluid", "var(--ls-900p)", "var(--ls-900p)"]}>
+        <Col size={["fluid", "fluid", "var(--ls-800p)", "var(--ls-900p)"]}>
           <Type />
           <LayoutDocs />
           <ButtonDocs />
