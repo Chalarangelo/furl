@@ -68,7 +68,7 @@ const TableDocs = props => (
           <TableCell><code>children</code></TableCell>
           <TableCell><code>React.children</code></TableCell>
           <TableCell>-</TableCell>
-          <TableCell colSpan={3}>the component's children elements (only accepts <code>&lt;TableCaption&gt;</code>, <code>&lt;TableHead&gt;</code> and <code>&lt;TableBody&gt;</code> elements)</TableCell>
+          <TableCell colSpan={3}>the component's children elements</TableCell>
         </TableRow>
       </TableBody>
     </Table>
@@ -99,7 +99,7 @@ const TableDocs = props => (
           <TableCell><code>children</code></TableCell>
           <TableCell><code>React.children</code></TableCell>
           <TableCell>-</TableCell>
-          <TableCell colSpan={3}>the component's children elements (only accepts <code>&lt;TableCaption&gt;</code>, <code>&lt;TableHead&gt;</code> and <code>&lt;TableBody&gt;</code> elements)</TableCell>
+          <TableCell colSpan={3}>the component's children elements (only accepts <code>&lt;TableRow&gt;</code> elements)</TableCell>
         </TableRow>
       </TableBody>
     </Table>
@@ -130,7 +130,7 @@ const TableDocs = props => (
           <TableCell><code>children</code></TableCell>
           <TableCell><code>React.children</code></TableCell>
           <TableCell>-</TableCell>
-          <TableCell colSpan={3}>the component's children elements (only accepts <code>&lt;TableCaption&gt;</code>, <code>&lt;TableHead&gt;</code> and <code>&lt;TableBody&gt;</code> elements)</TableCell>
+          <TableCell colSpan={3}>the component's children elements (only accepts <code>&lt;TableRow&gt;</code> elements)</TableCell>
         </TableRow>
       </TableBody>
     </Table>
@@ -161,7 +161,7 @@ const TableDocs = props => (
           <TableCell><code>children</code></TableCell>
           <TableCell><code>React.children</code></TableCell>
           <TableCell>-</TableCell>
-          <TableCell colSpan={3}>the component's children elements (only accepts <code>&lt;TableCaption&gt;</code>, <code>&lt;TableHead&gt;</code> and <code>&lt;TableBody&gt;</code> elements)</TableCell>
+          <TableCell colSpan={3}>the component's children elements (only accepts <code>&lt;TableCell&gt;</code> elements)</TableCell>
         </TableRow>
       </TableBody>
     </Table>
