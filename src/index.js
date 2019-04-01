@@ -10,7 +10,8 @@ import TableDocs from "./docs/Table";
 import ImageDocs from "./docs/Image";
 import ListDocs from "./docs/List";
 import MenuDocs from "./docs/MenuDocs";
-import LayoutSysDocs from "./docs/Layout";
+import LayoutSysDocs from "./docs/LayoutSystem";
+import LayoutDocs from "./docs/Layout";
 
 import Button from "./components/Button";
 import Image from "./components/Image";
@@ -80,6 +81,7 @@ ReactDOM.render(<Layout>
           <DropdownDocs />
           <HyperlinkDocs />
           <ImageDocs />
+          <LayoutDocs />
           <ListDocs />
           <MenuDocs />
           <TableDocs />

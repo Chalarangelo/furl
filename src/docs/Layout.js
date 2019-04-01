@@ -1,96 +1,170 @@
 import React from "react";
 import Hyperlink from "../components/Hyperlink";
-import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
+import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "../components/Table";
 
-const Layout = props => (
+const LayoutDocs = props => (
   <div>
     <h2>Layout</h2>
-    <p>Responsive layouts, based on a spacing scale can help create natural and easily scannable user interfaces.</p>
-    <p>Layout presets are fully customizable via the use of variables. You can easily alter the spacing as desired.</p>
-    <h3>Spacing Scale</h3>
-    <p>Furl uses a 17-step spacing scale with handcrafted defaults that work for any combination of device size and content.</p>
+    <p>Layouts allow you to structure your application's layout according to your needs.</p>
+    <h3>Examples</h3>
+    {/* TODO: Add component demo */}
+    <h3>API</h3>
+    <p>Layouts are made up of a <code>&lt;Layout&gt;</code> component, which is the layout's container element an optional <code>&lt;Header&gt;</code> element, an optional <code>&lt;Sidebar&gt;</code> element and a <code>&lt;Content&gt;</code> element, which serve as the layout's header bar, sidebar and content area respectively.</p>
     <Table className="fixed-table">
-      <TableCaption>Spacing scale variables</TableCaption>
+      <TableCaption>Layout props</TableCaption>
       <TableHead>
         <TableRow>
-          <TableCell heading>Variable name</TableCell>
-          <TableCell heading>Default value</TableCell>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Type</TableCell>
+          <TableCell heading>Default</TableCell>
+          <TableCell heading colSpan={3}>Description</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableCell><code>--ls-0p</code></TableCell>
-          <TableCell><code>0px</code></TableCell>
+          <TableCell><code>header</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell><code>'top'</code></TableCell>
+          <TableCell colSpan={3}>position of the header (<code>'top'</code>, <code>'bottom'</code>, <code>'none'</code>)</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><code>--ls-25p</code></TableCell>
-          <TableCell><code>4px</code></TableCell>
+          <TableCell><code>sidebar</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell><code>'left'</code></TableCell>
+          <TableCell colSpan={3}>position of the sidebar (<code>'left'</code>, <code>'right'</code>, <code>'none'</code>)</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><code>--ls-50p</code></TableCell>
-          <TableCell><code>8px</code></TableCell>
+          <TableCell><code>contentSize</code></TableCell>
+          <TableCell><code>array (4 * integer)</code></TableCell>
+          <TableCell><code>[1.0, 1.0, 0.75, 0.8]</code></TableCell>
+          <TableCell colSpan={3}>width of the content area in each screen size</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><code>--ls-75p</code></TableCell>
-          <TableCell><code>12px</code></TableCell>
+          <TableCell><code>id</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>value for the rendered element's <code>id</code></TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><code>--ls-100p</code></TableCell>
-          <TableCell><code>16px</code></TableCell>
+          <TableCell><code>className</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>additional classes that should be passed to the component</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><code>--ls-150p</code></TableCell>
-          <TableCell><code>24px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-200p</code></TableCell>
-          <TableCell><code>32px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-250p</code></TableCell>
-          <TableCell><code>48px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-300p</code></TableCell>
-          <TableCell><code>64px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-350p</code></TableCell>
-          <TableCell><code>96px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-400p</code></TableCell>
-          <TableCell><code>128px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-450p</code></TableCell>
-          <TableCell><code>192px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-500p</code></TableCell>
-          <TableCell><code>256px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-600p</code></TableCell>
-          <TableCell><code>384px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-700p</code></TableCell>
-          <TableCell><code>512px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-800p</code></TableCell>
-          <TableCell><code>640px</code></TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell><code>--ls-900p</code></TableCell>
-          <TableCell><code>768px</code></TableCell>
+          <TableCell><code>children</code></TableCell>
+          <TableCell><code>React.children</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>the component's children elements (only accepts <code>&lt;Header&gt;</code>, <code>&lt;Sidebar&gt;</code> and <code>&lt;Content&gt;</code> elements)</TableCell>
         </TableRow>
       </TableBody>
     </Table>
-    <p><strong>Note:</strong> The default step values above correspond to the calculated values of converting the <code>rem</code> value of each step to <code>px</code>.</p>
-    {/* TODO: Probably missing a few important notes about font colro variants and some other things, like weights etc, but those can be incorporated in the typographic component/module. */}
+    <Table className="fixed-table">
+      <TableCaption>Header props</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Type</TableCell>
+          <TableCell heading>Default</TableCell>
+          <TableCell heading colSpan={3}>Description</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell><code>outline</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell><code>'none'</code></TableCell>
+          <TableCell colSpan={3}>outline of the rendered element (<code>'border-top'</code>, <code>'border-bottom'</code>, <code>'shadow'</code>, <code>'none'</code>)</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><code>id</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>value for the rendered element's <code>id</code></TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><code>className</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>additional classes that should be passed to the component</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><code>children</code></TableCell>
+          <TableCell><code>React.children</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>the component's children elements</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+    <Table className="fixed-table">
+      <TableCaption>Sidebar props</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Type</TableCell>
+          <TableCell heading>Default</TableCell>
+          <TableCell heading colSpan={3}>Description</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell><code>outline</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell><code>'none'</code></TableCell>
+          <TableCell colSpan={3}>outline of the rendered element (<code>'border-left'</code>, <code>'border-right'</code>, <code>'none'</code>)</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><code>id</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>value for the rendered element's <code>id</code></TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><code>className</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>additional classes that should be passed to the component</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><code>children</code></TableCell>
+          <TableCell><code>React.children</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>the component's children elements</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+    <Table className="fixed-table">
+      <TableCaption>Content props</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Type</TableCell>
+          <TableCell heading>Default</TableCell>
+          <TableCell heading colSpan={3}>Description</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell><code>id</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>value for the rendered element's <code>id</code></TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><code>className</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>additional classes that should be passed to the component</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell><code>children</code></TableCell>
+          <TableCell><code>React.children</code></TableCell>
+          <TableCell>-</TableCell>
+          <TableCell colSpan={3}>the component's children elements</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
   </div>
 );
 
-export default Layout;
+export default LayoutDocs;
