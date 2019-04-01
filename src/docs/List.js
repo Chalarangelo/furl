@@ -17,7 +17,7 @@ const ListDocs = props => (
           <TableCell heading>Name</TableCell>
           <TableCell heading>Type</TableCell>
           <TableCell heading>Default</TableCell>
-          <TableCell heading>Description</TableCell>
+          <TableCell heading colSpan={3}>Description</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -25,31 +25,31 @@ const ListDocs = props => (
           <TableCell><code>ordered</code></TableCell>
           <TableCell><code>boolean</code></TableCell>
           <TableCell><code>false</code></TableCell>
-          <TableCell>ordered type of the list</TableCell>
+          <TableCell colSpan={3}>ordered type of the list</TableCell>
         </TableRow>
         <TableRow>
           <TableCell><code>listStyle</code></TableCell>
           <TableCell><code>string</code></TableCell>
           <TableCell><code>'none'</code></TableCell>
-          <TableCell>display style of the list (<code>'circle'</code>, <code>'disc'</code>, <code>'square'</code>, <code>'triangle'</code>, <code>'checkbox'</code>, only applicable if <code>ordered=false</code> - <code>'decimal'</code>, <code>'decimal-leading-zero'</code>, <code>'lower-latin'</code>, <code>'lower-roman'</code>, <code>'upper-latin'</code>, <code>'upper-roman'</code>, only applicable if <code>ordered=true</code> - <code>'none'</code>)</TableCell>
+          <TableCell colSpan={3}>display style of the list (<code>'circle'</code>, <code>'disc'</code>, <code>'square'</code>, <code>'triangle'</code>, <code>'checkbox'</code>, only applicable if <code>ordered=false</code> - <code>'decimal'</code>, <code>'decimal-leading-zero'</code>, <code>'lower-latin'</code>, <code>'lower-roman'</code>, <code>'upper-latin'</code>, <code>'upper-roman'</code>, only applicable if <code>ordered=true</code> - <code>'none'</code>)</TableCell>
         </TableRow>
         <TableRow>
           <TableCell><code>id</code></TableCell>
           <TableCell><code>string</code></TableCell>
           <TableCell>-</TableCell>
-          <TableCell>value for the rendered element's <code>id</code></TableCell>
+          <TableCell colSpan={3}>value for the rendered element's <code>id</code></TableCell>
         </TableRow>
         <TableRow>
           <TableCell><code>className</code></TableCell>
           <TableCell><code>string</code></TableCell>
           <TableCell>-</TableCell>
-          <TableCell>additional classes that should be passed to the component</TableCell>
+          <TableCell colSpan={3}>additional classes that should be passed to the component</TableCell>
         </TableRow>
         <TableRow>
           <TableCell><code>children</code></TableCell>
           <TableCell><code>React.children</code></TableCell>
           <TableCell>-</TableCell>
-          <TableCell>the component's children elements (only accepts <code>&lt;ListItem&gt;</code> elements)</TableCell>
+          <TableCell colSpan={3}>the component's children elements (only accepts <code>&lt;ListItem&gt;</code> elements)</TableCell>
         </TableRow>
       </TableBody>
     </Table>
@@ -60,7 +60,7 @@ const ListDocs = props => (
           <TableCell heading>Name</TableCell>
           <TableCell heading>Type</TableCell>
           <TableCell heading>Default</TableCell>
-          <TableCell heading>Description</TableCell>
+          <TableCell heading colSpan={3}>Description</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -68,19 +68,19 @@ const ListDocs = props => (
           <TableCell><code>id</code></TableCell>
           <TableCell><code>string</code></TableCell>
           <TableCell>-</TableCell>
-          <TableCell>value for the rendered element's <code>id</code></TableCell>
+          <TableCell colSpan={3}>value for the rendered element's <code>id</code></TableCell>
         </TableRow>
         <TableRow>
           <TableCell><code>className</code></TableCell>
           <TableCell><code>string</code></TableCell>
           <TableCell>-</TableCell>
-          <TableCell>additional classes that should be passed to the component</TableCell>
+          <TableCell colSpan={3}>additional classes that should be passed to the component</TableCell>
         </TableRow>
         <TableRow>
           <TableCell><code>children</code></TableCell>
           <TableCell><code>React.children</code></TableCell>
           <TableCell>-</TableCell>
-          <TableCell>the component's children elements</TableCell>
+          <TableCell colSpan={3}>the component's children elements</TableCell>
         </TableRow>
       </TableBody>
     </Table>

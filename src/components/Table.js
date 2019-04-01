@@ -5,9 +5,9 @@ const TableCaption = ({ id, className, children}) => (
   <caption id={id !== undefined ? id : false} className={className}>{children}</caption>
 );
 
-const TableCell = ({ heading = false, id, className, children }) => {
-  if (heading) return (<th id={id !== undefined ? id : false} className={className}>{children}</th>);
-  else return (<td id={id !== undefined ? id : false} className={className}>{children}</td>);
+const TableCell = ({ heading = false, id, className, colSpan = 1, rowSpan = 1, children }) => {
+  if (heading) return (<th id={id !== undefined ? id : false} className={className} colSpan={colSpan} rowSpan={rowSpan}>{children}</th>);
+  else return (<td id={id !== undefined ? id : false} className={className} colSpan={colSpan} rowSpan={rowSpan}>{children}</td>);
 };
 
 const TableRow = ({ id, className, children }) => {

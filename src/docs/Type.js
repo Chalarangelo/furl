@@ -13,30 +13,30 @@ const Type = props => (
       <TableCaption>Font variables</TableCaption>
       <TableHead>
         <TableRow>
-          <TableCell heading>Font sample</TableCell>
+          <TableCell heading colSpan={2}>Font sample</TableCell>
           <TableCell heading>Variable name</TableCell>
           <TableCell heading>Default value</TableCell>
-          <TableCell heading>Description</TableCell>
+          <TableCell heading colSpan={3}>Description</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableCell><span className="font-a">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell colSpan={2}><span className="font-a">Text</span></TableCell>
           <TableCell><code>--font-a</code></TableCell>
           <TableCell><code>Roboto</code></TableCell>
-          <TableCell>The primary font family. Used in most places.</TableCell>
+          <TableCell colSpan={3}>The primary font family. Used in most places.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-b">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell colSpan={2}><span className="font-b">Text</span></TableCell>
           <TableCell><code>--font-b</code></TableCell>
           <TableCell><code>Open Sans</code></TableCell>
-          <TableCell>The secondary font family. Used mainly in headings and titles.</TableCell>
+          <TableCell colSpan={3}>The secondary font family. Used mainly in headings and titles.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><span className="font-c">Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell colSpan={2}><span className="font-c">Text</span></TableCell>
           <TableCell><code>--font-c</code></TableCell>
           <TableCell><code>Roboto Mono</code></TableCell>
-          <TableCell>The code font family. Used in code elements.</TableCell>
+          <TableCell colSpan={3}>The code font family. Used in code elements.</TableCell>
         </TableRow>
       </TableBody>
     </Table>
@@ -52,78 +52,78 @@ const Type = props => (
       <TableCaption>Type scale variables</TableCaption>
       <TableHead>
         <TableRow>
-          <TableCell heading>Scale sample</TableCell>
+          <TableCell heading colSpan={3}>Scale sample</TableCell>
           <TableCell heading>Variable name</TableCell>
           <TableCell heading>Default value</TableCell>
-          <TableCell heading>Description</TableCell>
+          <TableCell heading colSpan={4}>Description</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>
-          <TableCell className="font-ts-25p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-25p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-25p</code></TableCell>
           <TableCell><code>12px</code></TableCell>
-          <TableCell>Smallest font size.</TableCell>
+          <TableCell colSpan={4}>Smallest font size.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-ts-50p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-50p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-50p</code></TableCell>
           <TableCell><code>14px</code></TableCell>
-          <TableCell>Smaller font size. Used mainly in <code>&lt;small&gt;</code> elements.</TableCell>
+          <TableCell colSpan={4}>Smaller font size. Used mainly in <code>&lt;small&gt;</code> elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-ts-100p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-100p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-100p</code></TableCell>
           <TableCell><code>16px</code></TableCell>
-          <TableCell>Base font size (<code>1rem</code>). Used in most places.</TableCell>
+          <TableCell colSpan={4}>Base font size (<code>1rem</code>). Used in most places.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-ts-200p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-200p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-200p</code></TableCell>
           <TableCell><code>18px</code></TableCell>
-          <TableCell>Larger font size.</TableCell>
+          <TableCell colSpan={4}>Larger font size.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-ts-300p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-300p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-300p</code></TableCell>
           <TableCell><code>20px</code></TableCell>
-          <TableCell>Heading font size. Used in <code>&lt;h6&gt;</code>elements.</TableCell>
+          <TableCell colSpan={4}>Heading font size. Used in <code>&lt;h6&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-ts-400p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-400p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-400p</code></TableCell>
           <TableCell><code>24px</code></TableCell>
-          <TableCell>Heading font size. Used in <code>&lt;h5&gt;</code>elements.</TableCell>
+          <TableCell colSpan={4}>Heading font size. Used in <code>&lt;h5&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-ts-500p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-500p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-500p</code></TableCell>
           <TableCell><code>30px</code></TableCell>
-          <TableCell>Heading font size. Used in <code>&lt;h4&gt;</code>elements.</TableCell>
+          <TableCell colSpan={4}>Heading font size. Used in <code>&lt;h4&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-ts-600p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-600p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-600p</code></TableCell>
           <TableCell><code>36px</code></TableCell>
-          <TableCell>Heading font size. Used in <code>&lt;h3&gt;</code>elements.</TableCell>
+          <TableCell colSpan={4}>Heading font size. Used in <code>&lt;h3&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-ts-700p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-700p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-700p</code></TableCell>
           <TableCell><code>48px</code></TableCell>
-          <TableCell>Heading font size. Used in <code>&lt;h2&gt;</code>elements.</TableCell>
+          <TableCell colSpan={4}>Heading font size. Used in <code>&lt;h2&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-ts-800p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-800p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-800p</code></TableCell>
           <TableCell><code>60px</code></TableCell>
-          <TableCell>Heading font size. Used in <code>&lt;h1&gt;</code>elements.</TableCell>
+          <TableCell colSpan={4}>Heading font size. Used in <code>&lt;h1&gt;</code>elements.</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-ts-900p"><span>Lorem ipsum dolor sit amet</span></TableCell>
+          <TableCell className="font-ts-900p" colSpan={3}><span>Text</span></TableCell>
           <TableCell><code>--ts-900p</code></TableCell>
           <TableCell><code>72px</code></TableCell>
-          <TableCell>Main heading font size.</TableCell>
+          <TableCell colSpan={4}>Main heading font size.</TableCell>
         </TableRow>
       </TableBody>
     </Table>
