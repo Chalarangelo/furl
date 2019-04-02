@@ -34,12 +34,6 @@ const GridDocs = props => (
           <TableCell colSpan={3}>content alignment on the secondary axis  (<code>'start'</code>, <code>'end'</code>, <code>'center'</code>, <code>'stretch'</code>, <code>'baseline'</code>)</TableCell>
         </TableRow>
         <TableRow>
-          <TableCell><code>contentSize</code></TableCell>
-          <TableCell><code>array (4 * integer)</code></TableCell>
-          <TableCell><code>[1.0, 1.0, 0.75, 0.8]</code></TableCell>
-          <TableCell colSpan={3}>width of the content area in each screen size</TableCell>
-        </TableRow>
-        <TableRow>
           <TableCell><code>id</code></TableCell>
           <TableCell><code>string</code></TableCell>
           <TableCell>-</TableCell>
