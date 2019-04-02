@@ -4,7 +4,7 @@ import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "..
 
 const Layout = props => (
   <div>
-    <h2>Layout</h2>
+    <h2>Layout System</h2>
     <p>Responsive layouts, based on a spacing scale can help create natural and easily scannable user interfaces.</p>
     <p>Layout presets are fully customizable via the use of variables. You can easily alter the spacing as desired.</p>
     <h3>Spacing Scale</h3>

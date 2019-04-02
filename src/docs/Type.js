@@ -5,7 +5,7 @@ import Prism from 'prismjs';
 
 const Type = props => (
   <div>
-    <h2>Typography</h2>
+    <h2>Typography System</h2>
     <p>Using a typographic scale and great fonts can help communicate content more efficiently, while making design easier.</p>
     <p>Typography presets are fully customizable via the use of variables. You can easily alter the fonts used and the type scale's presets as desired.</p>
     <h3>Fonts</h3>

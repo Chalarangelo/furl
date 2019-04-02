@@ -13,6 +13,7 @@ import GridDocs from "./docs/Grid";
 import MenuDocs from "./docs/Menu";
 import LayoutSysDocs from "./docs/LayoutSystem";
 import LayoutDocs from "./docs/Layout";
+import TypographyDocs from "./docs/Typography";
 
 import Button from "./components/Button";
 import Image from "./components/Image";
@@ -50,8 +51,8 @@ ReactDOM.render(<Layout>
       <MenuItem>
         <Dropdown text="Design Philosophy">
           <MenuItem>CSS Baseline</MenuItem>
-          <MenuItem>Typography</MenuItem>
-          <MenuItem>Layout</MenuItem>
+          <MenuItem>Typography System</MenuItem>
+          <MenuItem>Layout System</MenuItem>
         </Dropdown>
       </MenuItem>
       <MenuItem>
@@ -66,6 +67,7 @@ ReactDOM.render(<Layout>
           <MenuItem>List</MenuItem>
           <MenuItem>Menu</MenuItem>
           <MenuItem>Table</MenuItem>
+          <MenuItem>Typography</MenuItem>
         </Dropdown>
       </MenuItem>
     </Menu>
@@ -87,6 +89,7 @@ ReactDOM.render(<Layout>
           <ListDocs />
           <MenuDocs />
           <TableDocs />
+          <TypographyDocs />
         </Col>
         <Col size={["var(--ls-25p)", "var(--ls-70p)", "fluid", "fluid"]}>&nbsp;</Col>
       </Row>

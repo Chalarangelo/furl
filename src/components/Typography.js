@@ -42,7 +42,7 @@ const Kbd = ({ id, className, children }) => {
   </kbd>);
 }
 
-const Title = ({ level, semantic, id, className, children }) => {
+const Title = ({ level = 1, semantic = true, id, className, children }) => {
   switch (level) {
     case 1:
       if (semantic)
