@@ -53,6 +53,12 @@ const TableDocs = props => (
       </TableHead>
       <TableBody>
         <TableRow>
+          <TableCell><code>tableStyle</code></TableCell>
+          <TableCell><code>string</code></TableCell>
+          <TableCell><code>'none'</code></TableCell>
+          <TableCell colSpan={3}>style for the table  (<code>'none'</code>, <code>'bordered'</code>, <code>'striped'</code>)</TableCell>
+        </TableRow>
+        <TableRow>
           <TableCell><code>id</code></TableCell>
           <TableCell><code>string</code></TableCell>
           <TableCell>-</TableCell>

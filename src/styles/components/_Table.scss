@@ -2,8 +2,6 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   width: calc(100% - 2 * var(--margin-horizontal));
-  border: 1px solid var(--interface-gray-100);
-  --border-radius: var(--ls-50p);
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-150p);
   & caption {
@@ -16,8 +14,14 @@ table {
   & thead th {
     border-bottom: 1px solid var(--interface-gray-100);
   }
-  & tr:nth-of-type(2n-1) > td {
+  &.bordered thead th {
+    border-bottom: 2px solid var(--interface-gray-100);
+  }
+  &.striped tr:nth-of-type(2n-1) > td {
     --background-color: var(--interface-gray-50);
+  }
+  &.bordered tr:not(:last-child) > td {
+    border-bottom: 1px solid var(--interface-gray-100);
   }
   & th, & td {
     --padding-horizontal: var(--ls-50p);
@@ -37,24 +41,12 @@ table {
   & th:last-child, & td:last-child {
     padding-right: var(--ls-75p);
   }
-  & thead tr:first-child *:first-child, & :not(thead) + tbody tr:first-child *:first-child, & tbody:first-child tr:first-child *:first-child {
-    border-top-left-radius: var(--ls-50p);
-  }
-  & thead tr:first-child *:last-child, & :not(thead) + tbody tr:first-child *:last-child, & tbody:first-child tr:first-child *:last-child {
-    border-top-right-radius: var(--ls-50p);
-  }
-  & tbody tr:last-child *:first-child {
-    border-bottom-left-radius: var(--ls-50p);
-  }
-  & tbody tr:last-child *:last-child {
-    border-bottom-right-radius: var(--ls-50p);
-  }
   & tbody th {
     border-right: 1px solid var(--interface-gray-100);
   }
   & tr:hover, & tr:focus {
     > td {
-      --background-color: var(--focus-blue-100);
+      --background-color: var(--focus-blue-50);
     }
   }
 }

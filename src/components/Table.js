@@ -29,13 +29,14 @@ const TableBody = ({ id, className, children }) => {
 };
 
 const Table = ({
+  tableStyle = 'none',
   id,
   className,
   children
 }) => {
   children = normalizeChildren(children);
   const tableItems = children.filter(item => TableHead.name == item.type.name || TableBody.name == item.type.name || TableCaption.name == item.type.name);
-  let classNames = [className];
+  let classNames = [tableStyle !== 'none' ? tableStyle : '', className];
   return <table className={classNames.join(' ').trim()} id={id !== undefined ? id : false}>
     {tableItems}
   </table>

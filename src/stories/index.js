@@ -507,6 +507,86 @@ storiesOf('Table', module)
     </Table>
   )
 )
+  .add("bordered", () => (
+    <Table tableStyle='bordered'>
+    <TableCaption>Table of People</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Surname</TableCell>
+          <TableCell heading>Age</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>27</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Adam</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>32</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Jane</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>40</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>51</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Mary</TableCell>
+          <TableCell>Gary</TableCell>
+          <TableCell>67</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  )
+)
+  .add("striped", () => (
+    <Table tableStyle='striped'>
+    <TableCaption>Table of People</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Surname</TableCell>
+          <TableCell heading>Age</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>27</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Adam</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>32</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Jane</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>40</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>51</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Mary</TableCell>
+          <TableCell>Gary</TableCell>
+          <TableCell>67</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  )
+)
 .add("horizontal", () => (
     <Table>
     <TableCaption>Table of People</TableCaption>

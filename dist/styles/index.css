@@ -2705,8 +2705,6 @@ table {
   border-collapse: separate;
   border-spacing: 0;
   width: calc(100% - 2 * var(--margin-horizontal));
-  border: 1px solid var(--interface-gray-100);
-  --border-radius: var(--ls-50p);
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-150p); }
   table caption {
@@ -2716,8 +2714,12 @@ table {
     --border-radius: var(--ls-50p); }
   table thead th {
     border-bottom: 1px solid var(--interface-gray-100); }
-  table tr:nth-of-type(2n-1) > td {
+  table.bordered thead th {
+    border-bottom: 2px solid var(--interface-gray-100); }
+  table.striped tr:nth-of-type(2n-1) > td {
     --background-color: var(--interface-gray-50); }
+  table.bordered tr:not(:last-child) > td {
+    border-bottom: 1px solid var(--interface-gray-100); }
   table th, table td {
     --padding-horizontal: var(--ls-50p);
     --padding-vertical: var(--ls-50p); }
@@ -2732,15 +2734,7 @@ table {
     padding-left: var(--ls-75p); }
   table th:last-child, table td:last-child {
     padding-right: var(--ls-75p); }
-  table thead tr:first-child *:first-child, table :not(thead) + tbody tr:first-child *:first-child, table tbody:first-child tr:first-child *:first-child {
-    border-top-left-radius: var(--ls-50p); }
-  table thead tr:first-child *:last-child, table :not(thead) + tbody tr:first-child *:last-child, table tbody:first-child tr:first-child *:last-child {
-    border-top-right-radius: var(--ls-50p); }
-  table tbody tr:last-child *:first-child {
-    border-bottom-left-radius: var(--ls-50p); }
-  table tbody tr:last-child *:last-child {
-    border-bottom-right-radius: var(--ls-50p); }
   table tbody th {
     border-right: 1px solid var(--interface-gray-100); }
   table tr:hover > td, table tr:focus > td {
-    --background-color: var(--focus-blue-100); }
+    --background-color: var(--focus-blue-50); }
