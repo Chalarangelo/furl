@@ -9,6 +9,7 @@ import HyperlinkDocs from "./docs/Hyperlink";
 import TableDocs from "./docs/Table";
 import ImageDocs from "./docs/Image";
 import ListDocs from "./docs/List";
+import GridDocs from "/docs/Grid";
 import MenuDocs from "./docs/Menu";
 import LayoutSysDocs from "./docs/LayoutSystem";
 import LayoutDocs from "./docs/Layout";
@@ -79,6 +80,7 @@ ReactDOM.render(<Layout>
           <ButtonDocs />
           <CardDocs />
           <DropdownDocs />
+          <GridDocs />
           <HyperlinkDocs />
           <ImageDocs />
           <LayoutDocs />
