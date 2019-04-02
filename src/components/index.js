@@ -8,6 +8,7 @@ import { Grid, Row, Column } from "./Grid";
 import { Menu, MenuItem } from "./Menu";
 import { Card, CardSection } from "./Card";
 import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "./Table";
+import { Title, Text, Paragraph, Quote, Code, Kbd, Preformatted } from "./Typography";
 
 export { 
   Hyperlink,
@@ -19,5 +20,6 @@ export {
   Card, CardSection,
   Menu, MenuItem,
   Table, TableCaption, TableHead, TableBody, TableRow, TableCell,
-  Dropdown
+  Dropdown,
+  Title, Text, Paragraph, Quote, Code, Kbd, Preformatted
 };
