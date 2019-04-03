@@ -2661,11 +2661,13 @@ ol.upper-roman li::before {
     .menu.vertical.right-highlight > .menu-item {
       border-right: 3px solid transparent; }
       .menu.vertical.right-highlight > .menu-item.selected {
-        border-right: 3px solid var(--focus-blue-500); }
+        border-right: 3px solid var(--focus-blue-500);
+        --background-color: var(--focus-blue-50); }
     .menu.vertical.left-highlight > .menu-item {
       border-left: 3px solid transparent; }
       .menu.vertical.left-highlight > .menu-item.selected {
-        border-left: 3px solid var(--focus-blue-500); }
+        border-left: 3px solid var(--focus-blue-500);
+        --background-color: var(--focus-blue-50); }
   .menu.horizontal {
     height: var(--ls-250p);
     display: flex;

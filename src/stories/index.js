@@ -761,9 +761,9 @@ storiesOf('Menu', module)
           </Row>
         </Grid>
       </Header>
-      <Sidebar><Menu type="vertical">
+      <Sidebar><Menu type="vertical" highlight="right">
         <MenuItem>Item 1</MenuItem>
-        <MenuItem>Item 2</MenuItem>
+        <MenuItem selected>Item 2</MenuItem>
         <MenuItem>Item 3</MenuItem>
         <MenuItem>Item 4</MenuItem>
       </Menu></Sidebar>
