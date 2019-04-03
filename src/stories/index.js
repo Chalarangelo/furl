@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote } from "../../dist/components";
+import { Hyperlink, Anchor, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -261,6 +261,17 @@ storiesOf('Dropdown', module)
     </Layout>
   )
   )
+;
+
+storiesOf('Collapse', module)
+  .add("default", () => (
+    <Collapse title="Don't do it">
+      <Hyperlink href="#">Item 3.1</Hyperlink>
+      <Hyperlink href="#">Item 3.2</Hyperlink>
+      <Hyperlink href="#">Item 3.3</Hyperlink>
+    </Collapse>
+  )
+)
 ;
 
 storiesOf('Grid', module)

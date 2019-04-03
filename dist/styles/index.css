@@ -2187,6 +2187,51 @@ button, .button, a.button {
     text-transform: uppercase;
     letter-spacing: 0.0375em; }
 
+.collapse {
+  background: inherit;
+  --color: inherit;
+  position: relative;
+  display: block;
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-75p);
+  --box-shadow: var(--shadow-100);
+  --border-radius: var(--ls-50p);
+  transform: 0.3s all ease; }
+  .collapse > * {
+    transform: 0.3s all ease; }
+  .collapse > summary {
+    --padding-horizontal: var(--ls-75p);
+    --padding-vertical: var(--ls-50p);
+    background: inherit;
+    --color: inherit; }
+    .collapse > summary:hover {
+      --color: var(--focus-blue-500); }
+  .collapse[open] > summary {
+    border-bottom: 1px solid var(--interface-gray-100); }
+  .collapse > summary > svg {
+    background: inherit;
+    --color: inherit;
+    position: absolute;
+    right: var(--ls-50p);
+    transform: scale(0.66667);
+    transition: all 0.3s ease;
+    display: inline; }
+    .collapse > summary > svg > path {
+      --color: inherit;
+      fill: var(--color); }
+  .collapse[open] > summary > svg {
+    transform: scale(-0.66667, -0.66667); }
+  .collapse .collapse-content {
+    --background-color: var(--interface-gray-0);
+    left: 0;
+    width: 100%;
+    --padding: var(--ls-75p);
+    --border-radius: var(--ls-50p); }
+  .collapse > summary:first-of-type {
+    list-style-type: none; }
+  .collapse > summary::-webkit-details-marker {
+    display: none; }
+
 .dropdown {
   background: inherit;
   --color: inherit;

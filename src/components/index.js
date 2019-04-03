@@ -2,6 +2,7 @@ import Hyperlink from './Hyperlink';
 import Button from "./Button";
 import Image from "./Image";
 import Dropdown from "./Dropdown";
+import Collapse from "./Collapse";
 import { List, ListItem } from "./List";
 import { Layout, Content, Sidebar, Header } from "./Layout";
 import { Grid, Row, Column } from "./Grid";
@@ -22,6 +23,7 @@ export {
   Menu, MenuItem,
   Table, TableCaption, TableHead, TableBody, TableRow, TableCell,
   Dropdown,
+  Collapse,
   Title, Text, Paragraph, Quote, Code, Kbd, Preformatted,
   Anchor
 };

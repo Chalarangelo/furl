@@ -1,0 +1,55 @@
+.collapse {
+  background: inherit;
+  --color: inherit;
+  position: relative;
+  display: block;
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-75p);
+  --box-shadow: var(--shadow-100);
+  --border-radius: var(--ls-50p);
+  transform: 0.3s all ease;
+  & > * {
+    transform: 0.3s all ease;
+  }
+  & > summary {
+  --padding-horizontal: var(--ls-75p);
+  --padding-vertical: var(--ls-50p);
+  background: inherit;
+  --color: inherit;
+    &:hover {
+      --color: var(--focus-blue-500);
+    }
+  }
+  &[open] > summary { 
+    border-bottom: 1px solid var(--interface-gray-100);
+  }
+  & > summary > svg {
+    background: inherit;
+    --color: inherit;
+    position: absolute;
+    right: var(--ls-50p);
+    transform: scale(0.666667);
+    transition: all 0.3s ease;
+    display: inline;
+    & > path {
+      --color: inherit;
+      fill: var(--color);
+    }
+  }
+  &[open] > summary > svg {
+    transform: scale(-0.666667, -0.666667);
+  }
+  & .collapse-content {
+    --background-color: var(--interface-gray-0);
+    left: 0;
+    width: 100%;
+    --padding: var(--ls-75p);
+    --border-radius: var(--ls-50p);
+  }
+  & > summary:first-of-type {
+    list-style-type: none;
+  }
+  & > summary::-webkit-details-marker {
+    display:none;
+  }
+}
