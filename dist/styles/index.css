@@ -2001,6 +2001,22 @@ a {
   a:hover, a:focus {
     border-bottom: 2px solid var(--focus-blue-300); }
 
+a.anchor {
+  --margin-horizontal: var(--ls-75p); }
+  a.anchor:link {
+    --color: transparent;
+    border-bottom: 2px solid transparent; }
+  a.anchor:visited {
+    --color: transparent; }
+  a.anchor:hover, a.anchor:focus {
+    border-bottom: 2px solid transparent;
+    --color: var(--focus-blue-500); }
+
+*:hover > a.anchor, *:focus > a.anchor {
+  --color: var(--focus-blue-600); }
+  *:hover > a.anchor:hover, *:hover > a.anchor:focus, *:focus > a.anchor:hover, *:focus > a.anchor:focus {
+    --color: var(--focus-blue-500); }
+
 button, .button, a.button {
   line-height: 1.5;
   border: 0;

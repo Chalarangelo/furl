@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown } from "../../dist/components";
+import { Hyperlink, Anchor, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -23,6 +23,21 @@ storiesOf('Hyperlink', module)
     <Hyperlink href="https://google.com" openIn="external">
       Open in new tab with noopener noreferrer.
     </Hyperlink>
+  )
+)
+;
+
+storiesOf('Anchor', module)
+  .add("lonely", () => (
+    <Anchor href="#a"/>
+  )
+)
+  .add("inside title", () => (
+    <Title level={3}>Hello<Anchor href="#" /></Title>
+  )
+)
+  .add("to the left", () => (
+    <Title level={3}>Hello<Anchor href="#" /></Title>
   )
 )
 ;

@@ -1,0 +1,25 @@
+a.anchor {
+  --margin-horizontal: var(--ls-75p);
+  &:link{
+    --color: transparent;
+    border-bottom: 2px solid transparent;
+  }
+  &:visited {
+    --color: transparent;
+  }
+  &:hover, &:focus {
+    border-bottom: 2px solid transparent;
+    --color: var(--focus-blue-500);
+  }
+}
+
+* {
+  &:hover, &:focus {
+    & > a.anchor {
+      --color: var(--focus-blue-600);
+      &:hover, &:focus {
+        --color: var(--focus-blue-500);
+      }
+    }
+  }
+}

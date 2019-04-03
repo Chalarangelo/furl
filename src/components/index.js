@@ -9,6 +9,7 @@ import { Menu, MenuItem } from "./Menu";
 import { Card, CardSection } from "./Card";
 import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "./Table";
 import { Title, Text, Paragraph, Quote, Code, Kbd, Preformatted } from "./Typography";
+import Anchor from "./Anchor";
 
 export { 
   Hyperlink,
@@ -21,5 +22,6 @@ export {
   Menu, MenuItem,
   Table, TableCaption, TableHead, TableBody, TableRow, TableCell,
   Dropdown,
-  Title, Text, Paragraph, Quote, Code, Kbd, Preformatted
+  Title, Text, Paragraph, Quote, Code, Kbd, Preformatted,
+  Anchor
 };
