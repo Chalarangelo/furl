@@ -2017,6 +2017,83 @@ a.anchor {
   *:hover > a.anchor:hover, *:hover > a.anchor:focus, *:focus > a.anchor:hover, *:focus > a.anchor:focus {
     --color: var(--focus-blue-500); }
 
+.tooltip {
+  position: relative; }
+
+.tooltip-trigger {
+  display: inline-block; }
+
+.tooltip-bubble {
+  opacity: 0.85;
+  min-width: var(--ls-400p);
+  max-width: var(--ls-500p);
+  position: absolute;
+  z-index: 90; }
+  .tooltip-bubble::after {
+    content: '';
+    position: absolute; }
+
+.tooltip-top {
+  bottom: 100%;
+  left: 50%;
+  padding-bottom: var(--ls-50p);
+  transform: translateX(-50%); }
+  .tooltip-top::after {
+    border-left: var(--ls-50p) solid transparent;
+    border-right: var(--ls-50p) solid transparent;
+    border-top: var(--ls-50p) solid var(--interface-gray-700);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+
+.tooltip-bottom {
+  top: 100%;
+  left: 50%;
+  padding-top: var(--ls-50p);
+  transform: translateX(-50%); }
+  .tooltip-bottom::after {
+    border-left: var(--ls-50p) solid transparent;
+    border-right: var(--ls-50p) solid transparent;
+    border-bottom: var(--ls-50p) solid var(--interface-gray-700);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+
+.tooltip-left {
+  top: 50%;
+  right: 100%;
+  padding-right: var(--ls-50p);
+  transform: translateY(-50%); }
+  .tooltip-left::after {
+    border-left: var(--ls-50p) solid var(--interface-gray-700);
+    border-top: var(--ls-50p) solid transparent;
+    border-bottom: var(--ls-50p) solid transparent;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%); }
+
+.tooltip-right {
+  top: 50%;
+  left: 100%;
+  padding-left: var(--ls-50p);
+  transform: translateY(-50%); }
+  .tooltip-right::after {
+    border-right: var(--ls-50p) solid var(--interface-gray-700);
+    border-top: var(--ls-50p) solid transparent;
+    border-bottom: var(--ls-50p) solid transparent;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%); }
+
+.tooltip-message {
+  --background-color: var(--interface-gray-700);
+  --border-radius: var(--ls-25p);
+  --color: var(--interface-gray-0);
+  --font-size: var(--ts-50p);
+  --padding-vertical: var(--ls-75p);
+  --padding-horizontal: var(--ls-75p);
+  text-align: center; }
+
 button, .button, a.button {
   line-height: 1.5;
   border: 0;

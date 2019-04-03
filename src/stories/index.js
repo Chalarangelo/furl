@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote } from "../../dist/components";
+import { Hyperlink, Anchor, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -34,6 +34,13 @@ storiesOf('Anchor', module)
 )
   .add("inside title", () => (
     <Title level={3}>Hello<Anchor href="#" /></Title>
+  )
+)
+;
+
+storiesOf('Tooltip', module)
+  .add("text", () => (
+    <Paragraph className="margin-ls-250p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur facilisis posuere. <Tooltip content="Simple text" position="top">Hello.</Tooltip> Phasellus auctor justo eget dapibus blandit. Praesent at felis non leo suscipit finibus sit amet sit amet nibh. Donec suscipit diam viverra eleifend malesuada. <Tooltip content="Simple text" position="right">Hello.</Tooltip> Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Nulla facilisi. Ut vitae ullamcorper eros. <Tooltip content="Simple text" position="bottom">Hello.</Tooltip> Curabitur eu elit odio. Maecenas ex diam, pellentesque eu facilisis aliquam, aliquet ac eros. Sed mattis pellentesque mauris, non faucibus urna iaculis non. <Tooltip content="Simple text" position="left">Hello.</Tooltip> Nulla vel tellus sed turpis fringilla feugiat.</Paragraph>
   )
 )
 ;

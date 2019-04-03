@@ -11,6 +11,7 @@ import { Card, CardSection } from "./Card";
 import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "./Table";
 import { Title, Text, Paragraph, Quote, Code, Kbd, Preformatted } from "./Typography";
 import Anchor from "./Anchor";
+import Tooltip from "./Tooltip";
 
 export { 
   Hyperlink,
@@ -25,5 +26,6 @@ export {
   Dropdown,
   Collapse,
   Title, Text, Paragraph, Quote, Code, Kbd, Preformatted,
-  Anchor
+  Anchor,
+  Tooltip
 };

@@ -19,11 +19,11 @@ const Preformatted = ({ id, className, children }) => {
 }
 
 const Paragraph = ({ id, className, children }) => {
-  return (<code
+  return (<p
     id={id !== undefined ? id : false}
     className={[className].join(' ').trim()}>
     {children}
-  </code>);
+  </p>);
 }
 
 const Code = ({ id, className, children }) => {
