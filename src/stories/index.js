@@ -36,10 +36,6 @@ storiesOf('Anchor', module)
     <Title level={3}>Hello<Anchor href="#" /></Title>
   )
 )
-  .add("to the left", () => (
-    <Title level={3}>Hello<Anchor href="#" /></Title>
-  )
-)
 ;
 
 storiesOf('Button', module)
@@ -439,7 +435,11 @@ storiesOf('List', module)
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List listStyle="checkbox">
+      <List listStyle="checkmark">
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </List>
+      <List listStyle="xmark">
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>

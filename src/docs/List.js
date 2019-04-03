@@ -31,7 +31,7 @@ const ListDocs = props => (
           <TableCell><code>listStyle</code></TableCell>
           <TableCell><code>string</code></TableCell>
           <TableCell><code>'none'</code></TableCell>
-          <TableCell colSpan={3}>display style of the list (<code>'circle'</code>, <code>'disc'</code>, <code>'square'</code>, <code>'triangle'</code>, <code>'checkbox'</code>, only applicable if <code>ordered=false</code> - <code>'decimal'</code>, <code>'decimal-leading-zero'</code>, <code>'lower-latin'</code>, <code>'lower-roman'</code>, <code>'upper-latin'</code>, <code>'upper-roman'</code>, only applicable if <code>ordered=true</code> - <code>'none'</code>)</TableCell>
+          <TableCell colSpan={3}>display style of the list (<code>'circle'</code>, <code>'disc'</code>, <code>'square'</code>, <code>'triangle'</code>, <code>'checkmark'</code>, <code>'xmark'</code>, only applicable if <code>ordered=false</code> - <code>'decimal'</code>, <code>'decimal-leading-zero'</code>, <code>'lower-latin'</code>, <code>'lower-roman'</code>, <code>'upper-latin'</code>, <code>'upper-roman'</code>, only applicable if <code>ordered=true</code> - <code>'none'</code>)</TableCell>
         </TableRow>
         <TableRow>
           <TableCell><code>id</code></TableCell>

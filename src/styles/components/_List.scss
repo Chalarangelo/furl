@@ -10,7 +10,7 @@ li {
 }
 
 ul {
-  &.circle, &.disc, &.square, &.triangle, &.checkbox {
+  &.circle, &.disc, &.square, &.triangle, &.checkmark, &.xmark {
     li::before {
       --color: var(--interface-gray-400);
       display: inline-block;
@@ -43,9 +43,20 @@ ul {
       content: "\2023";
     }
   }
-  &.checkbox {
+  &.checkmark {
     li::before {
       content: "\2713";
+      font-size: 1rem;
+      margin-left: -1.75em;
+      margin-right: 0.75em;
+      --background-color: var(--focus-blue-100);
+      --border-radius: 50%;
+      text-align: center;
+    }
+  }
+  &.xmark {
+    li::before {
+      content: "\2717";
       font-size: 1rem;
       margin-left: -1.75em;
       margin-right: 0.75em;

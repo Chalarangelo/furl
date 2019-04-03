@@ -2266,7 +2266,7 @@ ol, ul {
 li {
   --padding-horizontal: var(--ls-50p); }
 
-ul.circle li::before, ul.disc li::before, ul.square li::before, ul.triangle li::before, ul.checkbox li::before {
+ul.circle li::before, ul.disc li::before, ul.square li::before, ul.triangle li::before, ul.checkmark li::before, ul.xmark li::before {
   --color: var(--interface-gray-400);
   display: inline-block;
   font-size: 1.5rem;
@@ -2289,8 +2289,17 @@ ul.square li::before {
 ul.triangle li::before {
   content: "\2023"; }
 
-ul.checkbox li::before {
+ul.checkmark li::before {
   content: "\2713";
+  font-size: 1rem;
+  margin-left: -1.75em;
+  margin-right: 0.75em;
+  --background-color: var(--focus-blue-100);
+  --border-radius: 50%;
+  text-align: center; }
+
+ul.xmark li::before {
+  content: "\2717";
   font-size: 1rem;
   margin-left: -1.75em;
   margin-right: 0.75em;
