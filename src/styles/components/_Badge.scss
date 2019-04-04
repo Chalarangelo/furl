@@ -1,0 +1,61 @@
+@mixin define-badge-color-variant ($class-name, $color-name) {
+  &.#{$class-name} {
+    --background-color: var(--#{$color-name}-200);
+    --secondary-background-color: var(--#{$color-name}-100);
+    --color: var(--#{$color-name}-900);
+  }
+}
+
+.badge {
+  --background-color: var(--interface-gray-200);
+  --secondarey-color: var(--interface-gray-100);
+  --font-size: var(--ts-50p);
+  font-size: var(--font-size);
+  --font-weight: 500;
+  --color: var(--interface-gray-900);
+  --margin: var(--ls-25p);
+  display: inline-block;
+  --padding-horizontal: var(--ls-50p);
+  --padding-vertical: var(--ls-0p);
+  --border-radius: var(--ls-25p);
+  
+  // Size variants
+  &.small {
+    --padding-horizontal: var(--ls-75p);
+    --padding-vertical: var(--ls-25p);
+  }
+  &.large {
+    --padding-horizontal: var(--ls-100p);
+    --padding-vertical: var(--ls-25p);
+  }
+
+  // Fill variants
+  &.flat {
+    background: var(--background-color);
+  }
+  &.outline {
+    background: transparent;
+    border: 1px solid var(--background-color);
+  }
+  &.gradient {
+    background: #{'linear-gradient(var(--secondary-background-color), var(--background-color))'};
+  }
+  &.light {
+    background: var(--secondary-background-color);
+    border: 1px solid var(--background-color);
+  }
+
+  // Shape variants
+  &.rounded {
+    border-radius: 20%/50%;
+  }
+  &.circle {
+    border-radius: 100%;
+  }
+
+  @include define-badge-color-variant('danger', 'danger-red');
+  @include define-badge-color-variant('success', 'success-green');
+  @include define-badge-color-variant('warning', 'warning-yellow');
+  @include define-badge-color-variant('primary', 'focus-blue');
+  @include define-badge-color-variant('secondary', 'deep-purple');
+}

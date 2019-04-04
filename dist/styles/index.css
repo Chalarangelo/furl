@@ -2264,6 +2264,59 @@ button, .button, a.button {
     text-transform: uppercase;
     letter-spacing: 0.0375em; }
 
+.badge {
+  --background-color: var(--interface-gray-200);
+  --secondarey-color: var(--interface-gray-100);
+  --font-size: var(--ts-50p);
+  font-size: var(--font-size);
+  --font-weight: 500;
+  --color: var(--interface-gray-900);
+  --margin: var(--ls-25p);
+  display: inline-block;
+  --padding-horizontal: var(--ls-50p);
+  --padding-vertical: var(--ls-0p);
+  --border-radius: var(--ls-25p); }
+  .badge.small {
+    --padding-horizontal: var(--ls-75p);
+    --padding-vertical: var(--ls-25p); }
+  .badge.large {
+    --padding-horizontal: var(--ls-100p);
+    --padding-vertical: var(--ls-25p); }
+  .badge.flat {
+    background: var(--background-color); }
+  .badge.outline {
+    background: transparent;
+    border: 1px solid var(--background-color); }
+  .badge.gradient {
+    background: linear-gradient(var(--secondary-background-color), var(--background-color)); }
+  .badge.light {
+    background: var(--secondary-background-color);
+    border: 1px solid var(--background-color); }
+  .badge.rounded {
+    border-radius: 20%/50%; }
+  .badge.circle {
+    border-radius: 100%; }
+  .badge.danger {
+    --background-color: var(--danger-red-200);
+    --secondary-background-color: var(--danger-red-100);
+    --color: var(--danger-red-900); }
+  .badge.success {
+    --background-color: var(--success-green-200);
+    --secondary-background-color: var(--success-green-100);
+    --color: var(--success-green-900); }
+  .badge.warning {
+    --background-color: var(--warning-yellow-200);
+    --secondary-background-color: var(--warning-yellow-100);
+    --color: var(--warning-yellow-900); }
+  .badge.primary {
+    --background-color: var(--focus-blue-200);
+    --secondary-background-color: var(--focus-blue-100);
+    --color: var(--focus-blue-900); }
+  .badge.secondary {
+    --background-color: var(--deep-purple-200);
+    --secondary-background-color: var(--deep-purple-100);
+    --color: var(--deep-purple-900); }
+
 .collapse {
   background: inherit;
   --color: inherit;

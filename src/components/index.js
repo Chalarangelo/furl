@@ -12,6 +12,7 @@ import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "
 import { Title, Text, Paragraph, Quote, Code, Kbd, Preformatted } from "./Typography";
 import Anchor from "./Anchor";
 import Tooltip from "./Tooltip";
+import Badge from "./Badge";
 
 export { 
   Hyperlink,
@@ -27,5 +28,6 @@ export {
   Collapse,
   Title, Text, Paragraph, Quote, Code, Kbd, Preformatted,
   Anchor,
-  Tooltip
+  Tooltip,
+  Badge
 };

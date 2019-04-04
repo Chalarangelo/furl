@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip } from "../../dist/components";
+import { Hyperlink, Anchor, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Badge } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -44,6 +44,100 @@ storiesOf('Tooltip', module)
   )
 )
 ;
+
+storiesOf('Badge', module)
+  .add("default", () => (
+    <React.Fragment>
+    <Badge>
+      Badge
+    </Badge>
+    <Paragraph>
+        Phasellus auctor justo eget dapibus blandit. Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Praesent at felis non leo suscipit finibus sit amet sit amet nibh. Lorem ipsum dolor sit <Badge>amet</Badge>, consectetur adipiscing elit. Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Nulla vel tellus sed turpis fringilla feugiat.
+    </Paragraph>
+    </React.Fragment>
+  )
+)
+  .add("large", () => (
+    <Badge size='large'>
+      Badge
+    </Badge>
+  )
+)
+  .add("small", () => (
+    <Badge size='small'>
+      Badge
+    </Badge>
+  )
+)
+  .add("rounded", () => (
+    <Badge shape='rounded'>
+      Badge
+    </Badge>
+  )
+)
+  .add("circle", () => (
+    <Badge shape='circle'>
+      3
+    </Badge>
+  )
+  )
+
+  .add("interface", () => (
+    <React.Fragment>
+      <Badge >Continue</Badge>
+      <Badge fill='light'>Continue</Badge>
+      <Badge fill='gradient'>Continue</Badge>
+      <Badge fill='outline'>Continue</Badge>
+    </React.Fragment>
+  )
+  )
+  .add("primary", () => (
+    <React.Fragment>
+      <Badge color='primary' >Continue</Badge>
+      <Badge color='primary' fill='light'>Continue</Badge>
+      <Badge color='primary' fill='gradient'>Continue</Badge>
+      <Badge color='primary' fill='outline'>Continue</Badge>
+    </React.Fragment>
+  )
+  )
+  .add("secondary", () => (
+    <React.Fragment>
+      <Badge color='secondary' >Continue</Badge>
+      <Badge color='secondary' fill='light'>Continue</Badge>
+      <Badge color='secondary' fill='gradient'>Continue</Badge>
+      <Badge color='secondary' fill='outline'>Continue</Badge>
+    </React.Fragment>
+  )
+  )
+  .add("danger", () => (
+    <React.Fragment>
+      <Badge color='danger' >Continue</Badge>
+      <Badge color='danger' fill='light'>Continue</Badge>
+      <Badge color='danger' fill='gradient'>Continue</Badge>
+      <Badge color='danger' fill='outline'>Continue</Badge>
+    </React.Fragment>
+  )
+  )
+  .add("success", () => (
+    <React.Fragment>
+      <Badge color='success' >Continue</Badge>
+      <Badge color='success' fill='light'>Continue</Badge>
+      <Badge color='success' fill='gradient'>Continue</Badge>
+      <Badge color='success' fill='outline'>Continue</Badge>
+    </React.Fragment>
+  )
+  )
+  .add("warning", () => (
+    <React.Fragment>
+      <Badge color='warning' >Continue</Badge>
+      <Badge color='warning' fill='light'>Continue</Badge>
+      <Badge color='warning' fill='gradient'>Continue</Badge>
+      <Badge color='warning' fill='outline'>Continue</Badge>
+    </React.Fragment>
+  )
+  )
+;
+
 
 storiesOf('Button', module)
   .add("normal", () => (
