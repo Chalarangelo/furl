@@ -1,0 +1,37 @@
+[type="checkbox"], [type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  height: var(--ls-100p);
+  width: var(--ls-100p);
+  vertical-align: bottom;
+  --margin: var(--ls-25p);
+  border: 1px solid var(--interface-gray-300);
+  --background-color: var(--interface-gray-0);
+  border-radius: var(--ls-25p);
+  transition: all 0.3s ease;
+  &:checked {
+    --background-color: var(--interface-gray-400);
+    border: 1px solid var(--interface-gray-400);
+  }
+  &:checked:before {
+    position: absolute;
+  }
+}
+[type="checkbox"] {
+  &:checked:before {
+    content: '\2713';
+    font-family: sans-serif;
+    --font-weight: 500;
+    --font-size: var(--ts-50p);
+    --color: var(--interface-gray-50);
+    --background-color: transparent;
+    height: var(--ls-100p);
+    width: var(--ls-100p);
+    top: -1px;
+    left: -1px;
+    line-height: 1.2;
+    text-align: center;
+  }
+}

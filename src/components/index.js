@@ -13,6 +13,7 @@ import { Title, Text, Paragraph, Quote, Code, Kbd, Preformatted } from "./Typogr
 import Anchor from "./Anchor";
 import Tooltip from "./Tooltip";
 import Badge from "./Badge";
+import Checkbox from "./Checkbox";
 
 export { 
   Hyperlink,
@@ -29,5 +30,6 @@ export {
   Title, Text, Paragraph, Quote, Code, Kbd, Preformatted,
   Anchor,
   Tooltip,
-  Badge
+  Badge,
+  Checkbox
 };
