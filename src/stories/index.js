@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Badge, Checkbox } from "../../dist/components";
+import { Hyperlink, Anchor, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Badge, Checkbox, Radio } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -46,11 +46,32 @@ storiesOf('Tooltip', module)
 ;
 
 storiesOf('Checkbox', module)
-  .add("text", () => (
-    <label><Checkbox />Test checkbox</label>
+  .add("default", () => (
+    <React.Fragment>
+      <Checkbox>Hello</Checkbox><br/>
+      <Checkbox color='primary'>Hello</Checkbox><br/>
+      <Checkbox color='secondary'>Hello</Checkbox><br/>
+      <Checkbox color='danger'>Hello</Checkbox><br/>
+      <Checkbox color='success'>Hello</Checkbox><br/>
+      <Checkbox color='warning'>Hello</Checkbox>
+    </React.Fragment>
   )
 )
 ;
+
+storiesOf('Radio', module)
+  .add("default", () => (
+    <React.Fragment>
+      <Radio name="radios">Hello</Radio><br />
+      <Radio name="radios" color='primary'>Hello</Radio><br />
+      <Radio name="radios" color='secondary'>Hello</Radio><br />
+      <Radio name="radios" color='danger'>Hello</Radio><br />
+      <Radio name="radios" color='success'>Hello</Radio><br />
+      <Radio name="radios" color='warning'>Hello</Radio>
+    </React.Fragment>
+  )
+  )
+  ;
 
 storiesOf('Badge', module)
   .add("default", () => (

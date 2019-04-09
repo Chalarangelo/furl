@@ -14,6 +14,7 @@ import Anchor from "./Anchor";
 import Tooltip from "./Tooltip";
 import Badge from "./Badge";
 import Checkbox from "./Checkbox";
+import Radio from "./Radio";
 
 export { 
   Hyperlink,
@@ -31,5 +32,6 @@ export {
   Anchor,
   Tooltip,
   Badge,
-  Checkbox
+  Checkbox,
+  Radio
 };

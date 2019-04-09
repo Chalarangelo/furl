@@ -1,24 +1,30 @@
 import React from "react";
 
 const Checkbox = ({
-  fill = 'flat',
-  text = 'normal',
-  size = 'normal',
   color = 'plain',
-  shape = 'normal',
-  id, 
-  className }) => {
-  let classNames = [];
-  // classNames.push(fill);
-  // if (text !== 'normal') classNames.push(text);
-  // if (size !== 'normal') classNames.push(size);
-  // if (color !== 'plain') classNames.push(color);
-  // if (shape !== 'normal') classNames.push(shape);
+  disabled = false,
+  required = false,
+  name,
+  checked,
+  onChange,
+  id,
+  className,
+  children }) => {
+  let classNames = [color, className];
   return (
-  <input 
-    type='checkbox'
-    id={id !== undefined ? id : false} 
-    className={[className, ...classNames].join(' ').trim()} />
+  <label className='checkbox'>
+    <input
+      type='checkbox'
+      id={id !== undefined ? id : false}
+      className={classNames.join(' ').trim()}
+      disabled={disabled}
+      required={required}
+      checked={checked}
+      name={name!== undefined ? name : false}
+      onChange={onChange}
+    />
+    {children}
+  </label>
 )};
 
 export default Checkbox;
