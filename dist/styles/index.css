@@ -2021,34 +2021,66 @@ a.anchor {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  --background-color: var(--interface-gray-400);
+  --color: var(--interface-gray-50);
   position: relative;
   height: var(--ls-100p);
   width: var(--ls-100p);
   vertical-align: bottom;
   --margin: var(--ls-25p);
-  border: 1px solid var(--interface-gray-300);
-  --background-color: var(--interface-gray-0);
-  border-radius: var(--ls-25p);
+  border: 1px solid var(--background-color);
+  background: var(--color);
   transition: all 0.3s ease; }
   [type="checkbox"]:checked, [type="radio"]:checked {
-    --background-color: var(--interface-gray-400);
-    border: 1px solid var(--interface-gray-400); }
+    background: var(--background-color);
+    border: 1px solid var(--background-color); }
   [type="checkbox"]:checked:before, [type="radio"]:checked:before {
     position: absolute; }
+  [type="checkbox"].danger, [type="radio"].danger {
+    --background-color: var(--danger-red-400);
+    --color: var(--danger-red-50); }
+  [type="checkbox"].success, [type="radio"].success {
+    --background-color: var(--success-green-400);
+    --color: var(--success-green-50); }
+  [type="checkbox"].warning, [type="radio"].warning {
+    --background-color: var(--warning-yellow-400);
+    --color: var(--warning-yellow-50); }
+  [type="checkbox"].primary, [type="radio"].primary {
+    --background-color: var(--focus-blue-400);
+    --color: var(--focus-blue-50); }
+  [type="checkbox"].secondary, [type="radio"].secondary {
+    --background-color: var(--deep-purple-400);
+    --color: var(--deep-purple-50); }
 
-[type="checkbox"]:checked:before {
-  content: '\2713';
-  font-family: sans-serif;
-  --font-weight: 500;
-  --font-size: var(--ts-50p);
-  --color: var(--interface-gray-50);
-  --background-color: transparent;
-  height: var(--ls-100p);
-  width: var(--ls-100p);
-  top: -1px;
-  left: -1px;
-  line-height: 1.2;
-  text-align: center; }
+[type="checkbox"] {
+  border-radius: var(--ls-25p); }
+  [type="checkbox"]:checked:before {
+    content: '\2713';
+    font-family: sans-serif;
+    --font-weight: 500;
+    --font-size: var(--ts-50p);
+    --background-color: transparent;
+    height: var(--ls-100p);
+    width: var(--ls-100p);
+    top: -1px;
+    left: -1px;
+    line-height: 1.2;
+    text-align: center; }
+
+[type="radio"] {
+  border-radius: var(--ls-100p); }
+  [type="radio"]:checked:before {
+    content: '\25cf';
+    font-family: sans-serif;
+    --font-weight: 500;
+    --font-size: var(--ts-50p);
+    --background-color: transparent;
+    height: var(--ls-100p);
+    width: var(--ls-100p);
+    top: -1px;
+    left: -1px;
+    line-height: 1.1;
+    text-align: center; }
 
 .tooltip {
   position: relative; }
