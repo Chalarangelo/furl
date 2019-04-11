@@ -2103,10 +2103,12 @@ a.anchor {
   position: relative; }
 
 .tooltip-trigger {
-  display: inline-block; }
+  display: inline-block;
+  text-decoration: underline dotted; }
 
 .tooltip-bubble {
-  opacity: 0.85;
+  background: transparent;
+  opacity: 0.95;
   min-width: var(--ls-400p);
   max-width: var(--ls-500p);
   position: absolute;
@@ -2121,12 +2123,12 @@ a.anchor {
   padding-bottom: var(--ls-50p);
   transform: translateX(-50%); }
   .tooltip-top::after {
-    border-left: var(--ls-50p) solid transparent;
-    border-right: var(--ls-50p) solid transparent;
-    border-top: var(--ls-50p) solid var(--interface-gray-700);
-    bottom: 0;
+    bottom: var(--ls-25p);
     left: 50%;
-    transform: translateX(-50%); }
+    transform: translateX(-50%) rotate(45deg);
+    height: var(--ls-50p);
+    width: var(--ls-50p);
+    --background-color: var(--interface-gray-700); }
 
 .tooltip-bottom {
   top: 100%;
@@ -2134,12 +2136,12 @@ a.anchor {
   padding-top: var(--ls-50p);
   transform: translateX(-50%); }
   .tooltip-bottom::after {
-    border-left: var(--ls-50p) solid transparent;
-    border-right: var(--ls-50p) solid transparent;
-    border-bottom: var(--ls-50p) solid var(--interface-gray-700);
-    top: 0;
     left: 50%;
-    transform: translateX(-50%); }
+    top: var(--ls-25p);
+    transform: translateX(-50%) rotate(45deg);
+    height: var(--ls-50p);
+    width: var(--ls-50p);
+    --background-color: var(--interface-gray-700); }
 
 .tooltip-left {
   top: 50%;
@@ -2147,12 +2149,12 @@ a.anchor {
   padding-right: var(--ls-50p);
   transform: translateY(-50%); }
   .tooltip-left::after {
-    border-left: var(--ls-50p) solid var(--interface-gray-700);
-    border-top: var(--ls-50p) solid transparent;
-    border-bottom: var(--ls-50p) solid transparent;
     top: 50%;
-    right: 0;
-    transform: translateY(-50%); }
+    right: var(--ls-25p);
+    transform: translateY(-50%) rotate(45deg);
+    height: var(--ls-50p);
+    width: var(--ls-50p);
+    --background-color: var(--interface-gray-700); }
 
 .tooltip-right {
   top: 50%;
@@ -2160,12 +2162,12 @@ a.anchor {
   padding-left: var(--ls-50p);
   transform: translateY(-50%); }
   .tooltip-right::after {
-    border-right: var(--ls-50p) solid var(--interface-gray-700);
-    border-top: var(--ls-50p) solid transparent;
-    border-bottom: var(--ls-50p) solid transparent;
     top: 50%;
-    left: 0;
-    transform: translateY(-50%); }
+    left: var(--ls-25p);
+    transform: translateY(-50%) rotate(45deg);
+    height: var(--ls-50p);
+    width: var(--ls-50p);
+    --background-color: var(--interface-gray-700); }
 
 .tooltip-message {
   --background-color: var(--interface-gray-700);
@@ -2175,6 +2177,98 @@ a.anchor {
   --padding-vertical: var(--ls-75p);
   --padding-horizontal: var(--ls-75p);
   text-align: center; }
+
+.popover {
+  position: relative; }
+
+.popover-trigger {
+  display: inline-block;
+  text-decoration: underline dotted; }
+
+.popover-bubble {
+  background: transparent;
+  opacity: 0.95;
+  min-width: var(--ls-400p);
+  max-width: var(--ls-500p);
+  position: absolute;
+  z-index: 90; }
+  .popover-bubble::after {
+    content: '';
+    position: absolute; }
+
+.popover-top {
+  bottom: 100%;
+  left: 50%;
+  padding-bottom: var(--ls-50p);
+  transform: translateX(-50%); }
+  .popover-top::after {
+    bottom: var(--ls-25p);
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    border: 1px solid var(--interface-gray-200);
+    border-top: 0;
+    border-left: 0;
+    height: var(--ls-50p);
+    width: var(--ls-50p);
+    --background-color: var(--interface-gray-50); }
+
+.popover-bottom {
+  top: 100%;
+  left: 50%;
+  padding-top: var(--ls-50p);
+  transform: translateX(-50%); }
+  .popover-bottom::after {
+    left: 50%;
+    top: var(--ls-25p);
+    transform: translateX(-50%) rotate(45deg);
+    border: 1px solid var(--interface-gray-200);
+    border-bottom: 0;
+    border-right: 0;
+    height: var(--ls-50p);
+    width: var(--ls-50p);
+    --background-color: var(--interface-gray-50); }
+
+.popover-left {
+  top: 50%;
+  right: 100%;
+  padding-right: var(--ls-50p);
+  transform: translateY(-50%); }
+  .popover-left::after {
+    top: 50%;
+    right: var(--ls-25p);
+    transform: translateY(-50%) rotate(45deg);
+    border: 1px solid var(--interface-gray-200);
+    border-bottom: 0;
+    border-left: 0;
+    height: var(--ls-50p);
+    width: var(--ls-50p);
+    --background-color: var(--interface-gray-50); }
+
+.popover-right {
+  top: 50%;
+  left: 100%;
+  padding-left: var(--ls-50p);
+  transform: translateY(-50%); }
+  .popover-right::after {
+    top: 50%;
+    left: var(--ls-25p);
+    transform: translateY(-50%) rotate(45deg);
+    border: 1px solid var(--interface-gray-200);
+    border-top: 0;
+    border-right: 0;
+    height: var(--ls-50p);
+    width: var(--ls-50p);
+    --background-color: var(--interface-gray-50); }
+
+.popover-message {
+  --background-color: var(--interface-gray-50);
+  --border-radius: var(--ls-25p);
+  --color: var(--interface-gray-1000);
+  --font-size: var(--ts-50p);
+  --padding-vertical: var(--ls-75p);
+  --padding-horizontal: var(--ls-75p);
+  text-align: center;
+  border: 1px solid var(--interface-gray-200); }
 
 button, .button, a.button {
   line-height: 1.5;

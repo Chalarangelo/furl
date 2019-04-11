@@ -13,6 +13,7 @@ import { Title, Text, Paragraph, Quote, Code, Kbd, Preformatted } from "./Typogr
 import Anchor from "./Anchor";
 import Footer from "./Footer";
 import Tooltip from "./Tooltip";
+import Popover from "./Popover";
 import Badge from "./Badge";
 import Checkbox from "./Checkbox";
 import Radio from "./Radio";
@@ -34,6 +35,7 @@ export {
   Title, Text, Paragraph, Quote, Code, Kbd, Preformatted,
   Anchor,
   Tooltip,
+  Popover,
   Badge,
   Checkbox,
   Radio,
