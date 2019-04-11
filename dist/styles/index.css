@@ -1879,10 +1879,12 @@ blockquote {
     white-space: pre; }
 
 figure {
-  --margin: var(--ls-50p); }
+  --margin: var(--ls-50p);
+  display: inline-block; }
 
 figcaption {
-  --color: var(--interface-gray-700); }
+  --color: var(--interface-gray-700);
+  text-align: center; }
 
 *, ::before, ::after {
   --margin: var(--ls-0p);

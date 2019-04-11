@@ -6,8 +6,23 @@ const Image = ({
   id,
   className,
   src,
-  alt = 'an image'
-}) =>(
+  alt = 'An image',
+  withCaption = false,
+}) =>
+  withCaption ? (
+  <figure>
+    <img 
+      className={className}
+      id={id !== undefined ? id : false} 
+      height={height} 
+      width={width} 
+      src ={src}
+      alt={alt}
+    />
+    <figcaption>{alt}</figcaption>
+  </figure>
+  )
+  : (
   <img 
     className={className}
     id={id !== undefined ? id : false} 
