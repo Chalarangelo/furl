@@ -2442,6 +2442,32 @@ button, .button, a.button {
     text-transform: uppercase;
     letter-spacing: 0.0375em; }
 
+.button-group {
+  display: inline-block;
+  --margin: var(--ls-75p);
+  --border-radius: var(--ls-25p); }
+  .button-group.solid, .button-group.gradient {
+    --box-shadow: var(--shadow-100); }
+  .button-group.outline > :not(:last-child) {
+    border-right: 0; }
+  .button-group.rounded {
+    --border-radius: 20%/50%; }
+    .button-group.rounded > * {
+      --border-radius: 100%
+    ; }
+  .button-group > button, .button-group > .button, .button-group > a.button {
+    --margin: var(--ls-0p);
+    border-radius: var(--ls-0p);
+    --box-shadow: 0; }
+    .button-group > button:first-child, .button-group > .button:first-child, .button-group > a.button:first-child {
+      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius); }
+    .button-group > button:last-child, .button-group > .button:last-child, .button-group > a.button:last-child {
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius); }
+    .button-group > button + button, .button-group > button .button, .button-group > button a.button, .button-group > .button + button, .button-group > .button .button, .button-group > .button a.button, .button-group > a.button + button, .button-group > a.button .button, .button-group > a.button a.button {
+      border-left: 1px solid var(--secondary-background-color); }
+
 .badge {
   --background-color: var(--interface-gray-200);
   --secondarey-color: var(--interface-gray-100);

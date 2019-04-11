@@ -157,3 +157,39 @@ button, .button, a.button {
     letter-spacing: 0.0375em;
   }
 }
+
+.button-group {
+  display: inline-block;
+  --margin: var(--ls-75p);
+  --border-radius: var(--ls-25p);
+  &.solid, &.gradient {
+    --box-shadow: var(--shadow-100); 
+  }
+  &.outline {
+    & >:not(:last-child) {
+      border-right: 0;
+    }
+  }
+  &.rounded {
+    --border-radius: 20%/50%;
+    & > * {
+      --border-radius: 100%
+    }
+  }
+  >button, >.button, >a.button {
+    --margin: var(--ls-0p);
+    border-radius: var(--ls-0p);
+    --box-shadow: 0;
+    &:first-child {
+      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius);
+    }
+    &:last-child {
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+    }
+    & + button, .button, a.button {
+      border-left: 1px solid var(--secondary-background-color);
+    }
+  }
+}

@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, Image } from "../../dist/components";
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, Image } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -363,6 +363,63 @@ storiesOf('Button', module)
       <Button type="link" href="https://google.com" fill='gradient' disabled>Continue</Button>
       <Button type="link" href="https://google.com" fill='outline' disabled>Continue</Button>
       <Button type="link" href="https://google.com" fill='ghost' disabled>Continue</Button>
+    </React.Fragment>
+  )
+)
+;
+
+storiesOf('ButtonGroup', module)
+  .add("All types", () => (
+    <React.Fragment>
+      <ButtonGroup>
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroup>
+      <ButtonGroup color="primary" fill="solid">
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroup>
+      <ButtonGroup color="secondary" fill="outline">
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroup>
+      <ButtonGroup color="secondary" fill="solid" size="small" text="uppercase">
+        <Button>a</Button>
+        <Button>b</Button>
+        <Button>c</Button>
+        <Button>d</Button>
+      </ButtonGroup>
+      <br/>
+      <ButtonGroup color="success" fill="gradient">
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroup>
+      <ButtonGroup color="danger" fill="solid" size="large">
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroup>
+      <ButtonGroup color="warning" fill="solid" shape="rounded">
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroup>
+      <ButtonGroup color="success" fill="outline" shape="rounded">
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroup>
     </React.Fragment>
   )
 )

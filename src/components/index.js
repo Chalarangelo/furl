@@ -1,5 +1,6 @@
 import Hyperlink from './Hyperlink';
 import Button from "./Button";
+import ButtonGroup from "./ButtonGroup";
 import Image from "./Image";
 import Dropdown from "./Dropdown";
 import Collapse from "./Collapse";
@@ -23,6 +24,7 @@ import { TextInput } from "./Input";
 export { 
   Hyperlink,
   Button, 
+  ButtonGroup,
   Image,
   List, ListItem,
   Layout, Content, Sidebar, Header,
