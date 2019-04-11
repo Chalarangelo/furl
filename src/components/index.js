@@ -17,6 +17,7 @@ import Badge from "./Badge";
 import Checkbox from "./Checkbox";
 import Radio from "./Radio";
 import Icon from "./Icon";
+import { TextInput } from "./Input";
 
 export { 
   Hyperlink,
@@ -36,5 +37,6 @@ export {
   Badge,
   Checkbox,
   Radio,
-  Icon
+  Icon,
+  TextInput
 };

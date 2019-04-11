@@ -2001,6 +2001,23 @@ a {
   a:hover, a:focus {
     border-bottom: 2px solid var(--focus-blue-300); }
 
+input[type='text'] {
+  border: 1px solid var(--interface-gray-200);
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-50p);
+  --padding-vertical: var(--ls-25p);
+  --padding-horizontal: var(--ls-50p);
+  --border-radius: var(--ls-25p);
+  cursor: text;
+  transition: all 0.3s ease;
+  --background-color: var(--interface-gray-0);
+  display: inline-block;
+  width: calc(100% - 2 * var(--margin-horizontal)); }
+  input[type='text']:hover, input[type='text']:focus {
+    border-color: var(--focus-blue-400); }
+  input[type='text']:focus {
+    box-shadow: 0 0 0 2px var(--focus-blue-100); }
+
 a.anchor {
   --margin-horizontal: var(--ls-75p); }
   a.anchor:link {
