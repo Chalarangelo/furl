@@ -58,7 +58,11 @@ storiesOf('Icon', module)
 
 storiesOf('Input', module)
   .add("text", () => (
-    <TextInput placeholder='Text...'/>
+    <React.Fragment>
+      <TextInput placeholder='Text...' />
+      <TextInput size='small' placeholder='Small' />
+      <TextInput size='large' placeholder='Large'/>
+    </React.Fragment>
   )
 )
   .add("email", () => (
