@@ -1,4 +1,17 @@
-input[type='text'], input[type='email'] {
+:placeholder-shown {
+  color: var(--interface-gray-600);
+}
+::-placeholder {
+  color: var(--interface-gray-600);
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color:var(--interface-gray-600);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color:var(--interface-gray-600);
+}
+
+input[type='text'], input[type='email'], input[type='password'] {
   border: 1px solid var(--interface-gray-200);
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
@@ -31,15 +44,28 @@ input[type='text'], input[type='email'] {
   }
 }
 
-:placeholder-shown {
-  color: var(--interface-gray-600);
-}
-::-placeholder {
-  color: var(--interface-gray-600);
-}
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color:var(--interface-gray-600);
-}
-::-moz-placeholder { /* Firefox 19+ */
-  color:var(--interface-gray-600);
+input.revealer {
+  width: calc(100% - 2 * var(--margin-horizontal));
+  margin-right: 0;
+  + button {
+    --revealer-width: var(--ls-150p);
+    position: relative;
+    margin-left: calc(0rem - var(--revealer-width) - var(--ls-25p));
+    width: var(--revealer-width);
+    --background-color: transparent;
+    --secondary-background-color: transparent;
+    --tertiary-background-color: transparent;
+    --color: var(--interface-gray-400);
+    --secondary-color: var(--interface-gray-600);
+    --padding-horizontal: var(--ls-0p);
+    --padding-vertical: var(--ls-25p);
+    color: var(--color);
+    &:hover, &:focus {
+      color: var(--secondary-color);
+    }
+    & > .icon {
+      color: inherit;
+      display: inline-block;
+    }
+  }
 }

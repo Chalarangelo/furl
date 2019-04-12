@@ -33,3 +33,7 @@ hr {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--interface-gray-400) 25%, var(--interface-gray-400) 75%, transparent);
 }
+
+svg, svg * {
+  color: inherit;
+}

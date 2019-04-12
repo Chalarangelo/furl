@@ -1915,6 +1915,9 @@ hr {
   height: 1px;
   background: linear-gradient(to right, transparent, var(--interface-gray-400) 25%, var(--interface-gray-400) 75%, transparent); }
 
+svg, svg * {
+  color: inherit; }
+
 .hidden {
   display: none !important; }
 
@@ -2003,33 +2006,6 @@ a {
   a:hover, a:focus {
     border-bottom: 2px solid var(--focus-blue-300); }
 
-input[type='text'], input[type='email'] {
-  border: 1px solid var(--interface-gray-200);
-  --margin-horizontal: var(--ls-75p);
-  --margin-vertical: var(--ls-50p);
-  --padding-vertical: var(--ls-25p);
-  --padding-horizontal: var(--ls-50p);
-  --border-radius: var(--ls-25p);
-  --background-color: var(--interface-gray-0);
-  --font-size: var(--ts-100p);
-  font-size: var(--font-size);
-  cursor: text;
-  transition: all 0.3s ease;
-  display: inline-block;
-  width: calc(100% - 2 * var(--margin-horizontal)); }
-  input[type='text']:hover, input[type='text']:focus, input[type='email']:hover, input[type='email']:focus {
-    border-color: var(--focus-blue-400); }
-  input[type='text']:focus, input[type='email']:focus {
-    box-shadow: 0 0 0 2px var(--focus-blue-100); }
-  input[type='text']:invalid, input[type='text']:focus:invalid, input[type='email']:invalid, input[type='email']:focus:invalid {
-    border-color: var(--danger-red-400);
-    box-shadow: none; }
-  input[type='text'].small, input[type='email'].small {
-    --font-size: var(--ts-50p); }
-  input[type='text'].large, input[type='email'].large {
-    --padding-vertical: var(--ls-75p);
-    --padding-horizontal: var(--ls-100p); }
-
 :placeholder-shown {
   color: var(--interface-gray-600); }
 
@@ -2043,6 +2019,55 @@ input[type='text'], input[type='email'] {
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: var(--interface-gray-600); }
+
+input[type='text'], input[type='email'], input[type='password'] {
+  border: 1px solid var(--interface-gray-200);
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-50p);
+  --padding-vertical: var(--ls-25p);
+  --padding-horizontal: var(--ls-50p);
+  --border-radius: var(--ls-25p);
+  --background-color: var(--interface-gray-0);
+  --font-size: var(--ts-100p);
+  font-size: var(--font-size);
+  cursor: text;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: calc(100% - 2 * var(--margin-horizontal)); }
+  input[type='text']:hover, input[type='text']:focus, input[type='email']:hover, input[type='email']:focus, input[type='password']:hover, input[type='password']:focus {
+    border-color: var(--focus-blue-400); }
+  input[type='text']:focus, input[type='email']:focus, input[type='password']:focus {
+    box-shadow: 0 0 0 2px var(--focus-blue-100); }
+  input[type='text']:invalid, input[type='text']:focus:invalid, input[type='email']:invalid, input[type='email']:focus:invalid, input[type='password']:invalid, input[type='password']:focus:invalid {
+    border-color: var(--danger-red-400);
+    box-shadow: none; }
+  input[type='text'].small, input[type='email'].small, input[type='password'].small {
+    --font-size: var(--ts-50p); }
+  input[type='text'].large, input[type='email'].large, input[type='password'].large {
+    --padding-vertical: var(--ls-75p);
+    --padding-horizontal: var(--ls-100p); }
+
+input.revealer {
+  width: calc(100% - 2 * var(--margin-horizontal));
+  margin-right: 0; }
+  input.revealer + button {
+    --revealer-width: var(--ls-150p);
+    position: relative;
+    margin-left: calc(0rem - var(--revealer-width) - var(--ls-25p));
+    width: var(--revealer-width);
+    --background-color: transparent;
+    --secondary-background-color: transparent;
+    --tertiary-background-color: transparent;
+    --color: var(--interface-gray-400);
+    --secondary-color: var(--interface-gray-600);
+    --padding-horizontal: var(--ls-0p);
+    --padding-vertical: var(--ls-25p);
+    color: var(--color); }
+    input.revealer + button:hover, input.revealer + button:focus {
+      color: var(--secondary-color); }
+    input.revealer + button > .icon {
+      color: inherit;
+      display: inline-block; }
 
 a.anchor {
   --margin-horizontal: var(--ls-75p); }
