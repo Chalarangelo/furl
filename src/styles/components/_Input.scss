@@ -1,4 +1,4 @@
-input[type='text'] {
+input[type='text'], input[type='email'] {
   border: 1px solid var(--interface-gray-200);
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
@@ -16,4 +16,21 @@ input[type='text'] {
   &:focus {
     box-shadow: 0 0 0 2px var(--focus-blue-100);
   }
+  &:invalid, &:focus:invalid{
+    border-color: var(--danger-red-400);
+    box-shadow: none;
+  }
+}
+
+:placeholder-shown {
+  color: var(--interface-gray-600);
+}
+::-placeholder {
+  color: var(--interface-gray-600);
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color:var(--interface-gray-600);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color:var(--interface-gray-600);
 }
