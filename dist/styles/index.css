@@ -2771,6 +2771,24 @@ ol.upper-latin li::before {
 ol.upper-roman li::before {
   content: counter(step-counter, upper-roman); }
 
+.breadcrumb {
+  display: block;
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-50p); }
+  .breadcrumb > .breadcrumb-item {
+    --color: var(--interface-gray-500); }
+    .breadcrumb > .breadcrumb-item > a {
+      color: inherit;
+      border: 0; }
+      .breadcrumb > .breadcrumb-item > a:hover, .breadcrumb > .breadcrumb-item > a:focus {
+        border: 0;
+        color: var(--focus-blue-500); }
+    .breadcrumb > .breadcrumb-item:last-of-type {
+      --color: var(--interface-gray-900); }
+  .breadcrumb .breadcrumb-separator {
+    --margin-horizontal: var(--ls-25p);
+    --color: var(--interface-gray-500); }
+
 .layout-container {
   display: grid;
   height: 100%;

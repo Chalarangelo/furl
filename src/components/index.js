@@ -5,6 +5,7 @@ import Image from "./Image";
 import Dropdown from "./Dropdown";
 import Collapse from "./Collapse";
 import { List, ListItem } from "./List";
+import { Breadcrumb, BreadcrumbItem } from "./Breadcrumb";
 import { Layout, Content, Sidebar, Header } from "./Layout";
 import { Grid, Row, Column } from "./Grid";
 import { Menu, MenuItem } from "./Menu";
@@ -27,6 +28,7 @@ export {
   ButtonGroup,
   Image,
   List, ListItem,
+  Breadcrumb, BreadcrumbItem,
   Layout, Content, Sidebar, Header,
   Grid, Row, Column,
   Card, CardSection,
