@@ -188,7 +188,7 @@ button, .button, a.button {
       border-top-right-radius: var(--border-radius);
       border-bottom-right-radius: var(--border-radius);
     }
-    & + button, .button, a.button {
+    & + button, & + .button, & + a.button {
       border-left: 1px solid var(--secondary-background-color);
     }
   }
