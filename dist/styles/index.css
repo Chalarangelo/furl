@@ -2020,7 +2020,7 @@ a {
   /* Firefox 19+ */
   color: var(--interface-gray-600); }
 
-input[type='text'], input[type='email'], input[type='password'] {
+input[type='text'], input[type='email'], input[type='password'], input[type='number'] {
   border: 1px solid var(--interface-gray-200);
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
@@ -2034,16 +2034,16 @@ input[type='text'], input[type='email'], input[type='password'] {
   transition: all 0.3s ease;
   display: inline-block;
   width: calc(100% - 2 * var(--margin-horizontal)); }
-  input[type='text']:hover, input[type='text']:focus, input[type='email']:hover, input[type='email']:focus, input[type='password']:hover, input[type='password']:focus {
+  input[type='text']:hover, input[type='text']:focus, input[type='email']:hover, input[type='email']:focus, input[type='password']:hover, input[type='password']:focus, input[type='number']:hover, input[type='number']:focus {
     border-color: var(--focus-blue-400); }
-  input[type='text']:focus, input[type='email']:focus, input[type='password']:focus {
+  input[type='text']:focus, input[type='email']:focus, input[type='password']:focus, input[type='number']:focus {
     box-shadow: 0 0 0 2px var(--focus-blue-100); }
-  input[type='text']:invalid, input[type='text']:focus:invalid, input[type='email']:invalid, input[type='email']:focus:invalid, input[type='password']:invalid, input[type='password']:focus:invalid {
+  input[type='text']:invalid, input[type='text']:focus:invalid, input[type='email']:invalid, input[type='email']:focus:invalid, input[type='password']:invalid, input[type='password']:focus:invalid, input[type='number']:invalid, input[type='number']:focus:invalid {
     border-color: var(--danger-red-400);
     box-shadow: none; }
-  input[type='text'].small, input[type='email'].small, input[type='password'].small {
+  input[type='text'].small, input[type='email'].small, input[type='password'].small, input[type='number'].small {
     --font-size: var(--ts-50p); }
-  input[type='text'].large, input[type='email'].large, input[type='password'].large {
+  input[type='text'].large, input[type='email'].large, input[type='password'].large, input[type='number'].large {
     --padding-vertical: var(--ls-75p);
     --padding-horizontal: var(--ls-100p); }
 
@@ -2068,6 +2068,61 @@ input.revealer {
     input.revealer + button > .icon {
       color: inherit;
       display: inline-block; }
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input[type=number] {
+  -moz-appearance: textfield;
+  /* Firefox */ }
+
+.number-input-minus {
+  --button-width: var(--ls-150p);
+  position: relative;
+  width: var(--button-width);
+  margin-right: calc(0rem - var(--button-width) - var(--ls-25p) + 1px);
+  --color: var(--interface-gray-400);
+  --secondary-color: var(--interface-gray-600);
+  --background-color: transparent;
+  --secondary-background-color: transparent;
+  --tertiary-background-color: transparent;
+  --color: var(--interface-gray-400);
+  --secondary-color: var(--interface-gray-600);
+  --padding-horizontal: var(--ls-0p);
+  --padding-vertical: var(--ls-25p); }
+  .number-input-minus:hover, .number-input-minus:focus {
+    color: var(--secondary-color); }
+  .number-input-minus > .icon {
+    color: inherit;
+    display: inline-block; }
+
+input[type=number] {
+  --button-width: var(--ls-150p);
+  --margin-horizontal: 0;
+  width: calc(100% - 2 * var(--ls-75p));
+  --padding-horizontal: var(--button-width);
+  text-align: center; }
+
+.number-input-plus {
+  --button-width: var(--ls-150p);
+  position: relative;
+  width: var(--button-width);
+  margin-left: calc(0rem - var(--button-width) - var(--ls-25p) + 1px);
+  --color: var(--interface-gray-400);
+  --secondary-color: var(--interface-gray-600);
+  --background-color: transparent;
+  --secondary-background-color: transparent;
+  --tertiary-background-color: transparent;
+  --color: var(--interface-gray-400);
+  --secondary-color: var(--interface-gray-600);
+  --padding-horizontal: var(--ls-0p);
+  --padding-vertical: var(--ls-25p); }
+  .number-input-plus:hover, .number-input-plus:focus {
+    color: var(--secondary-color); }
+  .number-input-plus > .icon {
+    color: inherit;
+    display: inline-block; }
 
 a.anchor {
   --margin-horizontal: var(--ls-75p); }

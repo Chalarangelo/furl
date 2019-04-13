@@ -11,7 +11,8 @@ const InputBase = ({
   name,
   onChange,
   id,
-  className
+  className,
+  ...rest
 }) => {
   let classNames = [size !== 'normal' ? size : '', className];
   return (
@@ -24,6 +25,7 @@ const InputBase = ({
       placeholder={placeholder !== undefined ? placeholder : false}
       name={name !== undefined ? name : false}
       onChange={onChange}
+      {...rest}
     />
   )
 };
@@ -97,5 +99,37 @@ const PasswordInput = ({
 }
 ;
 
+const NumberInput = ({
+  size = 'normal',
+  min,
+  max,
+  step = 1,
+  disabled = false,
+  required = false,
+  placeholder,
+  name,
+  onChange,
+  id,
+  className
+}) => {
+  const [inputValue, setInputValue] = React.useState(0);
+  return (
+    <React.Fragment>
+      <Button onClick={(e) => { setInputValue(+inputValue - step); onChange(e); }} className='number-input-minus'>
+        <Icon name='minus' width={16} height={16} />&zwnj;
+      </Button>
+      <InputBase
+        type='number' id={id} placeholder={placeholder}
+        className={className} size={size} disabled={disabled}
+        required={required} name={name} onChange={(e) => {setInputValue(e.target.value); onChange(e);}}
+        min={min} max={max} step={step} value={inputValue}
+      />
+      <Button onClick={(e) => { setInputValue(+inputValue + step); onChange(e); }} className='number-input-plus'>
+        <Icon name='plus' width={16} height={16} />&zwnj;
+      </Button>
+    </React.Fragment>
+  )
+}
 
-export {TextInput, EmailInput, PasswordInput};
+
+export { TextInput, EmailInput, PasswordInput, NumberInput};
