@@ -180,6 +180,8 @@ const SelectInput = ({
   required = false,
   placeholder,
   name,
+  multiple,
+  size,
   onChange,
   id,
   className,
@@ -187,20 +189,34 @@ const SelectInput = ({
 }) =>  {
   children = normalizeChildren(children);
   let options = children.filter(item => Option.name == item.type.name);
-  return (<React.Fragment><select
-    id={id !== undefined ? id : false}
-    className={[size !== 'normal' ? size : '', className].join(' ').trim()}
-    disabled={disabled}
-    required={required}
-    placeholder={placeholder !== undefined ? placeholder : false}
-    name={name !== undefined ? name : false}
-    onChange={onChange}
-  >
-    {options}
-  </select><Button>
-      <Icon name='chevron-down' width={16} height={16} />&zwnj;
-      </Button></React.Fragment>
-  )
+  if(multiple)
+    return (<select
+      id={id !== undefined ? id : false}
+      className={[size !== 'normal' ? size : '', className].join(' ').trim()}
+      disabled={disabled}
+      required={required}
+      placeholder={placeholder !== undefined ? placeholder : false}
+      name={name !== undefined ? name : false}
+      onChange={onChange}
+      multiple={multiple} size={size}
+    >
+      {options}
+    </select>);
+  else
+    return (<React.Fragment><select
+      id={id !== undefined ? id : false}
+      className={[size !== 'normal' ? size : '', className].join(' ').trim()}
+      disabled={disabled}
+      required={required}
+      placeholder={placeholder !== undefined ? placeholder : false}
+      name={name !== undefined ? name : false}
+      onChange={onChange}
+    >
+      {options}
+    </select><Button>
+        <Icon name='chevron-down' width={16} height={16} />&zwnj;
+        </Button></React.Fragment>
+    )
 };
 
 

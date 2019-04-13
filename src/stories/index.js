@@ -99,6 +99,14 @@ storiesOf('Input', module)
     </SelectInput>
   )
 )
+  .add("select multiple", () => (
+    <SelectInput multiple placeholder='0' onChange={(r) => console.log(r)}>
+      <Option>a</Option>
+      <Option selected>b</Option>
+      <Option>c</Option>
+    </SelectInput>
+  )
+)
 ;
 
 storiesOf('Tooltip', module)

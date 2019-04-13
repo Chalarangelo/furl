@@ -172,7 +172,7 @@ select {
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
   --padding-vertical: var(--ls-25p);
-  --padding-horizontal: var(--ls-50p);
+  --padding-horizontal: var(--ls-0p);
   --border-radius: var(--ls-25p);
   --background-color: var(--interface-gray-0);
   --font-size: var(--ts-100p);
@@ -195,12 +195,17 @@ select {
     border-color: var(--danger-red-400);
     box-shadow: none;
   }
+  > option {
+    --padding-horizontal: var(--ls-50p);
+  }
   &.small {
     --font-size: var(--ts-50p);
   }
   &.large {
     --padding-vertical: var(--ls-75p);
-    --padding-horizontal: var(--ls-100p);
+    > option {
+      --padding-horizontal: var(--ls-100p);
+    }
   }
   + button {
     --revealer-width: var(--ls-150p);
