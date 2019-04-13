@@ -52,13 +52,32 @@ const EmailInput = ({
   disabled = false,
   required = false,
   placeholder,
+  pattern='.+@.+\..+',
   name,
   onChange,
   id,
   className
 }) => (
   <InputBase 
-    type='email' id={id} placeholder={placeholder}
+    type='email' id={id} placeholder={placeholder} pattern={pattern}
+    className={className} size={size} disabled={disabled} 
+    required={required} name={name} onChange={onChange}
+  />
+);
+
+const UrlInput = ({
+  size = 'normal',
+  disabled = false,
+  required = false,
+  placeholder,
+  pattern='https?://.+',
+  name,
+  onChange,
+  id,
+  className
+}) => (
+  <InputBase 
+    type='url' id={id} placeholder={placeholder} pattern={pattern}
     className={className} size={size} disabled={disabled} 
     required={required} name={name} onChange={onChange}
   />
@@ -132,4 +151,4 @@ const NumberInput = ({
 }
 
 
-export { TextInput, EmailInput, PasswordInput, NumberInput};
+export { TextInput, EmailInput, PasswordInput, NumberInput, UrlInput };
