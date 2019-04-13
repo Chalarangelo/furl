@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import Icon from "./Icon";
-import { normalizeChildren } from "../utilities/utils";
+import { normalizeChildren, generateUniqueId } from "../utilities/utils";
 
 const InputBase = ({
   size = 'normal',
@@ -181,7 +181,7 @@ const SelectInput = ({
   placeholder,
   name,
   multiple,
-  size,
+  selectSize,
   onChange,
   id,
   className,
@@ -198,7 +198,7 @@ const SelectInput = ({
       placeholder={placeholder !== undefined ? placeholder : false}
       name={name !== undefined ? name : false}
       onChange={onChange}
-      multiple={multiple} size={size}
+      multiple={multiple} size={selectSize}
     >
       {options}
     </select>);
@@ -219,5 +219,38 @@ const SelectInput = ({
     )
 };
 
+const ComboboxInput = ({
+  size = 'normal',
+  disabled = false,
+  required = false,
+  placeholder,
+  name,
+  onChange,
+  id,
+  className,
+  children
+}) => {
+  const [optionsId, setOptionsId] = React.useState(generateUniqueId('combo-input'));
+  children = normalizeChildren(children);
+  let options = children.filter(item => Option.name == item.type.name);
+  
+  return (
+    <React.Fragment>
+      <datalist id={optionsId}>
+        {options}
+      </datalist>
+      <InputBase 
+        id={id} placeholder={placeholder} list={optionsId}
+        className={[size !== 'normal' ? size : '',className].join(' ').trim()} size={size} disabled={disabled} 
+        required={required} name={name} onChange={onChange}
+      />
+      <Button>
+        <Icon name='chevron-down' width={16} height={16} />&zwnj;
+      </Button>
+    </React.Fragment>
+  )
+}
+;
 
-export { TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput };
+
+export { TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput };

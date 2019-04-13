@@ -4,4 +4,7 @@ const isUndefined = val => val === undefined;
 
 const normalizeChildren = val => isUndefined(val) ? [] : castArray(val);
 
-export { normalizeChildren };
+let idCounter = 0;
+const generateUniqueId = (prefix = 'element') => `${prefix}-${idCounter++}`;
+
+export { normalizeChildren, generateUniqueId };

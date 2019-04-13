@@ -11,7 +11,7 @@
   color:var(--interface-gray-600);
 }
 
-input[type='text'], input[type='email'], input[type='password'], input[type='number'], input[type='url'] {
+input[type='text'], input[type='email'], input[type='password'], input[type='number'], input[type='url'], input[list] {
   border: 1px solid var(--interface-gray-200);
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
@@ -44,7 +44,7 @@ input[type='text'], input[type='email'], input[type='password'], input[type='num
   }
 }
 
-input.revealer {
+input.revealer, input[list] {
   width: calc(100% - 2 * var(--margin-horizontal));
   margin-right: 0;
   + button {
@@ -226,4 +226,25 @@ select {
       display: inline-block;
     }
   }
+}
+
+input[list]{ 
+  cursor: pointer;
+  + button {
+    pointer-events: none;
+  }
+  &::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+  &::-webkit-list-button {
+    display: none;
+  }
+}
+
+datalist {
+  width: 100%;
+}
+datalist option {
+  width: 100%;
+  color: red;
 }

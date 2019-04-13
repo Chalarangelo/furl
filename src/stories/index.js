@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option } from "../../dist/components";
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -105,6 +105,25 @@ storiesOf('Input', module)
       <Option selected>b</Option>
       <Option>c</Option>
     </SelectInput>
+  )
+)
+  .add("combobox", () => (
+    <React.Fragment>
+      <ComboboxInput>
+        <Option>Chocolate</Option>
+        <Option>Coconut</Option>
+        <Option>Mint</Option>
+        <Option>Strawberry</Option>
+        <Option>Vanilla</Option>
+      </ComboboxInput>
+      <ComboboxInput>
+        <Option>Orange</Option>
+        <Option>Lemon</Option>
+        <Option>Apple</Option>
+        <Option>Strawberry</Option>
+        <Option>Watermelon</Option>
+      </ComboboxInput>
+    </React.Fragment>
   )
 )
 ;
