@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "./Button";
 import Icon from "./Icon";
+import { normalizeChildren } from "../utilities/utils";
 
 const InputBase = ({
   size = 'normal',
@@ -164,5 +165,41 @@ const NumberInput = ({
   )
 }
 
+const Option = ({ disabled, selected, value, id, className, children }) => (
+  <option 
+    id={id !== undefined ? id : false} className={className}
+    value={value} disabled={disabled} selected={selected}
+    >
+    {children}
+  </option>
+);
 
-export { TextInput, EmailInput, PasswordInput, NumberInput, UrlInput };
+const SelectInput = ({
+  size = 'normal',
+  disabled = false,
+  required = false,
+  placeholder,
+  name,
+  onChange,
+  id,
+  className,
+  children
+}) =>  {
+  children = normalizeChildren(children);
+  let options = children.filter(item => Option.name == item.type.name);
+  return (<div className="select"><select
+    id={id !== undefined ? id : false}
+    className={[size !== 'normal' ? size : '', className].join(' ').trim()}
+    disabled={disabled}
+    required={required}
+    placeholder={placeholder !== undefined ? placeholder : false}
+    name={name !== undefined ? name : false}
+    onChange={onChange}
+  >
+    {options}
+  </select></div>
+  )
+};
+
+
+export { TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput };
