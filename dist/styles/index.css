@@ -2165,12 +2165,15 @@ select {
   --background-color: var(--interface-gray-0);
   --font-size: var(--ts-100p);
   font-size: var(--font-size);
+  margin-right: 0;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
   width: calc(100% - 2 * var(--margin-horizontal)); }
   select:hover, select:focus {
     border-color: var(--focus-blue-400); }
+    select:hover + button, select:focus + button {
+      color: var(--secondary-color); }
   select:focus {
     box-shadow: 0 0 0 2px var(--focus-blue-100); }
   select:invalid, select:focus:invalid {
@@ -2181,29 +2184,23 @@ select {
   select.large {
     --padding-vertical: var(--ls-75p);
     --padding-horizontal: var(--ls-100p); }
-
-select::-ms-expand {
-  display: none; }
-
-/* Arrow */
-.select::after {
-  content: '\2304';
-  position: absolute;
-  top: var(--ls-50p);
-  right: var(--ls-25p);
-  padding: 0 1em;
-  background: transparent;
-  pointer-events: none;
-  color: var(--interface-gray-400); }
-
-/* Transition */
-.select:hover::after {
-  color: var(--interface-gray-600); }
-
-.select::after {
-  -webkit-transition: .3s all ease;
-  -o-transition: .3s all ease;
-  transition: .3s all ease; }
+  select + button {
+    --revealer-width: var(--ls-150p);
+    position: relative;
+    margin-left: calc(0rem - var(--revealer-width) - var(--ls-25p));
+    width: var(--revealer-width);
+    --background-color: transparent;
+    --secondary-background-color: transparent;
+    --tertiary-background-color: transparent;
+    --color: var(--interface-gray-400);
+    --secondary-color: var(--interface-gray-600);
+    --padding-horizontal: var(--ls-0p);
+    --padding-vertical: var(--ls-25p);
+    pointer-events: none;
+    color: var(--color); }
+    select + button > .icon {
+      color: inherit;
+      display: inline-block; }
 
 a.anchor {
   --margin-horizontal: var(--ls-75p); }

@@ -177,12 +177,16 @@ select {
   --background-color: var(--interface-gray-0);
   --font-size: var(--ts-100p);
   font-size: var(--font-size);
+  margin-right: 0;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
   width: calc(100% - 2 * var(--margin-horizontal));
   &:hover, &:focus {
     border-color: var(--focus-blue-400);
+    + button {
+      color: var(--secondary-color);
+    }
   }
   &:focus {
     box-shadow: 0 0 0 2px var(--focus-blue-100);
@@ -198,61 +202,23 @@ select {
     --padding-vertical: var(--ls-75p);
     --padding-horizontal: var(--ls-100p);
   }
+  + button {
+    --revealer-width: var(--ls-150p);
+    position: relative;
+    margin-left: calc(0rem - var(--revealer-width) - var(--ls-25p));
+    width: var(--revealer-width);
+    --background-color: transparent;
+    --secondary-background-color: transparent;
+    --tertiary-background-color: transparent;
+    --color: var(--interface-gray-400);
+    --secondary-color: var(--interface-gray-600);
+    --padding-horizontal: var(--ls-0p);
+    --padding-vertical: var(--ls-25p);
+    pointer-events: none;
+    color: var(--color);
+    & > .icon {
+      color: inherit;
+      display: inline-block;
+    }
+  }
 }
-select::-ms-expand {
-  display: none;
-}
-/* Arrow */
-.select::after {
-  content: '\2304';
-  position: absolute;
-  top: var(--ls-50p);
-  right: var(--ls-25p);
-  padding: 0 1em;
-  background: transparent;
-  pointer-events: none;
-  color: var(--interface-gray-400);
-}
-/* Transition */
-.select:hover::after {
-  color: var(--interface-gray-600);
-}
-.select::after {
-  -webkit-transition: .3s all ease;
-  -o-transition: .3s all ease;
-  transition: .3s all ease;
-}
-
-// .select {
-//   position: relative;
-//   display: block;
-//   overflow: hidden;
-//   border: 1px solid var(--interface-gray-200);
-//   --margin-horizontal: var(--ls-75p);
-//   --margin-vertical: var(--ls-50p);
-//   --border-radius: var(--ls-25p);
-//   --background-color: var(--interface-gray-0);
-//   --font-size: var(--ts-100p);
-//   font-size: var(--font-size);
-//   cursor: text;
-//   transition: all 0.3s ease;
-//   display: inline-block;
-//   width: calc(100% - 2 * var(--margin-horizontal));
-//   &:hover, &:focus {
-//     border-color: var(--focus-blue-400);
-//   }
-//   &:focus {
-//     box-shadow: 0 0 0 2px var(--focus-blue-100);
-//   }
-//   &:invalid, &:focus:invalid{
-//     border-color: var(--danger-red-400);
-//     box-shadow: none;
-//   }
-//   &.small {
-//     --font-size: var(--ts-50p);
-//   }
-//   &.large {
-//     --padding-vertical: var(--ls-75p);
-//     --padding-horizontal: var(--ls-100p);
-//   }
-// }

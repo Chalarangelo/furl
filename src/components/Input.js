@@ -187,7 +187,7 @@ const SelectInput = ({
 }) =>  {
   children = normalizeChildren(children);
   let options = children.filter(item => Option.name == item.type.name);
-  return (<div className="select"><select
+  return (<React.Fragment><select
     id={id !== undefined ? id : false}
     className={[size !== 'normal' ? size : '', className].join(' ').trim()}
     disabled={disabled}
@@ -197,7 +197,9 @@ const SelectInput = ({
     onChange={onChange}
   >
     {options}
-  </select></div>
+  </select><Button>
+      <Icon name='chevron-down' width={16} height={16} />&zwnj;
+      </Button></React.Fragment>
   )
 };
 
