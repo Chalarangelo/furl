@@ -2124,6 +2124,33 @@ input[type=number] {
     color: inherit;
     display: inline-block; }
 
+textarea {
+  border: 1px solid var(--interface-gray-200);
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-50p);
+  --padding-vertical: var(--ls-25p);
+  --padding-horizontal: var(--ls-50p);
+  --border-radius: var(--ls-25p);
+  --background-color: var(--interface-gray-0);
+  --font-size: var(--ts-100p);
+  font-size: var(--font-size);
+  cursor: text;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: calc(100% - 2 * var(--margin-horizontal)); }
+  textarea:hover, textarea:focus {
+    border-color: var(--focus-blue-400); }
+  textarea:focus {
+    box-shadow: 0 0 0 2px var(--focus-blue-100); }
+  textarea:invalid, textarea:focus:invalid {
+    border-color: var(--danger-red-400);
+    box-shadow: none; }
+  textarea.small {
+    --font-size: var(--ts-50p); }
+  textarea.large {
+    --padding-vertical: var(--ls-75p);
+    --padding-horizontal: var(--ls-100p); }
+
 a.anchor {
   --margin-horizontal: var(--ls-75p); }
   a.anchor:link {

@@ -65,6 +65,10 @@ storiesOf('Input', module)
     </React.Fragment>
   )
 )
+  .add("text multiline", () => (
+    <TextInput multiline placeholder='Text...' />
+  )
+)
   .add("email", () => (
     <EmailInput placeholder='mail@server.com'/>
   )

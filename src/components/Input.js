@@ -35,17 +35,31 @@ const TextInput = ({
   disabled = false,
   required = false,
   placeholder,
+  multiline = false,
+  rows = 5,
   name,
   onChange,
   id,
   className
-}) => (
-  <InputBase 
-    type='text' id={id} placeholder={placeholder}
-    className={className} size={size} disabled={disabled} 
-    required={required} name={name} onChange={onChange}
-  />
-);
+}) => 
+  multiline ? (
+    <textarea
+      id={id !== undefined ? id : false}
+      className={[size !== 'normal' ? size : '', className].join(' ').trim()}
+      disabled={disabled}
+      required={required}
+      placeholder={placeholder !== undefined ? placeholder : false}
+      name={name !== undefined ? name : false}
+      onChange={onChange}
+      rows={rows}
+    />
+  ) : (
+    <InputBase 
+      type='text' id={id} placeholder={placeholder}
+      className={className} size={size} disabled={disabled} 
+      required={required} name={name} onChange={onChange}
+    />
+  );
 
 const EmailInput = ({
   size = 'normal',
