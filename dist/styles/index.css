@@ -2989,7 +2989,7 @@ ol.upper-roman li::before {
   z-index: 99;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  --background-color: var(--interface-gray-50);
+  --background-color: var(--interface-gray-0);
   --box-shadow: var(--shadow-300);
   transition: all 0.3s ease;
   --color: var(--interface-gray-900); }
