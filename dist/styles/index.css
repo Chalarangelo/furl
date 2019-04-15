@@ -2777,17 +2777,20 @@ button, .button, a.button {
   .dropdown > summary {
     background: inherit;
     --color: inherit; }
-  .dropdown > summary > svg {
+  .dropdown > summary > .icon {
+    background: inherit;
+    --color: inherit; }
+  .dropdown > summary > .icon > svg {
     background: inherit;
     --color: inherit;
-    transform: scale(0.66667);
     transition: all 0.3s ease;
     display: inline; }
-    .dropdown > summary > svg > path {
+    .dropdown > summary > .icon > svg > path {
       --color: inherit;
+      background: inherit;
       fill: var(--color); }
-  .dropdown[open] > summary > svg {
-    transform: scale(-0.66667, -0.66667); }
+  .dropdown[open] > summary > .icon > svg {
+    transform: scale(-1, -1); }
   .dropdown .dropdown-content {
     --background-color: var(--interface-gray-0);
     text-align: center;
@@ -2811,7 +2814,7 @@ button, .button, a.button {
 
 .menu.vertical .menu-item .dropdown {
   width: 100%; }
-  .menu.vertical .menu-item .dropdown > summary > svg {
+  .menu.vertical .menu-item .dropdown > summary > .icon {
     float: right; }
   .menu.vertical .menu-item .dropdown .dropdown-content {
     position: relative;
