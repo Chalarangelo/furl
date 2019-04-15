@@ -18,14 +18,15 @@ const Icon = ({
     id={id !== undefined ? id : false} 
     className={[ className, 'icon'].join(' ').trim()}
     dangerouslySetInnerHTML={{ __html: feather.icons[name].toSvg({
+      class: className,
       width: width,
       height: height,
       viewBox: viewBox,
       fill: fill,
       stroke: stroke,
-      strokeWidth: strokeWidth,
-      strokeLinecap: strokeLinecap,
-      strokeLinejoin: strokeLinejoin
+      'stroke-width': strokeWidth,
+      'stroke-linecap': strokeLinecap,
+      'stroke-linejoin': strokeLinejoin
     })}}   
   />
 );

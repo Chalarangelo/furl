@@ -54,6 +54,10 @@ storiesOf('Icon', module)
     <Icon name="alert-triangle" width={48} height={48}/>
   )
 )
+  .add("rain", () => (
+    <Icon name="cloud-rain" stroke='blue' fill='cyan' width={60} height={60}/>
+  )
+)
 ;
 
 storiesOf('Input', module)
