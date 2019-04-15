@@ -2743,19 +2743,19 @@ button, .button, a.button {
       --color: var(--focus-blue-500); }
   .collapse[open] > summary {
     border-bottom: 1px solid var(--interface-gray-100); }
-  .collapse > summary > svg {
+  .collapse > summary > .icon {
+    position: absolute;
+    right: var(--ls-50p); }
+  .collapse > summary > .icon > svg {
     background: inherit;
     --color: inherit;
-    position: absolute;
-    right: var(--ls-50p);
-    transform: scale(0.66667);
     transition: all 0.3s ease;
     display: inline; }
-    .collapse > summary > svg > path {
+    .collapse > summary > .icon > svg > path {
       --color: inherit;
       fill: var(--color); }
-  .collapse[open] > summary > svg {
-    transform: scale(-0.66667, -0.66667); }
+  .collapse[open] > summary > .icon > svg {
+    transform: scale(-1, -1); }
   .collapse .collapse-content {
     --background-color: var(--interface-gray-0);
     left: 0;

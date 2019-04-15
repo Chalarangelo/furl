@@ -23,12 +23,14 @@
   &[open] > summary { 
     border-bottom: 1px solid var(--interface-gray-100);
   }
-  & > summary > svg {
-    background: inherit;
-    --color: inherit;
+  & > summary > .icon {
     position: absolute;
     right: var(--ls-50p);
-    transform: scale(0.666667);
+
+  }
+  & > summary > .icon > svg {
+    background: inherit;
+    --color: inherit;
     transition: all 0.3s ease;
     display: inline;
     & > path {
@@ -36,8 +38,8 @@
       fill: var(--color);
     }
   }
-  &[open] > summary > svg {
-    transform: scale(-0.666667, -0.666667);
+  &[open] > summary > .icon > svg {
+    transform: scale(-1, -1);
   }
   & .collapse-content {
     --background-color: var(--interface-gray-0);
