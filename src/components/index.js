@@ -20,6 +20,7 @@ import Badge from "./Badge";
 import Checkbox from "./Checkbox";
 import Radio from "./Radio";
 import Icon from "./Icon";
+import Search from "./Search";
 import { TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput } from "./Input";
 
 export { 
@@ -44,5 +45,6 @@ export {
   Checkbox,
   Radio,
   Icon,
-  TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput
+  TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput,
+  Search
 };

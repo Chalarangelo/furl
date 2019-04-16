@@ -2020,7 +2020,7 @@ a {
   /* Firefox 19+ */
   color: var(--interface-gray-600); }
 
-input[type='text'], input[type='email'], input[type='password'], input[type='number'], input[type='url'], input[list] {
+input[type='text'], input[type='email'], input[type='password'], input[type='number'], input[type='url'], input[list], input[type='search'] {
   border: 1px solid var(--interface-gray-200);
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
@@ -2034,16 +2034,16 @@ input[type='text'], input[type='email'], input[type='password'], input[type='num
   transition: all 0.3s ease;
   display: inline-block;
   width: calc(100% - 2 * var(--margin-horizontal)); }
-  input[type='text']:hover, input[type='text']:focus, input[type='email']:hover, input[type='email']:focus, input[type='password']:hover, input[type='password']:focus, input[type='number']:hover, input[type='number']:focus, input[type='url']:hover, input[type='url']:focus, input[list]:hover, input[list]:focus {
+  input[type='text']:hover, input[type='text']:focus, input[type='email']:hover, input[type='email']:focus, input[type='password']:hover, input[type='password']:focus, input[type='number']:hover, input[type='number']:focus, input[type='url']:hover, input[type='url']:focus, input[list]:hover, input[list]:focus, input[type='search']:hover, input[type='search']:focus {
     border-color: var(--focus-blue-400); }
-  input[type='text']:focus, input[type='email']:focus, input[type='password']:focus, input[type='number']:focus, input[type='url']:focus, input[list]:focus {
+  input[type='text']:focus, input[type='email']:focus, input[type='password']:focus, input[type='number']:focus, input[type='url']:focus, input[list]:focus, input[type='search']:focus {
     box-shadow: 0 0 0 2px var(--focus-blue-100); }
-  input[type='text']:invalid, input[type='text']:focus:invalid, input[type='email']:invalid, input[type='email']:focus:invalid, input[type='password']:invalid, input[type='password']:focus:invalid, input[type='number']:invalid, input[type='number']:focus:invalid, input[type='url']:invalid, input[type='url']:focus:invalid, input[list]:invalid, input[list]:focus:invalid {
+  input[type='text']:invalid, input[type='text']:focus:invalid, input[type='email']:invalid, input[type='email']:focus:invalid, input[type='password']:invalid, input[type='password']:focus:invalid, input[type='number']:invalid, input[type='number']:focus:invalid, input[type='url']:invalid, input[type='url']:focus:invalid, input[list]:invalid, input[list]:focus:invalid, input[type='search']:invalid, input[type='search']:focus:invalid {
     border-color: var(--danger-red-400);
     box-shadow: none; }
-  input[type='text'].small, input[type='email'].small, input[type='password'].small, input[type='number'].small, input[type='url'].small, input[list].small {
+  input[type='text'].small, input[type='email'].small, input[type='password'].small, input[type='number'].small, input[type='url'].small, input[list].small, input[type='search'].small {
     --font-size: var(--ts-50p); }
-  input[type='text'].large, input[type='email'].large, input[type='password'].large, input[type='number'].large, input[type='url'].large, input[list].large {
+  input[type='text'].large, input[type='email'].large, input[type='password'].large, input[type='number'].large, input[type='url'].large, input[list].large, input[type='search'].large {
     --padding-vertical: var(--ls-75p);
     --padding-horizontal: var(--ls-100p); }
 
@@ -2220,6 +2220,49 @@ datalist {
 datalist option {
   width: 100%;
   color: red; }
+
+input[type='search'].with-search-icon {
+  --revealer-width: var(--ls-150p);
+  width: calc(100% - 2 * var(--margin-horizontal));
+  padding-right: calc(var(--padding-horizontal) + var(--revealer-width));
+  margin-right: 0; }
+  input[type='search'].with-search-icon + span {
+    --revealer-width: var(--ls-150p);
+    position: relative;
+    margin-left: calc(0rem - var(--revealer-width) - var(--ls-25p));
+    width: var(--revealer-width);
+    --background-color: transparent;
+    --secondary-background-color: transparent;
+    --tertiary-background-color: transparent;
+    --color: var(--interface-gray-400);
+    --secondary-color: var(--interface-gray-600);
+    --padding-horizontal: var(--ls-0p);
+    --padding-vertical: var(--ls-25p);
+    color: var(--color);
+    pointer-events: none; }
+    input[type='search'].with-search-icon + span:hover, input[type='search'].with-search-icon + span:focus {
+      color: var(--secondary-color); }
+    input[type='search'].with-search-icon + span > .icon {
+      color: inherit;
+      display: inline-block; }
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0; }
+
+input[type=search]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none; }
 
 a.anchor {
   --margin-horizontal: var(--ls-75p); }

@@ -253,4 +253,4 @@ const ComboboxInput = ({
 ;
 
 
-export { TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput };
+export { InputBase, TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput };
