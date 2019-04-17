@@ -49,6 +49,16 @@ storiesOf('Progress', module)
     </React.Fragment>
   )
 )
+  .add("colors", () => (
+    <React.Fragment>
+      <Progress value={25} max={100} color="primary"/>
+      <Progress value={75} max={100} color="secondary"/>
+      <Progress value={25} max={100} color="success"/>
+      <Progress value={75} max={100} color="warning"/>
+      <Progress value={25} max={100} color="danger"/>
+    </React.Fragment>
+  )
+  )
 ;
 
 storiesOf('Image', module)

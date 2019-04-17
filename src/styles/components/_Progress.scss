@@ -1,3 +1,10 @@
+@mixin define-progress-color-variant ($class-name, $color-name) {
+  &.#{$class-name} {
+    --background-color: var(--#{$color-name}-100);
+    --color: var(--#{$color-name}-500);
+  }
+}
+
 progress {
   display: block;
   -webkit-appearance: none;
@@ -29,4 +36,10 @@ progress {
     --border-radius: inherit;
     border-radius: var(--border-radius);
   }
+  // Color variants
+  @include define-progress-color-variant('danger', 'danger-red');
+  @include define-progress-color-variant('success', 'success-green');
+  @include define-progress-color-variant('warning', 'warning-yellow');
+  @include define-progress-color-variant('primary', 'focus-blue');
+  @include define-progress-color-variant('secondary', 'deep-purple');
 }

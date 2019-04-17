@@ -3438,3 +3438,18 @@ progress {
     background: var(--color);
     --border-radius: inherit;
     border-radius: var(--border-radius); }
+  progress.danger {
+    --background-color: var(--danger-red-100);
+    --color: var(--danger-red-500); }
+  progress.success {
+    --background-color: var(--success-green-100);
+    --color: var(--success-green-500); }
+  progress.warning {
+    --background-color: var(--warning-yellow-100);
+    --color: var(--warning-yellow-500); }
+  progress.primary {
+    --background-color: var(--focus-blue-100);
+    --color: var(--focus-blue-500); }
+  progress.secondary {
+    --background-color: var(--deep-purple-100);
+    --color: var(--deep-purple-500); }
