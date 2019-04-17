@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, Search } from "../../dist/components";
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, Search, Progress } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -34,6 +34,19 @@ storiesOf('Anchor', module)
 )
   .add("inside title", () => (
     <Title level={3}>Hello<Anchor href="#" /></Title>
+  )
+)
+;
+
+storiesOf('Progress', module)
+  .add("default", () => (
+    <React.Fragment>
+      <Progress value={0} max={100} />
+      <Progress value={25} max={100} />
+      <Progress value={50} max={100} />
+      <Progress value={75} max={100} />
+      <Progress value={100} max={100} />
+    </React.Fragment>
   )
 )
 ;

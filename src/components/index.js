@@ -21,6 +21,7 @@ import Checkbox from "./Checkbox";
 import Radio from "./Radio";
 import Icon from "./Icon";
 import Search from "./Search";
+import Progress from "./Progress";
 import { TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput } from "./Input";
 
 export { 
@@ -46,5 +47,6 @@ export {
   Radio,
   Icon,
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput,
-  Search
+  Search,
+  Progress
 };

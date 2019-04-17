@@ -1,0 +1,32 @@
+progress {
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: var(--ls-50p);
+  width: calc(100% - 2 * var(--margin-horizontal));
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-50p);
+  border: 0; // Removes default border
+  --border-radius: var(--ls-50p);
+  --background-color: var(--interface-gray-100);
+  --color: var(--interface-gray-500);
+  &::-webkit-progress-value { // Foreground color on webkit browser
+    --color: inherit;
+    background: var(--color);
+    --border-radius: inherit;
+    border-radius: var(--border-radius);
+  }
+  &::-webkit-progress-bar { // Background color on webkit browser
+    --background-color: inherit;
+    background: var(--background-color);
+    --border-radius: inherit;
+    border-radius: var(--border-radius);
+  }
+  &::-moz-progress-bar { // Foreground color on Firefox
+    --color: inherit;
+    background: var(--color);
+    --border-radius: inherit;
+    border-radius: var(--border-radius);
+  }
+}

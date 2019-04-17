@@ -3409,3 +3409,32 @@ table {
     border-right: 1px solid var(--interface-gray-100); }
   table tr:hover > td, table tr:focus > td {
     --background-color: var(--focus-blue-50); }
+
+progress {
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: var(--ls-50p);
+  width: calc(100% - 2 * var(--margin-horizontal));
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-50p);
+  border: 0;
+  --border-radius: var(--ls-50p);
+  --background-color: var(--interface-gray-100);
+  --color: var(--interface-gray-500); }
+  progress::-webkit-progress-value {
+    --color: inherit;
+    background: var(--color);
+    --border-radius: inherit;
+    border-radius: var(--border-radius); }
+  progress::-webkit-progress-bar {
+    --background-color: inherit;
+    background: var(--background-color);
+    --border-radius: inherit;
+    border-radius: var(--border-radius); }
+  progress::-moz-progress-bar {
+    --color: inherit;
+    background: var(--color);
+    --border-radius: inherit;
+    border-radius: var(--border-radius); }
