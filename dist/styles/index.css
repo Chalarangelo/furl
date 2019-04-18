@@ -3467,6 +3467,16 @@ progress {
     .loader > svg circle {
       color: inherit;
       animation: dash 1.5s ease-in-out infinite; }
+  .loader.danger {
+    --color: var(--danger-red-500); }
+  .loader.success {
+    --color: var(--success-green-500); }
+  .loader.warning {
+    --color: var(--warning-yellow-500); }
+  .loader.primary {
+    --color: var(--focus-blue-500); }
+  .loader.secondary {
+    --color: var(--deep-purple-500); }
 
 @keyframes rotate {
   100% {

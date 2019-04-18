@@ -1,3 +1,9 @@
+@mixin define-loader-color-variant ($class-name, $color-name) {
+  &.#{$class-name} {
+    --color: var(--#{$color-name}-500);
+  }
+}
+
 .loader {
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-25p);
@@ -13,7 +19,11 @@
       animation: dash 1.5s ease-in-out infinite;
     }
   }
-  
+  @include define-loader-color-variant('danger', 'danger-red');
+  @include define-loader-color-variant('success', 'success-green');
+  @include define-loader-color-variant('warning', 'warning-yellow');
+  @include define-loader-color-variant('primary', 'focus-blue');
+  @include define-loader-color-variant('secondary', 'deep-purple');
 }
 
 @keyframes rotate {

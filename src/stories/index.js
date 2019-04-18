@@ -64,12 +64,12 @@ storiesOf('Progress', module)
 storiesOf('Loader', module)
   .add("colors", () => (
     <React.Fragment>
-      <p>asdasdasdsa<Loader />asdasdasdsa</p>
-      {/* <Loader color="primary"/>
+      <Loader />
+      <Loader color="primary"/>
       <Loader color="secondary"/>
       <Loader color="success"/>
       <Loader color="warning"/>
-      <Loader color="danger"/> */}
+      <Loader color="danger"/>
     </React.Fragment>
   )
   )
