@@ -3423,6 +3423,8 @@ progress {
   --border-radius: var(--ls-50p);
   --background-color: var(--interface-gray-100);
   --color: var(--interface-gray-500); }
+  progress.large {
+    height: var(--ls-75p); }
   progress::-webkit-progress-value {
     --color: inherit;
     background: var(--color);

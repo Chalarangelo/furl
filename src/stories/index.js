@@ -69,7 +69,13 @@ storiesOf('Loader', module)
       <Loader color="secondary"/>
       <Loader color="success"/>
       <Loader color="warning"/>
-      <Loader color="danger"/>
+      <Loader color="danger" /><br/>
+      <Loader size="large" />
+      <Loader size="large" color="primary" />
+      <Loader size="large" color="secondary" />
+      <Loader size="large" color="success" />
+      <Loader size="large" color="warning" />
+      <Loader size="large" color="danger" />
     </React.Fragment>
   )
   )
