@@ -3453,3 +3453,35 @@ progress {
   progress.secondary {
     --background-color: var(--deep-purple-100);
     --color: var(--deep-purple-500); }
+
+.loader {
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-25p);
+  --color: var(--interface-gray-500); }
+  .loader > svg {
+    color: inherit;
+    margin: 0;
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    position: relative; }
+    .loader > svg circle {
+      color: inherit;
+      animation: dash 1.5s ease-in-out infinite; }
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg); } }
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0; }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35; }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124; } }
+
+span.icon {
+  display: inline-block; }

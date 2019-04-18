@@ -22,6 +22,7 @@ import Radio from "./Radio";
 import Icon from "./Icon";
 import Search from "./Search";
 import Progress from "./Progress";
+import Loader from "./Loader";
 import { TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput } from "./Input";
 
 export { 
@@ -48,5 +49,5 @@ export {
   Icon,
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput,
   Search,
-  Progress
+  Progress, Loader
 };

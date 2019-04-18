@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, Search, Progress } from "../../dist/components";
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, Search, Progress, Loader } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -56,6 +56,20 @@ storiesOf('Progress', module)
       <Progress value={25} max={100} color="success"/>
       <Progress value={75} max={100} color="warning"/>
       <Progress value={25} max={100} color="danger"/>
+    </React.Fragment>
+  )
+  )
+;
+
+storiesOf('Loader', module)
+  .add("colors", () => (
+    <React.Fragment>
+      <p>asdasdasdsa<Loader />asdasdasdsa</p>
+      {/* <Loader color="primary"/>
+      <Loader color="secondary"/>
+      <Loader color="success"/>
+      <Loader color="warning"/>
+      <Loader color="danger"/> */}
     </React.Fragment>
   )
   )
