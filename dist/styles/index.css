@@ -2992,18 +2992,23 @@ ol.upper-roman li::before {
   justify-content: space-between;
   width: calc(100% - 2 * var(--margin-horizontal));
   --margin-horizontal: var(--ls-75p);
-  --margin-vertical: var(--ls-25p); }
+  --margin-vertical: var(--ls-25p);
+  --background-color: inherit; }
   .step > .step-item {
+    --background-color: inherit;
     flex: 1;
     --margin-vertical: var(--ls-25p);
     --padding-vertical: var(--ls-25p);
     position: relative;
-    --font-weight: 600;
     margin-left: var(--ls-200p); }
-    .step > .step-item > small {
-      font-weight: normal;
-      display: block;
-      line-height: 1.2; }
+    .step > .step-item > .step-content {
+      --background-color: inherit;
+      --font-weight: 600;
+      text-shadow: 2px 0px 0px var(--background-color), 4px 0px 0px var(--background-color), 6px 0px 0px var(--background-color), 8px 0px 0px var(--background-color); }
+      .step > .step-item > .step-content > small {
+        font-weight: normal;
+        display: block;
+        line-height: 1.2; }
     .step > .step-item::before {
       content: '';
       display: block;
@@ -3015,16 +3020,8 @@ ol.upper-roman li::before {
       border-radius: var(--ls-150p);
       width: var(--ls-150p);
       height: var(--ls-150p); }
-    .step > .step-item:nth-child(1)::after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: var(--ls-25p);
-      right: 0;
-      width: 100%;
-      background: var(--focus-blue-800);
-      height: 1px;
-      top: 16px; }
+    .step > .step-item:not(:last-child) {
+      background: linear-gradient(180deg, transparent 16px, var(--focus-blue-400) 16px, transparent 17px); }
 
 .layout-container {
   display: grid;
