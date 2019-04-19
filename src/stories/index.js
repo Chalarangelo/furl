@@ -848,6 +848,12 @@ storiesOf('Step', module)
     <React.Fragment>
       <Step>
         <StepItem>Lorem Ipsum</StepItem>
+        <StepItem>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem>Consectetur</StepItem>
+        <StepItem>Adipiscing elit</StepItem>
+      </Step>
+      <Step>
+        <StepItem>Lorem Ipsum</StepItem>
         <StepItem selected>Dolor sit amet<small>Some description</small></StepItem>
         <StepItem>Consectetur</StepItem>
         <StepItem>Adipiscing elit</StepItem>
@@ -855,8 +861,14 @@ storiesOf('Step', module)
       <Step>
         <StepItem>Lorem Ipsum</StepItem>
         <StepItem>Dolor sit amet<small>Some description</small></StepItem>
-        <StepItem>Consectetur</StepItem>
+        <StepItem selected>Consectetur</StepItem>
         <StepItem>Adipiscing elit</StepItem>
+      </Step>
+      <Step>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem>Consectetur</StepItem>
+        <StepItem selected>Adipiscing elit</StepItem>
       </Step>
     </React.Fragment>
   )

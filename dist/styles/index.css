@@ -3005,7 +3005,7 @@ ol.upper-roman li::before {
     background: linear-gradient(180deg, transparent 16px, var(--focus-blue-500) 16px, transparent 17px); }
     .step > .step-item > .step-content {
       --background-color: inherit;
-      --color: var(--interface-gray-700);
+      --color: var(--interface-gray-800);
       text-shadow: 2px 0px 0px var(--background-color), 4px 0px 0px var(--background-color), 6px 0px 0px var(--background-color), 8px 0px 0px var(--background-color); }
       .step > .step-item > .step-content > small {
         font-weight: normal;
@@ -3014,6 +3014,13 @@ ol.upper-roman li::before {
     .step > .step-item.selected > .step-content {
       --color: var(--interface-gray-900);
       --font-weight: 600; }
+    .step > .step-item.selected::before {
+      --font-weight: 600;
+      --background-color: var(--focus-blue-400); }
+    .step > .step-item.selected ~ .step-item > .step-content {
+      --color: var(--interface-gray-500); }
+    .step > .step-item.selected ~ .step-item::before {
+      --background-color: var(--interface-gray-300); }
     .step > .step-item::before {
       content: counter(step-counter, decimal);
       text-align: center;
@@ -3023,12 +3030,12 @@ ol.upper-roman li::before {
       top: var(--ls-25p);
       left: calc(0rem - var(--ls-150p));
       margin-left: calc(0rem - var(--ls-25p));
-      background: var(--focus-blue-400);
+      --background-color: var(--focus-blue-300);
       border-radius: var(--ls-150p);
       width: var(--ls-150p);
       height: var(--ls-150p); }
     .step > .step-item.selected, .step > .step-item.selected ~ .step-item {
-      background: linear-gradient(180deg, transparent 16px, var(--interface-gray-200) 16px, transparent 17px); }
+      background: linear-gradient(180deg, transparent 16px, var(--interface-gray-300) 16px, transparent 17px); }
     .step > .step-item:last-child {
       flex: 0 0 auto;
       background: transparent !important; }
