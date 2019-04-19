@@ -845,11 +845,20 @@ storiesOf('Breadcrumb', module)
 
 storiesOf('Step', module)
   .add("default", () => (
-    <Step>
-      <StepItem>Lorem Ipsum</StepItem>
-      <StepItem>Dolor sit amet<small>Some description</small></StepItem>
-      <StepItem>Consectetur adipiscing elit</StepItem>
-    </Step>
+    <React.Fragment>
+      <Step>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem selected>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem>Consectetur</StepItem>
+        <StepItem>Adipiscing elit</StepItem>
+      </Step>
+      <Step>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem>Consectetur</StepItem>
+        <StepItem>Adipiscing elit</StepItem>
+      </Step>
+    </React.Fragment>
   )
 )
 ;

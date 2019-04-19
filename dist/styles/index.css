@@ -2995,22 +2995,29 @@ ol.upper-roman li::before {
   --margin-vertical: var(--ls-25p);
   --background-color: inherit; }
   .step > .step-item {
+    counter-increment: step-counter;
     --background-color: inherit;
     flex: 1;
     --margin-vertical: var(--ls-25p);
     --padding-vertical: var(--ls-25p);
     position: relative;
-    margin-left: var(--ls-200p); }
+    margin-left: var(--ls-200p);
+    background: linear-gradient(180deg, transparent 16px, var(--focus-blue-500) 16px, transparent 17px); }
     .step > .step-item > .step-content {
       --background-color: inherit;
-      --font-weight: 600;
+      --color: var(--interface-gray-700);
       text-shadow: 2px 0px 0px var(--background-color), 4px 0px 0px var(--background-color), 6px 0px 0px var(--background-color), 8px 0px 0px var(--background-color); }
       .step > .step-item > .step-content > small {
         font-weight: normal;
         display: block;
         line-height: 1.2; }
+    .step > .step-item.selected > .step-content {
+      --color: var(--interface-gray-900);
+      --font-weight: 600; }
     .step > .step-item::before {
-      content: '';
+      content: counter(step-counter, decimal);
+      text-align: center;
+      --color: var(--interface-gray-0);
       display: block;
       position: absolute;
       top: var(--ls-25p);
@@ -3020,8 +3027,11 @@ ol.upper-roman li::before {
       border-radius: var(--ls-150p);
       width: var(--ls-150p);
       height: var(--ls-150p); }
-    .step > .step-item:not(:last-child) {
-      background: linear-gradient(180deg, transparent 16px, var(--focus-blue-400s) 16px, transparent 17px); }
+    .step > .step-item.selected, .step > .step-item.selected ~ .step-item {
+      background: linear-gradient(180deg, transparent 16px, var(--interface-gray-200) 16px, transparent 17px); }
+    .step > .step-item:last-child {
+      flex: 0 0 auto;
+      background: transparent !important; }
 
 .layout-container {
   display: grid;

@@ -10,11 +10,11 @@ const Step = ({
 }) => {
   children = normalizeChildren(children);
   let steps = children.filter(item => StepItem.name == item.type.name);
-  // steps = steps.reduce((acc, v, i) => {
-  //   acc.push(v);
-  //   if (i !== steps.length - 1) acc.push(<span className='step-separator'>{separator}</span>);
-  //   return acc;
-  // }, []);
+  console.log(steps[0].props);
+  if (steps.every(x => !x.props.selected)) {
+    steps[0] = Object.assign({},steps[0]);
+    steps[0].props = Object.assign({selected: true }, steps[0].props);
+  }
   let classNames = [className, 'step'];
   return (
     <nav id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
