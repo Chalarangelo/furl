@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, Search, Progress, Loader } from "../../dist/components";
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, Search, Progress, Loader } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -839,6 +839,17 @@ storiesOf('Breadcrumb', module)
       <BreadcrumbItem><a href="#">Lorem Ipsum</a></BreadcrumbItem>
       <BreadcrumbItem>Dolor sit amet</BreadcrumbItem>
     </Breadcrumb>
+  )
+)
+;
+
+storiesOf('Step', module)
+  .add("default", () => (
+    <Step>
+      <StepItem>Lorem Ipsum</StepItem>
+      <StepItem>Dolor sit amet<small>Some description</small></StepItem>
+      <StepItem>Consectetur adipiscing elit</StepItem>
+    </Step>
   )
 )
 ;

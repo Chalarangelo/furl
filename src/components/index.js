@@ -6,6 +6,7 @@ import Dropdown from "./Dropdown";
 import Collapse from "./Collapse";
 import { List, ListItem } from "./List";
 import { Breadcrumb, BreadcrumbItem } from "./Breadcrumb";
+import { Step, StepItem } from "./Step";
 import { Layout, Content, Sidebar, Header } from "./Layout";
 import { Grid, Row, Column } from "./Grid";
 import { Menu, MenuItem } from "./Menu";
@@ -32,6 +33,7 @@ export {
   Image,
   List, ListItem,
   Breadcrumb, BreadcrumbItem,
+  Step, StepItem,
   Layout, Content, Sidebar, Header,
   Grid, Row, Column,
   Card, CardSection,
@@ -47,6 +49,7 @@ export {
   Checkbox,
   Radio,
   Icon,
+  Footer,
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput,
   Search,
   Progress, Loader
