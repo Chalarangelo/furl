@@ -35,7 +35,7 @@
       height: var(--ls-150p);
     }
     &:not(:last-child) {
-      background: linear-gradient(180deg, transparent 16px, var(--focus-blue-400) 16px,transparent 17px );
+      background: linear-gradient(180deg, transparent 16px, var(--focus-blue-400s) 16px,transparent 17px );
     }
   }
 }

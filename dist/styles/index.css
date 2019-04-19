@@ -3021,7 +3021,7 @@ ol.upper-roman li::before {
       width: var(--ls-150p);
       height: var(--ls-150p); }
     .step > .step-item:not(:last-child) {
-      background: linear-gradient(180deg, transparent 16px, var(--focus-blue-400) 16px, transparent 17px); }
+      background: linear-gradient(180deg, transparent 16px, var(--focus-blue-400s) 16px, transparent 17px); }
 
 .layout-container {
   display: grid;
