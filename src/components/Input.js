@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 import Icon from "./Icon";
 import { normalizeChildren, generateUniqueId } from "../utilities/utils";
-import { MaskedInputBase, CreditCardInput, PhoneInput } from "./MaskedInput";
+import { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput } from "./MaskedInput";
 
 const InputBase = ({
   size = 'normal',
@@ -256,5 +256,5 @@ const ComboboxInput = ({
 
 export { 
   InputBase, TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput,
-  MaskedInputBase, CreditCardInput, PhoneInput
+  MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput
 };

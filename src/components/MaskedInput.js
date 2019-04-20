@@ -3,6 +3,7 @@ import Button from "./Button";
 import Icon from "./Icon";
 import MaskedInput from "react-text-mask";
 import { normalizeChildren, generateUniqueId } from "../utilities/utils";
+import createNumberMask from "../utilities/createNumberMask";
 
 const MaskedInputBase = ({
   size = 'normal',
@@ -69,6 +70,26 @@ const PhoneInput = ({
   />
 );
 
+const CurrencyInput = ({
+  size = 'normal',
+  disabled = false,
+  required = false,
+  currencySymbol = '$',
+  placeholder,
+  name,
+  onChange,
+  id,
+  className
+}) =>  (
+    <MaskedInputBase 
+    type='text' id={id} placeholder={placeholder} 
+    mask={createNumberMask({
+      prefix: `${currencySymbol} `, 
+      allowDecimal : true
+    })}
+    className={className} size={size} disabled={disabled} 
+    required={required} name={name} onChange={onChange}
+  />
+);
 
-
-export { MaskedInputBase, CreditCardInput, PhoneInput };
+export { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput };
