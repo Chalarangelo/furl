@@ -27,7 +27,7 @@ import Progress from "./Progress";
 import Loader from "./Loader";
 import { 
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput, 
-  CreditCardInput, PhoneInput, CurrencyInput
+  CreditCardInput, PhoneInput, CurrencyInput, TimeInput
 } from "./Input";
 
 export { 
@@ -56,7 +56,7 @@ export {
   Icon,
   Footer,
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput,
-  CreditCardInput, PhoneInput, CurrencyInput,
+  CreditCardInput, PhoneInput, CurrencyInput, TimeInput,
   Search,
   Progress, Loader
 };

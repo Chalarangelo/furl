@@ -92,4 +92,37 @@ const CurrencyInput = ({
   />
 );
 
-export { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput };
+const TimeInput = ({
+  size = 'normal',
+  disabled = false,
+  required = false,
+  displayHours = true,
+  displaySeconds = true,
+  placeholder,
+  name,
+  onChange,
+  id,
+  className
+}) =>  {
+  let mask = [];
+  if (displayHours) {
+    mask.push(/[0-2]/); mask.push(/\d/); mask.push(':');
+  }
+  mask.push(/[0-5]/); mask.push(/\d/);
+  if (displaySeconds) {
+    mask.push(':'); mask.push(/[0-5]/); mask.push(/\d/);
+  }
+  if (!displaySeconds && !displayHours) {
+    mask.push(':'); mask.push('0'); mask.push('0');
+  }
+  return (
+    <MaskedInputBase 
+    type='text' id={id} placeholder={placeholder} 
+    mask={mask}
+    className={className} size={size} disabled={disabled} 
+    required={required} name={name} onChange={onChange}
+  />
+  )
+};
+
+export { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput };
