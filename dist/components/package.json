@@ -8,7 +8,8 @@
     "react-component-library-styles": "^0.1.0"
   },
   "dependencies": {
-    "feather-icons": "^4.21.0"
+    "feather-icons": "^4.21.0",
+    "react-text-mask": "^5.4.3"
   },
   "scripts": {
   }

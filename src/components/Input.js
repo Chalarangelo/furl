@@ -2,6 +2,7 @@ import React from "react";
 import Button from "./Button";
 import Icon from "./Icon";
 import { normalizeChildren, generateUniqueId } from "../utilities/utils";
+import { MaskedInputBase, CreditCardInput } from "./MaskedInput";
 
 const InputBase = ({
   size = 'normal',
@@ -163,7 +164,7 @@ const NumberInput = ({
       </Button>
     </React.Fragment>
   )
-}
+};
 
 const Option = ({ disabled, selected, value, id, className, children }) => (
   <option 
@@ -253,4 +254,7 @@ const ComboboxInput = ({
 ;
 
 
-export { InputBase, TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput };
+export { 
+  InputBase, TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput,
+  MaskedInputBase, CreditCardInput
+};

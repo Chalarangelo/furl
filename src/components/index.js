@@ -25,7 +25,10 @@ import Icon from "./Icon";
 import Search from "./Search";
 import Progress from "./Progress";
 import Loader from "./Loader";
-import { TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput } from "./Input";
+import { 
+  TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput, 
+  CreditCardInput
+} from "./Input";
 
 export { 
   Hyperlink,
@@ -53,6 +56,7 @@ export {
   Icon,
   Footer,
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput,
+  CreditCardInput,
   Search,
   Progress, Loader
 };
