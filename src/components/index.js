@@ -20,6 +20,7 @@ import Popover from "./Popover";
 import Badge from "./Badge";
 import Checkbox from "./Checkbox";
 import Radio from "./Radio";
+import Switch from "./Switch";
 import Icon from "./Icon";
 import Search from "./Search";
 import Progress from "./Progress";
@@ -48,6 +49,7 @@ export {
   Badge,
   Checkbox,
   Radio,
+  Switch,
   Icon,
   Footer,
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput,

@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, Search, Progress, Loader } from "../../dist/components";
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, Search, Progress, Loader, Switch } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -227,6 +227,20 @@ storiesOf('Radio', module)
   )
   )
   ;
+
+storiesOf('Switch', module)
+  .add("default", () => (
+    <React.Fragment>
+      <Switch>Hello</Switch><br/>
+      <Switch color='primary'>Hello</Switch><br/>
+      <Switch color='secondary'>Hello</Switch><br/>
+      <Switch color='danger'>Hello</Switch><br/>
+      <Switch color='success'>Hello</Switch><br/>
+      <Switch color='warning'>Hello</Switch>
+    </React.Fragment>
+  )
+)
+;
 
 storiesOf('Badge', module)
   .add("default", () => (

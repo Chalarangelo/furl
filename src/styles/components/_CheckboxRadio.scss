@@ -33,7 +33,7 @@
   @include define-checkbox-radio-color-variant('secondary', 'deep-purple');
 }
 [type="checkbox"] {
-  border-radius: var(--ls-25p);
+  --border-radius: var(--ls-25p);
   &:checked:before {
     content: '\2713';
     font-family: sans-serif;

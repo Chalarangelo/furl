@@ -1,0 +1,47 @@
+@mixin define-switch-color-variant ($class-name, $color-name) {
+  &.#{$class-name} {
+    --background-color: var(--#{$color-name}-500);
+  }
+}
+
+.switch-input {
+  // Inherits a lot of styles from the checkbox type
+  width: var(--ls-200p);
+  height: var(--ls-100p);
+  --background-color: var(--interface-gray-500);
+  --secondary-background-color: var(--interface-gray-300);
+  --tertiary-background-color: var(--interface-gray-0);
+  background: var(--secondary-background-color);
+  border: 1px solid var(--secondary-background-color);
+  --border-radius: var(--ls-50p);
+  &:checked {
+    background: var(--background-color);
+    border-color: var(--background-color);
+  }
+  &:before {
+    --tertiary-background-color: inherit;
+    background: var(--tertiary-background-color);
+    width: var(--ls-75p);
+    height: var(--ls-75p);
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border-radius: inherit;
+    transition: all 0.3s ease;
+  }
+  &:checked:before {
+    position: absolute;
+    top: 1px;
+    left: calc(100% - var(--ls-75p) - 2px);
+    content: '';
+    width: var(--ls-75p);
+    height: var(--ls-75p);
+  }
+  @include define-switch-color-variant('danger', 'danger-red');
+  @include define-switch-color-variant('success', 'success-green');
+  @include define-switch-color-variant('warning', 'warning-yellow');
+  @include define-switch-color-variant('primary', 'focus-blue');
+  @include define-switch-color-variant('secondary', 'deep-purple');
+}

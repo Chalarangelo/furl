@@ -2316,7 +2316,7 @@ a.anchor {
     --color: var(--deep-purple-50); }
 
 [type="checkbox"] {
-  border-radius: var(--ls-25p); }
+  --border-radius: var(--ls-25p); }
   [type="checkbox"]:checked:before {
     content: '\2713';
     font-family: sans-serif;
@@ -2344,6 +2344,48 @@ a.anchor {
     left: -1px;
     line-height: 1.1;
     text-align: center; }
+
+.switch-input {
+  width: var(--ls-200p);
+  height: var(--ls-100p);
+  --background-color: var(--interface-gray-500);
+  --secondary-background-color: var(--interface-gray-300);
+  --tertiary-background-color: var(--interface-gray-0);
+  background: var(--secondary-background-color);
+  border: 1px solid var(--secondary-background-color);
+  --border-radius: var(--ls-50p); }
+  .switch-input:checked {
+    background: var(--background-color);
+    border-color: var(--background-color); }
+  .switch-input:before {
+    --tertiary-background-color: inherit;
+    background: var(--tertiary-background-color);
+    width: var(--ls-75p);
+    height: var(--ls-75p);
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    border-radius: inherit;
+    transition: all 0.3s ease; }
+  .switch-input:checked:before {
+    position: absolute;
+    top: 1px;
+    left: calc(100% - var(--ls-75p) - 2px);
+    content: '';
+    width: var(--ls-75p);
+    height: var(--ls-75p); }
+  .switch-input.danger {
+    --background-color: var(--danger-red-500); }
+  .switch-input.success {
+    --background-color: var(--success-green-500); }
+  .switch-input.warning {
+    --background-color: var(--warning-yellow-500); }
+  .switch-input.primary {
+    --background-color: var(--focus-blue-500); }
+  .switch-input.secondary {
+    --background-color: var(--deep-purple-500); }
 
 .tooltip {
   position: relative; }
