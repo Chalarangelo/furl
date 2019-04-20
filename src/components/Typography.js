@@ -1,5 +1,6 @@
 import React from "react";
 import {normalizeChildren} from "../utilities/utils";
+import AutoLink from "../utilities/AutoLink";
 
 const Quote = ({ cite, id, className, children }) => {
   return (<blockquote
@@ -82,7 +83,17 @@ const Title = ({ level = 1, semantic = true, id, className, children }) => {
   }
 }
 
-const Text = ({ textStyle, id, className, children }) => {
+const Text = ({ autolink = false, textStyle, id, className, children }) => {
+  children = normalizeChildren(children);
+  if (autolink) {
+    children = children.map(v => {
+      if (typeof v !== 'string') {
+        console.error('AutolinkWarning: Cannot autolink children that are elements or components. Certain elements have not been autolinked.');
+        return v;
+      }
+      else return (<AutoLink text={v}/>);
+    });
+  }
   switch (textStyle) {
     case 'small':
       return <small

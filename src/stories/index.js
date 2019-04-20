@@ -1210,3 +1210,11 @@ storiesOf('Menu', module)
   )
 )
 ;
+
+storiesOf('Typography', module)
+  .add("Text", () => (
+    <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet nunc eu commodo luctus. Morbi lobortis, nibh ac luctus posuere, mi arcu faucibus risus, quis dictum neque augue quis leo. Proin porta volutpat finibus. Nullam ornare, lorem id euismod facilisis, quam nisi convallis sem, eget tempus ex mi ornare orci. Lorem ipsum dolor sit amet, <Text autolink>consectetur adipiscing elit https://google.com</Text>. Suspendisse in elit laoreet, blandit magna a, ullamcorper lectus. In ac pellentesque dolor, vel tempus libero. Sed pellentesque convallis lorem, ut suscipit ex vestibulum nec. <Text autolink><span>Ahem...</span>Sed sit amet dolor in turpis https://google.com</Text> lobortis eleifend. Ut cursus mi metus, et rutrum leo fringilla sed. Donec non sapien eget eros elementum finibus nec eget augue. Aliquam a odio posuere, feugiat purus ac, consectetur lorem. Donec eu nisi id libero rutrum porta eget nec elit. In mollis eu est porttitor tincidunt. 
+    </Paragraph>
+  )
+)
+;
