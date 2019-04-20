@@ -2020,7 +2020,9 @@ a {
   /* Firefox 19+ */
   color: var(--interface-gray-600); }
 
-input[type='text'], input[type='email'], input[type='password'], input[type='number'], input[type='url'], input[list], input[type='search'] {
+input[type='text'], input[type='email'], input[type='password'],
+input[type='number'], input[type='url'], input[list],
+input[type='search'], input[type='tel'] {
   border: 1px solid var(--interface-gray-200);
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
@@ -2034,16 +2036,30 @@ input[type='text'], input[type='email'], input[type='password'], input[type='num
   transition: all 0.3s ease;
   display: inline-block;
   width: calc(100% - 2 * var(--margin-horizontal)); }
-  input[type='text']:hover, input[type='text']:focus, input[type='email']:hover, input[type='email']:focus, input[type='password']:hover, input[type='password']:focus, input[type='number']:hover, input[type='number']:focus, input[type='url']:hover, input[type='url']:focus, input[list]:hover, input[list]:focus, input[type='search']:hover, input[type='search']:focus {
+  input[type='text']:hover, input[type='text']:focus, input[type='email']:hover, input[type='email']:focus, input[type='password']:hover, input[type='password']:focus,
+  input[type='number']:hover,
+  input[type='number']:focus, input[type='url']:hover, input[type='url']:focus, input[list]:hover, input[list]:focus,
+  input[type='search']:hover,
+  input[type='search']:focus, input[type='tel']:hover, input[type='tel']:focus {
     border-color: var(--focus-blue-400); }
-  input[type='text']:focus, input[type='email']:focus, input[type='password']:focus, input[type='number']:focus, input[type='url']:focus, input[list]:focus, input[type='search']:focus {
+  input[type='text']:focus, input[type='email']:focus, input[type='password']:focus,
+  input[type='number']:focus, input[type='url']:focus, input[list]:focus,
+  input[type='search']:focus, input[type='tel']:focus {
     box-shadow: 0 0 0 2px var(--focus-blue-100); }
-  input[type='text']:invalid, input[type='text']:focus:invalid, input[type='email']:invalid, input[type='email']:focus:invalid, input[type='password']:invalid, input[type='password']:focus:invalid, input[type='number']:invalid, input[type='number']:focus:invalid, input[type='url']:invalid, input[type='url']:focus:invalid, input[list]:invalid, input[list]:focus:invalid, input[type='search']:invalid, input[type='search']:focus:invalid {
+  input[type='text']:invalid, input[type='text']:focus:invalid, input[type='email']:invalid, input[type='email']:focus:invalid, input[type='password']:invalid, input[type='password']:focus:invalid,
+  input[type='number']:invalid,
+  input[type='number']:focus:invalid, input[type='url']:invalid, input[type='url']:focus:invalid, input[list]:invalid, input[list]:focus:invalid,
+  input[type='search']:invalid,
+  input[type='search']:focus:invalid, input[type='tel']:invalid, input[type='tel']:focus:invalid {
     border-color: var(--danger-red-400);
     box-shadow: none; }
-  input[type='text'].small, input[type='email'].small, input[type='password'].small, input[type='number'].small, input[type='url'].small, input[list].small, input[type='search'].small {
+  input[type='text'].small, input[type='email'].small, input[type='password'].small,
+  input[type='number'].small, input[type='url'].small, input[list].small,
+  input[type='search'].small, input[type='tel'].small {
     --font-size: var(--ts-50p); }
-  input[type='text'].large, input[type='email'].large, input[type='password'].large, input[type='number'].large, input[type='url'].large, input[list].large, input[type='search'].large {
+  input[type='text'].large, input[type='email'].large, input[type='password'].large,
+  input[type='number'].large, input[type='url'].large, input[list].large,
+  input[type='search'].large, input[type='tel'].large {
     --padding-vertical: var(--ls-75p);
     --padding-horizontal: var(--ls-100p); }
 

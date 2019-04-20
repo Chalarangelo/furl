@@ -20,7 +20,7 @@ const MaskedInputBase = ({
   let classNames = [size !== 'normal' ? size : '', className];
   return (
     <MaskedInput
-      type={type} mask={mask} guide={false}
+      type={type} mask={mask} guide={true} placeholderChar={'\u2000'}
       id={id !== undefined ? id : false}
       className={classNames.join(' ').trim()}
       disabled={disabled}
@@ -44,8 +44,26 @@ const CreditCardInput = ({
   className
 }) =>  (
     <MaskedInputBase 
-      type='text' id={id} placeholder={placeholder} 
+    type='text' id={id} placeholder={placeholder} 
     mask={[/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/]}
+    className={className} size={size} disabled={disabled} 
+    required={required} name={name} onChange={onChange}
+  />
+);
+
+const PhoneInput = ({
+  size = 'normal',
+  disabled = false,
+  required = false,
+  placeholder,
+  name,
+  onChange,
+  id,
+  className
+}) =>  (
+    <MaskedInputBase 
+    type='tel' id={id} placeholder={placeholder} 
+    mask={['+', /\d/, /\d/, ' ', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
     className={className} size={size} disabled={disabled} 
     required={required} name={name} onChange={onChange}
   />
@@ -53,4 +71,4 @@ const CreditCardInput = ({
 
 
 
-export { MaskedInputBase, CreditCardInput };
+export { MaskedInputBase, CreditCardInput, PhoneInput };

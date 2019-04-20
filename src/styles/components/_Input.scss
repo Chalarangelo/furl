@@ -11,7 +11,9 @@
   color:var(--interface-gray-600);
 }
 
-input[type='text'], input[type='email'], input[type='password'], input[type='number'], input[type='url'], input[list], input[type='search'] {
+input[type='text'], input[type='email'], input[type='password'], 
+input[type='number'], input[type='url'], input[list], 
+input[type='search'], input[type='tel'] {
   border: 1px solid var(--interface-gray-200);
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
