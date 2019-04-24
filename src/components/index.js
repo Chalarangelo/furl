@@ -2,6 +2,7 @@ import Hyperlink from './Hyperlink';
 import Button from "./Button";
 import ButtonGroup from "./ButtonGroup";
 import Image from "./Image";
+import Video from "./Video";
 import Dropdown from "./Dropdown";
 import Collapse from "./Collapse";
 import { List, ListItem } from "./List";
@@ -34,7 +35,7 @@ export {
   Hyperlink,
   Button, 
   ButtonGroup,
-  Image,
+  Image, Video,
   List, ListItem,
   Breadcrumb, BreadcrumbItem,
   Step, StepItem,
