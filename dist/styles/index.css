@@ -3568,7 +3568,6 @@ table {
 
 .calendar-day {
   --font-weight: 600;
-  --font-size: var(--ts-250p);
   border-bottom: 1px solid var(--interface-gray-100);
   --color: var(--interface-gray-800); }
 
@@ -3582,7 +3581,7 @@ table {
     color: var(--interface-gray-0);
     position: relative; }
   .calendar-date:hover {
-    --background-color: var(--focus-blue-200);
+    --background-color: var(--focus-blue-100);
     --color: var(--focus-blue-700); }
 
 progress {
