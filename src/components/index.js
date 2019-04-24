@@ -29,6 +29,7 @@ import Icon from "./Icon";
 import Search from "./Search";
 import Progress from "./Progress";
 import Loader from "./Loader";
+import Calendar from "./Calendar";
 import { 
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput, 
   CreditCardInput, PhoneInput, CurrencyInput, TimeInput
@@ -63,5 +64,6 @@ export {
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput,
   CreditCardInput, PhoneInput, CurrencyInput, TimeInput,
   Search,
-  Progress, Loader
+  Progress, Loader,
+  Calendar
 };

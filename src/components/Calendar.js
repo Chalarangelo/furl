@@ -1,0 +1,96 @@
+import React from "react";
+import { normalizeChildren } from "../utilities/utils";
+import calendar, {
+  isDate,
+  isSameDay,
+  isSameMonth,
+  getDateISO,
+  getNextMonth,
+  getPreviousMonth,
+  WEEK_DAYS,
+  CALENDAR_MONTHS
+} from "../utilities/calendarUtilities";
+
+const Calendar = ({
+  id,
+  date,
+  className,
+
+}) => {
+  const resolveStateFromDate = (date) => {
+    const isDateObject = isDate(date);
+    const _date = isDateObject ? date : new Date();
+
+    return {
+      current: isDateObject ? date : null,
+      month: +_date.getMonth() + 1,
+      year: _date.getFullYear()
+    };
+  }
+
+  const getCalendarDates = () => {
+    const calendarMonth = month || +current.getMonth() + 1;
+    const calendarYear = year || current.getFullYear();
+
+    return calendar(calendarMonth, calendarYear);
+  };
+
+  const renderDayLabel = (day, index) => {
+    const dayLabel = WEEK_DAYS[day].toUpperCase();
+    return (
+      <div 
+        className="calendar-day" 
+        key={dayLabel} 
+        index={index}
+        style={{
+          gridColumn: `${(index % 7) + 1} / span 1`
+        }}
+      >
+        {dayLabel}
+      </div>
+    );
+  };
+
+  const renderCalendarDate = (date, index) => {
+    const _date = new Date(date.join("-"));
+    const isToday = isSameDay(_date, today);
+    const isCurrent = current && isSameDay(_date, current);
+    const inMonth = month && year && isSameMonth(_date, new Date([year, month, 1].join("-")));
+
+    return (
+      <div 
+        className="calendar-date" 
+        style={{ 
+          gridRow: `${Math.floor(index / 7) + 2} / span 1`,
+          gridColumn: `${(index % 7) + 1} / span 1`
+        }}
+        key={getDateISO(_date)}
+        index={index} inMonth={inMonth} title={_date.toDateString()}
+      >
+        {_date.getDate()}
+      </div>
+    );
+  };
+
+  const [month, setMonth] = React.useState(resolveStateFromDate(date).month);
+  const [current, setCurrent] = React.useState(resolveStateFromDate(date).current);
+  const [year, setYear] = React.useState(resolveStateFromDate(date).year);
+  const [today, setToday] = React.useState(new Date());
+
+  return (
+    <div className="calendar-container">
+      <div className="calendar-header">
+        <div className="calendar-month">
+          {Object.keys(CALENDAR_MONTHS)[Math.max(0, Math.min(month - 1, 11))]} {year}
+        </div>
+      </div>
+
+      <div className="calendar-grid">
+        {Object.keys(WEEK_DAYS).map(renderDayLabel)}
+        {getCalendarDates().map(renderCalendarDate)}
+      </div>
+    </div>
+  );
+}
+
+export default Calendar;

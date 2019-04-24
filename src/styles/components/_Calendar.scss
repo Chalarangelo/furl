@@ -1,0 +1,55 @@
+.arrow-left {
+
+}
+.arrow-right {
+
+}
+.calendar-container {
+  border: 1px solid var(--interface-gray-400);
+  --border-radius: var(--ls-25p);
+  overflow: hidden;
+  box-sizing: content-box;
+  max-width: var(--ls-600p);
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-50p);
+}
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.calendar-grid {
+  display: grid;
+  grid-template: repeat(7, auto) / repeat(7, auto);
+}
+.calendar-month {
+  --font-weight: 600;
+  --font-size: var(--ts-500p);
+  text-align: center;
+  --padding-vertical: var(--ls-50p);
+  --padding-horizontal: var(--ls-25p);
+  word-spacing: var(--ls-25p);
+  width: 100%;
+}
+.calendar-cell, .calendar-day, .calendar-date {
+  text-align: center;
+  align-self: center;
+  letter-spacing: 0.1rem;
+  --padding-vertical: var(--ls-50p);
+  --padding-horizontal: var(--ls-25p);
+}
+.calendar-day {
+  --font-weight: 600;
+  --font-size: var(--ts-250p);
+  // Borders - dynamic?
+}
+.calendar-date {
+  // Dynamic font weight
+  --font-size: var(--ls-100p);
+  // Dynamic borders
+  &.highlighted {
+    background: blue;
+    color: white;
+    position: relative;
+  }
+}
