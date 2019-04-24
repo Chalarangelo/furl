@@ -58,11 +58,14 @@ const Calendar = ({
     const inMonth = month && year && isSameMonth(_date, new Date([year, month, 1].join("-")));
 
     return (
+      // The highlighting below is unfinished, just a demo
       <div 
-        className="calendar-date" 
+        className={["calendar-date", inMonth ? "in-month" : "", isToday ? "highlighted" : ""].join(' ').trim()} 
         style={{ 
           gridRow: `${Math.floor(index / 7) + 2} / span 1`,
-          gridColumn: `${(index % 7) + 1} / span 1`
+          gridColumn: `${(index % 7) + 1} / span 1`,
+          borderBottom: `${((index + 1) / 7) <= 5 ? '1px solid var(--interface-gray-50)' : 'none'}`,
+          borderRight: `${(index % 7) + 1 === 7 ? 'none' : '1px solid var(--interface-gray-50)'}`
         }}
         key={getDateISO(_date)}
         index={index} inMonth={inMonth} title={_date.toDateString()}

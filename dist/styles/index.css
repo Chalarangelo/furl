@@ -3531,7 +3531,7 @@ table {
     --background-color: var(--focus-blue-50); }
 
 .calendar-container {
-  border: 1px solid var(--interface-gray-400);
+  border: 1px solid var(--interface-gray-300);
   --border-radius: var(--ls-25p);
   overflow: hidden;
   box-sizing: content-box;
@@ -3549,31 +3549,41 @@ table {
   grid-template: repeat(7, auto)/repeat(7, auto); }
 
 .calendar-month {
+  --color: var(--interface-gray-800);
   --font-weight: 600;
-  --font-size: var(--ts-500p);
+  --font-size: var(--ts-400p);
   text-align: center;
-  --padding-vertical: var(--ls-50p);
+  --padding-vertical: var(--ls-25p);
   --padding-horizontal: var(--ls-25p);
   word-spacing: var(--ls-25p);
   width: 100%; }
 
 .calendar-cell, .calendar-day, .calendar-date {
+  transition: 0.3s all ease;
   text-align: center;
   align-self: center;
-  letter-spacing: 0.1rem;
-  --padding-vertical: var(--ls-50p);
+  letter-spacing: 0.075rem;
+  --padding-vertical: var(--ls-75p);
   --padding-horizontal: var(--ls-25p); }
 
 .calendar-day {
   --font-weight: 600;
-  --font-size: var(--ts-250p); }
+  --font-size: var(--ts-250p);
+  border-bottom: 1px solid var(--interface-gray-100);
+  --color: var(--interface-gray-800); }
 
 .calendar-date {
-  --font-size: var(--ls-100p); }
+  --font-size: var(--ls-100p);
+  --color: var(--interface-gray-500); }
+  .calendar-date.in-month {
+    --color: var(--interface-gray-900); }
   .calendar-date.highlighted {
-    background: blue;
-    color: white;
+    background: var(--focus-blue-500);
+    color: var(--interface-gray-0);
     position: relative; }
+  .calendar-date:hover {
+    --background-color: var(--focus-blue-200);
+    --color: var(--focus-blue-700); }
 
 progress {
   display: block;
