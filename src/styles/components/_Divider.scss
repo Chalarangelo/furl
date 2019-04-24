@@ -1,0 +1,21 @@
+hr {
+  // Fixes and defaults for styling
+  border: 0;
+  box-sizing: content-box;
+  // Actual styling using variables
+  line-height: 1.25;
+  --margin-vertical: var(--ls-100p);
+  --margin-horizontal: var(--ls-75p);
+  height: 1px;
+  --background-color: var(--interface-gray-200);
+}
+
+.divider {
+  position: relative;
+  height: 0.9em;
+  display: inline-block;
+  width: 1px;
+  --background-color: var(--interface-gray-200);
+  --margin-horizontal: var(--ls-25p);
+  vertical-align: baseline;
+}

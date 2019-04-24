@@ -1906,15 +1906,6 @@ body {
   --color: var(--interface-gray-900);
   --background-color: var(--interface-gray-0); }
 
-hr {
-  border: 0;
-  box-sizing: content-box;
-  line-height: 1.25;
-  --margin-vertical: var(--ls-100p);
-  --margin-horizontal: var(--ls-75p);
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--interface-gray-400) 25%, var(--interface-gray-400) 75%, transparent); }
-
 svg, svg * {
   color: inherit; }
 
@@ -2402,6 +2393,24 @@ a.anchor {
     --background-color: var(--focus-blue-500); }
   .switch-input.secondary {
     --background-color: var(--deep-purple-500); }
+
+hr {
+  border: 0;
+  box-sizing: content-box;
+  line-height: 1.25;
+  --margin-vertical: var(--ls-100p);
+  --margin-horizontal: var(--ls-75p);
+  height: 1px;
+  --background-color: var(--interface-gray-200); }
+
+.divider {
+  position: relative;
+  height: 0.9em;
+  display: inline-block;
+  width: 1px;
+  --background-color: var(--interface-gray-200);
+  --margin-horizontal: var(--ls-25p);
+  vertical-align: baseline; }
 
 .tooltip {
   position: relative; }
