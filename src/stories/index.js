@@ -1181,7 +1181,7 @@ storiesOf('Card', module)
     </Card>
     </Col><Col size={[12, 6, 5, 4]}>
     <Card width={320}>
-      <CardSection>
+      <CardSection className = 'padding-ls-0p'>
         <Grid align="stretch">
           <Row>
             <Col><h5>Hello world<small>Lorem ipsum</small></h5><p>This is some demo content that I want to test the Card with.</p></Col>
