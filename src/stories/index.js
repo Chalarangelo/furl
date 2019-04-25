@@ -1148,6 +1148,9 @@ storiesOf('Card', module)
         <h5>Hello world<small>Lorem ipsum</small></h5>
         <p>This is some demo content that I want to test the Card with.</p>
       </CardSection>
+      <CardSection>
+        <p>More stuff here.</p>
+      </CardSection>
     </Card>
   )
 )
