@@ -141,7 +141,10 @@ storiesOf('Input', module)
     <React.Fragment>
       <TextInput placeholder='Text...' />
       <TextInput size='small' placeholder='Small' />
-      <TextInput size='large' placeholder='Large'/>
+      <TextInput size='large' placeholder='Large' />
+      <TextInput shape='rounded' placeholder='Rounded' />
+      <TextInput shape='rounded' size='small' placeholder='Small rounded' />
+      <TextInput shape='rounded' size='large' placeholder='Large rounded' />
     </React.Fragment>
   )
 )
@@ -409,12 +412,6 @@ storiesOf('Button', module)
   .add("rounded", () => (
     <Button shape='rounded'>
       Continue
-    </Button>
-  )
-)
-  .add("circle", () => (
-    <Button shape='circle'>
-      >.
     </Button>
   )
 )

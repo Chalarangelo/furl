@@ -6,6 +6,7 @@ import { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput 
 
 const InputBase = ({
   size = 'normal',
+  shape = 'normal',
   type,
   disabled = false,
   required = false,
@@ -16,7 +17,10 @@ const InputBase = ({
   className,
   ...rest
 }) => {
-  let classNames = [size !== 'normal' ? size : '', className];
+  let classNames = [
+    size !== 'normal' ? size : '', 
+    shape !== 'normal' ? shape : '', 
+    className];
   return (
     <input
       type={type}
@@ -34,6 +38,7 @@ const InputBase = ({
 
 const TextInput = ({
   size = 'normal',
+  shape = 'normal',
   disabled = false,
   required = false,
   placeholder,
@@ -47,7 +52,8 @@ const TextInput = ({
   multiline ? (
     <textarea
       id={id !== undefined ? id : false}
-      className={[size !== 'normal' ? size : '', className].join(' ').trim()}
+      className={className}
+      size={size} shape={shape}
       disabled={disabled}
       required={required}
       placeholder={placeholder !== undefined ? placeholder : false}
@@ -57,7 +63,7 @@ const TextInput = ({
     />
   ) : (
     <InputBase 
-      type='text' id={id} placeholder={placeholder}
+      type='text' id={id} placeholder={placeholder} shape={shape}
       className={className} size={size} disabled={disabled} 
       required={required} name={name} onChange={onChange}
     />
@@ -65,6 +71,7 @@ const TextInput = ({
 
 const EmailInput = ({
   size = 'normal',
+  shape = 'normal',
   disabled = false,
   required = false,
   placeholder,
@@ -76,13 +83,14 @@ const EmailInput = ({
 }) => (
   <InputBase 
     type='email' id={id} placeholder={placeholder} pattern={pattern}
-    className={className} size={size} disabled={disabled} 
+    className={className} size={size} disabled={disabled} shape={shape}
     required={required} name={name} onChange={onChange}
   />
 );
 
 const UrlInput = ({
   size = 'normal',
+  shape = 'normal',
   disabled = false,
   required = false,
   placeholder,
@@ -94,13 +102,14 @@ const UrlInput = ({
 }) => (
   <InputBase 
     type='url' id={id} placeholder={placeholder} pattern={pattern}
-    className={className} size={size} disabled={disabled} 
+    className={className} size={size} disabled={disabled} shape={shape}
     required={required} name={name} onChange={onChange}
   />
 );
 
 const PasswordInput = ({
   size = 'normal',
+  shape = 'normal',
   disabled = false,
   required = false,
   placeholder,
@@ -117,7 +126,7 @@ const PasswordInput = ({
       <InputBase 
         type={passwordVisible ? 'text' : 'password'} id={id} placeholder={placeholder}
         className={['revealer', className].join(' ').trim()} size={size} disabled={disabled} 
-        required={required} name={name} onChange={onChange}
+        required={required} name={name} onChange={onChange} shape={shape}
       />
       <Button onClick={() => setPasswordVisible(!passwordVisible)}>
         <Icon name={passwordVisible ? 'eye-off' : 'eye'} width={16} height={16} />&zwnj;
@@ -136,6 +145,7 @@ const PasswordInput = ({
 
 const NumberInput = ({
   size = 'normal',
+  shape = 'normal',
   min,
   max,
   step = 1,
@@ -155,7 +165,7 @@ const NumberInput = ({
       </Button>
       <InputBase
         type='number' id={id} placeholder={placeholder}
-        className={className} size={size} disabled={disabled}
+        className={className} size={size} shape={shape} disabled={disabled}
         required={required} name={name} onChange={(e) => {setInputValue(e.target.value); onChange(e);}}
         min={min} max={max} step={step} value={inputValue}
       />
@@ -177,6 +187,7 @@ const Option = ({ disabled, selected, value, id, className, children }) => (
 
 const SelectInput = ({
   size = 'normal',
+  shape = 'normal',
   disabled = false,
   required = false,
   placeholder,
@@ -193,7 +204,7 @@ const SelectInput = ({
   if(multiple)
     return (<select
       id={id !== undefined ? id : false}
-      className={[size !== 'normal' ? size : '', className].join(' ').trim()}
+      className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
       disabled={disabled}
       required={required}
       placeholder={placeholder !== undefined ? placeholder : false}
@@ -206,7 +217,7 @@ const SelectInput = ({
   else
     return (<React.Fragment><select
       id={id !== undefined ? id : false}
-      className={[size !== 'normal' ? size : '', className].join(' ').trim()}
+      className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
       disabled={disabled}
       required={required}
       placeholder={placeholder !== undefined ? placeholder : false}
@@ -222,6 +233,7 @@ const SelectInput = ({
 
 const ComboboxInput = ({
   size = 'normal',
+  shape = 'normal',
   disabled = false,
   required = false,
   placeholder,
@@ -242,7 +254,7 @@ const ComboboxInput = ({
       </datalist>
       <InputBase 
         id={id} placeholder={placeholder} list={optionsId}
-        className={[size !== 'normal' ? size : '',className].join(' ').trim()} size={size} disabled={disabled} 
+        className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '',className].join(' ').trim()} size={size} disabled={disabled} 
         required={required} name={name} onChange={onChange}
       />
       <Button>

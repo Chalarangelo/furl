@@ -2053,6 +2053,10 @@ input[type='search'], input[type='tel'] {
   input[type='search'].large, input[type='tel'].large {
     --padding-vertical: var(--ls-75p);
     --padding-horizontal: var(--ls-100p); }
+  input[type='text'].rounded, input[type='email'].rounded, input[type='password'].rounded,
+  input[type='number'].rounded, input[type='url'].rounded, input[list].rounded,
+  input[type='search'].rounded, input[type='tel'].rounded {
+    border-radius: var(--ls-900p); }
 
 input.revealer, input[list] {
   width: calc(100% - 2 * var(--margin-horizontal));
@@ -2609,9 +2613,7 @@ button, .button, a.button {
     --padding-horizontal: var(--ls-100p);
     --padding-vertical: var(--ls-75p); }
   button.rounded, .button.rounded, a.button.rounded {
-    border-radius: 20%/50%; }
-  button.circle, .button.circle, a.button.circle {
-    border-radius: 100%; }
+    border-radius: var(--ls-900p); }
   button.flat:hover, button.flat:focus, .button.flat:hover, .button.flat:focus, a.button.flat:hover, a.button.flat:focus {
     background: var(--secondary-background-color); }
   button.solid, .button.solid, a.button.solid {

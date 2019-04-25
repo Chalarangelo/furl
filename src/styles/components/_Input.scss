@@ -44,6 +44,9 @@ input[type='search'], input[type='tel'] {
     --padding-vertical: var(--ls-75p);
     --padding-horizontal: var(--ls-100p);
   }
+  &.rounded {
+    border-radius: var(--ls-900p);
+  }
 }
 
 input.revealer, input[list] {
