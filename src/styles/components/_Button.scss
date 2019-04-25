@@ -61,10 +61,7 @@ button, .button, a.button {
 
   // Shape variants
   &.rounded {
-    border-radius: 20%/50%;
-  }
-  &.circle {
-    border-radius: 100%;
+    border-radius: var(--ls-900p);
   }
 
   // Fill variants
