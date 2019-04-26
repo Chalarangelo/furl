@@ -13,7 +13,18 @@ const ButtonGroup = ({
   children
 }) => {
   children = normalizeChildren(children);
-  const buttons = children.filter(item => Button.name == item.type.name);
+  const buttons = children.filter(item => Button.name == item.type.name)
+    .map(b => {
+      let _b = Object.assign({}, b);
+      _b.props = Object.assign({
+        fill: fill, 
+        text: text, 
+        size: size, 
+        color: color, 
+        shape: shape 
+      }, b.props);
+      return _b;
+    });
   let classNames = [className, 'button-group'];
   classNames.push(fill);
   if (text !== 'normal') classNames.push(text);
@@ -22,15 +33,7 @@ const ButtonGroup = ({
   if (shape !== 'normal') classNames.push(shape);
   return (
   <div id={id !== undefined ? id : false} className = {classNames.join(' ').trim()}>
-    {buttons.map(b => (
-      <Button 
-        fill={fill} text={text} size={size} color={color} shape={shape}
-        type={b.props.type} className={b.props.className} id={b.props.id}
-        disabled={b.props.disabled} openIn={b.props.openIn} href={b.props.href}
-        onClick={b.props.onClick}
-        children={b.props.children}
-      />
-    ))}
+    {buttons}
   </div>
   );
 };

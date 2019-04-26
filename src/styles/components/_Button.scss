@@ -168,7 +168,7 @@ button, .button, a.button {
     }
   }
   &.rounded {
-    --border-radius: 20%/50%;
+    --border-radius: var(--ls-900p);
     & > * {
       --border-radius: 100%
     }
