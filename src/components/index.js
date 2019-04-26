@@ -1,6 +1,7 @@
 import Hyperlink from './Hyperlink';
 import Button from "./Button";
 import ButtonGroup from "./ButtonGroup";
+import ContextButton from "./ContextButton";
 import Image from "./Image";
 import Video from "./Video";
 import Audio from "./Audio";
@@ -39,6 +40,7 @@ export {
   Hyperlink,
   Button, 
   ButtonGroup,
+  ContextButton,
   Image, Video, Audio, Iframe,
   List, ListItem,
   Breadcrumb, BreadcrumbItem,

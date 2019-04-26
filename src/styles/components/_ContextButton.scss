@@ -1,0 +1,19 @@
+button, .button, a.button {
+  &.context-button {
+    position: fixed;
+    &.v-top     { top: 0; }
+    &.v-bottom  { bottom: 0; }
+    &.v-center  { bottom: calc(50% - var(--margin-vertical) - 0.5 * var(--ls-250p)); }   
+    &.h-left    { left: 0; }
+    &.h-right   { right: 0; }
+    &.h-center  { right: calc(50% - var(--margin-horizontal) - 0.5 * var(--ls-250p)); }
+    width: var(--ls-250p);
+    height: var(--ls-250p);
+    line-height: var(--ls-150p);
+    border-radius: var(--ls-900p);
+    > * {
+      vertical-align: middle;
+    }
+
+  }
+}

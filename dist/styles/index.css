@@ -2781,6 +2781,27 @@ button, .button, a.button {
     .button-group > button + button, .button-group > button + .button, .button-group > button + a.button, .button-group > .button + button, .button-group > .button + .button, .button-group > .button + a.button, .button-group > a.button + button, .button-group > a.button + .button, .button-group > a.button + a.button {
       border-left: 1px solid var(--secondary-background-color); }
 
+button.context-button, .button.context-button, a.button.context-button {
+  position: fixed;
+  width: var(--ls-250p);
+  height: var(--ls-250p);
+  line-height: var(--ls-150p);
+  border-radius: var(--ls-900p); }
+  button.context-button.v-top, .button.context-button.v-top, a.button.context-button.v-top {
+    top: 0; }
+  button.context-button.v-bottom, .button.context-button.v-bottom, a.button.context-button.v-bottom {
+    bottom: 0; }
+  button.context-button.v-center, .button.context-button.v-center, a.button.context-button.v-center {
+    bottom: calc(50% - var(--margin-vertical) - 0.5 * var(--ls-250p)); }
+  button.context-button.h-left, .button.context-button.h-left, a.button.context-button.h-left {
+    left: 0; }
+  button.context-button.h-right, .button.context-button.h-right, a.button.context-button.h-right {
+    right: 0; }
+  button.context-button.h-center, .button.context-button.h-center, a.button.context-button.h-center {
+    right: calc(50% - var(--margin-horizontal) - 0.5 * var(--ls-250p)); }
+  button.context-button > *, .button.context-button > *, a.button.context-button > * {
+    vertical-align: middle; }
+
 .badge {
   --background-color: var(--interface-gray-200);
   --secondarey-color: var(--interface-gray-100);

@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar } from "../../dist/components";
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -1237,6 +1237,29 @@ storiesOf('Typography', module)
   .add("Text", () => (
     <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet nunc eu commodo luctus. Morbi lobortis, nibh ac luctus posuere, mi arcu faucibus risus, quis dictum neque augue quis leo. Proin porta volutpat finibus. Nullam ornare, lorem id euismod facilisis, quam nisi convallis sem, eget tempus ex mi ornare orci. Lorem ipsum dolor sit amet, <Text autolink>consectetur adipiscing elit https://google.com</Text>. Suspendisse in elit laoreet, blandit magna a, ullamcorper lectus. In ac pellentesque dolor, vel tempus libero. Sed pellentesque convallis lorem, ut suscipit ex vestibulum nec. <Text autolink><span>Ahem...</span>Sed sit amet dolor in turpis https://google.com</Text> lobortis eleifend. Ut cursus mi metus, et rutrum leo fringilla sed. Donec non sapien eget eros elementum finibus nec eget augue. Aliquam a odio posuere, feugiat purus ac, consectetur lorem. Donec eu nisi id libero rutrum porta eget nec elit. In mollis eu est porttitor tincidunt. 
     </Paragraph>
+  )
+)
+;
+
+storiesOf('ContextButton', module)
+  .add("default", () => (
+    <ContextButton>
+      <Icon name="plus" />
+    </ContextButton>
+  )
+)
+  .add("all places", () => (
+    <React.Fragment>
+      <ContextButton verticalPosition='top' horizontalPosition='left'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='bottom' horizontalPosition='left'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='center' horizontalPosition='left'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='top' horizontalPosition='center'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='bottom' horizontalPosition='center'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='center' horizontalPosition='center'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='top' horizontalPosition='right'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='bottom' horizontalPosition='right'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='center' horizontalPosition='right'><Icon name="plus" /></ContextButton>
+    </React.Fragment>
   )
 )
 ;
