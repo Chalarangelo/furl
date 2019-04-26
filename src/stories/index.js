@@ -4,7 +4,7 @@ import "../../dist/styles/index.css";
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton } from "../../dist/components";
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton, Pagination, PaginationItem } from "../../dist/components";
 
 storiesOf('Hyperlink', module)
   .add("internal", () => (
@@ -1259,6 +1259,46 @@ storiesOf('ContextButton', module)
       <ContextButton verticalPosition='top' horizontalPosition='right'><Icon name="plus" /></ContextButton>
       <ContextButton verticalPosition='bottom' horizontalPosition='right'><Icon name="plus" /></ContextButton>
       <ContextButton verticalPosition='center' horizontalPosition='right'><Icon name="plus" /></ContextButton>
+    </React.Fragment>
+  )
+)
+;
+
+storiesOf('Pagination', module)
+  .add("All types", () => (
+    <React.Fragment>
+      <Pagination>
+        <Button>First</Button>
+        <Button>Previous</Button>
+        <PaginationItem>1 of 6</PaginationItem>
+        <Button>Next</Button>
+        <Button>Last</Button>
+      </Pagination>
+      <Pagination shape='rounded'>
+        <Button>{'<<'}</Button>
+        <Button>{'<'}</Button>
+        <PaginationItem>1 of 15</PaginationItem>
+        <Button>{'>'}</Button>
+        <Button>{'>>'}</Button>
+      </Pagination>
+      <Pagination>
+        <Button><Icon name='chevrons-left'width={16} height={16}/></Button>
+        <Button><Icon name='chevron-left' width={16} height={16}/></Button>
+        <PaginationItem>1 / 8</PaginationItem>
+        <Button><Icon name='chevron-right' width={16} height={16}/></Button>
+        <Button><Icon name='chevrons-right' width={16} height={16}/></Button>
+      </Pagination>
+      <Pagination size='large'>
+        <Button color='primary'><Icon name='chevrons-left'width={16} height={16}/></Button>
+        <Button color='secondary'><Icon name='chevron-left' width={16} height={16}/></Button>
+          <PaginationItem>1</PaginationItem>
+          <PaginationItem>2</PaginationItem>
+          <PaginationItem>...</PaginationItem>
+          <PaginationItem>96</PaginationItem>
+          <PaginationItem>97</PaginationItem>
+        <Button color='primary'><Icon name='chevron-right' width={16} height={16}/></Button>
+        <Button color='secondary'><Icon name='chevrons-right' width={16} height={16}/></Button>
+      </Pagination>
     </React.Fragment>
   )
 )

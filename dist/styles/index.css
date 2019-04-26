@@ -2587,7 +2587,7 @@ hr {
   text-align: center;
   border: 1px solid var(--interface-gray-200); }
 
-button, .button, a.button {
+button, .button, a.button, .pagination-item {
   line-height: 1.5;
   border: 0;
   background: var(--background-color);
@@ -2601,157 +2601,157 @@ button, .button, a.button {
   --color: var(--interface-gray-50);
   --secondary-color: var(--interface-gray-900);
   transition: all 0.3s ease; }
-  button:hover, button:focus, .button:hover, .button:focus, a.button:hover, a.button:focus {
+  button:hover, button:focus, .button:hover, .button:focus, a.button:hover, a.button:focus, .pagination-item:hover, .pagination-item:focus {
     border: 0; }
-  button[disabled], .button[disabled], a.button[disabled] {
+  button[disabled], .button[disabled], a.button[disabled], .pagination-item[disabled] {
     --background-color: var(--interface-gray-200);
     --secondary-background-color: var(--interface-gray-300); }
-  button.small, .button.small, a.button.small {
+  button.small, .button.small, a.button.small, .pagination-item.small {
     --padding-horizontal: var(--ls-50p);
     --padding-vertical: var(--ls-25p); }
-  button.large, .button.large, a.button.large {
+  button.large, .button.large, a.button.large, .pagination-item.large {
     --padding-horizontal: var(--ls-100p);
     --padding-vertical: var(--ls-75p); }
-  button.rounded, .button.rounded, a.button.rounded {
+  button.rounded, .button.rounded, a.button.rounded, .pagination-item.rounded {
     border-radius: var(--ls-900p); }
-  button.flat:hover, button.flat:focus, .button.flat:hover, .button.flat:focus, a.button.flat:hover, a.button.flat:focus {
+  button.flat:hover, button.flat:focus, .button.flat:hover, .button.flat:focus, a.button.flat:hover, a.button.flat:focus, .pagination-item.flat:hover, .pagination-item.flat:focus {
     background: var(--secondary-background-color); }
-  button.solid, .button.solid, a.button.solid {
+  button.solid, .button.solid, a.button.solid, .pagination-item.solid {
     --box-shadow: var(--shadow-100); }
-    button.solid:hover, button.solid:focus, .button.solid:hover, .button.solid:focus, a.button.solid:hover, a.button.solid:focus {
+    button.solid:hover, button.solid:focus, .button.solid:hover, .button.solid:focus, a.button.solid:hover, a.button.solid:focus, .pagination-item.solid:hover, .pagination-item.solid:focus {
       --box-shadow: var(--shadow-300); }
-      button.solid:hover[disabled], button.solid:focus[disabled], .button.solid:hover[disabled], .button.solid:focus[disabled], a.button.solid:hover[disabled], a.button.solid:focus[disabled] {
+      button.solid:hover[disabled], button.solid:focus[disabled], .button.solid:hover[disabled], .button.solid:focus[disabled], a.button.solid:hover[disabled], a.button.solid:focus[disabled], .pagination-item.solid:hover[disabled], .pagination-item.solid:focus[disabled] {
         --box-shadow: var(--shadow-100); }
-  button.light, .button.light, a.button.light {
+  button.light, .button.light, a.button.light, .pagination-item.light {
     background: var(--tertiary-background-color);
     color: var(--secondary-color);
     --box-shadow: var(--shadow-100); }
-    button.light:hover, button.light:focus, .button.light:hover, .button.light:focus, a.button.light:hover, a.button.light:focus {
+    button.light:hover, button.light:focus, .button.light:hover, .button.light:focus, a.button.light:hover, a.button.light:focus, .pagination-item.light:hover, .pagination-item.light:focus {
       --box-shadow: var(--shadow-300); }
-      button.light:hover[disabled], button.light:focus[disabled], .button.light:hover[disabled], .button.light:focus[disabled], a.button.light:hover[disabled], a.button.light:focus[disabled] {
+      button.light:hover[disabled], button.light:focus[disabled], .button.light:hover[disabled], .button.light:focus[disabled], a.button.light:hover[disabled], a.button.light:focus[disabled], .pagination-item.light:hover[disabled], .pagination-item.light:focus[disabled] {
         --box-shadow: var(--shadow-100); }
-  button.gradient, .button.gradient, a.button.gradient {
+  button.gradient, .button.gradient, a.button.gradient, .pagination-item.gradient {
     background: linear-gradient(var(--background-color), var(--secondary-background-color));
     --box-shadow: var(--shadow-100); }
-    button.gradient:hover, button.gradient:focus, .button.gradient:hover, .button.gradient:focus, a.button.gradient:hover, a.button.gradient:focus {
+    button.gradient:hover, button.gradient:focus, .button.gradient:hover, .button.gradient:focus, a.button.gradient:hover, a.button.gradient:focus, .pagination-item.gradient:hover, .pagination-item.gradient:focus {
       --box-shadow: var(--shadow-300); }
-      button.gradient:hover[disabled], button.gradient:focus[disabled], .button.gradient:hover[disabled], .button.gradient:focus[disabled], a.button.gradient:hover[disabled], a.button.gradient:focus[disabled] {
+      button.gradient:hover[disabled], button.gradient:focus[disabled], .button.gradient:hover[disabled], .button.gradient:focus[disabled], a.button.gradient:hover[disabled], a.button.gradient:focus[disabled], .pagination-item.gradient:hover[disabled], .pagination-item.gradient:focus[disabled] {
         --box-shadow: var(--shadow-100); }
-  button.outline, .button.outline, a.button.outline {
+  button.outline, .button.outline, a.button.outline, .pagination-item.outline {
     border: 1px solid var(--background-color);
     background: transparent;
     --color: var(--interface-gray-800); }
-    button.outline[disabled], .button.outline[disabled], a.button.outline[disabled] {
+    button.outline[disabled], .button.outline[disabled], a.button.outline[disabled], .pagination-item.outline[disabled] {
       --color: var(--interface-gray-700); }
-    button.outline:hover, button.outline:focus, .button.outline:hover, .button.outline:focus, a.button.outline:hover, a.button.outline:focus {
+    button.outline:hover, button.outline:focus, .button.outline:hover, .button.outline:focus, a.button.outline:hover, a.button.outline:focus, .pagination-item.outline:hover, .pagination-item.outline:focus {
       background: var(--background-color);
       --color: var(--interface-gray-50); }
-      button.outline:hover[disabled], button.outline:focus[disabled], .button.outline:hover[disabled], .button.outline:focus[disabled], a.button.outline:hover[disabled], a.button.outline:focus[disabled] {
+      button.outline:hover[disabled], button.outline:focus[disabled], .button.outline:hover[disabled], .button.outline:focus[disabled], a.button.outline:hover[disabled], a.button.outline:focus[disabled], .pagination-item.outline:hover[disabled], .pagination-item.outline:focus[disabled] {
         background: transparent;
         --color: var(--interface-gray-700); }
-  button.ghost, .button.ghost, a.button.ghost {
+  button.ghost, .button.ghost, a.button.ghost, .pagination-item.ghost {
     background: transparent;
     --color: var(--interface-gray-800); }
-    button.ghost[disabled], .button.ghost[disabled], a.button.ghost[disabled] {
+    button.ghost[disabled], .button.ghost[disabled], a.button.ghost[disabled], .pagination-item.ghost[disabled] {
       --color: var(--interface-gray-700); }
-    button.ghost:hover, button.ghost:focus, .button.ghost:hover, .button.ghost:focus, a.button.ghost:hover, a.button.ghost:focus {
+    button.ghost:hover, button.ghost:focus, .button.ghost:hover, .button.ghost:focus, a.button.ghost:hover, a.button.ghost:focus, .pagination-item.ghost:hover, .pagination-item.ghost:focus {
       background: var(--background-color);
       --color: var(--interface-gray-50); }
-      button.ghost:hover[disabled], button.ghost:focus[disabled], .button.ghost:hover[disabled], .button.ghost:focus[disabled], a.button.ghost:hover[disabled], a.button.ghost:focus[disabled] {
+      button.ghost:hover[disabled], button.ghost:focus[disabled], .button.ghost:hover[disabled], .button.ghost:focus[disabled], a.button.ghost:hover[disabled], a.button.ghost:focus[disabled], .pagination-item.ghost:hover[disabled], .pagination-item.ghost:focus[disabled] {
         background: transparent;
         --color: var(--interface-gray-700); }
-  button.flat, .button.flat, a.button.flat {
+  button.flat, .button.flat, a.button.flat, .pagination-item.flat {
     --box-shadow: var(--shadow-0); }
-    button.flat:hover, button.flat:focus, .button.flat:hover, .button.flat:focus, a.button.flat:hover, a.button.flat:focus {
+    button.flat:hover, button.flat:focus, .button.flat:hover, .button.flat:focus, a.button.flat:hover, a.button.flat:focus, .pagination-item.flat:hover, .pagination-item.flat:focus {
       --box-shadow: var(--shadow-0); }
-      button.flat:hover[disabled], button.flat:focus[disabled], .button.flat:hover[disabled], .button.flat:focus[disabled], a.button.flat:hover[disabled], a.button.flat:focus[disabled] {
+      button.flat:hover[disabled], button.flat:focus[disabled], .button.flat:hover[disabled], .button.flat:focus[disabled], a.button.flat:hover[disabled], a.button.flat:focus[disabled], .pagination-item.flat:hover[disabled], .pagination-item.flat:focus[disabled] {
         --box-shadow: var(--shadow-0); }
-  button.danger, .button.danger, a.button.danger {
+  button.danger, .button.danger, a.button.danger, .pagination-item.danger {
     --background-color: var(--danger-red-500);
     --secondary-background-color: var(--danger-red-600);
     --tertiary-background-color: var(--danger-red-200);
     --secondary-color: var(--danger-red-900);
     --color: var(--danger-red-50); }
-    button.danger[disabled], .button.danger[disabled], a.button.danger[disabled] {
+    button.danger[disabled], .button.danger[disabled], a.button.danger[disabled], .pagination-item.danger[disabled] {
       --background-color: var(--danger-red-200);
       --secondary-background-color: var(--danger-red-300); }
-    button.danger.ghost, button.danger.outline, .button.danger.ghost, .button.danger.outline, a.button.danger.ghost, a.button.danger.outline {
+    button.danger.ghost, button.danger.outline, .button.danger.ghost, .button.danger.outline, a.button.danger.ghost, a.button.danger.outline, .pagination-item.danger.ghost, .pagination-item.danger.outline {
       --color: var(--danger-red-800); }
-      button.danger.ghost[disabled], button.danger.outline[disabled], .button.danger.ghost[disabled], .button.danger.outline[disabled], a.button.danger.ghost[disabled], a.button.danger.outline[disabled] {
+      button.danger.ghost[disabled], button.danger.outline[disabled], .button.danger.ghost[disabled], .button.danger.outline[disabled], a.button.danger.ghost[disabled], a.button.danger.outline[disabled], .pagination-item.danger.ghost[disabled], .pagination-item.danger.outline[disabled] {
         --color: var(--danger-red-700); }
-      button.danger.ghost:hover, button.danger.ghost:focus, button.danger.outline:hover, button.danger.outline:focus, .button.danger.ghost:hover, .button.danger.ghost:focus, .button.danger.outline:hover, .button.danger.outline:focus, a.button.danger.ghost:hover, a.button.danger.ghost:focus, a.button.danger.outline:hover, a.button.danger.outline:focus {
+      button.danger.ghost:hover, button.danger.ghost:focus, button.danger.outline:hover, button.danger.outline:focus, .button.danger.ghost:hover, .button.danger.ghost:focus, .button.danger.outline:hover, .button.danger.outline:focus, a.button.danger.ghost:hover, a.button.danger.ghost:focus, a.button.danger.outline:hover, a.button.danger.outline:focus, .pagination-item.danger.ghost:hover, .pagination-item.danger.ghost:focus, .pagination-item.danger.outline:hover, .pagination-item.danger.outline:focus {
         --color: var(--danger-red-50); }
-        button.danger.ghost:hover[disabled], button.danger.ghost:focus[disabled], button.danger.outline:hover[disabled], button.danger.outline:focus[disabled], .button.danger.ghost:hover[disabled], .button.danger.ghost:focus[disabled], .button.danger.outline:hover[disabled], .button.danger.outline:focus[disabled], a.button.danger.ghost:hover[disabled], a.button.danger.ghost:focus[disabled], a.button.danger.outline:hover[disabled], a.button.danger.outline:focus[disabled] {
+        button.danger.ghost:hover[disabled], button.danger.ghost:focus[disabled], button.danger.outline:hover[disabled], button.danger.outline:focus[disabled], .button.danger.ghost:hover[disabled], .button.danger.ghost:focus[disabled], .button.danger.outline:hover[disabled], .button.danger.outline:focus[disabled], a.button.danger.ghost:hover[disabled], a.button.danger.ghost:focus[disabled], a.button.danger.outline:hover[disabled], a.button.danger.outline:focus[disabled], .pagination-item.danger.ghost:hover[disabled], .pagination-item.danger.ghost:focus[disabled], .pagination-item.danger.outline:hover[disabled], .pagination-item.danger.outline:focus[disabled] {
           --color: var(--danger-red-700); }
-  button.success, .button.success, a.button.success {
+  button.success, .button.success, a.button.success, .pagination-item.success {
     --background-color: var(--success-green-500);
     --secondary-background-color: var(--success-green-600);
     --tertiary-background-color: var(--success-green-200);
     --secondary-color: var(--success-green-900);
     --color: var(--success-green-50); }
-    button.success[disabled], .button.success[disabled], a.button.success[disabled] {
+    button.success[disabled], .button.success[disabled], a.button.success[disabled], .pagination-item.success[disabled] {
       --background-color: var(--success-green-200);
       --secondary-background-color: var(--success-green-300); }
-    button.success.ghost, button.success.outline, .button.success.ghost, .button.success.outline, a.button.success.ghost, a.button.success.outline {
+    button.success.ghost, button.success.outline, .button.success.ghost, .button.success.outline, a.button.success.ghost, a.button.success.outline, .pagination-item.success.ghost, .pagination-item.success.outline {
       --color: var(--success-green-800); }
-      button.success.ghost[disabled], button.success.outline[disabled], .button.success.ghost[disabled], .button.success.outline[disabled], a.button.success.ghost[disabled], a.button.success.outline[disabled] {
+      button.success.ghost[disabled], button.success.outline[disabled], .button.success.ghost[disabled], .button.success.outline[disabled], a.button.success.ghost[disabled], a.button.success.outline[disabled], .pagination-item.success.ghost[disabled], .pagination-item.success.outline[disabled] {
         --color: var(--success-green-700); }
-      button.success.ghost:hover, button.success.ghost:focus, button.success.outline:hover, button.success.outline:focus, .button.success.ghost:hover, .button.success.ghost:focus, .button.success.outline:hover, .button.success.outline:focus, a.button.success.ghost:hover, a.button.success.ghost:focus, a.button.success.outline:hover, a.button.success.outline:focus {
+      button.success.ghost:hover, button.success.ghost:focus, button.success.outline:hover, button.success.outline:focus, .button.success.ghost:hover, .button.success.ghost:focus, .button.success.outline:hover, .button.success.outline:focus, a.button.success.ghost:hover, a.button.success.ghost:focus, a.button.success.outline:hover, a.button.success.outline:focus, .pagination-item.success.ghost:hover, .pagination-item.success.ghost:focus, .pagination-item.success.outline:hover, .pagination-item.success.outline:focus {
         --color: var(--success-green-50); }
-        button.success.ghost:hover[disabled], button.success.ghost:focus[disabled], button.success.outline:hover[disabled], button.success.outline:focus[disabled], .button.success.ghost:hover[disabled], .button.success.ghost:focus[disabled], .button.success.outline:hover[disabled], .button.success.outline:focus[disabled], a.button.success.ghost:hover[disabled], a.button.success.ghost:focus[disabled], a.button.success.outline:hover[disabled], a.button.success.outline:focus[disabled] {
+        button.success.ghost:hover[disabled], button.success.ghost:focus[disabled], button.success.outline:hover[disabled], button.success.outline:focus[disabled], .button.success.ghost:hover[disabled], .button.success.ghost:focus[disabled], .button.success.outline:hover[disabled], .button.success.outline:focus[disabled], a.button.success.ghost:hover[disabled], a.button.success.ghost:focus[disabled], a.button.success.outline:hover[disabled], a.button.success.outline:focus[disabled], .pagination-item.success.ghost:hover[disabled], .pagination-item.success.ghost:focus[disabled], .pagination-item.success.outline:hover[disabled], .pagination-item.success.outline:focus[disabled] {
           --color: var(--success-green-700); }
-  button.warning, .button.warning, a.button.warning {
+  button.warning, .button.warning, a.button.warning, .pagination-item.warning {
     --background-color: var(--warning-yellow-500);
     --secondary-background-color: var(--warning-yellow-600);
     --tertiary-background-color: var(--warning-yellow-200);
     --secondary-color: var(--warning-yellow-900);
     --color: var(--warning-yellow-50); }
-    button.warning[disabled], .button.warning[disabled], a.button.warning[disabled] {
+    button.warning[disabled], .button.warning[disabled], a.button.warning[disabled], .pagination-item.warning[disabled] {
       --background-color: var(--warning-yellow-200);
       --secondary-background-color: var(--warning-yellow-300); }
-    button.warning.ghost, button.warning.outline, .button.warning.ghost, .button.warning.outline, a.button.warning.ghost, a.button.warning.outline {
+    button.warning.ghost, button.warning.outline, .button.warning.ghost, .button.warning.outline, a.button.warning.ghost, a.button.warning.outline, .pagination-item.warning.ghost, .pagination-item.warning.outline {
       --color: var(--warning-yellow-800); }
-      button.warning.ghost[disabled], button.warning.outline[disabled], .button.warning.ghost[disabled], .button.warning.outline[disabled], a.button.warning.ghost[disabled], a.button.warning.outline[disabled] {
+      button.warning.ghost[disabled], button.warning.outline[disabled], .button.warning.ghost[disabled], .button.warning.outline[disabled], a.button.warning.ghost[disabled], a.button.warning.outline[disabled], .pagination-item.warning.ghost[disabled], .pagination-item.warning.outline[disabled] {
         --color: var(--warning-yellow-700); }
-      button.warning.ghost:hover, button.warning.ghost:focus, button.warning.outline:hover, button.warning.outline:focus, .button.warning.ghost:hover, .button.warning.ghost:focus, .button.warning.outline:hover, .button.warning.outline:focus, a.button.warning.ghost:hover, a.button.warning.ghost:focus, a.button.warning.outline:hover, a.button.warning.outline:focus {
+      button.warning.ghost:hover, button.warning.ghost:focus, button.warning.outline:hover, button.warning.outline:focus, .button.warning.ghost:hover, .button.warning.ghost:focus, .button.warning.outline:hover, .button.warning.outline:focus, a.button.warning.ghost:hover, a.button.warning.ghost:focus, a.button.warning.outline:hover, a.button.warning.outline:focus, .pagination-item.warning.ghost:hover, .pagination-item.warning.ghost:focus, .pagination-item.warning.outline:hover, .pagination-item.warning.outline:focus {
         --color: var(--warning-yellow-50); }
-        button.warning.ghost:hover[disabled], button.warning.ghost:focus[disabled], button.warning.outline:hover[disabled], button.warning.outline:focus[disabled], .button.warning.ghost:hover[disabled], .button.warning.ghost:focus[disabled], .button.warning.outline:hover[disabled], .button.warning.outline:focus[disabled], a.button.warning.ghost:hover[disabled], a.button.warning.ghost:focus[disabled], a.button.warning.outline:hover[disabled], a.button.warning.outline:focus[disabled] {
+        button.warning.ghost:hover[disabled], button.warning.ghost:focus[disabled], button.warning.outline:hover[disabled], button.warning.outline:focus[disabled], .button.warning.ghost:hover[disabled], .button.warning.ghost:focus[disabled], .button.warning.outline:hover[disabled], .button.warning.outline:focus[disabled], a.button.warning.ghost:hover[disabled], a.button.warning.ghost:focus[disabled], a.button.warning.outline:hover[disabled], a.button.warning.outline:focus[disabled], .pagination-item.warning.ghost:hover[disabled], .pagination-item.warning.ghost:focus[disabled], .pagination-item.warning.outline:hover[disabled], .pagination-item.warning.outline:focus[disabled] {
           --color: var(--warning-yellow-700); }
-  button.primary, .button.primary, a.button.primary {
+  button.primary, .button.primary, a.button.primary, .pagination-item.primary {
     --background-color: var(--focus-blue-500);
     --secondary-background-color: var(--focus-blue-600);
     --tertiary-background-color: var(--focus-blue-200);
     --secondary-color: var(--focus-blue-900);
     --color: var(--focus-blue-50); }
-    button.primary[disabled], .button.primary[disabled], a.button.primary[disabled] {
+    button.primary[disabled], .button.primary[disabled], a.button.primary[disabled], .pagination-item.primary[disabled] {
       --background-color: var(--focus-blue-200);
       --secondary-background-color: var(--focus-blue-300); }
-    button.primary.ghost, button.primary.outline, .button.primary.ghost, .button.primary.outline, a.button.primary.ghost, a.button.primary.outline {
+    button.primary.ghost, button.primary.outline, .button.primary.ghost, .button.primary.outline, a.button.primary.ghost, a.button.primary.outline, .pagination-item.primary.ghost, .pagination-item.primary.outline {
       --color: var(--focus-blue-800); }
-      button.primary.ghost[disabled], button.primary.outline[disabled], .button.primary.ghost[disabled], .button.primary.outline[disabled], a.button.primary.ghost[disabled], a.button.primary.outline[disabled] {
+      button.primary.ghost[disabled], button.primary.outline[disabled], .button.primary.ghost[disabled], .button.primary.outline[disabled], a.button.primary.ghost[disabled], a.button.primary.outline[disabled], .pagination-item.primary.ghost[disabled], .pagination-item.primary.outline[disabled] {
         --color: var(--focus-blue-700); }
-      button.primary.ghost:hover, button.primary.ghost:focus, button.primary.outline:hover, button.primary.outline:focus, .button.primary.ghost:hover, .button.primary.ghost:focus, .button.primary.outline:hover, .button.primary.outline:focus, a.button.primary.ghost:hover, a.button.primary.ghost:focus, a.button.primary.outline:hover, a.button.primary.outline:focus {
+      button.primary.ghost:hover, button.primary.ghost:focus, button.primary.outline:hover, button.primary.outline:focus, .button.primary.ghost:hover, .button.primary.ghost:focus, .button.primary.outline:hover, .button.primary.outline:focus, a.button.primary.ghost:hover, a.button.primary.ghost:focus, a.button.primary.outline:hover, a.button.primary.outline:focus, .pagination-item.primary.ghost:hover, .pagination-item.primary.ghost:focus, .pagination-item.primary.outline:hover, .pagination-item.primary.outline:focus {
         --color: var(--focus-blue-50); }
-        button.primary.ghost:hover[disabled], button.primary.ghost:focus[disabled], button.primary.outline:hover[disabled], button.primary.outline:focus[disabled], .button.primary.ghost:hover[disabled], .button.primary.ghost:focus[disabled], .button.primary.outline:hover[disabled], .button.primary.outline:focus[disabled], a.button.primary.ghost:hover[disabled], a.button.primary.ghost:focus[disabled], a.button.primary.outline:hover[disabled], a.button.primary.outline:focus[disabled] {
+        button.primary.ghost:hover[disabled], button.primary.ghost:focus[disabled], button.primary.outline:hover[disabled], button.primary.outline:focus[disabled], .button.primary.ghost:hover[disabled], .button.primary.ghost:focus[disabled], .button.primary.outline:hover[disabled], .button.primary.outline:focus[disabled], a.button.primary.ghost:hover[disabled], a.button.primary.ghost:focus[disabled], a.button.primary.outline:hover[disabled], a.button.primary.outline:focus[disabled], .pagination-item.primary.ghost:hover[disabled], .pagination-item.primary.ghost:focus[disabled], .pagination-item.primary.outline:hover[disabled], .pagination-item.primary.outline:focus[disabled] {
           --color: var(--focus-blue-700); }
-  button.secondary, .button.secondary, a.button.secondary {
+  button.secondary, .button.secondary, a.button.secondary, .pagination-item.secondary {
     --background-color: var(--deep-purple-500);
     --secondary-background-color: var(--deep-purple-600);
     --tertiary-background-color: var(--deep-purple-200);
     --secondary-color: var(--deep-purple-900);
     --color: var(--deep-purple-50); }
-    button.secondary[disabled], .button.secondary[disabled], a.button.secondary[disabled] {
+    button.secondary[disabled], .button.secondary[disabled], a.button.secondary[disabled], .pagination-item.secondary[disabled] {
       --background-color: var(--deep-purple-200);
       --secondary-background-color: var(--deep-purple-300); }
-    button.secondary.ghost, button.secondary.outline, .button.secondary.ghost, .button.secondary.outline, a.button.secondary.ghost, a.button.secondary.outline {
+    button.secondary.ghost, button.secondary.outline, .button.secondary.ghost, .button.secondary.outline, a.button.secondary.ghost, a.button.secondary.outline, .pagination-item.secondary.ghost, .pagination-item.secondary.outline {
       --color: var(--deep-purple-800); }
-      button.secondary.ghost[disabled], button.secondary.outline[disabled], .button.secondary.ghost[disabled], .button.secondary.outline[disabled], a.button.secondary.ghost[disabled], a.button.secondary.outline[disabled] {
+      button.secondary.ghost[disabled], button.secondary.outline[disabled], .button.secondary.ghost[disabled], .button.secondary.outline[disabled], a.button.secondary.ghost[disabled], a.button.secondary.outline[disabled], .pagination-item.secondary.ghost[disabled], .pagination-item.secondary.outline[disabled] {
         --color: var(--deep-purple-700); }
-      button.secondary.ghost:hover, button.secondary.ghost:focus, button.secondary.outline:hover, button.secondary.outline:focus, .button.secondary.ghost:hover, .button.secondary.ghost:focus, .button.secondary.outline:hover, .button.secondary.outline:focus, a.button.secondary.ghost:hover, a.button.secondary.ghost:focus, a.button.secondary.outline:hover, a.button.secondary.outline:focus {
+      button.secondary.ghost:hover, button.secondary.ghost:focus, button.secondary.outline:hover, button.secondary.outline:focus, .button.secondary.ghost:hover, .button.secondary.ghost:focus, .button.secondary.outline:hover, .button.secondary.outline:focus, a.button.secondary.ghost:hover, a.button.secondary.ghost:focus, a.button.secondary.outline:hover, a.button.secondary.outline:focus, .pagination-item.secondary.ghost:hover, .pagination-item.secondary.ghost:focus, .pagination-item.secondary.outline:hover, .pagination-item.secondary.outline:focus {
         --color: var(--deep-purple-50); }
-        button.secondary.ghost:hover[disabled], button.secondary.ghost:focus[disabled], button.secondary.outline:hover[disabled], button.secondary.outline:focus[disabled], .button.secondary.ghost:hover[disabled], .button.secondary.ghost:focus[disabled], .button.secondary.outline:hover[disabled], .button.secondary.outline:focus[disabled], a.button.secondary.ghost:hover[disabled], a.button.secondary.ghost:focus[disabled], a.button.secondary.outline:hover[disabled], a.button.secondary.outline:focus[disabled] {
+        button.secondary.ghost:hover[disabled], button.secondary.ghost:focus[disabled], button.secondary.outline:hover[disabled], button.secondary.outline:focus[disabled], .button.secondary.ghost:hover[disabled], .button.secondary.ghost:focus[disabled], .button.secondary.outline:hover[disabled], .button.secondary.outline:focus[disabled], a.button.secondary.ghost:hover[disabled], a.button.secondary.ghost:focus[disabled], a.button.secondary.outline:hover[disabled], a.button.secondary.outline:focus[disabled], .pagination-item.secondary.ghost:hover[disabled], .pagination-item.secondary.ghost:focus[disabled], .pagination-item.secondary.outline:hover[disabled], .pagination-item.secondary.outline:focus[disabled] {
           --color: var(--deep-purple-700); }
-  button.uppercase, .button.uppercase, a.button.uppercase {
+  button.uppercase, .button.uppercase, a.button.uppercase, .pagination-item.uppercase {
     text-transform: uppercase;
     letter-spacing: 0.0375em; }
 
@@ -2764,7 +2764,7 @@ button, .button, a.button {
   .button-group.outline > :not(:last-child) {
     border-right: 0; }
   .button-group.rounded {
-    --border-radius: 20%/50%; }
+    --border-radius: var(--ls-900p); }
     .button-group.rounded > * {
       --border-radius: 100%
     ; }
@@ -3146,6 +3146,48 @@ ol.upper-roman li::before {
     .step > .step-item:last-child {
       flex: 0 0 auto;
       background: transparent !important; }
+
+.pagination {
+  display: inline-block;
+  --margin: var(--ls-75p);
+  --border-radius: var(--ls-25p); }
+  .pagination.rounded {
+    --border-radius: var(--ls-900p); }
+    .pagination.rounded > * {
+      --border-radius: 100%
+    ; }
+  .pagination > button, .pagination > .button, .pagination > a.button, .pagination > .pagination-item {
+    border: 1px solid var(--tertiary-background-color);
+    background: var(--color);
+    color: var(--secondary-color);
+    --margin: var(--ls-0p);
+    border-radius: var(--ls-0p);
+    --box-shadow: 0; }
+    .pagination > button:hover, .pagination > button:focus, .pagination > .button:hover, .pagination > .button:focus, .pagination > a.button:hover, .pagination > a.button:focus, .pagination > .pagination-item:hover, .pagination > .pagination-item:focus {
+      background: var(--color);
+      color: var(--secondary-background-color); }
+    .pagination > button:first-child, .pagination > .button:first-child, .pagination > a.button:first-child, .pagination > .pagination-item:first-child {
+      border-top-left-radius: var(--border-radius);
+      border-bottom-left-radius: var(--border-radius); }
+    .pagination > button:last-child, .pagination > .button:last-child, .pagination > a.button:last-child, .pagination > .pagination-item:last-child {
+      border-top-right-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius); }
+    .pagination > button:not(:last-child), .pagination > .button:not(:last-child), .pagination > a.button:not(:last-child), .pagination > .pagination-item:not(:last-child) {
+      border-right: 0; }
+    .pagination > button *, .pagination > .button *, .pagination > a.button *, .pagination > .pagination-item * {
+      color: inherit;
+      background: inherit; }
+  .pagination > .pagination-item {
+    height: 100%;
+    display: inline-block;
+    --background-color: var(--interface-gray-0);
+    --color: var(--interface-gray-900);
+    background: var(--background-color);
+    color: var(--color);
+    --padding-horizontal: var(--ls-100p); }
+    .pagination > .pagination-item:hover, .pagination > .pagination-item:focus {
+      background: var(--background-color);
+      color: var(--color); }
 
 .layout-container {
   display: grid;

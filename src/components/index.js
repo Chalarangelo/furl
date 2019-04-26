@@ -9,6 +9,7 @@ import Iframe from "./Iframe";
 import Dropdown from "./Dropdown";
 import Collapse from "./Collapse";
 import { List, ListItem } from "./List";
+import { Pagination, PaginationItem } from "./Pagination";
 import { Breadcrumb, BreadcrumbItem } from "./Breadcrumb";
 import { Step, StepItem } from "./Step";
 import { Layout, Content, Sidebar, Header } from "./Layout";
@@ -43,6 +44,7 @@ export {
   ContextButton,
   Image, Video, Audio, Iframe,
   List, ListItem,
+  Pagination, PaginationItem,
   Breadcrumb, BreadcrumbItem,
   Step, StepItem,
   Layout, Content, Sidebar, Header,
