@@ -2786,7 +2786,8 @@ button.context-button, .button.context-button, a.button.context-button {
   width: var(--ls-250p);
   height: var(--ls-250p);
   line-height: var(--ls-150p);
-  border-radius: var(--ls-900p); }
+  border-radius: var(--ls-900p);
+  z-index: 97; }
   button.context-button.v-top, .button.context-button.v-top, a.button.context-button.v-top {
     top: 0; }
   button.context-button.v-bottom, .button.context-button.v-bottom, a.button.context-button.v-bottom {
@@ -2801,6 +2802,22 @@ button.context-button, .button.context-button, a.button.context-button {
     right: calc(50% - var(--margin-horizontal) - 0.5 * var(--ls-250p)); }
   button.context-button > *, .button.context-button > *, a.button.context-button > * {
     vertical-align: middle; }
+  button.context-button.small, .button.context-button.small, a.button.context-button.small {
+    width: var(--ls-200p);
+    height: var(--ls-200p);
+    line-height: var(--ls-100p); }
+    button.context-button.small.v-center, .button.context-button.small.v-center, a.button.context-button.small.v-center {
+      bottom: calc(50% - var(--margin-vertical) - 0.5 * var(--ls-200p)); }
+    button.context-button.small.h-center, .button.context-button.small.h-center, a.button.context-button.small.h-center {
+      right: calc(50% - var(--margin-horizontal) - 0.5 * var(--ls-200p)); }
+  button.context-button.large, .button.context-button.large, a.button.context-button.large {
+    width: var(--ls-300p);
+    height: var(--ls-300p);
+    line-height: var(--ls-200p); }
+    button.context-button.large.v-center, .button.context-button.large.v-center, a.button.context-button.large.v-center {
+      bottom: calc(50% - var(--margin-vertical) - 0.5 * var(--ls-300p)); }
+    button.context-button.large.h-center, .button.context-button.large.h-center, a.button.context-button.large.h-center {
+      right: calc(50% - var(--margin-horizontal) - 0.5 * var(--ls-300p)); }
 
 .badge {
   --background-color: var(--interface-gray-200);

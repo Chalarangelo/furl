@@ -1250,12 +1250,12 @@ storiesOf('ContextButton', module)
 )
   .add("all places", () => (
     <React.Fragment>
-      <ContextButton verticalPosition='top' horizontalPosition='left'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='top' horizontalPosition='left' color='primary'><Icon name="plus" /></ContextButton>
       <ContextButton verticalPosition='bottom' horizontalPosition='left'><Icon name="plus" /></ContextButton>
-      <ContextButton verticalPosition='center' horizontalPosition='left'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='center' horizontalPosition='left' size='large'><Icon name="plus" width={32} height={32}/></ContextButton>
       <ContextButton verticalPosition='top' horizontalPosition='center'><Icon name="plus" /></ContextButton>
       <ContextButton verticalPosition='bottom' horizontalPosition='center'><Icon name="plus" /></ContextButton>
-      <ContextButton verticalPosition='center' horizontalPosition='center'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='center' horizontalPosition='center' size='small'><Icon name="plus" width={16} height={16} /></ContextButton>
       <ContextButton verticalPosition='top' horizontalPosition='right'><Icon name="plus" /></ContextButton>
       <ContextButton verticalPosition='bottom' horizontalPosition='right'><Icon name="plus" /></ContextButton>
       <ContextButton verticalPosition='center' horizontalPosition='right'><Icon name="plus" /></ContextButton>

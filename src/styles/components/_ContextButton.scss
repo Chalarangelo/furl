@@ -14,6 +14,20 @@ button, .button, a.button {
     > * {
       vertical-align: middle;
     }
-
+    z-index: 97;
+    &.small {
+      &.v-center  { bottom: calc(50% - var(--margin-vertical) - 0.5 * var(--ls-200p)); }   
+      &.h-center  { right: calc(50% - var(--margin-horizontal) - 0.5 * var(--ls-200p)); }
+      width: var(--ls-200p);
+      height: var(--ls-200p);
+      line-height: var(--ls-100p);
+    }
+    &.large {
+      &.v-center  { bottom: calc(50% - var(--margin-vertical) - 0.5 * var(--ls-300p)); }   
+      &.h-center  { right: calc(50% - var(--margin-horizontal) - 0.5 * var(--ls-300p)); }
+      width: var(--ls-300p);
+      height: var(--ls-300p);
+      line-height: var(--ls-200p);
+    }
   }
 }
