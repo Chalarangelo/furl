@@ -125,4 +125,31 @@ const TimeInput = ({
   )
 };
 
-export { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput };
+const ColorInput = ({
+  size = 'normal',
+  disabled = false,
+  required = false,
+  placeholder,
+  name,
+  onChange,
+  id,
+  className
+}) => {
+  const [inputValue, setInputValue] = React.useState('#000000');
+  return (
+    <React.Fragment>
+    <MaskedInputBase
+      type='text' id={id} placeholder={placeholder}
+      mask={['#', /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/]}
+      className={['color-input',className].join(' ').trim()} size={size} disabled={disabled}
+        required={required} name={name} 
+        onChange={(e) => { setInputValue(e.target.value); onChange(e); }} value={inputValue}
+    />
+      <input type='color' onChange={(e) => { setInputValue(e.target.value); onChange(e); }} value={inputValue} />
+    </React.Fragment>
+  )
+};
+
+
+
+export { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput };

@@ -34,7 +34,7 @@ import Loader from "./Loader";
 import Calendar from "./Calendar";
 import { 
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput, 
-  CreditCardInput, PhoneInput, CurrencyInput, TimeInput
+  CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput
 } from "./Input";
 
 export { 
@@ -66,7 +66,7 @@ export {
   Icon,
   Footer,
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput,
-  CreditCardInput, PhoneInput, CurrencyInput, TimeInput,
+  CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput,
   Search,
   Progress, Loader,
   Calendar
