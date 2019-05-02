@@ -2951,6 +2951,19 @@ button.context-button, .button.context-button, a.button.context-button {
   .collapse > summary::-webkit-details-marker {
     display: none; }
 
+.accordion-section {
+  border-radius: 0;
+  margin-top: 0;
+  margin-bottom: 0; }
+  .accordion-section:first-of-type {
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    margin-top: var(--margin-vertical); }
+  .accordion-section:last-of-type {
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    margin-bottom: var(--margin-vertical); }
+
 .dropdown {
   background: inherit;
   --color: inherit;

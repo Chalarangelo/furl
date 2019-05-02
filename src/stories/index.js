@@ -685,6 +685,7 @@ storiesOf('Collapse', module)
 
 storiesOf('Accordion', module)
   .add("default", () => (
+    <React.Fragment>
     <Accordion>
       <Collapse title="Don't do it">
         <Hyperlink href="#">Item 3.1</Hyperlink>
@@ -697,6 +698,20 @@ storiesOf('Accordion', module)
         <Hyperlink href="#">Item 3.3</Hyperlink>
       </Collapse>
     </Accordion>
+    <br/>
+    <Accordion>
+      <Collapse title="Don't do it">
+        <Hyperlink href="#">Item 3.1</Hyperlink>
+        <Hyperlink href="#">Item 3.2</Hyperlink>
+        <Hyperlink href="#">Item 3.3</Hyperlink>
+      </Collapse>
+      <Collapse title="Don't do it">
+        <Hyperlink href="#">Item 3.1</Hyperlink>
+        <Hyperlink href="#">Item 3.2</Hyperlink>
+        <Hyperlink href="#">Item 3.3</Hyperlink>
+      </Collapse>
+    </Accordion>
+    </React.Fragment>
   )
 )
 ;

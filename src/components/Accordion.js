@@ -14,20 +14,21 @@ const Accordion = ({
       _c.props = Object.assign({
         onClick: function(e) {
           e.preventDefault();
-          setOpenSection(i);
+          setOpenSection(openSection == i ? -1 : i);
           console.log(JSON.stringify({
             openSection: openSection,
             i: i
           }));
           c.props.onClick && c.props.onClick(e);
         },
-        isOpen: openSection == i
+        isOpen: openSection == i,
+        className: [c.props.className, 'accordion-section'].join(' ').trim()
       }, c.props);
       return _c;
     });
-    return (<React.Fragment>
+    return (<div className={['accordion', className].join(' ').trim()} id={id !== undefined ? id : false}>
       {collapses}
-    </React.Fragment>);
+    </div>);
 };
 
 export default Accordion;
