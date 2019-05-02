@@ -11,6 +11,7 @@ import Collapse from "./Collapse";
 import Accordion from "./Accordion";
 import { List, ListItem } from "./List";
 import { Pagination, PaginationItem } from "./Pagination";
+import { Tab, TabItem } from "./Tab";
 import { Breadcrumb, BreadcrumbItem } from "./Breadcrumb";
 import { Step, StepItem } from "./Step";
 import { Layout, Content, Sidebar, Header } from "./Layout";
@@ -47,6 +48,7 @@ export {
   List, ListItem,
   Pagination, PaginationItem,
   Breadcrumb, BreadcrumbItem,
+  Tab, TabItem,
   Step, StepItem,
   Layout, Content, Sidebar, Header,
   Grid, Row, Column,
