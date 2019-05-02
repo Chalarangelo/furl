@@ -26,22 +26,23 @@ const Tab = ({
         setOpenTab(i);
         v.props.onClick && v.props.onClick(e);
       },
+      className: [v.props.className, openTab == i ? 'selected' : ''].join(' ').trim()
     }, v.props, _tB.props);
     return _tB;
   });
   let tabsContent = tabs.map((v,i) => {
-    let _tC = Object.assign({},(<span>{v.props.children}</span>));
+    let _tC = Object.assign({},(<div>{v.props.children}</div>));
     _tC.props = Object.assign({
       isOpen: openTab == i,
       className: [v.props.className, openTab == i ? 'open' : ''].join(' ').trim()
     }, v.props);
     return _tC;
   });
-  let classNames = [className, 'tab'];
+  let classNames = [className, 'tab-container'];
   return (
     <div id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
-      {tabsButtons}
-      {tabsContent}
+      <div className='tab-controls'>{tabsButtons}</div>
+      <div className='tab-content'>{tabsContent}</div>
     </div>
   );
 };

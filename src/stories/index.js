@@ -937,9 +937,11 @@ storiesOf('List', module)
 
 storiesOf('Tab', module)
   .add("default", () => (
-    <Tab>
-      <TabItem title="tab 1">Lorem Ipsum</TabItem>
-      <TabItem title="tab 2">Dolor sit amet</TabItem>
+    <Tab openIndex={2}>
+      <TabItem title="Lorem Ipsum">Lorem Ipsum</TabItem>
+      <TabItem title="Dolor Sit Amet">Dolor sit amet</TabItem>
+      <TabItem title="Peprendur">Dolor sit amet</TabItem>
+      <TabItem title="Nulla sit etiam">Dolor sit amet</TabItem>
     </Tab>
   )
 )
