@@ -15,10 +15,6 @@ const Accordion = ({
         onClick: function(e) {
           e.preventDefault();
           setOpenSection(openSection == i ? -1 : i);
-          console.log(JSON.stringify({
-            openSection: openSection,
-            i: i
-          }));
           c.props.onClick && c.props.onClick(e);
         },
         isOpen: openSection == i,
