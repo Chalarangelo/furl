@@ -3,6 +3,7 @@ import Icon from "./Icon";
 
 const Collapse = ({
   isOpen = false,
+  onClick,
   title,
   id,
   className,
@@ -10,7 +11,7 @@ const Collapse = ({
   let classNames = ["collapse", className];
   return (
     <details className={classNames.join(' ').trim()} id={id !== undefined ? id : false} open={isOpen}>
-      <summary>{title}
+      <summary onClick={onClick}>{title}
         <Icon name='chevron-down' width={16} height={16}/>
       </summary>
       <div className="collapse-content">

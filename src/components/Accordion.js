@@ -9,10 +9,19 @@ const Accordion = ({
   children }) => {
   const [openSection, setOpenSection] = React.useState(openIndex);
   const collapses = children.filter(item => Collapse.name == item.type.name)
-    .map(c => {
+    .map((c,i) => {
       let _c = Object.assign({}, c);
       _c.props = Object.assign({
-        isOpen: openSection
+        onClick: function(e) {
+          e.preventDefault();
+          setOpenSection(i);
+          console.log(JSON.stringify({
+            openSection: openSection,
+            i: i
+          }));
+          c.props.onClick && c.props.onClick(e);
+        },
+        isOpen: openSection == i
       }, c.props);
       return _c;
     });

@@ -8,6 +8,7 @@ import Audio from "./Audio";
 import Iframe from "./Iframe";
 import Dropdown from "./Dropdown";
 import Collapse from "./Collapse";
+import Accordion from "./Accordion";
 import { List, ListItem } from "./List";
 import { Pagination, PaginationItem } from "./Pagination";
 import { Breadcrumb, BreadcrumbItem } from "./Breadcrumb";
@@ -53,7 +54,7 @@ export {
   Menu, MenuItem,
   Table, TableCaption, TableHead, TableBody, TableRow, TableCell,
   Dropdown,
-  Collapse,
+  Collapse, Accordion,
   Title, Text, Paragraph, Quote, Code, Kbd, Preformatted,
   Anchor,
   Divider, 
