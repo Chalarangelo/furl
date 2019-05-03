@@ -707,7 +707,7 @@ storiesOf('Accordion', module)
       </Collapse>
     </Accordion>
     <br/>
-    <Accordion>
+    <Accordion fill='flat'>
       <Collapse title="Don't do it">
         <Hyperlink href="#">Item 3.1</Hyperlink>
         <Hyperlink href="#">Item 3.2</Hyperlink>

@@ -4,6 +4,7 @@ import Collapse from "./Collapse";
 
 const Accordion = ({
   openIndex = 0,
+  fill = 'solid',
   id,
   className,
   children }) => {
@@ -18,7 +19,7 @@ const Accordion = ({
           c.props.onClick && c.props.onClick(e);
         },
         isOpen: openSection == i,
-        className: [c.props.className, 'accordion-section'].join(' ').trim()
+        className: [c.props.className, 'accordion-section', fill !== 'solid' ? fill : ''].join(' ').trim()
       }, c.props);
       return _c;
     });

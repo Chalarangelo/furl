@@ -12,4 +12,7 @@
     border-bottom-right-radius: var(--border-radius);
     margin-bottom: var(--margin-vertical)
   }
+  &.flat:not(:first-of-type){
+    border-top: 0;
+  }
 }
