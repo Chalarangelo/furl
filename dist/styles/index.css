@@ -3207,23 +3207,42 @@ ol.upper-roman li::before {
   width: 100%;
   display: flex;
   flex-flow: row nowrap;
-  border-bottom: 1px solid var(--interface-gray-200);
   justify-content: center;
   --margin-vertical: var(--ls-0p); }
+  .tab-controls:not(.button-group) {
+    border-bottom: 1px solid var(--interface-gray-200); }
+  .tab-controls.button-group {
+    border: 1px solid var(--interface-gray-200); }
   .tab-controls > button {
     flex-grow: 1;
-    flex-basis: auto;
+    flex-basis: auto; }
+  .tab-controls:not(.button-group) > button {
     --margin-horizontal: var(--ls-0p);
     --margin-vertical: var(--ls-0p);
     border-radius: 0;
     background: transparent;
     --color: var(--interface-gray-700);
     border-bottom: 1px solid transparent; }
-    .tab-controls > button:hover, .tab-controls > button:focus {
+    .tab-controls:not(.button-group) > button:hover, .tab-controls:not(.button-group) > button:focus {
       background: transparent;
       --color: var(--focus-blue-500); }
-    .tab-controls > button.selected {
+    .tab-controls:not(.button-group) > button.selected {
       border-bottom: 1px solid var(--focus-blue-400); }
+  .tab-controls.button-group {
+    --margin-horizontal: var(--ls-0p);
+    --margin-vertical: var(--ls-0p); }
+    .tab-controls.button-group > button {
+      --color: var(--interface-gray-900);
+      --background-color: var(--interface-gray-50);
+      --secondary-background-color: var(--interface-gray-200); }
+      .tab-controls.button-group > button:hover, .tab-controls.button-group > button:focus {
+        background: var(--focus-blue-400);
+        --color: var(--interface-gray-0); }
+      .tab-controls.button-group > button.selected {
+        --background-color: var(--interface-gray-200); }
+        .tab-controls.button-group > button.selected:hover, .tab-controls.button-group > button.selected:focus {
+          background: var(--background-color);
+          color: var(--focus-blue-700); }
 
 .tab-content {
   border: 0;

@@ -10,6 +10,7 @@ const TabItem = ({ id, className, children }) => (
 
 const Tab = ({
   openIndex = 0,
+  controlStyle = 'normal',
   id,
   className,
   children
@@ -41,7 +42,7 @@ const Tab = ({
   let classNames = [className, 'tab-container'];
   return (
     <div id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
-      <div className='tab-controls'>{tabsButtons}</div>
+      <div className={['tab-controls', controlStyle !== 'normal' ? controlStyle : ''].join(' ').trim()}>{tabsButtons}</div>
       <div className='tab-content'>{tabsContent}</div>
     </div>
   );
