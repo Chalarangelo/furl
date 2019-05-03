@@ -681,6 +681,14 @@ storiesOf('Collapse', module)
     </Collapse>
   )
 )
+  .add("flat", () => (
+    <Collapse fill='flat' title="Don't do it">
+      <Hyperlink href="#">Item 3.1</Hyperlink>
+      <Hyperlink href="#">Item 3.2</Hyperlink>
+      <Hyperlink href="#">Item 3.3</Hyperlink>
+    </Collapse>
+  )
+)
 ;
 
 storiesOf('Accordion', module)

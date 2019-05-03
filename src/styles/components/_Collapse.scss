@@ -54,4 +54,8 @@
   & > summary::-webkit-details-marker {
     display:none;
   }
+  &.flat {
+    --box-shadow: var(--shadow-0);
+    border: 1px solid var(--interface-gray-200);
+  }
 }

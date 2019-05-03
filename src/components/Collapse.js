@@ -3,12 +3,13 @@ import Icon from "./Icon";
 
 const Collapse = ({
   isOpen = false,
+  fill = "solid",
   onClick,
   title,
   id,
   className,
   children }) => {
-  let classNames = ["collapse", className];
+  let classNames = ["collapse", fill !== "solid" ? fill : '', className];
   return (
     <details className={classNames.join(' ').trim()} id={id !== undefined ? id : false} open={isOpen}>
       <summary onClick={onClick}>{title}

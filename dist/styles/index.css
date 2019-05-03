@@ -2950,6 +2950,9 @@ button.context-button, .button.context-button, a.button.context-button {
     list-style-type: none; }
   .collapse > summary::-webkit-details-marker {
     display: none; }
+  .collapse.flat {
+    --box-shadow: var(--shadow-0);
+    border: 1px solid var(--interface-gray-200); }
 
 .accordion-section {
   border-radius: 0;
