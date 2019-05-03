@@ -872,6 +872,15 @@ storiesOf('Layout', module)
     </Layout>
   )
 )
+  .add("Responsive", () => (
+    <Layout header={['none', 'bottom', 'top', 'top']} sidebar={['none','left','right','right']}>
+      <Header>Header</Header>
+      <Sidebar>Sidebar</Sidebar>
+      <Content>Content</Content>
+      <Button>Invalid content</Button>
+    </Layout>
+  )
+  )
 ;
 
 storiesOf('List', module)
