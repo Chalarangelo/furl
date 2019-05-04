@@ -14,8 +14,6 @@ import useInterval from "../utilities/useInterval";
 import Icon from "./Icon";
 import Button from "./Button";
 
-let __pressureTimer, __pressureTimeout;
-
 const Calendar = ({
   id,
   date,
