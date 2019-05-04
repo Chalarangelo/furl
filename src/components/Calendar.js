@@ -11,12 +11,14 @@ import calendar, {
   CALENDAR_MONTHS
 } from "../utilities/calendarUtilities";
 import useInterval from "../utilities/useInterval";
+import useEffectOnUpdate from "../utilities/useEffectOnUpdate";
 import Icon from "./Icon";
 import Button from "./Button";
 
 const Calendar = ({
   id,
   date,
+  onDateChanged,
   className
 }) => {
   const resolveStateFromDate = (date) => {
@@ -70,7 +72,9 @@ const Calendar = ({
           borderRight: `${(index % 7) + 1 === 7 ? 'none' : '1px solid var(--interface-gray-50)'}`
         }}
         key={getDateISO(_date)}
-        index={index} title={_date.toDateString()}
+        index={index} 
+        onClick={gotoDate(_date)}
+        title={_date.toDateString()}
       >
         {_date.getDate()}
       </div>
@@ -115,6 +119,16 @@ const Calendar = ({
     setYear(year + 1);
   };
 
+  const gotoDate = date => evt => {
+    evt && evt.preventDefault();
+    if (!(current && isSameDay(date, current))) {
+      let _new = resolveStateFromDate(date);
+      setMonth(_new.month);
+      setYear(_new.year);
+      setCurrent(_new.current);
+    }
+  };
+
   const clearPressureTimer = () => {
     setIntervalFn(null);
     pressureTimeout && clearInterval(pressureTimeout);
@@ -145,6 +159,10 @@ const Calendar = ({
       default:  return;
     }
   }, 200);
+
+  useEffectOnUpdate(() => {
+    typeof onDateChanged === "function" && onDateChanged(current);
+  }, [current]);
 
   return (
     <div className="calendar-container">

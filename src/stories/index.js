@@ -55,7 +55,7 @@ storiesOf('Divider', module)
 
 storiesOf('Calendar', module)
   .add("default", () => (
-    <Calendar date={new Date()}/>
+    <Calendar date={new Date()} onDateChanged={(e) => console.log(e)}/>
   )
 )
 ;
