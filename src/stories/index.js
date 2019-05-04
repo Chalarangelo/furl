@@ -55,7 +55,14 @@ storiesOf('Divider', module)
 
 storiesOf('Calendar', module)
   .add("default", () => (
-    <Calendar date={new Date()} onDateChanged={(e) => console.log(e)}/>
+    <Calendar onDateChanged={(e) => console.log(e)}/>
+  )
+)
+;
+
+storiesOf('Calendar', module)
+  .add("solid with date", () => (
+    <Calendar fill='solid' date={new Date('01/01/2020')} onDateChanged={(e) => console.log(e)}/>
   )
 )
 ;

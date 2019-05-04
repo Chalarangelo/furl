@@ -6,6 +6,10 @@
   max-width: var(--ls-600p);
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
+  &.solid {
+    border: 0;
+    --box-shadow: var(--shadow-100);
+  }
 }
 .calendar-header {
   display: flex;
@@ -14,7 +18,7 @@
 }
 .calendar-grid {
   display: grid;
-  grid-template: repeat(7, auto) / repeat(7, auto);
+  grid-template: repeat(7, 1fr) / repeat(7, 1fr);
 }
 .calendar-month {
   --color: var(--interface-gray-800);
@@ -40,6 +44,7 @@
   --color: var(--interface-gray-800);
 }
 .calendar-date {
+  cursor: pointer;
   --font-size: var(--ls-100p);
   --color: var(--interface-gray-500);
   &.in-month {
@@ -50,6 +55,9 @@
     background: var(--focus-blue-500);
     color: var(--interface-gray-0);
     position: relative;
+  }
+  &.today {
+    color: var(--focus-blue-500);
   }
   &:hover {
     --background-color: var(--focus-blue-100);

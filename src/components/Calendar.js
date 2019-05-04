@@ -16,6 +16,7 @@ import Icon from "./Icon";
 import Button from "./Button";
 
 const Calendar = ({
+  fill = 'flat',
   id,
   date,
   onDateChanged,
@@ -64,7 +65,7 @@ const Calendar = ({
     return (
       // The highlighting below is unfinished, just a demo
       <div 
-        className={["calendar-date", inMonth ? "in-month" : "", isToday ? "highlighted" : ""].join(' ').trim()} 
+        className={["calendar-date", inMonth ? "in-month" : "", isCurrent ? "highlighted" : isToday ? "today" : ""].join(' ').trim()} 
         style={{ 
           gridRow: `${Math.floor(index / 7) + 2} / span 1`,
           gridColumn: `${(index % 7) + 1} / span 1`,
@@ -165,7 +166,7 @@ const Calendar = ({
   }, [current]);
 
   return (
-    <div className="calendar-container">
+    <div className={["calendar-container", className, fill !== 'flat' ? fill : ''].join(' ').trim()} id={id !== undefined ? id : false}>
       <div className="calendar-header">
         <Button className="calendar-arrow-button" 
           onMouseDown={handlePrevious}
