@@ -81,17 +81,19 @@ const Calendar = ({
 
   const handlePrevious = (e) => {
     e && e.preventDefault();
-    e.shiftKey ? gotoPreviousYear() : gotoPreviousMonth();
+    let shiftKey = e.shiftKey;
+    shiftKey ? gotoPreviousYear() : gotoPreviousMonth();
     setTimeout(
-      () => setIntervalFn(e.shiftKey ? 'prevYear' : 'prevMonth'),
+      () => setIntervalFn(shiftKey ? 'prevYear' : 'prevMonth'),
     500);
   }
 
   const handleNext = (e) => {
     e && e.preventDefault();
-    e.shiftKey ? gotoNextYear() : gotoNextMonth();
+    let shiftKey = e.shiftKey;
+    shiftKey ? gotoNextYear() : gotoNextMonth();
     setTimeout(
-      () => setIntervalFn(e.shiftKey ? 'nextYear' : 'nextMonth'),
+      () => setIntervalFn(shiftKey ? 'nextYear' : 'nextMonth'),
     500);
   }
 
