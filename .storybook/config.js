@@ -1,4 +1,10 @@
-import { configure } from '@storybook/react';
+import { addParameters, configure } from '@storybook/react';
+
+addParameters({
+  options: {
+    showAddonPanel: false
+  }
+});
 
 function loadStories() {
   require('../src/stories');

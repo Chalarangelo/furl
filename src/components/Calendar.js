@@ -81,18 +81,18 @@ const Calendar = ({
     e && e.preventDefault();
     let shiftKey = e.shiftKey;
     shiftKey ? gotoPreviousYear() : gotoPreviousMonth();
-    setTimeout(
+    setPressureTimeout(setTimeout(
       () => setIntervalFn(shiftKey ? 'prevYear' : 'prevMonth'),
-    500);
+    500));
   }
 
   const handleNext = (e) => {
     e && e.preventDefault();
     let shiftKey = e.shiftKey;
     shiftKey ? gotoNextYear() : gotoNextMonth();
-    setTimeout(
+    setPressureTimeout(setTimeout(
       () => setIntervalFn(shiftKey ? 'nextYear' : 'nextMonth'),
-    500);
+    500));
   }
 
   const gotoPreviousMonth = () => {
@@ -117,6 +117,8 @@ const Calendar = ({
 
   const clearPressureTimer = () => {
     setIntervalFn(null);
+    pressureTimeout && clearInterval(pressureTimeout);
+    setPressureTimeout(null);
   }
 
   const [month, setMonth] = React.useState(resolveStateFromDate(date).month);
@@ -124,6 +126,7 @@ const Calendar = ({
   const [year, setYear] = React.useState(resolveStateFromDate(date).year);
   const [today, setToday] = React.useState(new Date());
   const [intervalFn, setIntervalFn] = React.useState(null);
+  const [pressureTimeout, setPressureTimeout] = React.useState(null);
 
   useInterval(() => {
     switch (intervalFn) {
