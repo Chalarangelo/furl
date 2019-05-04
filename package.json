@@ -16,7 +16,7 @@
     "build-css": "node-sass-chokidar ./src/styles/index.scss ./dist/styles/index.css --output-style compressed",
     "build-packages": "npm-run-all build-js build-css",
     "watch-js": "NODE_ENV=production rollup -c -w",
-    "watch-css": "npm run build-css && node-sass-chokidar ./src/styles/index.scss ./dist/styles/index.css --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar ./src/styles/index.scss ./dist/styles/index.css --watch --recursive --output-style compressed",
     "watch-all": "npm-run-all -p watch-js watch-css",
     "test": "react-scripts test --env=jsdom --watchAll",
     "build-storybook": "build-storybook -c .storybook",
