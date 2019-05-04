@@ -55,6 +55,7 @@
     --background-color: var(--focus-blue-100);
     --color: var(--focus-blue-700);
   }
+  transition: border 0.0s ease;
 }
 .calendar-arrow-button {
   svg {

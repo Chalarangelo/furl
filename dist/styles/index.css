@@ -3762,7 +3762,8 @@ table {
 
 .calendar-date {
   --font-size: var(--ls-100p);
-  --color: var(--interface-gray-500); }
+  --color: var(--interface-gray-500);
+  transition: border 0.0s ease; }
   .calendar-date.in-month {
     --color: var(--interface-gray-900); }
   .calendar-date.highlighted {
