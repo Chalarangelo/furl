@@ -13,7 +13,8 @@ const Button = ({
   onClick,
   id,
   className,
-  children}) => {
+  children,
+  ...rest}) => {
   let classNames = [];
   classNames.push(fill);
   if (text !== 'normal') classNames.push(text);
@@ -32,6 +33,7 @@ const Button = ({
           disabled={disabled} 
           onClick={onClick}
           id={id !== undefined ? id : false}
+          {...rest}
         >
           {children}
         </a>
@@ -43,6 +45,7 @@ const Button = ({
           disabled={disabled} 
           onClick={onClick}
           id={id !== undefined ? id : false}
+          {...rest}
         >
           {children}
         </a>);
@@ -54,6 +57,7 @@ const Button = ({
           disabled={disabled} 
           onClick={onClick}
           id={id !== undefined ? id : false}
+          {...rest}
         >
           {children}
         </button>
@@ -66,6 +70,7 @@ const Button = ({
           disabled={disabled} 
           onClick={onClick}
           id={id !== undefined ? id : false}
+          {...rest}
         >
           {children}
         </button>
@@ -77,6 +82,7 @@ const Button = ({
           disabled={disabled} 
           onClick={onClick}
           id={id !== undefined ? id : false}
+          {...rest}
         >
           {children}
         </button>
