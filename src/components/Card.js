@@ -1,6 +1,20 @@
 import React from "react";
 import {normalizeChildren} from "../utilities/utils";
-import CardSection from "./CardSection";
+
+const CardSection = ({
+  height = 'auto',
+  media = '',
+  id,
+  className,
+  children
+}) => {
+  if(media.length)
+    return (<div className={[className, "card-media-section"].join(' ').trim()}
+      id={id !== undefined ? id : false} style={{ height: height, backgroundImage: `url(${encodeURI(media)})`}}/>);
+  else
+    return (<div className={[className, "card-section"].join(' ').trim()}
+      id={id !== undefined ? id : false}>{children}</div>);
+}
 
 const Card = ({
   width = 'auto',
