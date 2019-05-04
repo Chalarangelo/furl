@@ -3,7 +3,7 @@ import {normalizeChildren} from "../utilities/utils";
 import Content from "./Content";
 import { Sidebar, SidebarTab } from "./Sidebar";
 import Header from "./Header";
-import LayoutStyle from "./LayoutStyle";
+import LayoutStyle from "../utilities/LayoutStyle";
 
 const Layout = ({
   header = ['top', 'top', 'top', 'top'], // top, bottom, none
