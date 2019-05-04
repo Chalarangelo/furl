@@ -10,6 +10,8 @@ import calendar, {
   WEEK_DAYS,
   CALENDAR_MONTHS
 } from "../utilities/calendarUtilities";
+import Icon from "./Icon";
+import Button from "./Button";
 
 const Calendar = ({
   id,
@@ -75,6 +77,36 @@ const Calendar = ({
     );
   };
 
+  const handlePrevious = (e) => {
+    e && e.preventDefault();
+    e.shiftKey ? gotoPreviousYear() : gotoPreviousMonth();
+  }
+
+  const handleNext = (e) => {
+    e && e.preventDefault();
+    e.shiftKey ? gotoNextYear() : gotoNextMonth();
+  }
+
+  const gotoPreviousMonth = () => {
+    let _new = getPreviousMonth(month,year);
+    setMonth(_new.month);
+    setYear(_new.year);
+  };
+
+  const gotoNextMonth = () => {
+    let _new = getNextMonth(month, year);
+    setMonth(_new.month);
+    setYear(_new.year);
+  };
+
+  const gotoPreviousYear = () => {
+    setYear(year - 1);
+  };
+
+  const gotoNextYear = () => {
+    setYear(year + 1);
+  };
+
   const [month, setMonth] = React.useState(resolveStateFromDate(date).month);
   const [current, setCurrent] = React.useState(resolveStateFromDate(date).current);
   const [year, setYear] = React.useState(resolveStateFromDate(date).year);
@@ -83,9 +115,15 @@ const Calendar = ({
   return (
     <div className="calendar-container">
       <div className="calendar-header">
+        <Button className="calendar-arrow-button" onClick={handlePrevious}>
+          <Icon name='chevron-left' />
+        </Button>
         <div className="calendar-month">
           {Object.keys(CALENDAR_MONTHS)[Math.max(0, Math.min(month - 1, 11))]} {year}
         </div>
+        <Button className="calendar-arrow-button" onClick={handleNext}>
+          <Icon name='chevron-right' />
+        </Button>
       </div>
 
       <div className="calendar-grid">

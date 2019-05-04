@@ -3773,6 +3773,16 @@ table {
     --background-color: var(--focus-blue-100);
     --color: var(--focus-blue-700); }
 
+.calendar-arrow-button {
+  --background-color: transparent;
+  --secondary-background-color: transparent;
+  --tertiary-background-color: transparent;
+  --color: var(--interface-gray-600); }
+  .calendar-arrow-button svg {
+    transition: all 0.3s ease; }
+  .calendar-arrow-button:hover > span > svg, .calendar-arrow-button:focus > span > svg {
+    color: var(--focus-blue-500); }
+
 progress {
   display: block;
   -webkit-appearance: none;
