@@ -59,6 +59,7 @@
 .calendar-arrow-button {
   svg {
     transition: all 0.3s ease;
+    pointer-events: none;
   }
   --background-color: transparent;
   --secondary-background-color: transparent;

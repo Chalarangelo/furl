@@ -10,14 +10,16 @@ import calendar, {
   WEEK_DAYS,
   CALENDAR_MONTHS
 } from "../utilities/calendarUtilities";
+import useInterval from "../utilities/useInterval";
 import Icon from "./Icon";
 import Button from "./Button";
+
+let __pressureTimer, __pressureTimeout;
 
 const Calendar = ({
   id,
   date,
-  className,
-
+  className
 }) => {
   const resolveStateFromDate = (date) => {
     const isDateObject = isDate(date);
@@ -70,7 +72,7 @@ const Calendar = ({
           borderRight: `${(index % 7) + 1 === 7 ? 'none' : '1px solid var(--interface-gray-50)'}`
         }}
         key={getDateISO(_date)}
-        index={index} inMonth={inMonth} title={_date.toDateString()}
+        index={index} title={_date.toDateString()}
       >
         {_date.getDate()}
       </div>
@@ -80,11 +82,17 @@ const Calendar = ({
   const handlePrevious = (e) => {
     e && e.preventDefault();
     e.shiftKey ? gotoPreviousYear() : gotoPreviousMonth();
+    setTimeout(
+      () => setIntervalFn(e.shiftKey ? 'prevYear' : 'prevMonth'),
+    500);
   }
 
   const handleNext = (e) => {
     e && e.preventDefault();
     e.shiftKey ? gotoNextYear() : gotoNextMonth();
+    setTimeout(
+      () => setIntervalFn(e.shiftKey ? 'nextYear' : 'nextMonth'),
+    500);
   }
 
   const gotoPreviousMonth = () => {
@@ -107,21 +115,50 @@ const Calendar = ({
     setYear(year + 1);
   };
 
+  const clearPressureTimer = () => {
+    setIntervalFn(null);
+  }
+
   const [month, setMonth] = React.useState(resolveStateFromDate(date).month);
   const [current, setCurrent] = React.useState(resolveStateFromDate(date).current);
   const [year, setYear] = React.useState(resolveStateFromDate(date).year);
   const [today, setToday] = React.useState(new Date());
+  const [intervalFn, setIntervalFn] = React.useState(null);
+
+  useInterval(() => {
+    switch (intervalFn) {
+      case 'nextMonth':
+        gotoNextMonth();
+        break;
+      case 'prevMonth':
+        gotoPreviousMonth();
+        break;
+      case 'nextYear':
+        gotoNextYear();
+        break;
+      case 'prevYear':
+        gotoPreviousYear();
+        break;
+      default:  return;
+    }
+  }, 200);
 
   return (
     <div className="calendar-container">
       <div className="calendar-header">
-        <Button className="calendar-arrow-button" onClick={handlePrevious}>
+        <Button className="calendar-arrow-button" 
+          onMouseDown={handlePrevious}
+          onMouseUp={clearPressureTimer}
+        >
           <Icon name='chevron-left' />
         </Button>
         <div className="calendar-month">
           {Object.keys(CALENDAR_MONTHS)[Math.max(0, Math.min(month - 1, 11))]} {year}
         </div>
-        <Button className="calendar-arrow-button" onClick={handleNext}>
+        <Button className="calendar-arrow-button" 
+          onMouseDown={handleNext}
+          onMouseUp={clearPressureTimer}
+        >
           <Icon name='chevron-right' />
         </Button>
       </div>

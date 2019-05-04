@@ -3779,7 +3779,8 @@ table {
   --tertiary-background-color: transparent;
   --color: var(--interface-gray-600); }
   .calendar-arrow-button svg {
-    transition: all 0.3s ease; }
+    transition: all 0.3s ease;
+    pointer-events: none; }
   .calendar-arrow-button:hover > span > svg, .calendar-arrow-button:focus > span > svg {
     color: var(--focus-blue-500); }
 
