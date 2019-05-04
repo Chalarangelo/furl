@@ -1,6 +1,11 @@
 import React from "react";
 import {normalizeChildren} from "../utilities/utils";
-import ListItem from "./ListItem";
+
+const ListItem = ({ id, className, children }) => (
+  <li id={id !== undefined ? id : false} className={className}>
+    {children}
+  </li>
+);
 
 const List = ({ 
   ordered = false,
