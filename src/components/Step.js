@@ -1,6 +1,11 @@
 import React from "react";
 import { normalizeChildren } from "../utilities/utils";
-import StepItem from "./StepItem";
+
+const StepItem = ({ id, selected = false, className, children }) => (
+  <span id={id !== undefined ? id : false} className={['step-item', selected ? 'selected' : '', className].join(' ').trim()}>
+    <span className='step-content'>{children}</span>
+  </span>
+);
 
 const Step = ({
   separator = '/',
