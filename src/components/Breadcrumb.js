@@ -1,6 +1,11 @@
 import React from "react";
 import { normalizeChildren } from "../utilities/utils";
-import BreadcrumbItem from "./BreadcrumbItem";
+
+const BreadcrumbItem = ({ id, className, children }) => (
+  <span id={id !== undefined ? id : false} className={['breadcrumb-item', className].join(' ').trim()}>
+    {children}
+  </span>
+);
 
 const Breadcrumb = ({
   separator = '/',
