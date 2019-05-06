@@ -316,6 +316,8 @@ const FileInput = ({
   };
 
   const handleClick = (input) => (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     input.click();
   }
 
@@ -332,15 +334,21 @@ const FileInput = ({
       div.removeEventListener('dragleave', handleDragOut);
       div.removeEventListener('dragover', handleDrag);
       div.removeEventListener('drop', handleDrop);
+      div.removeEventListener('click', handleClick(input));
     };
   });
+
+  React.useEffect(() => {
+    // Create and send a custom event call the passed onChange here
+    // onChange(e);
+  },[filename]);
 
   return (<React.Fragment>
     <input 
       type='file' disabled={disabled} required={required} name={name} 
-      onChange={onChange} ref={inputRef}
+      onChange={e => setFilename(e)} ref={inputRef} onClick={e => e.stopPropagation()}
     />
-    <div className={[className, 'upload'].join(' ').trim()} ref={dropRef}>
+    <div className={[className, 'upload'].join(' ').trim()} ref={dropRef} id={id !== undefined ? id : false}>
       {filename && !drag ? <div>{filename}</div> : <div>{placeholder}</div>}
     </div>
   </React.Fragment>);
