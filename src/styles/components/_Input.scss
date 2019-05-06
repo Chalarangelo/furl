@@ -338,16 +338,39 @@ input[type='file'] {
 }
 
 .upload {
-  min-height: 120px;
-  border: 3px solid #d3d3d3;
+  min-height: var(--ls-300p);
+  border: 1px dashed var(--interface-gray-200);
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-50p);
+  --padding-vertical: var(--ls-75p);
+  --padding-horizontal: var(--ls-50p);
+  --border-radius: var(--ls-25p);
+  --background-color: var(--interface-gray-0);
+  --font-size: var(--ts-100p);
+  font-size: var(--font-size);
+  cursor: pointer;
   text-align: center;
-  font-size: 24px;
-  padding: 32px;
-  border-radius: 4px;
-  &.drag {
-    border: 3px dashed #1e90ff;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: calc(100% - 2 * var(--margin-horizontal));
+  &.small {
+    --font-size: var(--ts-50p);
+  }
+  &.large {
+    --padding-vertical: var(--ls-75p);
+    --padding-horizontal: var(--ls-100p);
+  }
+  &.rounded {
+    border-radius: var(--ls-900p);
+  }
+  &.drag, &:focus, &:hover {
+    border: 1px dashed var(--focus-blue-200);
+  }
+  &:invalid, &:focus:invalid {
+    border-color: var(--danger-red-400);
+    box-shadow: none;
   }
   &.ready {
-    border: 3px solid #32cd32;
+    border: 1px solid var(--success-green-200);
   }
 }

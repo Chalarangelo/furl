@@ -346,9 +346,9 @@ const FileInput = ({
   return (<React.Fragment>
     <input 
       type='file' disabled={disabled} required={required} name={name} 
-      onChange={e => setFilename(e)} ref={inputRef} onClick={e => e.stopPropagation()}
+      onChange={e => setFilename(e.target.value)} ref={inputRef} onClick={e => {e.stopPropagation();}}
     />
-    <div className={[className, 'upload'].join(' ').trim()} ref={dropRef} id={id !== undefined ? id : false}>
+    <div className={[className, 'upload', drag ? 'drag' : filename ? 'ready' : ''].join(' ').trim()} ref={dropRef} id={id !== undefined ? id : false}>
       {filename && !drag ? <div>{filename}</div> : <div>{placeholder}</div>}
     </div>
   </React.Fragment>);
