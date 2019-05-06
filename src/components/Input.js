@@ -265,8 +265,89 @@ const ComboboxInput = ({
 }
 ;
 
+const FileInput = ({
+  size = 'normal',
+  shape = 'normal',
+  type = '',
+  disabled = false,
+  required = false,
+  placeholder,
+  name,
+  onChange,
+  id,
+  className
+}) => {
+  const [drag, setDrag] = React.useState(false);
+  const [filename, setFilename] = React.useState('');
+  let dropRef = React.createRef();
+  let inputRef = React.createRef();
+
+  let dragCounter = 0;
+
+  const handleDrag = e => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDragIn = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounter++;
+    if (e.dataTransfer.items && e.dataTransfer.items.length > 0) setDrag(true);
+  };
+
+  const handleDragOut = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounter--;
+    if (dragCounter === 0) setDrag(false);
+  };
+
+  const handleDrop = e => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDrag(false);
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      onChange(e.dataTransfer.files[0]);
+      setFilename(e.dataTransfer.files[0].name);
+      e.dataTransfer.clearData();
+      dragCounter = 0;
+    }
+  };
+
+  const handleClick = (input) => (e) => {
+    input.click();
+  }
+
+  React.useEffect(() => {
+    let div = dropRef.current;
+    let input = inputRef.current;
+    div.addEventListener('dragenter', handleDragIn);
+    div.addEventListener('dragleave', handleDragOut);
+    div.addEventListener('dragover', handleDrag);
+    div.addEventListener('drop', handleDrop);
+    div.addEventListener('click', handleClick(input));
+    return function cleanup() {
+      div.removeEventListener('dragenter', handleDragIn);
+      div.removeEventListener('dragleave', handleDragOut);
+      div.removeEventListener('dragover', handleDrag);
+      div.removeEventListener('drop', handleDrop);
+    };
+  });
+
+  return (<React.Fragment>
+    <input 
+      type='file' disabled={disabled} required={required} name={name} 
+      onChange={onChange} ref={inputRef}
+    />
+    <div className={[className, 'upload'].join(' ').trim()} ref={dropRef}>
+      {filename && !drag ? <div>{filename}</div> : <div>{placeholder}</div>}
+    </div>
+  </React.Fragment>);
+};
+
 
 export { 
   InputBase, TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput,
-  MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput
+  MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, FileInput
 };

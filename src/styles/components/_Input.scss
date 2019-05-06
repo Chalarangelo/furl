@@ -332,3 +332,22 @@ input.color-input {
     top: calc(0.25 * var(--color-width)); // Hardcoded
 }
 }
+
+input[type='file'] {
+  display: none;
+}
+
+.upload {
+  min-height: 120px;
+  border: 3px solid #d3d3d3;
+  text-align: center;
+  font-size: 24px;
+  padding: 32px;
+  border-radius: 4px;
+  &.drag {
+    border: 3px dashed #1e90ff;
+  }
+  &.ready {
+    border: 3px solid #32cd32;
+  }
+}
