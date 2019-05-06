@@ -251,7 +251,10 @@ storiesOf('Input', module)
   .add("file", () => (
     <React.Fragment>
       <FileInput placeholder='Drop files here' onChange={e => console.log(e.target)} />
-      <FileInput multiple placeholder='Drop multiple files here' onChange={e => console.log(e.target)}/>
+      <FileInput multiple placeholder='Drop multiple files here' onFilesChanged={e => console.log(e)} />
+      <FileInput placeholder='Drop files here' shape='rounded' onFilesChanged={e => console.log(e)} />
+      <FileInput placeholder='Drop files here' size='small' onFilesChanged={e => console.log(e)} />
+      <FileInput placeholder='Drop files here' size='large' onFilesChanged={e => console.log(e)} />
     </React.Fragment>
   )
 )

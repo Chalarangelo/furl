@@ -268,7 +268,6 @@ const ComboboxInput = ({
 const FileInput = ({
   size = 'normal',
   shape = 'normal',
-  type = '',
   multiple = false,
   disabled = false,
   required = false,
@@ -332,7 +331,6 @@ const FileInput = ({
   React.useEffect(() => {
     let div = dropRef.current;
     if (div === null) return;
-    // let input = inputRef.current;
     div.addEventListener('dragenter', handleDragIn);
     div.addEventListener('dragleave', handleDragOut);
     div.addEventListener('dragover', handleDrag);
@@ -347,7 +345,7 @@ const FileInput = ({
   },[dropRef]);
 
   React.useEffect(() => {
-    onFilesChanged(filename);
+    typeof onFilesChanged == 'function' && onFilesChanged(filename);
   },[filename]);
 
   return (<React.Fragment>
@@ -355,8 +353,28 @@ const FileInput = ({
       type='file' disabled={disabled} required={required} name={name} multiple={multiple}
       onChange={handleFileInput} ref={inputRef} onClick={e => e.stopPropagation()}
     />
-    <div className={[className, 'upload', drag ? 'drag' : (filename && filename.length > 0) ? 'ready' : ''].join(' ').trim()} ref={dropRef} id={id !== undefined ? id : false}>
-      {filename && filename.length > 0 && !drag ? <div><ul>{filename.map(f => <li>{f.name}</li>)}</ul></div> : <div>{placeholder}</div>}
+    <div 
+      role="button"
+      className={[
+        className, 'upload', 
+        drag ? 'drag' : (filename && filename.length > 0) ? 'ready' : '',
+        shape !== 'normal' ? shape : '',
+        size !== 'normal' ? size : '',
+        disabled ? 'disabled' : ''
+      ].join(' ').trim()} 
+      ref={dropRef} 
+      id={id !== undefined ? id : false}>
+      {
+        filename && filename.length > 0 && !drag 
+        ? <React.Fragment>
+            <Icon name='check-circle'/>
+            <ul>{filename.map(f => <li>{f.name}</li>)}</ul> 
+          </React.Fragment>
+          : <React.Fragment>
+            <Icon name='upload' />
+            <span>{placeholder}</span>
+          </React.Fragment>
+        }
     </div>
   </React.Fragment>);
 };
