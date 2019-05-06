@@ -269,16 +269,17 @@ const FileInput = ({
   size = 'normal',
   shape = 'normal',
   type = '',
+  multiple = false,
   disabled = false,
   required = false,
   placeholder,
   name,
-  onChange,
+  onFilesChanged,
   id,
   className
 }) => {
   const [drag, setDrag] = React.useState(false);
-  const [filename, setFilename] = React.useState('');
+  const [filename, setFilename] = React.useState([]);
   let dropRef = React.createRef();
   let inputRef = React.createRef();
 
@@ -308,8 +309,8 @@ const FileInput = ({
     e.stopPropagation();
     setDrag(false);
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      onChange(e.dataTransfer.files[0]);
-      setFilename(e.dataTransfer.files[0].name);
+      if (multiple) setFilename(Array.from(e.dataTransfer.files));
+      else setFilename([e.dataTransfer.files[0]]);
       e.dataTransfer.clearData();
       dragCounter = 0;
     }
@@ -319,6 +320,13 @@ const FileInput = ({
     e.preventDefault();
     e.stopPropagation();
     inputRef.current && inputRef.current.click();
+  }
+
+  const handleFileInput = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      if (multiple) setFilename(Array.from(e.target.files));
+      else setFilename([e.target.files[0]]);
+    }
   }
 
   React.useEffect(() => {
@@ -339,17 +347,16 @@ const FileInput = ({
   },[dropRef]);
 
   React.useEffect(() => {
-    // Create and send a custom event call the passed onChange here
-    // onChange(e);
+    onFilesChanged(filename);
   },[filename]);
 
   return (<React.Fragment>
     <input 
-      type='file' disabled={disabled} required={required} name={name} 
-      onChange={e => setFilename(e.target.value)} ref={inputRef} onClick={e => e.stopPropagation()}
+      type='file' disabled={disabled} required={required} name={name} multiple={multiple}
+      onChange={handleFileInput} ref={inputRef} onClick={e => e.stopPropagation()}
     />
-    <div className={[className, 'upload', drag ? 'drag' : filename ? 'ready' : ''].join(' ').trim()} ref={dropRef} id={id !== undefined ? id : false}>
-      {filename && !drag ? <div>{filename}</div> : <div>{placeholder}</div>}
+    <div className={[className, 'upload', drag ? 'drag' : (filename && filename.length > 0) ? 'ready' : ''].join(' ').trim()} ref={dropRef} id={id !== undefined ? id : false}>
+      {filename && filename.length > 0 && !drag ? <div><ul>{filename.map(f => <li>{f.name}</li>)}</ul></div> : <div>{placeholder}</div>}
     </div>
   </React.Fragment>);
 };

@@ -58,9 +58,6 @@ storiesOf('Calendar', module)
     <Calendar onDateChanged={(e) => console.log(e)}/>
   )
 )
-;
-
-storiesOf('Calendar', module)
   .add("solid with date", () => (
     <Calendar fill='solid' date={new Date('01/01/2020')} onDateChanged={(e) => console.log(e)}/>
   )
@@ -253,7 +250,8 @@ storiesOf('Input', module)
 )
   .add("file", () => (
     <React.Fragment>
-      <FileInput placeholder='Drop files here' onChange={e => console.log(e.target)}/>
+      <FileInput placeholder='Drop files here' onChange={e => console.log(e.target)} />
+      <FileInput multiple placeholder='Drop multiple files here' onChange={e => console.log(e.target)}/>
     </React.Fragment>
   )
 )
