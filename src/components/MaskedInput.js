@@ -187,7 +187,7 @@ const DateInput = ({
           onDateChanged={dt => {
             let _dt = monthBeforeDay ? dt.toLocaleDateString('en-US',localeOptions) : dt.toLocaleDateString('en-GB',localeOptions);
             if(dt.getFullYear() <= maxYear && dt.getFullYear() >= minYear) {
-              setInputValue(_dt);
+              setInputValue(_dt.replace(/\//g,separator));
               setCalendarOpen(false);
             }
           }
