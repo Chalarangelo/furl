@@ -119,7 +119,6 @@ const TimeInput = ({
   if (!displaySeconds && !displayHours) {
     mask.push(':'); mask.push('0'); mask.push('0');
   }
-  console.log(pipeFormat);
   return (
     <MaskedInputBase 
     type='text' id={id} placeholder={placeholder} 
@@ -128,6 +127,33 @@ const TimeInput = ({
     className={className} size={size} disabled={disabled} 
     required={required} name={name} onChange={onChange}
   />
+  )
+};
+
+const DateInput = ({
+  size = 'normal',
+  disabled = false,
+  required = false,
+  monthBeforeDay = false,
+  separator = '/',
+  minYear = 1,
+  maxYear = 9999,
+  placeholder,
+  name,
+  onChange,
+  id,
+  className
+}) => {
+  let mask = [/\d/, /\d/, separator, /\d/, /\d/, separator, /\d/, /\d/, /\d/, /\d/], 
+  pipeFormat = monthBeforeDay ? `mm${separator}dd${separator}yyyy` : `dd${separator}mm${separator}yyyy`;
+  return (
+    <MaskedInputBase
+      type='text' id={id} placeholder={placeholder}
+      mask={mask} keepCharPositions={true}
+      pipe={createAutoCorrectedDatePipe(pipeFormat, { minYear: minYear, maxYear: maxYear})}
+      className={className} size={size} disabled={disabled}
+      required={required} name={name} onChange={onChange}
+    />
   )
 };
 
@@ -158,4 +184,4 @@ const ColorInput = ({
 
 
 
-export { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput };
+export { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, DateInput };

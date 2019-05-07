@@ -2,7 +2,7 @@ import React from "react";
 import Button from "./Button";
 import Icon from "./Icon";
 import { normalizeChildren, generateUniqueId } from "../utilities/utils";
-import { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput } from "./MaskedInput";
+import { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, DateInput } from "./MaskedInput";
 
 const InputBase = ({
   size = 'normal',
@@ -382,5 +382,5 @@ const FileInput = ({
 
 export { 
   InputBase, TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput,
-  MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, FileInput
+  MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, FileInput, DateInput
 };
