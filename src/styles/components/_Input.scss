@@ -384,7 +384,7 @@ input[type='file'] {
     }
   }
   > span, > ul, > ul > li, svg {
-    background: inherit;
+    background: transparent;
     transition: all 0.3s ease;
   }
   > span {
