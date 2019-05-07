@@ -4,6 +4,7 @@ import Icon from "./Icon";
 import MaskedInput from "react-text-mask";
 import { normalizeChildren, generateUniqueId } from "../utilities/utils";
 import createNumberMask from "../utilities/createNumberMask";
+import createAutoCorrectedDatePipe from "../utilities/createAutoCorrectedDatePipe";
 
 const MaskedInputBase = ({
   size = 'normal',
@@ -104,21 +105,26 @@ const TimeInput = ({
   id,
   className
 }) =>  {
-  let mask = [];
+  let mask = [], pipeFormat = '';
   if (displayHours) {
-    mask.push(/[0-2]/); mask.push(/\d/); mask.push(':');
+    mask.push(/\d/); mask.push(/\d/); mask.push(':');
+    pipeFormat += 'HH:';
   }
-  mask.push(/[0-5]/); mask.push(/\d/);
+  mask.push(/\d/); mask.push(/\d/);
+  pipeFormat += 'MM';
   if (displaySeconds) {
-    mask.push(':'); mask.push(/[0-5]/); mask.push(/\d/);
+    mask.push(':'); mask.push(/\d/); mask.push(/\d/);
+    pipeFormat += ':SS';
   }
   if (!displaySeconds && !displayHours) {
     mask.push(':'); mask.push('0'); mask.push('0');
   }
+  console.log(pipeFormat);
   return (
     <MaskedInputBase 
     type='text' id={id} placeholder={placeholder} 
-    mask={mask}
+    mask={mask} keepCharPositions={true}
+    pipe={createAutoCorrectedDatePipe(pipeFormat)}
     className={className} size={size} disabled={disabled} 
     required={required} name={name} onChange={onChange}
   />
