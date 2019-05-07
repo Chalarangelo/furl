@@ -397,3 +397,7 @@ input[type='file'] {
     // TODO
   }
 }
+
+input.date + button + div {
+  position: relative;
+}

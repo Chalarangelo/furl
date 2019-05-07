@@ -178,7 +178,7 @@ const DateInput = ({
       <Button onClick={(e) => { setCalendarOpen(!calendarOpen); }} className='calendar-toggler'>
         <Icon name='calendar' width={16} height={16} />&zwnj;
       </Button>
-      <span>
+      <div>
         {
           calendarOpen ? <Calendar
           fill='solid'
@@ -194,7 +194,7 @@ const DateInput = ({
         }
       /> : ''
     }
-    </span>
+    </div>
     </React.Fragment>
   );
 };
