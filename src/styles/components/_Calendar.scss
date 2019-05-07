@@ -85,8 +85,8 @@
   z-index: 1;
   position: absolute;
   width: 100%;
-  right: calc(0rem - var(--ls-50p));
-  top: var(--ls-100p);
+  right: var(--ls-50p);
+  top: var(--ls-200p);
   @media screen and (max-width: 599px) {
     width: calc(100vw - var(--ls-200p));
   }

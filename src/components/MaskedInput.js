@@ -155,18 +155,12 @@ const DateInput = ({
   const pipe = createAutoCorrectedDatePipe(pipeFormat, { minYear: minYear, maxYear: maxYear });
   const localeOptions = { year: 'numeric', month: '2-digit', day: '2-digit'};
 
-  React.useEffect(() => {
-    console.log('state ' + inputValue);
-  }, [inputValue]);
-
   const parseDate = (date) => {
     if(date === undefined) return;
     let dr = date.split('').filter(v => v !== separator);
-    console.log(dr);
     let year = dr.slice(-4).join('');
     let month = monthBeforeDay ? dr.slice(0, 2).join('') : dr.slice(2, 4).join('');
     let day = !monthBeforeDay ? dr.slice(0,2).join('') : dr.slice(2,4).join('');
-    console.table([year, month, day]);
     if (month.trim().length > 0 && day.trim().length > 0 && year.trim().length > 0) 
       return new Date(`${year}-${month}-${day}`);
   }
@@ -183,23 +177,24 @@ const DateInput = ({
       />
       <Button onClick={(e) => { setCalendarOpen(!calendarOpen); }} className='calendar-toggler'>
         <Icon name='calendar' width={16} height={16} />&zwnj;
+      </Button>
+      <span>
         {
           calendarOpen ? <Calendar
-            fill='solid'
-            className='date-calendar-picker'
-            date={parseDate(inputValue)}
-            onDateChanged={dt => {
-              console.log(dt);
-              let _dt = monthBeforeDay ? dt.toLocaleDateString('en-US', localeOptions) : dt.toLocaleDateString('en-GB', localeOptions);
-              if (dt.getFullYear() <= maxYear && dt.getFullYear() >= minYear) {
-                setInputValue(_dt);
-                setCalendarOpen(false);
-              }
+          fill='solid'
+          className='date-calendar-picker'
+          date = {parseDate(inputValue)}
+          onDateChanged={dt => {
+            let _dt = monthBeforeDay ? dt.toLocaleDateString('en-US',localeOptions) : dt.toLocaleDateString('en-GB',localeOptions);
+            if(dt.getFullYear() <= maxYear && dt.getFullYear() >= minYear) {
+              setInputValue(_dt);
+              setCalendarOpen(false);
             }
-            }
-          /> : ''
+          }
         }
-      </Button>
+      /> : ''
+    }
+    </span>
     </React.Fragment>
   );
 };
