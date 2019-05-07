@@ -80,3 +80,18 @@
     }
   }
 }
+
+.calendar-container.date-calendar-picker {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  right: calc(0rem - var(--ls-50p));
+  top: var(--ls-100p);
+  @media screen and (max-width: 599px) {
+    width: calc(100vw - var(--ls-200p));
+  }
+  @media screen and (min-width: 600px) {
+    width: var(--ls-600p);
+  }
+  --background-color: var(--interface-gray-0);
+}

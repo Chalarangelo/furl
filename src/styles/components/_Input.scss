@@ -49,7 +49,7 @@ input[type='search'], input[type='tel'] {
   }
 }
 
-input.revealer, input[list] {
+input.revealer, input[list], input.date {
   width: calc(100% - 2 * var(--margin-horizontal));
   margin-right: 0;
   + button {

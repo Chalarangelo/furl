@@ -5,6 +5,7 @@ import MaskedInput from "react-text-mask";
 import { normalizeChildren, generateUniqueId } from "../utilities/utils";
 import createNumberMask from "../utilities/createNumberMask";
 import createAutoCorrectedDatePipe from "../utilities/createAutoCorrectedDatePipe";
+import Calendar from "./Calendar";
 
 const MaskedInputBase = ({
   size = 'normal',
@@ -17,6 +18,7 @@ const MaskedInputBase = ({
   onChange,
   id,
   className,
+  __ref,
   ...rest
 }) => {
   let classNames = [size !== 'normal' ? size : '', className];
@@ -30,6 +32,7 @@ const MaskedInputBase = ({
       placeholder={placeholder !== undefined ? placeholder : false}
       name={name !== undefined ? name : false}
       onChange={onChange}
+      ref={__ref}
       {...rest}
     />
   )
@@ -146,15 +149,59 @@ const DateInput = ({
 }) => {
   let mask = [/\d/, /\d/, separator, /\d/, /\d/, separator, /\d/, /\d/, /\d/, /\d/], 
   pipeFormat = monthBeforeDay ? `mm${separator}dd${separator}yyyy` : `dd${separator}mm${separator}yyyy`;
+  const [inputValue, setInputValue] = React.useState(undefined);
+  const [calendarOpen, setCalendarOpen] = React.useState(false);
+  const inputRef = React.createRef();
+  const pipe = createAutoCorrectedDatePipe(pipeFormat, { minYear: minYear, maxYear: maxYear });
+  const localeOptions = { year: 'numeric', month: '2-digit', day: '2-digit'};
+
+  React.useEffect(() => {
+    console.log('state ' + inputValue);
+  }, [inputValue]);
+
+  const parseDate = (date) => {
+    if(date === undefined) return;
+    let dr = date.split('').filter(v => v !== separator);
+    console.log(dr);
+    let year = dr.slice(-4).join('');
+    let month = monthBeforeDay ? dr.slice(0, 2).join('') : dr.slice(2, 4).join('');
+    let day = !monthBeforeDay ? dr.slice(0,2).join('') : dr.slice(2,4).join('');
+    console.table([year, month, day]);
+    if (month.trim().length > 0 && day.trim().length > 0 && year.trim().length > 0) 
+      return new Date(`${year}-${month}-${day}`);
+  }
+
   return (
-    <MaskedInputBase
-      type='text' id={id} placeholder={placeholder}
-      mask={mask} keepCharPositions={true}
-      pipe={createAutoCorrectedDatePipe(pipeFormat, { minYear: minYear, maxYear: maxYear})}
-      className={className} size={size} disabled={disabled}
-      required={required} name={name} onChange={onChange}
-    />
-  )
+    <React.Fragment>
+      <MaskedInputBase
+        type='text' id={id} placeholder={placeholder}
+        mask={mask} keepCharPositions={true}
+        pipe={pipe}
+        className={[className,'date'].join(' ').trim()} size={size} disabled={disabled}
+        required={required} name={name} value={inputValue == undefined ? '' : inputValue} onChange={(e) => {setInputValue(e.target.value); typeof onChange == 'function' && onChange(e); }}
+        __ref={inputRef}
+      />
+      <Button onClick={(e) => { setCalendarOpen(!calendarOpen); }} className='calendar-toggler'>
+        <Icon name='calendar' width={16} height={16} />&zwnj;
+        {
+          calendarOpen ? <Calendar
+            fill='solid'
+            className='date-calendar-picker'
+            date={parseDate(inputValue)}
+            onDateChanged={dt => {
+              console.log(dt);
+              let _dt = monthBeforeDay ? dt.toLocaleDateString('en-US', localeOptions) : dt.toLocaleDateString('en-GB', localeOptions);
+              if (dt.getFullYear() <= maxYear && dt.getFullYear() >= minYear) {
+                setInputValue(_dt);
+                setCalendarOpen(false);
+              }
+            }
+            }
+          /> : ''
+        }
+      </Button>
+    </React.Fragment>
+  );
 };
 
 const ColorInput = ({

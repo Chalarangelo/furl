@@ -244,7 +244,7 @@ storiesOf('Input', module)
   )
   .add("date", () => (
     <React.Fragment>
-      <DateInput />
+      <DateInput id='dardard' />
       <DateInput monthBeforeDay />
       <DateInput minYear={2000} separator='-' />
       <DateInput minYear={2000} maxYear={2019} monthBeforeDay />
