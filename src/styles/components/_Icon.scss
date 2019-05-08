@@ -1,3 +1,20 @@
 span.icon {
   display: inline-block;
 }
+
+button, .button, a.button {
+  & .icon {
+    background: transparent;
+    transition: 0.3s all ease;
+    & > svg {
+      background: transparent;
+    }
+    vertical-align: bottom;
+    --padding-horizontal: var(--ls-25p);
+  }
+  &.context-button {
+    & .icon {
+      --padding-horizontal: var(--ls-0p);
+    }
+  }
+}

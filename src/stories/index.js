@@ -580,6 +580,46 @@ storiesOf('Button', module)
     </React.Fragment>
   )
 )
+  .add("default icon", () => (
+    <React.Fragment>
+      <Button ><Icon name='home'/></Button>
+      <Button fill='solid'><Icon name='home'/></Button>
+      <Button fill='light'><Icon name='home'/></Button>
+      <Button fill='gradient'><Icon name='home'/></Button>
+      <Button ><Icon name='home'/>Continue</Button>
+      <Button fill='solid'><Icon name='home'/>Continue</Button>
+      <Button fill='light'><Icon name='home'/>Continue</Button>
+      <Button fill='gradient'><Icon name='home'/>Continue</Button>
+      <Button fill='outline'><Icon name='home' />Continue</Button>
+      <Button fill='ghost'><Icon name='home' />Continue</Button>
+      <Button disabled><Icon name='home' />Continue</Button>
+      <Button fill='gradient' disabled><Icon name='home' />Continue</Button>
+      <Button fill='outline' disabled><Icon name='home' />Continue</Button>
+      <Button fill='ghost' disabled><Icon name='home' />Continue</Button>
+    </React.Fragment>
+  )
+)
+  .add("primary icon", () => (
+    <React.Fragment>
+      <Button color='primary' ><Icon name='home' /></Button>
+      <Button color='primary' fill='solid'><Icon name='home' /></Button>
+      <Button color='primary' fill='light'><Icon name='home' /></Button>
+      <Button color='primary' fill='gradient'><Icon name='home' /></Button>
+      <Button color='primary' ><Icon name='home' />Continue</Button>
+      <Button color='primary' size='large'><Icon name='home' />Continue</Button>
+      <Button color='primary' size='small'><Icon name='home' />Continue</Button>
+      <Button color='primary' fill='solid'><Icon name='home' />Continue</Button>
+      <Button color='primary' fill='light'><Icon name='home' />Continue</Button>
+      <Button color='primary' fill='gradient'><Icon name='home' />Continue</Button>
+      <Button color='primary' fill='outline'><Icon name='home' />Continue</Button>
+      <Button color='primary' fill='ghost'><Icon name='home' />Continue</Button>
+      <Button color='primary' disabled><Icon name='home' />Continue</Button>
+      <Button color='primary' fill='gradient' disabled><Icon name='home' />Continue</Button>
+      <Button color='primary' fill='outline' disabled><Icon name='home' />Continue</Button>
+      <Button color='primary' fill='ghost' disabled><Icon name='home' />Continue</Button>
+    </React.Fragment>
+  )
+  )
 ;
 
 storiesOf('ButtonGroup', module)
