@@ -8,7 +8,7 @@
 
 .tooltip-bubble {
   background: transparent;
-  opacity: 0.95;
+  opacity: 0.98;
   min-width: var(--ls-400p);
   max-width: var(--ls-500p);
   position: absolute;
@@ -30,7 +30,7 @@
     transform: translateX(-50%) rotate(45deg);
     height: var(--ls-50p);
     width: var(--ls-50p);
-    --background-color: var(--interface-gray-700);
+    --background-color: var(--interface-gray-900);
   }
 }
 
@@ -45,7 +45,7 @@
     transform: translateX(-50%) rotate(45deg);
     height: var(--ls-50p);
     width: var(--ls-50p);
-    --background-color: var(--interface-gray-700);
+    --background-color: var(--interface-gray-900);
   }
 }
 
@@ -60,7 +60,7 @@
     transform: translateY(-50%) rotate(45deg);
     height: var(--ls-50p);
     width: var(--ls-50p);
-    --background-color: var(--interface-gray-700);
+    --background-color: var(--interface-gray-900);
   }
 }
 
@@ -75,12 +75,12 @@
     transform: translateY(-50%) rotate(45deg);
     height: var(--ls-50p);
     width: var(--ls-50p);
-    --background-color: var(--interface-gray-700);
+    --background-color: var(--interface-gray-900);
   }
 }
 
 .tooltip-message {
-  --background-color: var(--interface-gray-700);
+  --background-color: var(--interface-gray-900);
   --border-radius: var(--ls-25p);
   --color: var(--interface-gray-0);
   --font-size: var(--ts-50p);
