@@ -279,6 +279,7 @@ storiesOf('Input', module)
   .add("slider", () => (
     <React.Fragment>
       <SliderInput />
+      <SliderInput range />
     </React.Fragment>
   )
 )

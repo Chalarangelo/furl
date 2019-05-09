@@ -452,6 +452,7 @@ input[type='range'] {
     background: var(--interface-gray-0);
     --border-radius: var(--ls-900p);
     border-radius: var(--border-radius);
+    pointer-events: auto !important;
   }
   &::-moz-range-thumb {
     -webkit-appearance: none; 
@@ -463,8 +464,13 @@ input[type='range'] {
     background: var(--interface-gray-0);
     --border-radius: var(--ls-900p);
     border-radius: var(--border-radius);
+    pointer-events: auto !important;
   }
   // &:hover, &:focus {
   // }
-  background: linear-gradient(to right, var(--focus-blue-200) 0%, var(--focus-blue-200) 47%, var(--interface-gray-200) 47%,)
+  &.low {
+    position: relative;
+    top: calc(0rem - var(--ls-150p));
+    pointer-events: none;
+  }
 }

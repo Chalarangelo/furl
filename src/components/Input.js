@@ -437,15 +437,37 @@ const SliderInput = ({
   shape = 'normal',
   disabled = false,
   required = false,
+  range = false,
   placeholder,
   name,
   onChange,
   id,
   className
 }) => {
-  const [inputValue, setInputValue] = React.useState(0);
+  const [inputValue, setInputValue] = React.useState(100);
+  const [lowInputValue, setLowInputValue] = React.useState(0);
 
   return (
+    range ? 
+    <React.Fragment>
+      <InputBase
+        type='range' id={id} placeholder={placeholder}
+        className={className} size={size} disabled={disabled} shape={shape}
+        required={required} name={name} onChange={(e) => { setInputValue(e.target.value); onChange && onChange(e); }}
+        value={inputValue} min={1} max={100} style={{
+          background: `linear-gradient(to right, var(--background-color) 0%, var(--background-color) ${lowInputValue}%, var(--secondary-background-color) ${lowInputValue}%,  var(--secondary-background-color) ${inputValue}%, var(--background-color) ${inputValue}%)`
+        }}
+      />
+      <InputBase
+        type='range' id={id} placeholder={placeholder}
+        className={'low'} size={size} disabled={disabled} shape={shape}
+        required={required} name={name} onChange={(e) => { setLowInputValue(e.target.value); onChange && onChange(e); }}
+        value={lowInputValue} min={1} max={100} style={{
+          background: `transparent`
+        }}
+      />
+    </React.Fragment>
+    :
     <InputBase
       type='range' id={id} placeholder={placeholder}
       className={className} size={size} disabled={disabled} shape={shape}
