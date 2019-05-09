@@ -379,8 +379,61 @@ const FileInput = ({
   </React.Fragment>);
 };
 
+const Star = ({ marked, starId, iconName, iconStyle, iconFillColor }) => (
+  <Icon star-id={starId} name={iconName} 
+    fill={marked ? iconFillColor : iconStyle !== 'fill' ? 'none' : 'var(--interface-gray-300)'} 
+    stroke = { marked ? iconFillColor : 'var(--interface-gray-300)'} 
+  />
+)
+
+const RatingInput = ({
+  iconName = 'star',
+  iconStyle = 'outline',
+  iconFillColor = 'var(--warning-yellow-500)',
+  disabled = false,
+  required = false,
+  name,
+  onChange,
+  id,
+  className
+}) =>  {
+  const [rating, setRating] = React.useState(typeof defaultValue == 'number' ? defaultValue : 0);
+  const [selection, setSelection] = React.useState(0);
+
+  const hoverOver = e => {
+    let val = 0;
+    if (e && e.target && e.target.getAttribute('star-id'))
+      val = e.target.getAttribute('star-id');
+    setSelection(val);
+  };
+
+  return (
+    <div
+      id={id !== undefined ? id : false}
+      onMouseOut={() => hoverOver(null)}
+      onClick={(event) => setRating(event.target.getAttribute('star-id') || rating)}
+      onMouseOver={hoverOver}
+      className={[className, 'rating'].join(' ').trim()}
+    >
+      <input
+        type='number' disabled={disabled} required={required} name={name} onChange={onChange} value={rating}
+      />
+      {Array.from({ length: 5 }, (v, i) => (
+        <Star
+          iconName={iconName}
+          iconStyle={iconStyle}
+          iconFillColor={iconFillColor}
+          starId={i + 1}
+          key={`star_${i + 1} `}
+          marked={selection ? selection >= i + 1 : rating >= i + 1}
+        />
+      ))}
+    </div>
+  );
+};
+
 
 export { 
   InputBase, TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput,
-  MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, FileInput, DateInput
+  MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, FileInput, DateInput, RatingInput
 };

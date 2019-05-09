@@ -401,3 +401,32 @@ input[type='file'] {
 input.date + button + div {
   position: relative;
 }
+
+.rating {
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-50p);
+  --padding-vertical: var(--ls-25p);
+  --padding-horizontal: var(--ls-50p);
+  --border-radius: var(--ls-25p);
+  --background-color: var(--interface-gray-0);
+  --font-size: var(--ts-100p);
+  transition: 0.3s ease all;
+  .icon {
+    &:hover, &:focus {
+      cursor: pointer;
+    }
+    --padding-horizontal: var(--ls-25p);
+    > svg {
+        pointer-events: none;
+      * {
+        pointer-events: none;
+      }
+    }
+    +.icon {
+      padding-left: var(--ls-0p);
+    }
+  }
+  input[type=number]{
+    display: none;
+  }
+}
