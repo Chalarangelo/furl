@@ -432,6 +432,7 @@ input.date + button + div {
 }
 
 input[type='range'] {
+  box-sizing: border-box;
   width: calc(100% - 2 * var(--margin-horizontal));
   -webkit-appearance: none;
   appearance: none;
@@ -460,6 +461,7 @@ input[type='range'] {
     }
   }
   &::-moz-range-thumb {
+    box-sizing: border-box;
     -webkit-appearance: none; 
     appearance: none;
     width: var(--ls-100p);
@@ -482,5 +484,10 @@ input[type='range'] {
     position: relative;
     top: calc(0rem - var(--ls-150p));
     pointer-events: none;
+  }
+}
+@supports ( -moz-appearance:none) {
+  input[type='range'].low {
+    top: calc(0rem - var(--ls-100p) - var(--ls-25p) + 2.5px);
   }
 }
