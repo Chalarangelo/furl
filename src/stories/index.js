@@ -280,6 +280,8 @@ storiesOf('Input', module)
     <React.Fragment>
       <SliderInput />
       <SliderInput range />
+      <SliderInput min={10} max={25}/>
+      <SliderInput range min={10} max={27}/>
     </React.Fragment>
   )
 )

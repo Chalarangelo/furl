@@ -437,6 +437,7 @@ input[type='range'] {
   appearance: none;
   --margin-horizontal: var(--ls-75p);
   height: var(--ls-25p);
+  --margin-vertical: var(--ls-50p);
   --background-color: var(--interface-gray-200); 
   --secondary-background-color: var(--focus-blue-200);
   --border-radius: var(--ls-25p);
@@ -448,11 +449,15 @@ input[type='range'] {
     width: var(--ls-100p);
     height: var(--ls-100p);
     cursor: pointer;
-    border: 2px solid var(--focus-blue-400);
+    border: 2px solid var(--focus-blue-300);
     background: var(--interface-gray-0);
     --border-radius: var(--ls-900p);
     border-radius: var(--border-radius);
     pointer-events: auto !important;
+    transition: 0.3s ease all;
+    &:hover, &:focus {
+      border: 2px solid var(--focus-blue-400);
+    }
   }
   &::-moz-range-thumb {
     -webkit-appearance: none; 
@@ -460,14 +465,19 @@ input[type='range'] {
     width: var(--ls-100p);
     height: var(--ls-100p);
     cursor: pointer;
-    border: 2px solid var(--focus-blue-400);
+    border: 2px solid var(--focus-blue-300);
     background: var(--interface-gray-0);
     --border-radius: var(--ls-900p);
     border-radius: var(--border-radius);
     pointer-events: auto !important;
+    transition: 0.3s ease all;
+    &:hover, &:focus {
+      border: 2px solid var(--focus-blue-400);
+    }
   }
-  // &:hover, &:focus {
-  // }
+  &:not(.low){
+    margin-bottom: 0;
+  }
   &.low {
     position: relative;
     top: calc(0rem - var(--ls-150p));
