@@ -434,6 +434,15 @@ storiesOf('Badge', module)
     </React.Fragment>
   )
   )
+  .add("primary with icon", () => (
+    <React.Fragment>
+      <Badge color='primary' ><Icon name='disc' width={16} height={16}/>Continue</Badge>
+      <Badge color='primary' fill='light'><Icon name='disc' width={16} height={16}/>Continue</Badge>
+      <Badge color='primary' fill='gradient'><Icon name='disc' width={16} height={16}/>Continue</Badge>
+      <Badge color='primary' fill='outline'><Icon name='disc' width={16} height={16}/>Continue</Badge>
+    </React.Fragment>
+  )
+  )
 ;
 
 

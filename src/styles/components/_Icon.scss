@@ -2,14 +2,14 @@ span.icon {
   display: inline-block;
 }
 
-button, .button, a.button {
+button, .button, a.button, .badge {
   & .icon {
     background: transparent;
     transition: 0.3s all ease;
     & > svg {
       background: transparent;
     }
-    vertical-align: bottom;
+    vertical-align: text-bottom;
     --padding-horizontal: var(--ls-25p);
   }
   &.context-button {
