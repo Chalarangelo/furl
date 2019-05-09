@@ -59,7 +59,7 @@ audio, canvas, iframe, img, svg, video {
   // Make media elements responsive
   display: block;
   height: auto;
-  max-width: 100%;
+  max-width: calc(100% - 2 * var(--margin-horizontal));
 }
 
 // Set fill color to match text color in all browsers
