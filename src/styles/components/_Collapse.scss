@@ -14,6 +14,7 @@
   & > summary {
   --padding-horizontal: var(--ls-75p);
   --padding-vertical: var(--ls-50p);
+  border-radius: inherit;
   background: inherit;
   --color: inherit;
     &:hover {
@@ -22,6 +23,8 @@
   }
   &[open] > summary { 
     border-bottom: 1px solid var(--interface-gray-100);
+    border-bottom-left-radius: var(--ls-0p);
+    border-bottom-right-radius: var(--ls-0p);
   }
   & > summary > .icon {
     position: absolute;
