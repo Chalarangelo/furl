@@ -430,3 +430,41 @@ input.date + button + div {
     display: none;
   }
 }
+
+input[type='range'] {
+  width: calc(100% - 2 * var(--margin-horizontal));
+  -webkit-appearance: none;
+  appearance: none;
+  --margin-horizontal: var(--ls-75p);
+  height: var(--ls-25p);
+  --background-color: var(--interface-gray-200); 
+  --secondary-background-color: var(--focus-blue-200);
+  --border-radius: var(--ls-25p);
+  outline: none;
+  transition: 0.3s ease all;
+  &::-webkit-slider-thumb { 
+    -webkit-appearance: none; 
+    appearance: none;
+    width: var(--ls-100p);
+    height: var(--ls-100p);
+    cursor: pointer;
+    border: 2px solid var(--focus-blue-400);
+    background: var(--interface-gray-0);
+    --border-radius: var(--ls-900p);
+    border-radius: var(--border-radius);
+  }
+  &::-moz-range-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    width: var(--ls-100p);
+    height: var(--ls-100p);
+    cursor: pointer;
+    border: 2px solid var(--focus-blue-400);
+    background: var(--interface-gray-0);
+    --border-radius: var(--ls-900p);
+    border-radius: var(--border-radius);
+  }
+  // &:hover, &:focus {
+  // }
+  background: linear-gradient(to right, var(--focus-blue-200) 0%, var(--focus-blue-200) 47%, var(--interface-gray-200) 47%,)
+}

@@ -432,8 +432,33 @@ const RatingInput = ({
   );
 };
 
+const SliderInput = ({
+  size = 'normal',
+  shape = 'normal',
+  disabled = false,
+  required = false,
+  placeholder,
+  name,
+  onChange,
+  id,
+  className
+}) => {
+  const [inputValue, setInputValue] = React.useState(0);
+
+  return (
+    <InputBase
+      type='range' id={id} placeholder={placeholder}
+      className={className} size={size} disabled={disabled} shape={shape}
+      required={required} name={name} onChange={(e) => { setInputValue(e.target.value); onChange && onChange(e);}}
+      value={inputValue} min={1} max={100} style={{
+        background: `linear-gradient(to right, var(--secondary-background-color) 0%, var(--secondary-background-color) ${inputValue}%, var(--background-color) ${inputValue}%)`
+      }}
+    />
+  )
+};
+
 
 export { 
   InputBase, TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput,
-  MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, FileInput, DateInput, RatingInput
+  MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, FileInput, DateInput, RatingInput, SliderInput
 };
