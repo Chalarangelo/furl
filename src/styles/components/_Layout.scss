@@ -60,6 +60,9 @@
   &:hover, &:focus {
     --box-shadow: var(--shadow-500);
   }
+  .icon {
+    --padding-horizontal: var(--ls-0p);
+  }
 }
 
 .layout-sidebar-overlay {
