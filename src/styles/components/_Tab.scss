@@ -38,18 +38,23 @@
     --margin-horizontal: var(--ls-0p);
     --margin-vertical: var(--ls-0p);
     & > button {
+      &.flat {
+        &:hover, &:focus {
+          background: var(--background-color);
+        }
+      }
       --color: var(--interface-gray-900);
       --background-color: var(--interface-gray-50);
       --secondary-background-color: var(--interface-gray-200);
-      &:hover, &:focus {
-        background: var(--focus-blue-400);
+      &:hover, &:not(.selected):focus {
+        --background-color: var(--focus-blue-500);
         --color: var(--interface-gray-0);
       }
       &.selected {
         --background-color: var(--interface-gray-200);
-        &:hover, &:focus {
-          background: var(--background-color);
-          color: var(--focus-blue-700);
+        --color: var(--focus-blue-700);
+        &:hover {
+          --color: var(--focus-blue-500);
         }
       }
     }
