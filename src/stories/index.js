@@ -131,11 +131,22 @@ storiesOf('Icon', module)
 
 storiesOf('Search', module)
   .add("default", () => (
-    <Search placeholder='Search...' />
+    <React.Fragment>
+      <Search placeholder='Search...'>
+        <h4>Results</h4>
+        <p>Hello, hello, hello!</p>
+      </Search>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lacus commodo, convallis ex id, commodo quam. In vehicula, metus eu euismod vestibulum, enim massa ultricies massa, nec auctor sem est in velit. Quisque hendrerit ultrices dolor. Sed lacinia eu dolor nec elementum. Suspendisse porttitor pulvinar mi sed vestibulum. Integer sed consectetur ligula. Vivamus sagittis vulputate justo, sit amet consectetur urna tempus nec. Aenean eleifend risus augue, ac consectetur lacus hendrerit vitae. Nam justo tortor, pulvinar at sapien ac, tempor sollicitudin risus. Pellentesque placerat ex sed finibus porta. Aenean sit amet enim nec sapien mollis luctus porttitor ac lorem.</p>
+    </React.Fragment>
   )
 )
   .add("with icon", () => (
-    <Search withIcon placeholder='Search...' />
+    <React.Fragment>
+      <Search withIcon placeholder='Search...'>
+        
+      </Search>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lacus commodo, convallis ex id, commodo quam. In vehicula, metus eu euismod vestibulum, enim massa ultricies massa, nec auctor sem est in velit. Quisque hendrerit ultrices dolor. Sed lacinia eu dolor nec elementum. Suspendisse porttitor pulvinar mi sed vestibulum. Integer sed consectetur ligula. Vivamus sagittis vulputate justo, sit amet consectetur urna tempus nec. Aenean eleifend risus augue, ac consectetur lacus hendrerit vitae. Nam justo tortor, pulvinar at sapien ac, tempor sollicitudin risus. Pellentesque placerat ex sed finibus porta. Aenean sit amet enim nec sapien mollis luctus porttitor ac lorem.</p>
+    </React.Fragment>
   )
 )
 ;

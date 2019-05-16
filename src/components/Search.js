@@ -1,5 +1,6 @@
 import React from "react";
-import {InputBase} from "./Input";
+import { InputBase } from "./Input";
+import { normalizeChildren } from "../utilities/utils";
 import Icon from "./Icon";
 
 const Search = ({
@@ -11,7 +12,8 @@ const Search = ({
   onChange,
   id,
   className,
-  withIcon
+  withIcon,
+  children
 }) => 
   withIcon ? (
     <React.Fragment>
@@ -23,13 +25,17 @@ const Search = ({
       <span>
         <Icon name='search' width={16} height={16} />&zwnj;
       </span>
+      {normalizeChildren(children).length ? <div className='search-result-box'>{children}</div> : ''}
     </React.Fragment>
   ) : (
-    <InputBase 
-      type='search' id={id} placeholder={placeholder}
-      className={className} size={size} disabled={disabled} 
-      required={required} name={name} onChange={onChange}
-    />
+    <React.Fragment>
+      <InputBase 
+        type='search' id={id} placeholder={placeholder}
+        className={className} size={size} disabled={disabled} 
+        required={required} name={name} onChange={onChange}
+        />
+        {normalizeChildren(children).length ? <div className='search-result-box'>{children}</div> : ''}
+    </React.Fragment>
   );
 
 
