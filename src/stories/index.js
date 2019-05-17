@@ -158,8 +158,8 @@ storiesOf('Input', module)
       <TextInput size='small' placeholder='Small' />
       <TextInput size='large' placeholder='Large' />
       <TextInput shape='rounded' placeholder='Rounded' />
-      <TextInput shape='rounded' size='small' placeholder='Small rounded' />
-      <TextInput shape='rounded' size='large' placeholder='Large rounded' />
+      <TextInput shape='rounded' size='small' placeholder='Small rounded' defaultValue='test'/>
+      <TextInput shape='rounded' size='large' placeholder='Large rounded' defaultValue='test'/>
     </React.Fragment>
   )
 )
@@ -238,7 +238,7 @@ storiesOf('Input', module)
 )
   .add("currency", () => (
     <React.Fragment>
-      <CurrencyInput />
+      <CurrencyInput placeholder='$' />
       <CurrencyInput currencySign='€' />
       <CurrencyInput currencySign='£' />
     </React.Fragment>

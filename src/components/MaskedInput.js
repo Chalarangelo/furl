@@ -2,7 +2,6 @@ import React from "react";
 import Button from "./Button";
 import Icon from "./Icon";
 import MaskedInput from "react-text-mask";
-import { normalizeChildren, generateUniqueId } from "../utilities/utils";
 import createNumberMask from "../utilities/createNumberMask";
 import createAutoCorrectedDatePipe from "../utilities/createAutoCorrectedDatePipe";
 import Calendar from "./Calendar";
@@ -18,6 +17,7 @@ const MaskedInputBase = ({
   onChange,
   id,
   className,
+  defaultValue,
   __ref,
   ...rest
 }) => {
@@ -32,6 +32,7 @@ const MaskedInputBase = ({
       placeholder={placeholder !== undefined ? placeholder : false}
       name={name !== undefined ? name : false}
       onChange={onChange}
+      defaultValue={defaultValue}
       ref={__ref}
       {...rest}
     />
@@ -46,13 +47,14 @@ const CreditCardInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  ...rest
 }) =>  (
     <MaskedInputBase 
     type='text' id={id} placeholder={placeholder} 
     mask={[/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/]}
     className={className} size={size} disabled={disabled} 
-    required={required} name={name} onChange={onChange}
+    required={required} name={name} onChange={onChange} {...rest}
   />
 );
 
@@ -64,13 +66,14 @@ const PhoneInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  ...rest
 }) =>  (
     <MaskedInputBase 
     type='tel' id={id} placeholder={placeholder} 
     mask={['+', /\d/, /\d/, ' ', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
     className={className} size={size} disabled={disabled} 
-    required={required} name={name} onChange={onChange}
+    required={required} name={name} onChange={onChange} {...rest}
   />
 );
 
@@ -83,7 +86,8 @@ const CurrencyInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  ...rest
 }) =>  (
     <MaskedInputBase 
     type='text' id={id} placeholder={placeholder} 
@@ -92,7 +96,7 @@ const CurrencyInput = ({
       allowDecimal : true
     })}
     className={className} size={size} disabled={disabled} 
-    required={required} name={name} onChange={onChange}
+    required={required} name={name} onChange={onChange} {...rest}
   />
 );
 
@@ -106,7 +110,8 @@ const TimeInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  ...rest
 }) =>  {
   let mask = [], pipeFormat = '';
   if (displayHours) {
@@ -129,6 +134,7 @@ const TimeInput = ({
     pipe={createAutoCorrectedDatePipe(pipeFormat)}
     className={className} size={size} disabled={disabled} 
     required={required} name={name} onChange={onChange}
+    {...rest}
   />
   )
 };
@@ -145,11 +151,13 @@ const DateInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  defaultValue,
+  ...rest
 }) => {
   let mask = [/\d/, /\d/, separator, /\d/, /\d/, separator, /\d/, /\d/, /\d/, /\d/], 
   pipeFormat = monthBeforeDay ? `mm${separator}dd${separator}yyyy` : `dd${separator}mm${separator}yyyy`;
-  const [inputValue, setInputValue] = React.useState(undefined);
+  const [inputValue, setInputValue] = React.useState(defaultValue ? defaultValue : undefined);
   const [calendarOpen, setCalendarOpen] = React.useState(false);
   const inputRef = React.createRef();
   const pipe = createAutoCorrectedDatePipe(pipeFormat, { minYear: minYear, maxYear: maxYear });
@@ -173,7 +181,7 @@ const DateInput = ({
         pipe={pipe}
         className={[className,'date'].join(' ').trim()} size={size} disabled={disabled}
         required={required} name={name} value={inputValue == undefined ? '' : inputValue} onChange={(e) => {setInputValue(e.target.value); typeof onChange == 'function' && onChange(e); }}
-        __ref={inputRef}
+        __ref={inputRef} {...rest}
       />
       <Button onClick={(e) => { setCalendarOpen(!calendarOpen); }} className='calendar-toggler'>
         <Icon name='calendar' width={16} height={16} />&zwnj;
@@ -207,9 +215,11 @@ const ColorInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  defaultValue,
+  ...rest
 }) => {
-  const [inputValue, setInputValue] = React.useState('#000000');
+  const [inputValue, setInputValue] = React.useState(defaultValue ? defaultValue : '#000000');
   return (
     <React.Fragment>
     <MaskedInputBase
@@ -217,7 +227,7 @@ const ColorInput = ({
       mask={['#', /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/]}
       className={['color-input',className].join(' ').trim()} size={size} disabled={disabled}
         required={required} name={name} 
-        onChange={(e) => { setInputValue(e.target.value); onChange(e); }} value={inputValue}
+        onChange={(e) => { setInputValue(e.target.value); onChange(e); }} value={inputValue} {...rest}
     />
       <input type='color' onChange={(e) => { setInputValue(e.target.value); onChange(e); }} value={inputValue} />
     </React.Fragment>

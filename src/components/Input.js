@@ -15,6 +15,7 @@ const InputBase = ({
   onChange,
   id,
   className,
+  defaultValue,
   ...rest
 }) => {
   let classNames = [
@@ -31,6 +32,7 @@ const InputBase = ({
       placeholder={placeholder !== undefined ? placeholder : false}
       name={name !== undefined ? name : false}
       onChange={onChange}
+      defaultValue={defaultValue}
       {...rest}
     />
   )
@@ -47,7 +49,8 @@ const TextInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  ...rest
 }) => 
   multiline ? (
     <textarea
@@ -60,12 +63,14 @@ const TextInput = ({
       name={name !== undefined ? name : false}
       onChange={onChange}
       rows={rows}
+      {...rest}
     />
   ) : (
     <InputBase 
       type='text' id={id} placeholder={placeholder} shape={shape}
       className={className} size={size} disabled={disabled} 
       required={required} name={name} onChange={onChange}
+      {...rest}
     />
   );
 
@@ -79,12 +84,13 @@ const EmailInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  ...rest
 }) => (
   <InputBase 
     type='email' id={id} placeholder={placeholder} pattern={pattern}
     className={className} size={size} disabled={disabled} shape={shape}
-    required={required} name={name} onChange={onChange}
+    required={required} name={name} onChange={onChange} {...rest}
   />
 );
 
@@ -98,12 +104,13 @@ const UrlInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  ...rest
 }) => (
   <InputBase 
     type='url' id={id} placeholder={placeholder} pattern={pattern}
     className={className} size={size} disabled={disabled} shape={shape}
-    required={required} name={name} onChange={onChange}
+    required={required} name={name} onChange={onChange} {...rest}
   />
 );
 
@@ -117,7 +124,8 @@ const PasswordInput = ({
   withRevealer = false,
   onChange,
   id,
-  className
+  className,
+  ...rest
 }) => {
   const [passwordVisible, setPasswordVisible] = React.useState(false);
   
@@ -126,7 +134,7 @@ const PasswordInput = ({
       <InputBase 
         type={passwordVisible ? 'text' : 'password'} id={id} placeholder={placeholder}
         className={['revealer', className].join(' ').trim()} size={size} disabled={disabled} 
-        required={required} name={name} onChange={onChange} shape={shape}
+        required={required} name={name} onChange={onChange} shape={shape} {...rest}
       />
       <Button onClick={() => setPasswordVisible(!passwordVisible)}>
         <Icon name={passwordVisible ? 'eye-off' : 'eye'} width={16} height={16} />&zwnj;
@@ -138,6 +146,7 @@ const PasswordInput = ({
       type='password' id={id} placeholder={placeholder}
       className={className} size={size} disabled={disabled}
       required={required} name={name} onChange={onChange}
+      {...rest}
     />
   )
 }
@@ -155,7 +164,8 @@ const NumberInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  ...rest
 }) => {
   const [inputValue, setInputValue] = React.useState(0);
   return (
@@ -167,7 +177,7 @@ const NumberInput = ({
         type='number' id={id} placeholder={placeholder}
         className={className} size={size} shape={shape} disabled={disabled}
         required={required} name={name} onChange={(e) => {setInputValue(e.target.value); onChange(e);}}
-        min={min} max={max} step={step} value={inputValue}
+        min={min} max={max} step={step} value={inputValue} {...rest}
       />
       <Button onClick={(e) => { setInputValue(+inputValue + step); onChange(e); }} className='number-input-plus'>
         <Icon name='plus' width={16} height={16} />&zwnj;
@@ -197,7 +207,8 @@ const SelectInput = ({
   onChange,
   id,
   className,
-  children
+  children,
+  ...rest
 }) =>  {
   children = normalizeChildren(children);
   let options = children.filter(item => Option.name == item.type.name);
@@ -210,7 +221,7 @@ const SelectInput = ({
       placeholder={placeholder !== undefined ? placeholder : false}
       name={name !== undefined ? name : false}
       onChange={onChange}
-      multiple={multiple} size={selectSize}
+      multiple={multiple} size={selectSize} {...rest}
     >
       {options}
     </select>);
@@ -222,7 +233,7 @@ const SelectInput = ({
       required={required}
       placeholder={placeholder !== undefined ? placeholder : false}
       name={name !== undefined ? name : false}
-      onChange={onChange}
+      onChange={onChange} {...rest}
     >
       {options}
     </select><Button>
@@ -241,7 +252,8 @@ const ComboboxInput = ({
   onChange,
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   const [optionsId, setOptionsId] = React.useState(generateUniqueId('combo-input'));
   children = normalizeChildren(children);
@@ -255,7 +267,7 @@ const ComboboxInput = ({
       <InputBase 
         id={id} placeholder={placeholder} list={optionsId}
         className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '',className].join(' ').trim()} size={size} disabled={disabled} 
-        required={required} name={name} onChange={onChange}
+        required={required} name={name} onChange={onChange} {...rest}
       />
       <Button>
         <Icon name='chevron-down' width={16} height={16} />&zwnj;
@@ -275,7 +287,8 @@ const FileInput = ({
   name,
   onFilesChanged,
   id,
-  className
+  className,
+  ...rest
 }) => {
   const [drag, setDrag] = React.useState(false);
   const [filename, setFilename] = React.useState([]);
@@ -351,7 +364,7 @@ const FileInput = ({
   return (<React.Fragment>
     <input 
       type='file' disabled={disabled} required={required} name={name} multiple={multiple}
-      onChange={handleFileInput} ref={inputRef} onClick={e => e.stopPropagation()}
+      onChange={handleFileInput} ref={inputRef} onClick={e => e.stopPropagation()} {...rest}
     />
     <div 
       role="button"
@@ -395,7 +408,9 @@ const RatingInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  defaultValue = 0,
+  ...rest
 }) =>  {
   const [rating, setRating] = React.useState(typeof defaultValue == 'number' ? defaultValue : 0);
   const [selection, setSelection] = React.useState(0);
@@ -443,11 +458,18 @@ const SliderInput = ({
   name,
   onChange,
   id,
-  className
+  className,
+  defaultValue,
+  ...rest
 }) => {
-  const [inputValue, setInputValue] = React.useState(max);
-  const [lowInputValue, setLowInputValue] = React.useState(min);
-
+  const [inputValue, setInputValue] = React.useState(range ?
+    (Array.isArray(defaultValue) && typeof defaultValue[1] == 'number') ?  defaultValue[1] : max :
+    typeof defaultValue == 'number' ? defaultValue : min
+  );
+  const [lowInputValue, setLowInputValue] = React.useState(range ?
+    (Array.isArray(defaultValue) && typeof defaultValue[0] == 'number') ? defaultValue[0] : min :
+    min
+  );
   return (
     range ? 
     <React.Fragment>
