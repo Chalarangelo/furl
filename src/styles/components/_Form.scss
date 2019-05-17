@@ -1,0 +1,30 @@
+form {
+  --padding: var(--ls-50p);
+  --margin: var(--ls-50p);
+  --border-radius: var(--ls-25p);
+  --background-color: var(--interface-gray-50);
+  &.flat {
+    border: 1px solid var(--interface-gray-100);
+  }
+  &.solid {
+    --box-shadow: var(--shadow-100);
+  }
+  &.small {
+    --padding: var(--ls-25p);
+  }
+  &.large {
+    --padding: var(--ls-75p);
+  }
+  &.light {
+    --background-color: var(--interface-gray-0);
+    &.flat {
+      border: 1px solid var(--interface-gray-50);
+    }  
+  }
+  &.dark {
+    --background-color: var(--interface-gray-100);
+    &.flat {
+      border: 1px solid var(--interface-gray-200);
+    }  
+  }
+}
