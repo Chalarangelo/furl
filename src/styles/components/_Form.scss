@@ -35,3 +35,8 @@ legend {
   --padding-horizontal: var(--ls-25p);
   --color: var(--interface-gray-600);
 }
+
+label {
+  --margin-horizontal: var(--ls-75p);
+  --margin-vertical: var(--ls-25p);
+}

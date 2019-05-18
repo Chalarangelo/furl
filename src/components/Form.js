@@ -4,6 +4,10 @@ const FormLegend = ({ id, className, children }) => (
   <legend id={id !== undefined ? id : false} className={className}>{children}</legend>
 );
 
+const FormLabel = ({ id, className, htmlFor, children }) => (
+  <label htmlFor={htmlFor} id={id !== undefined ? id : false} className={className}>{children}</label>
+);
+
 const Form = ({
   fill = 'flat',
   size = 'normal',
@@ -32,4 +36,4 @@ const Form = ({
   </form>
 )};
 
-export {Form, FormLegend};
+export { Form, FormLegend, FormLabel};
