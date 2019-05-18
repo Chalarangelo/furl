@@ -28,3 +28,10 @@ form {
     }  
   }
 }
+
+legend {
+  --font-size: var(--ts-50p);
+  text-align: center;
+  --padding-horizontal: var(--ls-25p);
+  --color: var(--interface-gray-600);
+}

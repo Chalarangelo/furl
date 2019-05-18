@@ -1,5 +1,9 @@
 import React from "react";
 
+const FormLegend = ({ id, className, children }) => (
+  <legend id={id !== undefined ? id : false} className={className}>{children}</legend>
+);
+
 const Form = ({
   fill = 'flat',
   size = 'normal',
@@ -28,4 +32,4 @@ const Form = ({
   </form>
 )};
 
-export default Form;
+export {Form, FormLegend};

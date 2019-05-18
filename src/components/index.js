@@ -34,7 +34,7 @@ import Search from "./Search";
 import Progress from "./Progress";
 import Loader from "./Loader";
 import Calendar from "./Calendar";
-import Form from "./Form";
+import {Form, FormLegend} from "./Form";
 import { 
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput, FileInput,
   CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, DateInput, RatingInput, SliderInput
@@ -74,5 +74,5 @@ export {
   Search,
   Progress, Loader,
   Calendar,
-  Form
+  Form, FormLegend
 };

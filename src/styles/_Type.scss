@@ -220,3 +220,7 @@ figcaption {
   --color: var(--interface-gray-700);
   text-align: center;
 }
+
+caption, legend {
+  font-family: var(--font-b), var(--font-a), var(--system-font-stack);
+}
