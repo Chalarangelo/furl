@@ -169,42 +169,72 @@ storiesOf('Input', module)
       <TextInput size='large' placeholder='Large' />
       <TextInput shape='rounded' placeholder='Rounded' />
       <TextInput shape='rounded' size='small' placeholder='Small rounded' defaultValue='test'/>
-      <TextInput shape='rounded' size='large' placeholder='Large rounded' defaultValue='test'/>
+      <TextInput shape='rounded' size='large' placeholder='Large rounded' defaultValue='test' />
+      <TextInput value='disabled' disabled />
+      <TextInput value='readonly' readOnly/>
     </React.Fragment>
   )
 )
   .add("text multiline", () => (
+    <React.Fragment>
     <TextInput multiline placeholder='Text...' />
+    <TextInput multiline value='disabled' disabled />
+    <TextInput multiline value='readonly' readOnly />
+    </React.Fragment>
   )
 )
   .add("email", () => (
-    <EmailInput placeholder='mail@server.com'/>
+    <React.Fragment>
+    <EmailInput placeholder='mail@server.com' />
+    <EmailInput value='disabled' disabled />
+    <EmailInput value='readonly' readOnly />
+    </React.Fragment>
   )
 )
   .add("url", () => (
-    <UrlInput placeholder='https://example.com'/>
+    <React.Fragment>
+    <UrlInput placeholder='https://example.com' />
+    <UrlInput value='disabled' disabled />
+    <UrlInput value='readonly' readOnly />
+    </React.Fragment>
   )
 )
   .add("password", () => (
     <React.Fragment>
       <PasswordInput placeholder='Password' />
       <PasswordInput withRevealer placeholder='Password' />
+      <PasswordInput disabled withRevealer placeholder='Password' />
+      <PasswordInput readOnly withRevealer placeholder='Password' />
     </React.Fragment>
   )
 )
   .add("number", () => (
     <React.Fragment>
       <NumberInput placeholder='0' onChange={(r) => console.log(r)}/>
-      <NumberInput placeholder='0' step={3} min={0} max={15}/>
+      <NumberInput placeholder='0' step={3} min={0} max={15} />
+      <NumberInput disabled placeholder='0' step={3} min={0} max={15} />
+      <NumberInput readOnly placeholder='0' step={3} min={0} max={15}/>
     </React.Fragment>
   )
 )
   .add("select", () => (
-    <SelectInput placeholder='0' onChange={(r) => console.log(r)}>
-      <Option>a</Option>
-      <Option selected>b</Option>
-      <Option>c</Option>
-    </SelectInput>
+    <React.Fragment>
+      <SelectInput placeholder='0' onChange={(r) => console.log(r)}>
+        <Option>a</Option>
+        <Option selected>b</Option>
+        <Option>c</Option>
+      </SelectInput>
+      <SelectInput disabled placeholder='0' onChange={(r) => console.log(r)}>
+        <Option>a</Option>
+        <Option selected>b</Option>
+        <Option>c</Option>
+      </SelectInput>
+      <SelectInput readOnly placeholder='0' onChange={(r) => console.log(r)}>
+        <Option>a</Option>
+        <Option selected>b</Option>
+        <Option>c</Option>
+      </SelectInput>
+    </React.Fragment>
   )
 )
   .add("select multiple", () => (
@@ -231,18 +261,36 @@ storiesOf('Input', module)
         <Option>Strawberry</Option>
         <Option>Watermelon</Option>
       </ComboboxInput>
+      <ComboboxInput disabled>
+        <Option>Orange</Option>
+        <Option>Lemon</Option>
+        <Option>Apple</Option>
+        <Option>Strawberry</Option>
+        <Option>Watermelon</Option>
+      </ComboboxInput>
+      <ComboboxInput readOnly>
+        <Option>Orange</Option>
+        <Option>Lemon</Option>
+        <Option>Apple</Option>
+        <Option>Strawberry</Option>
+        <Option>Watermelon</Option>
+      </ComboboxInput>
     </React.Fragment>
   )
 )
   .add("credit card", () => (
     <React.Fragment>
-      <CreditCardInput onChange={e => console.log(e.target)}/>
+      <CreditCardInput onChange={e => console.log(e.target)} />
+      <CreditCardInput disabled onChange={e => console.log(e.target)} />
+      <CreditCardInput readOnly onChange={e => console.log(e.target)}/>
     </React.Fragment>
   )
 )
   .add("phone", () => (
     <React.Fragment>
       <PhoneInput placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)}/>
+      <PhoneInput disabled placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)} />
+      <PhoneInput readOnly placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)}/>
     </React.Fragment>
   )
 )
@@ -251,6 +299,8 @@ storiesOf('Input', module)
       <CurrencyInput placeholder='$' />
       <CurrencyInput currencySign='€' />
       <CurrencyInput currencySign='£' />
+      <CurrencyInput disabled currencySign='£' />
+      <CurrencyInput readOnly currencySign='£' />
     </React.Fragment>
   )
   )
@@ -260,6 +310,8 @@ storiesOf('Input', module)
       <TimeInput displayHours={false} />
       <TimeInput displaySeconds={false} />
       <TimeInput displayHours={false} displaySeconds={false} />
+      <TimeInput disabled displayHours={false} displaySeconds={false} />
+      <TimeInput readOnly displayHours={false} displaySeconds={false} />
     </React.Fragment>
   )
   )
@@ -269,12 +321,16 @@ storiesOf('Input', module)
       <DateInput monthBeforeDay placeholder='mm/dd/yyyy' />
       <DateInput minYear={2000} separator='-' placeholder='mm-dd-yyyy' />
       <DateInput minYear={2000} maxYear={2019} monthBeforeDay placeholder='mm/dd/yyyy' />
+      <DateInput minYear={2000} disabled separator='-' placeholder='mm-dd-yyyy' />
+      <DateInput minYear={2000} readonly separator='-' placeholder='mm-dd-yyyy' />
     </React.Fragment>
   )
   )
   .add("color", () => (
     <React.Fragment>
-      <ColorInput placeholder='#fafafa' onChange={e => console.log(e.target)}/>
+      <ColorInput placeholder='#fafafa' onChange={e => console.log(e.target)} />
+      <ColorInput disabled placeholder='#fafafa' onChange={e => console.log(e.target)} />
+      <ColorInput readOnly placeholder='#fafafa' onChange={e => console.log(e.target)}/>
     </React.Fragment>
   )
 )
@@ -285,6 +341,8 @@ storiesOf('Input', module)
       <FileInput placeholder='Drop files here' shape='rounded' onFilesChanged={e => console.log(e)} />
       <FileInput placeholder='Drop files here' size='small' onFilesChanged={e => console.log(e)} />
       <FileInput placeholder='Drop files here' size='large' onFilesChanged={e => console.log(e)} />
+      <FileInput disabled placeholder='Drop files here' onChange={e => console.log(e.target)} />
+      <FileInput readOnly placeholder='Drop files here' onChange={e => console.log(e.target)} />
     </React.Fragment>
   )
 )
@@ -294,6 +352,8 @@ storiesOf('Input', module)
       <RatingInput iconStyle='fill' />
       <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)'/>
       <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill'/>
+      <RatingInput disabled iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' />
+      <RatingInput readOnly iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill'/>
     </React.Fragment>
   )
 )
@@ -302,7 +362,11 @@ storiesOf('Input', module)
       <SliderInput />
       <SliderInput range />
       <SliderInput min={10} max={25}/>
+      <SliderInput disabled min={10} max={25} />
+      <SliderInput readOnly min={10} max={25}/>
       <SliderInput range min={10} max={27}/>
+      <SliderInput disabled range min={10} max={27} />
+      <SliderInput readOnly range min={10} max={27}/>
     </React.Fragment>
   )
 )

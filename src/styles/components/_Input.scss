@@ -504,3 +504,15 @@ input[type='range'] {
   border-top-right-radius: var(--ls-0p);
   --box-shadow: var(--shadow-100);
 }
+
+input, textarea, select {
+  &[disabled] {
+    cursor: not-allowed;
+    --background-color: var(--interface-gray-50);
+    --color: var(--interface-gray-600);
+  }
+  &[readonly] {
+    --color: var(--interface-gray-700);
+    user-select: none; 
+  }
+}
