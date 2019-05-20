@@ -322,7 +322,7 @@ storiesOf('Input', module)
       <DateInput minYear={2000} separator='-' placeholder='mm-dd-yyyy' />
       <DateInput minYear={2000} maxYear={2019} monthBeforeDay placeholder='mm/dd/yyyy' />
       <DateInput minYear={2000} disabled separator='-' placeholder='mm-dd-yyyy' />
-      <DateInput minYear={2000} readonly separator='-' placeholder='mm-dd-yyyy' />
+      <DateInput minYear={2000} readOnly separator='-' placeholder='mm-dd-yyyy' />
     </React.Fragment>
   )
   )
@@ -352,8 +352,8 @@ storiesOf('Input', module)
       <RatingInput iconStyle='fill' />
       <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)'/>
       <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill'/>
-      <RatingInput disabled iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' />
-      <RatingInput readOnly iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill'/>
+      <RatingInput disabled iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3}/>
+      <RatingInput readOnly iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3}/>
     </React.Fragment>
   )
 )

@@ -142,6 +142,7 @@ const TimeInput = ({
 const DateInput = ({
   size = 'normal',
   disabled = false,
+  readOnly = false,
   required = false,
   monthBeforeDay = false,
   separator = '/',
@@ -179,11 +180,14 @@ const DateInput = ({
         type='text' id={id} placeholder={placeholder}
         mask={mask} keepCharPositions={true}
         pipe={pipe}
-        className={[className,'date'].join(' ').trim()} size={size} disabled={disabled}
+        className={[className,'date'].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name} value={inputValue == undefined ? '' : inputValue} onChange={(e) => {setInputValue(e.target.value); typeof onChange == 'function' && onChange(e); }}
         __ref={inputRef} {...rest}
       />
-      <Button onClick={(e) => { setCalendarOpen(!calendarOpen); }} className='calendar-toggler'>
+      <Button disabled={disabled} readOnly={readOnly} onClick={(e) => { 
+        if(readOnly || disabled) return;
+        setCalendarOpen(!calendarOpen); 
+      }} className='calendar-toggler'>
         <Icon name='calendar' width={16} height={16} />&zwnj;
       </Button>
       <div>
@@ -193,6 +197,7 @@ const DateInput = ({
           className='date-calendar-picker'
           date = {parseDate(inputValue)}
           onDateChanged={dt => {
+            if (readOnly || disabled) return;
             let _dt = monthBeforeDay ? dt.toLocaleDateString('en-US',localeOptions) : dt.toLocaleDateString('en-GB',localeOptions);
             if(dt.getFullYear() <= maxYear && dt.getFullYear() >= minYear) {
               setInputValue(_dt.replace(/\//g,separator));
@@ -210,6 +215,7 @@ const DateInput = ({
 const ColorInput = ({
   size = 'normal',
   disabled = false,
+  readOnly = false,
   required = false,
   placeholder,
   name,
@@ -225,11 +231,19 @@ const ColorInput = ({
     <MaskedInputBase
       type='text' id={id} placeholder={placeholder}
       mask={['#', /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/]}
-      className={['color-input',className].join(' ').trim()} size={size} disabled={disabled}
+        className={['color-input', className].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name} 
-        onChange={(e) => { setInputValue(e.target.value); onChange(e); }} value={inputValue} {...rest}
+        onChange={(e) => { 
+          if(readOnly || disabled) return;
+          setInputValue(e.target.value); 
+          onChange(e); 
+        }} value={inputValue} {...rest}
     />
-      <input type='color' onChange={(e) => { setInputValue(e.target.value); onChange(e); }} value={inputValue} />
+      <input type='color' onChange={(e) => { 
+        if (readOnly || disabled) return;
+        setInputValue(e.target.value); 
+        onChange(e); 
+      }} value={inputValue} disabled={disabled} readOnly={readOnly}/>
     </React.Fragment>
   )
 };

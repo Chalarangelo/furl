@@ -118,6 +118,7 @@ const PasswordInput = ({
   size = 'normal',
   shape = 'normal',
   disabled = false,
+  readOnly = false,
   required = false,
   placeholder,
   name,
@@ -133,10 +134,13 @@ const PasswordInput = ({
     <React.Fragment>
       <InputBase 
         type={passwordVisible ? 'text' : 'password'} id={id} placeholder={placeholder}
-        className={['revealer', className].join(' ').trim()} size={size} disabled={disabled} 
+        className={['revealer', className].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name} onChange={onChange} shape={shape} {...rest}
       />
-      <Button onClick={() => setPasswordVisible(!passwordVisible)}>
+      <Button disabled={disabled} readOnly={readOnly} onClick={() => {
+        if(disabled || readOnly) return;
+        setPasswordVisible(!passwordVisible);
+      }}>
         <Icon name={passwordVisible ? 'eye-off' : 'eye'} width={16} height={16} />&zwnj;
       </Button>
     </React.Fragment>
@@ -159,6 +163,7 @@ const NumberInput = ({
   max,
   step = 1,
   disabled = false,
+  readOnly = false,
   required = false,
   placeholder,
   name,
@@ -170,16 +175,28 @@ const NumberInput = ({
   const [inputValue, setInputValue] = React.useState(0);
   return (
     <React.Fragment>
-      <Button onClick={(e) => { setInputValue(+inputValue - step); onChange(e); }} className='number-input-minus'>
+      <Button disabled={disabled} readOnly={readOnly} onClick={(e) => { 
+        if (readOnly || disabled) return;
+        setInputValue(+inputValue - step); 
+        onChange(e); 
+      }} className='number-input-minus'>
         <Icon name='minus' width={16} height={16} />&zwnj;
       </Button>
       <InputBase
-        type='number' id={id} placeholder={placeholder}
+        type='number' id={id} placeholder={placeholder} readOnly={readOnly}
         className={className} size={size} shape={shape} disabled={disabled}
-        required={required} name={name} onChange={(e) => {setInputValue(e.target.value); onChange(e);}}
+        required={required} name={name} onChange={(e) => {
+          if (readOnly || disabled) return;
+          setInputValue(e.target.value); 
+          onChange(e);
+        }}
         min={min} max={max} step={step} value={inputValue} {...rest}
       />
-      <Button onClick={(e) => { setInputValue(+inputValue + step); onChange(e); }} className='number-input-plus'>
+      <Button disabled={disabled} readOnly={readOnly} onClick={(e) => { 
+        if (readOnly || disabled) return;
+        setInputValue(+inputValue + step); 
+        onChange(e); 
+      }} className='number-input-plus'>
         <Icon name='plus' width={16} height={16} />&zwnj;
       </Button>
     </React.Fragment>
@@ -282,6 +299,7 @@ const FileInput = ({
   shape = 'normal',
   multiple = false,
   disabled = false,
+  readOnly = false,
   required = false,
   placeholder,
   name,
@@ -344,6 +362,7 @@ const FileInput = ({
   React.useEffect(() => {
     let div = dropRef.current;
     if (div === null) return;
+    if (readOnly || disabled) return;
     div.addEventListener('dragenter', handleDragIn);
     div.addEventListener('dragleave', handleDragOut);
     div.addEventListener('dragover', handleDrag);
@@ -373,7 +392,8 @@ const FileInput = ({
         drag ? 'drag' : (filename && filename.length > 0) ? 'ready' : '',
         shape !== 'normal' ? shape : '',
         size !== 'normal' ? size : '',
-        disabled ? 'disabled' : ''
+        disabled ? 'disabled' : '',
+        readOnly ? 'readonly' : ''
       ].join(' ').trim()} 
       ref={dropRef} 
       id={id !== undefined ? id : false}>
@@ -404,6 +424,7 @@ const RatingInput = ({
   iconStyle = 'outline',
   iconFillColor = 'var(--warning-yellow-500)',
   disabled = false,
+  readOnly = false,
   required = false,
   name,
   onChange,
@@ -416,6 +437,7 @@ const RatingInput = ({
   const [selection, setSelection] = React.useState(0);
 
   const hoverOver = e => {
+    if (disabled || readOnly) return;
     let val = 0;
     if (e && e.target && e.target.getAttribute('star-id'))
       val = e.target.getAttribute('star-id');
@@ -426,12 +448,15 @@ const RatingInput = ({
     <div
       id={id !== undefined ? id : false}
       onMouseOut={() => hoverOver(null)}
-      onClick={(event) => setRating(event.target.getAttribute('star-id') || rating)}
+      onClick={(event) => {
+        if (disabled || readOnly) return;
+        setRating(event.target.getAttribute('star-id') || rating);
+      }}
       onMouseOver={hoverOver}
-      className={[className, 'rating'].join(' ').trim()}
+      className={[className, 'rating', disabled ? 'disabled' : '', readOnly ? 'readonly' : ''].join(' ').trim()}
     >
       <input
-        type='number' disabled={disabled} required={required} name={name} onChange={onChange} value={rating}
+        type='number' disabled={disabled} required={required} name={name} onChange={onChange} value={rating} readOnly={readOnly}
       />
       {Array.from({ length: 5 }, (v, i) => (
         <Star
@@ -450,6 +475,7 @@ const RatingInput = ({
 const SliderInput = ({
   size = 'normal',
   disabled = false,
+  readOnly = false,
   required = false,
   range = false,
   min = 0,
@@ -475,8 +501,9 @@ const SliderInput = ({
     <React.Fragment>
       <InputBase
         type='range' id={id} placeholder={placeholder}
-        className={className} size={size} disabled={disabled}
+        className={className} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name} onChange={(e) => { 
+          if (disabled || readOnly) return;
           if (e.target.value > lowInputValue) setInputValue(e.target.value);
           onChange && onChange(e); }}
         value={inputValue} min={min} max={max} style={{
@@ -485,8 +512,9 @@ const SliderInput = ({
       />
       <InputBase
         type='range' id={id} placeholder={placeholder}
-        className={'low'} size={size} disabled={disabled}
+        className={'low'} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name} onChange={(e) => { 
+          if (disabled || readOnly) return;
           if(e.target.value < inputValue) setLowInputValue(e.target.value); 
           onChange && onChange(e); }}
         value={lowInputValue} min={min} max={max} style={{
@@ -497,8 +525,8 @@ const SliderInput = ({
     :
     <InputBase
       type='range' id={id} placeholder={placeholder}
-      className={className} size={size} disabled={disabled}
-      required={required} name={name} onChange={(e) => { setInputValue(e.target.value); onChange && onChange(e);}}
+      className={className} size={size} disabled={disabled} readOnly={readOnly}
+        required={required} name={name} onChange={(e) => { if (disabled || readOnly) return; setInputValue(e.target.value); onChange && onChange(e);}}
       value={inputValue} min={min} max={max} style={{
         background: `linear-gradient(to right, var(--secondary-background-color) 0%, var(--secondary-background-color) ${(inputValue - min)/(max - min) * 100}%, var(--background-color) ${(inputValue - min)/(max - min) * 100}%)`
       }}
