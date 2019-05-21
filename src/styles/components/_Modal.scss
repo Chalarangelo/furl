@@ -6,10 +6,26 @@
   --background-color: white;
   width: 80vw;
   height: 80vh;
-  --padding-vertical: var(--ls-50p);
-  --padding-horizontal: var(--ls-75p);
   --border-radius: var(--ls-25p);
   --box-shadow: var(--shadow-100);
+}
+
+.modal-section {
+  --padding: var(--ls-25p);
+}
+
+.modal-media-section {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modal-section:not(:first-child) {
+  border-top: 1px solid var(--interface-gray-200);
+}
+
+.modal-media-section + .modal-section {
+  border-top: 0;
 }
 
 .modal-overlay {
