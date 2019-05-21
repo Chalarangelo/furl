@@ -1,0 +1,24 @@
+.modal {
+  z-index: 121;
+  position: fixed;
+  top: 10vh;
+  left: 10vw;
+  --background-color: white;
+  width: 80vw;
+  height: 80vh;
+  --padding-vertical: var(--ls-50p);
+  --padding-horizontal: var(--ls-75p);
+  --border-radius: var(--ls-25p);
+  --box-shadow: var(--shadow-100);
+}
+
+.modal-overlay {
+  z-index: 120;
+  --background-color: var(--interface-gray-800);
+  opacity: 0.24;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
