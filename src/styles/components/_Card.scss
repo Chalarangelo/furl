@@ -7,6 +7,10 @@
 
 .card-section {
   --padding: var(--ls-25p);
+  &:first-child {
+    border-top-left-radius: var(--ls-25p);
+    border-top-right-radius: var(--ls-25p);
+  }
 }
 
 .card-media-section {

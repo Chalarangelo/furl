@@ -7,11 +7,15 @@
   width: 80vw;
   height: 80vh;
   --border-radius: var(--ls-25p);
-  --box-shadow: var(--shadow-100);
+  --box-shadow: var(--shadow-300);
 }
 
 .modal-section {
   --padding: var(--ls-25p);
+  &:first-child {
+    border-top-left-radius: var(--ls-25p);
+    border-top-right-radius: var(--ls-25p);
+  }
 }
 
 .modal-media-section {
