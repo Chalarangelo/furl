@@ -18,22 +18,43 @@ const ModalSection = ({
 const Modal = ({
   color = 'normal',
   size = 'normal',
-  isOpen = false,
   id,
   className,
   children
 }) => (
-  isOpen ?
-  <React.Fragment>
-  <div className='modal-overlay' />
     <div
       className={['modal', className].join(' ').trim()}
       id={id !== undefined ? id : false} 
     >
       {children}
     </div>
-  </React.Fragment>
-  : ''
   );
 
-export {Modal, ModalSection};
+const ModalCenter = React.forwardRef(
+  ({isOpen = false, id, className, children}, ref) => {
+    const centerRef = React.useRef();
+    let [__isOpen, __setIsOpen] = React.useState(isOpen);
+    let [__content, __setContent] = React.useState(children);
+    React.useImperativeHandle(ref, () => ({
+      setContent: (content) => {
+        __setContent(content);
+      },
+      show: () => {
+        __setIsOpen(true);
+      },
+      hide: () => {
+        __setIsOpen(false);
+      }
+    }));
+    return (
+      __isOpen ?
+      <div className={['modal-center', className].join(' ').trim()} id={id !== undefined ? id : false} >
+        <div className='modal-overlay' />
+        {__content}
+      </div>
+      : ''
+    )
+  }
+);
+
+export {ModalCenter, Modal, ModalSection};

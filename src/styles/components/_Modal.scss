@@ -1,11 +1,9 @@
 .modal {
   z-index: 121;
   position: fixed;
-  top: 10vh;
-  left: 10vw;
   --background-color: white;
-  width: 80vw;
-  height: 80vh;
+  max-width: 80vw;
+  max-height: 80vh;
   --border-radius: var(--ls-25p);
   --box-shadow: var(--shadow-300);
 }
@@ -30,6 +28,18 @@
 
 .modal-media-section + .modal-section {
   border-top: 0;
+}
+
+.modal-center {
+  z-index: 120;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-overlay {

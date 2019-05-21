@@ -34,7 +34,7 @@ import Search from "./Search";
 import Progress from "./Progress";
 import Loader from "./Loader";
 import Calendar from "./Calendar";
-import {Modal, ModalSection} from "./Modal";
+import { Modal, ModalSection, ModalCenter} from "./Modal";
 import { Form, FormLegend, FormLabel} from "./Form";
 import { 
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput, FileInput,
@@ -76,5 +76,5 @@ export {
   Progress, Loader,
   Calendar,
   Form, FormLegend, FormLabel,
-  Modal, ModalSection
+  Modal, ModalSection, ModalCenter
 };
