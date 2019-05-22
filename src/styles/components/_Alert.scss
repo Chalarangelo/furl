@@ -1,0 +1,55 @@
+@mixin define-alert-color-variant ($class-name, $color-name) {
+  &.#{$class-name} {
+    --background-color: var(--#{$color-name}-100);
+    --secondary-color: var(--#{$color-name}-200);
+    --color: var(--#{$color-name}-800);
+  }
+}
+
+.alert {
+  --background-color: var(--interface-gray-100);
+  --secondary-color: var(--interface-gray-200);
+  --font-size: var(--ts-50p);
+  font-size: var(--font-size);
+  --font-weight: 500;
+  --color: var(--interface-gray-800);
+  --margin-vertical: var(--ls-25p);
+  --margin-horizontal: var(--ls-75p);
+  display: block;
+  --padding-horizontal: var(--ls-50p);
+  --padding-vertical: var(--ls-25p);
+  --border-radius: var(--ls-25p);
+  background: var(--background-color);
+  
+  // Size variants
+  &.small {
+    --padding-horizontal: var(--ls-25p);
+    --padding-vertical: var(--ls-0p);
+  }
+  &.large {
+    --padding-horizontal: var(--ls-75p);
+    --padding-vertical: var(--ls-50p);
+  }
+
+  // Fill variants
+  &.flat {
+    border: 1px solid var(--secondary-color);
+  }
+  &.gradient {
+    background: #{'linear-gradient(var(--secondary-color), var(--background-color))'};
+  }
+  &.solid {
+    box-shadow: var(--shadow-100);
+  }
+
+  // Shape variants
+  &.rounded {
+    border-radius: var(--ls-900p);
+  }
+
+  @include define-alert-color-variant('danger', 'danger-red');
+  @include define-alert-color-variant('success', 'success-green');
+  @include define-alert-color-variant('warning', 'warning-yellow');
+  @include define-alert-color-variant('primary', 'focus-blue');
+  @include define-alert-color-variant('secondary', 'deep-purple');
+}

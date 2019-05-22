@@ -26,6 +26,7 @@ import Footer from "./Footer";
 import Tooltip from "./Tooltip";
 import Popover from "./Popover";
 import Badge from "./Badge";
+import Alert from "./Alert";
 import Checkbox from "./Checkbox";
 import Radio from "./Radio";
 import Switch from "./Switch";
@@ -65,6 +66,7 @@ export {
   Tooltip,
   Popover,
   Badge,
+  Alert,
   Checkbox,
   Radio,
   Switch,
