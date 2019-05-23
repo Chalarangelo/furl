@@ -32,7 +32,6 @@ const Modal = ({
 
 const ModalCenter = React.forwardRef(
   ({isOpen = false, id, className, children}, ref) => {
-    const centerRef = React.useRef();
     let [__isOpen, __setIsOpen] = React.useState(isOpen);
     let [__content, __setContent] = React.useState(children);
     React.useImperativeHandle(ref, () => ({
