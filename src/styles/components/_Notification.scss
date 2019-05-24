@@ -1,0 +1,26 @@
+.notification-center {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  max-width: 30vw;
+  @media screen and (max-width: 599px) {
+    width: 100vw;
+    max-width: 100vw;
+  }
+  @media screen and (min-width: 600px) {
+    min-width: 600px;
+  }
+  z-index: 115;
+}
+
+.notification {
+  box-shadow: var(--shadow-100);
+  --padding: var(--ls-50p);
+  --margin: var(--ls-25p);
+  transition: 0.3s all ease-in;
+  --border-radius: var(--ls-25p);
+  &.almost-inactive {
+    opacity: 0;
+  }
+}
