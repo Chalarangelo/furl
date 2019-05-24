@@ -14,16 +14,21 @@ const Notification = ({
   duration = duration >= 500 ? duration : 500;
   const [isActive, setIsActive] = React.useState(active);
   const [isAlmostInactive, setIsAlmostInactive] = React.useState(false);
+  const [isInactive, setIsInactive] = React.useState(false);
   useTimeout(() => {
     setIsActive(false);
   }, duration);
   useTimeout(() => {
     setIsAlmostInactive(true);
-  }, duration-300);
+  }, duration - 300);
+  useTimeout(() => {
+    setIsAlmostInactive(false);
+    setIsInactive(true);
+  }, duration - 50);
   return (
     isActive ?
     <div
-        className={['notification', className, isAlmostInactive ? 'almost-inactive' : ''].join(' ').trim()}
+        className={['notification', className, isAlmostInactive ? 'almost-inactive' : '', isInactive ? 'inactive' : ''].join(' ').trim()}
       id={id !== undefined ? id : false} 
     >
       {children}
