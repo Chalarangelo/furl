@@ -1,36 +1,96 @@
+@mixin define-notification-color-variant ($class-name, $color-name) {
+  &.#{$class-name} {
+    --background-color: var(--#{$color-name}-50);
+    --color: var(--#{$color-name}-900);
+  }
+}
+
 .notification-center {
+  background: transparent;
+  pointer-events: none;
   position: fixed;
   top: 0;
-  right: 0;
+  &.left {
+    left: 0;
+  }
+  &.right {
+    right: 0;
+  }
+  &.center {
+    @media screen and (min-width: 384px) {
+      left: calc(50vw - var(--ls-600p) /2);
+    }
+  }
   height: 100vh;
   max-width: var(--ls-600p);
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 383px) {
     width: 100vw;
   }
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 384px) {
     width: var(--ls-600p);
   }
   z-index: 115;
-  flex-direction: column;
+  display: flex;
+    justify-content: flex-start;
+  &.top {
+    flex-direction: column;
+    & .notification {
+      &.almost-inactive {
+        transform: translate3d(0px, -4px, 0px);
+        opacity: 0;
+      }
+    }
+  }
+  &.bottom {
+    flex-direction: column-reverse;
+    & .notification {
+      &.almost-inactive {
+        transform: translate3d(0px, 4px, 0px);
+        opacity: 0;
+      }
+    }
+  }
   transition: 0.3s all ease;
 }
 
 .notification {
   box-shadow: var(--shadow-100);
-  --padding: var(--ls-50p);
+  --padding-horizontal: var(--ls-50p);
+  --padding-vertical: var(--ls-25p);
   --margin-horizontal: var(--ls-25p);
   --margin-vertical: var(--ls-25p);
   transition: 0.25s all ease, 0.5s height ease;
   --border-radius: var(--ls-25p);
   position: relative;
-  transform: translate3d(0px, 0px, 0px), ;
-  &.almost-inactive {
-    transform: translate3d(0px, -4px, 0px);
-    opacity: 0;
-  }
+  display: block;
   &.inactive {
     opacity: 0;
     transform: translate3d(0px, 0px, 0px);
     height: 0;
   }
+  pointer-events: all;
+  &.small {
+    --padding-horizontal: var(--ls-25p);
+    --padding-vertical: var(--ls-0p);
+  }
+  &.large {
+    --padding-horizontal: var(--ls-75p);
+    --padding-vertical: var(--ls-50p);
+  }
+  &.text-center {
+    text-align: center;
+  }
+  &.text-left {
+    text-align: left;
+  }
+  &.text-right {
+    text-align: right;
+  }
+  --background-color: var(--interface-gray-50);
+  --color: var(--interface-gray-900);
+  @include define-badge-color-variant('danger', 'danger-red');
+  @include define-badge-color-variant('success', 'success-green');
+  @include define-badge-color-variant('warning', 'warning-yellow');
+  @include define-badge-color-variant('primary', 'focus-blue');
+  @include define-badge-color-variant('secondary', 'deep-purple');
 }

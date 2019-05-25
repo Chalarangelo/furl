@@ -1597,17 +1597,48 @@ storiesOf('Pagination', module)
 ;
 
 storiesOf('Notification', module)
-  .add("default", () => { 
+  .add("top right", () => { 
     let notificationCenterRef = React.createRef();
+    let count = 0;
     return (
     <React.Fragment>
         <Button onClick={() => notificationCenterRef.current.addNotification(
           <Notification>
-            This is a notification.
+            This is a notification. {++count}
           </Notification>
         )}>Click me
       </Button>
       <NotificationCenter ref={notificationCenterRef}></NotificationCenter>
+    </React.Fragment>
+  );}
+  )
+  .add("bottom left", () => { 
+    let notificationCenterRef = React.createRef();
+    let count = 0;
+    return (
+    <React.Fragment>
+        <Button onClick={() => notificationCenterRef.current.addNotification(
+          <Notification>
+            This is a notification. {++count}
+          </Notification>
+        )}>Click me
+      </Button>
+        <NotificationCenter ref={notificationCenterRef} verticalPosition='bottom' horizontalPosition='left'></NotificationCenter>
+    </React.Fragment>
+  );}
+  )
+  .add("center top", () => { 
+    let notificationCenterRef = React.createRef();
+    let count = 0;
+    return (
+    <React.Fragment>
+        <Button onClick={() => notificationCenterRef.current.addNotification(
+          <Notification duration={60000}>
+            This is a notification. {++count}
+          </Notification>
+        )}>Click me
+      </Button>
+        <NotificationCenter ref={notificationCenterRef} verticalPosition='bottom' horizontalPosition='center'></NotificationCenter>
     </React.Fragment>
   );}
   );
