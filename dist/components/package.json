@@ -1,6 +1,6 @@
 {
-  "name": "react-component-library",
-  "version": "0.1.0",
+  "name": "furl-components",
+  "version": "0.1.0-alpha",
   "main": "index.js",
   "peerDependencies": {
     "react": "^16.8.4",

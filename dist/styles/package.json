@@ -1,6 +1,6 @@
 {
-  "name": "react-component-library-styles",
-  "version": "0.1.0",
+  "name": "furl-styles",
+  "version": "0.1.0-alpha",
   "main": "index.css",
   "peerDependencies": {
     "react": "^16.8.4",
