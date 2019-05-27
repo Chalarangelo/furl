@@ -1,6 +1,6 @@
-import React, { useLayoutEffect , useRef } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 
-function useEffectOnUpdate(fn, params) {
+function useEffectOnUpdate (fn, params) {
   const firstUpdate = useRef(true);
 
   // Only run if this is not the first update.

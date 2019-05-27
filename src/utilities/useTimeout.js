@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-function useTimeout(callback, delay) {
+function useTimeout (callback, delay) {
   const savedCallback = useRef();
 
   // Remember the latest callback.
@@ -10,7 +10,7 @@ function useTimeout(callback, delay) {
 
   // Set up the interval.
   useEffect(() => {
-    function tick() {
+    function tick () {
       savedCallback.current();
     }
     if (delay !== null) {

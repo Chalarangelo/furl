@@ -1,6 +1,6 @@
-import React from "react";
-import Hyperlink from "../components/Hyperlink";
-import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "../components/Table";
+import React from 'react';
+import Hyperlink from '../components/Hyperlink';
+import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from '../components/Table';
 
 const GridDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const GridDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Grid are made up of a <code>&lt;Grid&gt;</code> component, which is the grid's container element and one or more <code>&lt;Row&gt;</code> components, which are the rows of the grid, passed as <code>children</code> to the <code>&lt;Grid&gt;</code> component. The <code>&lt;Row&gt;</code> elements, in turn, contain one or more <code>&lt;Column&gt;</code> components, which are the columns of the row, passed as <code>children</code> to the <code>&lt;Row&gt;</code> component</p>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Grid props</TableCaption>
       <TableHead>
         <TableRow>
@@ -53,7 +53,7 @@ const GridDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Row props</TableCaption>
       <TableHead>
         <TableRow>
@@ -84,7 +84,7 @@ const GridDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Column props</TableCaption>
       <TableHead>
         <TableRow>

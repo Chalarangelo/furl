@@ -1,6 +1,6 @@
-import React from "react";
-import Hyperlink from "../components/Hyperlink";
-import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "../components/Table";
+import React from 'react';
+import Hyperlink from '../components/Hyperlink';
+import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from '../components/Table';
 
 const TableDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const TableDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Tables are made up of a <code>&lt;Table&gt;</code> component, which is the table's container element, an optional <code>&lt;TableCaption&gt;</code> element, an optional <code>&lt;TableHead&gt;</code> element and a <code>&lt;TableBody&gt;</code> element, which serve as the table's title, heading row(s) and body respectively. The last two elements contain one ore more <code>&lt;TableRow&gt;</code>, which in turn contain one or more <code>&lt;TableCell&gt;</code> elements, creating rows and columns in a table respectively.</p>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Table props</TableCaption>
       <TableHead>
         <TableRow>
@@ -41,7 +41,7 @@ const TableDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>TableCaption props</TableCaption>
       <TableHead>
         <TableRow>
@@ -78,7 +78,7 @@ const TableDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>TableHead props</TableCaption>
       <TableHead>
         <TableRow>
@@ -109,7 +109,7 @@ const TableDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>TableBody props</TableCaption>
       <TableHead>
         <TableRow>
@@ -140,7 +140,7 @@ const TableDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>TableRow props</TableCaption>
       <TableHead>
         <TableRow>
@@ -171,7 +171,7 @@ const TableDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>TableCell props</TableCaption>
       <TableHead>
         <TableRow>

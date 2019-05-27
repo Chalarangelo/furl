@@ -1,53 +1,52 @@
-import React from "react";
-import Button from "../components/Button";
-import ButtonSource from "./compSource/Button";
-import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
+import React from 'react';
+import Button from '../components/Button';
+import ButtonSource from './compSource/Button';
+import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from '../components/Table';
 import Prism from 'prismjs';
-import "prismjs/components/prism-jsx";
+import 'prismjs/components/prism-jsx';
 
 const ButtonDocs = props => (
   <div>
     <h2>Button</h2>
     <p>Buttons allow users to interact with your application.</p>
     <h3>Examples</h3>
-    <div className="component-example">
-      <div classname="component-demo">
-        <Button color="plain">Default</Button>
-        <Button color="primary">Primary</Button>
-        <Button color="secondary">Secondary</Button>
-        <Button color="success">Success</Button>
-        <Button color="warning">Warning</Button>
-        <Button color="danger">Danger</Button>
+    <div className='component-example'>
+      <div className='component-demo'>
+        <Button color='plain'>Default</Button>
+        <Button color='primary'>Primary</Button>
+        <Button color='secondary'>Secondary</Button>
+        <Button color='success'>Success</Button>
+        <Button color='warning'>Warning</Button>
+        <Button color='danger'>Danger</Button>
         <br />
-        <Button color="primary" fill="flat">Default</Button>
-        <Button color="primary" fill="solid">Solid</Button>
-        <Button color="primary" fill="light">Light</Button>
-        <Button color="primary" fill="gradient">Gradient</Button>
-        <Button color="primary" fill="outline">Outline</Button>
-        <Button color="primary" fill="ghost">Ghost</Button>
-        <Button color="primary" disabled>Disabled</Button>
+        <Button color='primary' fill='flat'>Default</Button>
+        <Button color='primary' fill='solid'>Solid</Button>
+        <Button color='primary' fill='light'>Light</Button>
+        <Button color='primary' fill='gradient'>Gradient</Button>
+        <Button color='primary' fill='outline'>Outline</Button>
+        <Button color='primary' fill='ghost'>Ghost</Button>
+        <Button color='primary' disabled>Disabled</Button>
         <br />
-        <Button color="primary" size="small">Small</Button>
-        <Button color="primary" size="normal">Medium</Button>
-        <Button color="primary" size="large">Large</Button>
-        <Button color="primary" shape="normal">Normal</Button>
-        <Button color="primary" shape="rounded">Rounded</Button>
-        <Button color="primary" shape="circle">Circle</Button>
-        <Button color="primary" text="uppercase">Upper</Button>
+        <Button color='primary' size='small'>Small</Button>
+        <Button color='primary' size='normal'>Medium</Button>
+        <Button color='primary' size='large'>Large</Button>
+        <Button color='primary' shape='normal'>Normal</Button>
+        <Button color='primary' shape='rounded'>Rounded</Button>
+        <Button color='primary' shape='circle'>Circle</Button>
+        <Button color='primary' text='uppercase'>Upper</Button>
       </div>
-      <pre className="component-source" dangerouslySetInnerHTML={{__html: Prism.highlight(ButtonSource, Prism.languages.jsx, 'jsx')}}>
-      </pre>
+      <pre className='component-source' dangerouslySetInnerHTML={{__html: Prism.highlight(ButtonSource, Prism.languages.jsx, 'jsx')}} />
     </div>
     <h3>API</h3>
     <p>Buttons are highly customizable, providing a different visual style for every kind of interaction context.</p>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Button props</TableCaption>
       <TableHead>
         <TableRow>
           <TableCell heading>Name</TableCell>
           <TableCell heading>Type</TableCell>
           <TableCell heading>Default</TableCell>
-          <TableCell heading heading colSpan={3}>Description</TableCell>
+          <TableCell heading colSpan={3}>Description</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>

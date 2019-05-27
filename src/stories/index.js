@@ -1,71 +1,71 @@
 import React from 'react';
 
-import "../../dist/styles/index.css";
+import '../../dist/styles/index.css';
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton, Pagination, PaginationItem, ColorInput, Accordion, Tab, TabItem, FileInput, DateInput, RatingInput, SliderInput, Form, FormLegend, FormLabel, Modal, ModalSection, ModalCenter, Alert, Notification, NotificationCenter } from "../../dist/components";
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton, Pagination, PaginationItem, ColorInput, Accordion, Tab, TabItem, FileInput, DateInput, RatingInput, SliderInput, Form, FormLegend, FormLabel, Modal, ModalSection, ModalCenter, Alert, Notification, NotificationCenter } from '../../dist/components';
 
 storiesOf('Hyperlink', module)
-  .add("internal", () => (
-    <Hyperlink href="#">
+  .add('internal', () => (
+    <Hyperlink href='#'>
       Open in same tab.
     </Hyperlink>
   )
-)
-  .add("blank", () => (
-    <Hyperlink href="https://google.com" openIn="_blank">
+  )
+  .add('blank', () => (
+    <Hyperlink href='https://google.com' openIn='_blank'>
       Open in new tab.
     </Hyperlink>
   )
-)
-  .add("external", () => (
-    <Hyperlink href="https://google.com" openIn="external">
+  )
+  .add('external', () => (
+    <Hyperlink href='https://google.com' openIn='external'>
       Open in new tab with noopener noreferrer.
     </Hyperlink>
   )
-)
+  )
 ;
 
 storiesOf('Anchor', module)
-  .add("lonely", () => (
-    <Anchor href="#a"/>
+  .add('lonely', () => (
+    <Anchor href='#a' />
   )
-)
-  .add("inside title", () => (
-    <Title level={3}>Hello<Anchor href="#" /></Title>
   )
-)
+  .add('inside title', () => (
+    <Title level={3}>Hello<Anchor href='#' /></Title>
+  )
+  )
 ;
 
 storiesOf('Divider', module)
-  .add("horizontal", () => (
+  .add('horizontal', () => (
     <React.Fragment>
       <Paragraph>Blah blah blah</Paragraph>
       <Divider />
       <Paragraph>Blah blah blah</Paragraph>
     </React.Fragment>
   )
-)
-  .add("vertical", () => (
-      <Paragraph>Blah <Divider vertical /> blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</Paragraph>
+  )
+  .add('vertical', () => (
+    <Paragraph>Blah <Divider vertical /> blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah</Paragraph>
   )
   )
 ;
 
 storiesOf('Calendar', module)
-  .add("default", () => (
-    <Calendar onDateChanged={(e) => console.log(e)}/>
+  .add('default', () => (
+    <Calendar onDateChanged={(e) => console.log(e)} />
   )
-)
-  .add("solid with date", () => (
-    <Calendar fill='solid' date={new Date('01/01/2020')} onDateChanged={(e) => console.log(e)}/>
   )
-)
+  .add('solid with date', () => (
+    <Calendar fill='solid' date={new Date('01/01/2020')} onDateChanged={(e) => console.log(e)} />
+  )
+  )
 ;
 
 storiesOf('Progress', module)
-  .add("default", () => (
+  .add('default', () => (
     <React.Fragment>
       <Progress value={0} max={100} />
       <Progress value={25} max={100} />
@@ -74,63 +74,63 @@ storiesOf('Progress', module)
       <Progress value={100} max={100} />
     </React.Fragment>
   )
-)
-  .add("colors", () => (
+  )
+  .add('colors', () => (
     <React.Fragment>
-      <Progress value={25} max={100} color="primary"/>
-      <Progress value={75} max={100} color="secondary"/>
-      <Progress value={25} max={100} color="success"/>
-      <Progress value={75} max={100} color="warning"/>
-      <Progress value={25} max={100} color="danger"/>
+      <Progress value={25} max={100} color='primary' />
+      <Progress value={75} max={100} color='secondary' />
+      <Progress value={25} max={100} color='success' />
+      <Progress value={75} max={100} color='warning' />
+      <Progress value={25} max={100} color='danger' />
     </React.Fragment>
   )
   )
 ;
 
 storiesOf('Loader', module)
-  .add("colors", () => (
+  .add('colors', () => (
     <React.Fragment>
       <Loader />
-      <Loader color="primary"/>
-      <Loader color="secondary"/>
-      <Loader color="success"/>
-      <Loader color="warning"/>
-      <Loader color="danger" /><br/>
-      <Loader size="large" />
-      <Loader size="large" color="primary" />
-      <Loader size="large" color="secondary" />
-      <Loader size="large" color="success" />
-      <Loader size="large" color="warning" />
-      <Loader size="large" color="danger" />
+      <Loader color='primary' />
+      <Loader color='secondary' />
+      <Loader color='success' />
+      <Loader color='warning' />
+      <Loader color='danger' /><br />
+      <Loader size='large' />
+      <Loader size='large' color='primary' />
+      <Loader size='large' color='secondary' />
+      <Loader size='large' color='success' />
+      <Loader size='large' color='warning' />
+      <Loader size='large' color='danger' />
     </React.Fragment>
   )
   )
 ;
 
 storiesOf('Image', module)
-  .add("default", () => (
-    <Image src="https://images.unsplash.com/photo-1554968756-e41553ee4eb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80" className="margin-ls-50p"/>
+  .add('default', () => (
+    <Image src='https://images.unsplash.com/photo-1554968756-e41553ee4eb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80' className='margin-ls-50p' />
   )
-)
-  .add("as figure", () => (
-    <Image src="https://images.unsplash.com/photo-1554968756-e41553ee4eb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80" className="margin-ls-50p" withCaption alt="Image by Garrick Sangil on Unsplash"/>
   )
-)
+  .add('as figure', () => (
+    <Image src='https://images.unsplash.com/photo-1554968756-e41553ee4eb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=701&q=80' className='margin-ls-50p' withCaption alt='Image by Garrick Sangil on Unsplash' />
+  )
+  )
 ;
 
 storiesOf('Icon', module)
-  .add("x", () => (
-    <Icon name="alert-triangle" width={48} height={48}/>
+  .add('x', () => (
+    <Icon name='alert-triangle' width={48} height={48} />
   )
-)
-  .add("rain", () => (
-    <Icon name="cloud-rain" stroke='blue' fill='cyan' width={60} height={60}/>
   )
-)
+  .add('rain', () => (
+    <Icon name='cloud-rain' stroke='blue' fill='cyan' width={60} height={60} />
+  )
+  )
 ;
 
 storiesOf('Search', module)
-  .add("default", () => (
+  .add('default', () => (
     <React.Fragment>
       <Search placeholder='Search...'>
         <h4>Results</h4>
@@ -139,67 +139,65 @@ storiesOf('Search', module)
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lacus commodo, convallis ex id, commodo quam. In vehicula, metus eu euismod vestibulum, enim massa ultricies massa, nec auctor sem est in velit. Quisque hendrerit ultrices dolor. Sed lacinia eu dolor nec elementum. Suspendisse porttitor pulvinar mi sed vestibulum. Integer sed consectetur ligula. Vivamus sagittis vulputate justo, sit amet consectetur urna tempus nec. Aenean eleifend risus augue, ac consectetur lacus hendrerit vitae. Nam justo tortor, pulvinar at sapien ac, tempor sollicitudin risus. Pellentesque placerat ex sed finibus porta. Aenean sit amet enim nec sapien mollis luctus porttitor ac lorem.</p>
     </React.Fragment>
   )
-)
-  .add("with icon", () => (
+  )
+  .add('with icon', () => (
     <React.Fragment>
-      <Search withIcon placeholder='Search...'>
-        
-      </Search>
+      <Search withIcon placeholder='Search...' />
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lacus commodo, convallis ex id, commodo quam. In vehicula, metus eu euismod vestibulum, enim massa ultricies massa, nec auctor sem est in velit. Quisque hendrerit ultrices dolor. Sed lacinia eu dolor nec elementum. Suspendisse porttitor pulvinar mi sed vestibulum. Integer sed consectetur ligula. Vivamus sagittis vulputate justo, sit amet consectetur urna tempus nec. Aenean eleifend risus augue, ac consectetur lacus hendrerit vitae. Nam justo tortor, pulvinar at sapien ac, tempor sollicitudin risus. Pellentesque placerat ex sed finibus porta. Aenean sit amet enim nec sapien mollis luctus porttitor ac lorem.</p>
     </React.Fragment>
   )
-)
+  )
 ;
 
 storiesOf('Form', module)
-  .add("default", () => (
+  .add('default', () => (
     <Form>
       <FormLegend>A Form</FormLegend>
-      <FormLabel htmlFor="text-in">Text</FormLabel>
-      <TextInput id="text-in" placeholder='Text...' />
+      <FormLabel htmlFor='text-in'>Text</FormLabel>
+      <TextInput id='text-in' placeholder='Text...' />
     </Form>
   )
-)
+  );
 
 storiesOf('Input', module)
-  .add("text", () => (
+  .add('text', () => (
     <React.Fragment>
       <TextInput placeholder='Text...' />
       <TextInput size='small' placeholder='Small' />
       <TextInput size='large' placeholder='Large' />
       <TextInput shape='rounded' placeholder='Rounded' />
-      <TextInput shape='rounded' size='small' placeholder='Small rounded' defaultValue='test'/>
+      <TextInput shape='rounded' size='small' placeholder='Small rounded' defaultValue='test' />
       <TextInput shape='rounded' size='large' placeholder='Large rounded' defaultValue='test' />
       <TextInput value='disabled' disabled />
-      <TextInput value='readonly' readOnly/>
+      <TextInput value='readonly' readOnly />
     </React.Fragment>
   )
-)
-  .add("text multiline", () => (
+  )
+  .add('text multiline', () => (
     <React.Fragment>
-    <TextInput multiline placeholder='Text...' />
-    <TextInput multiline value='disabled' disabled />
-    <TextInput multiline value='readonly' readOnly />
+      <TextInput multiline placeholder='Text...' />
+      <TextInput multiline value='disabled' disabled />
+      <TextInput multiline value='readonly' readOnly />
     </React.Fragment>
   )
-)
-  .add("email", () => (
+  )
+  .add('email', () => (
     <React.Fragment>
-    <EmailInput placeholder='mail@server.com' />
-    <EmailInput value='disabled' disabled />
-    <EmailInput value='readonly' readOnly />
+      <EmailInput placeholder='mail@server.com' />
+      <EmailInput value='disabled' disabled />
+      <EmailInput value='readonly' readOnly />
     </React.Fragment>
   )
-)
-  .add("url", () => (
+  )
+  .add('url', () => (
     <React.Fragment>
-    <UrlInput placeholder='https://example.com' />
-    <UrlInput value='disabled' disabled />
-    <UrlInput value='readonly' readOnly />
+      <UrlInput placeholder='https://example.com' />
+      <UrlInput value='disabled' disabled />
+      <UrlInput value='readonly' readOnly />
     </React.Fragment>
   )
-)
-  .add("password", () => (
+  )
+  .add('password', () => (
     <React.Fragment>
       <PasswordInput placeholder='Password' />
       <PasswordInput withRevealer placeholder='Password' />
@@ -207,17 +205,17 @@ storiesOf('Input', module)
       <PasswordInput readOnly withRevealer placeholder='Password' />
     </React.Fragment>
   )
-)
-  .add("number", () => (
+  )
+  .add('number', () => (
     <React.Fragment>
-      <NumberInput placeholder='0' onChange={(r) => console.log(r)}/>
+      <NumberInput placeholder='0' onChange={(r) => console.log(r)} />
       <NumberInput placeholder='0' step={3} min={0} max={15} />
       <NumberInput disabled placeholder='0' step={3} min={0} max={15} />
-      <NumberInput readOnly placeholder='0' step={3} min={0} max={15}/>
+      <NumberInput readOnly placeholder='0' step={3} min={0} max={15} />
     </React.Fragment>
   )
-)
-  .add("select", () => (
+  )
+  .add('select', () => (
     <React.Fragment>
       <SelectInput placeholder='0' onChange={(r) => console.log(r)}>
         <Option>a</Option>
@@ -236,16 +234,16 @@ storiesOf('Input', module)
       </SelectInput>
     </React.Fragment>
   )
-)
-  .add("select multiple", () => (
+  )
+  .add('select multiple', () => (
     <SelectInput multiple placeholder='0' onChange={(r) => console.log(r)}>
       <Option>a</Option>
       <Option selected>b</Option>
       <Option>c</Option>
     </SelectInput>
   )
-)
-  .add("combobox", () => (
+  )
+  .add('combobox', () => (
     <React.Fragment>
       <ComboboxInput>
         <Option>Chocolate</Option>
@@ -277,24 +275,24 @@ storiesOf('Input', module)
       </ComboboxInput>
     </React.Fragment>
   )
-)
-  .add("credit card", () => (
+  )
+  .add('credit card', () => (
     <React.Fragment>
       <CreditCardInput onChange={e => console.log(e.target)} />
       <CreditCardInput disabled onChange={e => console.log(e.target)} />
-      <CreditCardInput readOnly onChange={e => console.log(e.target)}/>
+      <CreditCardInput readOnly onChange={e => console.log(e.target)} />
     </React.Fragment>
   )
-)
-  .add("phone", () => (
+  )
+  .add('phone', () => (
     <React.Fragment>
-      <PhoneInput placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)}/>
+      <PhoneInput placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)} />
       <PhoneInput disabled placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)} />
-      <PhoneInput readOnly placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)}/>
+      <PhoneInput readOnly placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)} />
     </React.Fragment>
   )
-)
-  .add("currency", () => (
+  )
+  .add('currency', () => (
     <React.Fragment>
       <CurrencyInput placeholder='$' />
       <CurrencyInput currencySign='€' />
@@ -304,7 +302,7 @@ storiesOf('Input', module)
     </React.Fragment>
   )
   )
-  .add("time", () => (
+  .add('time', () => (
     <React.Fragment>
       <TimeInput />
       <TimeInput displayHours={false} />
@@ -315,7 +313,7 @@ storiesOf('Input', module)
     </React.Fragment>
   )
   )
-  .add("date", () => (
+  .add('date', () => (
     <React.Fragment>
       <DateInput placeholder='dd/mm/yyyy' />
       <DateInput monthBeforeDay placeholder='mm/dd/yyyy' />
@@ -326,15 +324,15 @@ storiesOf('Input', module)
     </React.Fragment>
   )
   )
-  .add("color", () => (
+  .add('color', () => (
     <React.Fragment>
       <ColorInput placeholder='#fafafa' onChange={e => console.log(e.target)} />
       <ColorInput disabled placeholder='#fafafa' onChange={e => console.log(e.target)} />
-      <ColorInput readOnly placeholder='#fafafa' onChange={e => console.log(e.target)}/>
+      <ColorInput readOnly placeholder='#fafafa' onChange={e => console.log(e.target)} />
     </React.Fragment>
   )
-)
-  .add("file", () => (
+  )
+  .add('file', () => (
     <React.Fragment>
       <FileInput placeholder='Drop files here' onChange={e => console.log(e.target)} />
       <FileInput multiple placeholder='Drop multiple files here' onFilesChanged={e => console.log(e)} />
@@ -345,127 +343,127 @@ storiesOf('Input', module)
       <FileInput readOnly placeholder='Drop files here' onChange={e => console.log(e.target)} />
     </React.Fragment>
   )
-)
-  .add("rating", () => (
+  )
+  .add('rating', () => (
     <React.Fragment>
       <RatingInput />
       <RatingInput iconStyle='fill' />
-      <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)'/>
-      <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill'/>
-      <RatingInput disabled iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3}/>
-      <RatingInput readOnly iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3}/>
+      <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' />
+      <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' />
+      <RatingInput disabled iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3} />
+      <RatingInput readOnly iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3} />
     </React.Fragment>
   )
-)
-  .add("slider", () => (
+  )
+  .add('slider', () => (
     <React.Fragment>
       <SliderInput />
       <SliderInput range />
-      <SliderInput min={10} max={25}/>
+      <SliderInput min={10} max={25} />
       <SliderInput disabled min={10} max={25} />
-      <SliderInput readOnly min={10} max={25}/>
-      <SliderInput range min={10} max={27}/>
+      <SliderInput readOnly min={10} max={25} />
+      <SliderInput range min={10} max={27} />
       <SliderInput disabled range min={10} max={27} />
-      <SliderInput readOnly range min={10} max={27}/>
+      <SliderInput readOnly range min={10} max={27} />
     </React.Fragment>
   )
-)
+  )
 ;
 
 storiesOf('Tooltip', module)
-  .add("text", () => (
-    <Paragraph className="margin-ls-250p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur facilisis posuere. <Tooltip content="Simple text" position="top">Hello.</Tooltip> Phasellus auctor justo eget dapibus blandit. Praesent at felis non leo suscipit finibus sit amet sit amet nibh. Donec suscipit diam viverra eleifend malesuada. <Tooltip content="Simple text" position="right">Hello.</Tooltip> Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Nulla facilisi. Ut vitae ullamcorper eros. <Tooltip content="Simple text" position="bottom">Hello.</Tooltip> Curabitur eu elit odio. Maecenas ex diam, pellentesque eu facilisis aliquam, aliquet ac eros. Sed mattis pellentesque mauris, non faucibus urna iaculis non. <Tooltip content="Simple text" position="left">Hello.</Tooltip> Nulla vel tellus sed turpis fringilla feugiat.</Paragraph>
+  .add('text', () => (
+    <Paragraph className='margin-ls-250p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur facilisis posuere. <Tooltip content='Simple text' position='top'>Hello.</Tooltip> Phasellus auctor justo eget dapibus blandit. Praesent at felis non leo suscipit finibus sit amet sit amet nibh. Donec suscipit diam viverra eleifend malesuada. <Tooltip content='Simple text' position='right'>Hello.</Tooltip> Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Nulla facilisi. Ut vitae ullamcorper eros. <Tooltip content='Simple text' position='bottom'>Hello.</Tooltip> Curabitur eu elit odio. Maecenas ex diam, pellentesque eu facilisis aliquam, aliquet ac eros. Sed mattis pellentesque mauris, non faucibus urna iaculis non. <Tooltip content='Simple text' position='left'>Hello.</Tooltip> Nulla vel tellus sed turpis fringilla feugiat.</Paragraph>
   )
-)
+  )
 ;
 
 storiesOf('Popover', module)
-  .add("text", () => (
-    <Paragraph className="margin-ls-250p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur facilisis posuere. <Popover content="Simple text" position="top">Hello.</Popover> Phasellus auctor justo eget dapibus blandit. Praesent at felis non leo suscipit finibus sit amet sit amet nibh. Donec suscipit diam viverra eleifend malesuada. <Popover content="Simple text" position="right">Hello.</Popover> Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Nulla facilisi. Ut vitae ullamcorper eros. <Popover content="Simple text" position="bottom">Hello.</Popover> Curabitur eu elit odio. Maecenas ex diam, pellentesque eu facilisis aliquam, aliquet ac eros. Sed mattis pellentesque mauris, non faucibus urna iaculis non. <Popover content="Simple text" position="left">Hello.</Popover> Nulla vel tellus sed turpis fringilla feugiat.</Paragraph>
+  .add('text', () => (
+    <Paragraph className='margin-ls-250p'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent efficitur facilisis posuere. <Popover content='Simple text' position='top'>Hello.</Popover> Phasellus auctor justo eget dapibus blandit. Praesent at felis non leo suscipit finibus sit amet sit amet nibh. Donec suscipit diam viverra eleifend malesuada. <Popover content='Simple text' position='right'>Hello.</Popover> Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Nulla facilisi. Ut vitae ullamcorper eros. <Popover content='Simple text' position='bottom'>Hello.</Popover> Curabitur eu elit odio. Maecenas ex diam, pellentesque eu facilisis aliquam, aliquet ac eros. Sed mattis pellentesque mauris, non faucibus urna iaculis non. <Popover content='Simple text' position='left'>Hello.</Popover> Nulla vel tellus sed turpis fringilla feugiat.</Paragraph>
   )
-)
+  )
 ;
 
 storiesOf('Checkbox', module)
-  .add("default", () => (
+  .add('default', () => (
     <React.Fragment>
-      <Checkbox>Hello</Checkbox><br/>
-      <Checkbox color='primary'>Hello</Checkbox><br/>
-      <Checkbox color='secondary'>Hello</Checkbox><br/>
-      <Checkbox color='danger'>Hello</Checkbox><br/>
-      <Checkbox color='success'>Hello</Checkbox><br/>
+      <Checkbox>Hello</Checkbox><br />
+      <Checkbox color='primary'>Hello</Checkbox><br />
+      <Checkbox color='secondary'>Hello</Checkbox><br />
+      <Checkbox color='danger'>Hello</Checkbox><br />
+      <Checkbox color='success'>Hello</Checkbox><br />
       <Checkbox color='warning'>Hello</Checkbox>
     </React.Fragment>
   )
-)
+  )
 ;
 
 storiesOf('Radio', module)
-  .add("default", () => (
+  .add('default', () => (
     <React.Fragment>
-      <Radio name="radios">Hello</Radio><br />
-      <Radio name="radios" color='primary'>Hello</Radio><br />
-      <Radio name="radios" color='secondary'>Hello</Radio><br />
-      <Radio name="radios" color='danger'>Hello</Radio><br />
-      <Radio name="radios" color='success'>Hello</Radio><br />
-      <Radio name="radios" color='warning'>Hello</Radio>
+      <Radio name='radios'>Hello</Radio><br />
+      <Radio name='radios' color='primary'>Hello</Radio><br />
+      <Radio name='radios' color='secondary'>Hello</Radio><br />
+      <Radio name='radios' color='danger'>Hello</Radio><br />
+      <Radio name='radios' color='success'>Hello</Radio><br />
+      <Radio name='radios' color='warning'>Hello</Radio>
     </React.Fragment>
   )
   )
-  ;
+;
 
 storiesOf('Switch', module)
-  .add("default", () => (
+  .add('default', () => (
     <React.Fragment>
-      <Switch>Hello</Switch><br/>
-      <Switch color='primary'>Hello</Switch><br/>
-      <Switch color='secondary'>Hello</Switch><br/>
-      <Switch color='danger'>Hello</Switch><br/>
-      <Switch color='success'>Hello</Switch><br/>
+      <Switch>Hello</Switch><br />
+      <Switch color='primary'>Hello</Switch><br />
+      <Switch color='secondary'>Hello</Switch><br />
+      <Switch color='danger'>Hello</Switch><br />
+      <Switch color='success'>Hello</Switch><br />
       <Switch color='warning'>Hello</Switch>
     </React.Fragment>
   )
-)
+  )
 ;
 
 storiesOf('Badge', module)
-  .add("default", () => (
+  .add('default', () => (
     <React.Fragment>
-    <Badge>
+      <Badge>
       Badge
-    </Badge>
-    <Paragraph>
+      </Badge>
+      <Paragraph>
         Phasellus auctor justo eget dapibus blandit. Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Praesent at felis non leo suscipit finibus sit amet sit amet nibh. Lorem ipsum dolor sit <Badge>amet</Badge>, consectetur adipiscing elit. Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Nulla vel tellus sed turpis fringilla feugiat.
-    </Paragraph>
+      </Paragraph>
     </React.Fragment>
   )
-)
-  .add("large", () => (
+  )
+  .add('large', () => (
     <Badge size='large'>
       Badge
     </Badge>
   )
-)
-  .add("small", () => (
+  )
+  .add('small', () => (
     <Badge size='small'>
       Badge
     </Badge>
   )
-)
-  .add("rounded", () => (
+  )
+  .add('rounded', () => (
     <Badge shape='rounded'>
       Badge
     </Badge>
   )
-)
-  .add("circle", () => (
+  )
+  .add('circle', () => (
     <Badge shape='circle'>
       3
     </Badge>
   )
   )
 
-  .add("interface", () => (
+  .add('interface', () => (
     <React.Fragment>
       <Badge >Continue</Badge>
       <Badge fill='light'>Continue</Badge>
@@ -474,7 +472,7 @@ storiesOf('Badge', module)
     </React.Fragment>
   )
   )
-  .add("primary", () => (
+  .add('primary', () => (
     <React.Fragment>
       <Badge color='primary' >Continue</Badge>
       <Badge color='primary' fill='light'>Continue</Badge>
@@ -483,7 +481,7 @@ storiesOf('Badge', module)
     </React.Fragment>
   )
   )
-  .add("secondary", () => (
+  .add('secondary', () => (
     <React.Fragment>
       <Badge color='secondary' >Continue</Badge>
       <Badge color='secondary' fill='light'>Continue</Badge>
@@ -492,7 +490,7 @@ storiesOf('Badge', module)
     </React.Fragment>
   )
   )
-  .add("danger", () => (
+  .add('danger', () => (
     <React.Fragment>
       <Badge color='danger' >Continue</Badge>
       <Badge color='danger' fill='light'>Continue</Badge>
@@ -501,7 +499,7 @@ storiesOf('Badge', module)
     </React.Fragment>
   )
   )
-  .add("success", () => (
+  .add('success', () => (
     <React.Fragment>
       <Badge color='success' >Continue</Badge>
       <Badge color='success' fill='light'>Continue</Badge>
@@ -510,7 +508,7 @@ storiesOf('Badge', module)
     </React.Fragment>
   )
   )
-  .add("warning", () => (
+  .add('warning', () => (
     <React.Fragment>
       <Badge color='warning' >Continue</Badge>
       <Badge color='warning' fill='light'>Continue</Badge>
@@ -519,50 +517,49 @@ storiesOf('Badge', module)
     </React.Fragment>
   )
   )
-  .add("primary with icon", () => (
+  .add('primary with icon', () => (
     <React.Fragment>
-      <Badge color='primary' ><Icon name='disc' width={16} height={16}/>Continue</Badge>
-      <Badge color='primary' fill='light'><Icon name='disc' width={16} height={16}/>Continue</Badge>
-      <Badge color='primary' fill='gradient'><Icon name='disc' width={16} height={16}/>Continue</Badge>
-      <Badge color='primary' fill='outline'><Icon name='disc' width={16} height={16}/>Continue</Badge>
+      <Badge color='primary' ><Icon name='disc' width={16} height={16} />Continue</Badge>
+      <Badge color='primary' fill='light'><Icon name='disc' width={16} height={16} />Continue</Badge>
+      <Badge color='primary' fill='gradient'><Icon name='disc' width={16} height={16} />Continue</Badge>
+      <Badge color='primary' fill='outline'><Icon name='disc' width={16} height={16} />Continue</Badge>
     </React.Fragment>
   )
   )
 ;
 
-
 storiesOf('Button', module)
-  .add("normal", () => (
+  .add('normal', () => (
     <Button>
       Continue
     </Button>
   )
-)
-  .add("large", () => (
+  )
+  .add('large', () => (
     <Button size='large'>
       Continue
     </Button>
   )
-)
-  .add("small", () => (
+  )
+  .add('small', () => (
     <Button size='small'>
       Continue
     </Button>
   )
-)
-  .add("rounded", () => (
+  )
+  .add('rounded', () => (
     <Button shape='rounded'>
       Continue
     </Button>
   )
-)
-  .add("uppercase", () => (
+  )
+  .add('uppercase', () => (
     <Button text='uppercase'>
       Continue
     </Button>
   )
-)
-  .add("default", () => (
+  )
+  .add('default', () => (
     <React.Fragment>
       <Button >Continue</Button>
       <Button fill='solid flat'>Continue</Button>
@@ -579,8 +576,8 @@ storiesOf('Button', module)
       <Button fill='ghost' disabled>Continue</Button>
     </React.Fragment>
   )
-)
-  .add("primary", () => (
+  )
+  .add('primary', () => (
     <React.Fragment>
       <Button color='primary' >Continue</Button>
       <Button color='primary' fill='solid flat'>Continue</Button>
@@ -598,8 +595,8 @@ storiesOf('Button', module)
       <Button color='primary' fill='outline' shape='rounded' text='uppercase' size='large'>Continue</Button>
     </React.Fragment>
   )
-)
-  .add("secondary", () => (
+  )
+  .add('secondary', () => (
     <React.Fragment>
       <Button color='secondary' >Continue</Button>
       <Button color='secondary' fill='solid flat'>Continue</Button>
@@ -617,8 +614,8 @@ storiesOf('Button', module)
       <Button color='secondary' fill='outline' shape='rounded' text='uppercase' size='large'>Continue</Button>
     </React.Fragment>
   )
-)
-  .add("danger", () => (
+  )
+  .add('danger', () => (
     <React.Fragment>
       <Button color='danger' >Continue</Button>
       <Button color='danger' fill='solid flat'>Continue</Button>
@@ -636,8 +633,8 @@ storiesOf('Button', module)
       <Button color='danger' fill='outline' shape='rounded' text='uppercase' size='large'>Continue</Button>
     </React.Fragment>
   )
-)
-  .add("success", () => (
+  )
+  .add('success', () => (
     <React.Fragment>
       <Button color='success' >Continue</Button>
       <Button color='success' fill='solid flat'>Continue</Button>
@@ -654,8 +651,8 @@ storiesOf('Button', module)
       <Button color='success' fill='ghost' disabled>Continue</Button>
     </React.Fragment>
   )
-)
-  .add("warning", () => (
+  )
+  .add('warning', () => (
     <React.Fragment>
       <Button color='warning' >Continue</Button>
       <Button color='warning' fill='solid flat'>Continue</Button>
@@ -672,36 +669,36 @@ storiesOf('Button', module)
       <Button color='warning' fill='ghost' disabled>Continue</Button>
     </React.Fragment>
   )
-)
-  .add("link", () => (
+  )
+  .add('link', () => (
     <React.Fragment>
-      <Button type="link" href="https://google.com" >Continue</Button>
-      <Button type="link" href="https://google.com" fill='solid flat'>Continue</Button>
-      <Button type="link" href="https://google.com" fill='light flat'>Continue</Button>
-      <Button type="link" href="https://google.com" fill='gradient flat'>Continue</Button>
-      <Button type="link" href="https://google.com" fill='solid'>Continue</Button>
-      <Button type="link" href="https://google.com" fill='light'>Continue</Button>
-      <Button type="link" href="https://google.com" fill='solid'>Continue</Button>
-      <Button type="link" href="https://google.com" fill='gradient'>Continue</Button>
-      <Button type="link" href="https://google.com" fill='outline'>Continue</Button>
-      <Button type="link" href="https://google.com" fill='ghost'>Continue</Button>
-      <Button type="link" href="https://google.com" disabled>Continue</Button>
-      <Button type="link" href="https://google.com" fill='gradient' disabled>Continue</Button>
-      <Button type="link" href="https://google.com" fill='outline' disabled>Continue</Button>
-      <Button type="link" href="https://google.com" fill='ghost' disabled>Continue</Button>
+      <Button type='link' href='https://google.com' >Continue</Button>
+      <Button type='link' href='https://google.com' fill='solid flat'>Continue</Button>
+      <Button type='link' href='https://google.com' fill='light flat'>Continue</Button>
+      <Button type='link' href='https://google.com' fill='gradient flat'>Continue</Button>
+      <Button type='link' href='https://google.com' fill='solid'>Continue</Button>
+      <Button type='link' href='https://google.com' fill='light'>Continue</Button>
+      <Button type='link' href='https://google.com' fill='solid'>Continue</Button>
+      <Button type='link' href='https://google.com' fill='gradient'>Continue</Button>
+      <Button type='link' href='https://google.com' fill='outline'>Continue</Button>
+      <Button type='link' href='https://google.com' fill='ghost'>Continue</Button>
+      <Button type='link' href='https://google.com' disabled>Continue</Button>
+      <Button type='link' href='https://google.com' fill='gradient' disabled>Continue</Button>
+      <Button type='link' href='https://google.com' fill='outline' disabled>Continue</Button>
+      <Button type='link' href='https://google.com' fill='ghost' disabled>Continue</Button>
     </React.Fragment>
   )
-)
-  .add("default icon", () => (
+  )
+  .add('default icon', () => (
     <React.Fragment>
-      <Button ><Icon name='home'/></Button>
-      <Button fill='solid'><Icon name='home'/></Button>
-      <Button fill='light'><Icon name='home'/></Button>
-      <Button fill='gradient'><Icon name='home'/></Button>
-      <Button ><Icon name='home'/>Continue</Button>
-      <Button fill='solid'><Icon name='home'/>Continue</Button>
-      <Button fill='light'><Icon name='home'/>Continue</Button>
-      <Button fill='gradient'><Icon name='home'/>Continue</Button>
+      <Button ><Icon name='home' /></Button>
+      <Button fill='solid'><Icon name='home' /></Button>
+      <Button fill='light'><Icon name='home' /></Button>
+      <Button fill='gradient'><Icon name='home' /></Button>
+      <Button ><Icon name='home' />Continue</Button>
+      <Button fill='solid'><Icon name='home' />Continue</Button>
+      <Button fill='light'><Icon name='home' />Continue</Button>
+      <Button fill='gradient'><Icon name='home' />Continue</Button>
       <Button fill='outline'><Icon name='home' />Continue</Button>
       <Button fill='ghost'><Icon name='home' />Continue</Button>
       <Button disabled><Icon name='home' />Continue</Button>
@@ -710,8 +707,8 @@ storiesOf('Button', module)
       <Button fill='ghost' disabled><Icon name='home' />Continue</Button>
     </React.Fragment>
   )
-)
-  .add("primary icon", () => (
+  )
+  .add('primary icon', () => (
     <React.Fragment>
       <Button color='primary' ><Icon name='home' /></Button>
       <Button color='primary' fill='solid'><Icon name='home' /></Button>
@@ -735,7 +732,7 @@ storiesOf('Button', module)
 ;
 
 storiesOf('ButtonGroup', module)
-  .add("All types", () => (
+  .add('All types', () => (
     <React.Fragment>
       <ButtonGroup>
         <Button>A</Button>
@@ -743,44 +740,44 @@ storiesOf('ButtonGroup', module)
         <Button>C</Button>
         <Button>D</Button>
       </ButtonGroup>
-      <ButtonGroup color="primary" fill="solid">
+      <ButtonGroup color='primary' fill='solid'>
         <Button>A</Button>
         <Button>B</Button>
         <Button>C</Button>
         <Button>D</Button>
       </ButtonGroup>
-      <ButtonGroup color="secondary" fill="outline">
+      <ButtonGroup color='secondary' fill='outline'>
         <Button>A</Button>
         <Button>B</Button>
         <Button>C</Button>
         <Button>D</Button>
       </ButtonGroup>
-      <ButtonGroup color="secondary" fill="solid" size="small" text="uppercase">
+      <ButtonGroup color='secondary' fill='solid' size='small' text='uppercase'>
         <Button>a</Button>
         <Button>b</Button>
         <Button>c</Button>
         <Button>d</Button>
       </ButtonGroup>
-      <br/>
-      <ButtonGroup color="success" fill="gradient">
+      <br />
+      <ButtonGroup color='success' fill='gradient'>
         <Button>A</Button>
         <Button>B</Button>
         <Button>C</Button>
         <Button>D</Button>
       </ButtonGroup>
-      <ButtonGroup color="danger" fill="solid" size="large">
+      <ButtonGroup color='danger' fill='solid' size='large'>
         <Button>A</Button>
         <Button>B</Button>
         <Button>C</Button>
         <Button>D</Button>
       </ButtonGroup>
-      <ButtonGroup color="warning" fill="solid" shape="rounded">
+      <ButtonGroup color='warning' fill='solid' shape='rounded'>
         <Button>A</Button>
         <Button>B</Button>
         <Button>C</Button>
         <Button>D</Button>
       </ButtonGroup>
-      <ButtonGroup color="success" fill="outline" shape="rounded">
+      <ButtonGroup color='success' fill='outline' shape='rounded'>
         <Button>A</Button>
         <Button>B</Button>
         <Button>C</Button>
@@ -788,39 +785,38 @@ storiesOf('ButtonGroup', module)
       </ButtonGroup>
     </React.Fragment>
   )
-)
+  )
 ;
 
 storiesOf('Dropdown', module)
-  .add("Top header left sidebar", () => (
-    <Layout header="bottom">
-      <Header outline="border-top">
+  .add('Top header left sidebar', () => (
+    <Layout header='bottom'>
+      <Header outline='border-top'>
         <Grid>
           <Row>
-            <Col size={4} className="borderBottom">
-              <span className="title">Page Title</span>
+            <Col size={4} className='borderBottom'>
+              <span className='title'>Page Title</span>
             </Col>
-            <Col size={2} className="borderBottom">
-            </Col>
+            <Col size={2} className='borderBottom' />
             <Col size={6}>
-              <Menu type="horizontal" highlight="top">
+              <Menu type='horizontal' highlight='top'>
                 <MenuItem>Item 1</MenuItem>
-                <MenuItem selected href="#">Item 2</MenuItem>
-                <MenuItem><Dropdown text="DropD" reverse>
+                <MenuItem selected href='#'>Item 2</MenuItem>
+                <MenuItem><Dropdown text='DropD' reverse>
                   <MenuItem>Item 3.1</MenuItem>
                   <MenuItem selected>Item 3.2</MenuItem>
                   <MenuItem>Item 3.3</MenuItem>
-                  </Dropdown></MenuItem>
+                </Dropdown></MenuItem>
                 <MenuItem>Item 4</MenuItem>
               </Menu>
             </Col>
           </Row>
         </Grid>
       </Header>
-      <Sidebar outline="border-right"><Menu type="vertical" highlight="left">
+      <Sidebar outline='border-right'><Menu type='vertical' highlight='left'>
         <MenuItem selected>Item 1</MenuItem>
         <MenuItem>Item 2</MenuItem>
-        <MenuItem><Dropdown text="DropD">
+        <MenuItem><Dropdown text='DropD'>
           <MenuItem>Item 3.1</MenuItem>
           <MenuItem selected>Item 3.2</MenuItem>
           <MenuItem>Item 3.3</MenuItem>
@@ -828,19 +824,19 @@ storiesOf('Dropdown', module)
         <MenuItem>Item 4</MenuItem>
       </Menu></Sidebar>
       <Content><p>Lorem ipsum dolor sit amet...</p><Button><Dropdown text="Don't do it">
-        <Hyperlink href="#">Item 3.1</Hyperlink>
-        <Hyperlink href="#">Item 3.2</Hyperlink>
-        <Hyperlink href="#">Item 3.3</Hyperlink>
-      </Dropdown></Button><br /><Dropdown text="DropD">
-          <Hyperlink href="#">Item 3.1</Hyperlink>
-          <Hyperlink href="#">Item 3.2</Hyperlink>
-          <Hyperlink href="#">Item 3.3</Hyperlink>
-        </Dropdown><br /><Dropdown text="DropD" reverse>
-          <Hyperlink href="#">Item 3.1</Hyperlink>
-          <Hyperlink href="#">Item 3.2</Hyperlink>
-          <Hyperlink href="#">Item 3.3</Hyperlink>
-        </Dropdown>
-        </Content>
+        <Hyperlink href='#'>Item 3.1</Hyperlink>
+        <Hyperlink href='#'>Item 3.2</Hyperlink>
+        <Hyperlink href='#'>Item 3.3</Hyperlink>
+      </Dropdown></Button><br /><Dropdown text='DropD'>
+        <Hyperlink href='#'>Item 3.1</Hyperlink>
+        <Hyperlink href='#'>Item 3.2</Hyperlink>
+        <Hyperlink href='#'>Item 3.3</Hyperlink>
+      </Dropdown><br /><Dropdown text='DropD' reverse>
+        <Hyperlink href='#'>Item 3.1</Hyperlink>
+        <Hyperlink href='#'>Item 3.2</Hyperlink>
+        <Hyperlink href='#'>Item 3.3</Hyperlink>
+      </Dropdown>
+      </Content>
       <Button>Invalid content</Button>
     </Layout>
   )
@@ -848,131 +844,130 @@ storiesOf('Dropdown', module)
 ;
 
 storiesOf('Collapse', module)
-  .add("default", () => (
+  .add('default', () => (
     <Collapse title="Don't do it">
-      <Hyperlink href="#">Item 3.1</Hyperlink>
-      <Hyperlink href="#">Item 3.2</Hyperlink>
-      <Hyperlink href="#">Item 3.3</Hyperlink>
+      <Hyperlink href='#'>Item 3.1</Hyperlink>
+      <Hyperlink href='#'>Item 3.2</Hyperlink>
+      <Hyperlink href='#'>Item 3.3</Hyperlink>
     </Collapse>
   )
-)
-  .add("flat", () => (
+  )
+  .add('flat', () => (
     <Collapse fill='flat' title="Don't do it">
-      <Hyperlink href="#">Item 3.1</Hyperlink>
-      <Hyperlink href="#">Item 3.2</Hyperlink>
-      <Hyperlink href="#">Item 3.3</Hyperlink>
+      <Hyperlink href='#'>Item 3.1</Hyperlink>
+      <Hyperlink href='#'>Item 3.2</Hyperlink>
+      <Hyperlink href='#'>Item 3.3</Hyperlink>
     </Collapse>
   )
-)
+  )
 ;
 
 storiesOf('Accordion', module)
-  .add("default", () => (
+  .add('default', () => (
     <React.Fragment>
-    <Accordion>
-      <Collapse title="Don't do it">
-        <Hyperlink href="#">Item 3.1</Hyperlink>
-        <Hyperlink href="#">Item 3.2</Hyperlink>
-        <Hyperlink href="#">Item 3.3</Hyperlink>
-      </Collapse>
-      <Collapse title="Don't do it">
-        <Hyperlink href="#">Item 3.1</Hyperlink>
-        <Hyperlink href="#">Item 3.2</Hyperlink>
-        <Hyperlink href="#">Item 3.3</Hyperlink>
-      </Collapse>
-    </Accordion>
-    <br/>
-    <Accordion fill='flat'>
-      <Collapse title="Don't do it">
-        <Hyperlink href="#">Item 3.1</Hyperlink>
-        <Hyperlink href="#">Item 3.2</Hyperlink>
-        <Hyperlink href="#">Item 3.3</Hyperlink>
-      </Collapse>
-      <Collapse title="Don't do it">
-        <Hyperlink href="#">Item 3.1</Hyperlink>
-        <Hyperlink href="#">Item 3.2</Hyperlink>
-        <Hyperlink href="#">Item 3.3</Hyperlink>
-      </Collapse>
-    </Accordion>
+      <Accordion>
+        <Collapse title="Don't do it">
+          <Hyperlink href='#'>Item 3.1</Hyperlink>
+          <Hyperlink href='#'>Item 3.2</Hyperlink>
+          <Hyperlink href='#'>Item 3.3</Hyperlink>
+        </Collapse>
+        <Collapse title="Don't do it">
+          <Hyperlink href='#'>Item 3.1</Hyperlink>
+          <Hyperlink href='#'>Item 3.2</Hyperlink>
+          <Hyperlink href='#'>Item 3.3</Hyperlink>
+        </Collapse>
+      </Accordion>
+      <br />
+      <Accordion fill='flat'>
+        <Collapse title="Don't do it">
+          <Hyperlink href='#'>Item 3.1</Hyperlink>
+          <Hyperlink href='#'>Item 3.2</Hyperlink>
+          <Hyperlink href='#'>Item 3.3</Hyperlink>
+        </Collapse>
+        <Collapse title="Don't do it">
+          <Hyperlink href='#'>Item 3.1</Hyperlink>
+          <Hyperlink href='#'>Item 3.2</Hyperlink>
+          <Hyperlink href='#'>Item 3.3</Hyperlink>
+        </Collapse>
+      </Accordion>
     </React.Fragment>
   )
-)
+  )
 ;
 
-
 storiesOf('Grid', module)
-  .add("Normal columns", () => (
+  .add('Normal columns', () => (
     <React.Fragment>
       <style>{`.box-colored {background: #0277bd;border-radius: 0.125rem;padding: 0.875rem;margin: 0.1rem;margin-bottom: 0.5rem;
 min-height: 0.875rem;color: #f8f8f8;}`}</style>
-    <Grid>
-      <Row>
-        <Col><div className="box-colored">fluid</div></Col>
-      </Row>
-      <Row>
-        <Col><div className="box-colored">fluid</div></Col>
-        <Col><div className="box-colored">fluid</div></Col>
-      </Row>
-      <Row>
-        <Col size={1}><div className="box-colored">1</div></Col>
-        <Col size={11}><div className="box-colored">11</div></Col>
-      </Row>
-      <Row>
-        <Col size={2}><div className="box-colored">2</div></Col>
-        <Col size={10}><div className="box-colored">10</div></Col>
-      </Row>
-      <Row>
-        <Col size={3}><div className="box-colored">3</div></Col>
-        <Col size={9}><div className="box-colored">9</div></Col>
-      </Row>
-      <Row>
-        <Col size={4}><div className="box-colored">4</div></Col>
-        <Col size={8}><div className="box-colored">8</div></Col>
-      </Row>
-      <Row>
-        <Col size={5}><div className="box-colored">5</div></Col>
-        <Col size={7}><div className="box-colored">7</div></Col>
-      </Row>
-      <Row>
-        <Col size={6}><div className="box-colored">6</div></Col>
-        <Col size={6}><div className="box-colored">6</div></Col>
-      </Row>
-    </Grid>
+      <Grid>
+        <Row>
+          <Col><div className='box-colored'>fluid</div></Col>
+        </Row>
+        <Row>
+          <Col><div className='box-colored'>fluid</div></Col>
+          <Col><div className='box-colored'>fluid</div></Col>
+        </Row>
+        <Row>
+          <Col size={1}><div className='box-colored'>1</div></Col>
+          <Col size={11}><div className='box-colored'>11</div></Col>
+        </Row>
+        <Row>
+          <Col size={2}><div className='box-colored'>2</div></Col>
+          <Col size={10}><div className='box-colored'>10</div></Col>
+        </Row>
+        <Row>
+          <Col size={3}><div className='box-colored'>3</div></Col>
+          <Col size={9}><div className='box-colored'>9</div></Col>
+        </Row>
+        <Row>
+          <Col size={4}><div className='box-colored'>4</div></Col>
+          <Col size={8}><div className='box-colored'>8</div></Col>
+        </Row>
+        <Row>
+          <Col size={5}><div className='box-colored'>5</div></Col>
+          <Col size={7}><div className='box-colored'>7</div></Col>
+        </Row>
+        <Row>
+          <Col size={6}><div className='box-colored'>6</div></Col>
+          <Col size={6}><div className='box-colored'>6</div></Col>
+        </Row>
+      </Grid>
     </React.Fragment>
   )
-)
-.add("Custom-size columns", () => (
+  )
+  .add('Custom-size columns', () => (
     <React.Fragment>
       <style>{`.box-colored {background: #0277bd;border-radius: 0.125rem;padding: 0.875rem;margin: 0.1rem;margin-bottom: 0.5rem;
 min-height: 0.875rem;color: #f8f8f8;}`}</style>
-    <Grid>
-      <Row>
-        <Col size={0.23}><div className="box-colored">23%</div></Col>
-        <Col size={0.28}><div className="box-colored">28%</div></Col>
-        <Col size={0.49}><div className="box-colored">49%</div></Col>
-      </Row>
-    </Grid>
+      <Grid>
+        <Row>
+          <Col size={0.23}><div className='box-colored'>23%</div></Col>
+          <Col size={0.28}><div className='box-colored'>28%</div></Col>
+          <Col size={0.49}><div className='box-colored'>49%</div></Col>
+        </Row>
+      </Grid>
     </React.Fragment>
   )
-)
-.add("Responsive columns", () => (
+  )
+  .add('Responsive columns', () => (
     <React.Fragment>
       <style>{`.box-colored {background: #0277bd;border-radius: 0.125rem;padding: 0.875rem;margin: 0.1rem;margin-bottom: 0.5rem;
 min-height: 0.875rem;color: #f8f8f8;}`}</style>
-    <Grid>
-      <Row>
-        <Col size={[0.23, 6, 12, 12]}><div className="box-colored">23%</div></Col>
-        <Col size={[0.28, 6, 4, 8]}><div className="box-colored">28%</div></Col>
-        <Col size={['fluid', 12, 8, 4]}><div className="box-colored">49%</div></Col>
-      </Row>
-    </Grid>
+      <Grid>
+        <Row>
+          <Col size={[0.23, 6, 12, 12]}><div className='box-colored'>23%</div></Col>
+          <Col size={[0.28, 6, 4, 8]}><div className='box-colored'>28%</div></Col>
+          <Col size={['fluid', 12, 8, 4]}><div className='box-colored'>49%</div></Col>
+        </Row>
+      </Grid>
     </React.Fragment>
   )
-)
+  )
 ;
 
 storiesOf('Layout', module)
-  .add("Top header left sidebar", () => (
+  .add('Top header left sidebar', () => (
     <Layout>
       <Header>Header</Header>
       <Sidebar>Sidebar</Sidebar>
@@ -980,8 +975,8 @@ storiesOf('Layout', module)
       <Button>Invalid content</Button>
     </Layout>
   )
-)
-  .add("Top header right sidebar", () => (
+  )
+  .add('Top header right sidebar', () => (
     <Layout sidebar='right'>
       <Header>Header</Header>
       <Sidebar>Sidebar</Sidebar>
@@ -989,16 +984,16 @@ storiesOf('Layout', module)
       <Button>Invalid content</Button>
     </Layout>
   )
-)
-  .add("Top header no sidebar", () => (
+  )
+  .add('Top header no sidebar', () => (
     <Layout sidebar='none'>
       <Header>Header</Header>
       <Content>Content</Content>
       <Button>Invalid content</Button>
     </Layout>
   )
-)
-  .add("Bottom header left sidebar", () => (
+  )
+  .add('Bottom header left sidebar', () => (
     <Layout header='bottom'>
       <Header>Header</Header>
       <Sidebar>Sidebar</Sidebar>
@@ -1006,8 +1001,8 @@ storiesOf('Layout', module)
       <Button>Invalid content</Button>
     </Layout>
   )
-)
-  .add("Bottom header right sidebar", () => (
+  )
+  .add('Bottom header right sidebar', () => (
     <Layout header='bottom' sidebar='right'>
       <Header>Header</Header>
       <Sidebar>Sidebar</Sidebar>
@@ -1015,40 +1010,40 @@ storiesOf('Layout', module)
       <Button>Invalid content</Button>
     </Layout>
   )
-)
-  .add("Bottom header no sidebar", () => (
+  )
+  .add('Bottom header no sidebar', () => (
     <Layout header='bottom' sidebar='none'>
       <Header>Header</Header>
       <Content>Content</Content>
       <Button>Invalid content</Button>
     </Layout>
   )
-)
-  .add("No header left sidebar", () => (
+  )
+  .add('No header left sidebar', () => (
     <Layout header='none'>
       <Sidebar>Sidebar</Sidebar>
       <Content>Content</Content>
       <Button>Invalid content</Button>
     </Layout>
   )
-)
-  .add("No header right sidebar", () => (
+  )
+  .add('No header right sidebar', () => (
     <Layout header='none' sidebar='right'>
       <Sidebar>Sidebar</Sidebar>
       <Content>Content</Content>
       <Button>Invalid content</Button>
     </Layout>
   )
-)
-  .add("Content only", () => (
+  )
+  .add('Content only', () => (
     <Layout header='none' sidebar='none'>
       <Content>Content</Content>
       <Button>Invalid content</Button>
     </Layout>
   )
-)
-  .add("Responsive", () => (
-    <Layout header={['none', 'bottom', 'top', 'top']} sidebar={['none','left','right','right']}>
+  )
+  .add('Responsive', () => (
+    <Layout header={['none', 'bottom', 'top', 'top']} sidebar={['none', 'left', 'right', 'right']}>
       <Header>Header</Header>
       <Sidebar>Sidebar</Sidebar>
       <Content>Content</Content>
@@ -1059,107 +1054,107 @@ storiesOf('Layout', module)
 ;
 
 storiesOf('List', module)
-  .add("unordered", () => (
+  .add('unordered', () => (
     <React.Fragment>
       <List>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List listStyle="circle">
+      <List listStyle='circle'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List listStyle="disc">
+      <List listStyle='disc'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List listStyle="square">
+      <List listStyle='square'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List listStyle="triangle">
+      <List listStyle='triangle'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List listStyle="checkmark">
+      <List listStyle='checkmark'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List listStyle="xmark">
+      <List listStyle='xmark'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
     </React.Fragment>
   )
-)
-  .add("ordered", () => (
+  )
+  .add('ordered', () => (
     <React.Fragment>
       <List ordered>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List ordered listStyle="decimal">
+      <List ordered listStyle='decimal'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List ordered listStyle="decimal-leading-zero">
+      <List ordered listStyle='decimal-leading-zero'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List ordered listStyle="lower-latin">
+      <List ordered listStyle='lower-latin'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List ordered listStyle="lower-roman">
+      <List ordered listStyle='lower-roman'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List ordered listStyle="upper-latin">
+      <List ordered listStyle='upper-latin'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-      <List ordered listStyle="upper-roman">
+      <List ordered listStyle='upper-roman'>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
     </React.Fragment>
   )
-)
+  )
 ;
 
 storiesOf('Tab', module)
-  .add("default", () => (
+  .add('default', () => (
     <Tab openIndex={2}>
-      <TabItem title="Lorem Ipsum"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel nisi ultricies, convallis enim iaculis, commodo nisi. Suspendisse commodo arcu nibh, ut pretium felis imperdiet ac. Etiam nec volutpat arcu. Aliquam et congue magna, aliquam luctus quam. Ut vulputate lorem risus, non feugiat magna maximus non. Sed tellus nisl, fermentum id finibus gravida, molestie vel lectus. Cras quam mi, sodales sed scelerisque eget, dignissim et nisi. Suspendisse sodales faucibus tellus ut iaculis.</p></TabItem>
-      <TabItem title="Dolor Sit Amet"><p>Etiam eros ex, imperdiet non pharetra vel, accumsan ut erat. Phasellus nisl enim, cursus aliquet faucibus a, dignissim vestibulum leo. Aenean ullamcorper sem mauris, in pharetra quam rhoncus at. Phasellus posuere velit commodo venenatis tempus. Quisque vulputate nisi sem, ut maximus elit malesuada a. Duis vitae lectus vel mi pretium luctus non non lacus. Sed vitae est nec sem dictum accumsan quis eleifend tellus. Sed at dignissim velit. Pellentesque nec erat sed massa condimentum semper id id eros. Sed eleifend ex sit amet eros molestie fermentum. Pellentesque quis purus mi.</p></TabItem>
-      <TabItem title="Peprendur"><p>Etiam rutrum lobortis porta. Vivamus justo diam, condimentum ut facilisis vitae, imperdiet ac lacus. Curabitur rutrum ex arcu, et lobortis augue gravida id. Mauris eu neque erat. Ut leo arcu, molestie sed pulvinar efficitur, facilisis id nisl. Etiam luctus ut nibh et eleifend. Cras lorem enim, posuere id vehicula vitae, iaculis at ante. Integer id ligula eu risus tristique commodo. Mauris tincidunt convallis erat ac faucibus. Fusce vehicula malesuada dui at fringilla. Phasellus efficitur, est vel tincidunt faucibus, arcu libero dignissim elit, non varius est ante nec urna. Sed in metus fermentum libero sodales vulputate. Nunc vel placerat ante. Mauris nec efficitur ante, eget ultricies magna. Morbi elementum interdum nunc ut suscipit. Donec in orci vel lectus mattis finibus sit amet in metus.</p></TabItem>
-      <TabItem title="Nulla sit etiam"><p>Nam sit amet convallis justo. Etiam tristique diam sem, at feugiat felis mattis vitae. Morbi ullamcorper, urna non fermentum mollis, purus lacus eleifend elit, eget sagittis mi arcu et arcu. Integer nec augue aliquet risus viverra ullamcorper. Integer dapibus nunc ut vestibulum accumsan. Aliquam luctus in erat id placerat. Proin eleifend cursus nulla, non rutrum libero efficitur eget. Nam nec purus finibus, cursus augue ac, maximus elit. Aenean at est in turpis lacinia lacinia. Mauris lectus lorem, luctus ac pharetra at, blandit a lectus. Pellentesque vel ex tristique, pulvinar risus sed, elementum lacus. Curabitur sed imperdiet augue, ut malesuada augue.</p></TabItem>
+      <TabItem title='Lorem Ipsum'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel nisi ultricies, convallis enim iaculis, commodo nisi. Suspendisse commodo arcu nibh, ut pretium felis imperdiet ac. Etiam nec volutpat arcu. Aliquam et congue magna, aliquam luctus quam. Ut vulputate lorem risus, non feugiat magna maximus non. Sed tellus nisl, fermentum id finibus gravida, molestie vel lectus. Cras quam mi, sodales sed scelerisque eget, dignissim et nisi. Suspendisse sodales faucibus tellus ut iaculis.</p></TabItem>
+      <TabItem title='Dolor Sit Amet'><p>Etiam eros ex, imperdiet non pharetra vel, accumsan ut erat. Phasellus nisl enim, cursus aliquet faucibus a, dignissim vestibulum leo. Aenean ullamcorper sem mauris, in pharetra quam rhoncus at. Phasellus posuere velit commodo venenatis tempus. Quisque vulputate nisi sem, ut maximus elit malesuada a. Duis vitae lectus vel mi pretium luctus non non lacus. Sed vitae est nec sem dictum accumsan quis eleifend tellus. Sed at dignissim velit. Pellentesque nec erat sed massa condimentum semper id id eros. Sed eleifend ex sit amet eros molestie fermentum. Pellentesque quis purus mi.</p></TabItem>
+      <TabItem title='Peprendur'><p>Etiam rutrum lobortis porta. Vivamus justo diam, condimentum ut facilisis vitae, imperdiet ac lacus. Curabitur rutrum ex arcu, et lobortis augue gravida id. Mauris eu neque erat. Ut leo arcu, molestie sed pulvinar efficitur, facilisis id nisl. Etiam luctus ut nibh et eleifend. Cras lorem enim, posuere id vehicula vitae, iaculis at ante. Integer id ligula eu risus tristique commodo. Mauris tincidunt convallis erat ac faucibus. Fusce vehicula malesuada dui at fringilla. Phasellus efficitur, est vel tincidunt faucibus, arcu libero dignissim elit, non varius est ante nec urna. Sed in metus fermentum libero sodales vulputate. Nunc vel placerat ante. Mauris nec efficitur ante, eget ultricies magna. Morbi elementum interdum nunc ut suscipit. Donec in orci vel lectus mattis finibus sit amet in metus.</p></TabItem>
+      <TabItem title='Nulla sit etiam'><p>Nam sit amet convallis justo. Etiam tristique diam sem, at feugiat felis mattis vitae. Morbi ullamcorper, urna non fermentum mollis, purus lacus eleifend elit, eget sagittis mi arcu et arcu. Integer nec augue aliquet risus viverra ullamcorper. Integer dapibus nunc ut vestibulum accumsan. Aliquam luctus in erat id placerat. Proin eleifend cursus nulla, non rutrum libero efficitur eget. Nam nec purus finibus, cursus augue ac, maximus elit. Aenean at est in turpis lacinia lacinia. Mauris lectus lorem, luctus ac pharetra at, blandit a lectus. Pellentesque vel ex tristique, pulvinar risus sed, elementum lacus. Curabitur sed imperdiet augue, ut malesuada augue.</p></TabItem>
     </Tab>
   )
-)
-.add("button group", () => (
+  )
+  .add('button group', () => (
     <Tab openIndex={1} controlStyle='button-group'>
-      <TabItem title="Lorem Ipsum"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel nisi ultricies, convallis enim iaculis, commodo nisi. Suspendisse commodo arcu nibh, ut pretium felis imperdiet ac. Etiam nec volutpat arcu. Aliquam et congue magna, aliquam luctus quam. Ut vulputate lorem risus, non feugiat magna maximus non. Sed tellus nisl, fermentum id finibus gravida, molestie vel lectus. Cras quam mi, sodales sed scelerisque eget, dignissim et nisi. Suspendisse sodales faucibus tellus ut iaculis.</p></TabItem>
-      <TabItem title="Dolor Sit Amet"><p>Etiam eros ex, imperdiet non pharetra vel, accumsan ut erat. Phasellus nisl enim, cursus aliquet faucibus a, dignissim vestibulum leo. Aenean ullamcorper sem mauris, in pharetra quam rhoncus at. Phasellus posuere velit commodo venenatis tempus. Quisque vulputate nisi sem, ut maximus elit malesuada a. Duis vitae lectus vel mi pretium luctus non non lacus. Sed vitae est nec sem dictum accumsan quis eleifend tellus. Sed at dignissim velit. Pellentesque nec erat sed massa condimentum semper id id eros. Sed eleifend ex sit amet eros molestie fermentum. Pellentesque quis purus mi.</p></TabItem>
-      <TabItem title="Peprendur"><p>Etiam rutrum lobortis porta. Vivamus justo diam, condimentum ut facilisis vitae, imperdiet ac lacus. Curabitur rutrum ex arcu, et lobortis augue gravida id. Mauris eu neque erat. Ut leo arcu, molestie sed pulvinar efficitur, facilisis id nisl. Etiam luctus ut nibh et eleifend. Cras lorem enim, posuere id vehicula vitae, iaculis at ante. Integer id ligula eu risus tristique commodo. Mauris tincidunt convallis erat ac faucibus. Fusce vehicula malesuada dui at fringilla. Phasellus efficitur, est vel tincidunt faucibus, arcu libero dignissim elit, non varius est ante nec urna. Sed in metus fermentum libero sodales vulputate. Nunc vel placerat ante. Mauris nec efficitur ante, eget ultricies magna. Morbi elementum interdum nunc ut suscipit. Donec in orci vel lectus mattis finibus sit amet in metus.</p></TabItem>
-      <TabItem title="Nulla sit etiam"><p>Nam sit amet convallis justo. Etiam tristique diam sem, at feugiat felis mattis vitae. Morbi ullamcorper, urna non fermentum mollis, purus lacus eleifend elit, eget sagittis mi arcu et arcu. Integer nec augue aliquet risus viverra ullamcorper. Integer dapibus nunc ut vestibulum accumsan. Aliquam luctus in erat id placerat. Proin eleifend cursus nulla, non rutrum libero efficitur eget. Nam nec purus finibus, cursus augue ac, maximus elit. Aenean at est in turpis lacinia lacinia. Mauris lectus lorem, luctus ac pharetra at, blandit a lectus. Pellentesque vel ex tristique, pulvinar risus sed, elementum lacus. Curabitur sed imperdiet augue, ut malesuada augue.</p></TabItem>
+      <TabItem title='Lorem Ipsum'><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel nisi ultricies, convallis enim iaculis, commodo nisi. Suspendisse commodo arcu nibh, ut pretium felis imperdiet ac. Etiam nec volutpat arcu. Aliquam et congue magna, aliquam luctus quam. Ut vulputate lorem risus, non feugiat magna maximus non. Sed tellus nisl, fermentum id finibus gravida, molestie vel lectus. Cras quam mi, sodales sed scelerisque eget, dignissim et nisi. Suspendisse sodales faucibus tellus ut iaculis.</p></TabItem>
+      <TabItem title='Dolor Sit Amet'><p>Etiam eros ex, imperdiet non pharetra vel, accumsan ut erat. Phasellus nisl enim, cursus aliquet faucibus a, dignissim vestibulum leo. Aenean ullamcorper sem mauris, in pharetra quam rhoncus at. Phasellus posuere velit commodo venenatis tempus. Quisque vulputate nisi sem, ut maximus elit malesuada a. Duis vitae lectus vel mi pretium luctus non non lacus. Sed vitae est nec sem dictum accumsan quis eleifend tellus. Sed at dignissim velit. Pellentesque nec erat sed massa condimentum semper id id eros. Sed eleifend ex sit amet eros molestie fermentum. Pellentesque quis purus mi.</p></TabItem>
+      <TabItem title='Peprendur'><p>Etiam rutrum lobortis porta. Vivamus justo diam, condimentum ut facilisis vitae, imperdiet ac lacus. Curabitur rutrum ex arcu, et lobortis augue gravida id. Mauris eu neque erat. Ut leo arcu, molestie sed pulvinar efficitur, facilisis id nisl. Etiam luctus ut nibh et eleifend. Cras lorem enim, posuere id vehicula vitae, iaculis at ante. Integer id ligula eu risus tristique commodo. Mauris tincidunt convallis erat ac faucibus. Fusce vehicula malesuada dui at fringilla. Phasellus efficitur, est vel tincidunt faucibus, arcu libero dignissim elit, non varius est ante nec urna. Sed in metus fermentum libero sodales vulputate. Nunc vel placerat ante. Mauris nec efficitur ante, eget ultricies magna. Morbi elementum interdum nunc ut suscipit. Donec in orci vel lectus mattis finibus sit amet in metus.</p></TabItem>
+      <TabItem title='Nulla sit etiam'><p>Nam sit amet convallis justo. Etiam tristique diam sem, at feugiat felis mattis vitae. Morbi ullamcorper, urna non fermentum mollis, purus lacus eleifend elit, eget sagittis mi arcu et arcu. Integer nec augue aliquet risus viverra ullamcorper. Integer dapibus nunc ut vestibulum accumsan. Aliquam luctus in erat id placerat. Proin eleifend cursus nulla, non rutrum libero efficitur eget. Nam nec purus finibus, cursus augue ac, maximus elit. Aenean at est in turpis lacinia lacinia. Mauris lectus lorem, luctus ac pharetra at, blandit a lectus. Pellentesque vel ex tristique, pulvinar risus sed, elementum lacus. Curabitur sed imperdiet augue, ut malesuada augue.</p></TabItem>
     </Tab>
   )
-)
+  )
 ;
 
 storiesOf('Breadcrumb', module)
-  .add("default", () => (
+  .add('default', () => (
     <Breadcrumb>
-      <BreadcrumbItem><a href="#">Lorem Ipsum</a></BreadcrumbItem>
+      <BreadcrumbItem><a href='#'>Lorem Ipsum</a></BreadcrumbItem>
       <BreadcrumbItem>Dolor sit amet</BreadcrumbItem>
     </Breadcrumb>
   )
-)
+  )
 ;
 
 storiesOf('Step', module)
-  .add("default", () => (
+  .add('default', () => (
     <React.Fragment>
       <Step>
         <StepItem>Lorem Ipsum</StepItem>
@@ -1187,13 +1182,13 @@ storiesOf('Step', module)
       </Step>
     </React.Fragment>
   )
-)
+  )
 ;
 
 storiesOf('Table', module)
-  .add("default", () => (
+  .add('default', () => (
     <Table>
-    <TableCaption>Table of People</TableCaption>
+      <TableCaption>Table of People</TableCaption>
       <TableHead>
         <TableRow>
           <TableCell heading>Name</TableCell>
@@ -1230,10 +1225,10 @@ storiesOf('Table', module)
       </TableBody>
     </Table>
   )
-)
-  .add("bordered", () => (
+  )
+  .add('bordered', () => (
     <Table tableStyle='bordered'>
-    <TableCaption>Table of People</TableCaption>
+      <TableCaption>Table of People</TableCaption>
       <TableHead>
         <TableRow>
           <TableCell heading>Name</TableCell>
@@ -1270,10 +1265,10 @@ storiesOf('Table', module)
       </TableBody>
     </Table>
   )
-)
-  .add("striped", () => (
+  )
+  .add('striped', () => (
     <Table tableStyle='striped'>
-    <TableCaption>Table of People</TableCaption>
+      <TableCaption>Table of People</TableCaption>
       <TableHead>
         <TableRow>
           <TableCell heading>Name</TableCell>
@@ -1310,10 +1305,10 @@ storiesOf('Table', module)
       </TableBody>
     </Table>
   )
-)
-.add("horizontal", () => (
+  )
+  .add('horizontal', () => (
     <Table>
-    <TableCaption>Table of People</TableCaption>
+      <TableCaption>Table of People</TableCaption>
       <TableBody>
         <TableRow>
           <TableCell heading>Name</TableCell>
@@ -1342,10 +1337,10 @@ storiesOf('Table', module)
       </TableBody>
     </Table>
   )
-)
-.add("grouping column", () => (
+  )
+  .add('grouping column', () => (
     <Table>
-    <TableCaption>Table of People</TableCaption>
+      <TableCaption>Table of People</TableCaption>
       <TableHead>
         <TableRow>
           <TableCell heading>#</TableCell>
@@ -1388,11 +1383,11 @@ storiesOf('Table', module)
       </TableBody>
     </Table>
   )
-)
+  )
 ;
 
 storiesOf('Modal', module)
-  .add("open", () => {
+  .add('open', () => {
     const modalCenterRef = React.createRef();
     return (
       <ModalCenter isOpen ref={modalCenterRef}>
@@ -1407,13 +1402,13 @@ storiesOf('Modal', module)
           <Button onClick={() => modalCenterRef.current.hide()}>Close</Button>
         </Modal>
       </ModalCenter>
-  );
+    );
   }
-)
+  )
 ;
 
 storiesOf('Card', module)
-  .add("with text", () => (
+  .add('with text', () => (
     <Card width={320}>
       <CardSection>
         <h5>Hello world<small>Lorem ipsum</small></h5>
@@ -1424,52 +1419,52 @@ storiesOf('Card', module)
       </CardSection>
     </Card>
   )
-)
-  .add("with media", () => (
+  )
+  .add('with media', () => (
     <Card width={320}>
       <CardSection>
         <h5>Hello world<small>Lorem ipsum</small></h5>
       </CardSection>
-      <CardSection media="https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80" height={200}/>
+      <CardSection media='https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80' height={200} />
       <CardSection>
         <p>This is some demo content that I want to test the Card with.</p>
       </CardSection>
     </Card>
   )
-)
-  .add("with grid", () => (
+  )
+  .add('with grid', () => (
     <Grid justify='center' align='center'><Row><Col size={[12, 6, 5, 4]}>
-    <Card width={320}>
-      <CardSection media="https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80" height={200} />
-      <CardSection>
-        <Grid justify={"between"}>
-          <Row>
-            <Col size={8}><h5>Hello world<small>Lorem ipsum</small></h5></Col>
-            <Col size={3}><Button fill="ghost" size="small">Next</Button></Col>
-          </Row>
-        </Grid>
-      </CardSection>
-      <CardSection>
-        <p>This is some demo content that I want to test the Card with.</p>
-      </CardSection>
-    </Card>
+      <Card width={320}>
+        <CardSection media='https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80' height={200} />
+        <CardSection>
+          <Grid justify={'between'}>
+            <Row>
+              <Col size={8}><h5>Hello world<small>Lorem ipsum</small></h5></Col>
+              <Col size={3}><Button fill='ghost' size='small'>Next</Button></Col>
+            </Row>
+          </Grid>
+        </CardSection>
+        <CardSection>
+          <p>This is some demo content that I want to test the Card with.</p>
+        </CardSection>
+      </Card>
     </Col><Col size={[12, 6, 5, 4]}>
-    <Card width={320}>
-      <CardSection className = 'padding-ls-0p'>
-        <Grid align="stretch">
-          <Row>
-            <Col><h5>Hello world<small>Lorem ipsum</small></h5><p>This is some demo content that I want to test the Card with.</p></Col>
-              <Col size={'120px'}><div style={{ height: '100%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundImage: `url(${encodeURI("https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80")})` }}/></Col>
-          </Row>
-        </Grid>
-      </CardSection>
-    </Card>
+      <Card width={320}>
+        <CardSection className='padding-ls-0p'>
+          <Grid align='stretch'>
+            <Row>
+              <Col><h5>Hello world<small>Lorem ipsum</small></h5><p>This is some demo content that I want to test the Card with.</p></Col>
+              <Col size={'120px'}><div style={{ height: '100%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundImage: `url(${encodeURI('https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80')})` }} /></Col>
+            </Row>
+          </Grid>
+        </CardSection>
+      </Card>
     </Col></Row></Grid>
   )
-);
+  );
 
 storiesOf('Menu', module)
-  .add("Top header left sidebar", () => (
+  .add('Top header left sidebar', () => (
     <Layout>
       <Header>
         <style>{`
@@ -1478,23 +1473,22 @@ storiesOf('Menu', module)
         `}</style>
         <Grid>
           <Row>
-            <Col size={4} className="borderBottom">
-              <span className="title">Page Title</span>
+            <Col size={4} className='borderBottom'>
+              <span className='title'>Page Title</span>
             </Col>
-            <Col size={2} className="borderBottom">
-            </Col>
+            <Col size={2} className='borderBottom' />
             <Col size={6}>
-              <Menu type="horizontal">
+              <Menu type='horizontal'>
                 <MenuItem>Item 1</MenuItem>
-                <MenuItem selected href="#">Item 2</MenuItem>
-                <MenuItem href="#a">Item 3</MenuItem>
+                <MenuItem selected href='#'>Item 2</MenuItem>
+                <MenuItem href='#a'>Item 3</MenuItem>
                 <MenuItem>Item 4</MenuItem>
               </Menu>
             </Col>
           </Row>
         </Grid>
       </Header>
-      <Sidebar><Menu type="vertical" highlight="right">
+      <Sidebar><Menu type='vertical' highlight='right'>
         <MenuItem>Item 1</MenuItem>
         <MenuItem selected>Item 2</MenuItem>
         <MenuItem>Item 3</MenuItem>
@@ -1504,60 +1498,60 @@ storiesOf('Menu', module)
       <Button>Invalid content</Button>
     </Layout>
   )
-)
+  )
 ;
 
 storiesOf('Typography', module)
-  .add("Text", () => (
-    <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet nunc eu commodo luctus. Morbi lobortis, nibh ac luctus posuere, mi arcu faucibus risus, quis dictum neque augue quis leo. Proin porta volutpat finibus. Nullam ornare, lorem id euismod facilisis, quam nisi convallis sem, eget tempus ex mi ornare orci. Lorem ipsum dolor sit amet, <Text autolink>consectetur adipiscing elit https://google.com</Text>. Suspendisse in elit laoreet, blandit magna a, ullamcorper lectus. In ac pellentesque dolor, vel tempus libero. Sed pellentesque convallis lorem, ut suscipit ex vestibulum nec. <Text autolink><span>Ahem...</span>Sed sit amet dolor in turpis https://google.com</Text> lobortis eleifend. Ut cursus mi metus, et rutrum leo fringilla sed. Donec non sapien eget eros elementum finibus nec eget augue. Aliquam a odio posuere, feugiat purus ac, consectetur lorem. Donec eu nisi id libero rutrum porta eget nec elit. In mollis eu est porttitor tincidunt. 
+  .add('Text', () => (
+    <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet nunc eu commodo luctus. Morbi lobortis, nibh ac luctus posuere, mi arcu faucibus risus, quis dictum neque augue quis leo. Proin porta volutpat finibus. Nullam ornare, lorem id euismod facilisis, quam nisi convallis sem, eget tempus ex mi ornare orci. Lorem ipsum dolor sit amet, <Text autolink>consectetur adipiscing elit https://google.com</Text>. Suspendisse in elit laoreet, blandit magna a, ullamcorper lectus. In ac pellentesque dolor, vel tempus libero. Sed pellentesque convallis lorem, ut suscipit ex vestibulum nec. <Text autolink><span>Ahem...</span>Sed sit amet dolor in turpis https://google.com</Text> lobortis eleifend. Ut cursus mi metus, et rutrum leo fringilla sed. Donec non sapien eget eros elementum finibus nec eget augue. Aliquam a odio posuere, feugiat purus ac, consectetur lorem. Donec eu nisi id libero rutrum porta eget nec elit. In mollis eu est porttitor tincidunt.
     </Paragraph>
   )
-)
+  )
 ;
 
 storiesOf('Alert', module)
-  .add("all variants", () => (
+  .add('all variants', () => (
     <React.Fragment>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet nunc eu commodo luctus. Morbi lobortis, nibh ac luctus posuere, mi arcu faucibus risus, quis dictum neque augue quis leo. Proin porta volutpat finibus. Nullam ornare, lorem id euismod facilisis, quam nisi convallis sem, eget tempus ex mi ornare orci. Lorem ipsum dolor sit amet.</Paragraph> 
+      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet nunc eu commodo luctus. Morbi lobortis, nibh ac luctus posuere, mi arcu faucibus risus, quis dictum neque augue quis leo. Proin porta volutpat finibus. Nullam ornare, lorem id euismod facilisis, quam nisi convallis sem, eget tempus ex mi ornare orci. Lorem ipsum dolor sit amet.</Paragraph>
       <Alert><h3>Alert</h3><p>This is an alert</p></Alert>
       <Paragraph>Suspendisse in elit laoreet, blandit magna a, ullamcorper lectus. In ac pellentesque dolor, vel tempus libero. Sed pellentesque convallis lorem, ut suscipit ex vestibulum nec. Lobortis eleifend. Ut cursus mi metus, et rutrum leo fringilla sed. Donec non sapien eget eros elementum finibus nec eget augue. Aliquam a odio posuere, feugiat purus ac, consectetur lorem. Donec eu nisi id libero rutrum porta eget nec elit. In mollis eu est porttitor tincidunt.
       </Paragraph>
-      <Alert color="primary"><Text>Primary</Text></Alert>
-      <Alert color="secondary"><Text>Secondary</Text></Alert>
-      <Alert color="success"><Text>Success</Text></Alert>
-      <Alert color="alert"><Text>Alert</Text></Alert>
-      <Alert color="warning"><Text>Warning</Text></Alert>
-      <Alert size="large" shape="rounded" fill="solid"><Text>Special</Text></Alert>
+      <Alert color='primary'><Text>Primary</Text></Alert>
+      <Alert color='secondary'><Text>Secondary</Text></Alert>
+      <Alert color='success'><Text>Success</Text></Alert>
+      <Alert color='alert'><Text>Alert</Text></Alert>
+      <Alert color='warning'><Text>Warning</Text></Alert>
+      <Alert size='large' shape='rounded' fill='solid'><Text>Special</Text></Alert>
     </React.Fragment>
   )
   )
-  ;
+;
 
 storiesOf('ContextButton', module)
-  .add("default", () => (
+  .add('default', () => (
     <ContextButton>
-      <Icon name="plus" />
+      <Icon name='plus' />
     </ContextButton>
   )
-)
-  .add("all places", () => (
+  )
+  .add('all places', () => (
     <React.Fragment>
-      <ContextButton verticalPosition='top' horizontalPosition='left' color='primary'><Icon name="plus" /></ContextButton>
-      <ContextButton verticalPosition='bottom' horizontalPosition='left'><Icon name="plus" /></ContextButton>
-      <ContextButton verticalPosition='center' horizontalPosition='left' size='large'><Icon name="plus" width={32} height={32}/></ContextButton>
-      <ContextButton verticalPosition='top' horizontalPosition='center'><Icon name="plus" /></ContextButton>
-      <ContextButton verticalPosition='bottom' horizontalPosition='center'><Icon name="plus" /></ContextButton>
-      <ContextButton verticalPosition='center' horizontalPosition='center' size='small'><Icon name="plus" width={16} height={16} /></ContextButton>
-      <ContextButton verticalPosition='top' horizontalPosition='right'><Icon name="plus" /></ContextButton>
-      <ContextButton verticalPosition='bottom' horizontalPosition='right'><Icon name="plus" /></ContextButton>
-      <ContextButton verticalPosition='center' horizontalPosition='right'><Icon name="plus" /></ContextButton>
+      <ContextButton verticalPosition='top' horizontalPosition='left' color='primary'><Icon name='plus' /></ContextButton>
+      <ContextButton verticalPosition='bottom' horizontalPosition='left'><Icon name='plus' /></ContextButton>
+      <ContextButton verticalPosition='center' horizontalPosition='left' size='large'><Icon name='plus' width={32} height={32} /></ContextButton>
+      <ContextButton verticalPosition='top' horizontalPosition='center'><Icon name='plus' /></ContextButton>
+      <ContextButton verticalPosition='bottom' horizontalPosition='center'><Icon name='plus' /></ContextButton>
+      <ContextButton verticalPosition='center' horizontalPosition='center' size='small'><Icon name='plus' width={16} height={16} /></ContextButton>
+      <ContextButton verticalPosition='top' horizontalPosition='right'><Icon name='plus' /></ContextButton>
+      <ContextButton verticalPosition='bottom' horizontalPosition='right'><Icon name='plus' /></ContextButton>
+      <ContextButton verticalPosition='center' horizontalPosition='right'><Icon name='plus' /></ContextButton>
     </React.Fragment>
   )
-)
+  )
 ;
 
 storiesOf('Pagination', module)
-  .add("All types", () => (
+  .add('All types', () => (
     <React.Fragment>
       <Pagination>
         <Button>First</Button>
@@ -1574,71 +1568,74 @@ storiesOf('Pagination', module)
         <Button>{'>>'}</Button>
       </Pagination>
       <Pagination>
-        <Button><Icon name='chevrons-left'width={16} height={16}/></Button>
-        <Button><Icon name='chevron-left' width={16} height={16}/></Button>
+        <Button><Icon name='chevrons-left'width={16} height={16} /></Button>
+        <Button><Icon name='chevron-left' width={16} height={16} /></Button>
         <PaginationItem>1 / 8</PaginationItem>
-        <Button><Icon name='chevron-right' width={16} height={16}/></Button>
-        <Button><Icon name='chevrons-right' width={16} height={16}/></Button>
+        <Button><Icon name='chevron-right' width={16} height={16} /></Button>
+        <Button><Icon name='chevrons-right' width={16} height={16} /></Button>
       </Pagination>
       <Pagination size='large'>
-        <Button color='primary'><Icon name='chevrons-left'width={16} height={16}/></Button>
-        <Button color='secondary'><Icon name='chevron-left' width={16} height={16}/></Button>
-          <PaginationItem>1</PaginationItem>
-          <PaginationItem>2</PaginationItem>
-          <PaginationItem>...</PaginationItem>
-          <PaginationItem>96</PaginationItem>
-          <PaginationItem>97</PaginationItem>
-        <Button color='primary'><Icon name='chevron-right' width={16} height={16}/></Button>
-        <Button color='secondary'><Icon name='chevrons-right' width={16} height={16}/></Button>
+        <Button color='primary'><Icon name='chevrons-left'width={16} height={16} /></Button>
+        <Button color='secondary'><Icon name='chevron-left' width={16} height={16} /></Button>
+        <PaginationItem>1</PaginationItem>
+        <PaginationItem>2</PaginationItem>
+        <PaginationItem>...</PaginationItem>
+        <PaginationItem>96</PaginationItem>
+        <PaginationItem>97</PaginationItem>
+        <Button color='primary'><Icon name='chevron-right' width={16} height={16} /></Button>
+        <Button color='secondary'><Icon name='chevrons-right' width={16} height={16} /></Button>
       </Pagination>
     </React.Fragment>
   )
-)
+  )
 ;
 
 storiesOf('Notification', module)
-  .add("top right", () => { 
+  .add('top right', () => {
     let notificationCenterRef = React.createRef();
     let count = 0;
     return (
-    <React.Fragment>
+      <React.Fragment>
         <Button onClick={() => notificationCenterRef.current.addNotification(
           <Notification>
             This is a notification. {++count}
           </Notification>
         )}>Click me
-      </Button>
-      <NotificationCenter ref={notificationCenterRef}></NotificationCenter>
-    </React.Fragment>
-  );}
+        </Button>
+        <NotificationCenter ref={notificationCenterRef} />
+      </React.Fragment>
+    );
+  }
   )
-  .add("bottom left", () => { 
+  .add('bottom left', () => {
     let notificationCenterRef = React.createRef();
     let count = 0;
     return (
-    <React.Fragment>
+      <React.Fragment>
         <Button onClick={() => notificationCenterRef.current.addNotification(
           <Notification>
             This is a notification. {++count}
           </Notification>
         )}>Click me
-      </Button>
-        <NotificationCenter ref={notificationCenterRef} verticalPosition='bottom' horizontalPosition='left'></NotificationCenter>
-    </React.Fragment>
-  );}
+        </Button>
+        <NotificationCenter ref={notificationCenterRef} verticalPosition='bottom' horizontalPosition='left' />
+      </React.Fragment>
+    );
+  }
   )
-  .add("center top", () => { 
+  .add('center top', () => {
     let notificationCenterRef = React.createRef();
     let count = 0;
     return (
-    <React.Fragment>
+      <React.Fragment>
         <Button onClick={() => notificationCenterRef.current.addNotification(
           <Notification duration={60000}>
             This is a notification. {++count}
           </Notification>
         )}>Click me
-      </Button>
-        <NotificationCenter ref={notificationCenterRef} verticalPosition='bottom' horizontalPosition='center'></NotificationCenter>
-    </React.Fragment>
-  );}
+        </Button>
+        <NotificationCenter ref={notificationCenterRef} verticalPosition='bottom' horizontalPosition='center' />
+      </React.Fragment>
+    );
+  }
   );

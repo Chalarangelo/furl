@@ -1,6 +1,6 @@
-import React from "react";
-import Hyperlink from "../components/Hyperlink";
-import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "../components/Table";
+import React from 'react';
+import Hyperlink from '../components/Hyperlink';
+import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from '../components/Table';
 
 const DropdownDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const DropdownDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Dropdowns are easy to use and can be combined with other components to help users navigate throughout your application, providing context as necessary.</p>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Dropdown props</TableCaption>
       <TableHead>
         <TableRow>
@@ -36,7 +36,7 @@ const DropdownDocs = props => (
         <TableRow>
           <TableCell><code>reverse</code></TableCell>
           <TableCell><code>boolean</code></TableCell>
-          <TableCell><code>false</code></TableCell> 
+          <TableCell><code>false</code></TableCell>
           <TableCell colSpan={3}>reverses the direction of the dropdown arrow and the popup</TableCell>
         </TableRow>
         <TableRow>

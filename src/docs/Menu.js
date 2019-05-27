@@ -1,6 +1,6 @@
-import React from "react";
-import Hyperlink from "../components/Hyperlink";
-import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "../components/Table";
+import React from 'react';
+import Hyperlink from '../components/Hyperlink';
+import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from '../components/Table';
 
 const MenuDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const MenuDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Menus are made up of a <code>&lt;Menu&gt;</code> component, which is the menu's container element and one or more <code>&lt;MenuItem&gt;</code> components, which are the actions of the menu, passed as <code>children</code> to the <code>&lt;Menu&gt;</code> component.</p>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Menu props</TableCaption>
       <TableHead>
         <TableRow>
@@ -53,7 +53,7 @@ const MenuDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>MenuItem props</TableCaption>
       <TableHead>
         <TableRow>

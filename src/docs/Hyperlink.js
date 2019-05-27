@@ -1,6 +1,6 @@
-import React from "react";
-import Hyperlink from "../components/Hyperlink";
-import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
+import React from 'react';
+import Hyperlink from '../components/Hyperlink';
+import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from '../components/Table';
 
 const HyperlinkDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const HyperlinkDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Hyperlinks are simple to use and allow you to create links to both internal and external URLs, without having to worry about things such as the <code>rel</code> and <code>target</code> attributes.</p>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Hyperlink props</TableCaption>
       <TableHead>
         <TableRow>

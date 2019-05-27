@@ -1,6 +1,6 @@
-import React from "react";
-import Hyperlink from "../components/Hyperlink";
-import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "../components/Table";
+import React from 'react';
+import Hyperlink from '../components/Hyperlink';
+import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from '../components/Table';
 
 const TypographyDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const TypographyDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Furl provides you with a host of typographic components, namely: <code>&lt;Title&gt;</code>, <code>&lt;Text&gt;</code>, <code>&lt;Paragraph&gt;</code>, <code>&lt;Quote&gt;</code>, <code>&lt;Code&gt;</code>, <code>&lt;Kbd&gt;</code> and <code>&lt;Preformatted&gt;</code></p>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Title props</TableCaption>
       <TableHead>
         <TableRow>
@@ -53,7 +53,7 @@ const TypographyDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Text props</TableCaption>
       <TableHead>
         <TableRow>
@@ -90,7 +90,7 @@ const TypographyDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Paragraph props</TableCaption>
       <TableHead>
         <TableRow>
@@ -121,7 +121,7 @@ const TypographyDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Quote props</TableCaption>
       <TableHead>
         <TableRow>
@@ -158,7 +158,7 @@ const TypographyDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Code props</TableCaption>
       <TableHead>
         <TableRow>
@@ -189,7 +189,7 @@ const TypographyDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Kbd props</TableCaption>
       <TableHead>
         <TableRow>
@@ -220,7 +220,7 @@ const TypographyDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Preformatted props</TableCaption>
       <TableHead>
         <TableRow>

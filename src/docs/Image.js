@@ -1,6 +1,6 @@
-import React from "react";
-import Hyperlink from "../components/Hyperlink";
-import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from "../components/Table";
+import React from 'react';
+import Hyperlink from '../components/Hyperlink';
+import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from '../components/Table';
 
 const ImageDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const ImageDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Images are very easy to use and expose certain important layout properties.</p>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Image props</TableCaption>
       <TableHead>
         <TableRow>

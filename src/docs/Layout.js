@@ -1,6 +1,6 @@
-import React from "react";
-import Hyperlink from "../components/Hyperlink";
-import { Table, TableCaption, TableHead, TableBody, TableRow, TableCell } from "../components/Table";
+import React from 'react';
+import Hyperlink from '../components/Hyperlink';
+import {Table, TableCaption, TableHead, TableBody, TableRow, TableCell} from '../components/Table';
 
 const LayoutDocs = props => (
   <div>
@@ -10,7 +10,7 @@ const LayoutDocs = props => (
     {/* TODO: Add component demo */}
     <h3>API</h3>
     <p>Layouts are made up of a <code>&lt;Layout&gt;</code> component, which is the layout's container element an optional <code>&lt;Header&gt;</code> element, an optional <code>&lt;Sidebar&gt;</code> element and a <code>&lt;Content&gt;</code> element, which serve as the layout's header bar, sidebar and content area respectively.</p>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Layout props</TableCaption>
       <TableHead>
         <TableRow>
@@ -59,7 +59,7 @@ const LayoutDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Header props</TableCaption>
       <TableHead>
         <TableRow>
@@ -96,7 +96,7 @@ const LayoutDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Sidebar props</TableCaption>
       <TableHead>
         <TableRow>
@@ -133,7 +133,7 @@ const LayoutDocs = props => (
         </TableRow>
       </TableBody>
     </Table>
-    <Table className="fixed-table">
+    <Table className='fixed-table'>
       <TableCaption>Content props</TableCaption>
       <TableHead>
         <TableRow>
