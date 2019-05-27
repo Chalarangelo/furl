@@ -40,11 +40,11 @@ storiesOf('Anchor', module)
 
 storiesOf('Divider', module)
   .add('horizontal', () => (
-    <React.Fragment>
+    <>
       <Paragraph>Blah blah blah</Paragraph>
       <Divider />
       <Paragraph>Blah blah blah</Paragraph>
-    </React.Fragment>
+    </>
   )
   )
   .add('vertical', () => (
@@ -66,30 +66,30 @@ storiesOf('Calendar', module)
 
 storiesOf('Progress', module)
   .add('default', () => (
-    <React.Fragment>
+    <>
       <Progress value={0} max={100} />
       <Progress value={25} max={100} />
       <Progress value={50} max={100} />
       <Progress value={75} max={100} />
       <Progress value={100} max={100} />
-    </React.Fragment>
+    </>
   )
   )
   .add('colors', () => (
-    <React.Fragment>
+    <>
       <Progress value={25} max={100} color='primary' />
       <Progress value={75} max={100} color='secondary' />
       <Progress value={25} max={100} color='success' />
       <Progress value={75} max={100} color='warning' />
       <Progress value={25} max={100} color='danger' />
-    </React.Fragment>
+    </>
   )
   )
 ;
 
 storiesOf('Loader', module)
   .add('colors', () => (
-    <React.Fragment>
+    <>
       <Loader />
       <Loader color='primary' />
       <Loader color='secondary' />
@@ -102,7 +102,7 @@ storiesOf('Loader', module)
       <Loader size='large' color='success' />
       <Loader size='large' color='warning' />
       <Loader size='large' color='danger' />
-    </React.Fragment>
+    </>
   )
   )
 ;
@@ -131,20 +131,20 @@ storiesOf('Icon', module)
 
 storiesOf('Search', module)
   .add('default', () => (
-    <React.Fragment>
+    <>
       <Search placeholder='Search...'>
         <h4>Results</h4>
         <p>Hello, hello, hello!</p>
       </Search>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lacus commodo, convallis ex id, commodo quam. In vehicula, metus eu euismod vestibulum, enim massa ultricies massa, nec auctor sem est in velit. Quisque hendrerit ultrices dolor. Sed lacinia eu dolor nec elementum. Suspendisse porttitor pulvinar mi sed vestibulum. Integer sed consectetur ligula. Vivamus sagittis vulputate justo, sit amet consectetur urna tempus nec. Aenean eleifend risus augue, ac consectetur lacus hendrerit vitae. Nam justo tortor, pulvinar at sapien ac, tempor sollicitudin risus. Pellentesque placerat ex sed finibus porta. Aenean sit amet enim nec sapien mollis luctus porttitor ac lorem.</p>
-    </React.Fragment>
+    </>
   )
   )
   .add('with icon', () => (
-    <React.Fragment>
+    <>
       <Search withIcon placeholder='Search...' />
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in lacus commodo, convallis ex id, commodo quam. In vehicula, metus eu euismod vestibulum, enim massa ultricies massa, nec auctor sem est in velit. Quisque hendrerit ultrices dolor. Sed lacinia eu dolor nec elementum. Suspendisse porttitor pulvinar mi sed vestibulum. Integer sed consectetur ligula. Vivamus sagittis vulputate justo, sit amet consectetur urna tempus nec. Aenean eleifend risus augue, ac consectetur lacus hendrerit vitae. Nam justo tortor, pulvinar at sapien ac, tempor sollicitudin risus. Pellentesque placerat ex sed finibus porta. Aenean sit amet enim nec sapien mollis luctus porttitor ac lorem.</p>
-    </React.Fragment>
+    </>
   )
   )
 ;
@@ -161,7 +161,7 @@ storiesOf('Form', module)
 
 storiesOf('Input', module)
   .add('text', () => (
-    <React.Fragment>
+    <>
       <TextInput placeholder='Text...' />
       <TextInput size='small' placeholder='Small' />
       <TextInput size='large' placeholder='Large' />
@@ -170,53 +170,53 @@ storiesOf('Input', module)
       <TextInput shape='rounded' size='large' placeholder='Large rounded' defaultValue='test' />
       <TextInput value='disabled' disabled />
       <TextInput value='readonly' readOnly />
-    </React.Fragment>
+    </>
   )
   )
   .add('text multiline', () => (
-    <React.Fragment>
+    <>
       <TextInput multiline placeholder='Text...' />
       <TextInput multiline value='disabled' disabled />
       <TextInput multiline value='readonly' readOnly />
-    </React.Fragment>
+    </>
   )
   )
   .add('email', () => (
-    <React.Fragment>
+    <>
       <EmailInput placeholder='mail@server.com' />
       <EmailInput value='disabled' disabled />
       <EmailInput value='readonly' readOnly />
-    </React.Fragment>
+    </>
   )
   )
   .add('url', () => (
-    <React.Fragment>
+    <>
       <UrlInput placeholder='https://example.com' />
       <UrlInput value='disabled' disabled />
       <UrlInput value='readonly' readOnly />
-    </React.Fragment>
+    </>
   )
   )
   .add('password', () => (
-    <React.Fragment>
+    <>
       <PasswordInput placeholder='Password' />
       <PasswordInput withRevealer placeholder='Password' />
       <PasswordInput disabled withRevealer placeholder='Password' />
       <PasswordInput readOnly withRevealer placeholder='Password' />
-    </React.Fragment>
+    </>
   )
   )
   .add('number', () => (
-    <React.Fragment>
+    <>
       <NumberInput placeholder='0' onChange={(r) => console.log(r)} />
       <NumberInput placeholder='0' step={3} min={0} max={15} />
       <NumberInput disabled placeholder='0' step={3} min={0} max={15} />
       <NumberInput readOnly placeholder='0' step={3} min={0} max={15} />
-    </React.Fragment>
+    </>
   )
   )
   .add('select', () => (
-    <React.Fragment>
+    <>
       <SelectInput placeholder='0' onChange={(r) => console.log(r)}>
         <Option>a</Option>
         <Option selected>b</Option>
@@ -232,7 +232,7 @@ storiesOf('Input', module)
         <Option selected>b</Option>
         <Option>c</Option>
       </SelectInput>
-    </React.Fragment>
+    </>
   )
   )
   .add('select multiple', () => (
@@ -244,7 +244,7 @@ storiesOf('Input', module)
   )
   )
   .add('combobox', () => (
-    <React.Fragment>
+    <>
       <ComboboxInput>
         <Option>Chocolate</Option>
         <Option>Coconut</Option>
@@ -273,67 +273,67 @@ storiesOf('Input', module)
         <Option>Strawberry</Option>
         <Option>Watermelon</Option>
       </ComboboxInput>
-    </React.Fragment>
+    </>
   )
   )
   .add('credit card', () => (
-    <React.Fragment>
+    <>
       <CreditCardInput onChange={e => console.log(e.target)} />
       <CreditCardInput disabled onChange={e => console.log(e.target)} />
       <CreditCardInput readOnly onChange={e => console.log(e.target)} />
-    </React.Fragment>
+    </>
   )
   )
   .add('phone', () => (
-    <React.Fragment>
+    <>
       <PhoneInput placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)} />
       <PhoneInput disabled placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)} />
       <PhoneInput readOnly placeholder='+30 (123) 456-7890' onChange={e => console.log(e.target)} />
-    </React.Fragment>
+    </>
   )
   )
   .add('currency', () => (
-    <React.Fragment>
+    <>
       <CurrencyInput placeholder='$' />
       <CurrencyInput currencySign='€' />
       <CurrencyInput currencySign='£' />
       <CurrencyInput disabled currencySign='£' />
       <CurrencyInput readOnly currencySign='£' />
-    </React.Fragment>
+    </>
   )
   )
   .add('time', () => (
-    <React.Fragment>
+    <>
       <TimeInput />
       <TimeInput displayHours={false} />
       <TimeInput displaySeconds={false} />
       <TimeInput displayHours={false} displaySeconds={false} />
       <TimeInput disabled displayHours={false} displaySeconds={false} />
       <TimeInput readOnly displayHours={false} displaySeconds={false} />
-    </React.Fragment>
+    </>
   )
   )
   .add('date', () => (
-    <React.Fragment>
+    <>
       <DateInput placeholder='dd/mm/yyyy' />
       <DateInput monthBeforeDay placeholder='mm/dd/yyyy' />
       <DateInput minYear={2000} separator='-' placeholder='mm-dd-yyyy' />
       <DateInput minYear={2000} maxYear={2019} monthBeforeDay placeholder='mm/dd/yyyy' />
       <DateInput minYear={2000} disabled separator='-' placeholder='mm-dd-yyyy' />
       <DateInput minYear={2000} readOnly separator='-' placeholder='mm-dd-yyyy' />
-    </React.Fragment>
+    </>
   )
   )
   .add('color', () => (
-    <React.Fragment>
+    <>
       <ColorInput placeholder='#fafafa' onChange={e => console.log(e.target)} />
       <ColorInput disabled placeholder='#fafafa' onChange={e => console.log(e.target)} />
       <ColorInput readOnly placeholder='#fafafa' onChange={e => console.log(e.target)} />
-    </React.Fragment>
+    </>
   )
   )
   .add('file', () => (
-    <React.Fragment>
+    <>
       <FileInput placeholder='Drop files here' onChange={e => console.log(e.target)} />
       <FileInput multiple placeholder='Drop multiple files here' onFilesChanged={e => console.log(e)} />
       <FileInput placeholder='Drop files here' shape='rounded' onFilesChanged={e => console.log(e)} />
@@ -341,22 +341,22 @@ storiesOf('Input', module)
       <FileInput placeholder='Drop files here' size='large' onFilesChanged={e => console.log(e)} />
       <FileInput disabled placeholder='Drop files here' onChange={e => console.log(e.target)} />
       <FileInput readOnly placeholder='Drop files here' onChange={e => console.log(e.target)} />
-    </React.Fragment>
+    </>
   )
   )
   .add('rating', () => (
-    <React.Fragment>
+    <>
       <RatingInput />
       <RatingInput iconStyle='fill' />
       <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' />
       <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' />
       <RatingInput disabled iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3} />
       <RatingInput readOnly iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3} />
-    </React.Fragment>
+    </>
   )
   )
   .add('slider', () => (
-    <React.Fragment>
+    <>
       <SliderInput />
       <SliderInput range />
       <SliderInput min={10} max={25} />
@@ -365,7 +365,7 @@ storiesOf('Input', module)
       <SliderInput range min={10} max={27} />
       <SliderInput disabled range min={10} max={27} />
       <SliderInput readOnly range min={10} max={27} />
-    </React.Fragment>
+    </>
   )
   )
 ;
@@ -386,56 +386,56 @@ storiesOf('Popover', module)
 
 storiesOf('Checkbox', module)
   .add('default', () => (
-    <React.Fragment>
+    <>
       <Checkbox>Hello</Checkbox><br />
       <Checkbox color='primary'>Hello</Checkbox><br />
       <Checkbox color='secondary'>Hello</Checkbox><br />
       <Checkbox color='danger'>Hello</Checkbox><br />
       <Checkbox color='success'>Hello</Checkbox><br />
       <Checkbox color='warning'>Hello</Checkbox>
-    </React.Fragment>
+    </>
   )
   )
 ;
 
 storiesOf('Radio', module)
   .add('default', () => (
-    <React.Fragment>
+    <>
       <Radio name='radios'>Hello</Radio><br />
       <Radio name='radios' color='primary'>Hello</Radio><br />
       <Radio name='radios' color='secondary'>Hello</Radio><br />
       <Radio name='radios' color='danger'>Hello</Radio><br />
       <Radio name='radios' color='success'>Hello</Radio><br />
       <Radio name='radios' color='warning'>Hello</Radio>
-    </React.Fragment>
+    </>
   )
   )
 ;
 
 storiesOf('Switch', module)
   .add('default', () => (
-    <React.Fragment>
+    <>
       <Switch>Hello</Switch><br />
       <Switch color='primary'>Hello</Switch><br />
       <Switch color='secondary'>Hello</Switch><br />
       <Switch color='danger'>Hello</Switch><br />
       <Switch color='success'>Hello</Switch><br />
       <Switch color='warning'>Hello</Switch>
-    </React.Fragment>
+    </>
   )
   )
 ;
 
 storiesOf('Badge', module)
   .add('default', () => (
-    <React.Fragment>
+    <>
       <Badge>
       Badge
       </Badge>
       <Paragraph>
         Phasellus auctor justo eget dapibus blandit. Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Praesent at felis non leo suscipit finibus sit amet sit amet nibh. Lorem ipsum dolor sit <Badge>amet</Badge>, consectetur adipiscing elit. Etiam ligula magna, rutrum a enim semper, hendrerit finibus nibh. Sed pulvinar nisi ac est finibus, non rutrum dui egestas. Nulla vel tellus sed turpis fringilla feugiat.
       </Paragraph>
-    </React.Fragment>
+    </>
   )
   )
   .add('large', () => (
@@ -464,66 +464,66 @@ storiesOf('Badge', module)
   )
 
   .add('interface', () => (
-    <React.Fragment>
+    <>
       <Badge >Continue</Badge>
       <Badge fill='light'>Continue</Badge>
       <Badge fill='gradient'>Continue</Badge>
       <Badge fill='outline'>Continue</Badge>
-    </React.Fragment>
+    </>
   )
   )
   .add('primary', () => (
-    <React.Fragment>
+    <>
       <Badge color='primary' >Continue</Badge>
       <Badge color='primary' fill='light'>Continue</Badge>
       <Badge color='primary' fill='gradient'>Continue</Badge>
       <Badge color='primary' fill='outline'>Continue</Badge>
-    </React.Fragment>
+    </>
   )
   )
   .add('secondary', () => (
-    <React.Fragment>
+    <>
       <Badge color='secondary' >Continue</Badge>
       <Badge color='secondary' fill='light'>Continue</Badge>
       <Badge color='secondary' fill='gradient'>Continue</Badge>
       <Badge color='secondary' fill='outline'>Continue</Badge>
-    </React.Fragment>
+    </>
   )
   )
   .add('danger', () => (
-    <React.Fragment>
+    <>
       <Badge color='danger' >Continue</Badge>
       <Badge color='danger' fill='light'>Continue</Badge>
       <Badge color='danger' fill='gradient'>Continue</Badge>
       <Badge color='danger' fill='outline'>Continue</Badge>
-    </React.Fragment>
+    </>
   )
   )
   .add('success', () => (
-    <React.Fragment>
+    <>
       <Badge color='success' >Continue</Badge>
       <Badge color='success' fill='light'>Continue</Badge>
       <Badge color='success' fill='gradient'>Continue</Badge>
       <Badge color='success' fill='outline'>Continue</Badge>
-    </React.Fragment>
+    </>
   )
   )
   .add('warning', () => (
-    <React.Fragment>
+    <>
       <Badge color='warning' >Continue</Badge>
       <Badge color='warning' fill='light'>Continue</Badge>
       <Badge color='warning' fill='gradient'>Continue</Badge>
       <Badge color='warning' fill='outline'>Continue</Badge>
-    </React.Fragment>
+    </>
   )
   )
   .add('primary with icon', () => (
-    <React.Fragment>
+    <>
       <Badge color='primary' ><Icon name='disc' width={16} height={16} />Continue</Badge>
       <Badge color='primary' fill='light'><Icon name='disc' width={16} height={16} />Continue</Badge>
       <Badge color='primary' fill='gradient'><Icon name='disc' width={16} height={16} />Continue</Badge>
       <Badge color='primary' fill='outline'><Icon name='disc' width={16} height={16} />Continue</Badge>
-    </React.Fragment>
+    </>
   )
   )
 ;
@@ -560,7 +560,7 @@ storiesOf('Button', module)
   )
   )
   .add('default', () => (
-    <React.Fragment>
+    <>
       <Button >Continue</Button>
       <Button fill='solid flat'>Continue</Button>
       <Button fill='light flat'>Continue</Button>
@@ -574,11 +574,11 @@ storiesOf('Button', module)
       <Button fill='gradient' disabled>Continue</Button>
       <Button fill='outline' disabled>Continue</Button>
       <Button fill='ghost' disabled>Continue</Button>
-    </React.Fragment>
+    </>
   )
   )
   .add('primary', () => (
-    <React.Fragment>
+    <>
       <Button color='primary' >Continue</Button>
       <Button color='primary' fill='solid flat'>Continue</Button>
       <Button color='primary' fill='light flat'>Continue</Button>
@@ -593,11 +593,11 @@ storiesOf('Button', module)
       <Button color='primary' fill='outline' disabled>Continue</Button>
       <Button color='primary' fill='ghost' disabled>Continue</Button>
       <Button color='primary' fill='outline' shape='rounded' text='uppercase' size='large'>Continue</Button>
-    </React.Fragment>
+    </>
   )
   )
   .add('secondary', () => (
-    <React.Fragment>
+    <>
       <Button color='secondary' >Continue</Button>
       <Button color='secondary' fill='solid flat'>Continue</Button>
       <Button color='secondary' fill='light flat'>Continue</Button>
@@ -612,11 +612,11 @@ storiesOf('Button', module)
       <Button color='secondary' fill='outline' disabled>Continue</Button>
       <Button color='secondary' fill='ghost' disabled>Continue</Button>
       <Button color='secondary' fill='outline' shape='rounded' text='uppercase' size='large'>Continue</Button>
-    </React.Fragment>
+    </>
   )
   )
   .add('danger', () => (
-    <React.Fragment>
+    <>
       <Button color='danger' >Continue</Button>
       <Button color='danger' fill='solid flat'>Continue</Button>
       <Button color='danger' fill='light flat'>Continue</Button>
@@ -631,11 +631,11 @@ storiesOf('Button', module)
       <Button color='danger' fill='outline' disabled>Continue</Button>
       <Button color='danger' fill='ghost' disabled>Continue</Button>
       <Button color='danger' fill='outline' shape='rounded' text='uppercase' size='large'>Continue</Button>
-    </React.Fragment>
+    </>
   )
   )
   .add('success', () => (
-    <React.Fragment>
+    <>
       <Button color='success' >Continue</Button>
       <Button color='success' fill='solid flat'>Continue</Button>
       <Button color='success' fill='light flat'>Continue</Button>
@@ -649,11 +649,11 @@ storiesOf('Button', module)
       <Button color='success' fill='gradient' disabled>Continue</Button>
       <Button color='success' fill='outline' disabled>Continue</Button>
       <Button color='success' fill='ghost' disabled>Continue</Button>
-    </React.Fragment>
+    </>
   )
   )
   .add('warning', () => (
-    <React.Fragment>
+    <>
       <Button color='warning' >Continue</Button>
       <Button color='warning' fill='solid flat'>Continue</Button>
       <Button color='warning' fill='light flat'>Continue</Button>
@@ -667,11 +667,11 @@ storiesOf('Button', module)
       <Button color='warning' fill='gradient' disabled>Continue</Button>
       <Button color='warning' fill='outline' disabled>Continue</Button>
       <Button color='warning' fill='ghost' disabled>Continue</Button>
-    </React.Fragment>
+    </>
   )
   )
   .add('link', () => (
-    <React.Fragment>
+    <>
       <Button type='link' href='https://google.com' >Continue</Button>
       <Button type='link' href='https://google.com' fill='solid flat'>Continue</Button>
       <Button type='link' href='https://google.com' fill='light flat'>Continue</Button>
@@ -686,11 +686,11 @@ storiesOf('Button', module)
       <Button type='link' href='https://google.com' fill='gradient' disabled>Continue</Button>
       <Button type='link' href='https://google.com' fill='outline' disabled>Continue</Button>
       <Button type='link' href='https://google.com' fill='ghost' disabled>Continue</Button>
-    </React.Fragment>
+    </>
   )
   )
   .add('default icon', () => (
-    <React.Fragment>
+    <>
       <Button ><Icon name='home' /></Button>
       <Button fill='solid'><Icon name='home' /></Button>
       <Button fill='light'><Icon name='home' /></Button>
@@ -705,11 +705,11 @@ storiesOf('Button', module)
       <Button fill='gradient' disabled><Icon name='home' />Continue</Button>
       <Button fill='outline' disabled><Icon name='home' />Continue</Button>
       <Button fill='ghost' disabled><Icon name='home' />Continue</Button>
-    </React.Fragment>
+    </>
   )
   )
   .add('primary icon', () => (
-    <React.Fragment>
+    <>
       <Button color='primary' ><Icon name='home' /></Button>
       <Button color='primary' fill='solid'><Icon name='home' /></Button>
       <Button color='primary' fill='light'><Icon name='home' /></Button>
@@ -726,14 +726,14 @@ storiesOf('Button', module)
       <Button color='primary' fill='gradient' disabled><Icon name='home' />Continue</Button>
       <Button color='primary' fill='outline' disabled><Icon name='home' />Continue</Button>
       <Button color='primary' fill='ghost' disabled><Icon name='home' />Continue</Button>
-    </React.Fragment>
+    </>
   )
   )
 ;
 
 storiesOf('ButtonGroup', module)
   .add('All types', () => (
-    <React.Fragment>
+    <>
       <ButtonGroup>
         <Button>A</Button>
         <Button>B</Button>
@@ -783,7 +783,7 @@ storiesOf('ButtonGroup', module)
         <Button>C</Button>
         <Button>D</Button>
       </ButtonGroup>
-    </React.Fragment>
+    </>
   )
   )
 ;
@@ -864,7 +864,7 @@ storiesOf('Collapse', module)
 
 storiesOf('Accordion', module)
   .add('default', () => (
-    <React.Fragment>
+    <>
       <Accordion>
         <Collapse title="Don't do it">
           <Hyperlink href='#'>Item 3.1</Hyperlink>
@@ -890,14 +890,14 @@ storiesOf('Accordion', module)
           <Hyperlink href='#'>Item 3.3</Hyperlink>
         </Collapse>
       </Accordion>
-    </React.Fragment>
+    </>
   )
   )
 ;
 
 storiesOf('Grid', module)
   .add('Normal columns', () => (
-    <React.Fragment>
+    <>
       <style>{`.box-colored {background: #0277bd;border-radius: 0.125rem;padding: 0.875rem;margin: 0.1rem;margin-bottom: 0.5rem;
 min-height: 0.875rem;color: #f8f8f8;}`}</style>
       <Grid>
@@ -933,11 +933,11 @@ min-height: 0.875rem;color: #f8f8f8;}`}</style>
           <Col size={6}><div className='box-colored'>6</div></Col>
         </Row>
       </Grid>
-    </React.Fragment>
+    </>
   )
   )
   .add('Custom-size columns', () => (
-    <React.Fragment>
+    <>
       <style>{`.box-colored {background: #0277bd;border-radius: 0.125rem;padding: 0.875rem;margin: 0.1rem;margin-bottom: 0.5rem;
 min-height: 0.875rem;color: #f8f8f8;}`}</style>
       <Grid>
@@ -947,11 +947,11 @@ min-height: 0.875rem;color: #f8f8f8;}`}</style>
           <Col size={0.49}><div className='box-colored'>49%</div></Col>
         </Row>
       </Grid>
-    </React.Fragment>
+    </>
   )
   )
   .add('Responsive columns', () => (
-    <React.Fragment>
+    <>
       <style>{`.box-colored {background: #0277bd;border-radius: 0.125rem;padding: 0.875rem;margin: 0.1rem;margin-bottom: 0.5rem;
 min-height: 0.875rem;color: #f8f8f8;}`}</style>
       <Grid>
@@ -961,7 +961,7 @@ min-height: 0.875rem;color: #f8f8f8;}`}</style>
           <Col size={['fluid', 12, 8, 4]}><div className='box-colored'>49%</div></Col>
         </Row>
       </Grid>
-    </React.Fragment>
+    </>
   )
   )
 ;
@@ -1055,7 +1055,7 @@ storiesOf('Layout', module)
 
 storiesOf('List', module)
   .add('unordered', () => (
-    <React.Fragment>
+    <>
       <List>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
@@ -1084,11 +1084,11 @@ storiesOf('List', module)
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-    </React.Fragment>
+    </>
   )
   )
   .add('ordered', () => (
-    <React.Fragment>
+    <>
       <List ordered>
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
@@ -1117,7 +1117,7 @@ storiesOf('List', module)
         <ListItem>Lorem ipsum</ListItem>
         <ListItem>Dolor sit amet</ListItem>
       </List>
-    </React.Fragment>
+    </>
   )
   )
 ;
@@ -1155,7 +1155,7 @@ storiesOf('Breadcrumb', module)
 
 storiesOf('Step', module)
   .add('default', () => (
-    <React.Fragment>
+    <>
       <Step>
         <StepItem>Lorem Ipsum</StepItem>
         <StepItem>Dolor sit amet<small>Some description</small></StepItem>
@@ -1180,7 +1180,7 @@ storiesOf('Step', module)
         <StepItem>Consectetur</StepItem>
         <StepItem selected>Adipiscing elit</StepItem>
       </Step>
-    </React.Fragment>
+    </>
   )
   )
 ;
@@ -1511,7 +1511,7 @@ storiesOf('Typography', module)
 
 storiesOf('Alert', module)
   .add('all variants', () => (
-    <React.Fragment>
+    <>
       <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet nunc eu commodo luctus. Morbi lobortis, nibh ac luctus posuere, mi arcu faucibus risus, quis dictum neque augue quis leo. Proin porta volutpat finibus. Nullam ornare, lorem id euismod facilisis, quam nisi convallis sem, eget tempus ex mi ornare orci. Lorem ipsum dolor sit amet.</Paragraph>
       <Alert><h3>Alert</h3><p>This is an alert</p></Alert>
       <Paragraph>Suspendisse in elit laoreet, blandit magna a, ullamcorper lectus. In ac pellentesque dolor, vel tempus libero. Sed pellentesque convallis lorem, ut suscipit ex vestibulum nec. Lobortis eleifend. Ut cursus mi metus, et rutrum leo fringilla sed. Donec non sapien eget eros elementum finibus nec eget augue. Aliquam a odio posuere, feugiat purus ac, consectetur lorem. Donec eu nisi id libero rutrum porta eget nec elit. In mollis eu est porttitor tincidunt.
@@ -1522,7 +1522,7 @@ storiesOf('Alert', module)
       <Alert color='alert'><Text>Alert</Text></Alert>
       <Alert color='warning'><Text>Warning</Text></Alert>
       <Alert size='large' shape='rounded' fill='solid'><Text>Special</Text></Alert>
-    </React.Fragment>
+    </>
   )
   )
 ;
@@ -1535,7 +1535,7 @@ storiesOf('ContextButton', module)
   )
   )
   .add('all places', () => (
-    <React.Fragment>
+    <>
       <ContextButton verticalPosition='top' horizontalPosition='left' color='primary'><Icon name='plus' /></ContextButton>
       <ContextButton verticalPosition='bottom' horizontalPosition='left'><Icon name='plus' /></ContextButton>
       <ContextButton verticalPosition='center' horizontalPosition='left' size='large'><Icon name='plus' width={32} height={32} /></ContextButton>
@@ -1545,14 +1545,14 @@ storiesOf('ContextButton', module)
       <ContextButton verticalPosition='top' horizontalPosition='right'><Icon name='plus' /></ContextButton>
       <ContextButton verticalPosition='bottom' horizontalPosition='right'><Icon name='plus' /></ContextButton>
       <ContextButton verticalPosition='center' horizontalPosition='right'><Icon name='plus' /></ContextButton>
-    </React.Fragment>
+    </>
   )
   )
 ;
 
 storiesOf('Pagination', module)
   .add('All types', () => (
-    <React.Fragment>
+    <>
       <Pagination>
         <Button>First</Button>
         <Button>Previous</Button>
@@ -1585,7 +1585,7 @@ storiesOf('Pagination', module)
         <Button color='primary'><Icon name='chevron-right' width={16} height={16} /></Button>
         <Button color='secondary'><Icon name='chevrons-right' width={16} height={16} /></Button>
       </Pagination>
-    </React.Fragment>
+    </>
   )
   )
 ;
@@ -1595,7 +1595,7 @@ storiesOf('Notification', module)
     let notificationCenterRef = React.createRef();
     let count = 0;
     return (
-      <React.Fragment>
+      <>
         <Button onClick={() => notificationCenterRef.current.addNotification(
           <Notification>
             This is a notification. {++count}
@@ -1603,7 +1603,7 @@ storiesOf('Notification', module)
         )}>Click me
         </Button>
         <NotificationCenter ref={notificationCenterRef} />
-      </React.Fragment>
+      </>
     );
   }
   )
@@ -1611,7 +1611,7 @@ storiesOf('Notification', module)
     let notificationCenterRef = React.createRef();
     let count = 0;
     return (
-      <React.Fragment>
+      <>
         <Button onClick={() => notificationCenterRef.current.addNotification(
           <Notification>
             This is a notification. {++count}
@@ -1619,7 +1619,7 @@ storiesOf('Notification', module)
         )}>Click me
         </Button>
         <NotificationCenter ref={notificationCenterRef} verticalPosition='bottom' horizontalPosition='left' />
-      </React.Fragment>
+      </>
     );
   }
   )
@@ -1627,7 +1627,7 @@ storiesOf('Notification', module)
     let notificationCenterRef = React.createRef();
     let count = 0;
     return (
-      <React.Fragment>
+      <>
         <Button onClick={() => notificationCenterRef.current.addNotification(
           <Notification duration={60000}>
             This is a notification. {++count}
@@ -1635,7 +1635,7 @@ storiesOf('Notification', module)
         )}>Click me
         </Button>
         <NotificationCenter ref={notificationCenterRef} verticalPosition='bottom' horizontalPosition='center' />
-      </React.Fragment>
+      </>
     );
   }
   );

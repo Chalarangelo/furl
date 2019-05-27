@@ -12,12 +12,12 @@ const Sidebar = ({ id, className, outline = 'none', children, ...rest }) => {
 
 const SidebarTab = ({ open, onClick, ...rest }) =>
   open
-    ? <React.Fragment>
+    ? <>
       <button className='layout-sidebar-tab' onClick={onClick} {...rest}>
         <Icon name='x' />
       </button>
       <div className='layout-sidebar-overlay' />
-    </React.Fragment>
+    </>
     : <button className='layout-sidebar-tab' onClick={onClick} {...rest}>
       <Icon name='menu' />
     </button>

@@ -131,7 +131,7 @@ const PasswordInput = ({
   const [passwordVisible, setPasswordVisible] = React.useState(false);
 
   return withRevealer ? (
-    <React.Fragment>
+    <>
       <InputBase
         type={passwordVisible ? 'text' : 'password'} id={id} placeholder={placeholder}
         className={['revealer', className].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}
@@ -143,7 +143,7 @@ const PasswordInput = ({
       }}>
         <Icon name={passwordVisible ? 'eye-off' : 'eye'} width={16} height={16} />&zwnj;
       </Button>
-    </React.Fragment>
+    </>
   )
     : (
       <InputBase
@@ -174,7 +174,7 @@ const NumberInput = ({
 }) => {
   const [inputValue, setInputValue] = React.useState(0);
   return (
-    <React.Fragment>
+    <>
       <Button disabled={disabled} readOnly={readOnly} onClick={(e) => {
         if (readOnly || disabled) return;
         setInputValue(+inputValue - step);
@@ -199,7 +199,7 @@ const NumberInput = ({
       }} className='number-input-plus'>
         <Icon name='plus' width={16} height={16} />&zwnj;
       </Button>
-    </React.Fragment>
+    </>
   );
 };
 
@@ -244,7 +244,7 @@ const SelectInput = ({
       {options}
     </select>);
   } else {
-    return (<React.Fragment><select
+    return (<><select
       id={id}
       className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
       disabled={disabled}
@@ -256,7 +256,7 @@ const SelectInput = ({
       {options}
     </select><Button>
       <Icon name='chevron-down' width={16} height={16} />&zwnj;
-    </Button></React.Fragment>
+    </Button></>
     );
   }
 };
@@ -279,7 +279,7 @@ const ComboboxInput = ({
   let options = children.filter(item => Option.name === item.type.name);
 
   return (
-    <React.Fragment>
+    <>
       <datalist id={optionsId}>
         {options}
       </datalist>
@@ -291,7 +291,7 @@ const ComboboxInput = ({
       <Button>
         <Icon name='chevron-down' width={16} height={16} />&zwnj;
       </Button>
-    </React.Fragment>
+    </>
   );
 }
 ;
@@ -382,7 +382,7 @@ const FileInput = ({
     typeof onFilesChanged === 'function' && onFilesChanged(filename);
   }, [filename]);
 
-  return (<React.Fragment>
+  return (<>
     <input
       type='file' disabled={disabled} required={required} name={name} multiple={multiple}
       onChange={handleFileInput} ref={inputRef} onClick={e => e.stopPropagation()} {...rest}
@@ -401,17 +401,17 @@ const FileInput = ({
       id={id}>
       {
         filename && filename.length > 0 && !drag
-          ? <React.Fragment>
+          ? <>
             <Icon name='check-circle' />
             <ul>{filename.map(f => <li>{f.name}</li>)}</ul>
-          </React.Fragment>
-          : <React.Fragment>
+          </>
+          : <>
             <Icon name='upload' />
             <span>{placeholder}</span>
-          </React.Fragment>
+          </>
       }
     </div>
-  </React.Fragment>);
+  </>);
 };
 
 const Star = ({ marked, starId, iconName, iconStyle, iconFillColor, ...rest }) => (
@@ -500,7 +500,7 @@ const SliderInput = ({
   );
   return (
     range
-      ? <React.Fragment>
+      ? <>
         <InputBase
           type='range' id={id} placeholder={placeholder}
           className={className} size={size} disabled={disabled} readOnly={readOnly}
@@ -527,7 +527,7 @@ const SliderInput = ({
           }}
           {...rest}
         />
-      </React.Fragment>
+      </>
       : <InputBase
         type='range' id={id} placeholder={placeholder}
         className={className} size={size} disabled={disabled} readOnly={readOnly}

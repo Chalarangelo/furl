@@ -46,13 +46,13 @@ const Column = ({
 
   classNames = sizes.map((v, i) => `grid-col-${sizeNames[i]}-${((+v >= 1 && +v <= 12) || (v === 'fluid')) ? `${v}` : (+v < 1) ? `c${`${v}`.replace(/\(|\)|\./g, '')}` : `p${`${v}`.replace(/\(|\)|\./g, '')}`}`);
   if (style.length > 0) {
-    return (<React.Fragment>
+    return (<>
       <style>{style}</style>
       <div className={[className, ...classNames].join(' ').trim()}
         id={id} {...rest}>
         {children}
       </div>
-    </React.Fragment>);
+    </>);
   } else {
     return (<div className={[className, ...classNames].join(' ').trim()}
       id={id} {...rest}>

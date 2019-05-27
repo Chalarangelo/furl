@@ -24,7 +24,7 @@ const Layout = ({
   const layoutName = `layout-${header.map(v => v[0]).join('')}-${sidebar.map(v => v[0]).join('')}-${contentSize.map(v => `${v}`.replace('.', '')).join('-')}`;
   const [sidebarVisible, setSidebarVisible] = React.useState(false);
   return (
-    <React.Fragment>
+    <>
       <style>
         {LayoutStyle(layoutName, header, sidebar, contentSize)}
       </style>
@@ -35,7 +35,7 @@ const Layout = ({
         {contentEl}
         <SidebarTab open={sidebarVisible} onClick={() => setSidebarVisible(!sidebarVisible)} />
       </div>
-    </React.Fragment>
+    </>
   );
 };
 

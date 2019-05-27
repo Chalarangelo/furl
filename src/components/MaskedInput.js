@@ -174,7 +174,7 @@ const DateInput = ({
   };
 
   return (
-    <React.Fragment>
+    <>
       <MaskedInputBase
         type='text' id={id} placeholder={placeholder}
         mask={mask} keepCharPositions
@@ -207,7 +207,7 @@ const DateInput = ({
           /> : ''
         }
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
@@ -226,7 +226,7 @@ const ColorInput = ({
 }) => {
   const [inputValue, setInputValue] = React.useState(defaultValue || '#000000');
   return (
-    <React.Fragment>
+    <>
       <MaskedInputBase
         type='text' id={id} placeholder={placeholder}
         mask={['#', /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/]}
@@ -243,7 +243,7 @@ const ColorInput = ({
         setInputValue(e.target.value);
         onChange(e);
       }} value={inputValue} disabled={disabled} readOnly={readOnly} />
-    </React.Fragment>
+    </>
   );
 };
 
