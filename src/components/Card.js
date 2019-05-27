@@ -10,10 +10,10 @@ const CardSection = ({
 }) => {
   if (media.length) {
     return (<div className={[className, 'card-media-section'].join(' ').trim()}
-      id={id !== undefined ? id : false} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
+      id={id} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
   } else {
     return (<div className={[className, 'card-section'].join(' ').trim()}
-      id={id !== undefined ? id : false}>{children}</div>);
+      id={id}>{children}</div>);
   }
 };
 
@@ -26,7 +26,7 @@ const Card = ({
   children = normalizeChildren(children);
   const sections = children.filter(item => CardSection.name === item.type.name);
   return (<div className={[className, 'card'].join(' ').trim()}
-    id={id !== undefined ? id : false} style={{width: width}}>
+    id={id} style={{width: width}}>
     {sections}
   </div>);
 };

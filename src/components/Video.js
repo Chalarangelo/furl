@@ -18,7 +18,7 @@ const Video = ({
     <figure>
       <video
         className={className}
-        id={id !== undefined ? id : false}
+        id={id}
         height={height}
         width={width}
         src={src}
@@ -31,7 +31,7 @@ const Video = ({
     : (
       <video
         className={className}
-        id={id !== undefined ? id : false}
+        id={id}
         height={height}
         width={width}
         src={src}

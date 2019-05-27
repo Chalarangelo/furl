@@ -2,7 +2,7 @@ import React from 'react';
 import { normalizeChildren } from '../utilities/utils';
 
 const StepItem = ({ id, selected = false, className, children }) => (
-  <span id={id !== undefined ? id : false} className={['step-item', selected ? 'selected' : '', className].join(' ').trim()}>
+  <span id={id} className={['step-item', selected ? 'selected' : '', className].join(' ').trim()}>
     <span className='step-content'>{children}</span>
   </span>
 );
@@ -21,7 +21,7 @@ const Step = ({
   }
   let classNames = [className, 'step'];
   return (
-    <nav id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
+    <nav id={id} className={classNames.join(' ').trim()}>
       {steps}
     </nav>
   );

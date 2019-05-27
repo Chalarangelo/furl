@@ -3,7 +3,7 @@ import { normalizeChildren } from '../utilities/utils';
 import Button from './Button';
 
 const TabItem = ({ id, className, children }) => (
-  <span id={id !== undefined ? id : false} className={['tab-item', className].join(' ').trim()}>
+  <span id={id} className={['tab-item', className].join(' ').trim()}>
     {children}
   </span>
 );
@@ -41,7 +41,7 @@ const Tab = ({
   });
   let classNames = [className, 'tab-container'];
   return (
-    <div id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
+    <div id={id} className={classNames.join(' ').trim()}>
       <div className={['tab-controls', controlStyle !== 'normal' ? controlStyle : ''].join(' ').trim()}>{tabsButtons}</div>
       <div className='tab-content'>{tabsContent}</div>
     </div>

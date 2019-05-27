@@ -15,7 +15,7 @@ const Alert = ({
   if (shape !== 'normal') classNames.push(shape);
   return (
     <div
-      id={id !== undefined ? id : false}
+      id={id}
       className={['alert', className, ...classNames].join(' ').trim()}>
       {children}
     </div>

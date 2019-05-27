@@ -24,7 +24,7 @@ const Accordion = ({
       }, c.props);
       return _c;
     });
-  return (<div className={['accordion', className].join(' ').trim()} id={id !== undefined ? id : false}>
+  return (<div className={['accordion', className].join(' ').trim()} id={id}>
     {collapses}
   </div>);
 };

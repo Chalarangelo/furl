@@ -25,12 +25,12 @@ const InputBase = ({
   return (
     <input
       type={type}
-      id={id !== undefined ? id : false}
+      id={id}
       className={classNames.join(' ').trim()}
       disabled={disabled}
       required={required}
-      placeholder={placeholder !== undefined ? placeholder : false}
-      name={name !== undefined ? name : false}
+      placeholder={placeholder}
+      name={name}
       onChange={onChange}
       defaultValue={defaultValue}
       {...rest}
@@ -54,13 +54,13 @@ const TextInput = ({
 }) =>
   multiline ? (
     <textarea
-      id={id !== undefined ? id : false}
+      id={id}
       className={className}
       size={size} shape={shape}
       disabled={disabled}
       required={required}
-      placeholder={placeholder !== undefined ? placeholder : false}
-      name={name !== undefined ? name : false}
+      placeholder={placeholder}
+      name={name}
       onChange={onChange}
       rows={rows}
       {...rest}
@@ -205,7 +205,7 @@ const NumberInput = ({
 
 const Option = ({ disabled, selected, value, id, className, children }) => (
   <option
-    id={id !== undefined ? id : false} className={className}
+    id={id} className={className}
     value={value} disabled={disabled} selected={selected}
   >
     {children}
@@ -231,12 +231,12 @@ const SelectInput = ({
   let options = children.filter(item => Option.name === item.type.name);
   if (multiple) {
     return (<select
-      id={id !== undefined ? id : false}
+      id={id}
       className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
       disabled={disabled}
       required={required}
-      placeholder={placeholder !== undefined ? placeholder : false}
-      name={name !== undefined ? name : false}
+      placeholder={placeholder}
+      name={name}
       onChange={onChange}
       multiple={multiple} size={selectSize} {...rest}
     >
@@ -244,12 +244,12 @@ const SelectInput = ({
     </select>);
   } else {
     return (<React.Fragment><select
-      id={id !== undefined ? id : false}
+      id={id}
       className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
       disabled={disabled}
       required={required}
-      placeholder={placeholder !== undefined ? placeholder : false}
-      name={name !== undefined ? name : false}
+      placeholder={placeholder}
+      name={name}
       onChange={onChange} {...rest}
     >
       {options}
@@ -397,7 +397,7 @@ const FileInput = ({
         readOnly ? 'readonly' : ''
       ].join(' ').trim()}
       ref={dropRef}
-      id={id !== undefined ? id : false}>
+      id={id}>
       {
         filename && filename.length > 0 && !drag
           ? <React.Fragment>
@@ -446,7 +446,7 @@ const RatingInput = ({
 
   return (
     <div
-      id={id !== undefined ? id : false}
+      id={id}
       onMouseOut={() => hoverOver(null)}
       onClick={(event) => {
         if (disabled || readOnly) return;

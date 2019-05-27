@@ -9,7 +9,7 @@ const Tooltip = ({
 }) => {
   const [show, setShow] = React.useState(false);
   return (
-    <span id={id !== undefined ? id : false} className={[className, 'tooltip'].join(' ').trim()} onMouseLeave={() => setShow(false)}>
+    <span id={id} className={[className, 'tooltip'].join(' ').trim()} onMouseLeave={() => setShow(false)}>
       {show && <div className={`tooltip-bubble tooltip-${position}`}>
         <div className='tooltip-message'>{content}</div>
       </div>}

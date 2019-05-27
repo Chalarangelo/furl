@@ -2,7 +2,7 @@ import React from 'react';
 import {normalizeChildren} from '../utilities/utils';
 
 const ListItem = ({ id, className, children }) => (
-  <li id={id !== undefined ? id : false} className={className}>
+  <li id={id} className={className}>
     {children}
   </li>
 );
@@ -19,13 +19,13 @@ const List = ({
   let classNames = [className, listStyle !== 'none' ? listStyle : ''];
   if (ordered) {
     return (
-      <ol id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
+      <ol id={id} className={classNames.join(' ').trim()}>
         {listItems}
       </ol>
     );
   } else {
     return (
-      <ul id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
+      <ul id={id} className={classNames.join(' ').trim()}>
         {listItems}
       </ul>
     );

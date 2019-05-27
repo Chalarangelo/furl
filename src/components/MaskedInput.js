@@ -25,12 +25,12 @@ const MaskedInputBase = ({
   return (
     <MaskedInput
       type={type} mask={mask} guide placeholderChar={'\u2000'}
-      id={id !== undefined ? id : false}
+      id={id}
       className={classNames.join(' ').trim()}
       disabled={disabled}
       required={required}
-      placeholder={placeholder !== undefined ? placeholder : false}
-      name={name !== undefined ? name : false}
+      placeholder={placeholder}
+      name={name}
       onChange={onChange}
       defaultValue={defaultValue}
       ref={__ref}

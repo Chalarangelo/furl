@@ -16,7 +16,7 @@ const Icon = ({
   ...rest
 }) => (
   <span
-    id={id !== undefined ? id : false}
+    id={id}
     className={[ className, 'icon' ].join(' ').trim()}
     {...rest}
     dangerouslySetInnerHTML={{ __html: feather.icons[name].toSvg({

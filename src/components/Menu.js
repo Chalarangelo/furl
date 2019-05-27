@@ -35,7 +35,7 @@ const Menu = ({ type = 'horizontal', highlight = 'top', id, className, children 
   const menuItems = children.filter(item => MenuItem.name === item.type.name);
   let classNames = [type, className, `${highlight}-highlight`, 'menu'];
   return (<nav
-    id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>{menuItems}</nav>);
+    id={id} className={classNames.join(' ').trim()}>{menuItems}</nav>);
 };
 
 export {Menu, MenuItem};

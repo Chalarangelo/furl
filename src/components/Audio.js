@@ -19,7 +19,7 @@ const Audio = ({
     <figure>
       <audio
         className={className}
-        id={id !== undefined ? id : false}
+        id={id}
         height={height}
         width={width}
         src={src}
@@ -32,7 +32,7 @@ const Audio = ({
     : (
       <audio
         className={className}
-        id={id !== undefined ? id : false}
+        id={id}
         height={height}
         width={width}
         src={src}

@@ -4,8 +4,8 @@ import AutoLink from '../utilities/AutoLink';
 
 const Quote = ({ cite, id, className, children }) => {
   return (<blockquote
-    cite={cite !== undefined ? cite : false}
-    id={id !== undefined ? id : false}
+    cite={cite}
+    id={id}
     className={[className].join(' ').trim()}>
     {children}
   </blockquote>);
@@ -13,7 +13,7 @@ const Quote = ({ cite, id, className, children }) => {
 
 const Preformatted = ({ id, className, children }) => {
   return (<pre
-    id={id !== undefined ? id : false}
+    id={id}
     className={[className].join(' ').trim()}>
     {children}
   </pre>);
@@ -21,7 +21,7 @@ const Preformatted = ({ id, className, children }) => {
 
 const Paragraph = ({ id, className, children }) => {
   return (<p
-    id={id !== undefined ? id : false}
+    id={id}
     className={[className].join(' ').trim()}>
     {children}
   </p>);
@@ -29,7 +29,7 @@ const Paragraph = ({ id, className, children }) => {
 
 const Code = ({ id, className, children }) => {
   return (<code
-    id={id !== undefined ? id : false}
+    id={id}
     className={[className].join(' ').trim()}>
     {children}
   </code>);
@@ -37,7 +37,7 @@ const Code = ({ id, className, children }) => {
 
 const Kbd = ({ id, className, children }) => {
   return (<kbd
-    id={id !== undefined ? id : false}
+    id={id}
     className={[className].join(' ').trim()}>
     {children}
   </kbd>);
@@ -46,19 +46,19 @@ const Kbd = ({ id, className, children }) => {
 const Title = ({ level = 1, semantic = true, id, className, children }) => {
   switch (level) {
     case 1:
-      if (semantic) { return <h1 id={id !== undefined ? id : false} className={[className].join(' ').trim()}>{children}</h1>; } else { return <span id={id !== undefined ? id : false} className={['title1', className].join(' ').trim()}>{children}</span>; }
+      if (semantic) { return <h1 id={id} className={[className].join(' ').trim()}>{children}</h1>; } else { return <span id={id} className={['title1', className].join(' ').trim()}>{children}</span>; }
     case 2:
-      if (semantic) { return <h2 id={id !== undefined ? id : false} className={[className].join(' ').trim()}>{children}</h2>; } else { return <span id={id !== undefined ? id : false} className={['title2', className].join(' ').trim()}>{children}</span>; }
+      if (semantic) { return <h2 id={id} className={[className].join(' ').trim()}>{children}</h2>; } else { return <span id={id} className={['title2', className].join(' ').trim()}>{children}</span>; }
     case 3:
-      if (semantic) { return <h3 id={id !== undefined ? id : false} className={[className].join(' ').trim()}>{children}</h3>; } else { return <span id={id !== undefined ? id : false} className={['title3', className].join(' ').trim()}>{children}</span>; }
+      if (semantic) { return <h3 id={id} className={[className].join(' ').trim()}>{children}</h3>; } else { return <span id={id} className={['title3', className].join(' ').trim()}>{children}</span>; }
     case 4:
-      if (semantic) { return <h4 id={id !== undefined ? id : false} className={[className].join(' ').trim()}>{children}</h4>; } else { return <span id={id !== undefined ? id : false} className={['title4', className].join(' ').trim()}>{children}</span>; }
+      if (semantic) { return <h4 id={id} className={[className].join(' ').trim()}>{children}</h4>; } else { return <span id={id} className={['title4', className].join(' ').trim()}>{children}</span>; }
     case 5:
-      if (semantic) { return <h5 id={id !== undefined ? id : false} className={[className].join(' ').trim()}>{children}</h5>; } else { return <span id={id !== undefined ? id : false} className={['title5', className].join(' ').trim()}>{children}</span>; }
+      if (semantic) { return <h5 id={id} className={[className].join(' ').trim()}>{children}</h5>; } else { return <span id={id} className={['title5', className].join(' ').trim()}>{children}</span>; }
     case 6:
-      if (semantic) { return <h6 id={id !== undefined ? id : false} className={[className].join(' ').trim()}>{children}</h6>; } else { return <span id={id !== undefined ? id : false} className={['title6', className].join(' ').trim()}>{children}</span>; }
+      if (semantic) { return <h6 id={id} className={[className].join(' ').trim()}>{children}</h6>; } else { return <span id={id} className={['title6', className].join(' ').trim()}>{children}</span>; }
     default:
-      if (semantic) { return <h1 id={id !== undefined ? id : false} className={[className].join(' ').trim()}>{children}</h1>; } else { return <span id={id !== undefined ? id : false} className={['title1', className].join(' ').trim()}>{children}</span>; }
+      if (semantic) { return <h1 id={id} className={[className].join(' ').trim()}>{children}</h1>; } else { return <span id={id} className={['title1', className].join(' ').trim()}>{children}</span>; }
   }
 };
 
@@ -75,25 +75,25 @@ const Text = ({ autolink = false, textStyle, id, className, children }) => {
   switch (textStyle) {
     case 'small':
       return <small
-        id={id !== undefined ? id : false}
+        id={id}
         className={[className].join(' ').trim()}>
         {children}
       </small>;
     case 'bold':
       return <strong
-        id={id !== undefined ? id : false}
+        id={id}
         className={[className].join(' ').trim()}>
         {children}
       </strong>;
     case 'italics':
       return <em
-        id={id !== undefined ? id : false}
+        id={id}
         className={[className].join(' ').trim()}>
         {children}
       </em>;
     default:
       return <span
-        id={id !== undefined ? id : false}
+        id={id}
         className={[textStyle, className].join(' ').trim()}>
         {children}
       </span>;

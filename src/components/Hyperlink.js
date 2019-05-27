@@ -6,7 +6,7 @@ const Hyperlink = ({ openIn = 'self', href, id, className, children }) =>
       href={href}
       rel='noopener noreferrer'
       target='_blank'
-      id={id !== undefined ? id : false}
+      id={id}
       className={className}
     >
       {children}
@@ -14,7 +14,7 @@ const Hyperlink = ({ openIn = 'self', href, id, className, children }) =>
     : <a
       href={href}
       target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
-      id={id !== undefined ? id : false}
+      id={id}
       className={className}
     >
       {children}

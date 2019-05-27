@@ -2,7 +2,7 @@ import React from 'react';
 import { normalizeChildren } from '../utilities/utils';
 
 const BreadcrumbItem = ({ id, className, children }) => (
-  <span id={id !== undefined ? id : false} className={['breadcrumb-item', className].join(' ').trim()}>
+  <span id={id} className={['breadcrumb-item', className].join(' ').trim()}>
     {children}
   </span>
 );
@@ -22,7 +22,7 @@ const Breadcrumb = ({
   }, []);
   let classNames = [className, 'breadcrumb'];
   return (
-    <nav id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
+    <nav id={id} className={classNames.join(' ').trim()}>
       {breadcrumbs}
     </nav>
   );

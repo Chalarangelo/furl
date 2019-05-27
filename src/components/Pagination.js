@@ -10,7 +10,7 @@ const PaginationItem = ({
   className,
   children }) => (
   <span // eslint-disable-line semistandard-react/jsx-indent
-    id={id !== undefined ? id : false}
+    id={id}
     className={['pagination-item', fill, size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}>
     {children}
   </span>
@@ -38,7 +38,7 @@ const Pagination = ({
   if (size !== 'normal') classNames.push(size);
   if (shape !== 'normal') classNames.push(shape);
   return (
-    <div id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
+    <div id={id} className={classNames.join(' ').trim()}>
       {buttons}
     </div>
   );

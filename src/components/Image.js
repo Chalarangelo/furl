@@ -13,7 +13,7 @@ const Image = ({
     <figure>
       <img
         className={className}
-        id={id !== undefined ? id : false}
+        id={id}
         height={height}
         width={width}
         src={src}
@@ -25,7 +25,7 @@ const Image = ({
     : (
       <img
         className={className}
-        id={id !== undefined ? id : false}
+        id={id}
         height={height}
         width={width}
         src={src}

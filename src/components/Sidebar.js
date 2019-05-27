@@ -3,7 +3,7 @@ import Icon from './Icon';
 
 const Sidebar = ({ id, className, outline = 'none', children }) => {
   return (<aside
-    id={id !== undefined ? id : false} className={[ outline !== 'none' ? outline : '', className, 'layout-sidebar' ].join(' ').trim()}>{children}</aside>);
+    id={id} className={[ outline !== 'none' ? outline : '', className, 'layout-sidebar' ].join(' ').trim()}>{children}</aside>);
 };
 
 const SidebarTab = ({open, onClick}) =>

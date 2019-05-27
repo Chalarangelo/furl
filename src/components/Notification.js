@@ -33,7 +33,7 @@ const Notification = ({
     isActive
       ? <div
         className={['notification', ...classNames, isAlmostInactive ? 'almost-inactive' : '', isInactive ? 'inactive' : ''].join(' ').trim()}
-        id={id !== undefined ? id : false}
+        id={id}
       >
         {children}
       </div>
@@ -63,7 +63,7 @@ const NotificationCenter = React.forwardRef(
       __setContent(__content.filter(v => v !== null));
     });
     return (
-      <div className={['notification-center', verticalPosition, horizontalPosition, className].join(' ').trim()} id={id !== undefined ? id : false} >
+      <div className={['notification-center', verticalPosition, horizontalPosition, className].join(' ').trim()} id={id} >
         {__content.filter(v => v !== null)}
       </div>
     );

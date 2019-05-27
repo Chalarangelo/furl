@@ -9,7 +9,7 @@ const Popover = ({
 }) => {
   const [show, setShow] = React.useState(false);
   return (
-    <span className={[className, 'popover'].join(' ').trim()} id={id !== undefined ? id : false}>
+    <span className={[className, 'popover'].join(' ').trim()} id={id}>
       {show && <div className={`popover-bubble popover-${position}`}>
         <div className='popover-message'>{content}</div>
       </div>}

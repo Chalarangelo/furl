@@ -165,7 +165,7 @@ const Calendar = ({
   }, [current]);
 
   return (
-    <div className={['calendar-container', className, fill !== 'flat' ? fill : ''].join(' ').trim()} id={id !== undefined ? id : false}>
+    <div className={['calendar-container', className, fill !== 'flat' ? fill : ''].join(' ').trim()} id={id}>
       <div className='calendar-header'>
         <Button className='calendar-arrow-button'
           onMouseDown={handlePrevious}

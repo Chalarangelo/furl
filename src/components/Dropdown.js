@@ -10,7 +10,7 @@ const Dropdown = ({
   children }) => {
   let classNames = ['dropdown', reverse ? 'reverse' : '', className];
   return (
-    <details className={classNames.join(' ').trim()} id={id !== undefined ? id : false} open={isOpen}>
+    <details className={classNames.join(' ').trim()} id={id} open={isOpen}>
       <summary>{text}
         {reverse
           ? <Icon name='chevron-up' width={16} height={16} />

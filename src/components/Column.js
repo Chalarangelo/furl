@@ -48,13 +48,13 @@ const Column = ({
     return (<React.Fragment>
       <style>{style}</style>
       <div className={[className, ...classNames].join(' ').trim()}
-        id={id !== undefined ? id : false}>
+        id={id}>
         {children}
       </div>
     </React.Fragment>);
   } else {
     return (<div className={[className, ...classNames].join(' ').trim()}
-      id={id !== undefined ? id : false}>
+      id={id}>
       {children}
     </div>);
   }

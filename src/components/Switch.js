@@ -15,12 +15,12 @@ const Switch = ({
     <label className='switch'>
       <input
         type='checkbox'
-        id={id !== undefined ? id : false}
+        id={id}
         className={classNames.join(' ').trim()}
         disabled={disabled}
         required={required}
         checked={checked}
-        name={name !== undefined ? name : false}
+        name={name}
         onChange={onChange}
       />
       {children}

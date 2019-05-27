@@ -14,7 +14,7 @@ const ContextButton = ({
   let classNames = [className, `v-${verticalPosition}`, `h-${horizontalPosition}`, 'context-button'];
   return (
     <Button
-      id={id !== undefined ? id : false}
+      id={id}
       className={classNames.join(' ').trim()}
       fill='solid'
       text={text}

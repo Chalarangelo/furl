@@ -28,7 +28,7 @@ const Layout = ({
         {LayoutStyle(layoutName, header, sidebar, contentSize)}
       </style>
       <div
-        id={id !== undefined ? id : false} className={['layout-container', className, layoutName, sidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'].join(' ').trim()}>
+        id={id} className={['layout-container', className, layoutName, sidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'].join(' ').trim()}>
         {headerEl}
         {sidebarEl}
         {contentEl}

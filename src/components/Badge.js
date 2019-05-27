@@ -17,7 +17,7 @@ const Badge = ({
   if (shape !== 'normal') classNames.push(shape);
   return (
     <span
-      id={id !== undefined ? id : false}
+      id={id}
       className={['badge', className, ...classNames].join(' ').trim()}>
       {children}
     </span>

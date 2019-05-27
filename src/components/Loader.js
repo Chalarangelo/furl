@@ -12,7 +12,7 @@ const Loader = ({
     width={size === 'large' ? 48 : 24}
     height={size === 'large' ? 48 : 24}
     className={['loader', color !== 'normal' ? color : '', className].join(' ').trim()}
-    id={id !== undefined ? id : false}
+    id={id}
   />
 );
 

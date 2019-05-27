@@ -9,10 +9,10 @@ const ModalSection = ({
 }) => {
   if (media.length) {
     return (<div className={[className, 'modal-media-section'].join(' ').trim()}
-      id={id !== undefined ? id : false} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
+      id={id} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
   } else {
     return (<div className={[className, 'modal-section'].join(' ').trim()}
-      id={id !== undefined ? id : false}>{children}</div>);
+      id={id}>{children}</div>);
   }
 };
 
@@ -25,7 +25,7 @@ const Modal = ({
 }) => (
   <div
     className={['modal', className].join(' ').trim()}
-    id={id !== undefined ? id : false}
+    id={id}
   >
     {children}
   </div>
@@ -48,7 +48,7 @@ const ModalCenter = React.forwardRef(
     }));
     return (
       __isOpen
-        ? <div className={['modal-center', className].join(' ').trim()} id={id !== undefined ? id : false} >
+        ? <div className={['modal-center', className].join(' ').trim()} id={id} >
           <div className='modal-overlay' />
           {__content}
         </div>

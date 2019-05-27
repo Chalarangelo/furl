@@ -15,7 +15,7 @@ const Iframe = ({
     <figure>
       <iframe
         className={className}
-        id={id !== undefined ? id : false}
+        id={id}
         height={height}
         width={width}
         src={src}
@@ -30,7 +30,7 @@ const Iframe = ({
     : (
       <iframe
         className={className}
-        id={id !== undefined ? id : false}
+        id={id}
         height={height}
         width={width}
         src={src}
