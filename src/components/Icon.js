@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 const feather = require('feather-icons');
 
-const Icon = ({ 
-  name, 
+const Icon = ({
+  name,
   width = 24,
   height = 24,
   viewBox = '0 0 24 24',
@@ -11,13 +11,13 @@ const Icon = ({
   strokeWidth = 2,
   strokeLinecap = 'round',
   strokeLinejoin = 'round',
-  id, 
+  id,
   className,
   ...rest
 }) => (
-  <span 
-    id={id !== undefined ? id : false} 
-    className={[ className, 'icon'].join(' ').trim()}
+  <span
+    id={id !== undefined ? id : false}
+    className={[ className, 'icon' ].join(' ').trim()}
     {...rest}
     dangerouslySetInnerHTML={{ __html: feather.icons[name].toSvg({
       class: className,
@@ -29,7 +29,7 @@ const Icon = ({
       'stroke-width': strokeWidth,
       'stroke-linecap': strokeLinecap,
       'stroke-linejoin': strokeLinejoin
-    })}}   
+    })}}
   />
 );
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Switch = ({
   color = 'plain',
@@ -25,7 +25,7 @@ const Switch = ({
       />
       {children}
     </label>
-  )
+  );
 };
 
 export default Switch;

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const Footer = ({ id, className, children }) => {
-  return (<footer 
+  return (<footer
     id={id !== undefined ? id : false} className={[ className ].join(' ').trim()}>{children}</footer>);
-}
+};
 
 export default Footer;

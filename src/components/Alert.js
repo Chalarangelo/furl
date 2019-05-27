@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Alert = ({
   fill = 'flat',
@@ -19,7 +19,7 @@ const Alert = ({
       className={['alert', className, ...classNames].join(' ').trim()}>
       {children}
     </div>
-  )
+  );
 };
 
 export default Alert;

@@ -1,8 +1,8 @@
-import React from "react";
-import Button from "./Button";
-import Icon from "./Icon";
-import { normalizeChildren, generateUniqueId } from "../utilities/utils";
-import { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, DateInput } from "./MaskedInput";
+import React from 'react';
+import Button from './Button';
+import Icon from './Icon';
+import { normalizeChildren, generateUniqueId } from '../utilities/utils';
+import { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, DateInput } from './MaskedInput';
 
 const InputBase = ({
   size = 'normal',
@@ -19,8 +19,8 @@ const InputBase = ({
   ...rest
 }) => {
   let classNames = [
-    size !== 'normal' ? size : '', 
-    shape !== 'normal' ? shape : '', 
+    size !== 'normal' ? size : '',
+    shape !== 'normal' ? shape : '',
     className];
   return (
     <input
@@ -35,7 +35,7 @@ const InputBase = ({
       defaultValue={defaultValue}
       {...rest}
     />
-  )
+  );
 };
 
 const TextInput = ({
@@ -51,7 +51,7 @@ const TextInput = ({
   id,
   className,
   ...rest
-}) => 
+}) =>
   multiline ? (
     <textarea
       id={id !== undefined ? id : false}
@@ -66,9 +66,9 @@ const TextInput = ({
       {...rest}
     />
   ) : (
-    <InputBase 
+    <InputBase
       type='text' id={id} placeholder={placeholder} shape={shape}
-      className={className} size={size} disabled={disabled} 
+      className={className} size={size} disabled={disabled}
       required={required} name={name} onChange={onChange}
       {...rest}
     />
@@ -80,14 +80,14 @@ const EmailInput = ({
   disabled = false,
   required = false,
   placeholder,
-  pattern='.+@.+\..+',
+  pattern = '.+@.+\..+',
   name,
   onChange,
   id,
   className,
   ...rest
 }) => (
-  <InputBase 
+  <InputBase
     type='email' id={id} placeholder={placeholder} pattern={pattern}
     className={className} size={size} disabled={disabled} shape={shape}
     required={required} name={name} onChange={onChange} {...rest}
@@ -100,14 +100,14 @@ const UrlInput = ({
   disabled = false,
   required = false,
   placeholder,
-  pattern='https?://.+',
+  pattern = 'https?://.+',
   name,
   onChange,
   id,
   className,
   ...rest
 }) => (
-  <InputBase 
+  <InputBase
     type='url' id={id} placeholder={placeholder} pattern={pattern}
     className={className} size={size} disabled={disabled} shape={shape}
     required={required} name={name} onChange={onChange} {...rest}
@@ -129,30 +129,30 @@ const PasswordInput = ({
   ...rest
 }) => {
   const [passwordVisible, setPasswordVisible] = React.useState(false);
-  
+
   return withRevealer ? (
     <React.Fragment>
-      <InputBase 
+      <InputBase
         type={passwordVisible ? 'text' : 'password'} id={id} placeholder={placeholder}
         className={['revealer', className].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name} onChange={onChange} shape={shape} {...rest}
       />
       <Button disabled={disabled} readOnly={readOnly} onClick={() => {
-        if(disabled || readOnly) return;
+        if (disabled || readOnly) return;
         setPasswordVisible(!passwordVisible);
       }}>
         <Icon name={passwordVisible ? 'eye-off' : 'eye'} width={16} height={16} />&zwnj;
       </Button>
     </React.Fragment>
   )
-  : (
-    <InputBase
-      type='password' id={id} placeholder={placeholder}
-      className={className} size={size} disabled={disabled}
-      required={required} name={name} onChange={onChange}
-      {...rest}
-    />
-  )
+    : (
+      <InputBase
+        type='password' id={id} placeholder={placeholder}
+        className={className} size={size} disabled={disabled}
+        required={required} name={name} onChange={onChange}
+        {...rest}
+      />
+    );
 }
 ;
 
@@ -175,10 +175,10 @@ const NumberInput = ({
   const [inputValue, setInputValue] = React.useState(0);
   return (
     <React.Fragment>
-      <Button disabled={disabled} readOnly={readOnly} onClick={(e) => { 
+      <Button disabled={disabled} readOnly={readOnly} onClick={(e) => {
         if (readOnly || disabled) return;
-        setInputValue(+inputValue - step); 
-        onChange(e); 
+        setInputValue(+inputValue - step);
+        onChange(e);
       }} className='number-input-minus'>
         <Icon name='minus' width={16} height={16} />&zwnj;
       </Button>
@@ -187,27 +187,27 @@ const NumberInput = ({
         className={className} size={size} shape={shape} disabled={disabled}
         required={required} name={name} onChange={(e) => {
           if (readOnly || disabled) return;
-          setInputValue(e.target.value); 
+          setInputValue(e.target.value);
           onChange(e);
         }}
         min={min} max={max} step={step} value={inputValue} {...rest}
       />
-      <Button disabled={disabled} readOnly={readOnly} onClick={(e) => { 
+      <Button disabled={disabled} readOnly={readOnly} onClick={(e) => {
         if (readOnly || disabled) return;
-        setInputValue(+inputValue + step); 
-        onChange(e); 
+        setInputValue(+inputValue + step);
+        onChange(e);
       }} className='number-input-plus'>
         <Icon name='plus' width={16} height={16} />&zwnj;
       </Button>
     </React.Fragment>
-  )
+  );
 };
 
 const Option = ({ disabled, selected, value, id, className, children }) => (
-  <option 
+  <option
     id={id !== undefined ? id : false} className={className}
     value={value} disabled={disabled} selected={selected}
-    >
+  >
     {children}
   </option>
 );
@@ -226,10 +226,10 @@ const SelectInput = ({
   className,
   children,
   ...rest
-}) =>  {
+}) => {
   children = normalizeChildren(children);
-  let options = children.filter(item => Option.name == item.type.name);
-  if(multiple)
+  let options = children.filter(item => Option.name === item.type.name);
+  if (multiple) {
     return (<select
       id={id !== undefined ? id : false}
       className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
@@ -242,7 +242,7 @@ const SelectInput = ({
     >
       {options}
     </select>);
-  else
+  } else {
     return (<React.Fragment><select
       id={id !== undefined ? id : false}
       className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
@@ -254,9 +254,10 @@ const SelectInput = ({
     >
       {options}
     </select><Button>
-        <Icon name='chevron-down' width={16} height={16} />&zwnj;
-        </Button></React.Fragment>
-    )
+      <Icon name='chevron-down' width={16} height={16} />&zwnj;
+    </Button></React.Fragment>
+    );
+  }
 };
 
 const ComboboxInput = ({
@@ -274,23 +275,23 @@ const ComboboxInput = ({
 }) => {
   const [optionsId, setOptionsId] = React.useState(generateUniqueId('combo-input'));
   children = normalizeChildren(children);
-  let options = children.filter(item => Option.name == item.type.name);
-  
+  let options = children.filter(item => Option.name === item.type.name);
+
   return (
     <React.Fragment>
       <datalist id={optionsId}>
         {options}
       </datalist>
-      <InputBase 
+      <InputBase
         id={id} placeholder={placeholder} list={optionsId}
-        className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '',className].join(' ').trim()} size={size} disabled={disabled} 
+        className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} {...rest}
       />
       <Button>
         <Icon name='chevron-down' width={16} height={16} />&zwnj;
       </Button>
     </React.Fragment>
-  )
+  );
 }
 ;
 
@@ -350,14 +351,14 @@ const FileInput = ({
     e.preventDefault();
     e.stopPropagation();
     inputRef.current && inputRef.current.click();
-  }
+  };
 
   const handleFileInput = (e) => {
     if (e.target.files && e.target.files.length > 0) {
       if (multiple) setFilename(Array.from(e.target.files));
       else setFilename([e.target.files[0]]);
     }
-  }
+  };
 
   React.useEffect(() => {
     let div = dropRef.current;
@@ -368,56 +369,56 @@ const FileInput = ({
     div.addEventListener('dragover', handleDrag);
     div.addEventListener('drop', handleDrop);
     div.addEventListener('click', handleClick);
-    return function cleanup() {
+    return function cleanup () {
       div.removeEventListener('dragenter', handleDragIn);
       div.removeEventListener('dragleave', handleDragOut);
       div.removeEventListener('dragover', handleDrag);
       div.removeEventListener('drop', handleDrop);
     };
-  },[dropRef]);
+  }, [dropRef]);
 
   React.useEffect(() => {
-    typeof onFilesChanged == 'function' && onFilesChanged(filename);
-  },[filename]);
+    typeof onFilesChanged === 'function' && onFilesChanged(filename);
+  }, [filename]);
 
   return (<React.Fragment>
-    <input 
+    <input
       type='file' disabled={disabled} required={required} name={name} multiple={multiple}
       onChange={handleFileInput} ref={inputRef} onClick={e => e.stopPropagation()} {...rest}
     />
-    <div 
-      role="button"
+    <div
+      role='button'
       className={[
-        className, 'upload', 
+        className, 'upload',
         drag ? 'drag' : (filename && filename.length > 0) ? 'ready' : '',
         shape !== 'normal' ? shape : '',
         size !== 'normal' ? size : '',
         disabled ? 'disabled' : '',
         readOnly ? 'readonly' : ''
-      ].join(' ').trim()} 
-      ref={dropRef} 
+      ].join(' ').trim()}
+      ref={dropRef}
       id={id !== undefined ? id : false}>
       {
-        filename && filename.length > 0 && !drag 
-        ? <React.Fragment>
-            <Icon name='check-circle'/>
-            <ul>{filename.map(f => <li>{f.name}</li>)}</ul> 
+        filename && filename.length > 0 && !drag
+          ? <React.Fragment>
+            <Icon name='check-circle' />
+            <ul>{filename.map(f => <li>{f.name}</li>)}</ul>
           </React.Fragment>
           : <React.Fragment>
             <Icon name='upload' />
             <span>{placeholder}</span>
           </React.Fragment>
-        }
+      }
     </div>
   </React.Fragment>);
 };
 
 const Star = ({ marked, starId, iconName, iconStyle, iconFillColor }) => (
-  <Icon star-id={starId} name={iconName} 
-    fill={marked ? iconFillColor : iconStyle !== 'fill' ? 'none' : 'var(--interface-gray-300)'} 
-    stroke = { marked ? iconFillColor : 'var(--interface-gray-300)'} 
+  <Icon star-id={starId} name={iconName}
+    fill={marked ? iconFillColor : iconStyle !== 'fill' ? 'none' : 'var(--interface-gray-300)'}
+    stroke={marked ? iconFillColor : 'var(--interface-gray-300)'}
   />
-)
+);
 
 const RatingInput = ({
   iconName = 'star',
@@ -432,15 +433,14 @@ const RatingInput = ({
   className,
   defaultValue = 0,
   ...rest
-}) =>  {
-  const [rating, setRating] = React.useState(typeof defaultValue == 'number' ? defaultValue : 0);
+}) => {
+  const [rating, setRating] = React.useState(typeof defaultValue === 'number' ? defaultValue : 0);
   const [selection, setSelection] = React.useState(0);
 
   const hoverOver = e => {
     if (disabled || readOnly) return;
     let val = 0;
-    if (e && e.target && e.target.getAttribute('star-id'))
-      val = e.target.getAttribute('star-id');
+    if (e && e.target && e.target.getAttribute('star-id')) { val = e.target.getAttribute('star-id'); }
     setSelection(val);
   };
 
@@ -454,6 +454,7 @@ const RatingInput = ({
       }}
       onMouseOver={hoverOver}
       className={[className, 'rating', disabled ? 'disabled' : '', readOnly ? 'readonly' : ''].join(' ').trim()}
+      {...rest} // TODO: Check if this should all go here
     >
       <input
         type='number' disabled={disabled} required={required} name={name} onChange={onChange} value={rating} readOnly={readOnly}
@@ -488,53 +489,57 @@ const SliderInput = ({
   defaultValue,
   ...rest
 }) => {
-  const [inputValue, setInputValue] = React.useState(range ?
-    (Array.isArray(defaultValue) && typeof defaultValue[1] == 'number') ?  defaultValue[1] : max :
-    typeof defaultValue == 'number' ? defaultValue : min
+  const [inputValue, setInputValue] = React.useState(range
+    ? (Array.isArray(defaultValue) && typeof defaultValue[1] === 'number') ? defaultValue[1] : max
+    : typeof defaultValue === 'number' ? defaultValue : min
   );
-  const [lowInputValue, setLowInputValue] = React.useState(range ?
-    (Array.isArray(defaultValue) && typeof defaultValue[0] == 'number') ? defaultValue[0] : min :
-    min
+  const [lowInputValue, setLowInputValue] = React.useState(range
+    ? (Array.isArray(defaultValue) && typeof defaultValue[0] === 'number') ? defaultValue[0] : min
+    : min
   );
   return (
-    range ? 
-    <React.Fragment>
-      <InputBase
+    range
+      ? <React.Fragment>
+        <InputBase
+          type='range' id={id} placeholder={placeholder}
+          className={className} size={size} disabled={disabled} readOnly={readOnly}
+          required={required} name={name} onChange={(e) => {
+            if (disabled || readOnly) return;
+            if (e.target.value > lowInputValue) setInputValue(e.target.value);
+            onChange && onChange(e);
+          }}
+          value={inputValue} min={min} max={max} style={{
+            background: `linear-gradient(to right, var(--background-color) 0%, var(--background-color) ${(lowInputValue - min) / (max - min) * 100}%, var(--secondary-background-color) ${(lowInputValue - min) / (max - min)}%,  var(--secondary-background-color) ${(inputValue - min) / (max - min) * 100}%, var(--background-color) ${(inputValue - min) / (max - min) * 100}%)`
+          }}
+          {...rest}
+        />
+        <InputBase
+          type='range' id={id} placeholder={placeholder}
+          className={'low'} size={size} disabled={disabled} readOnly={readOnly}
+          required={required} name={name} onChange={(e) => {
+            if (disabled || readOnly) return;
+            if (e.target.value < inputValue) setLowInputValue(e.target.value);
+            onChange && onChange(e);
+          }}
+          value={lowInputValue} min={min} max={max} style={{
+            background: `transparent`
+          }}
+          {...rest}
+        />
+      </React.Fragment>
+      : <InputBase
         type='range' id={id} placeholder={placeholder}
         className={className} size={size} disabled={disabled} readOnly={readOnly}
-        required={required} name={name} onChange={(e) => { 
-          if (disabled || readOnly) return;
-          if (e.target.value > lowInputValue) setInputValue(e.target.value);
-          onChange && onChange(e); }}
+        required={required} name={name} onChange={(e) => { if (disabled || readOnly) return; setInputValue(e.target.value); onChange && onChange(e); }}
         value={inputValue} min={min} max={max} style={{
-          background: `linear-gradient(to right, var(--background-color) 0%, var(--background-color) ${(lowInputValue - min)/(max - min) * 100}%, var(--secondary-background-color) ${(lowInputValue - min)/(max - min)}%,  var(--secondary-background-color) ${(inputValue - min)/(max - min) * 100}%, var(--background-color) ${(inputValue - min)/(max - min) * 100}%)`
+          background: `linear-gradient(to right, var(--secondary-background-color) 0%, var(--secondary-background-color) ${(inputValue - min) / (max - min) * 100}%, var(--background-color) ${(inputValue - min) / (max - min) * 100}%)`
         }}
+        {...rest}
       />
-      <InputBase
-        type='range' id={id} placeholder={placeholder}
-        className={'low'} size={size} disabled={disabled} readOnly={readOnly}
-        required={required} name={name} onChange={(e) => { 
-          if (disabled || readOnly) return;
-          if(e.target.value < inputValue) setLowInputValue(e.target.value); 
-          onChange && onChange(e); }}
-        value={lowInputValue} min={min} max={max} style={{
-          background: `transparent`
-        }}
-      />
-    </React.Fragment>
-    :
-    <InputBase
-      type='range' id={id} placeholder={placeholder}
-      className={className} size={size} disabled={disabled} readOnly={readOnly}
-        required={required} name={name} onChange={(e) => { if (disabled || readOnly) return; setInputValue(e.target.value); onChange && onChange(e);}}
-      value={inputValue} min={min} max={max} style={{
-        background: `linear-gradient(to right, var(--secondary-background-color) 0%, var(--secondary-background-color) ${(inputValue - min)/(max - min) * 100}%, var(--background-color) ${(inputValue - min)/(max - min) * 100}%)`
-      }}
-    />
-  )
+  );
 };
 
-export { 
+export {
   InputBase, TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, Option, SelectInput, ComboboxInput,
   MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, FileInput, DateInput, RatingInput, SliderInput
 };

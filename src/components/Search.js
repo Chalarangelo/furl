@@ -1,7 +1,7 @@
-import React from "react";
-import { InputBase } from "./Input";
-import { normalizeChildren } from "../utilities/utils";
-import Icon from "./Icon";
+import React from 'react';
+import { InputBase } from './Input';
+import { normalizeChildren } from '../utilities/utils';
+import Icon from './Icon';
 
 const Search = ({
   size = 'normal',
@@ -14,7 +14,7 @@ const Search = ({
   className,
   withIcon,
   children
-}) => 
+}) =>
   withIcon ? (
     <React.Fragment>
       <InputBase
@@ -29,14 +29,13 @@ const Search = ({
     </React.Fragment>
   ) : (
     <React.Fragment>
-      <InputBase 
+      <InputBase
         type='search' id={id} placeholder={placeholder}
-        className={className} size={size} disabled={disabled} 
+        className={className} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange}
-        />
-        {normalizeChildren(children).length ? <div className='search-result-box'>{children}</div> : ''}
+      />
+      {normalizeChildren(children).length ? <div className='search-result-box'>{children}</div> : ''}
     </React.Fragment>
   );
-
 
 export default Search;

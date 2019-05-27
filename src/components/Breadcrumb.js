@@ -1,5 +1,5 @@
-import React from "react";
-import { normalizeChildren } from "../utilities/utils";
+import React from 'react';
+import { normalizeChildren } from '../utilities/utils';
 
 const BreadcrumbItem = ({ id, className, children }) => (
   <span id={id !== undefined ? id : false} className={['breadcrumb-item', className].join(' ').trim()}>
@@ -14,8 +14,8 @@ const Breadcrumb = ({
   children
 }) => {
   children = normalizeChildren(children);
-  let breadcrumbs = children.filter(item => BreadcrumbItem.name == item.type.name);
-  breadcrumbs = breadcrumbs.reduce((acc,v,i) => {
+  let breadcrumbs = children.filter(item => BreadcrumbItem.name === item.type.name);
+  breadcrumbs = breadcrumbs.reduce((acc, v, i) => {
     acc.push(v);
     if (i !== breadcrumbs.length - 1) acc.push(<span className='breadcrumb-separator'>{separator}</span>);
     return acc;

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Badge = ({
   fill = 'flat',
@@ -6,8 +6,8 @@ const Badge = ({
   size = 'normal',
   color = 'plain',
   shape = 'normal',
-  id, 
-  className, 
+  id,
+  className,
   children }) => {
   let classNames = [];
   classNames.push(fill);
@@ -16,11 +16,12 @@ const Badge = ({
   if (color !== 'plain') classNames.push(color);
   if (shape !== 'normal') classNames.push(shape);
   return (
-  <span 
-    id={id !== undefined ? id : false} 
-    className={['badge', className, ...classNames].join(' ').trim()}>
-    {children}
-  </span>
-)};
+    <span
+      id={id !== undefined ? id : false}
+      className={['badge', className, ...classNames].join(' ').trim()}>
+      {children}
+    </span>
+  );
+};
 
 export default Badge;

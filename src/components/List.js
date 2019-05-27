@@ -1,5 +1,5 @@
-import React from "react";
-import {normalizeChildren} from "../utilities/utils";
+import React from 'react';
+import {normalizeChildren} from '../utilities/utils';
 
 const ListItem = ({ id, className, children }) => (
   <li id={id !== undefined ? id : false} className={className}>
@@ -7,28 +7,29 @@ const ListItem = ({ id, className, children }) => (
   </li>
 );
 
-const List = ({ 
+const List = ({
   ordered = false,
   listStyle = 'none',
-  id, 
-  className, 
+  id,
+  className,
   children
 }) => {
   children = normalizeChildren(children);
-  const listItems = children.filter(item => ListItem.name == item.type.name);
+  const listItems = children.filter(item => ListItem.name === item.type.name);
   let classNames = [className, listStyle !== 'none' ? listStyle : ''];
-  if (ordered)
+  if (ordered) {
     return (
-    <ol id={id !== undefined ? id : false} className = {classNames.join(' ').trim()}>
+      <ol id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
         {listItems}
-    </ol>
+      </ol>
     );
-  else
+  } else {
     return (
       <ul id={id !== undefined ? id : false} className={classNames.join(' ').trim()}>
         {listItems}
       </ul>
     );
+  }
 };
 
 export {List, ListItem};

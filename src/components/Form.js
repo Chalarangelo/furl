@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const FormLegend = ({ id, className, children }) => (
   <legend id={id !== undefined ? id : false} className={className}>{children}</legend>
@@ -18,8 +18,8 @@ const Form = ({
   enctype,
   autocomplete,
   openIn = 'self',
-  id, 
-  className, 
+  id,
+  className,
   children,
   ...rest }) => {
   let classNames = [];
@@ -27,13 +27,14 @@ const Form = ({
   if (size !== 'normal') classNames.push(size);
   if (color !== 'normal') classNames.push(color);
   return (
-  <form
-    enctype={enctype} target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
-    action={action} autocomplete={autocomplete ? 'on' : 'off'} method={method} name={name}
-    id={id !== undefined ? id : false} className={[className, ...classNames].join(' ').trim()} {...rest}
-  >
-    {children}
-  </form>
-)};
+    <form
+      encType={enctype} target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
+      action={action} autoComplete={autocomplete ? 'on' : 'off'} method={method} name={name}
+      id={id !== undefined ? id : false} className={[className, ...classNames].join(' ').trim()} {...rest}
+    >
+      {children}
+    </form>
+  );
+};
 
-export { Form, FormLegend, FormLabel};
+export { Form, FormLegend, FormLabel };

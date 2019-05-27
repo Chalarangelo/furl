@@ -1,6 +1,6 @@
-import React from "react";
-import { normalizeChildren } from "../utilities/utils";
-import useTimeout from "../utilities/useTimeout";
+import React from 'react';
+import { normalizeChildren } from '../utilities/utils';
+import useTimeout from '../utilities/useTimeout';
 
 const Notification = ({
   color = 'plain',
@@ -30,23 +30,23 @@ const Notification = ({
     setIsInactive(true);
   }, duration - 50);
   return (
-    isActive ?
-    <div
+    isActive
+      ? <div
         className={['notification', ...classNames, isAlmostInactive ? 'almost-inactive' : '', isInactive ? 'inactive' : ''].join(' ').trim()}
-      id={id !== undefined ? id : false} 
-    >
-      {children}
-    </div>
-    : null
+        id={id !== undefined ? id : false}
+      >
+        {children}
+      </div>
+      : null
   );
-}
+};
 
 const NotificationCenter = React.forwardRef(
   ({
     verticalPosition = 'top',
     horizontalPosition = 'right',
-    id, 
-    className, 
+    id,
+    className,
     children
   }, ref) => {
     children = normalizeChildren(children);
@@ -56,17 +56,17 @@ const NotificationCenter = React.forwardRef(
       addNotification: (content) => {
         content = normalizeChildren(content);
         const notifications = content.filter(item => Notification.name === item.type.name);
-        __setContent([...__content, content]);
+        __setContent([...__content, notifications]);
       }
     }));
     React.useEffect(() => {
       __setContent(__content.filter(v => v !== null));
-    })
+    });
     return (
       <div className={['notification-center', verticalPosition, horizontalPosition, className].join(' ').trim()} id={id !== undefined ? id : false} >
         {__content.filter(v => v !== null)}
       </div>
-    )
+    );
   }
 );
 

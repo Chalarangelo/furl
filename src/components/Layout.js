@@ -1,9 +1,9 @@
-import React from "react";
-import {normalizeChildren} from "../utilities/utils";
-import Content from "./Content";
-import { Sidebar, SidebarTab } from "./Sidebar";
-import Header from "./Header";
-import LayoutStyle from "../utilities/LayoutStyle";
+import React from 'react';
+import {normalizeChildren} from '../utilities/utils';
+import Content from './Content';
+import { Sidebar, SidebarTab } from './Sidebar';
+import Header from './Header';
+import LayoutStyle from '../utilities/LayoutStyle';
 
 const Layout = ({
   header = ['top', 'top', 'top', 'top'], // top, bottom, none
@@ -20,22 +20,22 @@ const Layout = ({
   const headerEl = children.filter(item => Header.name === item.type.name)[0];
   const sidebarEl = children.filter(item => Sidebar.name === item.type.name)[0];
   const contentEl = children.filter(item => Content.name === item.type.name)[0];
-  const layoutName = `layout-${header.map(v => v[0]).join('')}-${sidebar.map(v => v[0]).join('')}-${contentSize.map(v => `${v}`.replace('.','')).join('-')}`;
+  const layoutName = `layout-${header.map(v => v[0]).join('')}-${sidebar.map(v => v[0]).join('')}-${contentSize.map(v => `${v}`.replace('.', '')).join('-')}`;
   const [sidebarVisible, setSidebarVisible] = React.useState(false);
   return (
     <React.Fragment>
       <style>
-        {LayoutStyle(layoutName,header,sidebar,contentSize)}
+        {LayoutStyle(layoutName, header, sidebar, contentSize)}
       </style>
-      <div 
+      <div
         id={id !== undefined ? id : false} className={['layout-container', className, layoutName, sidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'].join(' ').trim()}>
         {headerEl}
         {sidebarEl}
         {contentEl}
-        <SidebarTab open={sidebarVisible} onClick={() => setSidebarVisible(!sidebarVisible)}/>
+        <SidebarTab open={sidebarVisible} onClick={() => setSidebarVisible(!sidebarVisible)} />
       </div>
     </React.Fragment>
   );
-}
+};
 
 export {Layout, Content, Sidebar, Header};

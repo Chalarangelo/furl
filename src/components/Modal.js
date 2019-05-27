@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const ModalSection = ({
   height = 'auto',
@@ -7,28 +7,29 @@ const ModalSection = ({
   className,
   children
 }) => {
-  if(media.length)
-    return (<div className={[className, "modal-media-section"].join(' ').trim()}
-      id={id !== undefined ? id : false} style={{ height: height, backgroundImage: `url(${encodeURI(media)})`}}/>);
-  else
-    return (<div className={[className, "modal-section"].join(' ').trim()}
+  if (media.length) {
+    return (<div className={[className, 'modal-media-section'].join(' ').trim()}
+      id={id !== undefined ? id : false} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
+  } else {
+    return (<div className={[className, 'modal-section'].join(' ').trim()}
       id={id !== undefined ? id : false}>{children}</div>);
+  }
 };
 
 const Modal = ({
-  color = 'normal',
-  size = 'normal',
+  // color = 'normal',
+  // size = 'normal',
   id,
   className,
   children
 }) => (
-    <div
-      className={['modal', className].join(' ').trim()}
-      id={id !== undefined ? id : false} 
-    >
-      {children}
-    </div>
-  );
+  <div
+    className={['modal', className].join(' ').trim()}
+    id={id !== undefined ? id : false}
+  >
+    {children}
+  </div>
+);
 
 const ModalCenter = React.forwardRef(
   ({isOpen = false, id, className, children}, ref) => {
@@ -46,13 +47,13 @@ const ModalCenter = React.forwardRef(
       }
     }));
     return (
-      __isOpen ?
-      <div className={['modal-center', className].join(' ').trim()} id={id !== undefined ? id : false} >
-        <div className='modal-overlay' />
-        {__content}
-      </div>
-      : ''
-    )
+      __isOpen
+        ? <div className={['modal-center', className].join(' ').trim()} id={id !== undefined ? id : false} >
+          <div className='modal-overlay' />
+          {__content}
+        </div>
+        : ''
+    );
   }
 );
 

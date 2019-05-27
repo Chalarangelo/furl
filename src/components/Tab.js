@@ -1,6 +1,6 @@
-import React from "react";
-import { normalizeChildren } from "../utilities/utils";
-import Button from "./Button";
+import React from 'react';
+import { normalizeChildren } from '../utilities/utils';
+import Button from './Button';
 
 const TabItem = ({ id, className, children }) => (
   <span id={id !== undefined ? id : false} className={['tab-item', className].join(' ').trim()}>
@@ -17,25 +17,25 @@ const Tab = ({
 }) => {
   const [openTab, setOpenTab] = React.useState(openIndex);
   children = normalizeChildren(children);
-  let tabs = children.filter(item => TabItem.name == item.type.name);
+  let tabs = children.filter(item => TabItem.name === item.type.name);
   let tabsButtons = tabs.map((v, i) => {
-    let _tB = Object.assign({},(<Button>{v.props.title}</Button>));
+    let _tB = Object.assign({}, (<Button>{v.props.title}</Button>));
     _tB.props = Object.assign({
-      onClick: function(e) {
+      onClick: function (e) {
         e.preventDefault();
         console.log(i);
         setOpenTab(i);
         v.props.onClick && v.props.onClick(e);
       },
-      className: [v.props.className, openTab == i ? 'selected' : ''].join(' ').trim()
+      className: [v.props.className, openTab === i ? 'selected' : ''].join(' ').trim()
     }, v.props, _tB.props);
     return _tB;
   });
-  let tabsContent = tabs.map((v,i) => {
-    let _tC = Object.assign({},(<div>{v.props.children}</div>));
+  let tabsContent = tabs.map((v, i) => {
+    let _tC = Object.assign({}, (<div>{v.props.children}</div>));
     _tC.props = Object.assign({
-      isOpen: openTab == i,
-      className: [v.props.className, openTab == i ? 'open' : ''].join(' ').trim()
+      isOpen: openTab === i,
+      className: [v.props.className, openTab === i ? 'open' : ''].join(' ').trim()
     }, v.props);
     return _tC;
   });

@@ -1,5 +1,4 @@
-import React from "react";
-import { normalizeChildren } from "../utilities/utils";
+import React from 'react';
 import calendar, {
   isDate,
   isSameDay,
@@ -9,11 +8,11 @@ import calendar, {
   getPreviousMonth,
   WEEK_DAYS,
   CALENDAR_MONTHS
-} from "../utilities/calendarUtilities";
-import useInterval from "../utilities/useInterval";
-import useEffectOnUpdate from "../utilities/useEffectOnUpdate";
-import Icon from "./Icon";
-import Button from "./Button";
+} from '../utilities/calendarUtilities';
+import useInterval from '../utilities/useInterval';
+import useEffectOnUpdate from '../utilities/useEffectOnUpdate';
+import Icon from './Icon';
+import Button from './Button';
 
 const Calendar = ({
   fill = 'flat',
@@ -31,7 +30,7 @@ const Calendar = ({
       month: +_date.getMonth() + 1,
       year: _date.getFullYear()
     };
-  }
+  };
 
   const getCalendarDates = () => {
     const calendarMonth = month || +current.getMonth() + 1;
@@ -43,9 +42,9 @@ const Calendar = ({
   const renderDayLabel = (day, index) => {
     const dayLabel = WEEK_DAYS[day].toUpperCase();
     return (
-      <div 
-        className="calendar-day" 
-        key={dayLabel} 
+      <div
+        className='calendar-day'
+        key={dayLabel}
         index={index}
         style={{
           gridColumn: `${(index % 7) + 1} / span 1`
@@ -57,23 +56,23 @@ const Calendar = ({
   };
 
   const renderCalendarDate = (date, index) => {
-    const _date = new Date(date.join("-"));
+    const _date = new Date(date.join('-'));
     const isToday = isSameDay(_date, today);
     const isCurrent = current && isSameDay(_date, current);
-    const inMonth = month && year && isSameMonth(_date, new Date([year, month, 1].join("-")));
+    const inMonth = month && year && isSameMonth(_date, new Date([year, month, 1].join('-')));
 
     return (
       // The highlighting below is unfinished, just a demo
-      <div 
-        className={["calendar-date", inMonth ? "in-month" : "", isCurrent ? "highlighted" : isToday ? "today" : ""].join(' ').trim()} 
-        style={{ 
+      <div
+        className={['calendar-date', inMonth ? 'in-month' : '', isCurrent ? 'highlighted' : isToday ? 'today' : ''].join(' ').trim()}
+        style={{
           gridRow: `${Math.floor(index / 7) + 2} / span 1`,
           gridColumn: `${(index % 7) + 1} / span 1`,
           borderBottom: `${((index + 1) / 7) <= 5 ? '1px solid var(--interface-gray-50)' : 'none'}`,
           borderRight: `${(index % 7) + 1 === 7 ? 'none' : '1px solid var(--interface-gray-50)'}`
         }}
         key={getDateISO(_date)}
-        index={index} 
+        index={index}
         onClick={gotoDate(_date)}
         title={_date.toDateString()}
       >
@@ -88,8 +87,8 @@ const Calendar = ({
     shiftKey ? gotoPreviousYear() : gotoPreviousMonth();
     setPressureTimeout(setTimeout(
       () => setIntervalFn(shiftKey ? 'prevYear' : 'prevMonth'),
-    500));
-  }
+      500));
+  };
 
   const handleNext = (e) => {
     e && e.preventDefault();
@@ -97,11 +96,11 @@ const Calendar = ({
     shiftKey ? gotoNextYear() : gotoNextMonth();
     setPressureTimeout(setTimeout(
       () => setIntervalFn(shiftKey ? 'nextYear' : 'nextMonth'),
-    500));
-  }
+      500));
+  };
 
   const gotoPreviousMonth = () => {
-    let _new = getPreviousMonth(month,year);
+    let _new = getPreviousMonth(month, year);
     setMonth(_new.month);
     setYear(_new.year);
   };
@@ -134,7 +133,7 @@ const Calendar = ({
     setIntervalFn(null);
     pressureTimeout && clearInterval(pressureTimeout);
     setPressureTimeout(null);
-  }
+  };
 
   const [month, setMonth] = React.useState(resolveStateFromDate(date).month);
   const [current, setCurrent] = React.useState(resolveStateFromDate(date).current);
@@ -157,27 +156,27 @@ const Calendar = ({
       case 'prevYear':
         gotoPreviousYear();
         break;
-      default:  return;
+      default:
     }
   }, 200);
 
   useEffectOnUpdate(() => {
-    typeof onDateChanged === "function" && onDateChanged(current);
+    typeof onDateChanged === 'function' && onDateChanged(current);
   }, [current]);
 
   return (
-    <div className={["calendar-container", className, fill !== 'flat' ? fill : ''].join(' ').trim()} id={id !== undefined ? id : false}>
-      <div className="calendar-header">
-        <Button className="calendar-arrow-button" 
+    <div className={['calendar-container', className, fill !== 'flat' ? fill : ''].join(' ').trim()} id={id !== undefined ? id : false}>
+      <div className='calendar-header'>
+        <Button className='calendar-arrow-button'
           onMouseDown={handlePrevious}
           onMouseUp={clearPressureTimer}
         >
           <Icon name='chevron-left' />
         </Button>
-        <div className="calendar-month">
+        <div className='calendar-month'>
           {Object.keys(CALENDAR_MONTHS)[Math.max(0, Math.min(month - 1, 11))]} {year}
         </div>
-        <Button className="calendar-arrow-button" 
+        <Button className='calendar-arrow-button'
           onMouseDown={handleNext}
           onMouseUp={clearPressureTimer}
         >
@@ -185,12 +184,12 @@ const Calendar = ({
         </Button>
       </div>
 
-      <div className="calendar-grid">
+      <div className='calendar-grid'>
         {Object.keys(WEEK_DAYS).map(renderDayLabel)}
         {getCalendarDates().map(renderCalendarDate)}
       </div>
     </div>
   );
-}
+};
 
 export default Calendar;

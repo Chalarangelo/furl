@@ -1,5 +1,5 @@
-import React from "react";
-import {normalizeChildren} from "../utilities/utils";
+import React from 'react';
+import { normalizeChildren } from '../utilities/utils';
 
 const CardSection = ({
   height = 'auto',
@@ -8,26 +8,27 @@ const CardSection = ({
   className,
   children
 }) => {
-  if(media.length)
-    return (<div className={[className, "card-media-section"].join(' ').trim()}
-      id={id !== undefined ? id : false} style={{ height: height, backgroundImage: `url(${encodeURI(media)})`}}/>);
-  else
-    return (<div className={[className, "card-section"].join(' ').trim()}
+  if (media.length) {
+    return (<div className={[className, 'card-media-section'].join(' ').trim()}
+      id={id !== undefined ? id : false} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
+  } else {
+    return (<div className={[className, 'card-section'].join(' ').trim()}
       id={id !== undefined ? id : false}>{children}</div>);
-}
+  }
+};
 
 const Card = ({
   width = 'auto',
   id,
   className,
-  children,
+  children
 }) => {
   children = normalizeChildren(children);
   const sections = children.filter(item => CardSection.name === item.type.name);
-  return (<div className={[className, "card"].join(' ').trim()}
+  return (<div className={[className, 'card'].join(' ').trim()}
     id={id !== undefined ? id : false} style={{width: width}}>
     {sections}
-  </div>)
-}
+  </div>);
+};
 
 export { Card, CardSection };

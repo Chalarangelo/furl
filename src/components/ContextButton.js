@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Button from './Button';
 
 const ContextButton = ({
@@ -11,20 +11,20 @@ const ContextButton = ({
   id,
   className,
   children}) => {
-    let classNames = [className,`v-${verticalPosition}`, `h-${horizontalPosition}`, 'context-button'];
-    return (
-      <Button
-        id={id !== undefined ? id : false} 
-        className={classNames.join(' ').trim()}
-        fill='solid'
-        text={text}
-        size={size}
-        color={color}
-        onClick={onClick}
-      >
-        {children}
-      </Button>
-    );
+  let classNames = [className, `v-${verticalPosition}`, `h-${horizontalPosition}`, 'context-button'];
+  return (
+    <Button
+      id={id !== undefined ? id : false}
+      className={classNames.join(' ').trim()}
+      fill='solid'
+      text={text}
+      size={size}
+      color={color}
+      onClick={onClick}
+    >
+      {children}
+    </Button>
+  );
 };
 
 export default ContextButton;

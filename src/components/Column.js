@@ -1,24 +1,23 @@
-import React from "react";
+import React from 'react';
 
-const sizeNames = ['xs','sm','md','lg'];
-const Column = ({ 
+const sizeNames = ['xs', 'sm', 'md', 'lg'];
+const Column = ({
   size = 'fluid',
   id,
   className,
-  children 
+  children
 }) => {
-  let sizes, classNames = [], style;
+  let sizes; let classNames = []; let style;
   if (!Array.isArray(size)) sizes = [size, size, size, size];
   else sizes = size;
 
-  style = sizes.reduce((acc,v,i) => {
-    if ( (+v >= 1 && +v <= 12) || (v === 'fluid') ) {
+  style = sizes.reduce((acc, v, i) => {
+    if ((+v >= 1 && +v <= 12) || (v === 'fluid')) {
       return acc;
-    }
-    else if (+v < 1) {
+    } else if (+v < 1) {
       switch (i) {
         case 0:
-          return acc + `.grid-col-xs-c${`${v}`.replace(/\(|\)|\./g,'')} { --col-xs-size: ${v * 100}%; } `;
+          return acc + `.grid-col-xs-c${`${v}`.replace(/\(|\)|\./g, '')} { --col-xs-size: ${v * 100}%; } `;
         case 1:
           return acc + `.grid-col-sm-c${`${v}`.replace(/\(|\)|\./g, '')} { --col-sm-size: ${v * 100}%; } `;
         case 2:
@@ -28,8 +27,7 @@ const Column = ({
         default:
           return acc;
       }
-    }
-    else {
+    } else {
       switch (i) {
         case 0:
           return acc + `.grid-col-xs-p${`${v}`.replace(/\(|\)|\./g, '')} { --col-xs-size: ${v}; } `;
@@ -45,20 +43,21 @@ const Column = ({
     }
   }, '');
 
-  classNames = sizes.map((v, i) => `grid-col-${sizeNames[i]}-${( (+v >= 1 && +v <= 12) || (v === 'fluid') ) ? `${v}` : (+v < 1) ? `c${`${v}`.replace(/\(|\)|\./g, '')}` : `p${`${v}`.replace(/\(|\)|\./g, '')}`}`);
-  if(style.length > 0) 
+  classNames = sizes.map((v, i) => `grid-col-${sizeNames[i]}-${((+v >= 1 && +v <= 12) || (v === 'fluid')) ? `${v}` : (+v < 1) ? `c${`${v}`.replace(/\(|\)|\./g, '')}` : `p${`${v}`.replace(/\(|\)|\./g, '')}`}`);
+  if (style.length > 0) {
     return (<React.Fragment>
       <style>{style}</style>
       <div className={[className, ...classNames].join(' ').trim()}
         id={id !== undefined ? id : false}>
-          {children}
+        {children}
       </div>
     </React.Fragment>);
-  else
+  } else {
     return (<div className={[className, ...classNames].join(' ').trim()}
       id={id !== undefined ? id : false}>
       {children}
     </div>);
-}
+  }
+};
 
 export default Column;

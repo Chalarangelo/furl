@@ -6,6 +6,6 @@
     "semistandard-react/prop-types": "off",
     "no-useless-escape": "warn",
     "no-mixed-operators": "warn",
-    "no-unused-vars": ["warn", { "varsIgnorePattern": "React" }]
+    "no-unused-vars": ["warn", { "varsIgnorePattern": "(React|set.*)" }]
   }
 }

@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
 const Button = ({
-  fill = 'flat', 
-  text ='normal', 
-  size = 'normal', 
-  color='plain', 
-  shape='normal',
-  type='button', 
+  fill = 'flat',
+  text = 'normal',
+  size = 'normal',
+  color = 'plain',
+  shape = 'normal',
+  type = 'button',
   disabled = false,
   openIn,
   href,
@@ -24,25 +24,23 @@ const Button = ({
   switch (type) {
     case 'link':
       return (['external', '_external'].includes(openIn)
-        ?
-        <a
+        ? <a
           href={disabled ? '' : href}
           className={['button', className, ...classNames].join(' ').trim()}
           rel='noopener noreferrer'
           target='_blank'
-          disabled={disabled} 
+          disabled={disabled}
           onClick={onClick}
           id={id !== undefined ? id : false}
           {...rest}
         >
           {children}
         </a>
-        :
-        <a
+        : <a
           href={disabled ? '' : href}
           className={['button', className, ...classNames].join(' ').trim()}
           target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
-          disabled={disabled} 
+          disabled={disabled}
           onClick={onClick}
           id={id !== undefined ? id : false}
           {...rest}
@@ -51,10 +49,10 @@ const Button = ({
         </a>);
     case 'submit':
       return (
-        <button 
-          type='submit' 
-          className={[className, ...classNames].join(' ').trim()} 
-          disabled={disabled} 
+        <button
+          type='submit'
+          className={[className, ...classNames].join(' ').trim()}
+          disabled={disabled}
           onClick={onClick}
           id={id !== undefined ? id : false}
           {...rest}
@@ -64,10 +62,10 @@ const Button = ({
       );
     case 'reset':
       return (
-        <button 
-          type='reset' 
-          className={[className, ...classNames].join(' ').trim()} 
-          disabled={disabled} 
+        <button
+          type='reset'
+          className={[className, ...classNames].join(' ').trim()}
+          disabled={disabled}
           onClick={onClick}
           id={id !== undefined ? id : false}
           {...rest}
@@ -77,9 +75,9 @@ const Button = ({
       );
     default:
       return (
-        <button 
-          className={[className, ...classNames].join(' ').trim()} 
-          disabled={disabled} 
+        <button
+          className={[className, ...classNames].join(' ').trim()}
+          disabled={disabled}
           onClick={onClick}
           id={id !== undefined ? id : false}
           {...rest}

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const Content = ({ id, className, children }) => {
-  return (<main 
+  return (<main
     id={id !== undefined ? id : false} className={[className, 'layout-content'].join(' ').trim()}>{children}</main>);
-}
+};
 
 export default Content;
