@@ -1,6 +1,6 @@
 {
   "name": "furl-styles",
-  "version": "0.1.0-alpha",
+  "version": "0.1.1-alpha",
   "main": "index.css",
   "peerDependencies": {
     "react": "^16.8.4",
