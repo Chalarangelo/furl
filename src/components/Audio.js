@@ -13,7 +13,8 @@ const Audio = ({
   muted = false,
   preload = true,
   alt = 'An audio clip',
-  withCaption = false
+  withCaption = false,
+  ...rest
 }) =>
   withCaption ? (
     <figure>
@@ -25,6 +26,7 @@ const Audio = ({
         src={src}
         title={alt}
         autoPlay={autoplay} controls={controls} loop={loop} muted={muted} preload={preload} volume={volume}
+        {...rest}
       />
       <figcaption>{alt}</figcaption>
     </figure>
@@ -38,6 +40,7 @@ const Audio = ({
         src={src}
         title={alt}
         autoPlay={autoplay} controls={controls} loop={loop} muted={muted} preload={preload} volume={volume}
+        {...rest}
       />);
 
 export default Audio;

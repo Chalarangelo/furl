@@ -19,7 +19,8 @@ const Calendar = ({
   id,
   date,
   onDateChanged,
-  className
+  className,
+  ...rest
 }) => {
   const resolveStateFromDate = (date) => {
     const isDateObject = isDate(date);
@@ -165,7 +166,7 @@ const Calendar = ({
   }, [current]);
 
   return (
-    <div className={['calendar-container', className, fill !== 'flat' ? fill : ''].join(' ').trim()} id={id}>
+    <div className={['calendar-container', className, fill !== 'flat' ? fill : ''].join(' ').trim()} id={id} {...rest}>
       <div className='calendar-header'>
         <Button className='calendar-arrow-button'
           onMouseDown={handlePrevious}

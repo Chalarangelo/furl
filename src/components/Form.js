@@ -1,11 +1,11 @@
 import React from 'react';
 
-const FormLegend = ({ id, className, children }) => (
-  <legend id={id} className={className}>{children}</legend>
+const FormLegend = ({ id, className, children, ...rest }) => (
+  <legend id={id} className={className} {...rest}>{children}</legend>
 );
 
-const FormLabel = ({ id, className, htmlFor, children }) => (
-  <label htmlFor={htmlFor} id={id} className={className}>{children}</label>
+const FormLabel = ({ id, className, htmlFor, children, ...rest }) => (
+  <label htmlFor={htmlFor} id={id} className={className} {...rest}>{children}</label>
 );
 
 const Form = ({

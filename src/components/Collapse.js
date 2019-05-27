@@ -8,10 +8,11 @@ const Collapse = ({
   title,
   id,
   className,
-  children }) => {
+  children,
+  ...rest }) => {
   let classNames = ['collapse', fill !== 'solid' ? fill : '', className];
   return (
-    <details className={classNames.join(' ').trim()} id={id} open={isOpen}>
+    <details className={classNames.join(' ').trim()} id={id} open={isOpen} {...rest}>
       <summary onClick={onClick}>{title}
         <Icon name='chevron-down' width={16} height={16} />
       </summary>

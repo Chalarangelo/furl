@@ -5,7 +5,8 @@ const Column = ({
   size = 'fluid',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   let sizes; let classNames = []; let style;
   if (!Array.isArray(size)) sizes = [size, size, size, size];
@@ -48,13 +49,13 @@ const Column = ({
     return (<React.Fragment>
       <style>{style}</style>
       <div className={[className, ...classNames].join(' ').trim()}
-        id={id}>
+        id={id} {...rest}>
         {children}
       </div>
     </React.Fragment>);
   } else {
     return (<div className={[className, ...classNames].join(' ').trim()}
-      id={id}>
+      id={id} {...rest}>
       {children}
     </div>);
   }

@@ -5,11 +5,12 @@ const Popover = ({
   position = 'top',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   const [show, setShow] = React.useState(false);
   return (
-    <span className={[className, 'popover'].join(' ').trim()} id={id}>
+    <span className={[className, 'popover'].join(' ').trim()} id={id} {...rest}>
       {show && <div className={`popover-bubble popover-${position}`}>
         <div className='popover-message'>{content}</div>
       </div>}

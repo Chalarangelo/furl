@@ -5,7 +5,8 @@ const Loader = ({
   color = 'normal',
   size = 'normal',
   id,
-  className
+  className,
+  ...rest
 }) => (
   <Icon
     name='circle'
@@ -13,6 +14,7 @@ const Loader = ({
     height={size === 'large' ? 48 : 24}
     className={['loader', color !== 'normal' ? color : '', className].join(' ').trim()}
     id={id}
+    {...rest}
   />
 );
 

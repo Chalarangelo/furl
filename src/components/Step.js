@@ -1,8 +1,8 @@
 import React from 'react';
 import { normalizeChildren } from '../utilities/utils';
 
-const StepItem = ({ id, selected = false, className, children }) => (
-  <span id={id} className={['step-item', selected ? 'selected' : '', className].join(' ').trim()}>
+const StepItem = ({ id, selected = false, className, children, ...rest }) => (
+  <span id={id} className={['step-item', selected ? 'selected' : '', className].join(' ').trim()} {...rest}>
     <span className='step-content'>{children}</span>
   </span>
 );
@@ -10,7 +10,8 @@ const StepItem = ({ id, selected = false, className, children }) => (
 const Step = ({
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   children = normalizeChildren(children);
   let steps = children.filter(item => StepItem.name === item.type.name);
@@ -21,7 +22,7 @@ const Step = ({
   }
   let classNames = [className, 'step'];
   return (
-    <nav id={id} className={classNames.join(' ').trim()}>
+    <nav id={id} className={classNames.join(' ').trim()} {...rest}>
       {steps}
     </nav>
   );

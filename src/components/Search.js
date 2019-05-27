@@ -13,14 +13,15 @@ const Search = ({
   id,
   className,
   withIcon,
-  children
+  children,
+  ...rest
 }) =>
   withIcon ? (
     <React.Fragment>
       <InputBase
         type='search' id={id} placeholder={placeholder}
         className={['with-search-icon', className].join(' ').trim()} size={size} disabled={disabled}
-        required={required} name={name} onChange={onChange}
+        required={required} name={name} onChange={onChange} {...rest}
       />
       <span>
         <Icon name='search' width={16} height={16} />&zwnj;
@@ -32,7 +33,7 @@ const Search = ({
       <InputBase
         type='search' id={id} placeholder={placeholder}
         className={className} size={size} disabled={disabled}
-        required={required} name={name} onChange={onChange}
+        required={required} name={name} onChange={onChange} {...rest}
       />
       {normalizeChildren(children).length ? <div className='search-result-box'>{children}</div> : ''}
     </React.Fragment>

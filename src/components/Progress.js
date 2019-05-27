@@ -6,11 +6,13 @@ const Progress = ({
   color = 'normal',
   size = 'normal',
   id,
-  className
+  className,
+  ...rest
 }) => (
   <progress
     value={value} max={max} id={id}
     className={[color !== 'normal' ? color : '', size !== 'normal' ? size : '', className].join(' ').trim()}
+    {...rest}
   >
     {`${+value / +max * 100}%`}
   </progress>

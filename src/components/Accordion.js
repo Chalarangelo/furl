@@ -7,7 +7,8 @@ const Accordion = ({
   fill = 'solid',
   id,
   className,
-  children }) => {
+  children,
+  ...rest }) => {
   children = normalizeChildren(children);
   const [openSection, setOpenSection] = React.useState(openIndex);
   const collapses = children.filter(item => Collapse.name === item.type.name)
@@ -24,7 +25,7 @@ const Accordion = ({
       }, c.props);
       return _c;
     });
-  return (<div className={['accordion', className].join(' ').trim()} id={id}>
+  return (<div className={['accordion', className].join(' ').trim()} id={id} {...rest}>
     {collapses}
   </div>);
 };

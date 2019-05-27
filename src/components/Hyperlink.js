@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Hyperlink = ({ openIn = 'self', href, id, className, children }) =>
+const Hyperlink = ({ openIn = 'self', href, id, className, children, ...rest }) =>
   (['external', '_external'].includes(openIn)
     ? <a
       href={href}
@@ -8,6 +8,7 @@ const Hyperlink = ({ openIn = 'self', href, id, className, children }) =>
       target='_blank'
       id={id}
       className={className}
+      {...rest}
     >
       {children}
     </a>
@@ -16,6 +17,7 @@ const Hyperlink = ({ openIn = 'self', href, id, className, children }) =>
       target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
       id={id}
       className={className}
+      {...rest}
     >
       {children}
     </a>)

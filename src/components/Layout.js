@@ -11,7 +11,8 @@ const Layout = ({
   contentSize = [1.0, 1.0, 0.75, 0.8],
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   children = normalizeChildren(children);
   if (!Array.isArray(header)) header = [header, header, header, header];
@@ -28,7 +29,7 @@ const Layout = ({
         {LayoutStyle(layoutName, header, sidebar, contentSize)}
       </style>
       <div
-        id={id} className={['layout-container', className, layoutName, sidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'].join(' ').trim()}>
+        id={id} className={['layout-container', className, layoutName, sidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'].join(' ').trim()} {...rest}>
         {headerEl}
         {sidebarEl}
         {contentEl}

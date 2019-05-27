@@ -6,13 +6,14 @@ const CardSection = ({
   media = '',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   if (media.length) {
-    return (<div className={[className, 'card-media-section'].join(' ').trim()}
+    return (<div className={[className, 'card-media-section'].join(' ').trim()} {...rest}
       id={id} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
   } else {
-    return (<div className={[className, 'card-section'].join(' ').trim()}
+    return (<div className={[className, 'card-section'].join(' ').trim()} {...rest}
       id={id}>{children}</div>);
   }
 };
@@ -21,12 +22,13 @@ const Card = ({
   width = 'auto',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   children = normalizeChildren(children);
   const sections = children.filter(item => CardSection.name === item.type.name);
   return (<div className={[className, 'card'].join(' ').trim()}
-    id={id} style={{width: width}}>
+    id={id} style={{width: width}} {...rest}>
     {sections}
   </div>);
 };

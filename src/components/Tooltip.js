@@ -5,11 +5,12 @@ const Tooltip = ({
   position = 'top',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   const [show, setShow] = React.useState(false);
   return (
-    <span id={id} className={[className, 'tooltip'].join(' ').trim()} onMouseLeave={() => setShow(false)}>
+    <span id={id} className={[className, 'tooltip'].join(' ').trim()} onMouseLeave={() => setShow(false)} {...rest}>
       {show && <div className={`tooltip-bubble tooltip-${position}`}>
         <div className='tooltip-message'>{content}</div>
       </div>}

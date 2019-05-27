@@ -12,7 +12,8 @@ const Video = ({
   muted = false,
   preload = true,
   alt = 'A video',
-  withCaption = false
+  withCaption = false,
+  ...rest
 }) =>
   withCaption ? (
     <figure>
@@ -23,7 +24,7 @@ const Video = ({
         width={width}
         src={src}
         title={alt}
-        autoPlay={autoplay} controls={controls} loop={loop} muted={muted} preload={preload}
+        autoPlay={autoplay} controls={controls} loop={loop} muted={muted} preload={preload} {...rest}
       />
       <figcaption>{alt}</figcaption>
     </figure>
@@ -36,7 +37,7 @@ const Video = ({
         width={width}
         src={src}
         title={alt}
-        autoPlay={autoplay} controls={controls} loop={loop} muted={muted} preload={preload}
+        autoPlay={autoplay} controls={controls} loop={loop} muted={muted} preload={preload} {...rest}
       />);
 
 export default Video;

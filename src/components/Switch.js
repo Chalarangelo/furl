@@ -9,7 +9,8 @@ const Switch = ({
   onChange,
   id,
   className,
-  children }) => {
+  children,
+  ...rest }) => {
   let classNames = [color, 'switch-input', className];
   return (
     <label className='switch'>
@@ -22,6 +23,7 @@ const Switch = ({
         checked={checked}
         name={name}
         onChange={onChange}
+        {...rest}
       />
       {children}
     </label>

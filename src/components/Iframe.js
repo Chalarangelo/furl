@@ -9,7 +9,8 @@ const Iframe = ({
   alt = 'An image',
   withCaption = false,
   allowFullScreen = false,
-  children
+  children,
+  ...rest
 }) =>
   withCaption ? (
     <figure>
@@ -21,6 +22,7 @@ const Iframe = ({
         src={src}
         title={alt}
         allowFullScreen={allowFullScreen}
+        {...rest}
       >
         {children}
       </iframe>
@@ -36,6 +38,7 @@ const Iframe = ({
         src={src}
         title={alt}
         allowFullScreen={allowFullScreen}
+        {...rest}
       >
         {children}
       </iframe>);

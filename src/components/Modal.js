@@ -5,14 +5,15 @@ const ModalSection = ({
   media = '',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   if (media.length) {
     return (<div className={[className, 'modal-media-section'].join(' ').trim()}
-      id={id} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
+      id={id} {...rest} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
   } else {
     return (<div className={[className, 'modal-section'].join(' ').trim()}
-      id={id}>{children}</div>);
+      id={id} {...rest}>{children}</div>);
   }
 };
 
@@ -21,18 +22,20 @@ const Modal = ({
   // size = 'normal',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => (
   <div
     className={['modal', className].join(' ').trim()}
     id={id}
+    {...rest}
   >
     {children}
   </div>
 );
 
 const ModalCenter = React.forwardRef(
-  ({isOpen = false, id, className, children}, ref) => {
+  ({isOpen = false, id, className, children, ...rest}, ref) => {
     let [__isOpen, __setIsOpen] = React.useState(isOpen);
     let [__content, __setContent] = React.useState(children);
     React.useImperativeHandle(ref, () => ({
@@ -48,7 +51,7 @@ const ModalCenter = React.forwardRef(
     }));
     return (
       __isOpen
-        ? <div className={['modal-center', className].join(' ').trim()} id={id} >
+        ? <div className={['modal-center', className].join(' ').trim()} id={id} {...rest}>
           <div className='modal-overlay' />
           {__content}
         </div>

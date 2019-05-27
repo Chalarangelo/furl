@@ -7,7 +7,8 @@ const Alert = ({
   shape = 'normal',
   id,
   className,
-  children }) => {
+  children,
+  ...rest }) => {
   let classNames = [];
   classNames.push(fill);
   if (size !== 'normal') classNames.push(size);
@@ -16,7 +17,8 @@ const Alert = ({
   return (
     <div
       id={id}
-      className={['alert', className, ...classNames].join(' ').trim()}>
+      className={['alert', className, ...classNames].join(' ').trim()}
+      {...rest}>
       {children}
     </div>
   );

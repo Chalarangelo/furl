@@ -7,7 +7,8 @@ const Image = ({
   className,
   src,
   alt = 'An image',
-  withCaption = false
+  withCaption = false,
+  ...rest
 }) =>
   withCaption ? (
     <figure>
@@ -18,6 +19,7 @@ const Image = ({
         width={width}
         src={src}
         alt={alt}
+        {...rest}
       />
       <figcaption>{alt}</figcaption>
     </figure>
@@ -30,6 +32,7 @@ const Image = ({
         width={width}
         src={src}
         alt={alt}
+        {...rest}
       />);
 
 export default Image;

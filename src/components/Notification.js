@@ -10,7 +10,8 @@ const Notification = ({
   duration = 3000,
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   duration = duration >= 500 ? duration : 500;
   const [isActive, setIsActive] = React.useState(active);
@@ -34,6 +35,7 @@ const Notification = ({
       ? <div
         className={['notification', ...classNames, isAlmostInactive ? 'almost-inactive' : '', isInactive ? 'inactive' : ''].join(' ').trim()}
         id={id}
+        {...rest}
       >
         {children}
       </div>
@@ -47,7 +49,8 @@ const NotificationCenter = React.forwardRef(
     horizontalPosition = 'right',
     id,
     className,
-    children
+    children,
+    ...rest
   }, ref) => {
     children = normalizeChildren(children);
     const notifications = children.filter(item => Notification.name === item.type.name);
@@ -63,7 +66,7 @@ const NotificationCenter = React.forwardRef(
       __setContent(__content.filter(v => v !== null));
     });
     return (
-      <div className={['notification-center', verticalPosition, horizontalPosition, className].join(' ').trim()} id={id} >
+      <div className={['notification-center', verticalPosition, horizontalPosition, className].join(' ').trim()} id={id} {...rest} >
         {__content.filter(v => v !== null)}
       </div>
     );

@@ -9,7 +9,8 @@ const Checkbox = ({
   onChange,
   id,
   className,
-  children }) => {
+  children,
+  ...rest }) => {
   let classNames = [color, className];
   return (
     <label className='checkbox'>
@@ -22,6 +23,7 @@ const Checkbox = ({
         checked={checked}
         name={name}
         onChange={onChange}
+        {...rest}
       />
       {children}
     </label>

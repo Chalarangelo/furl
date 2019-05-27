@@ -9,7 +9,8 @@ const Radio = ({
   onChange,
   id,
   className,
-  children }) => {
+  children,
+  ...rest }) => {
   let classNames = [color, className];
   return (
     <label className='radio'>
@@ -22,6 +23,7 @@ const Radio = ({
         checked={checked}
         name={name}
         onChange={onChange}
+        {...rest}
       />
       {children}
     </label>

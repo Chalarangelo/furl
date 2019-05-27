@@ -203,10 +203,11 @@ const NumberInput = ({
   );
 };
 
-const Option = ({ disabled, selected, value, id, className, children }) => (
+const Option = ({ disabled, selected, value, id, className, children, ...rest }) => (
   <option
     id={id} className={className}
     value={value} disabled={disabled} selected={selected}
+    {...rest}
   >
     {children}
   </option>
@@ -413,10 +414,10 @@ const FileInput = ({
   </React.Fragment>);
 };
 
-const Star = ({ marked, starId, iconName, iconStyle, iconFillColor }) => (
+const Star = ({ marked, starId, iconName, iconStyle, iconFillColor, ...rest }) => (
   <Icon star-id={starId} name={iconName}
     fill={marked ? iconFillColor : iconStyle !== 'fill' ? 'none' : 'var(--interface-gray-300)'}
-    stroke={marked ? iconFillColor : 'var(--interface-gray-300)'}
+    stroke={marked ? iconFillColor : 'var(--interface-gray-300)'} {...rest}
   />
 );
 

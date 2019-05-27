@@ -10,7 +10,8 @@ const ButtonGroup = ({
   shape = 'normal',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   children = normalizeChildren(children);
   const buttons = children.filter(item => Button.name === item.type.name)
@@ -32,7 +33,7 @@ const ButtonGroup = ({
   if (color !== 'plain') classNames.push(color);
   if (shape !== 'normal') classNames.push(shape);
   return (
-    <div id={id} className={classNames.join(' ').trim()}>
+    <div id={id} className={classNames.join(' ').trim()} {...rest}>
       {buttons}
     </div>
   );

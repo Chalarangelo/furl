@@ -2,8 +2,8 @@ import React from 'react';
 import { normalizeChildren } from '../utilities/utils';
 import Button from './Button';
 
-const TabItem = ({ id, className, children }) => (
-  <span id={id} className={['tab-item', className].join(' ').trim()}>
+const TabItem = ({ id, className, children, ...rest }) => (
+  <span id={id} className={['tab-item', className].join(' ').trim()} {...rest}>
     {children}
   </span>
 );
@@ -13,7 +13,8 @@ const Tab = ({
   controlStyle = 'normal',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   const [openTab, setOpenTab] = React.useState(openIndex);
   children = normalizeChildren(children);
@@ -41,7 +42,7 @@ const Tab = ({
   });
   let classNames = [className, 'tab-container'];
   return (
-    <div id={id} className={classNames.join(' ').trim()}>
+    <div id={id} className={classNames.join(' ').trim()} {...rest}>
       <div className={['tab-controls', controlStyle !== 'normal' ? controlStyle : ''].join(' ').trim()}>{tabsButtons}</div>
       <div className='tab-content'>{tabsContent}</div>
     </div>

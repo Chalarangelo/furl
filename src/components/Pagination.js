@@ -8,10 +8,12 @@ const PaginationItem = ({
   shape = 'normal',
   id,
   className,
-  children }) => (
+  children,
+  ...rest }) => (
   <span // eslint-disable-line semistandard-react/jsx-indent
     id={id}
-    className={['pagination-item', fill, size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}>
+    className={['pagination-item', fill, size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
+    {...rest}>
     {children}
   </span>
 );
@@ -21,7 +23,8 @@ const Pagination = ({
   shape = 'normal',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   children = normalizeChildren(children);
   const buttons = children.filter(item => Button.name === item.type.name || PaginationItem.name === item.type.name)
@@ -38,7 +41,7 @@ const Pagination = ({
   if (size !== 'normal') classNames.push(size);
   if (shape !== 'normal') classNames.push(shape);
   return (
-    <div id={id} className={classNames.join(' ').trim()}>
+    <div id={id} className={classNames.join(' ').trim()} {...rest}>
       {buttons}
     </div>
   );

@@ -10,7 +10,8 @@ const ContextButton = ({
   onClick,
   id,
   className,
-  children}) => {
+  children,
+  ...rest}) => {
   let classNames = [className, `v-${verticalPosition}`, `h-${horizontalPosition}`, 'context-button'];
   return (
     <Button
@@ -21,6 +22,7 @@ const ContextButton = ({
       size={size}
       color={color}
       onClick={onClick}
+      {...rest}
     >
       {children}
     </Button>

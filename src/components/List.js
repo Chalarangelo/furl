@@ -1,8 +1,8 @@
 import React from 'react';
 import {normalizeChildren} from '../utilities/utils';
 
-const ListItem = ({ id, className, children }) => (
-  <li id={id} className={className}>
+const ListItem = ({ id, className, children, ...rest }) => (
+  <li id={id} className={className} {...rest}>
     {children}
   </li>
 );
@@ -12,20 +12,21 @@ const List = ({
   listStyle = 'none',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   children = normalizeChildren(children);
   const listItems = children.filter(item => ListItem.name === item.type.name);
   let classNames = [className, listStyle !== 'none' ? listStyle : ''];
   if (ordered) {
     return (
-      <ol id={id} className={classNames.join(' ').trim()}>
+      <ol id={id} className={classNames.join(' ').trim()} {...rest}>
         {listItems}
       </ol>
     );
   } else {
     return (
-      <ul id={id} className={classNames.join(' ').trim()}>
+      <ul id={id} className={classNames.join(' ').trim()} {...rest}>
         {listItems}
       </ul>
     );

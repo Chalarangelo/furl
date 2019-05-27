@@ -1,8 +1,8 @@
 import React from 'react';
 import { normalizeChildren } from '../utilities/utils';
 
-const BreadcrumbItem = ({ id, className, children }) => (
-  <span id={id} className={['breadcrumb-item', className].join(' ').trim()}>
+const BreadcrumbItem = ({ id, className, children, ...rest }) => (
+  <span id={id} className={['breadcrumb-item', className].join(' ').trim()} {...rest}>
     {children}
   </span>
 );
@@ -11,7 +11,8 @@ const Breadcrumb = ({
   separator = '/',
   id,
   className,
-  children
+  children,
+  ...rest
 }) => {
   children = normalizeChildren(children);
   let breadcrumbs = children.filter(item => BreadcrumbItem.name === item.type.name);
@@ -22,7 +23,7 @@ const Breadcrumb = ({
   }, []);
   let classNames = [className, 'breadcrumb'];
   return (
-    <nav id={id} className={classNames.join(' ').trim()}>
+    <nav id={id} className={classNames.join(' ').trim()} {...rest}>
       {breadcrumbs}
     </nav>
   );
