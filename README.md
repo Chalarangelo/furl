@@ -1,4 +1,4 @@
-[![Logo](/spash.png)](https://github.com/Chalarangelo/furl)
+[![Logo](/splash.png)](https://github.com/Chalarangelo/furl)
 
 # furl
 
