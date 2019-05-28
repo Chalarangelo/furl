@@ -1,3 +1,17 @@
+[![Logo](/spash.png)](https://github.com/Chalarangelo/furl)
+
+# furl
+
+> functional React.js components.
+
+-----
+
+```bash
+npm i furl-components furl-styles
+```
+
+*Under construction*
+
 ### Remarks
 
 You must import the fonts yourself (check weight):
