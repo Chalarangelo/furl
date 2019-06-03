@@ -295,10 +295,10 @@ storiesOf('Input', module)
   .add('currency', () => (
     <>
       <CurrencyInput placeholder='$' />
-      <CurrencyInput currencySign='€' />
-      <CurrencyInput currencySign='£' />
-      <CurrencyInput disabled currencySign='£' />
-      <CurrencyInput readOnly currencySign='£' />
+      <CurrencyInput currencySymbol='€' placeholder='€'/>
+      <CurrencyInput currencySymbol='£' placeholder='£'/>
+      <CurrencyInput disabled currencySymbol='£' />
+      <CurrencyInput readOnly currencySymbol='£' />
     </>
   )
   )
