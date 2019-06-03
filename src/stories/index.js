@@ -346,12 +346,12 @@ storiesOf('Input', module)
   )
   .add('rating', () => (
     <>
-      <RatingInput />
-      <RatingInput iconStyle='fill' />
-      <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' />
-      <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' />
-      <RatingInput disabled iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3} />
-      <RatingInput readOnly iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3} />
+      <RatingInput onChange={(e) => console.log(e)}/>
+      <RatingInput iconStyle='fill' onChange={(e) => console.log(e)}/>
+      <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' onChange={(e) => console.log(e)}/>
+      <RatingInput iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' onChange={(e) => console.log(e)}/>
+      <RatingInput disabled iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3} onChange={(e) => console.log(e)}/>
+      <RatingInput readOnly iconName='heart' iconFillColor='var(--danger-red-500)' iconStyle='fill' defaultValue={3} onChange={(e) => console.log(e)} />
     </>
   )
   )
