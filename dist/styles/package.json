@@ -1,11 +1,11 @@
 {
   "name": "furl-styles",
-  "version": "0.1.1-alpha",
+  "version": "0.1.2-alpha",
   "main": "index.css",
   "peerDependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "react-component-library": "^0.1.0"
+    "react-component-library": "^0.1.2"
   },
   "dependencies": {},
   "scripts": {
