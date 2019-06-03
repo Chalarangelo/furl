@@ -11,9 +11,9 @@ const Tooltip = ({
   const [show, setShow] = React.useState(false);
   return (
     <span id={id} className={[className, 'tooltip'].join(' ').trim()} onMouseLeave={() => setShow(false)} {...rest}>
-      {show && <div className={`tooltip-bubble tooltip-${position}`}>
-        <div className='tooltip-message'>{content}</div>
-      </div>}
+      {show && <span className={`tooltip-bubble tooltip-${position}`}>
+        <span className='tooltip-message'>{content}</span>
+      </span>}
       <span className='tooltip-trigger' onMouseOver={() => setShow(true)}>
         {children}
       </span>

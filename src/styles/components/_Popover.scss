@@ -7,6 +7,7 @@
 }
 
 .popover-bubble {
+  display: block;
   background: transparent;
   opacity: 0.98;
   min-width: var(--ls-400p);
@@ -92,6 +93,7 @@
 }
 
 .popover-message {
+  display: block;
   --background-color: var(--interface-gray-50);
   --border-radius: var(--ls-25p);
   --color: var(--interface-gray-1000);
