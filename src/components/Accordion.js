@@ -18,7 +18,7 @@ const Accordion = ({
         onClick: function (e) {
           e.preventDefault();
           setOpenSection(openSection === i ? -1 : i);
-          c.props.onClick && c.props.onClick(e);
+          typeof c.props.onClick === 'function' && c.props.onClick(e);
         },
         isOpen: openSection === i,
         className: [c.props.className, 'accordion-section', fill !== 'solid' ? fill : ''].join(' ').trim()

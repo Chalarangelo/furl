@@ -235,7 +235,7 @@ const ColorInput = ({
         onChange={(e) => {
           if (readOnly || disabled) return;
           setInputValue(e.target.value);
-          onChange(e);
+          typeof onChange === 'function' && onChange(e);
         }} value={inputValue} {...rest}
       />
       <input type='color' onChange={(e) => {

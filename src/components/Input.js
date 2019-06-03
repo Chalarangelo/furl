@@ -178,7 +178,7 @@ const NumberInput = ({
       <Button disabled={disabled} readOnly={readOnly} onClick={(e) => {
         if (readOnly || disabled) return;
         setInputValue(+inputValue - step);
-        onChange(e);
+        typeof onChange === 'function' && onChange(e);
       }} className='number-input-minus'>
         <Icon name='minus' width={16} height={16} />&zwnj;
       </Button>
@@ -188,7 +188,7 @@ const NumberInput = ({
         required={required} name={name} onChange={(e) => {
           if (readOnly || disabled) return;
           setInputValue(e.target.value);
-          onChange(e);
+          typeof onChange === 'function' && onChange(e);
         }}
         min={min} max={max} step={step} value={inputValue} {...rest}
       />
@@ -507,7 +507,7 @@ const SliderInput = ({
           required={required} name={name} onChange={(e) => {
             if (disabled || readOnly) return;
             if (e.target.value > lowInputValue) setInputValue(e.target.value);
-            onChange && onChange(e);
+            typeof onChange === 'function' && onChange(e);
           }}
           value={inputValue} min={min} max={max} style={{
             background: `linear-gradient(to right, var(--background-color) 0%, var(--background-color) ${(lowInputValue - min) / (max - min) * 100}%, var(--secondary-background-color) ${(lowInputValue - min) / (max - min)}%,  var(--secondary-background-color) ${(inputValue - min) / (max - min) * 100}%, var(--background-color) ${(inputValue - min) / (max - min) * 100}%)`
@@ -520,7 +520,7 @@ const SliderInput = ({
           required={required} name={name} onChange={(e) => {
             if (disabled || readOnly) return;
             if (e.target.value < inputValue) setLowInputValue(e.target.value);
-            onChange && onChange(e);
+            typeof onChange === 'function' && onChange(e);
           }}
           value={lowInputValue} min={min} max={max} style={{
             background: `transparent`
@@ -531,7 +531,7 @@ const SliderInput = ({
       : <InputBase
         type='range' id={id} placeholder={placeholder}
         className={className} size={size} disabled={disabled} readOnly={readOnly}
-        required={required} name={name} onChange={(e) => { if (disabled || readOnly) return; setInputValue(e.target.value); onChange && onChange(e); }}
+        required={required} name={name} onChange={(e) => { if (disabled || readOnly) return; setInputValue(e.target.value); typeof onChange === 'function' && onChange(e); }}
         value={inputValue} min={min} max={max} style={{
           background: `linear-gradient(to right, var(--secondary-background-color) 0%, var(--secondary-background-color) ${(inputValue - min) / (max - min) * 100}%, var(--background-color) ${(inputValue - min) / (max - min) * 100}%)`
         }}

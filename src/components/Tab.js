@@ -25,7 +25,7 @@ const Tab = ({
       onClick: function (e) {
         e.preventDefault();
         setOpenTab(i);
-        v.props.onClick && v.props.onClick(e);
+        typeof v.props.onClick === 'function' && v.props.onClick(e);
       },
       className: [v.props.className, openTab === i ? 'selected' : ''].join(' ').trim()
     }, v.props, _tB.props);
