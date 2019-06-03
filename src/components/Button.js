@@ -21,6 +21,8 @@ const Button = ({
   if (size !== 'normal') classNames.push(size);
   if (color !== 'plain') classNames.push(color);
   if (shape !== 'normal') classNames.push(shape);
+  if (className && typeof className.indexOf === 'function' && className.indexOf('with-dropdown') !== -1)
+    type = 'with-dropdown';
   switch (type) {
     case 'link':
       return (['external', '_external'].includes(openIn)
@@ -72,6 +74,18 @@ const Button = ({
         >
           {children}
         </button>
+      );
+    case 'with-dropdown':
+      return(
+        <span
+          className={['button', className, ...classNames].join(' ').trim()}
+          disabled={disabled}
+          onClick={onClick}
+          id={id}
+          {...rest}
+        >
+          {children}
+        </span>
       );
     default:
       return (
