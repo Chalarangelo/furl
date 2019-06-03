@@ -15,7 +15,6 @@ const Step = ({
 }) => {
   children = normalizeChildren(children);
   let steps = children.filter(item => StepItem.name === item.type.name);
-  console.log(steps[0].props);
   if (steps.every(x => !x.props.selected)) {
     steps[0] = Object.assign({}, steps[0]);
     steps[0].props = Object.assign({ selected: true }, steps[0].props);

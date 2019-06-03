@@ -24,7 +24,6 @@ const Tab = ({
     _tB.props = Object.assign({
       onClick: function (e) {
         e.preventDefault();
-        console.log(i);
         setOpenTab(i);
         v.props.onClick && v.props.onClick(e);
       },
