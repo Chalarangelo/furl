@@ -206,7 +206,7 @@ const NumberInput = ({
 const Option = ({ disabled, selected, value, id, className, children, ...rest }) => (
   <option
     id={id} className={className}
-    value={value} disabled={disabled} selected={selected}
+    value={value !== undefined ? value : `${children}`} disabled={disabled}
     {...rest}
   >
     {children}
@@ -230,6 +230,9 @@ const SelectInput = ({
 }) => {
   children = normalizeChildren(children);
   let options = children.filter(item => Option.name === item.type.name);
+  let defaultValue = options
+    .filter(v => v.props.selected)
+    .map(v => v.props.value !== undefined ? v.props.value : `${v.props.children}`);
   if (multiple) {
     return (<select
       id={id}
@@ -240,6 +243,7 @@ const SelectInput = ({
       name={name}
       onChange={onChange}
       multiple={multiple} size={selectSize} {...rest}
+      defaultValue={defaultValue}
     >
       {options}
     </select>);
@@ -252,6 +256,7 @@ const SelectInput = ({
       placeholder={placeholder}
       name={name}
       onChange={onChange} {...rest}
+      defaultValue={defaultValue[0]}
     >
       {options}
     </select><Button>
@@ -277,6 +282,9 @@ const ComboboxInput = ({
   const [optionsId, setOptionsId] = React.useState(generateUniqueId('combo-input'));
   children = normalizeChildren(children);
   let options = children.filter(item => Option.name === item.type.name);
+  let defaultValue = options
+    .filter(v => v.props.selected)
+    .map(v => v.props.value !== undefined ? v.props.value : `${v.props.children}`);
 
   return (
     <>
@@ -286,7 +294,7 @@ const ComboboxInput = ({
       <InputBase
         id={id} placeholder={placeholder} list={optionsId}
         className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()} size={size} disabled={disabled}
-        required={required} name={name} onChange={onChange} {...rest}
+        required={required} name={name} onChange={onChange} {...rest} defaultValue={defaultValue[0]}
       />
       <Button>
         <Icon name='chevron-down' width={16} height={16} />&zwnj;

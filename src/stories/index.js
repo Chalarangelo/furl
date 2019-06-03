@@ -239,7 +239,7 @@ storiesOf('Input', module)
     <SelectInput multiple placeholder='0' onChange={(r) => console.log(r)}>
       <Option>a</Option>
       <Option selected>b</Option>
-      <Option>c</Option>
+      <Option selected>c</Option>
     </SelectInput>
   )
   )
@@ -248,7 +248,7 @@ storiesOf('Input', module)
       <ComboboxInput>
         <Option>Chocolate</Option>
         <Option>Coconut</Option>
-        <Option>Mint</Option>
+        <Option selected>Mint</Option>
         <Option>Strawberry</Option>
         <Option>Vanilla</Option>
       </ComboboxInput>
