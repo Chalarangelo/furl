@@ -23,6 +23,7 @@ const Switch = ({
         checked={checked}
         name={name}
         onChange={onChange}
+        aria-label={`${children}`}
         {...rest}
       />
       {children}
