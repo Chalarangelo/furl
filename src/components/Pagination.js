@@ -41,7 +41,7 @@ const Pagination = ({
   if (size !== 'normal') classNames.push(size);
   if (shape !== 'normal') classNames.push(shape);
   return (
-    <div id={id} className={classNames.join(' ').trim()} {...rest}>
+    <div id={id} className={classNames.join(' ').trim()} {...rest} role='group'>
       {buttons}
     </div>
   );

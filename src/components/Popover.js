@@ -14,7 +14,10 @@ const Popover = ({
       {show && <span className={`popover-bubble popover-${position}`}>
         <span className='popover-message'>{content}</span>
       </span>}
-      <span className='popover-trigger' onClick={() => setShow(!show)}>
+      <span className='popover-trigger' onClick={() => setShow(!show)}
+        onFocus={() => setShow(true)}
+        onBlur={() => setShow(false)}
+        tabIndex={0}>
         {children}
       </span>
     </span>

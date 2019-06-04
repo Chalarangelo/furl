@@ -14,7 +14,11 @@ const Tooltip = ({
       {show && <span className={`tooltip-bubble tooltip-${position}`}>
         <span className='tooltip-message'>{content}</span>
       </span>}
-      <span className='tooltip-trigger' onMouseOver={() => setShow(true)}>
+      <span className='tooltip-trigger' 
+        onMouseOver={() => setShow(true)} 
+        onFocus={() => setShow(true)} 
+        onBlur={() => setShow(false)}
+      tabIndex={0}>
         {children}
       </span>
     </span>
