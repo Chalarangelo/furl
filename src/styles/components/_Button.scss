@@ -1,13 +1,15 @@
 @mixin define-button-color-variant ($class-name, $color-name) {
   &.#{$class-name} {
-    --background-color: var(--#{$color-name}-500);
-    --secondary-background-color: var(--#{$color-name}-600);
+    --background-color: var(--#{$color-name}-600);
+    --secondary-background-color: var(--#{$color-name}-700);
     --tertiary-background-color: var(--#{$color-name}-200);
+    --quaternary-background-color: var(--#{$color-name}-100);
     --secondary-color: var(--#{$color-name}-900);
     --color: var(--#{$color-name}-50);
     &[disabled] {
       --background-color: var(--#{$color-name}-200);
       --secondary-background-color: var(--#{$color-name}-300);
+      --color: var(--#{$color-name}-700);
     }
     &.ghost, &.outline {
       --color: var(--#{$color-name}-800);
@@ -37,14 +39,16 @@ button, .button, a.button, .pagination-item {
   --padding-vertical: var(--ls-50p);
 
   --border-radius: var(--ls-25p);
-  --background-color: var(--interface-gray-500);
-  --secondary-background-color: var(--interface-gray-600);
+  --background-color: var(--interface-gray-600);
+  --secondary-background-color: var(--interface-gray-700);
   --tertiary-background-color: var(--interface-gray-200);
+  --quaternary-background-color: var(--interface-gray-100);
   --color: var(--interface-gray-50);
   --secondary-color: var(--interface-gray-900);
   &[disabled] {
     --background-color: var(--interface-gray-200);
     --secondary-background-color: var(--interface-gray-300);
+    --color: var(--interface-gray-700);
   }
 
   transition: all 0.3s ease;
@@ -88,6 +92,11 @@ button, .button, a.button, .pagination-item {
       &[disabled]{
         --box-shadow: var(--shadow-100); 
       }
+    }
+  }
+  &.flat.light {
+    &:hover, &:focus {
+      background: var(--quaternary-background-color);
     }
   }
   &.gradient {
@@ -144,9 +153,34 @@ button, .button, a.button, .pagination-item {
   // Color variants
   @include define-button-color-variant('danger', 'danger-red');
   @include define-button-color-variant('success', 'success-green');
-  @include define-button-color-variant('warning', 'warning-yellow');
+  // @include define-button-color-variant('warning', 'warning-yellow');
   @include define-button-color-variant('primary', 'focus-blue');
   @include define-button-color-variant('secondary', 'deep-purple');
+  // Warning is inherently problematic, use own palette
+  &.warning {
+    --background-color: var(--warning-yellow-400);
+    --secondary-background-color: var(--warning-yellow-500);
+    --tertiary-background-color: var(--warning-yellow-300);
+    --quaternary-background-color: var(--warning-yellow-200);
+    --secondary-color: var(--warning-yellow-900);
+    --color: var(--warning-yellow-900);
+    &[disabled] {
+      --background-color: var(--warning-yellow-200);
+      --secondary-background-color: var(--warning-yellow-300);
+    }
+    &.ghost, &.outline {
+      --color: var(--warning-yellow-800);
+      &[disabled]{
+        --color: var(--warning-yellow-700);
+      }
+      &:hover, &:focus {
+        --color: var(--warning-yellow-900);
+        &[disabled]{
+          --color: var(--warning-yellow-700);
+        }
+      }
+    }
+  }
 
   // Text variants
   &.uppercase {

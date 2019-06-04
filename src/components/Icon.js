@@ -16,6 +16,7 @@ const Icon = ({
   ...rest
 }) => (
   <span
+    title={name}
     id={id}
     className={[ className, 'icon' ].join(' ').trim()}
     {...rest}

@@ -34,6 +34,7 @@ const Button = ({
           disabled={disabled}
           onClick={onClick}
           id={id}
+          aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
           {...rest}
         >
           {children}
@@ -45,6 +46,7 @@ const Button = ({
           disabled={disabled}
           onClick={onClick}
           id={id}
+          aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
           {...rest}
         >
           {children}
@@ -57,6 +59,7 @@ const Button = ({
           disabled={disabled}
           onClick={onClick}
           id={id}
+          aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
           {...rest}
         >
           {children}
@@ -70,6 +73,7 @@ const Button = ({
           disabled={disabled}
           onClick={onClick}
           id={id}
+          aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
           {...rest}
         >
           {children}
@@ -82,6 +86,7 @@ const Button = ({
           disabled={disabled}
           onClick={onClick}
           id={id}
+          aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
           {...rest}
         >
           {children}
@@ -94,6 +99,7 @@ const Button = ({
           disabled={disabled}
           onClick={onClick}
           id={id}
+          aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
           {...rest}
         >
           {children}
