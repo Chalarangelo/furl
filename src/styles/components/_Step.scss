@@ -35,7 +35,7 @@
     }
     &.selected ~ .step-item {
       & > .step-content {
-        --color: var(--interface-gray-500);
+        --color: var(--interface-gray-600);
       }
       &::before {
         --background-color: var(--interface-gray-300);
