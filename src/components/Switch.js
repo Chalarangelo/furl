@@ -24,6 +24,7 @@ const Switch = ({
         name={name}
         onChange={onChange}
         aria-label={`${children}`}
+        role='switch'
         {...rest}
       />
       {children}
