@@ -22,7 +22,6 @@ const Search = ({
         type='search' id={id} placeholder={placeholder}
         className={['with-search-icon', className].join(' ').trim()} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} 
-        title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
         {...rest}
       />
       <span>
@@ -36,7 +35,6 @@ const Search = ({
         type='search' id={id} placeholder={placeholder}
         className={className} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} 
-        title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
         {...rest}
       />
       {normalizeChildren(children).length ? <div className='search-result-box'>{children}</div> : ''}

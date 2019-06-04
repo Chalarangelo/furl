@@ -33,6 +33,7 @@ const InputBase = ({
       name={name}
       onChange={onChange}
       defaultValue={defaultValue}
+      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       {...rest}
     />
   );
@@ -62,7 +63,8 @@ const TextInput = ({
       placeholder={placeholder}
       name={name}
       onChange={onChange}
-      rows={rows}
+      rows={rows} 
+      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       {...rest}
     />
   ) : (
@@ -243,6 +245,7 @@ const SelectInput = ({
       name={name}
       onChange={onChange}
       multiple={multiple} size={selectSize} {...rest}
+      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       defaultValue={defaultValue}
     >
       {options}
@@ -255,8 +258,10 @@ const SelectInput = ({
       required={required}
       placeholder={placeholder}
       name={name}
-      onChange={onChange} {...rest}
+      onChange={onChange}
       defaultValue={defaultValue[0]}
+      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
+      {...rest}
     >
       {options}
     </select><Button>
@@ -393,6 +398,7 @@ const FileInput = ({
   return (<>
     <input
       type='file' disabled={disabled} required={required} name={name} multiple={multiple}
+      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       onChange={handleFileInput} ref={inputRef} onClick={e => e.stopPropagation()} {...rest}
     />
     <div
@@ -466,7 +472,8 @@ const RatingInput = ({
       {...rest} // TODO: Check if this should all go here
     >
       <input
-        type='number' disabled={disabled} required={required} name={name} onChange={onChange} value={rating} readOnly={readOnly}
+        type='number' disabled={disabled} required={required} name={name} onChange={onChange} value={rating}
+        title={name ? name : id ? id : rest.title ? rest.title : 'Search'} readOnly={readOnly}
       />
       {Array.from({ length: 5 }, (v, i) => (
         <Star
