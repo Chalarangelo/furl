@@ -3,7 +3,7 @@
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
   & > .breadcrumb-item {
-    --color: var(--interface-gray-500);
+    --color: var(--interface-gray-600);
     > a {
       color: inherit;
       border: 0;
@@ -18,6 +18,6 @@
   }
   & .breadcrumb-separator {
     --margin-horizontal: var(--ls-25p);
-    --color: var(--interface-gray-500);
+    --color: var(--interface-gray-600);
   }
 }
