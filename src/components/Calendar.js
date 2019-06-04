@@ -171,6 +171,7 @@ const Calendar = ({
         <Button className='calendar-arrow-button'
           onMouseDown={handlePrevious}
           onMouseUp={clearPressureTimer}
+          aria-label='Previous month'
         >
           <Icon name='chevron-left' />
         </Button>
@@ -180,6 +181,7 @@ const Calendar = ({
         <Button className='calendar-arrow-button'
           onMouseDown={handleNext}
           onMouseUp={clearPressureTimer}
+          aria-label='Next month'
         >
           <Icon name='chevron-right' />
         </Button>

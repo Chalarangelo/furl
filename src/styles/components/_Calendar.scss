@@ -46,7 +46,7 @@
 .calendar-date {
   cursor: pointer;
   --font-size: var(--ls-100p);
-  --color: var(--interface-gray-500);
+  --color: var(--interface-gray-600);
   &.in-month {
     --color: var(--interface-gray-900);
   }
