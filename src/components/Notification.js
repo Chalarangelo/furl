@@ -36,6 +36,7 @@ const Notification = ({
         className={['notification', ...classNames, isAlmostInactive ? 'almost-inactive' : '', isInactive ? 'inactive' : ''].join(' ').trim()}
         id={id}
         {...rest}
+        role='alert'
       >
         {children}
       </div>
