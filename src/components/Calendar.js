@@ -187,7 +187,7 @@ const Calendar = ({
         </Button>
       </div>
 
-      <div className='calendar-grid'>
+      <div className='calendar-grid' role='group'>
         {Object.keys(WEEK_DAYS).map(renderDayLabel)}
         {getCalendarDates().map(renderCalendarDate)}
       </div>
