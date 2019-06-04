@@ -18,8 +18,6 @@ const ModalSection = ({
 };
 
 const Modal = ({
-  // color = 'normal',
-  // size = 'normal',
   id,
   className,
   children,
@@ -28,6 +26,7 @@ const Modal = ({
   <div
     className={['modal', className].join(' ').trim()}
     id={id}
+    role='dialog'
     {...rest}
   >
     {children}
