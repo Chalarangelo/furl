@@ -35,6 +35,7 @@ const Button = ({
           onClick={onClick}
           id={id}
           aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
+          role='button'
           {...rest}
         >
           {children}
@@ -47,6 +48,7 @@ const Button = ({
           onClick={onClick}
           id={id}
           aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
+          role='button'
           {...rest}
         >
           {children}
@@ -87,6 +89,7 @@ const Button = ({
           onClick={onClick}
           id={id}
           aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
+          role='button'
           {...rest}
         >
           {children}
