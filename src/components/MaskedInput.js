@@ -187,7 +187,7 @@ const DateInput = ({
       <Button disabled={disabled} readOnly={readOnly} onClick={() => {
         if (readOnly || disabled) return;
         setCalendarOpen(!calendarOpen);
-      }} className='calendar-toggler'>
+      }} className='calendar-toggler' aria-label='Open calendar'>
         <Icon name='calendar' width={16} height={16} />&zwnj;
       </Button>
       <div>

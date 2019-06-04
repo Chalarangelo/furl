@@ -139,7 +139,7 @@ const PasswordInput = ({
         className={['revealer', className].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name} onChange={onChange} shape={shape} {...rest}
       />
-      <Button disabled={disabled} readOnly={readOnly} onClick={() => {
+      <Button disabled={disabled} readOnly={readOnly} aria-label={passwordVisible ? 'Hide password' : 'Show password'} onClick={() => {
         if (disabled || readOnly) return;
         setPasswordVisible(!passwordVisible);
       }}>
@@ -181,7 +181,7 @@ const NumberInput = ({
         if (readOnly || disabled) return;
         setInputValue(+inputValue - step);
         typeof onChange === 'function' && onChange(e);
-      }} className='number-input-minus'>
+      }} className='number-input-minus' aria-label='Decrement value'>
         <Icon name='minus' width={16} height={16} />&zwnj;
       </Button>
       <InputBase
@@ -198,7 +198,7 @@ const NumberInput = ({
         if (readOnly || disabled) return;
         setInputValue(+inputValue + step);
         onChange(e);
-      }} className='number-input-plus'>
+      }} className='number-input-plus' aria-label='Increment value'>
         <Icon name='plus' width={16} height={16} />&zwnj;
       </Button>
     </>
@@ -301,7 +301,7 @@ const ComboboxInput = ({
         className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} {...rest} defaultValue={defaultValue[0]}
       />
-      <Button>
+      <Button aria-label='Show/Hide options'>
         <Icon name='chevron-down' width={16} height={16} />&zwnj;
       </Button>
     </>
@@ -431,7 +431,8 @@ const FileInput = ({
 const Star = ({ marked, starId, iconName, iconStyle, iconFillColor, ...rest }) => (
   <Icon star-id={starId} name={iconName}
     fill={marked ? iconFillColor : iconStyle !== 'fill' ? 'none' : 'var(--interface-gray-300)'}
-    stroke={marked ? iconFillColor : 'var(--interface-gray-300)'} {...rest}
+    stroke={marked ? iconFillColor : 'var(--interface-gray-300)'} 
+    role='button' {...rest}
   />
 );
 
@@ -469,7 +470,8 @@ const RatingInput = ({
       }}
       onMouseOver={hoverOver}
       className={[className, 'rating', disabled ? 'disabled' : '', readOnly ? 'readonly' : ''].join(' ').trim()}
-      {...rest} // TODO: Check if this should all go here
+      role='group'
+      {...rest}
     >
       <input
         type='number' disabled={disabled} required={required} name={name} onChange={onChange} value={rating}
@@ -483,6 +485,7 @@ const RatingInput = ({
           starId={i + 1}
           key={`star_${i + 1} `}
           marked={selection ? selection >= i + 1 : rating >= i + 1}
+          aria-label={`Rate ${i}`}
         />
       ))}
     </div>
