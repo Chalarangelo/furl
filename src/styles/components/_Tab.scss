@@ -44,14 +44,14 @@
         }
       }
       --color: var(--interface-gray-900);
-      --background-color: var(--interface-gray-50);
+      --background-color: var(--interface-gray-0);
       --secondary-background-color: var(--interface-gray-200);
       &:hover, &:not(.selected):focus {
         --background-color: var(--focus-blue-500);
         --color: var(--interface-gray-0);
       }
       &.selected {
-        --background-color: var(--interface-gray-200);
+        --background-color: var(--interface-gray-50);
         --color: var(--focus-blue-700);
         &:hover {
           --color: var(--focus-blue-500);
