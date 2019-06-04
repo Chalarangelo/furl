@@ -9,6 +9,7 @@ const Loader = ({
   ...rest
 }) => (
   <Icon
+    role='progressbar'
     name='circle'
     width={size === 'large' ? 48 : 24}
     height={size === 'large' ? 48 : 24}
