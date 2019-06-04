@@ -21,7 +21,7 @@ const Step = ({
   }
   let classNames = [className, 'step'];
   return (
-    <nav id={id} className={classNames.join(' ').trim()} {...rest}>
+    <nav id={id} className={classNames.join(' ').trim()} role='presentation' {...rest}>
       {steps}
     </nav>
   );
