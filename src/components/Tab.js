@@ -3,9 +3,9 @@ import { normalizeChildren, generateUniqueId } from '../utilities/utils';
 import Button from './Button';
 
 const TabItem = ({ id, className, children, ...rest }) => (
-  <span id={id} className={['tab-item', className].join(' ').trim()} {...rest}>
+  <div id={id} className={['tab-item', className].join(' ').trim()} {...rest}>
     {children}
-  </span>
+  </div>
 );
 
 const Tab = ({
@@ -28,14 +28,20 @@ const Tab = ({
         setOpenTab(i);
         typeof v.props.onClick === 'function' && v.props.onClick(e);
       },
-      className: [v.props.className, openTab === i ? 'selected' : ''].join(' ').trim()
+      className: [v.props.className, openTab === i ? 'selected' : ''].join(' ').trim(),
+      id: `${tabsId}-button-${v.props.id ? v.props.id : i}`,
+      role: 'tab',
+      'aria-controls': `${tabsId}-content-${v.props.id ? v.props.id : i}`
     }, v.props, _tB.props);
     return _tB;
   });
   let tabsContent = tabs.map((v, i) => {
     let _tC = Object.assign({}, (<div key={`${tabsId}-c-${i}`}>{v.props.children}</div>));
     _tC.props = Object.assign({
-      className: [v.props.className, openTab === i ? 'open' : ''].join(' ').trim()
+      className: [v.props.className, openTab === i ? 'open' : ''].join(' ').trim(),
+      id: `${tabsId}-content-${v.props.id ? v.props.id : i}`,
+      role: 'tabpanel',
+      'aria-labelledby': `${tabsId}-button-${v.props.id ? v.props.id : i}`
     }, v.props);
     return _tC;
   });
