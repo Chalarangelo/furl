@@ -51,6 +51,7 @@ const TextInput = ({
   onChange,
   id,
   className,
+  defaultValue,
   ...rest
 }) =>
   multiline ? (
@@ -63,6 +64,7 @@ const TextInput = ({
       placeholder={placeholder}
       name={name}
       onChange={onChange}
+      defaultValue={defaultValue}
       rows={rows} 
       title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       {...rest}
