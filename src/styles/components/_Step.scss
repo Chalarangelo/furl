@@ -64,4 +64,38 @@
       background: transparent !important;
     }
   }
+  &.vertical {
+    flex-flow: column;
+    & > .step-item {
+      padding-bottom: var(--ls-150p);
+      &::before {
+        content: '';
+        width: var(--ls-100p);
+        height: var(--ls-100p);
+        top: var(--ls-50p);
+      }
+      background: transparent;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: var(--ls-150p);
+        left: calc(0rem - var(--ls-100p) - var(--ls-25p) - 1px);
+        height: 100%;
+        width: 2px;
+        background: var(--focus-blue-300);
+      }
+      &.selected, &.selected ~ .step-item {
+        background: transparent;
+        &::after {
+          background: var(--interface-gray-300);
+        }
+      }
+      &:last-child {
+        &::after {
+          background: transparent !important;
+        }
+      }
+    }
+  }
 }

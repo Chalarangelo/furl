@@ -1183,6 +1183,35 @@ storiesOf('Step', module)
     </>
   )
   )
+  .add('vertical', () => (
+    <>
+      <Step alignment='vertical'>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem>Consectetur</StepItem>
+        <StepItem>Adipiscing elit</StepItem>
+      </Step>
+      <Step alignment='vertical'>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem selected>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem>Consectetur</StepItem>
+        <StepItem>Adipiscing elit</StepItem>
+      </Step>
+      <Step alignment='vertical'>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem selected>Consectetur</StepItem>
+        <StepItem>Adipiscing elit</StepItem>
+      </Step>
+      <Step alignment='vertical'>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem>Consectetur</StepItem>
+        <StepItem selected>Adipiscing elit</StepItem>
+      </Step>
+    </>
+  )
+  )
 ;
 
 storiesOf('Table', module)

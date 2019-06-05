@@ -9,6 +9,7 @@ const StepItem = ({ id, selected = false, className, children, ...rest }) => (
 
 const Step = ({
   id,
+  alignment = 'horizontal',
   className,
   children,
   ...rest
@@ -19,7 +20,7 @@ const Step = ({
     steps[0] = Object.assign({}, steps[0]);
     steps[0].props = Object.assign({ selected: true }, steps[0].props);
   }
-  let classNames = [className, 'step'];
+  let classNames = [className, 'step', alignment === 'vertical' ? 'vertical' : ''];
   return (
     <nav id={id} className={classNames.join(' ').trim()} role='presentation' {...rest}>
       {steps}
