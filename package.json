@@ -1,22 +1,25 @@
 {
   "name": "furl",
-  "version": "0.1.1-alpha",
+  "version": "0.1.2-alpha",
   "files": [
     "dist",
     "README.md"
   ],
-  "main": "./dist/bundle.js",
+  "main": "./dist/index.js",
   "peerDependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "feather-icons": "^4.21.0",
+    "react-text-mask": "^5.4.3"
+  },
   "scripts": {
     "build-js": "NODE_ENV=production rollup -c",
-    "build-css": "node-sass-chokidar ./src/styles/index.scss ./dist/styles/index.css --output-style compressed",
+    "build-css": "node-sass-chokidar ./src/styles/index.scss ./dist/index.css --output-style compressed",
     "build-packages": "npm-run-all build-js build-css",
     "watch-js": "NODE_ENV=production rollup -c -w",
-    "watch-css": "npm run build-css && node-sass-chokidar ./src/styles/index.scss ./dist/styles/index.css --watch --recursive --output-style compressed",
+    "watch-css": "npm run build-css && node-sass-chokidar ./src/styles/index.scss ./dist/index.css --watch --recursive --output-style compressed",
     "watch-all": "npm-run-all -p watch-js watch-css",
     "test": "react-scripts test --env=jsdom --watchAll",
     "build-storybook": "build-storybook -c .storybook",
@@ -58,6 +61,7 @@
     "rollup": "^1.5.0",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-postprocess": "^1.0.2",
     "rollup-plugin-replace": "^2.1.0",
     "rollup-plugin-terser": "^4.0.4"
   }
