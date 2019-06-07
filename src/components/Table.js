@@ -1,5 +1,5 @@
 import React from 'react';
-import {normalizeChildren} from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 
 const TableCaption = ({ className, children, ...rest }) => (
   <caption className={className} {...rest}>{children}</caption>
@@ -33,7 +33,7 @@ const Table = ({
 }) => {
   const tableItems = normalizeChildren(children).filter(item => TableHead.name === item.type.name || TableBody.name === item.type.name || TableCaption.name === item.type.name);
   let classNames = [tableStyle !== 'none' ? tableStyle : '', className];
-  return <table className={classNames.join(' ').trim()} {...rest}>
+  return <table className={combineClassNames(classNames)} {...rest}>
     {tableItems}
   </table>;
 };

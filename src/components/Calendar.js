@@ -13,6 +13,7 @@ import useInterval from '../utilities/useInterval';
 import useEffectOnUpdate from '../utilities/useEffectOnUpdate';
 import Icon from './Icon';
 import Button from './Button';
+import { combineClassNames } from '../utilities/utils';
 
 const Calendar = ({
   fill = 'flat',
@@ -64,7 +65,7 @@ const Calendar = ({
     return (
       // The highlighting below is unfinished, just a demo
       <div
-        className={['calendar-date', inMonth ? 'in-month' : '', isCurrent ? 'highlighted' : isToday ? 'today' : ''].join(' ').trim()}
+        className={combineClassNames(['calendar-date', inMonth ? 'in-month' : '', isCurrent ? 'highlighted' : isToday ? 'today' : ''])}
         style={{
           gridRow: `${Math.floor(index / 7) + 2} / span 1`,
           gridColumn: `${(index % 7) + 1} / span 1`,
@@ -165,7 +166,7 @@ const Calendar = ({
   }, [current]);
 
   return (
-    <div className={['calendar-container', className, fill !== 'flat' ? fill : ''].join(' ').trim()} {...rest}>
+    <div className={combineClassNames(['calendar-container', className, fill !== 'flat' ? fill : ''])} {...rest}>
       <div className='calendar-header'>
         <Button className='calendar-arrow-button'
           onMouseDown={handlePrevious}

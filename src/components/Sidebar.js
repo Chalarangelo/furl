@@ -1,9 +1,10 @@
 import React from 'react';
 import Icon from './Icon';
+import { combineClassNames } from '../utilities/utils';
 
 const Sidebar = ({ className, outline = 'none', children, ...rest }) => {
   return (<aside
-    className={[ outline !== 'none' ? outline : '', className, 'layout-sidebar' ].join(' ').trim()}
+    className={combineClassNames([ outline !== 'none' ? outline : '', className, 'layout-sidebar' ])}
     {...rest}>
     {children}
   </aside>);

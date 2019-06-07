@@ -1,6 +1,6 @@
 import React from 'react';
 import { InputBase } from './Input';
-import { normalizeChildren } from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 import Icon from './Icon';
 
 const Search = ({
@@ -19,7 +19,7 @@ const Search = ({
     <>
       <InputBase
         type='search' placeholder={placeholder}
-        className={['with-search-icon', className].join(' ').trim()} size={size} disabled={disabled}
+        className={combineClassNames(['with-search-icon', className])} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} 
         {...rest}
       />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { combineClassNames } from '../utilities/utils';
 
 const Radio = ({
   color = 'plain',
@@ -15,7 +16,7 @@ const Radio = ({
     <label className='radio'>
       <input
         type='radio'
-        className={classNames.join(' ').trim()}
+        className={combineClassNames(classNames)}
         disabled={disabled}
         required={required}
         checked={checked}

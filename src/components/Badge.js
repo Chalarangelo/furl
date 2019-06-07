@@ -1,4 +1,5 @@
 import React from 'react';
+import { combineClassNames } from '../utilities/utils';
 
 const Badge = ({
   fill = 'flat',
@@ -9,15 +10,14 @@ const Badge = ({
   className,
   children,
   ...rest }) => {
-  let classNames = [];
-  classNames.push(fill);
+  let classNames = ['badge', className, fill];
   if (text !== 'normal') classNames.push(text);
   if (size !== 'normal') classNames.push(size);
   if (color !== 'plain') classNames.push(color);
   if (shape !== 'normal') classNames.push(shape);
   return (
     <span
-      className={['badge', className, ...classNames].join(' ').trim()}
+      className={combineClassNames(classNames)}
       {...rest}>
       {children}
     </span>

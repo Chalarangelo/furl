@@ -1,4 +1,5 @@
 import React from 'react';
+import { combineClassNames } from '../utilities/utils';
 
 const Switch = ({
   color = 'plain',
@@ -15,7 +16,7 @@ const Switch = ({
     <label className='switch'>
       <input
         type='checkbox'
-        className={classNames.join(' ').trim()}
+        className={combineClassNames(classNames)}
         disabled={disabled}
         required={required}
         checked={checked}

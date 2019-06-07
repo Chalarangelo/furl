@@ -1,4 +1,5 @@
 import React from 'react';
+import { combineClassNames } from '../utilities/utils';
 
 const Button = ({
   fill = 'flat',
@@ -15,8 +16,7 @@ const Button = ({
   className,
   children,
   ...rest}) => {
-  let classNames = [];
-  classNames.push(fill);
+  let classNames = ['button', fill, className];
   if (text !== 'normal') classNames.push(text);
   if (size !== 'normal') classNames.push(size);
   if (color !== 'plain') classNames.push(color);
@@ -28,7 +28,7 @@ const Button = ({
       return (['external', '_external'].includes(openIn)
         ? <a
           href={disabled ? '' : href}
-          className={['button', className, ...classNames].join(' ').trim()}
+          className={combineClassNames(classNames)}
           rel='noopener noreferrer'
           target='_blank'
           disabled={disabled}
@@ -42,7 +42,7 @@ const Button = ({
         </a>
         : <a
           href={disabled ? '' : href}
-          className={['button', className, ...classNames].join(' ').trim()}
+          className={combineClassNames(classNames)}
           target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
           disabled={disabled}
           onClick={onClick}
@@ -57,7 +57,7 @@ const Button = ({
       return (
         <button
           type='submit'
-          className={[className, ...classNames].join(' ').trim()}
+          className={combineClassNames(classNames)}
           disabled={disabled}
           onClick={onClick}
           id={id}
@@ -71,7 +71,7 @@ const Button = ({
       return (
         <button
           type='reset'
-          className={[className, ...classNames].join(' ').trim()}
+          className={combineClassNames(classNames)}
           disabled={disabled}
           onClick={onClick}
           id={id}
@@ -84,7 +84,7 @@ const Button = ({
     case 'with-dropdown':
       return(
         <span
-          className={['button', className, ...classNames].join(' ').trim()}
+          className={combineClassNames(classNames)}
           disabled={disabled}
           onClick={onClick}
           id={id}
@@ -96,9 +96,10 @@ const Button = ({
         </span>
       );
     default:
+      classNames = classNames.slice(1);
       return (
         <button
-          className={[className, ...classNames].join(' ').trim()}
+          className={combineClassNames(classNames)}
           disabled={disabled}
           onClick={onClick}
           id={id}

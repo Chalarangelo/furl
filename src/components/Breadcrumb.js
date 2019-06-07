@@ -1,8 +1,8 @@
 import React from 'react';
-import { normalizeChildren, generateUniqueId } from '../utilities/utils';
+import { normalizeChildren, generateUniqueId, combineClassNames } from '../utilities/utils';
 
 const BreadcrumbItem = ({ className, children, ...rest }) => (
-  <span className={['breadcrumb-item', className].join(' ').trim()} {...rest}>
+  <span className={combineClassNames(['breadcrumb-item', className])} {...rest}>
     {children}
   </span>
 );
@@ -20,9 +20,8 @@ const Breadcrumb = ({
     if (i !== breadcrumbs.length - 1) acc.push(<span className='breadcrumb-separator' key={`${breadcrumbsId}-${i}`}>{separator}</span>);
     return acc;
   }, []);
-  let classNames = [className, 'breadcrumb'];
   return (
-    <nav className={classNames.join(' ').trim()} {...rest}>
+    <nav className={combineClassNames([className, 'breadcrumb'])} {...rest}>
       {breadcrumbs}
     </nav>
   );

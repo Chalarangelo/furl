@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren } from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 import Button from './Button';
 
 const PaginationItem = ({
@@ -10,7 +10,7 @@ const PaginationItem = ({
   children,
   ...rest }) => (
   <span // eslint-disable-line semistandard-react/jsx-indent
-    className={['pagination-item', fill, size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
+    className={combineClassNames(['pagination-item', fill, size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className])}
     {...rest}>
     {children}
   </span>
@@ -37,7 +37,7 @@ const Pagination = ({
   if (size !== 'normal') classNames.push(size);
   if (shape !== 'normal') classNames.push(shape);
   return (
-    <div className={classNames.join(' ').trim()} {...rest} role='group'>
+    <div className={combineClassNames(classNames)} {...rest} role='group'>
       {buttons}
     </div>
   );

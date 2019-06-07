@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import { combineClassNames } from '../utilities/utils';
 
 const ContextButton = ({
   text = 'normal',
@@ -14,7 +15,7 @@ const ContextButton = ({
   let classNames = [className, `v-${verticalPosition}`, `h-${horizontalPosition}`, 'context-button'];
   return (
     <Button
-      className={classNames.join(' ').trim()}
+      className={combineClassNames(classNames)}
       fill='solid'
       text={text}
       size={size}

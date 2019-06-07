@@ -1,4 +1,5 @@
 import React from 'react';
+import { combineClassNames } from '../utilities/utils';
 
 const Alert = ({
   fill = 'flat',
@@ -8,14 +9,14 @@ const Alert = ({
   className,
   children,
   ...rest }) => {
-  let classNames = [];
+  let classNames = ['alert'];
   classNames.push(fill);
   if (size !== 'normal') classNames.push(size);
   if (color !== 'plain') classNames.push(color);
   if (shape !== 'normal') classNames.push(shape);
   return (
     <div
-      className={['alert', className, ...classNames].join(' ').trim()}
+      className={combineClassNames(classNames)}
       {...rest}>
       {children}
     </div>

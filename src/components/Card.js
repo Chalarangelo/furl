@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren } from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 
 const CardSection = ({
   height = 'auto',
@@ -9,10 +9,10 @@ const CardSection = ({
   ...rest
 }) => {
   if (media.length) {
-    return (<div className={[className, 'card-media-section'].join(' ').trim()} {...rest}
+    return (<div className={combineClassNames([className, 'card-media-section'])} {...rest}
       style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
   } else {
-    return (<div className={[className, 'card-section'].join(' ').trim()} {...rest}>{children}</div>);
+    return (<div className={combineClassNames([className, 'card-section'])} {...rest}>{children}</div>);
   }
 };
 
@@ -23,7 +23,7 @@ const Card = ({
   ...rest
 }) => {
   const sections = normalizeChildren(children).filter(item => CardSection.name === item.type.name);
-  return (<div className={[className, 'card'].join(' ').trim()}
+  return (<div className={combineClassNames([className, 'card'])}
     style={{width: width}} {...rest}>
     {sections}
   </div>);

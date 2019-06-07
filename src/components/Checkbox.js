@@ -1,4 +1,5 @@
 import React from 'react';
+import { combineClassNames } from '../utilities/utils';
 
 const Checkbox = ({
   color = 'plain',
@@ -15,7 +16,7 @@ const Checkbox = ({
     <label className='checkbox'>
       <input
         type='checkbox'
-        className={classNames.join(' ').trim()}
+        className={combineClassNames(classNames)}
         disabled={disabled}
         required={required}
         checked={checked}

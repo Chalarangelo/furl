@@ -7,4 +7,6 @@ const normalizeChildren = val => isUndefined(val) ? [] : castArray(val);
 let idCounter = 0;
 const generateUniqueId = (prefix = 'element') => `${prefix}-${idCounter++}`;
 
-export { normalizeChildren, generateUniqueId };
+const combineClassNames = (classNames) => classNames.join(' ').trim();
+
+export { normalizeChildren, generateUniqueId, combineClassNames };

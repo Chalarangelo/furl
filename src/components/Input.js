@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import Icon from './Icon';
-import { normalizeChildren, generateUniqueId } from '../utilities/utils';
+import { normalizeChildren, generateUniqueId, combineClassNames } from '../utilities/utils';
 import { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, DateInput } from './MaskedInput';
 
 const InputBase = ({
@@ -26,7 +26,7 @@ const InputBase = ({
     <input
       type={type}
       id={id}
-      className={classNames.join(' ').trim()}
+      className={combineClassNames(classNames)}
       disabled={disabled}
       required={required}
       placeholder={placeholder}
@@ -135,7 +135,7 @@ const PasswordInput = ({
     <>
       <InputBase
         type={passwordVisible ? 'text' : 'password'} placeholder={placeholder}
-        className={['revealer', className].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}
+        className={combineClassNames(['revealer', className])} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name} onChange={onChange} shape={shape} {...rest}
       />
       <Button disabled={disabled} readOnly={readOnly} aria-label={passwordVisible ? 'Hide password' : 'Show password'} onClick={() => {
@@ -235,7 +235,7 @@ const SelectInput = ({
   if (multiple) {
     return (<select
       id={id}
-      className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
+      className={combineClassNames([size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className])}
       disabled={disabled}
       required={required}
       placeholder={placeholder}
@@ -250,7 +250,7 @@ const SelectInput = ({
   } else {
     return (<><select
       id={id}
-      className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
+      className={combineClassNames([size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className])}
       disabled={disabled}
       required={required}
       placeholder={placeholder}
@@ -293,7 +293,7 @@ const ComboboxInput = ({
       </datalist>
       <InputBase
         placeholder={placeholder} list={optionsId}
-        className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()} size={size} disabled={disabled}
+        className={combineClassNames([size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className])} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} {...rest} defaultValue={defaultValue[0]}
       />
       <Button aria-label='Show/Hide options'>
@@ -398,14 +398,14 @@ const FileInput = ({
     />
     <div
       role='button'
-      className={[
+      className={combineClassNames([
         className, 'upload',
         drag ? 'drag' : (filename && filename.length > 0) ? 'ready' : '',
         shape !== 'normal' ? shape : '',
         size !== 'normal' ? size : '',
         disabled ? 'disabled' : '',
         readOnly ? 'readonly' : ''
-      ].join(' ').trim()}
+      ])}
       ref={dropRef}
       id={id}>
       {
@@ -464,7 +464,7 @@ const RatingInput = ({
         setRating(event.target.getAttribute('star-id') || rating);
       }}
       onMouseOver={hoverOver}
-      className={[className, 'rating', disabled ? 'disabled' : '', readOnly ? 'readonly' : ''].join(' ').trim()}
+      className={combineClassNames([className, 'rating', disabled ? 'disabled' : '', readOnly ? 'readonly' : ''])}
       role='group'
       {...rest}
     >

@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren } from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 
 const ModalSection = ({
   height = 'auto',
@@ -9,7 +9,7 @@ const ModalSection = ({
   ...rest
 }) => {
   if (media.length) {
-    return (<div className={[className, 'modal-media-section'].join(' ').trim()}
+    return (<div className={combineClassNames([className, 'modal-media-section'])}
       {...rest} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
   } else {
     return (<div className={[className, 'modal-section'].join(' ').trim()}
@@ -23,7 +23,7 @@ const Modal = ({
   ...rest
 }) => (
   <div
-    className={['modal', className].join(' ').trim()}
+    className={combineClassNames(['modal', className])}
     role='dialog'
     {...rest}
   >
@@ -50,7 +50,7 @@ const ModalCenter = React.forwardRef(
     }));
     return (
       __isOpen
-        ? <div className={['modal-center', className].join(' ').trim()} {...rest}>
+        ? <div className={combineClassNames(['modal-center', className])} {...rest}>
           <div className='modal-overlay' />
           {__content}
         </div>

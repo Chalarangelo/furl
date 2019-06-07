@@ -5,6 +5,7 @@ import MaskedInput from 'react-text-mask';
 import createNumberMask from '../utilities/createNumberMask';
 import createAutoCorrectedDatePipe from '../utilities/createAutoCorrectedDatePipe';
 import Calendar from './Calendar';
+import { combineClassNames } from '../utilities/utils';
 
 const MaskedInputBase = ({
   size = 'normal',
@@ -26,7 +27,7 @@ const MaskedInputBase = ({
     <MaskedInput
       type={type} mask={mask} guide placeholderChar={'\u2000'}
       id={id}
-      className={classNames.join(' ').trim()}
+      className={combineClassNames(classNames)}
       disabled={disabled}
       required={required}
       placeholder={placeholder}
@@ -226,7 +227,7 @@ const ColorInput = ({
       <MaskedInputBase
         type='text' id={id} placeholder={placeholder}
         mask={['#', /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/]}
-        className={['color-input', className].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}
+        className={combineClassNames(['color-input', className])} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name}
         onChange={(e) => {
           if (readOnly || disabled) return;

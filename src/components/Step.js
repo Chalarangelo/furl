@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren } from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 
 const StepItem = ({ selected = false, className, children, ...rest }) => (
   <span className={['step-item', selected ? 'selected' : '', className].join(' ').trim()} {...rest}>
@@ -20,7 +20,7 @@ const Step = ({
   }
   let classNames = [className, 'step', alignment === 'vertical' ? 'vertical' : ''];
   return (
-    <nav className={classNames.join(' ').trim()} role='presentation' {...rest}>
+    <nav className={combineClassNames(classNames)} role='presentation' {...rest}>
       {steps}
     </nav>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import {normalizeChildren} from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 
 const ListItem = ({ className, children, ...rest }) => (
   <li className={className} {...rest}>
@@ -18,13 +18,13 @@ const List = ({
   let classNames = [className, listStyle !== 'none' ? listStyle : ''];
   if (ordered) {
     return (
-      <ol className={classNames.join(' ').trim()} {...rest}>
+      <ol className={combineClassNames(classNames)} {...rest}>
         {listItems}
       </ol>
     );
   } else {
     return (
-      <ul className={classNames.join(' ').trim()} {...rest}>
+      <ul className={combineClassNames(classNames)} {...rest}>
         {listItems}
       </ul>
     );

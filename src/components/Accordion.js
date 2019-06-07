@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren } from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 import Collapse from './Collapse';
 
 const Accordion = ({
@@ -23,7 +23,7 @@ const Accordion = ({
       }, c.props);
       return _c;
     });
-  return (<div className={['accordion', className].join(' ').trim()} {...rest}>
+  return (<div className={combineClassNames(['accordion', className])} {...rest}>
     {collapses}
   </div>);
 };

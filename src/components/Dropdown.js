@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from './Icon';
+import { combineClassNames } from '../utilities/utils';
 
 const Dropdown = ({
   isOpen = false,
@@ -10,7 +11,7 @@ const Dropdown = ({
   ...rest }) => {
   let classNames = ['dropdown', reverse ? 'reverse' : '', className];
   return (
-    <details className={classNames.join(' ').trim()} open={isOpen} {...rest}>
+    <details className={combineClassNames(classNames)} open={isOpen} {...rest}>
       <summary>{text}
         {reverse
           ? <Icon name='chevron-up' width={16} height={16} />

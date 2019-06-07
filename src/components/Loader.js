@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from './Icon';
+import { combineClassNames } from '../utilities/utils';
 
 const Loader = ({
   color = 'normal',
@@ -12,7 +13,7 @@ const Loader = ({
     name='circle'
     width={size === 'large' ? 48 : 24}
     height={size === 'large' ? 48 : 24}
-    className={['loader', color !== 'normal' ? color : '', className].join(' ').trim()}
+    className={combineClassNames(['loader', color !== 'normal' ? color : '', className])}
     {...rest}
   />
 );

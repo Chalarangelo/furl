@@ -1,4 +1,5 @@
 import React from 'react';
+import { combineClassNames } from '../utilities/utils';
 const feather = require('feather-icons');
 
 const Icon = ({
@@ -16,7 +17,7 @@ const Icon = ({
 }) => (
   <span
     title={name}
-    className={[ className, 'icon' ].join(' ').trim()}
+    className={combineClassNames([ className, 'icon' ])}
     {...rest}
     dangerouslySetInnerHTML={{ __html: feather.icons[name].toSvg({
       class: className,

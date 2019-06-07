@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren } from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 import useTimeout from '../utilities/useTimeout';
 
 const Notification = ({
@@ -32,7 +32,7 @@ const Notification = ({
   return (
     isActive
       ? <div
-        className={['notification', ...classNames, isAlmostInactive ? 'almost-inactive' : '', isInactive ? 'inactive' : ''].join(' ').trim()}
+        className={combineClassNames(['notification', ...classNames, isAlmostInactive ? 'almost-inactive' : '', isInactive ? 'inactive' : ''])}
         {...rest}
         role='alert'
       >
@@ -62,7 +62,7 @@ const NotificationCenter = React.forwardRef(
       __setContent(__content.filter(v => v !== null));
     });
     return (
-      <div className={['notification-center', verticalPosition, horizontalPosition, className].join(' ').trim()} {...rest} >
+      <div className={combineClassNames(['notification-center', verticalPosition, horizontalPosition, className])} {...rest} >
         {__content.filter(v => v !== null)}
       </div>
     );

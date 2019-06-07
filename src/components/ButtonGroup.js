@@ -1,5 +1,5 @@
 import React from 'react';
-import {normalizeChildren} from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 import Button from './Button';
 
 const ButtonGroup = ({
@@ -24,14 +24,13 @@ const ButtonGroup = ({
       }, b.props);
       return _b;
     });
-  let classNames = [className, 'button-group'];
-  classNames.push(fill);
+  let classNames = [className, 'button-group', fill];
   if (text !== 'normal') classNames.push(text);
   if (size !== 'normal') classNames.push(size);
   if (color !== 'plain') classNames.push(color);
   if (shape !== 'normal') classNames.push(shape);
   return (
-    <div className={classNames.join(' ').trim()} {...rest} role='group'>
+    <div className={combineClassNames(classNames)} {...rest} role='group'>
       {buttons}
     </div>
   );

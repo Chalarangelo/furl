@@ -1,5 +1,5 @@
 import React from 'react';
-import {normalizeChildren} from '../utilities/utils';
+import { normalizeChildren, combineClassNames } from '../utilities/utils';
 import Button from './Button';
 import Dropdown from './Dropdown';
 
@@ -16,7 +16,7 @@ const MenuItem = ({
   let classNames = [selected ? 'selected' : '', className, 'menu-item', _children.some(item => item.type && item.type.name && Dropdown.name === item.type.name) ? 'with-dropdown' : ''];
   return (
     <Button
-      className={classNames.join(' ').trim()}
+      className={combineClassNames(classNames)}
       fill='' size='normal' text='normal' color=''
       type={href !== undefined ? 'link' : 'button'}
       disabled={disabled}
@@ -34,7 +34,7 @@ const Menu = ({ type = 'horizontal', highlight = 'top', className, children, ...
   const menuItems = normalizeChildren(children).filter(item => MenuItem.name === item.type.name);
   let classNames = [type, className, `${highlight}-highlight`, 'menu'];
   return (<nav
-    className={classNames.join(' ').trim()} {...rest}>{menuItems}</nav>);
+    className={combineClassNames(classNames)} {...rest}>{menuItems}</nav>);
 };
 
 export {Menu, MenuItem};

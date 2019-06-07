@@ -1,4 +1,5 @@
 import React from 'react';
+import { combineClassNames } from '../utilities/utils';
 
 const sizeNames = ['xs', 'sm', 'md', 'lg'];
 const Column = ({
@@ -47,12 +48,12 @@ const Column = ({
   if (style.length > 0) {
     return (<>
       <style>{style}</style>
-      <div className={[className, ...classNames].join(' ').trim()} {...rest}>
+      <div className={combineClassNames([className, ...classNames])} {...rest}>
         {children}
       </div>
     </>);
   } else {
-    return (<div className={[className, ...classNames].join(' ').trim()} {...rest}>
+    return (<div className={combineClassNames([className, ...classNames])} {...rest}>
       {children}
     </div>);
   }

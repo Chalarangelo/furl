@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren, generateUniqueId } from '../utilities/utils';
+import { normalizeChildren, generateUniqueId, combineClassNames } from '../utilities/utils';
 import Button from './Button';
 
 const TabItem = ({ className, children, ...rest }) => (
@@ -27,7 +27,7 @@ const Tab = ({
         setOpenTab(i);
         typeof v.props.onClick === 'function' && v.props.onClick(e);
       },
-      className: [v.props.className, openTab === i ? 'selected' : ''].join(' ').trim(),
+      className: combineClassNames([v.props.className, openTab === i ? 'selected' : '']),
       id: `${tabsId}-button-${v.props.id ? v.props.id : i}`,
       role: 'tab',
       'aria-controls': `${tabsId}-content-${v.props.id ? v.props.id : i}`
@@ -37,7 +37,7 @@ const Tab = ({
   let tabsContent = tabs.map((v, i) => {
     let _tC = Object.assign({}, (<div key={`${tabsId}-c-${i}`}>{v.props.children}</div>));
     _tC.props = Object.assign({
-      className: [v.props.className, openTab === i ? 'open' : ''].join(' ').trim(),
+      className: combineClassNames([v.props.className, openTab === i ? 'open' : '']),
       id: `${tabsId}-content-${v.props.id ? v.props.id : i}`,
       role: 'tabpanel',
       'aria-labelledby': `${tabsId}-button-${v.props.id ? v.props.id : i}`
@@ -46,8 +46,8 @@ const Tab = ({
   });
   let classNames = [className, 'tab-container'];
   return (
-    <div id={id} className={classNames.join(' ').trim()} {...rest}>
-      <div className={['tab-controls', controlStyle !== 'normal' ? controlStyle : ''].join(' ').trim()}>{tabsButtons}</div>
+    <div id={id} className={combineClassNames(classNames)} {...rest}>
+      <div className={combineClassNames(['tab-controls', controlStyle !== 'normal' ? controlStyle : ''])}>{tabsButtons}</div>
       <div className='tab-content'>{tabsContent}</div>
     </div>
   );

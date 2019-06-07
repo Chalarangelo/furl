@@ -1,4 +1,5 @@
 import React from 'react';
+import { combineClassNames } from '../utilities/utils';
 
 const Tooltip = ({
   content,
@@ -9,7 +10,7 @@ const Tooltip = ({
 }) => {
   const [show, setShow] = React.useState(false);
   return (
-    <span className={[className, 'tooltip'].join(' ').trim()} onMouseLeave={() => setShow(false)} {...rest}>
+    <span className={combineClassNames([className, 'tooltip'])} onMouseLeave={() => setShow(false)} {...rest}>
       {show && <span className={`tooltip-bubble tooltip-${position}`}>
         <span className='tooltip-message'>{content}</span>
       </span>}
