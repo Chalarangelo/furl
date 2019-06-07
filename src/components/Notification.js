@@ -53,13 +53,11 @@ const NotificationCenter = React.forwardRef(
     children,
     ...rest
   }, ref) => {
-    children = normalizeChildren(children);
-    const notifications = children.filter(item => Notification.name === item.type.name);
+    const notifications = normalizeChildren(children).filter(item => Notification.name === item.type.name);
     let [__content, __setContent] = React.useState(notifications);
     React.useImperativeHandle(ref, () => ({
       addNotification: (content) => {
-        content = normalizeChildren(content);
-        const notifications = content.filter(item => Notification.name === item.type.name);
+        const notifications = normalizeChildren(content).filter(item => Notification.name === item.type.name);
         __setContent([...__content, notifications]);
       }
     }));

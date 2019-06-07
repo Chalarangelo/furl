@@ -1,4 +1,5 @@
 import React from 'react';
+import { normalizeChildren } from '../utilities/utils';
 
 const ModalSection = ({
   height = 'auto',
@@ -35,11 +36,13 @@ const Modal = ({
 
 const ModalCenter = React.forwardRef(
   ({isOpen = false, id, className, children, ...rest}, ref) => {
+    const modal = normalizeChildren(children).filter(item => Modal.name === item.type.name);
     let [__isOpen, __setIsOpen] = React.useState(isOpen);
-    let [__content, __setContent] = React.useState(children);
+    let [__content, __setContent] = React.useState(modal);
     React.useImperativeHandle(ref, () => ({
       setContent: (content) => {
-        __setContent(content);
+        const modal = normalizeChildren(content).filter(item => Modal.name === item.type.name);
+        __setContent(modal);
       },
       show: () => {
         __setIsOpen(true);

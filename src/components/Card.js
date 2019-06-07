@@ -25,8 +25,7 @@ const Card = ({
   children,
   ...rest
 }) => {
-  children = normalizeChildren(children);
-  const sections = children.filter(item => CardSection.name === item.type.name);
+  const sections = normalizeChildren(children).filter(item => CardSection.name === item.type.name);
   return (<div className={[className, 'card'].join(' ').trim()}
     id={id} style={{width: width}} {...rest}>
     {sections}

@@ -9,9 +9,8 @@ const Accordion = ({
   className,
   children,
   ...rest }) => {
-  children = normalizeChildren(children);
   const [openSection, setOpenSection] = React.useState(openIndex);
-  const collapses = children.filter(item => Collapse.name === item.type.name)
+  const collapses = normalizeChildren(children).filter(item => Collapse.name === item.type.name)
     .map((c, i) => {
       let _c = Object.assign({}, c);
       _c.props = Object.assign({

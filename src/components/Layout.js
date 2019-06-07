@@ -14,13 +14,13 @@ const Layout = ({
   children,
   ...rest
 }) => {
-  children = normalizeChildren(children);
+  let _children = normalizeChildren(children);
   if (!Array.isArray(header)) header = [header, header, header, header];
   if (!Array.isArray(sidebar)) sidebar = [sidebar, sidebar, sidebar, sidebar];
   if (!Array.isArray(contentSize)) contentSize = [contentSize, contentSize, contentSize, contentSize];
-  const headerEl = children.filter(item => Header.name === item.type.name)[0];
-  const sidebarEl = children.filter(item => Sidebar.name === item.type.name)[0];
-  const contentEl = children.filter(item => Content.name === item.type.name)[0];
+  const headerEl = _children.filter(item => Header.name === item.type.name)[0];
+  const sidebarEl = _children.filter(item => Sidebar.name === item.type.name)[0];
+  const contentEl = _children.filter(item => Content.name === item.type.name)[0];
   const layoutName = `layout-${header.map(v => v[0]).join('')}-${sidebar.map(v => v[0]).join('')}-${contentSize.map(v => `${v}`.replace('.', '')).join('-')}`;
   const [sidebarVisible, setSidebarVisible] = React.useState(false);
   return (

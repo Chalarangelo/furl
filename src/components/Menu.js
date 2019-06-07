@@ -13,8 +13,8 @@ const MenuItem = ({
   className,
   children,
   ...rest }) => {
-  children = normalizeChildren(children);
-  let classNames = [selected ? 'selected' : '', className, 'menu-item', children.some(item => item.type && item.type.name && Dropdown.name === item.type.name) ? 'with-dropdown' : ''];
+  let _children = normalizeChildren(children);
+  let classNames = [selected ? 'selected' : '', className, 'menu-item', _children.some(item => item.type && item.type.name && Dropdown.name === item.type.name) ? 'with-dropdown' : ''];
   return (
     <Button
       id={id}
@@ -27,14 +27,13 @@ const MenuItem = ({
       href={href}
       {...rest}
     >
-      {children}
+      {_children}
     </Button>
   );
 };
 
 const Menu = ({ type = 'horizontal', highlight = 'top', id, className, children, ...rest }) => {
-  children = normalizeChildren(children);
-  const menuItems = children.filter(item => MenuItem.name === item.type.name);
+  const menuItems = normalizeChildren(children).filter(item => MenuItem.name === item.type.name);
   let classNames = [type, className, `${highlight}-highlight`, 'menu'];
   return (<nav
     id={id} className={classNames.join(' ').trim()} {...rest}>{menuItems}</nav>);

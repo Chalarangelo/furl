@@ -68,9 +68,9 @@ const Title = ({ level = 1, semantic = true, id, className, children, ...rest })
 };
 
 const Text = ({ autolink = false, textStyle, id, className, children, ...rest }) => {
-  children = normalizeChildren(children);
+  let _children = normalizeChildren(children);
   if (autolink) {
-    children = children.map(v => {
+    _children = _children.map(v => {
       if (typeof v !== 'string') {
         console.error('AutolinkWarning: Cannot autolink children that are elements or components. Certain elements have not been autolinked.');
         return v;
@@ -82,25 +82,25 @@ const Text = ({ autolink = false, textStyle, id, className, children, ...rest })
       return <small
         id={id}
         className={[className].join(' ').trim()} {...rest}>
-        {children}
+        {_children}
       </small>;
     case 'bold':
       return <strong
         id={id}
         className={[className].join(' ').trim()} {...rest}>
-        {children}
+        {_children}
       </strong>;
     case 'italics':
       return <em
         id={id}
         className={[className].join(' ').trim()} {...rest}>
-        {children}
+        {_children}
       </em>;
     default:
       return <span
         id={id}
         className={[textStyle, className].join(' ').trim()} {...rest}>
-        {children}
+        {_children}
       </span>;
   }
 };
