@@ -7,7 +7,6 @@ const Checkbox = ({
   name,
   checked,
   onChange,
-  id,
   className,
   children,
   ...rest }) => {
@@ -16,7 +15,6 @@ const Checkbox = ({
     <label className='checkbox'>
       <input
         type='checkbox'
-        id={id}
         className={classNames.join(' ').trim()}
         disabled={disabled}
         required={required}

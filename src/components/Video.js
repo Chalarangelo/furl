@@ -3,7 +3,6 @@ import React from 'react';
 const Video = ({
   width = 'auto',
   height = 'auto',
-  id,
   className,
   src,
   autoplay = false,
@@ -19,7 +18,6 @@ const Video = ({
     <figure>
       <video
         className={className}
-        id={id}
         height={height}
         width={width}
         src={src}
@@ -32,7 +30,6 @@ const Video = ({
     : (
       <video
         className={className}
-        id={id}
         height={height}
         width={width}
         src={src}

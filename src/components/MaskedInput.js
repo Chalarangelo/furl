@@ -47,12 +47,11 @@ const CreditCardInput = ({
   placeholder,
   name,
   onChange,
-  id,
   className,
   ...rest
 }) => (
   <MaskedInputBase
-    type='text' id={id} placeholder={placeholder}
+    type='text' placeholder={placeholder}
     mask={[/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/]}
     className={className} size={size} disabled={disabled}
     required={required} name={name} onChange={onChange} {...rest}
@@ -66,12 +65,11 @@ const PhoneInput = ({
   placeholder,
   name,
   onChange,
-  id,
   className,
   ...rest
 }) => (
   <MaskedInputBase
-    type='tel' id={id} placeholder={placeholder}
+    type='tel' placeholder={placeholder}
     mask={['+', /\d/, /\d/, ' ', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
     className={className} size={size} disabled={disabled}
     required={required} name={name} onChange={onChange} {...rest}
@@ -86,12 +84,11 @@ const CurrencyInput = ({
   placeholder,
   name,
   onChange,
-  id,
   className,
   ...rest
 }) => (
   <MaskedInputBase
-    type='text' id={id} placeholder={placeholder}
+    type='text' placeholder={placeholder}
     mask={createNumberMask({
       prefix: `${currencySymbol} `,
       allowDecimal: true
@@ -110,7 +107,6 @@ const TimeInput = ({
   placeholder,
   name,
   onChange,
-  id,
   className,
   ...rest
 }) => {
@@ -130,7 +126,7 @@ const TimeInput = ({
   }
   return (
     <MaskedInputBase
-      type='text' id={id} placeholder={placeholder}
+      type='text' placeholder={placeholder}
       mask={mask} keepCharPositions
       pipe={createAutoCorrectedDatePipe(pipeFormat)}
       className={className} size={size} disabled={disabled}
@@ -152,7 +148,6 @@ const DateInput = ({
   placeholder,
   name,
   onChange,
-  id,
   className,
   defaultValue,
   ...rest
@@ -177,7 +172,7 @@ const DateInput = ({
   return (
     <>
       <MaskedInputBase
-        type='text' id={id} placeholder={placeholder}
+        type='text' placeholder={placeholder}
         mask={mask} keepCharPositions
         pipe={pipe}
         className={[className, 'date'].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}

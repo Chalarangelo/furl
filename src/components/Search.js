@@ -10,7 +10,6 @@ const Search = ({
   placeholder,
   name,
   onChange,
-  id,
   className,
   withIcon,
   children,
@@ -19,7 +18,7 @@ const Search = ({
   withIcon ? (
     <>
       <InputBase
-        type='search' id={id} placeholder={placeholder}
+        type='search' placeholder={placeholder}
         className={['with-search-icon', className].join(' ').trim()} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} 
         {...rest}
@@ -32,7 +31,7 @@ const Search = ({
   ) : (
     <>
       <InputBase
-        type='search' id={id} placeholder={placeholder}
+        type='search' placeholder={placeholder}
         className={className} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} 
         {...rest}

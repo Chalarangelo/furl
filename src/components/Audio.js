@@ -3,7 +3,6 @@ import React from 'react';
 const Audio = ({
   width = 'auto',
   height = 'auto',
-  id,
   className,
   src,
   volume = 1.0,
@@ -20,7 +19,6 @@ const Audio = ({
     <figure>
       <audio
         className={className}
-        id={id}
         height={height}
         width={width}
         src={src}
@@ -34,7 +32,6 @@ const Audio = ({
     : (
       <audio
         className={className}
-        id={id}
         height={height}
         width={width}
         src={src}

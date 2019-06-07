@@ -3,7 +3,6 @@ import React from 'react';
 const Image = ({
   width = 'auto',
   height = 'auto',
-  id,
   className,
   src,
   alt = 'An image',
@@ -14,7 +13,6 @@ const Image = ({
     <figure>
       <img
         className={className}
-        id={id}
         height={height}
         width={width}
         src={src}
@@ -27,7 +25,6 @@ const Image = ({
     : (
       <img
         className={className}
-        id={id}
         height={height}
         width={width}
         src={src}

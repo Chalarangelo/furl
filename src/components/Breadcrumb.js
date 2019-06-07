@@ -1,15 +1,14 @@
 import React from 'react';
 import { normalizeChildren, generateUniqueId } from '../utilities/utils';
 
-const BreadcrumbItem = ({ id, className, children, ...rest }) => (
-  <span id={id} className={['breadcrumb-item', className].join(' ').trim()} {...rest}>
+const BreadcrumbItem = ({ className, children, ...rest }) => (
+  <span className={['breadcrumb-item', className].join(' ').trim()} {...rest}>
     {children}
   </span>
 );
 
 const Breadcrumb = ({
   separator = '/',
-  id,
   className,
   children,
   ...rest
@@ -23,7 +22,7 @@ const Breadcrumb = ({
   }, []);
   let classNames = [className, 'breadcrumb'];
   return (
-    <nav id={id} className={classNames.join(' ').trim()} {...rest}>
+    <nav className={classNames.join(' ').trim()} {...rest}>
       {breadcrumbs}
     </nav>
   );

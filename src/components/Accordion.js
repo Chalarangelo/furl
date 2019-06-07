@@ -5,7 +5,6 @@ import Collapse from './Collapse';
 const Accordion = ({
   openIndex = 0,
   fill = 'solid',
-  id,
   className,
   children,
   ...rest }) => {
@@ -24,7 +23,7 @@ const Accordion = ({
       }, c.props);
       return _c;
     });
-  return (<div className={['accordion', className].join(' ').trim()} id={id} {...rest}>
+  return (<div className={['accordion', className].join(' ').trim()} {...rest}>
     {collapses}
   </div>);
 };

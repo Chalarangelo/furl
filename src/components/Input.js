@@ -87,12 +87,11 @@ const EmailInput = ({
   pattern = '.+@.+\..+',
   name,
   onChange,
-  id,
   className,
   ...rest
 }) => (
   <InputBase
-    type='email' id={id} placeholder={placeholder} pattern={pattern}
+    type='email' placeholder={placeholder} pattern={pattern}
     className={className} size={size} disabled={disabled} shape={shape}
     required={required} name={name} onChange={onChange} {...rest}
   />
@@ -107,12 +106,11 @@ const UrlInput = ({
   pattern = 'https?://.+',
   name,
   onChange,
-  id,
   className,
   ...rest
 }) => (
   <InputBase
-    type='url' id={id} placeholder={placeholder} pattern={pattern}
+    type='url' placeholder={placeholder} pattern={pattern}
     className={className} size={size} disabled={disabled} shape={shape}
     required={required} name={name} onChange={onChange} {...rest}
   />
@@ -128,7 +126,6 @@ const PasswordInput = ({
   name,
   withRevealer = false,
   onChange,
-  id,
   className,
   ...rest
 }) => {
@@ -137,7 +134,7 @@ const PasswordInput = ({
   return withRevealer ? (
     <>
       <InputBase
-        type={passwordVisible ? 'text' : 'password'} id={id} placeholder={placeholder}
+        type={passwordVisible ? 'text' : 'password'} placeholder={placeholder}
         className={['revealer', className].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name} onChange={onChange} shape={shape} {...rest}
       />
@@ -151,7 +148,7 @@ const PasswordInput = ({
   )
     : (
       <InputBase
-        type='password' id={id} placeholder={placeholder}
+        type='password' placeholder={placeholder}
         className={className} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange}
         {...rest}
@@ -172,7 +169,6 @@ const NumberInput = ({
   placeholder,
   name,
   onChange,
-  id,
   className,
   ...rest
 }) => {
@@ -187,7 +183,7 @@ const NumberInput = ({
         <Icon name='minus' width={16} height={16} />&zwnj;
       </Button>
       <InputBase
-        type='number' id={id} placeholder={placeholder} readOnly={readOnly}
+        type='number' placeholder={placeholder} readOnly={readOnly}
         className={className} size={size} shape={shape} disabled={disabled}
         required={required} name={name} onChange={(e) => {
           if (readOnly || disabled) return;
@@ -207,9 +203,9 @@ const NumberInput = ({
   );
 };
 
-const Option = ({ disabled, selected, value, id, className, children, ...rest }) => (
+const Option = ({ disabled, selected, value, className, children, ...rest }) => (
   <option
-    id={id} className={className}
+    className={className}
     value={value !== undefined ? value : `${children}`} disabled={disabled}
     {...rest}
   >
@@ -280,7 +276,6 @@ const ComboboxInput = ({
   placeholder,
   name,
   onChange,
-  id,
   className,
   children,
   ...rest
@@ -297,7 +292,7 @@ const ComboboxInput = ({
         {options}
       </datalist>
       <InputBase
-        id={id} placeholder={placeholder} list={optionsId}
+        placeholder={placeholder} list={optionsId}
         className={[size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} {...rest} defaultValue={defaultValue[0]}
       />
@@ -503,7 +498,6 @@ const SliderInput = ({
   placeholder,
   name,
   onChange,
-  id,
   className,
   defaultValue,
   ...rest
@@ -520,7 +514,7 @@ const SliderInput = ({
     range
       ? <>
         <InputBase
-          type='range' id={id} placeholder={placeholder}
+          type='range' placeholder={placeholder}
           className={className} size={size} disabled={disabled} readOnly={readOnly}
           required={required} name={name} onChange={(e) => {
             if (disabled || readOnly) return;
@@ -533,7 +527,7 @@ const SliderInput = ({
           {...rest}
         />
         <InputBase
-          type='range' id={id} placeholder={placeholder}
+          type='range' placeholder={placeholder}
           className={'low'} size={size} disabled={disabled} readOnly={readOnly}
           required={required} name={name} onChange={(e) => {
             if (disabled || readOnly) return;
@@ -547,7 +541,7 @@ const SliderInput = ({
         />
       </>
       : <InputBase
-        type='range' id={id} placeholder={placeholder}
+        type='range' placeholder={placeholder}
         className={className} size={size} disabled={disabled} readOnly={readOnly}
         required={required} name={name} onChange={(e) => { if (disabled || readOnly) return; setInputValue(e.target.value); typeof onChange === 'function' && onChange(e); }}
         value={inputValue} min={min} max={max} style={{

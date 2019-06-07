@@ -3,7 +3,6 @@ import React from 'react';
 const Iframe = ({
   width = 'auto',
   height = 'auto',
-  id,
   className,
   src,
   alt = 'An image',
@@ -16,7 +15,6 @@ const Iframe = ({
     <figure>
       <iframe
         className={className}
-        id={id}
         height={height}
         width={width}
         src={src}
@@ -32,7 +30,6 @@ const Iframe = ({
     : (
       <iframe
         className={className}
-        id={id}
         height={height}
         width={width}
         src={src}

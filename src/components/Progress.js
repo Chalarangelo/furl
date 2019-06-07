@@ -5,12 +5,11 @@ const Progress = ({
   max = 100,
   color = 'normal',
   size = 'normal',
-  id,
   className,
   ...rest
 }) => (
   <progress
-    value={value} max={max} id={id}
+    value={value} max={max}
     className={[color !== 'normal' ? color : '', size !== 'normal' ? size : '', className].join(' ').trim()}
     {...rest}
   >

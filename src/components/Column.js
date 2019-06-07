@@ -3,7 +3,6 @@ import React from 'react';
 const sizeNames = ['xs', 'sm', 'md', 'lg'];
 const Column = ({
   size = 'fluid',
-  id,
   className,
   children,
   ...rest
@@ -48,14 +47,12 @@ const Column = ({
   if (style.length > 0) {
     return (<>
       <style>{style}</style>
-      <div className={[className, ...classNames].join(' ').trim()}
-        id={id} {...rest}>
+      <div className={[className, ...classNames].join(' ').trim()} {...rest}>
         {children}
       </div>
     </>);
   } else {
-    return (<div className={[className, ...classNames].join(' ').trim()}
-      id={id} {...rest}>
+    return (<div className={[className, ...classNames].join(' ').trim()} {...rest}>
       {children}
     </div>);
   }

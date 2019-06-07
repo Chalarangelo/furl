@@ -5,13 +5,12 @@ const Dropdown = ({
   isOpen = false,
   text,
   reverse = false,
-  id,
   className,
   children,
   ...rest }) => {
   let classNames = ['dropdown', reverse ? 'reverse' : '', className];
   return (
-    <details className={classNames.join(' ').trim()} id={id} open={isOpen} {...rest}>
+    <details className={classNames.join(' ').trim()} open={isOpen} {...rest}>
       <summary>{text}
         {reverse
           ? <Icon name='chevron-up' width={16} height={16} />

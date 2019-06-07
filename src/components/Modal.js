@@ -4,29 +4,26 @@ import { normalizeChildren } from '../utilities/utils';
 const ModalSection = ({
   height = 'auto',
   media = '',
-  id,
   className,
   children,
   ...rest
 }) => {
   if (media.length) {
     return (<div className={[className, 'modal-media-section'].join(' ').trim()}
-      id={id} {...rest} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
+      {...rest} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
   } else {
     return (<div className={[className, 'modal-section'].join(' ').trim()}
-      id={id} {...rest}>{children}</div>);
+      {...rest}>{children}</div>);
   }
 };
 
 const Modal = ({
-  id,
   className,
   children,
   ...rest
 }) => (
   <div
     className={['modal', className].join(' ').trim()}
-    id={id}
     role='dialog'
     {...rest}
   >
@@ -35,7 +32,7 @@ const Modal = ({
 );
 
 const ModalCenter = React.forwardRef(
-  ({isOpen = false, id, className, children, ...rest}, ref) => {
+  ({isOpen = false, className, children, ...rest}, ref) => {
     const modal = normalizeChildren(children).filter(item => Modal.name === item.type.name);
     let [__isOpen, __setIsOpen] = React.useState(isOpen);
     let [__content, __setContent] = React.useState(modal);
@@ -53,7 +50,7 @@ const ModalCenter = React.forwardRef(
     }));
     return (
       __isOpen
-        ? <div className={['modal-center', className].join(' ').trim()} id={id} {...rest}>
+        ? <div className={['modal-center', className].join(' ').trim()} {...rest}>
           <div className='modal-overlay' />
           {__content}
         </div>

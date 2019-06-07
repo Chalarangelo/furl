@@ -6,7 +6,6 @@ const Badge = ({
   size = 'normal',
   color = 'plain',
   shape = 'normal',
-  id,
   className,
   children,
   ...rest }) => {
@@ -18,7 +17,6 @@ const Badge = ({
   if (shape !== 'normal') classNames.push(shape);
   return (
     <span
-      id={id}
       className={['badge', className, ...classNames].join(' ').trim()}
       {...rest}>
       {children}

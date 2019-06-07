@@ -2,8 +2,8 @@ import React from 'react';
 import { normalizeChildren, generateUniqueId } from '../utilities/utils';
 import Button from './Button';
 
-const TabItem = ({ id, className, children, ...rest }) => (
-  <div id={id} className={['tab-item', className].join(' ').trim()} {...rest}>
+const TabItem = ({ className, children, ...rest }) => (
+  <div className={['tab-item', className].join(' ').trim()} {...rest}>
     {children}
   </div>
 );

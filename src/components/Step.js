@@ -1,14 +1,13 @@
 import React from 'react';
 import { normalizeChildren } from '../utilities/utils';
 
-const StepItem = ({ id, selected = false, className, children, ...rest }) => (
-  <span id={id} className={['step-item', selected ? 'selected' : '', className].join(' ').trim()} {...rest}>
+const StepItem = ({ selected = false, className, children, ...rest }) => (
+  <span className={['step-item', selected ? 'selected' : '', className].join(' ').trim()} {...rest}>
     <span className='step-content'>{children}</span>
   </span>
 );
 
 const Step = ({
-  id,
   alignment = 'horizontal',
   className,
   children,
@@ -21,7 +20,7 @@ const Step = ({
   }
   let classNames = [className, 'step', alignment === 'vertical' ? 'vertical' : ''];
   return (
-    <nav id={id} className={classNames.join(' ').trim()} role='presentation' {...rest}>
+    <nav className={classNames.join(' ').trim()} role='presentation' {...rest}>
       {steps}
     </nav>
   );

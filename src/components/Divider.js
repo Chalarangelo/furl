@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Divider = ({ vertical = false, id, className, ...rest }) =>
+const Divider = ({ vertical = false, className, ...rest }) =>
   vertical ? (
-    <span id={id} className={['divider', className].join(' ').trim()} {...rest} role='separator'/>
+    <span className={['divider', className].join(' ').trim()} {...rest} role='separator'/>
   )
     : (
-      <hr id={id} className={className} {...rest} />
+      <hr className={className} {...rest} />
     );
 
 export default Divider; 

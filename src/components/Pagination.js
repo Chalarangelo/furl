@@ -6,12 +6,10 @@ const PaginationItem = ({
   fill = 'flat',
   size = 'normal',
   shape = 'normal',
-  id,
   className,
   children,
   ...rest }) => (
   <span // eslint-disable-line semistandard-react/jsx-indent
-    id={id}
     className={['pagination-item', fill, size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className].join(' ').trim()}
     {...rest}>
     {children}
@@ -21,7 +19,6 @@ const PaginationItem = ({
 const Pagination = ({
   size = 'normal',
   shape = 'normal',
-  id,
   className,
   children,
   ...rest
@@ -40,7 +37,7 @@ const Pagination = ({
   if (size !== 'normal') classNames.push(size);
   if (shape !== 'normal') classNames.push(shape);
   return (
-    <div id={id} className={classNames.join(' ').trim()} {...rest} role='group'>
+    <div className={classNames.join(' ').trim()} {...rest} role='group'>
       {buttons}
     </div>
   );

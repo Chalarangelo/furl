@@ -8,7 +8,6 @@ const ButtonGroup = ({
   size = 'normal',
   color = 'plain',
   shape = 'normal',
-  id,
   className,
   children,
   ...rest
@@ -32,7 +31,7 @@ const ButtonGroup = ({
   if (color !== 'plain') classNames.push(color);
   if (shape !== 'normal') classNames.push(shape);
   return (
-    <div id={id} className={classNames.join(' ').trim()} {...rest} role='group'>
+    <div className={classNames.join(' ').trim()} {...rest} role='group'>
       {buttons}
     </div>
   );

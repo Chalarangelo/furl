@@ -1,9 +1,8 @@
 import React from 'react';
 import Icon from './Icon';
 
-const Sidebar = ({ id, className, outline = 'none', children, ...rest }) => {
+const Sidebar = ({ className, outline = 'none', children, ...rest }) => {
   return (<aside
-    id={id}
     className={[ outline !== 'none' ? outline : '', className, 'layout-sidebar' ].join(' ').trim()}
     {...rest}>
     {children}

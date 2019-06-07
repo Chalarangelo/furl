@@ -8,7 +8,6 @@ const Notification = ({
   textAlign = 'center',
   active = true,
   duration = 3000,
-  id,
   className,
   children,
   ...rest
@@ -34,7 +33,6 @@ const Notification = ({
     isActive
       ? <div
         className={['notification', ...classNames, isAlmostInactive ? 'almost-inactive' : '', isInactive ? 'inactive' : ''].join(' ').trim()}
-        id={id}
         {...rest}
         role='alert'
       >
@@ -48,7 +46,6 @@ const NotificationCenter = React.forwardRef(
   ({
     verticalPosition = 'top',
     horizontalPosition = 'right',
-    id,
     className,
     children,
     ...rest
@@ -65,7 +62,7 @@ const NotificationCenter = React.forwardRef(
       __setContent(__content.filter(v => v !== null));
     });
     return (
-      <div className={['notification-center', verticalPosition, horizontalPosition, className].join(' ').trim()} id={id} {...rest} >
+      <div className={['notification-center', verticalPosition, horizontalPosition, className].join(' ').trim()} {...rest} >
         {__content.filter(v => v !== null)}
       </div>
     );

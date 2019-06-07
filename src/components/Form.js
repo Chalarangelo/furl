@@ -1,11 +1,11 @@
 import React from 'react';
 
-const FormLegend = ({ id, className, children, ...rest }) => (
-  <legend id={id} className={className} {...rest}>{children}</legend>
+const FormLegend = ({ className, children, ...rest }) => (
+  <legend className={className} {...rest}>{children}</legend>
 );
 
-const FormLabel = ({ id, className, htmlFor, children, ...rest }) => (
-  <label htmlFor={htmlFor} id={id} className={className} {...rest}>{children}</label>
+const FormLabel = ({ className, htmlFor, children, ...rest }) => (
+  <label htmlFor={htmlFor} className={className} {...rest}>{children}</label>
 );
 
 const Form = ({
@@ -18,7 +18,6 @@ const Form = ({
   enctype,
   autocomplete,
   openIn = 'self',
-  id,
   className,
   children,
   ...rest }) => {
@@ -30,7 +29,7 @@ const Form = ({
     <form
       encType={enctype} target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
       action={action} autoComplete={autocomplete ? 'on' : 'off'} method={method} name={name}
-      id={id} className={[className, ...classNames].join(' ').trim()} {...rest}
+      className={[className, ...classNames].join(' ').trim()} {...rest}
     >
       {children}
     </form>

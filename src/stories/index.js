@@ -1438,8 +1438,8 @@ storiesOf('Modal', module)
 
 storiesOf('Card', module)
   .add('with text', () => (
-    <Card width={320}>
-      <CardSection>
+    <Card width={320} id="acard">
+      <CardSection id="acardsection">
         <h5>Hello world<small>Lorem ipsum</small></h5>
         <p>This is some demo content that I want to test the Card with.</p>
       </CardSection>

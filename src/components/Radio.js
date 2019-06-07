@@ -7,7 +7,6 @@ const Radio = ({
   name,
   checked,
   onChange,
-  id,
   className,
   children,
   ...rest }) => {
@@ -16,7 +15,6 @@ const Radio = ({
     <label className='radio'>
       <input
         type='radio'
-        id={id}
         className={classNames.join(' ').trim()}
         disabled={disabled}
         required={required}

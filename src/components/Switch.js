@@ -7,7 +7,6 @@ const Switch = ({
   name,
   checked,
   onChange,
-  id,
   className,
   children,
   ...rest }) => {
@@ -16,7 +15,6 @@ const Switch = ({
     <label className='switch'>
       <input
         type='checkbox'
-        id={id}
         className={classNames.join(' ').trim()}
         disabled={disabled}
         required={required}

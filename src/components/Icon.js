@@ -11,13 +11,11 @@ const Icon = ({
   strokeWidth = 2,
   strokeLinecap = 'round',
   strokeLinejoin = 'round',
-  id,
   className,
   ...rest
 }) => (
   <span
     title={name}
-    id={id}
     className={[ className, 'icon' ].join(' ').trim()}
     {...rest}
     dangerouslySetInnerHTML={{ __html: feather.icons[name].toSvg({

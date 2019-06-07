@@ -16,7 +16,6 @@ import Button from './Button';
 
 const Calendar = ({
   fill = 'flat',
-  id,
   date,
   onDateChanged,
   className,
@@ -166,7 +165,7 @@ const Calendar = ({
   }, [current]);
 
   return (
-    <div className={['calendar-container', className, fill !== 'flat' ? fill : ''].join(' ').trim()} id={id} {...rest}>
+    <div className={['calendar-container', className, fill !== 'flat' ? fill : ''].join(' ').trim()} {...rest}>
       <div className='calendar-header'>
         <Button className='calendar-arrow-button'
           onMouseDown={handlePrevious}
