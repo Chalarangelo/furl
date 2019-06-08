@@ -49,7 +49,7 @@
     "start-storybook": "start-storybook -p 9009 -c .storybook",
     "start-react": "react-scripts start",
     "start-docs": "npm-run-all -p watch-css watch-js start-react",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest --coverage"
   },
   "browserslist": [
     "> 1%",

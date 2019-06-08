@@ -90,7 +90,6 @@ const parseVariablesFromProps = (props) => {
   if (props.paddingLeft)      variables['--padding-left'] = parseLayout(props.paddingLeft);
   if (props.color)            variables['--color'] = parseColor(props.color);
   if (props.backgroundColor)  variables['--background-color'] = parseColor(props.backgroundColor);
-  console.log(variables);
   return variables;
 }
 
