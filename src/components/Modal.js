@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const ModalSection = ({
   height = 'auto',
@@ -9,11 +9,23 @@ const ModalSection = ({
   ...rest
 }) => {
   if (media.length) {
-    return (<div className={combineClassNames([className, 'modal-media-section'])}
-      {...rest} style={{ height: height, backgroundImage: `url(${encodeURI(media)})` }} />);
+    return (
+      <div 
+        className={combineClassNames([className, 'modal-media-section'])}
+        style={combineStyles(rest, rest.style, { height: height, backgroundImage: `url(${encodeURI(media)})` })}
+        {...omitProps(rest)}
+      />
+    );
   } else {
-    return (<div className={[className, 'modal-section'].join(' ').trim()}
-      {...rest}>{children}</div>);
+    return (
+      <div 
+        className={[className, 'modal-section'].join(' ').trim()}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
+      >
+        {children}
+      </div>
+    );
   }
 };
 
@@ -25,7 +37,8 @@ const Modal = ({
   <div
     className={combineClassNames(['modal', className])}
     role='dialog'
-    {...rest}
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
   >
     {children}
   </div>
@@ -50,10 +63,14 @@ const ModalCenter = React.forwardRef(
     }));
     return (
       __isOpen
-        ? <div className={combineClassNames(['modal-center', className])} {...rest}>
-          <div className='modal-overlay' />
-          {__content}
-        </div>
+        ? <div 
+            className={combineClassNames(['modal-center', className])}
+            style={combineStyles(rest, rest.style)}
+            {...omitProps(rest)}
+          >
+            <div className='modal-overlay' />
+            {__content}
+          </div>
         : ''
     );
   }

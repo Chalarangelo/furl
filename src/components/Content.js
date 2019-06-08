@@ -1,9 +1,16 @@
 import React from 'react';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Content = ({ className, children, ...rest }) => {
-  return (<main
-    className={combineClassNames([className, 'layout-content'])} {...rest}>{children}</main>);
+  return (
+    <main
+      className={combineClassNames([className, 'layout-content'])}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
+      {children}
+    </main>
+  );
 };
 
 export default Content;

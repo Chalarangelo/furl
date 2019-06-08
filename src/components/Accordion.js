@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 import Collapse from './Collapse';
 
 const Accordion = ({
@@ -12,7 +12,7 @@ const Accordion = ({
   const collapses = normalizeChildren(children).filter(item => Collapse.name === item.type.name)
     .map((c, i) => {
       let _c = Object.assign({}, c);
-      _c.props = Object.assign({
+      _c.props = Object.assign({}, c.props, {
         onClick: function (e) {
           e.preventDefault();
           setOpenSection(openSection === i ? -1 : i);
@@ -20,12 +20,18 @@ const Accordion = ({
         },
         isOpen: openSection === i,
         className: [c.props.className, 'accordion-section', fill !== 'solid' ? fill : ''].join(' ').trim()
-      }, c.props);
+      });
       return _c;
     });
-  return (<div className={combineClassNames(['accordion', className])} {...rest}>
-    {collapses}
-  </div>);
+  return (
+    <div 
+      className={combineClassNames(['accordion', className])} 
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
+      {collapses}
+    </div>
+  );
 };
 
 export default Accordion;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 import Button from './Button';
 import Dropdown from './Dropdown';
 
@@ -23,7 +23,8 @@ const MenuItem = ({
       openIn={openIn}
       onClick={onClick}
       href={href}
-      {...rest}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     >
       {_children}
     </Button>
@@ -33,8 +34,15 @@ const MenuItem = ({
 const Menu = ({ type = 'horizontal', highlight = 'top', className, children, ...rest }) => {
   const menuItems = normalizeChildren(children).filter(item => MenuItem.name === item.type.name);
   let classNames = [type, className, `${highlight}-highlight`, 'menu'];
-  return (<nav
-    className={combineClassNames(classNames)} {...rest}>{menuItems}</nav>);
+  return (
+    <nav
+      className={combineClassNames(classNames)}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
+      {menuItems}
+    </nav>
+  );
 };
 
 export {Menu, MenuItem};

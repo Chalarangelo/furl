@@ -1,5 +1,5 @@
 import React from 'react';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Alert = ({
   fill = 'flat',
@@ -17,7 +17,9 @@ const Alert = ({
   return (
     <div
       className={combineClassNames(classNames)}
-      {...rest}>
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
       {children}
     </div>
   );

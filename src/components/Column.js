@@ -1,5 +1,5 @@
 import React from 'react';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const sizeNames = ['xs', 'sm', 'md', 'lg'];
 const Column = ({
@@ -48,14 +48,24 @@ const Column = ({
   if (style.length > 0) {
     return (<>
       <style>{style}</style>
-      <div className={combineClassNames([className, ...classNames])} {...rest}>
+      <div 
+        className={combineClassNames([className, ...classNames])}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
+      >
         {children}
       </div>
     </>);
   } else {
-    return (<div className={combineClassNames([className, ...classNames])} {...rest}>
-      {children}
-    </div>);
+    return (
+      <div 
+        className={combineClassNames([className, ...classNames])}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
+      >
+        {children}
+      </div>
+    );
   }
 };
 

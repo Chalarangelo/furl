@@ -1,4 +1,5 @@
 import React from 'react';
+import { omitProps, combineStyles } from '../utilities/utils';
 
 const Audio = ({
   width = 'auto',
@@ -23,8 +24,14 @@ const Audio = ({
         width={width}
         src={src}
         title={alt}
-        autoPlay={autoplay} controls={controls} loop={loop} muted={muted} preload={preload} volume={volume}
-        {...rest}
+        autoPlay={autoplay} 
+        controls={controls} 
+        loop={loop} 
+        muted={muted} 
+        preload={preload} 
+        volume={volume}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       />
       <figcaption>{alt}</figcaption>
     </figure>
@@ -36,8 +43,14 @@ const Audio = ({
         width={width}
         src={src}
         title={alt}
-        autoPlay={autoplay} controls={controls} loop={loop} muted={muted} preload={preload} volume={volume}
-        {...rest}
+        autoPlay={autoplay} 
+        controls={controls} 
+        loop={loop} 
+        muted={muted} 
+        preload={preload} 
+        volume={volume}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       />);
 
 export default Audio;

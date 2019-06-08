@@ -13,7 +13,7 @@ import useInterval from '../utilities/useInterval';
 import useEffectOnUpdate from '../utilities/useEffectOnUpdate';
 import Icon from './Icon';
 import Button from './Button';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Calendar = ({
   fill = 'flat',
@@ -166,7 +166,11 @@ const Calendar = ({
   }, [current]);
 
   return (
-    <div className={combineClassNames(['calendar-container', className, fill !== 'flat' ? fill : ''])} {...rest}>
+    <div 
+      className={combineClassNames(['calendar-container', className, fill !== 'flat' ? fill : ''])} 
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
       <div className='calendar-header'>
         <Button className='calendar-arrow-button'
           onMouseDown={handlePrevious}

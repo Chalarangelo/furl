@@ -1,5 +1,5 @@
 import React from 'react';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Progress = ({
   value = 0,
@@ -12,7 +12,8 @@ const Progress = ({
   <progress
     value={value} max={max}
     className={combineClassNames([color !== 'normal' ? color : '', size !== 'normal' ? size : '', className])}
-    {...rest}
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
   >
     {`${+value / +max * 100}%`}
   </progress>

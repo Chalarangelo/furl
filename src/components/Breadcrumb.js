@@ -1,8 +1,12 @@
 import React from 'react';
-import { normalizeChildren, generateUniqueId, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, generateUniqueId, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const BreadcrumbItem = ({ className, children, ...rest }) => (
-  <span className={combineClassNames(['breadcrumb-item', className])} {...rest}>
+  <span 
+    className={combineClassNames(['breadcrumb-item', className])} 
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
+  >
     {children}
   </span>
 );
@@ -21,7 +25,11 @@ const Breadcrumb = ({
     return acc;
   }, []);
   return (
-    <nav className={combineClassNames([className, 'breadcrumb'])} {...rest}>
+    <nav 
+      className={combineClassNames([className, 'breadcrumb'])} 
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
       {breadcrumbs}
     </nav>
   );

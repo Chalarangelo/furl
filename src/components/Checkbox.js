@@ -1,5 +1,5 @@
 import React from 'react';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Checkbox = ({
   color = 'plain',
@@ -22,7 +22,8 @@ const Checkbox = ({
         checked={checked}
         name={name}
         onChange={onChange}
-        {...rest}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       />
       {children}
     </label>

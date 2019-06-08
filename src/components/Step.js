@@ -1,8 +1,12 @@
 import React from 'react';
-import { normalizeChildren, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const StepItem = ({ selected = false, className, children, ...rest }) => (
-  <span className={['step-item', selected ? 'selected' : '', className].join(' ').trim()} {...rest}>
+  <span 
+    className={['step-item', selected ? 'selected' : '', className].join(' ').trim()} 
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
+  >
     <span className='step-content'>{children}</span>
   </span>
 );
@@ -20,7 +24,12 @@ const Step = ({
   }
   let classNames = [className, 'step', alignment === 'vertical' ? 'vertical' : ''];
   return (
-    <nav className={combineClassNames(classNames)} role='presentation' {...rest}>
+    <nav 
+      className={combineClassNames(classNames)} 
+      role='presentation'
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
       {steps}
     </nav>
   );

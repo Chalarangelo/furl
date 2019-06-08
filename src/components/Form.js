@@ -1,12 +1,25 @@
 import React from 'react';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const FormLegend = ({ className, children, ...rest }) => (
-  <legend className={className} {...rest}>{children}</legend>
+  <legend 
+    className={className}
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
+  >
+    {children}
+  </legend>
 );
 
 const FormLabel = ({ className, htmlFor, children, ...rest }) => (
-  <label htmlFor={htmlFor} className={className} {...rest}>{children}</label>
+  <label 
+    htmlFor={htmlFor} 
+    className={className}
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
+  >
+    {children}
+  </label>
 );
 
 const Form = ({
@@ -27,9 +40,15 @@ const Form = ({
   if (color !== 'normal') classNames.push(color);
   return (
     <form
-      encType={enctype} target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
-      action={action} autoComplete={autocomplete ? 'on' : 'off'} method={method} name={name}
-      className={combineClassNames(classNames)} {...rest}
+      encType={enctype} 
+      target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
+      action={action} 
+      autoComplete={autocomplete ? 'on' : 'off'} 
+      method={method} 
+      name={name}
+      className={combineClassNames(classNames)}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     >
       {children}
     </form>

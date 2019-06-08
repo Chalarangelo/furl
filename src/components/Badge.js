@@ -1,5 +1,5 @@
 import React from 'react';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Badge = ({
   fill = 'flat',
@@ -18,7 +18,9 @@ const Badge = ({
   return (
     <span
       className={combineClassNames(classNames)}
-      {...rest}>
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
       {children}
     </span>
   );

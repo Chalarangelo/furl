@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from './Button';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const ContextButton = ({
   text = 'normal',
@@ -21,7 +21,8 @@ const ContextButton = ({
       size={size}
       color={color}
       onClick={onClick}
-      {...rest}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     >
       {children}
     </Button>

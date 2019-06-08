@@ -22,7 +22,8 @@ const propsToOmit = [
   'paddingRight',
   'paddingLeft',
   'color',
-  'backgroundColor'
+  'backgroundColor',
+  'style'
 ];
 
 const omitProps = (obj, arr = propsToOmit) =>
@@ -89,10 +90,11 @@ const parseVariablesFromProps = (props) => {
   if (props.paddingLeft)      variables['--padding-left'] = parseLayout(props.paddingLeft);
   if (props.color)            variables['--color'] = parseColor(props.color);
   if (props.backgroundColor)  variables['--background-color'] = parseColor(props.backgroundColor);
+  console.log(variables);
   return variables;
 }
 
-const combineStyles = (props, ...styleObjects) => 
+const combineStyles = (props, ...styleObjects) =>
   Object.assign({}, ...styleObjects, parseVariablesFromProps(props));
 
 export { normalizeChildren, generateUniqueId, combineClassNames, omitProps, combineStyles };

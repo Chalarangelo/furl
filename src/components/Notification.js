@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 import useTimeout from '../utilities/useTimeout';
 
 const Notification = ({
@@ -32,12 +32,13 @@ const Notification = ({
   return (
     isActive
       ? <div
-        className={combineClassNames(['notification', ...classNames, isAlmostInactive ? 'almost-inactive' : '', isInactive ? 'inactive' : ''])}
-        {...rest}
-        role='alert'
-      >
-        {children}
-      </div>
+          className={combineClassNames(['notification', ...classNames, isAlmostInactive ? 'almost-inactive' : '', isInactive ? 'inactive' : ''])}
+          role='alert'
+          style={combineStyles(rest, rest.style)}
+          {...omitProps(rest)}
+        >
+          {children}
+        </div>
       : null
   );
 };
@@ -62,7 +63,11 @@ const NotificationCenter = React.forwardRef(
       __setContent(__content.filter(v => v !== null));
     });
     return (
-      <div className={combineClassNames(['notification-center', verticalPosition, horizontalPosition, className])} {...rest} >
+      <div 
+        className={combineClassNames(['notification-center', verticalPosition, horizontalPosition, className])}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)} 
+      >
         {__content.filter(v => v !== null)}
       </div>
     );

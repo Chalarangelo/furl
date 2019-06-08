@@ -1,8 +1,12 @@
 import React from 'react';
-import { normalizeChildren, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const ListItem = ({ className, children, ...rest }) => (
-  <li className={className} {...rest}>
+  <li 
+    className={className} 
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
+  >
     {children}
   </li>
 );
@@ -18,13 +22,21 @@ const List = ({
   let classNames = [className, listStyle !== 'none' ? listStyle : ''];
   if (ordered) {
     return (
-      <ol className={combineClassNames(classNames)} {...rest}>
+      <ol 
+        className={combineClassNames(classNames)}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
+      >
         {listItems}
       </ol>
     );
   } else {
     return (
-      <ul className={combineClassNames(classNames)} {...rest}>
+      <ul 
+        className={combineClassNames(classNames)}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
+      >
         {listItems}
       </ul>
     );

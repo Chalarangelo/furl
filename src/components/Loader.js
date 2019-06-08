@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from './Icon';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Loader = ({
   color = 'normal',
@@ -14,7 +14,8 @@ const Loader = ({
     width={size === 'large' ? 48 : 24}
     height={size === 'large' ? 48 : 24}
     className={combineClassNames(['loader', color !== 'normal' ? color : '', className])}
-    {...rest}
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
   />
 );
 

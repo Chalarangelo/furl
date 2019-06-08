@@ -1,5 +1,5 @@
 import React from 'react';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Switch = ({
   color = 'plain',
@@ -24,7 +24,8 @@ const Switch = ({
         onChange={onChange}
         aria-label={`${children}`}
         role='switch'
-        {...rest}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       />
       {children}
     </label>

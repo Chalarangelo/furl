@@ -1,6 +1,6 @@
 import React from 'react';
 import { InputBase } from './Input';
-import { normalizeChildren, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 import Icon from './Icon';
 
 const Search = ({
@@ -21,7 +21,8 @@ const Search = ({
         type='search' placeholder={placeholder}
         className={combineClassNames(['with-search-icon', className])} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} 
-        {...rest}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       />
       <span>
         <Icon name='search' width={16} height={16} />&zwnj;
@@ -34,7 +35,8 @@ const Search = ({
         type='search' placeholder={placeholder}
         className={className} size={size} disabled={disabled}
         required={required} name={name} onChange={onChange} 
-        {...rest}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       />
       {normalizeChildren(children).length ? <div className='search-result-box'>{children}</div> : ''}
     </>

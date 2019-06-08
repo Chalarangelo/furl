@@ -1,4 +1,5 @@
 import React from 'react';
+import { omitProps, combineStyles } from '../utilities/utils';
 
 const Hyperlink = ({ openIn = 'self', href, className, children, ...rest }) =>
   (['external', '_external'].includes(openIn)
@@ -7,7 +8,8 @@ const Hyperlink = ({ openIn = 'self', href, className, children, ...rest }) =>
       rel='noopener noreferrer'
       target='_blank'
       className={className}
-      {...rest}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     >
       {children}
     </a>
@@ -15,7 +17,8 @@ const Hyperlink = ({ openIn = 'self', href, className, children, ...rest }) =>
       href={href}
       target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
       className={className}
-      {...rest}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     >
       {children}
     </a>)

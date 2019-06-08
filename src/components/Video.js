@@ -1,4 +1,5 @@
 import React from 'react';
+import { omitProps, combineStyles } from '../utilities/utils';
 
 const Video = ({
   width = 'auto',
@@ -22,7 +23,13 @@ const Video = ({
         width={width}
         src={src}
         title={alt}
-        autoPlay={autoplay} controls={controls} loop={loop} muted={muted} preload={preload} {...rest}
+        autoPlay={autoplay} 
+        controls={controls} 
+        loop={loop} 
+        muted={muted} 
+        preload={preload}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       />
       <figcaption>{alt}</figcaption>
     </figure>
@@ -34,7 +41,13 @@ const Video = ({
         width={width}
         src={src}
         title={alt}
-        autoPlay={autoplay} controls={controls} loop={loop} muted={muted} preload={preload} {...rest}
+        autoPlay={autoplay} 
+        controls={controls} 
+        loop={loop} 
+        muted={muted} 
+        preload={preload}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       />);
 
 export default Video;

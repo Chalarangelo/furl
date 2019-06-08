@@ -1,28 +1,78 @@
 import React from 'react';
-import { normalizeChildren, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const TableCaption = ({ className, children, ...rest }) => (
-  <caption className={className} {...rest}>{children}</caption>
+  <caption 
+    className={className}
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
+  >
+    {children}
+  </caption>
 );
 
 const TableCell = ({ heading = false, className, colSpan = 1, rowSpan = 1, children, ...rest }) => {
-  if (heading) return (<th className={className} colSpan={colSpan} rowSpan={rowSpan} {...rest}>{children}</th>);
-  else return (<td className={className} colSpan={colSpan} rowSpan={rowSpan} {...rest}>{children}</td>);
+  if (heading) return (
+    <th 
+      className={className} 
+      colSpan={colSpan} 
+      rowSpan={rowSpan}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
+      {children}
+    </th>
+  );
+  else return (
+    <td 
+      className={className} 
+      colSpan={colSpan} 
+      rowSpan={rowSpan}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
+      {children}
+    </td>
+  );
 };
 
 const TableRow = ({ className, children, ...rest }) => {
   const cells = normalizeChildren(children).filter(item => TableCell.name === item.type.name);
-  return (<tr className={className} {...rest}>{cells}</tr>);
+  return (
+    <tr 
+      className={className}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
+      {cells}
+    </tr>
+  );
 };
 
 const TableHead = ({ className, children, ...rest }) => {
   const headItems = normalizeChildren(children).filter(item => TableRow.name === item.type.name);
-  return (<thead className={className} {...rest}>{headItems}</thead>);
+  return (
+    <thead 
+      className={className}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
+      {headItems}
+    </thead>
+  );
 };
 
 const TableBody = ({ className, children, ...rest }) => {
   const bodyItems = normalizeChildren(children).filter(item => TableRow.name === item.type.name);
-  return (<tbody className={className} {...rest}>{bodyItems}</tbody>);
+  return (
+    <tbody 
+      className={className}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
+      {bodyItems}
+    </tbody>
+  );
 };
 
 const Table = ({
@@ -33,9 +83,15 @@ const Table = ({
 }) => {
   const tableItems = normalizeChildren(children).filter(item => TableHead.name === item.type.name || TableBody.name === item.type.name || TableCaption.name === item.type.name);
   let classNames = [tableStyle !== 'none' ? tableStyle : '', className];
-  return <table className={combineClassNames(classNames)} {...rest}>
-    {tableItems}
-  </table>;
+  return (
+    <table 
+      className={combineClassNames(classNames)}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
+      {tableItems}
+    </table>
+  );
 };
 
 export { Table, TableHead, TableBody, TableRow, TableCell, TableCaption };

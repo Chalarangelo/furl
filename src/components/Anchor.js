@@ -1,8 +1,13 @@
 import React from 'react';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Anchor = ({ href, className, ...rest }) => (
-  <a href={href} className={combineClassNames([className, 'anchor'])} {...rest}>
+  <a 
+    href={href} 
+    className={combineClassNames([className, 'anchor'])} 
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
+  >
     {'#'}
   </a>
 );

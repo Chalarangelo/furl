@@ -1,5 +1,5 @@
 import React from 'react';
-import { normalizeChildren, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 import Content from './Content';
 import { Sidebar, SidebarTab } from './Sidebar';
 import Header from './Header';
@@ -28,7 +28,10 @@ const Layout = ({
         {LayoutStyle(layoutName, header, sidebar, contentSize)}
       </style>
       <div
-        className={combineClassNames(['layout-container', className, layoutName, sidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'])} {...rest}>
+        className={combineClassNames(['layout-container', className, layoutName, sidebarVisible ? 'sidebar-visible' : 'sidebar-hidden'])}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
+      >
         {headerEl}
         {sidebarEl}
         {contentEl}

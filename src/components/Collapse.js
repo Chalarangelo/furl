@@ -1,6 +1,6 @@
 import React from 'react';
 import Icon from './Icon';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Collapse = ({
   isOpen = false,
@@ -12,7 +12,12 @@ const Collapse = ({
   ...rest }) => {
   let classNames = ['collapse', fill !== 'solid' ? fill : '', className];
   return (
-    <details className={combineClassNames(classNames)} open={isOpen} {...rest}>
+    <details 
+      className={combineClassNames(classNames)} 
+      open={isOpen} 
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
       <summary onClick={onClick}>{title}
         <Icon name='chevron-down' width={16} height={16} />
       </summary>

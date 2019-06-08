@@ -1,4 +1,5 @@
 import React from 'react';
+import { omitProps, combineStyles } from '../utilities/utils';
 
 const Iframe = ({
   width = 'auto',
@@ -20,7 +21,8 @@ const Iframe = ({
         src={src}
         title={alt}
         allowFullScreen={allowFullScreen}
-        {...rest}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       >
         {children}
       </iframe>
@@ -35,7 +37,8 @@ const Iframe = ({
         src={src}
         title={alt}
         allowFullScreen={allowFullScreen}
-        {...rest}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       >
         {children}
       </iframe>);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Button = ({
   fill = 'flat',
@@ -36,7 +36,8 @@ const Button = ({
           id={id}
           aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
           role='button'
-          {...rest}
+          style={combineStyles(rest, rest.style)}
+          {...omitProps(rest)}
         >
           {children}
         </a>
@@ -49,7 +50,8 @@ const Button = ({
           id={id}
           aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
           role='button'
-          {...rest}
+          style={combineStyles(rest, rest.style)}
+          {...omitProps(rest)}
         >
           {children}
         </a>);
@@ -62,7 +64,8 @@ const Button = ({
           onClick={onClick}
           id={id}
           aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
-          {...rest}
+          style={combineStyles(rest, rest.style)}
+          {...omitProps(rest)}
         >
           {children}
         </button>
@@ -76,7 +79,8 @@ const Button = ({
           onClick={onClick}
           id={id}
           aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
-          {...rest}
+          style={combineStyles(rest, rest.style)}
+          {...omitProps(rest)}
         >
           {children}
         </button>
@@ -90,7 +94,8 @@ const Button = ({
           id={id}
           aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
           role='button'
-          {...rest}
+          style={combineStyles(rest, rest.style)}
+          {...omitProps(rest)}
         >
           {children}
         </span>
@@ -104,7 +109,8 @@ const Button = ({
           onClick={onClick}
           id={id}
           aria-label={rest['aria-label'] ? rest['aria-label'] : rest.title ? rest.title : rest.name ? rest.name : id ? id : 'button'}
-          {...rest}
+          style={combineStyles(rest, rest.style)}
+          {...omitProps(rest)}
         >
           {children}
         </button>

@@ -863,7 +863,7 @@ storiesOf('Collapse', module)
 storiesOf('Accordion', module)
   .add('default', () => (
     <>
-      <Accordion>
+      <Accordion id="test">
         <Collapse title="Don't do it">
           <Hyperlink href='#'>Item 3.1</Hyperlink>
           <Hyperlink href='#'>Item 3.2</Hyperlink>

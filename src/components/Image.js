@@ -1,4 +1,5 @@
 import React from 'react';
+import { omitProps, combineStyles } from '../utilities/utils';
 
 const Image = ({
   width = 'auto',
@@ -17,7 +18,8 @@ const Image = ({
         width={width}
         src={src}
         alt={alt}
-        {...rest}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       />
       <figcaption>{alt}</figcaption>
     </figure>
@@ -29,7 +31,8 @@ const Image = ({
         width={width}
         src={src}
         alt={alt}
-        {...rest}
+        style={combineStyles(rest, rest.style)}
+        {...omitProps(rest)}
       />);
 
 export default Image;

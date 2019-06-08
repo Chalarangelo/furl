@@ -5,7 +5,7 @@ import MaskedInput from 'react-text-mask';
 import createNumberMask from '../utilities/createNumberMask';
 import createAutoCorrectedDatePipe from '../utilities/createAutoCorrectedDatePipe';
 import Calendar from './Calendar';
-import { combineClassNames } from '../utilities/utils';
+import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const MaskedInputBase = ({
   size = 'normal',
@@ -36,7 +36,8 @@ const MaskedInputBase = ({
       defaultValue={defaultValue} 
       title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       ref={__ref}
-      {...rest}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     />
   );
 };

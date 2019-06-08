@@ -1,9 +1,13 @@
 import React from 'react';
-import { normalizeChildren, generateUniqueId, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, generateUniqueId, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 import Button from './Button';
 
 const TabItem = ({ className, children, ...rest }) => (
-  <div className={['tab-item', className].join(' ').trim()} {...rest}>
+  <div 
+    className={['tab-item', className].join(' ').trim()}
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
+  >
     {children}
   </div>
 );
@@ -46,7 +50,12 @@ const Tab = ({
   });
   let classNames = [className, 'tab-container'];
   return (
-    <div id={id} className={combineClassNames(classNames)} {...rest}>
+    <div 
+      id={id} 
+      className={combineClassNames(classNames)}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
       <div className={combineClassNames(['tab-controls', controlStyle !== 'normal' ? controlStyle : ''])}>{tabsButtons}</div>
       <div className='tab-content'>{tabsContent}</div>
     </div>

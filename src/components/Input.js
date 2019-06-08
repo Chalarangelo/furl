@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import Icon from './Icon';
-import { normalizeChildren, generateUniqueId, combineClassNames } from '../utilities/utils';
+import { normalizeChildren, generateUniqueId, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 import { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, DateInput } from './MaskedInput';
 
 const InputBase = ({
@@ -34,7 +34,8 @@ const InputBase = ({
       onChange={onChange}
       defaultValue={defaultValue}
       title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
-      {...rest}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     />
   );
 };
@@ -67,7 +68,8 @@ const TextInput = ({
       defaultValue={defaultValue}
       rows={rows} 
       title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
-      {...rest}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     />
   ) : (
     <InputBase
@@ -207,7 +209,8 @@ const Option = ({ disabled, selected, value, className, children, ...rest }) => 
   <option
     className={className}
     value={value !== undefined ? value : `${children}`} disabled={disabled}
-    {...rest}
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
   >
     {children}
   </option>
@@ -244,6 +247,8 @@ const SelectInput = ({
       multiple={multiple} size={selectSize} {...rest}
       title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       defaultValue={defaultValue}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     >
       {options}
     </select>);
@@ -258,7 +263,8 @@ const SelectInput = ({
       onChange={onChange}
       defaultValue={defaultValue[0]}
       title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
-      {...rest}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     >
       {options}
     </select><Button>
@@ -394,7 +400,9 @@ const FileInput = ({
     <input
       type='file' disabled={disabled} required={required} name={name} multiple={multiple}
       title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
-      onChange={handleFileInput} ref={inputRef} onClick={e => e.stopPropagation()} {...rest}
+      onChange={handleFileInput} ref={inputRef} onClick={e => e.stopPropagation()}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     />
     <div
       role='button'
@@ -427,7 +435,9 @@ const Star = ({ marked, starId, iconName, iconStyle, iconFillColor, ...rest }) =
   <Icon star-id={starId} name={iconName}
     fill={marked ? iconFillColor : iconStyle !== 'fill' ? 'none' : 'var(--interface-gray-300)'}
     stroke={marked ? iconFillColor : 'var(--interface-gray-300)'} 
-    role='button' {...rest}
+    role='button'
+    style={combineStyles(rest, rest.style)}
+    {...omitProps(rest)}
   />
 );
 
@@ -466,7 +476,8 @@ const RatingInput = ({
       onMouseOver={hoverOver}
       className={combineClassNames([className, 'rating', disabled ? 'disabled' : '', readOnly ? 'readonly' : ''])}
       role='group'
-      {...rest}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
     >
       <input
         type='number' disabled={disabled} required={required} name={name} onChange={onChange} value={rating}
