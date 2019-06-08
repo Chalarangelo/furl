@@ -1,35 +1,3 @@
-const castArray = val => (Array.isArray(val) ? val : [val]);
-
-const isUndefined = val => val === undefined;
-
-const normalizeChildren = val => isUndefined(val) ? [] : castArray(val);
-
-let idCounter = 0;
-const generateUniqueId = (prefix = 'element') => `${prefix}-${idCounter++}`;
-
-const combineClassNames = (classNames) => classNames.join(' ').trim();
-
-const propsToOmit = [
-  'fontFamily',
-  'fontSize',
-  'fontWeight',
-  'boxShadow',
-  'borderRadius',
-  'margin',
-  'marginRight',
-  'marginLeft',
-  'padding',
-  'paddingRight',
-  'paddingLeft',
-  'color',
-  'backgroundColor'
-];
-
-const omitProps = (obj, arr = propsToOmit) =>
-  Object.keys(obj)
-    .filter(k => !arr.includes(k))
-    .reduce((acc, key) => ((acc[key] = obj[key]), acc), {});
-
 const parseFontFamily = (fontFamily) => {
   let regex = /^(-{0}|-{2})(font-)?[abc]$/;
   let _fontFamily = fontFamily.toLowerCase().trim();
@@ -95,4 +63,4 @@ const parseVariablesFromProps = (props) => {
 const combineStyles = (props, ...styleObjects) => 
   Object.assign({}, ...styleObjects, parseVariablesFromProps(props));
 
-export { normalizeChildren, generateUniqueId, combineClassNames, omitProps, combineStyles };
+export default combineStyles;
