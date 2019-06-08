@@ -1,18 +1,40 @@
 {
-  "name": "furl",
-  "version": "0.1.2-alpha",
+  "name": "furl-components",
+  "version": "0.1.3-alpha",
+  "description": "Functional react.js components. ",
   "files": [
     "dist",
     "README.md"
   ],
   "main": "./dist/index.js",
-  "peerDependencies": {
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chalarangelo/furl.git"
   },
+  "keywords": [
+    "furl",
+    "react",
+    "react-component",
+    "component",
+    "components",
+    "ui",
+    "ux",
+    "framework",
+    "frontend"
+  ],
+  "author": "Angelos Chalaris (chalarangelo@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chalarangelo/furl/issues"
+  },
+  "homepage": "https://github.com/Chalarangelo/furl#readme",
   "dependencies": {
     "feather-icons": "^4.21.0",
     "react-text-mask": "^5.4.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
   },
   "scripts": {
     "build-js": "NODE_ENV=production rollup -c",
