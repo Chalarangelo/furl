@@ -63,7 +63,6 @@ const Calendar = ({
     const inMonth = month && year && isSameMonth(_date, new Date([year, month, 1].join('-')));
 
     return (
-      // The highlighting below is unfinished, just a demo
       <div
         className={combineClassNames(['calendar-date', inMonth ? 'in-month' : '', isCurrent ? 'highlighted' : isToday ? 'today' : ''])}
         style={{
