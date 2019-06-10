@@ -26,8 +26,8 @@ const Video = ({
         autoPlay={autoplay} 
         controls={controls} 
         loop={loop} 
-        muted={muted} 
-        preload={preload}
+        muted={muted}
+        preload={`${preload}`} 
         style={combineStyles(rest, rest.style)}
         {...omitProps(rest)}
       />

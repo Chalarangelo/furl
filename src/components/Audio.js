@@ -28,7 +28,7 @@ const Audio = ({
         controls={controls} 
         loop={loop} 
         muted={muted} 
-        preload={preload} 
+        preload={`${preload}`} 
         volume={volume}
         style={combineStyles(rest, rest.style)}
         {...omitProps(rest)}
