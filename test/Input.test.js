@@ -72,6 +72,16 @@ test('PasswordInput renders an <input> element of password type.', () => {
   expect(wrapper).toContainMatchingElement('input[type="password"]');
 });
 
+test('PasswordInput renders an <input> element that does not reveal its contents when given the disabled prop.', () => {
+  const wrapper = mount(
+    <PasswordInput disabled withRevealer/>
+  );
+
+  wrapper.find('button').simulate('click');
+  expect(wrapper).toContainMatchingElement('input[type="password"]');
+
+});
+
 test('NumberInput renders an <input> element of number type.', () => {
   const wrapper = mount(
     <NumberInput />
@@ -91,6 +101,19 @@ test('SelectInput renders a <select> element.', () => {
 
   expect(wrapper).toContainMatchingElement('select');
   expect(wrapper).toContainMatchingElements(3,'option');
+});
+
+test('SelectInput renders a multiple <select> element.', () => {
+  const wrapper = mount(
+    <SelectInput multiple placeholder='0'>
+      <Option>a</Option>
+      <Option selected>b</Option>
+      <Option>c</Option>
+    </SelectInput>
+  );
+
+  expect(wrapper).toContainMatchingElement('select[multiple]');
+  expect(wrapper).toContainMatchingElements(3, 'option');
 });
 
 test('ComboboxInput renders a <input> element and a <datalist> element.', () => {

@@ -330,26 +330,26 @@ const FileInput = ({
   let inputRef = React.createRef();
 
   let dragCounter = 0;
-
+  /* istanbul ignore next */
   const handleDrag = e => {
     e.preventDefault();
     e.stopPropagation();
   };
-
+  /* istanbul ignore next */
   const handleDragIn = e => {
     e.preventDefault();
     e.stopPropagation();
     dragCounter++;
     if (e.dataTransfer.items && e.dataTransfer.items.length > 0) setDrag(true);
   };
-
+  /* istanbul ignore next */
   const handleDragOut = e => {
     e.preventDefault();
     e.stopPropagation();
     dragCounter--;
     if (dragCounter === 0) setDrag(false);
   };
-
+  /* istanbul ignore next */
   const handleDrop = e => {
     e.preventDefault();
     e.stopPropagation();
@@ -361,20 +361,20 @@ const FileInput = ({
       dragCounter = 0;
     }
   };
-
+  /* istanbul ignore next */
   const handleClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     inputRef.current && inputRef.current.click();
   };
-
+  /* istanbul ignore next */
   const handleFileInput = (e) => {
     if (e.target.files && e.target.files.length > 0) {
       if (multiple) setFilename(Array.from(e.target.files));
       else setFilename([e.target.files[0]]);
     }
   };
-
+  /* istanbul ignore next */
   React.useEffect(() => {
     let div = dropRef.current;
     if (div === null) return;
@@ -457,7 +457,7 @@ const RatingInput = ({
 }) => {
   const [rating, setRating] = React.useState(typeof defaultValue === 'number' ? defaultValue : 0);
   const [selection, setSelection] = React.useState(0);
-
+  /* istanbul ignore next */
   const hoverOver = e => {
     if (disabled || readOnly) return;
     let val = 0;

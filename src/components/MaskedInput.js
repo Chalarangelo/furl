@@ -161,7 +161,7 @@ const DateInput = ({
   const inputRef = React.createRef();
   const pipe = createAutoCorrectedDatePipe(pipeFormat, { minYear: minYear, maxYear: maxYear });
   const localeOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
-
+  /* istanbul ignore next */
   const parseDate = (date) => {
     if (date === undefined) return;
     let dr = date.split('').filter(v => v !== separator);
