@@ -25,12 +25,11 @@ test('Progress has the correct props.', () => {
 
 test('Progress renders an <progress> element with the appropriate color modifier.', () => {
   const wrapper = shallow(
-    <Progress value={25} max={100} color='primary' />
+    <Progress color='primary' />
   );
 
   expect(wrapper).toContainMatchingElement('progress.primary');
 });
-
 
 test('Progress renders an <progress> element with the appropriate size modifier.', () => {
   const wrapper = shallow(

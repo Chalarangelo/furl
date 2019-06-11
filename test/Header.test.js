@@ -13,3 +13,11 @@ test('Header renders a <header> element of the appropriate class.', () => {
   expect(wrapper).toContainMatchingElement('header.layout-header');
 });
 
+test('Header renders a <header> element with the appropriate modifier.', () => {
+  const wrapper = shallow(
+    <Header outline='border-bottom'>
+    </Header>
+  );
+
+  expect(wrapper).toContainMatchingElement('header.layout-header.border-bottom');
+});

@@ -4,6 +4,7 @@ import Icon from './Icon';
 import { normalizeChildren, generateUniqueId, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 import { MaskedInputBase, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, DateInput } from './MaskedInput';
 
+/* istanbul ignore next */
 const InputBase = ({
   size = 'normal',
   shape = 'normal',

@@ -7,6 +7,7 @@ import createAutoCorrectedDatePipe from '../utilities/createAutoCorrectedDatePip
 import Calendar from './Calendar';
 import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
+/* istanbul ignore next */
 const MaskedInputBase = ({
   size = 'normal',
   type,

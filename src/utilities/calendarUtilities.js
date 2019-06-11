@@ -28,14 +28,17 @@ export const CALENDAR_MONTHS = {
 
 export const CALENDAR_WEEKS = 6;
 
+/* istanbul ignore next */
 export const zeroPad = (value, length) => `${value}`.padStart(length, '0');
 
+/* istanbul ignore next */
 export const isDate = date => {
   const isDate = Object.prototype.toString.call(date) === '[object Date]';
   const isValidDate = date && !Number.isNaN(date.valueOf());
   return isDate && isValidDate;
 };
 
+/* istanbul ignore next */
 export const getDateISO = (date = new Date()) => {
   if (!isDate(date)) return null;
 
@@ -46,6 +49,7 @@ export const getDateISO = (date = new Date()) => {
   ].join('-');
 };
 
+/* istanbul ignore next */
 export const getMonthDays = (month = THIS_MONTH, year = THIS_YEAR) => {
   const months30 = [4, 6, 9, 11];
   const leapYear = year % 4 === 0;
@@ -59,10 +63,12 @@ export const getMonthDays = (month = THIS_MONTH, year = THIS_YEAR) => {
       : 31;
 };
 
+/* istanbul ignore next */
 export const getMonthFirstDay = (month = THIS_MONTH, year = THIS_YEAR) => {
   return +(new Date(`${year}-${zeroPad(month, 2)}-01`).getDay()) + 1;
 };
 
+/* istanbul ignore next */
 export const isSameMonth = (date, basedate = new Date()) => {
   if (!(isDate(date) && isDate(basedate))) return false;
 
@@ -75,6 +81,7 @@ export const isSameMonth = (date, basedate = new Date()) => {
   return (+basedateMonth === +dateMonth) && (+basedateYear === +dateYear);
 };
 
+/* istanbul ignore next */
 export const isSameDay = (date, basedate = new Date()) => {
   if (!(isDate(date) && isDate(basedate))) return false;
 
@@ -89,6 +96,7 @@ export const isSameDay = (date, basedate = new Date()) => {
   return (+basedateDate === +dateDate) && (+basedateMonth === +dateMonth) && (+basedateYear === +dateYear);
 };
 
+/* istanbul ignore next */
 export const getPreviousMonth = (month, year) => {
   const prevMonth = (month > 1) ? month - 1 : 12;
   const prevMonthYear = (month > 1) ? year : year - 1;
@@ -96,6 +104,7 @@ export const getPreviousMonth = (month, year) => {
   return { month: prevMonth, year: prevMonthYear };
 };
 
+/* istanbul ignore next */
 export const getNextMonth = (month, year) => {
   const nextMonth = (month < 12) ? month + 1 : 1;
   const nextMonthYear = (month < 12) ? year : year + 1;
@@ -103,6 +112,7 @@ export const getNextMonth = (month, year) => {
   return { month: nextMonth, year: nextMonthYear };
 };
 
+/* istanbul ignore next */
 export default (month = THIS_MONTH, year = THIS_YEAR) => {
   const monthDays = getMonthDays(month, year);
   const monthFirstDay = getMonthFirstDay(month, year);

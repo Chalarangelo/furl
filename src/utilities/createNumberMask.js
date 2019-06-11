@@ -136,6 +136,7 @@ export default function createNumberMask ({
   return numberMask;
 }
 
+/* istanbul ignore next */
 function convertToMask (strNumber) {
   return strNumber
     .split(emptyString)
@@ -143,6 +144,7 @@ function convertToMask (strNumber) {
 }
 
 // http://stackoverflow.com/a/10899795/604296
+/* istanbul ignore next */
 function addThousandsSeparator (n, thousandsSeparatorSymbol) {
   return n.replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparatorSymbol);
 }
