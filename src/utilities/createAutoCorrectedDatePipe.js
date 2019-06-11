@@ -2,6 +2,8 @@
 
 const maxValueMonth = [31, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const formatOrder = ['yyyy', 'yy', 'mm', 'dd', 'HH', 'MM', 'SS'];
+
+/* istanbul ignore next */
 export default function createAutoCorrectedDatePipe (dateFormat = 'mm dd yyyy', {
   minYear = 1,
   maxYear = 9999

@@ -10,6 +10,7 @@ const nonDigitsRegExp = /\D+/g;
 const digitRegExp = /\d/;
 const caretTrap = '[]';
 
+/* istanbul ignore next */
 export default function createNumberMask ({
   prefix = dollarSign,
   suffix = emptyString,

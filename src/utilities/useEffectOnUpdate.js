@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef } from 'react';
 
+/* istanbul ignore next */
 function useEffectOnUpdate (fn, params) {
   const firstUpdate = useRef(true);
 

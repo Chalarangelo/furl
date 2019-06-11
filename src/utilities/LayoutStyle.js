@@ -1,3 +1,4 @@
+/* istanbul ignore next */
 const LayoutStyle = (layoutName, headerSize, sidebarSize, contentSize) => {
   let gridAreas = ['', '', '', ''];
   let gridColumns = ['', '', '', ''];
