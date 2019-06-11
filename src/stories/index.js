@@ -1432,6 +1432,27 @@ storiesOf('Modal', module)
     );
   }
   )
+  .add('show', () => {
+    const modalCenterRef = React.createRef();
+    return (
+      <>
+        <ModalCenter ref={modalCenterRef} />
+        <Button onClick={() => {
+          modalCenterRef.current.setContent(
+            <Modal>
+              <ModalSection>
+                <h5>Hello world<small>Lorem ipsum</small></h5>
+                <p>This is some demo content that I want to test the Card with.</p>
+              </ModalSection>
+            </Modal>
+          );
+
+          modalCenterRef.current.show();
+        }}>Click here</Button>
+      </>
+    );
+  }
+  )
 ;
 
 storiesOf('Card', module)
