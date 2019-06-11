@@ -14,6 +14,7 @@ const Sidebar = ({ className, outline = 'none', children, ...rest }) => {
   );
 };
 
+/* istanbul ignore next */
 const SidebarTab = ({ open, onClick, ...rest }) =>
   open
     ? <>

@@ -6,7 +6,7 @@ import { Popover } from '../src/components';
 
 test('Popover renders a <span> element with the "popover" class.', () => {
   const wrapper = mount(
-    <Popover content='Simple text' position='top'>Hello.</Popover>
+    <Popover content='Simple text'>Hello.</Popover>
   );
 
   expect(wrapper).toContainMatchingElement('span.popover');
@@ -19,6 +19,25 @@ test('Popover renders a <span> element with the "popover-bubble" class.', () => 
 
   wrapper.find('.popover-trigger').simulate('click');
   expect(wrapper).toContainMatchingElement('span.popover-bubble');
+});
+
+test('Popover renders a <span> element with the "popover-bubble" class when focused.', () => {
+  const wrapper = mount(
+    <Popover content='Simple text' position='top'>Hello.</Popover>
+  );
+
+  wrapper.find('.popover-trigger').simulate('focus');
+  expect(wrapper).toContainMatchingElement('span.popover-bubble');
+});
+
+test('Popover does not render a <span> element with the "popover-bubble" class when unfocused.', () => {
+  const wrapper = mount(
+    <Popover content='Simple text' position='top'>Hello.</Popover>
+  );
+
+  wrapper.find('.popover-trigger').simulate('focus');
+  wrapper.find('.popover-trigger').simulate('blur');
+  expect(wrapper).not.toContainMatchingElement('span.popover-bubble');
 });
 
 test('Popover renders a <span> element with the "popover-top" class.', () => {

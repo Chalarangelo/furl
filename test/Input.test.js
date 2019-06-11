@@ -142,7 +142,7 @@ test('FileInput renders an <input> element of file type.', () => {
 
 test('RatingInput renders an <input> element of number type.', () => {
   const wrapper = mount(
-    <RatingInput />
+    <RatingInput onChange={() => {}}/>
   );
 
   expect(wrapper).toContainMatchingElement('input[type="number"]');

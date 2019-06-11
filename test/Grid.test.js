@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import { Grid } from '../src/components';
+import { Grid, Row, Button } from '../src/components';
 
 test('Grid renders a <div> element of the appropriate class.', () => {
   const wrapper = shallow(
@@ -20,4 +20,15 @@ test('Grid renders a <div> element of the appropriate modifiers.', () => {
   );
 
   expect(wrapper).toContainMatchingElement('.grid-container.justify-center.align-center');
+});
+
+test('Grid does not render direct children other than Rows.', () => {
+  const wrapper = mount(
+    <Grid>
+      <Row></Row>
+      <Button></Button>
+    </Grid>
+  );
+
+  expect(wrapper).not.toContainMatchingElement('button');
 });

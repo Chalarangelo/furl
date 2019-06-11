@@ -19,12 +19,15 @@ const Notification = ({
   let classNames = [className, `text-${textAlign}`];
   if (size !== 'normal') classNames.push(size);
   if (color !== 'plain') classNames.push(color);
+  /* istanbul ignore next */
   useTimeout(() => {
     setIsActive(false);
   }, duration);
+  /* istanbul ignore next */
   useTimeout(() => {
     setIsAlmostInactive(true);
   }, duration - 300);
+  /* istanbul ignore next */
   useTimeout(() => {
     setIsAlmostInactive(false);
     setIsInactive(true);

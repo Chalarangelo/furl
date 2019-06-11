@@ -6,19 +6,38 @@ import { Tooltip } from '../src/components';
 
 test('Tooltip renders a <span> element with the "tooltip" class.', () => {
   const wrapper = mount(
-    <Tooltip content='Simple text' position='top'>Hello.</Tooltip>  
+    <Tooltip content='Simple text'>Hello.</Tooltip>  
   );
 
   expect(wrapper).toContainMatchingElement('span.tooltip');
 });
 
-test('Tooltip renders a <span> element with the "tooltip-bubble" class.', () => {
+test('Tooltip renders a <span> element with the "tooltip-bubble" class when moused over.', () => {
   const wrapper = mount(
     <Tooltip content='Simple text' position='top'>Hello.</Tooltip>
   );
 
   wrapper.find('.tooltip-trigger').simulate('mouseOver');
   expect(wrapper).toContainMatchingElement('span.tooltip-bubble');
+});
+
+test('Tooltip renders a <span> element with the "tooltip-bubble" class when focused.', () => {
+  const wrapper = mount(
+    <Tooltip content='Simple text' position='top'>Hello.</Tooltip>
+  );
+
+  wrapper.find('.tooltip-trigger').simulate('focus');
+  expect(wrapper).toContainMatchingElement('span.tooltip-bubble');
+});
+
+test('Tooltip does not render a <span> element with the "tooltip-bubble" class when unfocused.', () => {
+  const wrapper = mount(
+    <Tooltip content='Simple text' position='top'>Hello.</Tooltip>
+  );
+
+  wrapper.find('.tooltip-trigger').simulate('focus');
+  wrapper.find('.tooltip-trigger').simulate('blur');
+  expect(wrapper).not.toContainMatchingElement('span.tooltip-bubble');
 });
 
 test('Tooltip renders a <span> element with the "tooltip-top" class.', () => {
