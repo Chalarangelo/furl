@@ -25,3 +25,22 @@ test('Accordion renders the appropriate structure.', () => {
   expect(wrapper).toContainMatchingElements(2, 'details .collapse-content');
   expect(wrapper).toContainMatchingElement('.accordion');
 });
+
+test('Accordion renders a component with the appropriate modifier.', () => {
+  const wrapper = mount(
+    <Accordion id="test" fill='flat'>
+      <Collapse title="Don't do it">
+        <Hyperlink href='#'>Item 3.1</Hyperlink>
+        <Hyperlink href='#'>Item 3.2</Hyperlink>
+        <Hyperlink href='#'>Item 3.3</Hyperlink>
+      </Collapse>
+      <Collapse title="Don't do it">
+        <Hyperlink href='#'>Item 3.1</Hyperlink>
+        <Hyperlink href='#'>Item 3.2</Hyperlink>
+        <Hyperlink href='#'>Item 3.3</Hyperlink>
+      </Collapse>
+    </Accordion>
+  );
+
+  expect(wrapper).toContainMatchingElement('.collapse.flat');
+});
