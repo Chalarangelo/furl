@@ -12,6 +12,7 @@ const Accordion = ({
   const collapses = normalizeChildren(children).filter(item => Collapse.name === item.type.name)
     .map((c, i) => {
       let _c = Object.assign({}, c);
+      /* istanbul ignore next */
       _c.props = Object.assign({}, c.props, {
         onClick: function (e) {
           e.preventDefault();
