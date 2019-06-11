@@ -33,43 +33,43 @@ const omitProps = (obj, arr = propsToOmit) =>
 
 const parseFontFamily = (fontFamily) => {
   let regex = /^(-{0}|-{2})(font-)?[abc]$/;
-  let _fontFamily = fontFamily.toLowerCase().trim();
+  let _fontFamily = `${fontFamily}`.toLowerCase().trim();
   if (regex.test(_fontFamily))
     return `var(--font-${_fontFamily.slice(-1)})`;
   return fontFamily;
 }
 
 const parseFontSize = (fontSize) => {
-  let regex = /^(-{0}|-{2})(ts-)?\d{1,3}p?$/
-  let _fontSize = fontSize.toLowerCase().trim();
+  let regex = /^(-{0}|-{2})(ts-)?(\d{1,3})p?$/
+  let _fontSize = `${fontSize}`.toLowerCase().trim();
   if (regex.test(_fontSize))
     return `var(--ts-${_fontSize.match(regex)[3]}p)`;
   return _fontSize;
 }
 
 const parseFontWeight = (fontWeight) => {
-  return fontWeight.toLowerCase().trim();
+  return `${fontWeight}`.toLowerCase().trim();
 }
 
 const parseShadow = (shadow) => {
-  let regex = /^(-{0}|-{2})(shadow-)?\d{1,3}?$/
-  let _shadow = shadow.toLowerCase().trim();
+  let regex = /^(-{0}|-{2})(shadow-)?(\d{1,3})?$/
+  let _shadow = `${shadow}`.toLowerCase().trim();
   if (regex.test(_shadow))
-    return `var(--shadow-${_shadow.match(regex)[3]}p)`;
+    return `var(--shadow-${_shadow.match(regex)[3]})`;
   return _shadow;
 }
 
 const parseColor = (color) => {
   let regex = /^(-{0}|-{2})(.+-\d{1,3})?$/;
-  let _color = color.toLowerCase().trim();
+  let _color = `${color}`.toLowerCase().trim();
   if (regex.test(_color))
     return `var(--${_color.match(regex)[2]})`;
   return _color;
 }
 
 const parseLayout = (layoutSize) => {
-  let regex = /^(-{0}|-{2})(ls-)?\d{1,3}p?$/
-  let _layoutSize = layoutSize.toLowerCase().trim();
+  let regex = /^(-{0}|-{2})(ls-)?(\d{1,3})p?$/
+  let _layoutSize = `${layoutSize}`.toLowerCase().trim();
   if (regex.test(layoutSize))
     return `var(--ls-${_layoutSize.match(regex)[3]}p)`;
   return _layoutSize;
