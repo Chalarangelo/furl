@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import { Button, Dropdown } from '../src/components';
+import { Button } from '../src/components';
 
 test('Button renders a <button> element with the badge class.', () => {
   const wrapper = mount(
