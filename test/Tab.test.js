@@ -15,7 +15,7 @@ test('Content renders a <div> element of the appropriate class and with the appr
   expect(wrapper).toContainMatchingElement('div.tab-content');
 });
 
-test('Content renders a <div> element with the given children.', () => {
+test('Content renders a <nav> element with the given children.', () => {
   const wrapper = mount(
     <Tab openIndex={2}>
       <TabItem title='Lorem Ipsum'><p>...</p></TabItem>
