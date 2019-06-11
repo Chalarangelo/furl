@@ -80,7 +80,7 @@ const Calendar = ({
       </div>
     );
   };
-
+  /* istanbul ignore next */
   const handlePrevious = (e) => {
     e && e.preventDefault();
     let shiftKey = e.shiftKey;
@@ -89,7 +89,7 @@ const Calendar = ({
       () => setIntervalFn(shiftKey ? 'prevYear' : 'prevMonth'),
       500));
   };
-
+  /* istanbul ignore next */
   const handleNext = (e) => {
     e && e.preventDefault();
     let shiftKey = e.shiftKey;
@@ -98,27 +98,27 @@ const Calendar = ({
       () => setIntervalFn(shiftKey ? 'nextYear' : 'nextMonth'),
       500));
   };
-
+  /* istanbul ignore next */
   const gotoPreviousMonth = () => {
     let _new = getPreviousMonth(month, year);
     setMonth(_new.month);
     setYear(_new.year);
   };
-
+  /* istanbul ignore next */
   const gotoNextMonth = () => {
     let _new = getNextMonth(month, year);
     setMonth(_new.month);
     setYear(_new.year);
   };
-
+  /* istanbul ignore next */
   const gotoPreviousYear = () => {
     setYear(year - 1);
   };
-
+  /* istanbul ignore next */
   const gotoNextYear = () => {
     setYear(year + 1);
   };
-
+  /* istanbul ignore next */
   const gotoDate = date => evt => {
     evt && evt.preventDefault();
     if (!(current && isSameDay(date, current))) {
@@ -128,7 +128,7 @@ const Calendar = ({
       setCurrent(_new.current);
     }
   };
-
+  /* istanbul ignore next */
   const clearPressureTimer = () => {
     setIntervalFn(null);
     pressureTimeout && clearInterval(pressureTimeout);
@@ -141,7 +141,7 @@ const Calendar = ({
   const [today, setToday] = React.useState(new Date());
   const [intervalFn, setIntervalFn] = React.useState(null);
   const [pressureTimeout, setPressureTimeout] = React.useState(null);
-
+  /* istanbul ignore next */
   useInterval(() => {
     switch (intervalFn) {
       case 'nextMonth':
@@ -159,7 +159,7 @@ const Calendar = ({
       default:
     }
   }, 200);
-
+  /* istanbul ignore next */
   useEffectOnUpdate(() => {
     typeof onDateChanged === 'function' && onDateChanged(current);
   }, [current]);
