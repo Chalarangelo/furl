@@ -12,7 +12,7 @@ test('Loader renders a <span> element with the loader class.', () => {
   expect(wrapper).toContainMatchingElement('span.loader');
 });
 
-test('Progress renders a <span> element with the appropriate color modifier.', () => {
+test('Loader renders a <span> element with the appropriate color modifier.', () => {
   const wrapper = mount(
     <Loader color='primary' />
   );
