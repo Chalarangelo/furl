@@ -96,4 +96,6 @@ const parseVariablesFromProps = (props) => {
 const combineStyles = (props, ...styleObjects) =>
   Object.assign({}, ...styleObjects, parseVariablesFromProps(props));
 
-export { normalizeChildren, generateUniqueId, combineClassNames, omitProps, combineStyles };
+const hasKey = (obj, key) => Object.keys(obj).includes(key);
+
+export { normalizeChildren, generateUniqueId, combineClassNames, omitProps, combineStyles, hasKey };

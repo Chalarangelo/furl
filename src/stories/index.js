@@ -2,7 +2,11 @@ import React from 'react';
 
 import { storiesOf } from '@storybook/react';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton, Pagination, PaginationItem, ColorInput, Accordion, Tab, TabItem, FileInput, DateInput, RatingInput, SliderInput, Form, FormLegend, FormLabel, Modal, ModalSection, ModalCenter, Alert, Notification, NotificationCenter } from '../../dist';
+import '../styles/index.scss';
+
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton, Pagination, PaginationItem, ColorInput, Accordion, Tab, TabItem, FileInput, DateInput, RatingInput, SliderInput, Form, FormLegend, FormLabel, Modal, ModalSection, ModalCenter, Alert, Notification, NotificationCenter } from '../../src/components';
+
+import TableHOC from '../hypercomponents/Table';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -1687,3 +1691,231 @@ storiesOf('Notification', module)
     );
   }
   );
+
+  storiesOf('Hypercomponents: Table', module)
+  .add('normal table', () => (
+    <TableHOC>
+      <TableCaption>Table of People</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Surname</TableCell>
+          <TableCell heading>Age</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>27</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Adam</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>32</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Jane</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>40</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>51</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Mary</TableCell>
+          <TableCell>Gary</TableCell>
+          <TableCell>67</TableCell>
+        </TableRow>
+      </TableBody>
+    </TableHOC>
+  )
+  )
+  .add('normal table bordered', () => (
+    <TableHOC tableStyle='bordered'>
+      <TableCaption>Table of People</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Surname</TableCell>
+          <TableCell heading>Age</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>27</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Adam</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>32</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Jane</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>40</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>51</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Mary</TableCell>
+          <TableCell>Gary</TableCell>
+          <TableCell>67</TableCell>
+        </TableRow>
+      </TableBody>
+    </TableHOC>
+  )
+  )
+  .add('normal table striped', () => (
+    <TableHOC tableStyle='striped'>
+      <TableCaption>Table of People</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Surname</TableCell>
+          <TableCell heading>Age</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>27</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Adam</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>32</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Jane</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>40</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>John</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>51</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>Mary</TableCell>
+          <TableCell>Gary</TableCell>
+          <TableCell>67</TableCell>
+        </TableRow>
+      </TableBody>
+    </TableHOC>
+  )
+  )
+  .add('normal table horizontal', () => (
+    <TableHOC>
+      <TableCaption>Table of People</TableCaption>
+      <TableBody>
+        <TableRow>
+          <TableCell heading>Name</TableCell>
+          <TableCell>John</TableCell>
+          <TableCell>Adam</TableCell>
+          <TableCell>Jane</TableCell>
+          <TableCell>John</TableCell>
+          <TableCell>Mary</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>Surname</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>Gary</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>Age</TableCell>
+          <TableCell>27</TableCell>
+          <TableCell>32</TableCell>
+          <TableCell>40</TableCell>
+          <TableCell>51</TableCell>
+          <TableCell>67</TableCell>
+        </TableRow>
+      </TableBody>
+    </TableHOC>
+  )
+  )
+  .add('normal table grouping column', () => (
+    <TableHOC>
+      <TableCaption>Table of People</TableCaption>
+      <TableHead>
+        <TableRow>
+          <TableCell heading>#</TableCell>
+          <TableCell heading>Name</TableCell>
+          <TableCell heading>Surname</TableCell>
+          <TableCell heading>Age</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell heading>1</TableCell>
+          <TableCell>John</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>27</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>1</TableCell>
+          <TableCell>Adam</TableCell>
+          <TableCell>Smith</TableCell>
+          <TableCell>32</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>2</TableCell>
+          <TableCell>Jane</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>40</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>2</TableCell>
+          <TableCell>John</TableCell>
+          <TableCell>Doe</TableCell>
+          <TableCell>51</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell heading>3</TableCell>
+          <TableCell>Mary</TableCell>
+          <TableCell>Gary</TableCell>
+          <TableCell>67</TableCell>
+        </TableRow>
+      </TableBody>
+    </TableHOC>
+  )
+  )
+  .add('HOC Table with data and property names', () => {
+    const people = [
+      { name: 'John', surname: 'Smith', age: 42 },
+      { name: 'Adam', surname: 'Smith', gender: 'male' }
+    ];
+    const propertyNames = ['name', 'surname', 'age'];
+    return (
+      <TableHOC
+        data={people}
+        propertyNames={propertyNames}
+        title='People'
+      />
+    )
+  }
+  )
+  .add('HOC Table with data', () => {
+    const people = [
+      { name: 'John', surname: 'Smith', age: 42 },
+      { name: 'Adam', surname: 'Smith', gender: 'male' }
+    ];
+    return (
+      <TableHOC
+        data={people}
+      />
+    )
+  }
+  )
+  ;
