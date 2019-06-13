@@ -7,6 +7,7 @@ import '../styles/index.scss';
 import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton, Pagination, PaginationItem, ColorInput, Accordion, Tab, TabItem, FileInput, DateInput, RatingInput, SliderInput, Form, FormLegend, FormLabel, Modal, ModalSection, ModalCenter, Alert, Notification, NotificationCenter } from '../../src/components';
 
 import TableHOC from '../hypercomponents/Table';
+import ListHOC from '../hypercomponents/List';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -1919,3 +1920,82 @@ storiesOf('Notification', module)
   }
   )
   ;
+
+
+storiesOf('ListHOC', module)
+  .add('unordered', () => (
+    <>
+      <ListHOC>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC listStyle='circle'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC listStyle='disc'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC listStyle='square'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC listStyle='triangle'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC listStyle='checkmark'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC listStyle='xmark'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+    </>
+  )
+  )
+  .add('ordered', () => (
+    <>
+      <ListHOC ordered>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC ordered listStyle='decimal'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC ordered listStyle='decimal-leading-zero'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC ordered listStyle='lower-latin'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC ordered listStyle='lower-roman'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC ordered listStyle='upper-latin'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+      <ListHOC ordered listStyle='upper-roman'>
+        <ListItem>Lorem ipsum</ListItem>
+        <ListItem>Dolor sit amet</ListItem>
+      </ListHOC>
+    </>
+  )
+)
+  .add('mapped', () => {
+    const names = ['John', 'Paul', 'Mary'];
+    return (
+    <>
+      <ListHOC data={names} />
+      <ListHOC data={names} ordered />
+    </>
+  )
+  })
+;
