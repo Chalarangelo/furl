@@ -10,6 +10,7 @@ import TableHOC from '../hypercomponents/Table';
 import ListHOC from '../hypercomponents/List';
 import TabsHOC from '../hypercomponents/Tab';
 import AccordionHOC from '../hypercomponents/Accordion';
+import BreadcrumbsHOC from '../hypercomponents/Breadcrumb';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2153,3 +2154,23 @@ storiesOf('Hypercomponents: Accordion', module)
   )
   )
   ;
+
+storiesOf('Hypercomponents: Breadcrumb', module)
+  .add('normal', () => (
+    <BreadcrumbsHOC>
+      <BreadcrumbItem><a href='#'>Lorem Ipsum</a></BreadcrumbItem>
+      <BreadcrumbItem>Dolor sit amet</BreadcrumbItem>
+    </BreadcrumbsHOC>
+  )
+  )
+  .add('mapped', () => (
+    <BreadcrumbsHOC data={[
+      {
+        href: '#',
+        title: 'Lorem Ipsum'
+      },
+      'Dolor sit amet'
+    ]} />
+  )
+  )
+;
