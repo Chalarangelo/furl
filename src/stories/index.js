@@ -9,6 +9,7 @@ import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, Bre
 import TableHOC from '../hypercomponents/Table';
 import ListHOC from '../hypercomponents/List';
 import TabsHOC from '../hypercomponents/Tab';
+import AccordionHOC from '../hypercomponents/Accordion';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2061,6 +2062,94 @@ storiesOf('Hypercomponents: Tabs', module)
         }
       ]}
     />
+  )
+  )
+  ;
+
+
+storiesOf('Hypercomponents: Accordion', module)
+  .add('normal', () => (
+    <>
+      <AccordionHOC id="test">
+        <Collapse title="Don't do it">
+          <Hyperlink href='#'>Item 3.1</Hyperlink>
+          <Hyperlink href='#'>Item 3.2</Hyperlink>
+          <Hyperlink href='#'>Item 3.3</Hyperlink>
+        </Collapse>
+        <Collapse title="Don't do it">
+          <Hyperlink href='#'>Item 3.1</Hyperlink>
+          <Hyperlink href='#'>Item 3.2</Hyperlink>
+          <Hyperlink href='#'>Item 3.3</Hyperlink>
+        </Collapse>
+      </AccordionHOC>
+      <br />
+      <AccordionHOC fill='flat'>
+        <Collapse title="Don't do it">
+          <Hyperlink href='#'>Item 3.1</Hyperlink>
+          <Hyperlink href='#'>Item 3.2</Hyperlink>
+          <Hyperlink href='#'>Item 3.3</Hyperlink>
+        </Collapse>
+        <Collapse title="Don't do it">
+          <Hyperlink href='#'>Item 3.1</Hyperlink>
+          <Hyperlink href='#'>Item 3.2</Hyperlink>
+          <Hyperlink href='#'>Item 3.3</Hyperlink>
+        </Collapse>
+      </AccordionHOC>
+    </>
+  )
+)
+  .add('mapped', () => (
+    <>
+      <AccordionHOC id="test"
+        data={[
+          {
+            title: 'Don\'t do it',
+            content: (
+              <>
+                <Hyperlink href='#'>Item 3.1</Hyperlink>
+                <Hyperlink href='#'>Item 3.2</Hyperlink>
+                <Hyperlink href='#'>Item 3.3</Hyperlink>
+              </>
+            )
+          },
+          {
+            title: 'Don\'t do it',
+            content: (
+              <>
+                <Hyperlink href='#'>Item 3.1</Hyperlink>
+                <Hyperlink href='#'>Item 3.2</Hyperlink>
+                <Hyperlink href='#'>Item 3.3</Hyperlink>
+              </>
+            )
+          }
+        ]}
+      />
+      <br />
+      <AccordionHOC fill='flat'
+        data={[
+          {
+            title: 'Don\'t do it',
+            content: (
+              <>
+                <Hyperlink href='#'>Item 3.1</Hyperlink>
+                <Hyperlink href='#'>Item 3.2</Hyperlink>
+                <Hyperlink href='#'>Item 3.3</Hyperlink>
+              </>
+            )
+          },
+          {
+            title: 'Don\'t do it',
+            content: (
+              <>
+                <Hyperlink href='#'>Item 3.1</Hyperlink>
+                <Hyperlink href='#'>Item 3.2</Hyperlink>
+                <Hyperlink href='#'>Item 3.3</Hyperlink>
+              </>
+            )
+          }
+        ]}
+      />
+    </>
   )
   )
   ;
