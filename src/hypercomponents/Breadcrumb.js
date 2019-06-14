@@ -13,7 +13,7 @@ const BreadcrumbsHOC = (props) => {
   return (
     <Breadcrumb {...omitProps(props, ['data'])}>
       {data.map((val, i) => {
-        let content = typeof val === 'string' ? val : val.title;
+        let content = hasKey(val, 'title') ? val.title : val;
         return (
           <BreadcrumbItem key={`i_${i}_${content}`}>
             {val.href ? (

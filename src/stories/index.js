@@ -11,6 +11,7 @@ import ListHOC from '../hypercomponents/List';
 import TabsHOC from '../hypercomponents/Tab';
 import AccordionHOC from '../hypercomponents/Accordion';
 import BreadcrumbsHOC from '../hypercomponents/Breadcrumb';
+import StepsHOC from '../hypercomponents/Step';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2155,7 +2156,7 @@ storiesOf('Hypercomponents: Accordion', module)
   )
   ;
 
-storiesOf('Hypercomponents: Breadcrumb', module)
+storiesOf('Hypercomponents: Breadcrumbs', module)
   .add('normal', () => (
     <BreadcrumbsHOC>
       <BreadcrumbItem><a href='#'>Lorem Ipsum</a></BreadcrumbItem>
@@ -2171,6 +2172,76 @@ storiesOf('Hypercomponents: Breadcrumb', module)
       },
       'Dolor sit amet'
     ]} />
+  )
+  )
+;
+
+storiesOf('Hypercomponents: Steps', module)
+  .add('normal', () => (
+    <>
+      <StepsHOC>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem>Consectetur</StepItem>
+        <StepItem>Adipiscing elit</StepItem>
+      </StepsHOC>
+      <StepsHOC>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem selected>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem>Consectetur</StepItem>
+        <StepItem>Adipiscing elit</StepItem>
+      </StepsHOC>
+      <StepsHOC alignment='vertical'>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem selected>Consectetur</StepItem>
+        <StepItem>Adipiscing elit</StepItem>
+      </StepsHOC>
+      <StepsHOC alignment='vertical'>
+        <StepItem>Lorem Ipsum</StepItem>
+        <StepItem>Dolor sit amet<small>Some description</small></StepItem>
+        <StepItem>Consectetur</StepItem>
+        <StepItem selected>Adipiscing elit</StepItem>
+      </StepsHOC>
+    </>
+  )
+)
+  .add('mapped', () => (
+    <>
+      <StepsHOC data={[
+        'Lorem Ipsum',
+        (<>Dolor sit amet<small>Some description</small></>),
+        'Consectetur',
+        'Adipiscing elit'
+      ]} />
+      <StepsHOC data={[
+        'Lorem Ipsum',
+        {
+          selected: true,
+          content: (<>Dolor sit amet<small>Some description</small></>)
+        },
+        'Consectetur',
+        'Adipiscing elit'
+      ]} />
+      <StepsHOC data={[
+        'Lorem Ipsum',
+        (<>Dolor sit amet<small>Some description</small></>),
+        {
+          selected: true,
+          content: 'Consectetur'
+        },
+        'Adipiscing elit'
+      ]} alignment='vertical' />
+      <StepsHOC data={[
+        'Lorem Ipsum',
+        (<>Dolor sit amet<small>Some description</small></>),
+        'Consectetur',
+        {
+          selected: true,
+          content: 'Adipiscing elit'
+        }
+      ]} alignment='vertical' />
+    </>
   )
   )
 ;
