@@ -35,7 +35,6 @@ const MaskedInputBase = ({
       name={name}
       onChange={onChange}
       defaultValue={defaultValue} 
-      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       ref={__ref}
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
@@ -241,8 +240,7 @@ const ColorInput = ({
         if (readOnly || disabled) return;
         setInputValue(e.target.value);
         onChange(e);
-      }} value={inputValue} disabled={disabled} readOnly={readOnly}
-        title={name ? name : id ? id : rest.title ? rest.title : 'Search'} />
+      }} value={inputValue} disabled={disabled} readOnly={readOnly} />
     </>
   );
 };

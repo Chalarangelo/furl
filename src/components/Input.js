@@ -245,7 +245,6 @@ const SelectInput = ({
       name={name}
       onChange={onChange}
       multiple={multiple} size={selectSize} {...rest}
-      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       defaultValue={defaultValue}
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
@@ -262,7 +261,6 @@ const SelectInput = ({
       name={name}
       onChange={onChange}
       defaultValue={defaultValue[0]}
-      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
     >
@@ -399,7 +397,6 @@ const FileInput = ({
   return (<>
     <input
       type='file' disabled={disabled} required={required} name={name} multiple={multiple}
-      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       onChange={handleFileInput} ref={inputRef} onClick={e => e.stopPropagation()}
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
@@ -481,7 +478,7 @@ const RatingInput = ({
     >
       <input
         type='number' disabled={disabled} required={required} name={name} onChange={onChange} value={rating}
-        title={name ? name : id ? id : rest.title ? rest.title : 'Search'} readOnly={readOnly}
+        readOnly={readOnly}
       />
       {Array.from({ length: 5 }, (v, i) => (
         <Star
