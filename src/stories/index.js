@@ -13,6 +13,7 @@ import AccordionHOC from '../hypercomponents/Accordion';
 import BreadcrumbsHOC from '../hypercomponents/Breadcrumb';
 import StepsHOC from '../hypercomponents/Step';
 import MenuHOC from '../hypercomponents/Menu';
+import RadioGroupHOC from '../hypercomponents/RadioGroup';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2293,3 +2294,46 @@ storiesOf('Hypercomponents: Menu', module)
   )
   )
 ;
+
+
+
+storiesOf('Hypercomponents: RadioGroup', module)
+  .add('normal', () => (
+    <RadioGroupHOC name='radios'>
+      <Radio>Hello</Radio><br />
+      <Radio color='primary'>Hello</Radio><br />
+      <Radio color='secondary'>Hello</Radio><br />
+      <Radio color='danger'>Hello</Radio><br />
+      <Radio color='success'>Hello</Radio><br />
+      <Radio color='warning'>Hello</Radio>
+    </RadioGroupHOC>
+  )
+)
+  .add('mapped', () => (
+    <RadioGroupHOC name='radios' data={[
+      'Hello',
+      {
+        color: 'primary',
+        value: 'Hello'
+      },
+      {
+        color: 'secondary',
+        title: 'Hello'
+      },
+      {
+        color: 'danger',
+        title: 'Hello',
+        value: 'Hello'
+      },
+      {
+        color: 'success',
+        title: 'Hello',
+      },
+      {
+        color: 'warning',
+        value: 'Hello'
+      }
+    ]}/>
+  )
+  )
+  ;
