@@ -185,7 +185,7 @@ const DateInput = ({
         if (readOnly || disabled) return;
         setCalendarOpen(!calendarOpen);
       }} className='calendar-toggler' aria-label='Open calendar'>
-        <Icon name='calendar' width={16} height={16} />&zwnj;
+        <Icon name='calendar' width={16} height={16} title='Open calendar'/>&zwnj;
       </Button>
       <div>
         {

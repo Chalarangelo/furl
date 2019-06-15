@@ -34,7 +34,7 @@ const InputBase = ({
       name={name}
       onChange={onChange}
       defaultValue={defaultValue}
-      title={name ? name : id ? id : rest.title ? rest.title : ''}
+      title={rest.title ? rest.title : name ? name : id ? id : ''}
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
     />
@@ -182,7 +182,7 @@ const NumberInput = ({
         setInputValue(+inputValue - step);
         typeof onChange === 'function' && onChange(e);
       }} className='number-input-minus' aria-label='Decrement value'>
-        <Icon name='minus' width={16} height={16} />&zwnj;
+        <Icon name='minus' width={16} height={16} title='Decrement value' />&zwnj;
       </Button>
       <InputBase
         type='number' placeholder={placeholder} readOnly={readOnly}
@@ -199,7 +199,7 @@ const NumberInput = ({
         setInputValue(+inputValue + step);
         onChange(e);
       }} className='number-input-plus' aria-label='Increment value'>
-        <Icon name='plus' width={16} height={16} />&zwnj;
+        <Icon name='plus' width={16} height={16} title='Increment value' />&zwnj;
       </Button>
     </>
   );
@@ -416,11 +416,11 @@ const FileInput = ({
       {
         filename && filename.length > 0 && !drag
           ? <>
-            <Icon name='check-circle' />
+            <Icon name='check-circle' title='Complete' />
             <ul>{filename.map(f => <li>{f.name}</li>)}</ul>
           </>
           : <>
-            <Icon name='upload' />
+            <Icon name='upload' title='Upload file'/>
             <span>{placeholder}</span>
           </>
       }
@@ -489,6 +489,7 @@ const RatingInput = ({
           key={`star_${i + 1} `}
           marked={selection ? selection >= i + 1 : rating >= i + 1}
           aria-label={`Rate ${i}`}
+          title={`Rate ${i}`}
         />
       ))}
     </div>

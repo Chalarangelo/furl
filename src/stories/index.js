@@ -2542,7 +2542,7 @@ storiesOf('Hypercomponents: ComboboxInput', module)
   ;
 
 storiesOf('Hypercomponents: Input', module)
-  .add('all', () => (
+  .add('simple', () => (
     <>
       <InputHOC placeholder='Text...' type='text' />
       <InputHOC multiline type='text' />
@@ -2562,6 +2562,29 @@ storiesOf('Hypercomponents: Input', module)
       <InputHOC type='file' />
       <InputHOC type='rating' />
       <InputHOC type='slider' />
+    </>
+  )
+  )
+  .add('labelled', () => (
+    <>
+      <InputHOC placeholder='Text...' type='text' label='Text' />
+      <InputHOC multiline type='text' label='Multiline text' />
+      <InputHOC placeholder='Text...' type='textarea' label='Textarea' />
+      <InputHOC placeholder='mail@server.com' type='email' label='E-mail'  />
+      <InputHOC placeholder='https://google.com' type='url' label='URL' />
+      <InputHOC type='password' label='Password' />
+      <InputHOC placeholder='0' type='number' label='Number' />
+      <InputHOC type='select' data={['0', '2', '4']} label='Select'  />
+      <InputHOC type='combobox' data={['0', '2', '4']} label='Combo box' />
+      <InputHOC placeholder='0000-0000-0000-0000' type='credit-card' label='Credit card' />
+      <InputHOC placeholder='+30 (123) 456-7890' type='telephone' label='Phone' />
+      <InputHOC placeholder='$' type='currency' label='Currency' />
+      <InputHOC placeholder='00:00' type='time' label='Time' />
+      <InputHOC placeholder='dd/mm/yyyy' type='date' label='Date' />
+      <InputHOC placeholder='#ffffff' type='color' label='Color' />
+      <InputHOC type='file' label='Upload' />
+      <InputHOC type='rating' label='Rating' />
+      <InputHOC type='slider' label='Sider' />
     </>
   )
   )

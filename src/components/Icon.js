@@ -16,7 +16,7 @@ const Icon = ({
   ...rest
 }) => (
   <span
-    title={name}
+    title={ rest.title ? rest.title : name }
     className={combineClassNames([ className, 'icon' ])}
     style={combineStyles(rest, rest.style)}
     {...omitProps(rest)}
