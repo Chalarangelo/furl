@@ -12,6 +12,7 @@ import TabsHOC from '../hypercomponents/Tab';
 import AccordionHOC from '../hypercomponents/Accordion';
 import BreadcrumbsHOC from '../hypercomponents/Breadcrumb';
 import StepsHOC from '../hypercomponents/Step';
+import MenuHOC from '../hypercomponents/Menu';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2241,6 +2242,53 @@ storiesOf('Hypercomponents: Steps', module)
           content: 'Adipiscing elit'
         }
       ]} alignment='vertical' />
+    </>
+  )
+  )
+;
+
+storiesOf('Hypercomponents: Menu', module)
+  .add('Normal menus', () => (
+    <>
+      <MenuHOC type='horizontal'>
+        <MenuItem>Item 1</MenuItem>
+        <MenuItem selected href='#'>Item 2</MenuItem>
+        <MenuItem href='#a'>Item 3</MenuItem>
+        <MenuItem>Item 4</MenuItem>
+      </MenuHOC>
+      <MenuHOC type='vertical' highlight='right'>
+        <MenuItem>Item 1</MenuItem>
+        <MenuItem selected>Item 2</MenuItem>
+        <MenuItem>Item 3</MenuItem>
+        <MenuItem>Item 4</MenuItem>
+      </MenuHOC>
+    </>
+  )
+  )
+  .add('Mapped menus', () => (
+    <>
+      <MenuHOC type='horizontal' data={[
+        'Item 1',
+        {
+          selected: true,
+          href: '#',
+          title: 'Item 2'
+        },
+        {
+          href: '#',
+          title: 'Item 3'
+        },
+        'Item 4'
+      ]}/>
+      <MenuHOC type='vertical' highlight='right' data ={[
+        'Item 1',
+        {
+          selected: true,
+          title: 'Item 2'
+        },
+        'Item 3',
+        'Item 4'
+      ]}/>
     </>
   )
   )
