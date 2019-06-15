@@ -17,6 +17,7 @@ import RadioGroupHOC from '../hypercomponents/RadioGroup';
 import ButtonGroupHOC from '../hypercomponents/ButtonGroup';
 import SelectInputHOC from '../hypercomponents/SelectInput';
 import ComboboxInputHOC from '../hypercomponents/ComboboxInput';
+import InputHOC from '../hypercomponents/Input';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2539,3 +2540,29 @@ storiesOf('Hypercomponents: ComboboxInput', module)
   )
   )
   ;
+
+storiesOf('Hypercomponents: Input', module)
+  .add('all', () => (
+    <>
+      <InputHOC placeholder='Text...' type='text' />
+      <InputHOC multiline type='text' />
+      <InputHOC placeholder='Text...' type='textarea' />
+      <InputHOC placeholder='mail@server.com' type='email'/>
+      <InputHOC placeholder='https://google.com' type='url'/>
+      <InputHOC type='password'/>
+      <InputHOC placeholder='0' type='number' />
+      <InputHOC type='select' data={['0', '2', '4']} />
+      <InputHOC type='combobox' data={['0', '2', '4']} />
+      <InputHOC placeholder='0000-0000-0000-0000' type='credit-card'/>
+      <InputHOC placeholder='+30 (123) 456-7890' type='telephone'/>
+      <InputHOC placeholder='$' type='currency' />
+      <InputHOC placeholder='00:00' type='time' />
+      <InputHOC placeholder='dd/mm/yyyy' type='date' />
+      <InputHOC placeholder='#ffffff' type='color' />
+      <InputHOC type='file' />
+      <InputHOC type='rating' />
+      <InputHOC type='slider' />
+    </>
+  )
+  )
+;

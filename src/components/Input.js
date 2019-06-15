@@ -34,7 +34,7 @@ const InputBase = ({
       name={name}
       onChange={onChange}
       defaultValue={defaultValue}
-      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
+      title={name ? name : id ? id : rest.title ? rest.title : ''}
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
     />
@@ -68,7 +68,6 @@ const TextInput = ({
       onChange={onChange}
       defaultValue={defaultValue}
       rows={rows} 
-      title={name ? name : id ? id : rest.title ? rest.title : 'Search'}
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
     />
