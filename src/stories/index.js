@@ -15,6 +15,7 @@ import StepsHOC from '../hypercomponents/Step';
 import MenuHOC from '../hypercomponents/Menu';
 import RadioGroupHOC from '../hypercomponents/RadioGroup';
 import ButtonGroupHOC from '../hypercomponents/ButtonGroup';
+import SelectInputHOC from '../hypercomponents/SelectInput';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2337,8 +2338,6 @@ storiesOf('Hypercomponents: RadioGroup', module)
   )
   ;
 
-
-
 storiesOf('Hypercomponents: ButtonGroup', module)
   .add('normal', () => (
     <>
@@ -2409,3 +2408,47 @@ storiesOf('Hypercomponents: ButtonGroup', module)
   )
   )
 ;
+
+storiesOf('Hypercomponents: SelectInput', module)
+  .add('normal', () => (
+    <>
+      <SelectInputHOC placeholder='0' onChange={(r) => console.log(r)}>
+        <Option>a</Option>
+        <Option selected>b</Option>
+        <Option>c</Option>
+      </SelectInputHOC>
+      <SelectInputHOC multiple placeholder='0' onChange={(r) => console.log(r)}>
+        <Option>a</Option>
+        <Option selected>b</Option>
+        <Option selected>c</Option>
+      </SelectInputHOC>
+    </>
+  )
+  )
+  .add('mapped', () => (
+    <>
+      <SelectInputHOC placeholder='0' onChange={(r) => console.log(r)} data={[
+        'a',
+        {
+          selected: true,
+          value: 'b'
+        },
+        {
+          title: 'c'
+        }
+      ]} />
+      <SelectInputHOC multiple placeholder='0' onChange={(r) => console.log(r)} data={[
+        'a',
+        {
+          selected: true,
+          value: 'b'
+        },
+        {
+          selected: true,
+          title: 'c'
+        }
+      ]} />
+    </>
+  )
+  )
+  ;
