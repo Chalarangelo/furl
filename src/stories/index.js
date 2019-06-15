@@ -14,6 +14,7 @@ import BreadcrumbsHOC from '../hypercomponents/Breadcrumb';
 import StepsHOC from '../hypercomponents/Step';
 import MenuHOC from '../hypercomponents/Menu';
 import RadioGroupHOC from '../hypercomponents/RadioGroup';
+import ButtonGroupHOC from '../hypercomponents/ButtonGroup';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2295,8 +2296,6 @@ storiesOf('Hypercomponents: Menu', module)
   )
 ;
 
-
-
 storiesOf('Hypercomponents: RadioGroup', module)
   .add('normal', () => (
     <RadioGroupHOC name='radios'>
@@ -2337,3 +2336,76 @@ storiesOf('Hypercomponents: RadioGroup', module)
   )
   )
   ;
+
+
+
+storiesOf('Hypercomponents: ButtonGroup', module)
+  .add('normal', () => (
+    <>
+      <ButtonGroupHOC>
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroupHOC>
+      <ButtonGroupHOC color='primary' fill='solid'>
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroupHOC>
+      <ButtonGroupHOC color='secondary' fill='outline'>
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroupHOC>
+      <ButtonGroupHOC color='secondary' fill='solid' size='small' text='uppercase'>
+        <Button>a</Button>
+        <Button>b</Button>
+        <Button>c</Button>
+        <Button>d</Button>
+      </ButtonGroupHOC>
+      <br />
+      <ButtonGroupHOC color='success' fill='gradient'>
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroupHOC>
+      <ButtonGroupHOC color='danger' fill='solid' size='large'>
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroupHOC>
+      <ButtonGroupHOC color='warning' fill='solid' shape='rounded'>
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroupHOC>
+      <ButtonGroupHOC color='success' fill='outline' shape='rounded'>
+        <Button>A</Button>
+        <Button>B</Button>
+        <Button>C</Button>
+        <Button>D</Button>
+      </ButtonGroupHOC>
+    </>
+  )
+  )
+  .add('mapped', () => (
+    <>
+      <ButtonGroupHOC data={['A','B','C','D']} />
+      <ButtonGroupHOC color='primary' fill='solid' data={['A','B','C','D']} />
+      <ButtonGroupHOC color='secondary' fill='outline' data={['A','B','C','D']} />
+      <ButtonGroupHOC color='secondary' fill='solid' size='small' text='uppercase' data={['A','B','C','D']} />
+      <br />
+      <ButtonGroupHOC color='success' fill='gradient' data={['A','B','C','D']} />
+      <ButtonGroupHOC color='danger' fill='solid' size='large' data={['A','B','C','D']} />
+      <ButtonGroupHOC color='warning' fill='solid' shape='rounded' data={['A','B','C','D']} />
+      <ButtonGroupHOC color='success' fill='outline' shape='rounded' data={['A','B','C','D']} />
+    </>
+  )
+  )
+;
