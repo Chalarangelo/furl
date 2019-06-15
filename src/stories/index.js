@@ -16,6 +16,7 @@ import MenuHOC from '../hypercomponents/Menu';
 import RadioGroupHOC from '../hypercomponents/RadioGroup';
 import ButtonGroupHOC from '../hypercomponents/ButtonGroup';
 import SelectInputHOC from '../hypercomponents/SelectInput';
+import ComboboxInputHOC from '../hypercomponents/ComboboxInput';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2447,6 +2448,92 @@ storiesOf('Hypercomponents: SelectInput', module)
           selected: true,
           title: 'c'
         }
+      ]} />
+    </>
+  )
+  )
+  ;
+
+storiesOf('Hypercomponents: ComboboxInput', module)
+  .add('normal', () => (
+    <>
+      <ComboboxInputHOC>
+        <Option>Chocolate</Option>
+        <Option>Coconut</Option>
+        <Option selected>Mint</Option>
+        <Option>Strawberry</Option>
+        <Option>Vanilla</Option>
+      </ComboboxInputHOC>
+      <ComboboxInputHOC>
+        <Option>Orange</Option>
+        <Option>Lemon</Option>
+        <Option>Apple</Option>
+        <Option>Strawberry</Option>
+        <Option>Watermelon</Option>
+      </ComboboxInputHOC>
+      <ComboboxInputHOC disabled>
+        <Option>Orange</Option>
+        <Option>Lemon</Option>
+        <Option>Apple</Option>
+        <Option>Strawberry</Option>
+        <Option>Watermelon</Option>
+      </ComboboxInputHOC>
+      <ComboboxInputHOC readOnly>
+        <Option>Orange</Option>
+        <Option>Lemon</Option>
+        <Option>Apple</Option>
+        <Option>Strawberry</Option>
+        <Option>Watermelon</Option>
+      </ComboboxInputHOC>
+    </>
+  )
+  )
+  .add('mapped', () => (
+    <>
+      <ComboboxInputHOC data={[
+        'Chocolate',
+        'Coconut',
+        {
+          selected: true,
+          value: 'Mint'
+        },
+        {
+          title: 'Strawberry'
+        },
+        'Vanilla'
+      ]} />
+      <ComboboxInputHOC data={[
+        'Chocolate',
+        'Coconut',
+        {
+          value: 'Mint'
+        },
+        {
+          title: 'Strawberry'
+        },
+        'Vanilla'
+      ]} />
+      <ComboboxInputHOC disabled data={[
+        'Chocolate',
+        'Coconut',
+        {
+          value: 'Mint'
+        },
+        {
+          title: 'Strawberry'
+        },
+        'Vanilla'
+      ]} />
+      <ComboboxInputHOC readOnly data={[
+        'Chocolate',
+        'Coconut',
+        {
+          value: 'Mint'
+        },
+        {
+          title: 'Strawberry'
+        },
+        'Vanilla'
       ]} />
     </>
   )
