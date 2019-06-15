@@ -3,12 +3,12 @@ import {
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput,
   CreditCardInput, PhoneInput, CurrencyInput, TimeInput, 
   ColorInput, FileInput, DateInput, RatingInput, SliderInput,
-  Checkbox
+  Checkbox, FormLabel
 } from '../components';
 import RadioGroup from './RadioGroup';
 import SelectInput from './SelectInput';
 import ComboboxInput from './ComboboxInput';
-import { hasKey, omitProps } from '../utilities/utils';
+import { hasKey, omitProps, generateUniqueId } from '../utilities/utils';
 
 const InputHOC = (props) => {
   if (!hasKey(props, 'type'))
@@ -16,94 +16,249 @@ const InputHOC = (props) => {
       <TextInput {...omitProps(props, ['type'])} />
     );
 
+  let id = hasKey(props, 'id') ? props.id : generateUniqueId('input');
+  let title = hasKey(props, 'title') ? props.title : hasKey(props, 'name') ? props.name : '';
+
   switch (props.type.toLowerCase().trim()) {
     case 'text':
       return (
-        <TextInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+            ) : ''
+          }
+          <TextInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'textarea':
       return (
-        <TextInput multiline {...omitProps(props, ['type', 'multiline'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <TextInput id={id} title={title} multiline {...omitProps(props, ['type', 'id', 'multiline'])} />
+        </>
       );
     case 'email':
     case 'e-mail':
       return (
-        <EmailInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <EmailInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'password':
       return (
-        <PasswordInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <PasswordInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'number':
     case 'num':
       return (
-        <NumberInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <NumberInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'url':
       return (
-        <UrlInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <UrlInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'creditcard':
     case 'credit-card':
     case 'card':
       return (
-        <CreditCardInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <CreditCardInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'phone':
     case 'telephone':
     case 'tel':
       return (
-        <PhoneInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <PhoneInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'currency':
     case 'money':
       return (
-        <CurrencyInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <CurrencyInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'time':
       return (
-        <TimeInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <TimeInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'date':
       return (
-        <DateInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <DateInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'rating':
       return (
-        <RatingInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <RatingInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'slider':
     case 'range':
       return (
-        <SliderInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <SliderInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'color':
       return (
-        <ColorInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <ColorInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'file':
     case 'upload':
       return (
-        <FileInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <FileInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'radio':
     case 'radio-group':
     case 'radiogroup':
       return (
-        <RadioGroup {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <RadioGroup id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'select':
       return (
-        <SelectInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <SelectInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     case 'combo':
     case 'combobox':
       return (
-        <ComboboxInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <ComboboxInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
     default:
       return (
-        <TextInput {...omitProps(props, ['type'])} />
+        <>
+          {props.label ? (
+            <FormLabel htmlFor={id}>
+              {props.label}
+            </FormLabel>
+          ) : ''
+          }
+          <TextInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+        </>
       );
   }
 
