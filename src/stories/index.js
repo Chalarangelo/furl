@@ -18,6 +18,7 @@ import ButtonGroupHOC from '../hypercomponents/ButtonGroup';
 import SelectInputHOC from '../hypercomponents/SelectInput';
 import ComboboxInputHOC from '../hypercomponents/ComboboxInput';
 import InputHOC from '../hypercomponents/Input';
+import FormHOC from '../hypercomponents/Form';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2586,6 +2587,46 @@ storiesOf('Hypercomponents: Input', module)
       <InputHOC type='rating' label='Rating' />
       <InputHOC type='slider' label='Sider' />
     </>
+  )
+  )
+;
+
+storiesOf('Hypercomponents: Form', module)
+  .add('normal', () => (
+    <FormHOC>
+      <FormLegend>A Form</FormLegend>
+      <FormLabel htmlFor='text-in'>Text</FormLabel>
+      <TextInput id='text-in' placeholder='Text...' />
+    </FormHOC>
+  )
+  )
+  .add('mapped', () => (
+    <FormHOC
+      data={[
+        {
+          name: 'username',
+          label: 'Username'
+        },
+        {
+          type: 'password',
+          name: 'password',
+          placeholder: '',
+          label: 'Password'
+        },
+        {
+          type: 'password',
+          name: 'repeat',
+          placeholder: '',
+          label: 'Repeat password'
+        },
+        {
+          type: 'email',
+          name: 'email',
+          label: 'E-mail',
+          placeholder: 'mail@server.com'
+        }
+      ]}
+    />
   )
   )
 ;
