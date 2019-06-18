@@ -16,6 +16,7 @@ const mapDataToInput = (val, i) => {
       name={name}
       label={label}
       placeholder={placeholder}
+      key={`i_${i}_${id}`}
       {...omitProps(val, ['id', 'type', 'name', 'label', 'placeholder'])}
     />
   );
@@ -58,7 +59,6 @@ const FormHOC = (props) => {
             }
             </>
           );
-          return val.data.map(mapDataToInput);
         }
         return mapDataToInput(val, i);
       })}
