@@ -93,6 +93,10 @@ a, b, del, em, i, ins, q, span, strong, u {
   font-size: 1em; 
 }
 
+span[class*='title'] {
+  font-size: var(--font-size);
+}
+
 // Consistent fonts and styles in all browsers
 button, input, optgroup, select, textarea {
   font-family: inherit;

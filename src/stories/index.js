@@ -2660,5 +2660,47 @@ storiesOf('Hypercomponents: Form', module)
       ]}
     />
   )
+)
+  .add('with sections', () => (
+    <FormHOC
+      legend='Signup form'
+      twoColumn
+      data={[
+        {
+          title: 'Part A',
+          data: [
+            {
+              name: 'username',
+              label: 'Username'
+            },
+            {
+              type: 'password',
+              name: 'password',
+              placeholder: '',
+              label: 'Password'
+            },
+            {
+              type: 'password',
+              name: 'repeat',
+              placeholder: '',
+              label: 'Repeat password'
+            }
+          ]
+        },
+        {
+          title: 'Part B',
+          description: 'We will not spam you',
+          data: [
+            {
+              type: 'email',
+              name: 'email',
+              label: 'E-mail',
+              placeholder: 'mail@server.com'
+            }
+          ]
+        }
+      ]}
+    />
+  )
   )
 ;

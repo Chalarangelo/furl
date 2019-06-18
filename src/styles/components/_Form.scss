@@ -41,3 +41,8 @@ label {
   --margin-vertical: var(--ls-25p);
   display: block;
 }
+
+form hr {
+  margin-left: calc(0rem - var(--ls-50p));
+  margin-right: calc(0rem - var(--ls-50p));
+}

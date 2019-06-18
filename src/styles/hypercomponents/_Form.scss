@@ -7,7 +7,7 @@
     grid-row-gap: var(--ls-50p);
     justify-items: stretch;
     align-items: center;
-    & legend {
+    & legend, & .title5, & p, & hr {
       grid-column-start: 1;
       grid-column-end: 5;
     }
@@ -19,6 +19,18 @@
     & input, & select, & textarea {
       grid-column-start: 2;
       grid-column-end: 5;
+    }
+    & .title5, & p {
+      margin-bottom: var(--ls-0p);
+      & + p {
+        margin-top: var(--ls-0p);
+      }
+    }
+    & .title5 {
+      --color: var(--interface-gray-900);
+    }
+    & p {
+      --color: var(--interface-gray-700);
     }
   }
 }
