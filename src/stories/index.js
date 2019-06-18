@@ -2593,7 +2593,7 @@ storiesOf('Hypercomponents: Input', module)
 
 storiesOf('Hypercomponents: Form', module)
   .add('normal', () => (
-    <FormHOC>
+    <FormHOC twoColumn>
       <FormLegend>A Form</FormLegend>
       <FormLabel htmlFor='text-in'>Text</FormLabel>
       <TextInput id='text-in' placeholder='Text...' />
@@ -2602,6 +2602,38 @@ storiesOf('Hypercomponents: Form', module)
   )
   .add('mapped', () => (
     <FormHOC
+      legend='Signup form'
+      data={[
+        {
+          name: 'username',
+          label: 'Username'
+        },
+        {
+          type: 'password',
+          name: 'password',
+          placeholder: '',
+          label: 'Password'
+        },
+        {
+          type: 'password',
+          name: 'repeat',
+          placeholder: '',
+          label: 'Repeat password'
+        },
+        {
+          type: 'email',
+          name: 'email',
+          label: 'E-mail',
+          placeholder: 'mail@server.com'
+        }
+      ]}
+    />
+  )
+)
+  .add('two-column', () => (
+    <FormHOC
+      twoColumn
+      legend='Signup form'
       data={[
         {
           name: 'username',
