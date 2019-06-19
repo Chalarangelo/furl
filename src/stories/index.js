@@ -20,6 +20,7 @@ import ComboboxInputHOC from '../hypercomponents/ComboboxInput';
 import InputHOC from '../hypercomponents/Input';
 import FormHOC from '../hypercomponents/Form';
 import CardHOC from '../hypercomponents/Card';
+import MediaObjectHOC from '../hypercomponents/MediaObject';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2840,3 +2841,22 @@ storiesOf('Hypercomponent: Card', module)
   )
   )
 ;
+
+
+storiesOf('Hypercomponents: MediaObject', module)
+  .add('all cases', () => (
+    <>
+      <MediaObjectHOC media='https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80'>
+        <Paragraph><Text textStyle='bold'>Joe Henderson</Text><br />Dude, this is awesome. Thanks so much.</Paragraph>
+      </MediaObjectHOC>
+      <MediaObjectHOC media='https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80' data ={
+        (
+          <>
+            <Paragraph><Text textStyle='bold'>Joe Henderson</Text><br/>Dude, this is awesome. Thanks so much.</Paragraph>
+          </>
+        )
+      }/>
+    </>
+  )
+  )
+  ;
