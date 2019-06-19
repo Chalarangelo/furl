@@ -3,12 +3,13 @@ import {
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput,
   CreditCardInput, PhoneInput, CurrencyInput, TimeInput, 
   ColorInput, FileInput, DateInput, RatingInput, SliderInput,
-  Checkbox, FormLabel
+  Checkbox, FormLabel, Icon
 } from '../components';
 import RadioGroup from './RadioGroup';
 import SelectInput from './SelectInput';
 import ComboboxInput from './ComboboxInput';
-import { hasKey, omitProps, generateUniqueId } from '../utilities/utils';
+import { hasKey, omitProps, generateUniqueId, combineStyles } from '../utilities/utils';
+import generateBackgroundIcon from '../utilities/iconGenerator';
 
 const InputHOC = (props) => {
   if (!hasKey(props, 'type'))
@@ -18,6 +19,12 @@ const InputHOC = (props) => {
 
   let id = hasKey(props, 'id') ? props.id : generateUniqueId('input');
   let title = hasKey(props, 'title') ? props.title : hasKey(props, 'name') ? props.name : '';
+  let style = hasKey(props, 'style') ? props.style : {};
+  let className = hasKey(props, 'className') ? props.className : '';
+  if (hasKey(props, 'icon')) {
+    style = combineStyles(style, generateBackgroundIcon({ name: props.icon, stroke: '#6e7e8c', height: 18, width: 18 }));
+    className = `${className} with-icon`.trim();
+  }
 
   switch (props.type.toLowerCase().trim()) {
     case 'text':
@@ -29,7 +36,7 @@ const InputHOC = (props) => {
             </FormLabel>
             ) : ''
           }
-          <TextInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <TextInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'textarea':
@@ -54,7 +61,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <EmailInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <EmailInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'password':
@@ -66,7 +73,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <PasswordInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <PasswordInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'number':
@@ -91,7 +98,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <UrlInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <UrlInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'creditcard':
@@ -105,7 +112,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <CreditCardInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <CreditCardInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'phone':
@@ -119,7 +126,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <PhoneInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <PhoneInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'currency':
@@ -132,7 +139,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <CurrencyInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <CurrencyInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'time':
@@ -144,7 +151,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <TimeInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <TimeInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'date':
@@ -156,7 +163,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <DateInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <DateInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'rating':
@@ -168,7 +175,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <RatingInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <RatingInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'slider':
@@ -181,7 +188,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <SliderInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <SliderInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'color':
@@ -193,7 +200,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <ColorInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <ColorInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'file':
@@ -206,7 +213,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <FileInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <FileInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'radio':
@@ -232,7 +239,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <SelectInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <SelectInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     case 'combo':
@@ -245,7 +252,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <ComboboxInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <ComboboxInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
     default:
@@ -257,7 +264,7 @@ const InputHOC = (props) => {
             </FormLabel>
           ) : ''
           }
-          <TextInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <TextInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
         </>
       );
   }

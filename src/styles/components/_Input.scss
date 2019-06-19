@@ -197,7 +197,7 @@ select {
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-50p);
   --padding-vertical: var(--ls-25p);
-  --padding-horizontal: var(--ls-0p);
+  --padding-horizontal: var(--ls-50p);
   --border-radius: var(--ls-25p);
   --background-color: var(--interface-gray-0);
   --font-size: var(--ts-100p);
@@ -573,4 +573,10 @@ input[type='range'] {
 
 input[type=color][readonly]{
   pointer-events: none;
+}
+
+.with-icon {
+  padding-left: calc(var(--padding-horizontal) + var(--ls-150p));
+  background-position-y: center;
+  background-position-x: var(--ls-25p);
 }

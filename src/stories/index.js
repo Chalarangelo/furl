@@ -2590,6 +2590,29 @@ storiesOf('Hypercomponents: Input', module)
     </>
   )
   )
+  .add('with icons', () => (
+    <>
+      <InputHOC icon='user' placeholder='Text...' type='text' label='Text' />
+      <InputHOC multiline type='text' label='Multiline text' />
+      <InputHOC placeholder='Text...' type='textarea' label='Textarea' />
+      <InputHOC icon='mail' placeholder='mail@server.com' type='email' label='E-mail'  />
+      <InputHOC icon='at-sign' placeholder='https://google.com' type='url' label='URL' />
+      <InputHOC icon='key' type='password' label='Password' />
+      <InputHOC placeholder='0' type='number' label='Number' />
+      <InputHOC icon='cloud' type='select' data={['0', '2', '4']} label='Select'  />
+      <InputHOC icon='sun' type='combobox' data={['0', '2', '4']} label='Combo box' />
+      <InputHOC icon='credit-card' placeholder='0000-0000-0000-0000' type='credit-card' label='Credit card' />
+      <InputHOC icon='phone' placeholder='+30 (123) 456-7890' type='telephone' label='Phone' />
+      <InputHOC icon='dollar-sign' placeholder='$' type='currency' label='Currency' />
+      <InputHOC icon='clock' placeholder='00:00' type='time' label='Time' />
+      <InputHOC icon='calendar' placeholder='dd/mm/yyyy' type='date' label='Date' />
+      <InputHOC icon='sliders' placeholder='#ffffff' type='color' label='Color' />
+      <InputHOC type='file' label='Upload' />
+      <InputHOC type='rating' label='Rating' />
+      <InputHOC type='slider' label='Sider' />
+    </>
+  )
+  )
 ;
 
 storiesOf('Hypercomponents: Form', module)
