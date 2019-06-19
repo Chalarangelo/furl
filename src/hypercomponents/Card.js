@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardSection } from '../components';
+import { Card, CardSection, Paragraph } from '../components';
 import { hasKey, omitProps } from '../utilities/utils';
 
 const CardHOC = (props) => {
@@ -17,7 +17,11 @@ const CardHOC = (props) => {
         let children = hasKey(val, 'content') ? val.content : hasKey(val, 'children') ? val.children : val;
         return (
           <CardSection {...omitProps(val, ['content', 'children'])} key={`sc_${i}`} >
-            {children}
+            {
+              typeof children === 'string' ? 
+                (<Paragraph>{children}</Paragraph>) : 
+                children
+            }
           </CardSection>
         )
       })}

@@ -2765,7 +2765,7 @@ storiesOf('Hypercomponent: Card', module)
             <h5>Hello world<small>Lorem ipsum</small></h5>
             <p>This is some demo content that I want to test the Card with.</p>
           </>),
-          (<p>More stuff here.</p>)
+          'More stuff here.'
         ]}
       />
       <CardHOC width={320}
@@ -2775,7 +2775,7 @@ storiesOf('Hypercomponent: Card', module)
             media: 'https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80',
             height: 200
           },
-          (<p>This is some demo content that I want to test the Card with.</p>)
+          'This is some demo content that I want to test the Card with.'
         ]}
       />
       <Grid justify='center' align='center'><Row><Col size={[12, 6, 5, 4]}>
@@ -2793,7 +2793,7 @@ storiesOf('Hypercomponent: Card', module)
               </Row>
             </Grid>
           ),
-          (<p>This is some demo content that I want to test the Card with.</p>)
+          'This is some demo content that I want to test the Card with.'
         ]}
       />
     </Col><Col size={[12, 6, 5, 4]}>
