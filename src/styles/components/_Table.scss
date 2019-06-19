@@ -28,6 +28,7 @@ table {
     --padding-vertical: var(--ls-50p);
   }
   & th {
+    position: relative;
     text-align: left;
     --font-weight: 500;
     --font-size: var(--ts-50p);

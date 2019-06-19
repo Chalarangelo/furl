@@ -1,0 +1,19 @@
+th .table-control {
+  position: absolute;
+  top: 0;
+  right: 0;
+  &:nth-of-type(2) {
+    right: var(--ls-200p);
+  }
+  --background-color: transparent;
+  --secondary-background-color: transparent;
+  --tertiary-background-color: transparent;
+  --quaternary-background-color: transparent;
+  --secondary-color: transparent;
+  --color: var(--interface-gray-500);
+  --padding-horizontal: var(--ls-0p);
+  --padding-vertical: var(--ls-0p);
+  &:hover, &:focus {
+    --color: var(--interface-gray-900);
+  }
+}

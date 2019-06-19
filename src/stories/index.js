@@ -1932,6 +1932,19 @@ storiesOf('Notification', module)
     )
   }
   )
+  .add('Data table with filters and sorting', () => {
+    const people = [
+      { name: 'John', surname: 'Smith', age: 42 },
+      { name: 'Adam', surname: 'Smith', gender: 'male' }
+    ];
+    return (
+      <TableHOC
+        sortable filterable
+        data={people}
+      />
+    )
+  }
+  )
   ;
 
 
@@ -2841,7 +2854,6 @@ storiesOf('Hypercomponent: Card', module)
   )
   )
 ;
-
 
 storiesOf('Hypercomponents: MediaObject', module)
   .add('all cases', () => (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, TableHead, TableBody, TableRow, TableCell, TableCaption } from '../components';
+import { Table, TableHead, TableBody, TableRow, TableCell, TableCaption, Button, Icon } from '../components';
 import { hasKey, omitProps } from '../utilities/utils';
 
 const TableHOC = (props) => {
@@ -31,7 +31,19 @@ const TableHOC = (props) => {
       <TableHead>
         <TableRow>
           {propertyNames.map(val => (
-            <TableCell heading key={`h_${val}`}>{val}</TableCell>
+            <TableCell heading key={`h_${val}`}>
+              {val}
+              { props.sortable ? (
+                <Button className='table-control'>
+                  <Icon name='arrow-down' width={20} height={20} title='Sort descending'/>
+                </Button>) : '' 
+              }
+              { props.filterable ? (
+                <Button className='table-control'>
+                  <Icon name='filter' width={20} height={20} title='Filter column'/>
+                </Button>) : '' 
+              }
+            </TableCell>
           ))}
         </TableRow>
       </TableHead>
