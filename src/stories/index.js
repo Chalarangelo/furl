@@ -1935,6 +1935,7 @@ storiesOf('Notification', module)
   .add('Data table with filters and sorting', () => {
     const people = [
       { name: 'John', surname: 'Smith', age: 42 },
+      { name: 'Maria', surname: 'Jones'},
       { name: 'Adam', surname: 'Smith', gender: 'male' }
     ];
     return (
