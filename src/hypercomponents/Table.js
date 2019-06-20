@@ -33,9 +33,6 @@ const TableHOC = (props) => {
   const [isSorted, setIsSorted] = React.useState(
     propertyNames.reduce((acc,val) => {acc[val] = false; return acc; }, {})
   );
-  const [filters, setFilters] = React.useState(
-    propertyNames.reduce((acc, val) => { acc[val] = false; return acc; }, {})
-  );
   const [_data, _setData] = React.useState(data);
 
   React.useEffect(() => {
@@ -68,11 +65,6 @@ const TableHOC = (props) => {
                     title={isSorted[val] === false ? 'Sort ascending' : isSorted[val] === 'asc' ? 'Sort descending' : 'Clear sorting'}
                     className = { isSorted[val] === 'asc' ? 'reverse' : isSorted[val] === 'desc' ? 'rotated' : ''}
                   />
-                </Button>) : '' 
-              }
-              { props.filterable ? (
-                <Button className='table-control'>
-                  <Icon name='filter' width={20} height={20} title='Filter column'/>
                 </Button>) : '' 
               }
             </TableCell>
