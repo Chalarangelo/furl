@@ -22,6 +22,19 @@
           --color: var(--#{$color-name}-700);
         }
       }
+    }   
+    &.link {
+      background: transparent;
+      --color: var(--#{$color-name}-700);
+      &[disabled]{
+        --color: var(--#{$color-name}-600);
+      }
+      &:hover, &:focus {
+        --color: var(--#{$color-name}-500);
+        &[disabled]{
+          --color: var(--#{$color-name}-600);
+        }
+      }
     }
   }
 }
@@ -146,6 +159,19 @@ button, .button, a.button, .pagination-item {
       --box-shadow: var(--shadow-0);
       &[disabled]{
         --box-shadow: var(--shadow-0); 
+      }
+    }
+  }
+  &.link {
+    background: transparent;
+    --color: var(--interface-gray-700);
+    &[disabled]{
+      --color: var(--interface-gray-600);
+    }
+    &:hover, &:focus {
+      --color: var(--interface-gray-500);
+      &[disabled]{
+        --color: var(--interface-gray-600);
       }
     }
   }

@@ -745,6 +745,17 @@ storiesOf('Button', module)
     </>
   )
   )
+  .add('styled as links', () => (
+    <>
+      <Button fill='link'>Continue</Button>
+      <Button fill='link' color='primary'>Continue</Button>
+      <Button fill='link' color='secondary'>Continue</Button>
+      <Button fill='link' color='success'>Continue</Button>
+      <Button fill='link' color='warning'>Continue</Button>
+      <Button fill='link' color='danger'>Continue</Button>
+    </>
+  )
+  )
 ;
 
 storiesOf('ButtonGroup', module)
