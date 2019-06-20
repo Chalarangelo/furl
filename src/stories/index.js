@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import '../styles/index.scss';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton, Pagination, PaginationItem, ColorInput, Accordion, Tab, TabItem, FileInput, DateInput, RatingInput, SliderInput, Form, FormLegend, FormLabel, Modal, ModalSection, ModalCenter, Alert, Notification, NotificationCenter } from '../../src/components';
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton, Pagination, PaginationItem, ColorInput, Accordion, Tab, TabItem, FileInput, DateInput, RatingInput, SliderInput, Form, FormLegend, FormLabel, Modal, ModalSection, ModalCenter, Alert, Notification, NotificationCenter, Avatar } from '../../src/components';
 
 import TableHOC from '../hypercomponents/Table';
 import ListHOC from '../hypercomponents/List';
@@ -50,6 +50,23 @@ storiesOf('Anchor', module)
   )
   .add('inside title', () => (
     <Title level={3}>Hello<Anchor href='#' /></Title>
+  )
+  )
+;
+
+
+
+storiesOf('Avatar', module)
+  .add('all variants', () => (
+    <>
+      <Avatar src='https://avatars0.githubusercontent.com/u/8281875?s=460&v=4' />
+      <Avatar src='https://avatars0.githubusercontent.com/u/8281875?s=460&v=4' shape='square'/>
+      <Avatar src='https://avatars0.githubusercontent.com/u/8281875?s=460&v=4' shape='circle' size='extra-small'/>
+      <Avatar src='https://avatars0.githubusercontent.com/u/8281875?s=460&v=4' shape='circle' size='small'/>
+      <Avatar src='https://avatars0.githubusercontent.com/u/8281875?s=460&v=4' shape='circle' size='medium'/>
+      <Avatar src='https://avatars0.githubusercontent.com/u/8281875?s=460&v=4' shape='circle' size='large'/>
+      <Avatar src='https://avatars0.githubusercontent.com/u/8281875?s=460&v=4' shape='circle' size='extra-large'/>
+    </>
   )
   )
 ;

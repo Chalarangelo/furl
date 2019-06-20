@@ -9,6 +9,7 @@ import Iframe from './Iframe';
 import Dropdown from './Dropdown';
 import Collapse from './Collapse';
 import Accordion from './Accordion';
+import Avatar from './Avatar';
 import { List, ListItem } from './List';
 import { Pagination, PaginationItem } from './Pagination';
 import { Tab, TabItem } from './Tab';
@@ -76,6 +77,7 @@ export {
   TextInput, EmailInput, PasswordInput, NumberInput, UrlInput, SelectInput, Option, ComboboxInput,
   CreditCardInput, PhoneInput, CurrencyInput, TimeInput, ColorInput, FileInput, DateInput, RatingInput, SliderInput,
   Search,
+  Avatar,
   Progress, Loader,
   Calendar,
   Form, FormLegend, FormLabel,

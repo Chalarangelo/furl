@@ -1,0 +1,37 @@
+.avatar {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  --margin-horizontal: var(--ls-25p);
+  --margin-vertical: var(--ls-25p);
+  &.rounded {
+    --border-radius: var(--ls-900p);
+  }
+  &.circle {
+    --border-radius: var(--ls-500p);
+  }
+  &.square {
+    --border-radius: var(--ls-0p);
+  }
+  &.extra-small {
+    width: var(--ls-100p);
+    height: var(--ls-100p);
+  }
+  &.small {
+    width: var(--ls-150p);
+    height: var(--ls-150p);
+  }
+  &.medium {
+    width: var(--ls-200p);
+    height: var(--ls-200p);
+  }
+  &.large {
+    width: var(--ls-250p);
+    height: var(--ls-250p);
+  }
+  &.extra-large {
+    width: var(--ls-300p);
+    height: var(--ls-300p);
+  }
+}
