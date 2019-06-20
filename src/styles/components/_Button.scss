@@ -179,7 +179,7 @@ button, .button, a.button, .pagination-item {
   // Color variants
   @include define-button-color-variant('danger', 'danger-red');
   @include define-button-color-variant('success', 'success-green');
-  @include define-button-color-variant('warning', 'warning-yellow');
+  // @include define-button-color-variant('warning', 'warning-yellow');
   @include define-button-color-variant('primary', 'focus-blue');
   @include define-button-color-variant('secondary', 'deep-purple');
   // Warning is inherently problematic, use own palette
@@ -203,6 +203,19 @@ button, .button, a.button, .pagination-item {
         --color: var(--warning-yellow-900);
         &[disabled]{
           --color: var(--warning-yellow-700);
+        }
+      }
+    }  
+    &.link {
+      background: transparent;
+      --color: var(--warning-yellow-700);
+      &[disabled]{
+        --color: var(--warning-yellow-600);
+      }
+      &:hover, &:focus {
+        --color: var(--warning-yellow-500);
+        &[disabled]{
+          --color: var(--warning-yellow-600);
         }
       }
     }
