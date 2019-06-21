@@ -89,10 +89,19 @@ const drawFilledCircle = (ctx, x, y, r) => {
   ctx.fill();
 }
 
+const drawBars = (ctx, ptsa, width, height) => {
+  for(let i=0;i<ptsa.length-1;i+=2) 
+    drawBar(ctx, ptsa[i], ptsa[i+1], 8, width, height);
+}
+
+const drawBar = (ctx, x, y, width, w, h) => {
+  ctx.fillRect(x, y, width, h-y);
+}
+
 const calculateCoords = (value, index, width, height, maxValue, minValue, numberOfValues) => 
   [index * width/numberOfValues, height - value/(maxValue - minValue) * height];
 
 const flatten = (arr, depth = 1) =>
   arr.reduce((a, v) => a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v), []);
 
-export { drawCurve, drawLines, drawPoints, drawFilledCircle, getCurvePoints, calculateCoords, flatten };
+export { drawCurve, drawLines, drawPoints, drawBars, drawFilledCircle, getCurvePoints, calculateCoords, flatten };

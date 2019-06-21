@@ -32,6 +32,14 @@ storiesOf('Graph', module)
     <Graph type='line' data={[1,2,3,1,2,1,2,3,1,4,1]} />
   )
   )
+  .add('scatter', () => (
+    <Graph type='scatter' data={[1,2,3,1,2,1,2,3,1,4,1]} />
+  )
+  )
+  .add('bar', () => (
+    <Graph type='bar' data={[1,2,3,1,2,1,2,3,1,4,1]} />
+  )
+  )
 ;
 
 storiesOf('Hyperlink', module)
