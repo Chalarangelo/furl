@@ -10,6 +10,8 @@ const Graph = ({
   max = 'auto',
   min = 0,
   displayPoints = true,
+  alt = 'A graph',
+  withCaption = false,
   data
 }) => {
   let canvasRef = React.createRef();
@@ -20,63 +22,59 @@ const Graph = ({
     ctx.lineCap = 'round';
 
     let coords = [], minValue = 0, maxValue = Infinity, multipleSeries = false;
-    if(Array.isArray(data[0])) {
-      multipleSeries = true;
-      minValue = (!isUndefined(min) && min !== 'auto') ? min : Math.min(...data.map(val => minBy(val, i => i.value)));
-      console.log(minValue);
-      maxValue = (!isUndefined(max) && max !== 'auto') ? max : Math.max(...data.map(val => maxBy(val, i => i.value)));
-      console.log(maxValue);
-      coords = data.map(series => flatten(series.map((val, i) => calculateCoords(val.value, i, width, height, maxValue, minValue, series.length))));
-      console.log(coords);
-    }
-    else {
-      minValue = (!isUndefined(min) && min !== 'auto') ? min : minBy(data, i => i.value);
-      maxValue = (!isUndefined(max) && max !== 'auto') ? max : maxBy(data, i => i.value);
-      coords = flatten(data.map((val, i) => calculateCoords(val.value, i, width, height, maxValue, minValue, data.length)));
-    }
+    // if(Array.isArray(data[0])) {
+    //   multipleSeries = true;
+    //   minValue = (!isUndefined(min) && min !== 'auto') ? min : Math.min(...data.map(val => minBy(val, i => i.value)));
+    //   console.log(minValue);
+    //   maxValue = (!isUndefined(max) && max !== 'auto') ? max : Math.max(...data.map(val => maxBy(val, i => i.value)));
+    //   console.log(maxValue);
+    //   coords = data.map(series => flatten(series.map((val, i) => calculateCoords(val.value, i, width, height, maxValue, minValue, series.length))));
+    //   console.log(coords);
+    // }
+    // else {
+      // minValue = (!isUndefined(min) && min !== 'auto') ? min : minBy(data, i => i.value);
+      // maxValue = (!isUndefined(max) && max !== 'auto') ? max : maxBy(data, i => i.value);
+      minValue = (!isUndefined(min) && min !== 'auto') ? min : Math.min(...data);
+      maxValue = (!isUndefined(max) && max !== 'auto') ? max : Math.max(...data);
+      coords = flatten(data.map((val, i) => calculateCoords(val, i, width, height, maxValue, minValue, data.length)));
+    // }
+    console.log(coords);
 
-    if(type !== 'pie') {
-      ctx.lineWidth = 0.5;
-      ctx.strokeStyle = graphInterfaceColor;
-      drawAxisX(ctx, width, height);
-      drawAxisY(ctx, width, height);
+    // if(type !== 'pie') {
+      // ctx.lineWidth = 0.5;
+      // ctx.strokeStyle = graphInterfaceColor;
+      // drawAxisX(ctx, width, height);
+      // drawAxisY(ctx, width, height);
       ctx.fillStyle = graphColors[0];
       ctx.strokeStyle = graphColors[0];
       ctx.lineWidth = 1;
-    }
+    // }
 
     if (type === 'curve') {
-      if (multipleSeries) {
-        coords.forEach((series, i) => {
-          ctx.fillStyle = graphColors[i % graphColors.length];
-          ctx.strokeStyle = graphColors[i % graphColors.length];
-          drawCurve(ctx, series, 0.5, false, 16, displayPoints);
-        });
-      }
-      else {
+      // if (multipleSeries) {
+      //   coords.forEach((series, i) => {
+      //     ctx.fillStyle = graphColors[i % graphColors.length];
+      //     ctx.strokeStyle = graphColors[i % graphColors.length];
+      //     drawCurve(ctx, series, 0.5, false, 16, displayPoints);
+      //   });
+      // }
+      // else {
         drawCurve(ctx, coords, 0.5, false, 16, displayPoints);
-      }
+      // }
     }
     if (type === 'line') {
-      if (multipleSeries) {
-        coords.forEach((series, i) => {
-          ctx.fillStyle = graphColors[i % graphColors.length];
-          ctx.strokeStyle = graphColors[i % graphColors.length];
-          drawLines(ctx, series, displayPoints);
-        });
-      }
-      else {
+      // if (multipleSeries) {
+      //   coords.forEach((series, i) => {
+      //     ctx.fillStyle = graphColors[i % graphColors.length];
+      //     ctx.strokeStyle = graphColors[i % graphColors.length];
+      //     drawLines(ctx, series, displayPoints);
+      //   });
+      // }
+      // else {
         drawLines(ctx, coords, displayPoints);
-      }
+      // }
     }
     if(type === 'bar') {
-      ctx.lineWidth = 0.5;
-      ctx.strokeStyle = graphInterfaceColor;
-      drawAxisX(ctx, width, height);
-      drawAxisY(ctx, width, height);
-      ctx.fillStyle = graphColors[0];
-      ctx.strokeStyle = graphColors[0];
-      ctx.lineWidth = 1;
       drawBars(ctx, coords, width, height);
     }
     if(type === 'pie') {
@@ -84,7 +82,15 @@ const Graph = ({
     }
   });
   
-  return (
+  return withCaption ? 
+  (
+    <figure>
+      <canvas ref={canvasRef} width={width} height={height}>
+      </canvas>
+      <figcaption>{alt}</figcaption>
+    </figure>
+  )
+  :(
     <canvas ref={canvasRef} width={width} height={height}>
     </canvas>
   );
