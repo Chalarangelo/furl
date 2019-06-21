@@ -1,5 +1,5 @@
 import React from 'react';
-import { hasKey, omitProps, combineStyles } from '../utilities/utils';
+import { hasKey, omitProps, combineStyles, combineClassNames } from '../utilities/utils';
 
 const MediaObjectHOC = (props) => {
   if (!hasKey(props, 'media'))
@@ -20,7 +20,7 @@ const MediaObjectHOC = (props) => {
   return (
     <div className={className} style={style} {...omitProps(props, ['data', 'media', 'mediaWidth', 'mediaHeight', 'className', 'style'])}>
       <div 
-        className='media-image'
+        className={combineClassNames(['media-image', hasKey(props, 'mediaClassNames') ? props.mediaClassNames : ''])}
         style={{ 
           width: width, 
           height: height,

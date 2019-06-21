@@ -3,8 +3,8 @@ import { combineClassNames, omitProps, combineStyles } from '../utilities/utils'
 
 const Avatar = ({ 
   src, 
-  shape = 'rounded',
-  size = 'small',
+  shape = 'circle',
+  size = 'medium',
   className, 
   ...rest }) => {
     let classNames = [className, 'avatar', shape, size];
