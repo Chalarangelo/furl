@@ -117,6 +117,7 @@ h6, .title6 {
 }
 
 h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
+  display: block;
   letter-spacing: -0.05em;
   font-family: var(--font-b), var(--font-a), var(--system-font-stack);
   --margin-horizontal: var(--ls-75p);

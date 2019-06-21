@@ -21,6 +21,7 @@ import InputHOC from '../hypercomponents/Input';
 import FormHOC from '../hypercomponents/Form';
 import CardHOC from '../hypercomponents/Card';
 import MediaObjectHOC from '../hypercomponents/MediaObject';
+import ItemHOC from '../hypercomponents/Item';
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
@@ -2897,6 +2898,25 @@ storiesOf('Hypercomponents: MediaObject', module)
           </>
         )
       }/>
+    </>
+  )
+  )
+  ;
+
+storiesOf('Hypercomponents: Item', module)
+  .add('all variants', () => (
+    <>
+      <ItemHOC 
+        author='Angelos Chalaris'
+        media='https://avatars0.githubusercontent.com/u/8281875?s=460&v=4'
+        data='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed eros nisl. Sed mollis ipsum lacus, a vestibulum augue consequat quis. Phasellus id fermentum erat. Nunc vitae gravida sem. Cras ac maximus tortor. Nulla sit amet tempus arcu. Vivamus finibus mattis porttitor. Quisque lacus lectus, lobortis non mauris vitae, euismod efficitur mi. In eget metus tincidunt, commodo ligula a, feugiat ligula. Pellentesque augue urna, elementum id neque interdum, sagittis maximus odio. Quisque ullamcorper sit amet elit quis sagittis. '
+      />
+      <ItemHOC 
+        author='Angelos Chalaris'
+        date={new Date()}
+        media='https://avatars0.githubusercontent.com/u/8281875?s=460&v=4'
+        data='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed eros nisl. Sed mollis ipsum lacus, a vestibulum augue consequat quis. Phasellus id fermentum erat. Nunc vitae gravida sem. Cras ac maximus tortor. Nulla sit amet tempus arcu. Vivamus finibus mattis porttitor. Quisque lacus lectus, lobortis non mauris vitae, euismod efficitur mi. In eget metus tincidunt, commodo ligula a, feugiat ligula. Pellentesque augue urna, elementum id neque interdum, sagittis maximus odio. Quisque ullamcorper sit amet elit quis sagittis. '
+      />
     </>
   )
   )

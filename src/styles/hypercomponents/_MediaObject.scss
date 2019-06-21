@@ -14,3 +14,10 @@
   --margin-horizontal: var(--ls-50p);
   --margin-vertical: calc(var(--ls-100p) + var(--ls-25p));
 }
+
+.media-content {
+  padding-top: var(--ls-100p);
+  & > :first-child {
+    margin-top: var(--ls-0p);
+  }
+}

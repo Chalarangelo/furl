@@ -30,7 +30,8 @@
   "homepage": "https://github.com/Chalarangelo/furl#readme",
   "dependencies": {
     "feather-icons": "^4.21.0",
-    "react-text-mask": "^5.4.3"
+    "react-text-mask": "^5.4.3",
+    "react-timy": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.4",
