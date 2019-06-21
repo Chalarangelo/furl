@@ -40,6 +40,10 @@ storiesOf('Graph', module)
     <Graph type='bar' data={[1,2,3,1,2,1,2,3,1,4,1]} />
   )
   )
+  .add('pie', () => (
+    <Graph type='pie' data={[1,2,3,1,2,1,2,3,1,4,1]} />
+  )
+  )
 ;
 
 storiesOf('Hyperlink', module)

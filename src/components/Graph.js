@@ -1,5 +1,5 @@
 import React from 'react';
-import { drawCurve, drawLines, drawPoints, drawBars, getCurvePoints, calculateCoords, flatten } from '../utilities/graphUtils';
+import { drawCurve, drawLines, drawPoints, drawBars, drawPie, getCurvePoints, calculateCoords, flatten } from '../utilities/graphUtils';
 
 const Graph = ({
   width = 400,
@@ -25,6 +25,8 @@ const Graph = ({
       drawLines(ctx, coords, true);
     if(type === 'bar')
       drawBars(ctx, coords, width, height);
+    if(type === 'pie')
+      drawPie(ctx, data, width, height);
   });
   
   return (

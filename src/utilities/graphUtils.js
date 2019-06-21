@@ -98,10 +98,31 @@ const drawBar = (ctx, x, y, width, w, h) => {
   ctx.fillRect(x, y, width, h-y);
 }
 
+const drawPie = (ctx, data, width, height) => {
+  let total = data.reduce((acc,v) => acc + v, 0);
+  let x = width / 2;
+  let y = height / 2;
+  let r = Math.min(width, height)/2;
+  ctx.fillRect(x-2, y-2, 4, 4);
+  console.log(x,y,r);
+  let startAngle = 0 * Math.PI;
+  for(let i=0;i<data.length;i++){
+    let endAngle = startAngle + data[i]/total * 2 * Math.PI;
+    ctx.beginPath();
+    ctx.moveTo(x,y);
+    ctx.arc(x, y, r, startAngle, endAngle)
+    ctx.moveTo(x,y);
+    ctx.closePath();
+    ctx.fill();
+    console.log(startAngle, endAngle);
+    startAngle = endAngle;
+  }
+}
+
 const calculateCoords = (value, index, width, height, maxValue, minValue, numberOfValues) => 
   [index * width/numberOfValues, height - value/(maxValue - minValue) * height];
 
 const flatten = (arr, depth = 1) =>
   arr.reduce((a, v) => a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v), []);
 
-export { drawCurve, drawLines, drawPoints, drawBars, drawFilledCircle, getCurvePoints, calculateCoords, flatten };
+export { drawCurve, drawLines, drawPoints, drawBars, drawPie, drawFilledCircle, getCurvePoints, calculateCoords, flatten };
