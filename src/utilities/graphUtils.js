@@ -93,8 +93,10 @@ const drawFilledCircle = (ctx, x, y, r) => {
 }
 
 const drawBars = (ctx, ptsa, width, height) => {
+  let barWidth = Math.floor(width/ptsa.length*2 - 4);
+  console.log(barWidth);
   for(let i=0;i<ptsa.length-1;i+=2) 
-    drawBar(ctx, ptsa[i], ptsa[i+1], 8, width, height);
+    drawBar(ctx, ptsa[i], ptsa[i + 1], barWidth, width, height);
 }
 
 const drawBar = (ctx, x, y, width, w, h) => {
@@ -137,8 +139,10 @@ const drawAxisY = (ctx, width, height) => {
   ctx.stroke(); 
 }
 
-const calculateCoords = (value, index, width, height, maxValue, minValue, numberOfValues) => 
-  [index * (width - 24)/numberOfValues + 12, (height - 24) - value/(maxValue - minValue) * (height - 24) + 12];
+const calculateCoords = (value, index, width, height, maxValue, minValue, numberOfValues) => {
+  console.log(value, index, width, height, maxValue, minValue, numberOfValues);
+  return [index * (width - 24)/numberOfValues + 12, (height - 24) - value/(maxValue - minValue) * (height - 24) + 12];
+}
 
 const flatten = (arr, depth = 1) =>
   arr.reduce((a, v) => a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v), []);

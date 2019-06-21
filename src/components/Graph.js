@@ -9,6 +9,7 @@ const Graph = ({
   type = 'curve',
   max = 'auto',
   min = 0,
+  displayPoints = true,
   data
 }) => {
   let canvasRef = React.createRef();
@@ -18,12 +19,23 @@ const Graph = ({
     let ctx = canvas.getContext("2d");
     ctx.lineCap = 'round';
 
-    let minValue = (!isUndefined(min) && min !== 'auto') ? min : minBy(data, i => i.value);
-    let maxValue = (!isUndefined(max) && max !== 'auto') ? max : maxBy(data, i => i.value);
-    let coords = flatten(data.map((val, i) => calculateCoords(val.value, i, width, height, maxValue, minValue, data.length)));
+    let coords = [], minValue = 0, maxValue = Infinity, multipleSeries = false;
+    if(Array.isArray(data[0])) {
+      multipleSeries = true;
+      minValue = (!isUndefined(min) && min !== 'auto') ? min : Math.min(...data.map(val => minBy(val, i => i.value)));
+      console.log(minValue);
+      maxValue = (!isUndefined(max) && max !== 'auto') ? max : Math.max(...data.map(val => maxBy(val, i => i.value)));
+      console.log(maxValue);
+      coords = data.map(series => flatten(series.map((val, i) => calculateCoords(val.value, i, width, height, maxValue, minValue, series.length))));
+      console.log(coords);
+    }
+    else {
+      minValue = (!isUndefined(min) && min !== 'auto') ? min : minBy(data, i => i.value);
+      maxValue = (!isUndefined(max) && max !== 'auto') ? max : maxBy(data, i => i.value);
+      coords = flatten(data.map((val, i) => calculateCoords(val.value, i, width, height, maxValue, minValue, data.length)));
+    }
 
-    console.log(coords);
-    if(type === 'scatter') {
+    if(type !== 'pie') {
       ctx.lineWidth = 0.5;
       ctx.strokeStyle = graphInterfaceColor;
       drawAxisX(ctx, width, height);
@@ -31,27 +43,31 @@ const Graph = ({
       ctx.fillStyle = graphColors[0];
       ctx.strokeStyle = graphColors[0];
       ctx.lineWidth = 1;
-      drawPoints(ctx, coords);
     }
+
     if (type === 'curve') {
-      ctx.lineWidth = 0.5;
-      ctx.strokeStyle = graphInterfaceColor;
-      drawAxisX(ctx, width, height);
-      drawAxisY(ctx, width, height);
-      ctx.fillStyle = graphColors[0];
-      ctx.strokeStyle = graphColors[0];
-      ctx.lineWidth = 1;
-      drawCurve(ctx, coords, 0.5, false, 16, true);
+      if (multipleSeries) {
+        coords.forEach((series, i) => {
+          ctx.fillStyle = graphColors[i % graphColors.length];
+          ctx.strokeStyle = graphColors[i % graphColors.length];
+          drawCurve(ctx, series, 0.5, false, 16, displayPoints);
+        });
+      }
+      else {
+        drawCurve(ctx, coords, 0.5, false, 16, displayPoints);
+      }
     }
-    if(type === 'line') {
-      ctx.lineWidth = 0.5;
-      ctx.strokeStyle = graphInterfaceColor;
-      drawAxisX(ctx, width, height);
-      drawAxisY(ctx, width, height);
-      ctx.fillStyle = graphColors[0];
-      ctx.strokeStyle = graphColors[0];
-      ctx.lineWidth = 1;
-      drawLines(ctx, coords, true);
+    if (type === 'line') {
+      if (multipleSeries) {
+        coords.forEach((series, i) => {
+          ctx.fillStyle = graphColors[i % graphColors.length];
+          ctx.strokeStyle = graphColors[i % graphColors.length];
+          drawLines(ctx, series, displayPoints);
+        });
+      }
+      else {
+        drawLines(ctx, coords, displayPoints);
+      }
     }
     if(type === 'bar') {
       ctx.lineWidth = 0.5;
