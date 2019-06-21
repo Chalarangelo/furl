@@ -2124,7 +2124,7 @@ storiesOf('Hypercomponents: Tabs', module)
   )
 )
   .add('mapped button group without titles', () => (
-    <TabsHOC openIndex={2}
+    <TabsHOC openIndex={2} controlStyle='button-group'
       data={[
         {
           content: (<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel nisi ultricies, convallis enim iaculis, commodo nisi. Suspendisse commodo arcu nibh, ut pretium felis imperdiet ac. Etiam nec volutpat arcu. Aliquam et congue magna, aliquam luctus quam. Ut vulputate lorem risus, non feugiat magna maximus non. Sed tellus nisl, fermentum id finibus gravida, molestie vel lectus. Cras quam mi, sodales sed scelerisque eget, dignissim et nisi. Suspendisse sodales faucibus tellus ut iaculis.</p>)

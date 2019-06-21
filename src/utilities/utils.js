@@ -98,4 +98,4 @@ const combineStyles = (props, ...styleObjects) =>
 
 const hasKey = (obj, key) => Object.keys(obj).includes(key);
 
-export { normalizeChildren, generateUniqueId, combineClassNames, omitProps, combineStyles, hasKey };
+export { isUndefined, normalizeChildren, generateUniqueId, combineClassNames, omitProps, combineStyles, hasKey };
