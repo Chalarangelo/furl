@@ -35,6 +35,7 @@ import Icon from './Icon';
 import Search from './Search';
 import Progress from './Progress';
 import Loader from './Loader';
+import Graph from './Graph';
 import Calendar from './Calendar';
 import { Modal, ModalSection, ModalCenter } from './Modal';
 import { Notification, NotificationCenter } from './Notification';
@@ -82,5 +83,6 @@ export {
   Calendar,
   Form, FormLegend, FormLabel,
   Modal, ModalSection, ModalCenter,
-  Notification, NotificationCenter
+  Notification, NotificationCenter,
+  Graph
 };

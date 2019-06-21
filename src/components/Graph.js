@@ -1,9 +1,10 @@
 import React from 'react';
+import { drawCurve, drawLines, getCurvePoints, calculateCoords, flatten } from '../utilities/graphUtils';
 
 const Graph = ({
   width = 400,
   height = 300,
-  type = 'line',
+  type = 'curve',
   data
 }) => {
   let canvasRef = React.createRef();
@@ -11,20 +12,15 @@ const Graph = ({
   React.useEffect(() => {
     let canvas = canvasRef.current;
     let ctx = canvas.getContext("2d");
+    ctx.fillStyle = '#2C8CF1';
+    ctx.strokeStyle = '#07327E';
     let minValue = 0;
     let maxValue = Math.max(...data);
-    let lastCoords = [0,0];
-    data.forEach((val, i) => {
-      let y = height - val/(maxValue - minValue) * height;
-      let x = i * width/data.length;
-      ctx.fillRect(x,y, 2, 2);
-      ctx.fillText(`${val} (${i})`, x,y);
-      ctx.beginPath();
-      ctx.moveTo(...lastCoords);
-      ctx.lineTo(x,y);
-      ctx.stroke();
-      lastCoords=[x,y];
-    })
+    let coords = flatten(data.map((val, i) => calculateCoords(val, i, width, height, maxValue, minValue, data.length)));
+    if(type === 'curve')
+      drawCurve(ctx, coords, 0.5, false, 16, true);
+    if(type === 'line')
+      drawLines(ctx, coords, true);
   });
   
   return (
@@ -32,7 +28,5 @@ const Graph = ({
     </canvas>
   );
 }
-
-ReactDOM.render(<Graph data={[1,2,3,1,2,1,2,3,1,4,1]}/>, document.getElementById('app'));
 
 export default Graph;

@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 
 import '../styles/index.scss';
 
-import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton, Pagination, PaginationItem, ColorInput, Accordion, Tab, TabItem, FileInput, DateInput, RatingInput, SliderInput, Form, FormLegend, FormLabel, Modal, ModalSection, ModalCenter, Alert, Notification, NotificationCenter, Avatar } from '../../src/components';
+import { Hyperlink, Anchor, Button, ButtonGroup, List, ListItem, Breadcrumb, BreadcrumbItem, Step, StepItem, Layout, Grid, Row, Column as Col, Content, Sidebar, Header, Card, CardSection, Menu, MenuItem, Table, TableRow, TableCell, TableHead, TableBody, TableCaption, Dropdown, Collapse, Title, Text, Paragraph, Code, Preformatted, Kbd, Quote, Tooltip, Popover, Badge, Checkbox, Radio, Icon, TextInput, NumberInput, Image, EmailInput, PasswordInput, UrlInput, SelectInput, Option, ComboboxInput, CreditCardInput, PhoneInput, CurrencyInput, TimeInput, Search, Progress, Loader, Switch, Divider, Calendar, ContextButton, Pagination, PaginationItem, ColorInput, Accordion, Tab, TabItem, FileInput, DateInput, RatingInput, SliderInput, Form, FormLegend, FormLabel, Modal, ModalSection, ModalCenter, Alert, Notification, NotificationCenter, Avatar, Graph } from '../../src/components';
 
 import TableHOC from '../hypercomponents/Table';
 import ListHOC from '../hypercomponents/List';
@@ -22,6 +22,17 @@ import FormHOC from '../hypercomponents/Form';
 import CardHOC from '../hypercomponents/Card';
 import MediaObjectHOC from '../hypercomponents/MediaObject';
 import ItemHOC from '../hypercomponents/Item';
+
+storiesOf('Graph', module)
+  .add('curvy', () => (
+    <Graph data={[1,2,3,1,2,1,2,3,1,4,1]} />
+  )
+  )
+  .add('line', () => (
+    <Graph type='line' data={[1,2,3,1,2,1,2,3,1,4,1]} />
+  )
+  )
+;
 
 storiesOf('Hyperlink', module)
   .add('internal', () => (
