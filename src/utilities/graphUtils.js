@@ -4,6 +4,9 @@ const _drawLines = (ctx, pts) => {
     ctx.lineTo(pts[i], pts[i+1]);
 };
 
+const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
+const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
+
 const drawLines = (ctx, ptsa, showPoints = false) => {
   ctx.beginPath();
   _drawLines(ctx, ptsa);
@@ -95,19 +98,19 @@ const drawBars = (ctx, ptsa, width, height) => {
 }
 
 const drawBar = (ctx, x, y, width, w, h) => {
-  ctx.fillRect(x, y, width, h-y);
+  ctx.fillRect(x, y, width, h-y-12);
 }
 
 const drawPie = (ctx, data, width, height) => {
-  let total = data.reduce((acc,v) => acc + v, 0);
-  let x = width / 2;
-  let y = height / 2;
-  let r = Math.min(width, height)/2;
+  let total = data.reduce((acc,v) => acc + v.value, 0);
+  let x = (width - 24) / 2;
+  let y = (height - 24) / 2;
+  let r = Math.min((width - 24), (height - 24))/2;
   ctx.fillRect(x-2, y-2, 4, 4);
   console.log(x,y,r);
   let startAngle = 0 * Math.PI;
   for(let i=0;i<data.length;i++){
-    let endAngle = startAngle + data[i]/total * 2 * Math.PI;
+    let endAngle = startAngle + data[i].value/total * 2 * Math.PI;
     ctx.beginPath();
     ctx.moveTo(x,y);
     ctx.arc(x, y, r, startAngle, endAngle)
@@ -119,10 +122,24 @@ const drawPie = (ctx, data, width, height) => {
   }
 }
 
+const drawAxisX = (ctx, width, height) => {
+  ctx.beginPath();
+  ctx.moveTo(12, height - 12);
+  ctx.lineTo(width - 12, height - 12);
+  ctx.stroke(); 
+}
+
+const drawAxisY = (ctx, width, height) => {
+  ctx.beginPath();
+  ctx.moveTo(12, 12);
+  ctx.lineTo(12, height - 12);
+  ctx.stroke(); 
+}
+
 const calculateCoords = (value, index, width, height, maxValue, minValue, numberOfValues) => 
-  [index * width/numberOfValues, height - value/(maxValue - minValue) * height];
+  [index * (width - 24)/numberOfValues + 12, (height - 24) - value/(maxValue - minValue) * (height - 24) + 12];
 
 const flatten = (arr, depth = 1) =>
   arr.reduce((a, v) => a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v), []);
 
-export { drawCurve, drawLines, drawPoints, drawBars, drawPie, drawFilledCircle, getCurvePoints, calculateCoords, flatten };
+export { drawCurve, drawLines, drawPoints, drawBars, drawPie, drawFilledCircle, getCurvePoints, calculateCoords, flatten, maxBy, minBy, drawAxisX, drawAxisY };

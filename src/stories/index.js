@@ -25,23 +25,78 @@ import ItemHOC from '../hypercomponents/Item';
 
 storiesOf('Graph', module)
   .add('curvy', () => (
-    <Graph data={[1,2,3,1,2,1,2,3,1,4,1]} />
+    <Graph data={[
+      { label: '0', value: 1 },
+      { label: '1', value: 2 },
+      { label: '2', value: 3 },
+      { label: '3', value: 1 },
+      { label: '4', value: 2 },
+      { label: '5', value: 1 },
+      { label: '6', value: 2 },
+      { label: '7', value: 4 },
+      { label: '8', value: 1 },
+      { label: '9', value: 2 }
+    ]} />
   )
   )
   .add('line', () => (
-    <Graph type='line' data={[1,2,3,1,2,1,2,3,1,4,1]} />
+    <Graph type='line' data={[
+      { label: '0', value: 1 },
+      { label: '1', value: 2 },
+      { label: '2', value: 3 },
+      { label: '3', value: 1 },
+      { label: '4', value: 2 },
+      { label: '5', value: 1 },
+      { label: '6', value: 2 },
+      { label: '7', value: 4 },
+      { label: '8', value: 1 },
+      { label: '9', value: 2 }
+    ]} />
   )
   )
   .add('scatter', () => (
-    <Graph type='scatter' data={[1,2,3,1,2,1,2,3,1,4,1]} />
+    <Graph type='scatter' data={[
+      { label: '0', value: 1 },
+      { label: '1', value: 2 },
+      { label: '2', value: 3 },
+      { label: '3', value: 1 },
+      { label: '4', value: 2 },
+      { label: '5', value: 1 },
+      { label: '6', value: 2 },
+      { label: '7', value: 4 },
+      { label: '8', value: 1 },
+      { label: '9', value: 2 }
+    ]} />
   )
   )
   .add('bar', () => (
-    <Graph type='bar' data={[1,2,3,1,2,1,2,3,1,4,1]} />
+    <Graph type='bar' data={[
+      { label: '0', value: 1 },
+      { label: '1', value: 2 },
+      { label: '2', value: 3 },
+      { label: '3', value: 1 },
+      { label: '4', value: 2 },
+      { label: '5', value: 1 },
+      { label: '6', value: 2 },
+      { label: '7', value: 4 },
+      { label: '8', value: 1 },
+      { label: '9', value: 2 }
+    ]} />
   )
   )
   .add('pie', () => (
-    <Graph type='pie' data={[1,2,3,1,2,1,2,3,1,4,1]} />
+    <Graph type='pie' data={[
+      { label: '0', value: 1 },
+      { label: '1', value: 2 },
+      { label: '2', value: 3 },
+      { label: '3', value: 1 },
+      { label: '4', value: 2 },
+      { label: '5', value: 1 },
+      { label: '6', value: 2 },
+      { label: '7', value: 4 },
+      { label: '8', value: 1 },
+      { label: '9', value: 2 }
+    ]} />
   )
   )
 ;
