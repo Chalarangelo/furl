@@ -101,20 +101,21 @@ const drawBar = (ctx, x, y, width, w, h) => {
   ctx.fillRect(x, y, width, h-y-12);
 }
 
-const drawPie = (ctx, data, width, height) => {
+const drawPie = (ctx, data, width, height, colors) => {
   let total = data.reduce((acc,v) => acc + v.value, 0);
   let x = (width - 24) / 2;
   let y = (height - 24) / 2;
   let r = Math.min((width - 24), (height - 24))/2;
-  ctx.fillRect(x-2, y-2, 4, 4);
-  console.log(x,y,r);
   let startAngle = 0 * Math.PI;
   for(let i=0;i<data.length;i++){
+    let color = colors[i % colors.length]
+    ctx.fillStyle = color;
+    console.log(color);
     let endAngle = startAngle + data[i].value/total * 2 * Math.PI;
     ctx.beginPath();
-    ctx.moveTo(x,y);
-    ctx.arc(x, y, r, startAngle, endAngle)
-    ctx.moveTo(x,y);
+    ctx.moveTo(x + 12,y + 12);
+    ctx.arc(x + 12, y + 12, r, startAngle, endAngle)
+    ctx.moveTo(x + 12,y + 12);
     ctx.closePath();
     ctx.fill();
     console.log(startAngle, endAngle);
