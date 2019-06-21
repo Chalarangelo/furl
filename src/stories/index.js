@@ -22,6 +22,7 @@ import FormHOC from '../hypercomponents/Form';
 import CardHOC from '../hypercomponents/Card';
 import MediaObjectHOC from '../hypercomponents/MediaObject';
 import ItemHOC from '../hypercomponents/Item';
+import PaginationHOC from '../hypercomponents/Pagination';
 
 storiesOf('Graph', module)
   .add('curvy', () => (
@@ -2939,6 +2940,72 @@ storiesOf('Hypercomponents: Item', module)
         date={new Date()}
         media='https://avatars0.githubusercontent.com/u/8281875?s=460&v=4'
         data='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed eros nisl. Sed mollis ipsum lacus, a vestibulum augue consequat quis. Phasellus id fermentum erat. Nunc vitae gravida sem. Cras ac maximus tortor. Nulla sit amet tempus arcu. Vivamus finibus mattis porttitor. Quisque lacus lectus, lobortis non mauris vitae, euismod efficitur mi. In eget metus tincidunt, commodo ligula a, feugiat ligula. Pellentesque augue urna, elementum id neque interdum, sagittis maximus odio. Quisque ullamcorper sit amet elit quis sagittis. '
+      />
+    </>
+  )
+  )
+  ;
+
+storiesOf('Hypercomponents: Pagination', module)
+  .add('normal', () => (
+    <>
+      <PaginationHOC>
+        <Button>First</Button>
+        <Button>Previous</Button>
+        <PaginationItem>1 of 6</PaginationItem>
+        <Button>Next</Button>
+        <Button>Last</Button>
+      </PaginationHOC>
+      <PaginationHOC shape='rounded'>
+        <Button>{'<<'}</Button>
+        <Button>{'<'}</Button>
+        <PaginationItem>1 of 15</PaginationItem>
+        <Button>{'>'}</Button>
+        <Button>{'>>'}</Button>
+      </PaginationHOC>
+      <PaginationHOC>
+        <Button><Icon name='chevrons-left' width={16} height={16} /></Button>
+        <Button><Icon name='chevron-left' width={16} height={16} /></Button>
+        <PaginationItem>1 / 8</PaginationItem>
+        <Button><Icon name='chevron-right' width={16} height={16} /></Button>
+        <Button><Icon name='chevrons-right' width={16} height={16} /></Button>
+      </PaginationHOC>
+      <PaginationHOC size='large'>
+        <Button color='primary'><Icon name='chevrons-left' width={16} height={16} /></Button>
+        <Button color='secondary'><Icon name='chevron-left' width={16} height={16} /></Button>
+        <PaginationItem>1</PaginationItem>
+        <PaginationItem>2</PaginationItem>
+        <PaginationItem>...</PaginationItem>
+        <PaginationItem>96</PaginationItem>
+        <PaginationItem>97</PaginationItem>
+        <Button color='primary'><Icon name='chevron-right' width={16} height={16} /></Button>
+        <Button color='secondary'><Icon name='chevrons-right' width={16} height={16} /></Button>
+      </PaginationHOC>
+    </>
+  )
+)
+  .add('mapped', () => (
+    <>
+      <PaginationHOC
+        currentPage={1} pageCount={6}
+        firstText='First'
+        previousText='Previous'
+        nextText='Next'
+        lastText='Last'
+      />
+      <PaginationHOC shape='rounded'
+        currentPage={1} pageCount={15}
+        firstText={'<<'}
+        previousText={'<'}
+        nextText={'>'}
+        lastText={'>>'}
+      />
+      <PaginationHOC
+        currentPage={1} pageCount={8}
+        firstText={(<Icon name='chevrons-left' width={16} height={16} />)}
+        previousText={(<Icon name='chevron-left' width={16} height={16} />)}
+        nextText={(<Icon name='chevron-right' width={16} height={16} />)}
+        lastText={(<Icon name='chevrons-right' width={16} height={16} />)}
       />
     </>
   )
