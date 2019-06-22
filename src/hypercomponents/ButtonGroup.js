@@ -12,7 +12,6 @@ const ButtonGroupHOC = ({
       <ButtonGroup {...rest}>
         {
           data.map((val, i) => {
-            console.log(typeof val);
             let content = hasKey(val, 'content') ? val.content : val;
             return (
               <Button key={`i_${i}_${content}`} {...omitProps(val, ['content'])}>

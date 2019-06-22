@@ -1,6 +1,6 @@
 import React from 'react';
 import { drawCurve, drawLines, drawPoints, drawBars, drawPie, getCurvePoints, calculateCoords, flatten, maxBy, minBy, drawAxisX, drawAxisY } from '../utilities/graphUtils';
-import { isUndefined } from 'util';
+import { isUndefined } from '../utilities/utils';
 import { graphInterfaceColor, graphColors } from '../utilities/graphPalettes';
 
 const Graph = ({
@@ -38,7 +38,6 @@ const Graph = ({
       maxValue = (!isUndefined(max) && max !== 'auto') ? max : Math.max(...data);
       coords = flatten(data.map((val, i) => calculateCoords(val, i, width, height, maxValue, minValue, data.length)));
     // }
-    console.log(coords);
 
     // if(type !== 'pie') {
       // ctx.lineWidth = 0.5;

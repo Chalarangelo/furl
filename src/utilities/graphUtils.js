@@ -94,7 +94,6 @@ const drawFilledCircle = (ctx, x, y, r) => {
 
 const drawBars = (ctx, ptsa, width, height) => {
   let barWidth = Math.floor(width/ptsa.length*2 - 4);
-  console.log(barWidth);
   for(let i=0;i<ptsa.length-1;i+=2) 
     drawBar(ctx, ptsa[i], ptsa[i + 1], barWidth, width, height);
 }
@@ -112,7 +111,6 @@ const drawPie = (ctx, data, width, height, colors) => {
   for(let i=0;i<data.length;i++){
     let color = colors[i % colors.length]
     ctx.fillStyle = color;
-    console.log(color);
     let endAngle = startAngle + data[i]/total * 2 * Math.PI;
     ctx.beginPath();
     ctx.moveTo(x + 12,y + 12);
@@ -120,7 +118,6 @@ const drawPie = (ctx, data, width, height, colors) => {
     ctx.moveTo(x + 12,y + 12);
     ctx.closePath();
     ctx.fill();
-    console.log(startAngle, endAngle);
     startAngle = endAngle;
   }
 }
@@ -139,10 +136,8 @@ const drawAxisY = (ctx, width, height) => {
   ctx.stroke(); 
 }
 
-const calculateCoords = (value, index, width, height, maxValue, minValue, numberOfValues) => {
-  console.log(value, index, width, height, maxValue, minValue, numberOfValues);
-  return [index * (width - 24)/numberOfValues + 12, (height - 24) - value/(maxValue - minValue) * (height - 24) + 12];
-}
+const calculateCoords = (value, index, width, height, maxValue, minValue, numberOfValues) => 
+  [index * (width - 24)/numberOfValues + 12, (height - 24) - value/(maxValue - minValue) * (height - 24) + 12];
 
 const flatten = (arr, depth = 1) =>
   arr.reduce((a, v) => a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v), []);

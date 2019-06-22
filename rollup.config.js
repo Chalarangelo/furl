@@ -10,7 +10,7 @@ const minimizeCss = NODE_ENV === "production";
 const minimizeJs = NODE_ENV === "production";
 
 export default {
-  input: "./src/components/index.js",
+  input: "./src/lib/index.js",
   output: {
     file: outputFile,
     format: "esm"
