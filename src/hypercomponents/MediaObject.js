@@ -1,37 +1,41 @@
 import React from 'react';
-import { hasKey, omitProps, combineStyles, combineClassNames } from '../utilities/utils';
+import { isUndefined, combineStyles, combineClassNames, parseLayout } from '../utilities/utils';
 
-const MediaObjectHOC = (props) => {
-  if (!hasKey(props, 'media'))
-    return (
-      <div {...props} />
-    );
+const MediaObjectHOC = ({
+  media,
+  data,
+  children,
+  mediaWidth = 'ls-200p',
+  mediaHeight = 'ls-200p',
+  className,
+  style,
+  mediaClassNames,
+  ...rest
+}) => {
+  if (isUndefined(media))
+    return (<div {...rest} />);
 
-  let data =  hasKey(props, 'data') ? props.data : props.children;
-  let width = hasKey(props, 'mediaWidth') ? props.mediaWidth : 'var(--ls-200p)';
-  let height = hasKey(props, 'mediaHeight') ? props.mediaHeight : 'var(--ls-200p)';
-
-  let className = hasKey(props, 'className') ? props.className : '';
-  className = `${className} media-object`.trim();
-
-  let style = hasKey(props, 'style') ? props.style : '';
-  style = combineStyles(style, { '--media-size': width });
+  let _data = !isUndefined(data) ? data : children;
+  let _width = parseLayout(mediaWidth);
+  let _height = parseLayout(mediaHeight);
+  let _className = combineClassNames([className, 'media-object']);
+  let _style = combineStyles(rest, style, { '--media-size': _width });
 
   return (
-    <div className={className} style={style} {...omitProps(props, ['data', 'media', 'mediaWidth', 'mediaHeight', 'className', 'style'])}>
-      <div 
-        className={combineClassNames(['media-image', hasKey(props, 'mediaClassNames') ? props.mediaClassNames : ''])}
-        style={{ 
-          width: width, 
-          height: height,
-          backgroundSize: 'cover', 
-          backgroundRepeat: 'no-repeat', 
-          backgroundPosition: 'center', 
-          backgroundImage: `url(${encodeURI(props.media)})` 
-        }} 
+    <div className={_className} style={_style} {...rest}>
+      <div
+        className={combineClassNames(['media-image', mediaClassNames])}
+        style={{
+          width: _width,
+          height: _height,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundImage: `url(${encodeURI(media)})`
+        }}
       />
       <div className='media-content'>
-        {data}
+        {_data}
       </div>
     </div>
   );
