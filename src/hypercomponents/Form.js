@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FormLegend, Title, Divider, Paragraph } from '../components';
 import Input from './Input';
-import { hasKey, omitProps, generateUniqueId } from '../utilities/utils';
+import { hasKey, omitProps, generateUniqueId, isUndefined, combineClassNames } from '../utilities/utils';
 
 const mapDataToInput = (val, i) => {
   let id = hasKey(val, 'id') ? val.id : hasKey(val, 'name') ? val.name : generateUniqueId('input');
@@ -22,41 +22,47 @@ const mapDataToInput = (val, i) => {
   );
 }
 
-const FormHOC = (props) => {
-
-  let className = hasKey(props, 'className') ? props.className : '';
-  className = `${className} ${(hasKey(props, 'twoColumn') && props.twoColumn) ? 'two-column' : ''}`.trim();
-  if(!hasKey(props, 'data')) 
+const FormHOC = ({
+  data,
+  className,
+  twoColumn = false,
+  legend,
+  label,
+  title,
+  ...rest
+}) => {
+  let classNames = [className, twoColumn ? 'two-column' : ''];
+  if(isUndefined(data)) {
     return (
-      <Form {...omitProps(props, ['className', 'twoColumn'])} className={className} />
+      <Form className={combineClassNames(classNames)} {...rest}/>
     );
-  
-  let data = props.data;
-  let title = hasKey(props, 'legend') ? props.legend : hasKey(props, 'label') ? props.label : hasKey(props, 'title') ? props.title : false;
+  }
+
+  let _title = !isUndefined(legend) ? legend : !isUndefined(label) ? label : !isUndefined(title) ? title : false;
 
   return (
-    <Form {...omitProps(props, ['data', 'legend', 'className', 'twoColumn'])} className={className}>
+    <Form {...rest} className={combineClassNames(classNames)}>
       {
-        title !== false ? <FormLegend>{title}</FormLegend> : null
+        _title ? <FormLegend>{_title}</FormLegend> : null
       }
       {data.map((val, i) => {
-        if(hasKey(val, 'data'))  {
-          let _title = hasKey(val, 'legend') ? val.legend : hasKey(val, 'label') ? val.label : hasKey(val, 'title') ? val.title : false;
+        if (hasKey(val, 'data')) {
+          let __title = hasKey(val, 'legend') ? val.legend : hasKey(val, 'label') ? val.label : hasKey(val, 'title') ? val.title : false;
           let _description = hasKey(val, 'description') ? val.description : false;
           return (
             <>
-            {
-              _title !== false ? <Title level={5} semantic={false}>{_title}</Title> : null
-            }
-            {
-              _description !== false ? <Paragraph>{_description}</Paragraph> : null
-            }
-            {
-              val.data.map(mapDataToInput)
-            }
-            {
-              i !== data.length - 1 ? <Divider /> : ''
-            }
+              {
+                __title ? <Title level={5} semantic={false}>{__title}</Title> : null
+              }
+              {
+                _description ? <Paragraph>{_description}</Paragraph> : null
+              }
+              {
+                val.data.map(mapDataToInput)
+              }
+              {
+                i !== data.length - 1 ? <Divider /> : ''
+              }
             </>
           );
         }
