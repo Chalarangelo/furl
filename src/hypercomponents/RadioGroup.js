@@ -1,31 +1,30 @@
 import React from 'react';
 import { Radio } from '../components';
-import { hasKey, omitProps, generateUniqueId, normalizeChildren } from '../utilities/utils';
+import { isUndefined, hasKey, omitProps, generateUniqueId, normalizeChildren } from '../utilities/utils';
 
-const RadioGroupHOC = (props) => {
-  let name = hasKey(props, 'name') ? props.name : 
-    hasKey(props, 'title') ? props.title : 
-    hasKey(props, 'id') ? props.id :
+const RadioGroupHOC = ({
+  data,
+  name,
+  children,
+  color,
+  ...rest
+}) => {
+  let _name = !isUndefined(name) ? name : 
+    hasKey(rest, 'title') ? rest.title :
+    hasKey(rest, 'id') ? rest.id :
     generateUniqueId('radio-group');
-  if (!hasKey(props, 'data')){
-    const radios = normalizeChildren(props.children).filter(item => Radio.name === item.type.name)
+  if(isUndefined(data)) {
+    const radios = normalizeChildren(children).filter(item => Radio.name === item.type.name)
       .map(r => {
         let _r = Object.assign({}, r);
         _r.props = Object.assign({
           name: name,
-          color: props.color
+          color: color
         }, r.props);
         return _r;
       });
-    return (
-      <>
-        {radios}
-      </>
-    )
+    return ( <> {radios} </> );
   }
-
-  let data = props.data;
-
   return (
     <>
       {data.map((val, i) => {
@@ -39,6 +38,6 @@ const RadioGroupHOC = (props) => {
       })}
     </>
   );
-};
+}
 
 export default RadioGroupHOC;
