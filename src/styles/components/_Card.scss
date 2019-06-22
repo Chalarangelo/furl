@@ -26,3 +26,17 @@
 .card-media-section + .card-section {
   border-top: 0;
 }
+
+:not(div).card-section {
+  margin: 0;
+  padding: calc( var(--padding-vertical) + var(--margin-vertical) ) calc( var(--padding-horizontal) + var(--margin-horizontal) );
+  width: 100%;
+  &:not(:last-child) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &:not(:first-child) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

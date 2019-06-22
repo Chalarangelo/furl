@@ -19,7 +19,6 @@ import SelectInputHOC from '../hypercomponents/SelectInput';
 import ComboboxInputHOC from '../hypercomponents/ComboboxInput';
 import InputHOC from '../hypercomponents/Input';
 import FormHOC from '../hypercomponents/Form';
-import CardHOC from '../hypercomponents/Card';
 import MediaObjectHOC from '../hypercomponents/MediaObject';
 import ItemHOC from '../hypercomponents/Item';
 import PaginationHOC from '../hypercomponents/Pagination';
@@ -1580,7 +1579,19 @@ storiesOf('Card', module)
       </Card>
     </Col></Row></Grid>
   )
-  );
+  )
+  .add('with generated sections', () => (
+    <Card width={320}>
+      <CardSection>
+        <h5>Hello world<small>Lorem ipsum</small></h5>
+      </CardSection>
+      <Image src='https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80' height={200} />
+      This is some demo content that I want to test the Card with.
+      <Button>Continue</Button>
+    </Card>
+  )
+  )
+;
 
 storiesOf('Menu', module)
   .add('Top header left sidebar', () => (
@@ -2795,118 +2806,6 @@ storiesOf('Hypercomponents: Form', module)
         }
       ]}
     />
-  )
-  )
-;
-
-storiesOf('Hypercomponent: Card', module)
-  .add('normal', () => (
-    <>
-      <CardHOC width={320} id="acard">
-        <CardSection id="acardsection">
-          <h5>Hello world<small>Lorem ipsum</small></h5>
-          <p>This is some demo content that I want to test the Card with.</p>
-        </CardSection>
-        <CardSection>
-          <p>More stuff here.</p>
-        </CardSection>
-      </CardHOC>
-      <CardHOC width={320}>
-        <CardSection>
-          <h5>Hello world<small>Lorem ipsum</small></h5>
-        </CardSection>
-        <CardSection media='https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80' height={200} />
-        <CardSection>
-          <p>This is some demo content that I want to test the Card with.</p>
-        </CardSection>
-      </CardHOC>
-      <Grid justify='center' align='center'><Row><Col size={[12, 6, 5, 4]}>
-      <CardHOC width={320}>
-        <CardSection media='https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80' height={200} />
-        <CardSection>
-          <Grid justify={'between'}>
-            <Row>
-              <Col size={8}><h5>Hello world<small>Lorem ipsum</small></h5></Col>
-              <Col size={3}><Button fill='ghost' size='small'>Next</Button></Col>
-            </Row>
-          </Grid>
-        </CardSection>
-        <CardSection>
-          <p>This is some demo content that I want to test the Card with.</p>
-        </CardSection>
-      </CardHOC>
-    </Col><Col size={[12, 6, 5, 4]}>
-        <CardHOC width={320}>
-          <CardSection className='padding-ls-0p'>
-            <Grid align='stretch'>
-              <Row>
-                <Col><h5>Hello world<small>Lorem ipsum</small></h5><p>This is some demo content that I want to test the Card with.</p></Col>
-                <Col size={'120px'}><div style={{ height: '100%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundImage: `url(${encodeURI('https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80')})` }} /></Col>
-              </Row>
-            </Grid>
-          </CardSection>
-        </CardHOC>
-      </Col></Row></Grid>
-    </>
-  )
-  )
-  .add('mapped', () => (
-    <>
-      <CardHOC width={320} id="acard"
-        data={[
-          (<>
-            <h5>Hello world<small>Lorem ipsum</small></h5>
-            <p>This is some demo content that I want to test the Card with.</p>
-          </>),
-          'More stuff here.'
-        ]}
-      />
-      <CardHOC width={320}
-        data ={[
-          (<h5>Hello world<small>Lorem ipsum</small></h5>),
-          {
-            media: 'https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80',
-            height: 200
-          },
-          'This is some demo content that I want to test the Card with.'
-        ]}
-      />
-      <Grid justify='center' align='center'><Row><Col size={[12, 6, 5, 4]}>
-      <CardHOC width={320}
-        data={[
-          {
-            media: 'https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80',
-            height: 200
-          },
-          (
-            <Grid justify={'between'}>
-              <Row>
-                <Col size={8}><h5>Hello world<small>Lorem ipsum</small></h5></Col>
-                <Col size={3}><Button fill='ghost' size='small'>Next</Button></Col>
-              </Row>
-            </Grid>
-          ),
-          'This is some demo content that I want to test the Card with.'
-        ]}
-      />
-    </Col><Col size={[12, 6, 5, 4]}>
-        <CardHOC width={320} 
-          data={[
-            {
-              className: 'padding-ls-0p',
-              children: (
-                <Grid align='stretch'>
-                  <Row>
-                    <Col><h5>Hello world<small>Lorem ipsum</small></h5><p>This is some demo content that I want to test the Card with.</p></Col>
-                    <Col size={'120px'}><div style={{ height: '100%', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundImage: `url(${encodeURI('https://images.unsplash.com/photo-1552661590-cbe23da9a2fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80')})` }} /></Col>
-                  </Row>
-                </Grid>
-              )
-            }
-          ]}
-        />
-      </Col></Row></Grid>
-    </>
   )
   )
 ;
