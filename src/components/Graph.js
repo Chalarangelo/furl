@@ -16,6 +16,7 @@ const Graph = ({
 }) => {
   let canvasRef = React.createRef();
   
+  /* istanbul ignore next */
   React.useEffect(() => {
     let canvas = canvasRef.current;
     let ctx = canvas.getContext("2d");

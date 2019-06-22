@@ -1,12 +1,17 @@
+/* istanbul ignore next */
 const _drawLines = (ctx, pts) => {
   ctx.moveTo(pts[0], pts[1]);
   for(let i=2;i<pts.length-1;i+=2) 
     ctx.lineTo(pts[i], pts[i+1]);
 };
 
+/* istanbul ignore next */
 const maxBy = (arr, fn) => Math.max(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
+
+/* istanbul ignore next */
 const minBy = (arr, fn) => Math.min(...arr.map(typeof fn === 'function' ? fn : val => val[fn]));
 
+/* istanbul ignore next */
 const drawLines = (ctx, ptsa, showPoints = false) => {
   ctx.beginPath();
   _drawLines(ctx, ptsa);
@@ -15,6 +20,7 @@ const drawLines = (ctx, ptsa, showPoints = false) => {
     drawPoints(ctx, ptsa);
 };
 
+/* istanbul ignore next */
 const getCurvePoints = (pts, tension = 0.5, isClosed = false, numOfSegments = 16) => {
   var _pts = [], res = [],    // clone array
     x, y,                     // our x,y coords
@@ -72,6 +78,7 @@ const getCurvePoints = (pts, tension = 0.5, isClosed = false, numOfSegments = 16
   return res;
 }
 
+/* istanbul ignore next */
 const drawCurve = (ctx, ptsa, tension, isClosed, numOfSegments, showPoints = false) => {
   ctx.beginPath();
   _drawLines(ctx, getCurvePoints(ptsa, tension, isClosed, numOfSegments));
@@ -80,28 +87,33 @@ const drawCurve = (ctx, ptsa, tension, isClosed, numOfSegments, showPoints = fal
     drawPoints(ctx, ptsa);
 };
 
+/* istanbul ignore next */
 const drawPoints = (ctx, ptsa) => {
   ctx.beginPath();
   for(let i=0;i<ptsa.length-1;i+=2) 
     drawFilledCircle(ctx, ptsa[i], ptsa[i+1], 3);
 }
 
+/* istanbul ignore next */
 const drawFilledCircle = (ctx, x, y, r) => {
   ctx.beginPath();
   ctx.arc(x, y, r, 0, 2 * Math.PI);
   ctx.fill();
 }
 
+/* istanbul ignore next */
 const drawBars = (ctx, ptsa, width, height) => {
   let barWidth = Math.floor(width/ptsa.length*2 - 4);
   for(let i=0;i<ptsa.length-1;i+=2) 
     drawBar(ctx, ptsa[i], ptsa[i + 1], barWidth, width, height);
 }
 
+/* istanbul ignore next */
 const drawBar = (ctx, x, y, width, w, h) => {
   ctx.fillRect(x, y, width, h-y-12);
 }
 
+/* istanbul ignore next */
 const drawPie = (ctx, data, width, height, colors) => {
   let total = data.reduce((acc,v) => acc + v, 0);
   let x = (width - 24) / 2;
@@ -122,6 +134,7 @@ const drawPie = (ctx, data, width, height, colors) => {
   }
 }
 
+/* istanbul ignore next */
 const drawAxisX = (ctx, width, height) => {
   ctx.beginPath();
   ctx.moveTo(12, height - 12);
@@ -129,6 +142,7 @@ const drawAxisX = (ctx, width, height) => {
   ctx.stroke(); 
 }
 
+/* istanbul ignore next */
 const drawAxisY = (ctx, width, height) => {
   ctx.beginPath();
   ctx.moveTo(12, 12);
@@ -136,9 +150,11 @@ const drawAxisY = (ctx, width, height) => {
   ctx.stroke(); 
 }
 
+/* istanbul ignore next */
 const calculateCoords = (value, index, width, height, maxValue, minValue, numberOfValues) => 
   [index * (width - 24)/numberOfValues + 12, (height - 24) - value/(maxValue - minValue) * (height - 24) + 12];
 
+/* istanbul ignore next */
 const flatten = (arr, depth = 1) =>
   arr.reduce((a, v) => a.concat(depth > 1 && Array.isArray(v) ? flatten(v, depth - 1) : v), []);
 
