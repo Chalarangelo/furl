@@ -1,26 +1,44 @@
 import React from 'react';
-import { hasKey, omitProps, combineStyles } from '../utilities/utils';
+import { isUndefined } from '../utilities/utils';
 import { Title, Text, Paragraph } from '../components';
 import MediaObject from './MediaObject';
 import { Timy, formatConfig } from 'react-timy';
 
-const ItemHOC = (props) => {
-  if (!hasKey(props, 'media'))
-    return (
-      <div {...props} />
-    );
+const ItemHOC = ({
+  media,
+  data,
+  children,
+  date,
+  author,
+  dateConfig = formatConfig,
+  ...rest
+}) => {
+  if (isUndefined(media))
+    return ( <div {...rest}>{children}</div> );
 
-  let author = hasKey(props, 'author') ? props.author : '';
-  let date = hasKey(props, 'date') ? props.date : false;
-  let data = hasKey(props, 'data') ? props.data : props.children;
+  let [_data, _usesData] = !isUndefined(data) ? [data, true] : [children, false];
 
   return (
-    <MediaObject media={props.media} {...omitProps(props, ['data', 'date', 'author'])} mediaClassNames='avatar circle medium'>
-      <Title className='item-author' level={6} semantic={false} fontSize={'ts-50p'} style={{marginTop: date ? 'var(--ls-0p)' : 'var(--ls-50p)'}}>
-        <Text textStyle='bold'>{author}</Text>
-        <Text textStyle='small' color='interface-gray-500' fontSize={'ts-25p'}>{date ? <Timy date={date}/> : ''}</Text>
+    <MediaObject media={media} {...rest} mediaClassNames='avatar circle medium'>
+      <Title 
+        className='item-author' 
+        level={6} 
+        semantic={false} 
+        fontSize={'ts-100p'} 
+        style={{marginTop: date ? 'var(--ls-0p)' : 'var(--ls-50p)'}}
+      >
+        {author ? (<Text textStyle='bold'>{author}</Text>) : ''}
+        <Text textStyle='small' color='interface-gray-500' fontSize={'ts-25p'}>
+          {date ? <Timy date={date} config={dateConfig} /> : ''}
+        </Text>
       </Title>
-      <Paragraph>{data}</Paragraph>
+      {
+        _usesData ? (
+          <Paragraph>{ _data }</Paragraph>
+        ) : (
+          <> { _data } </>
+        )
+      }
     </MediaObject>
   );
 };
