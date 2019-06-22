@@ -1,26 +1,30 @@
 import React from 'react';
 import { Pagination, Button, PaginationItem } from '../components';
-import { hasKey, omitProps } from '../utilities/utils';
+import { isUndefined } from '../utilities/utils';
 
-const PaginationHOC = (props) => {
-  if (!hasKey(props, 'currentPage'))
-    return (
-      <Pagination {...props} />
+const PaginationHOC = ({
+  currentPage,
+  pageCount,
+  firstText='First',
+  previousText = 'Previous',
+  nextText = 'Next',
+  lastText = 'Last',
+  onPrevious,
+  onFirst,
+  onNext,
+  onLast,
+  ...rest
+}) =>
+  isUndefined(currentPage) ?
+    (<Pagination {...rest} />) :
+    (
+      <Pagination {...rest}>
+        <Button onClick={onFirst}>{firstText}</Button>
+        <Button onClick={onPrevious}>{previousText}</Button>
+        <PaginationItem>{`${currentPage} of ${pageCount}`}</PaginationItem>
+        <Button onClick={onNext}>{nextText}</Button>
+        <Button onClick={onLast}>{lastText}</Button>
+      </Pagination>
     );
-
-  return (
-    <Pagination {...omitProps(props, [
-      'currentPage', 'pageCount',
-      'previousText', 'firstText', 'nextText', 'lastText',
-      'onPrevious', 'onFirst', 'onNext', 'onLast'
-    ])}>
-      <Button onClick={props.onFirst}>{props.firstText}</Button>
-      <Button onClick={props.onPrevious}>{props.previousText}</Button>
-      <PaginationItem>{`${props.currentPage} of ${props.pageCount}`}</PaginationItem>
-      <Button onClick={props.onNext}>{props.nextText}</Button>
-      <Button onClick={props.onLast}>{props.lastText}</Button>
-    </Pagination>
-  );
-};
 
 export default PaginationHOC;
