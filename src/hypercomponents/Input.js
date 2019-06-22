@@ -8,97 +8,98 @@ import {
 import RadioGroup from './RadioGroup';
 import SelectInput from './SelectInput';
 import ComboboxInput from './ComboboxInput';
-import { hasKey, omitProps, generateUniqueId, combineStyles } from '../utilities/utils';
+import { isUndefined, hasKey, omitProps, generateUniqueId, combineStyles, combineClassNames } from '../utilities/utils';
 import generateBackgroundIcon from '../utilities/iconGenerator';
 
-const InputHOC = (props) => {
-  if (!hasKey(props, 'type'))
-    return (
-      <TextInput {...omitProps(props, ['type'])} />
-    );
+const InputHOC = ({
+  type = 'text',
+  id,
+  title,
+  label,
+  icon,
+  name,
+  style,
+  className,
+  ...rest
+}) => {
+  let _id = !isUndefined(id) ? id :generateUniqueId('input');
+  let _title = !isUndefined(title) ? title : !isUndefined(name) ? name : generateUniqueId('');
+  let _style = combineStyles(rest, style, !isUndefined(icon) ? generateBackgroundIcon({ name: icon, stroke: '#6e7e8c', height: 18, width: 18 }) : {});
+  let classNames = [className, !isUndefined(icon) ? 'with-icon' : ''];
 
-  let id = hasKey(props, 'id') ? props.id : generateUniqueId('input');
-  let title = hasKey(props, 'title') ? props.title : hasKey(props, 'name') ? props.name : '';
-  let style = hasKey(props, 'style') ? props.style : {};
-  let className = hasKey(props, 'className') ? props.className : '';
-  if (hasKey(props, 'icon')) {
-    style = combineStyles(style, generateBackgroundIcon({ name: props.icon, stroke: '#6e7e8c', height: 18, width: 18 }));
-    className = `${className} with-icon`.trim();
-  }
-
-  switch (props.type.toLowerCase().trim()) {
+  switch (type.toLowerCase().trim()) {
     case 'text':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
             ) : ''
           }
-          <TextInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <TextInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest} />
         </>
       );
     case 'textarea':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <TextInput id={id} title={title} multiline {...omitProps(props, ['type', 'id', 'multiline'])} />
+          <TextInput multiline id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest} />
         </>
       );
     case 'email':
     case 'e-mail':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <EmailInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <EmailInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest} />
         </>
       );
     case 'password':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <PasswordInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <PasswordInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'number':
     case 'num':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <NumberInput id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <NumberInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'url':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <UrlInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <UrlInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'creditcard':
@@ -106,13 +107,13 @@ const InputHOC = (props) => {
     case 'card':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <CreditCardInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <CreditCardInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'phone':
@@ -120,100 +121,100 @@ const InputHOC = (props) => {
     case 'tel':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <PhoneInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <PhoneInput id={id} id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest} />
         </>
       );
     case 'currency':
     case 'money':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <CurrencyInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <CurrencyInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'time':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <TimeInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <TimeInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'date':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <DateInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <DateInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'rating':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <RatingInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <RatingInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'slider':
     case 'range':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <SliderInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <SliderInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'color':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <ColorInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <ColorInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'file':
     case 'upload':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <FileInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <FileInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest} />
         </>
       );
     case 'radio':
@@ -221,50 +222,62 @@ const InputHOC = (props) => {
     case 'radiogroup':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <RadioGroup id={id} title={title} {...omitProps(props, ['type', 'id'])} />
+          <RadioGroup id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
+        </>
+      );
+    case 'checkbox':
+      return (
+        <>
+          {label ? (
+            <FormLabel htmlFor={id}>
+              {label}
+            </FormLabel>
+          ) : ''
+          }
+          <Checkbox id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest} />
         </>
       );
     case 'select':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <SelectInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <SelectInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     case 'combo':
     case 'combobox':
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <ComboboxInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <ComboboxInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
     default:
       return (
         <>
-          {props.label ? (
+          {label ? (
             <FormLabel htmlFor={id}>
-              {props.label}
+              {label}
             </FormLabel>
           ) : ''
           }
-          <TextInput id={id} title={title} style={style} className={className} {...omitProps(props, ['type', 'id', 'style', 'className'])} />
+          <TextInput id={_id} title={_title} style={_style} className={combineClassNames(classNames)} {...rest}  />
         </>
       );
   }

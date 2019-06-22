@@ -2632,6 +2632,7 @@ storiesOf('Hypercomponents: Input', module)
       <InputHOC type='file' />
       <InputHOC type='rating' />
       <InputHOC type='slider' />
+      <InputHOC type='checkbox'>I accept the terms of agreement.</InputHOC>
     </>
   )
   )
@@ -2655,6 +2656,7 @@ storiesOf('Hypercomponents: Input', module)
       <InputHOC type='file' label='Upload' />
       <InputHOC type='rating' label='Rating' />
       <InputHOC type='slider' label='Sider' />
+      <InputHOC type='checkbox' label='Checkbox'>I accept the terms of agreement.</InputHOC>
     </>
   )
   )
