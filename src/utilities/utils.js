@@ -77,19 +77,19 @@ const parseLayout = (layoutSize) => {
 
 const parseVariablesFromProps = (props) => {
   let variables = {};
-  if (props.fontFamily)       variables['--font-family'] = parseFontFamily(props.fontFamily);
-  if (props.fontSize)         variables['--font-size'] = parseFontSize(props.fontSize);
-  if (props.fontWeight)       variables['--font-weight'] = parseFontWeight(props.fontWeight);
-  if (props.boxShadow)        variables['--box-shadow'] = parseShadow(props.boxShadow);
-  if (props.borderRadius)     variables['--border-radius'] = parseLayout(props.borderRadius);
-  if (props.margin)           variables['--margin'] = parseLayout(props.margin);
-  if (props.marginRight)      variables['--margin-right'] = parseLayout(props.marginRight);
-  if (props.marginLeft)       variables['--margin-left'] = parseLayout(props.marginLeft);
-  if (props.padding)          variables['--padding'] = parseLayout(props.padding);
-  if (props.paddingRight)     variables['--padding-right'] = parseLayout(props.paddingRight);
-  if (props.paddingLeft)      variables['--padding-left'] = parseLayout(props.paddingLeft);
-  if (props.color)            variables['--color'] = parseColor(props.color);
-  if (props.backgroundColor)  variables['--background-color'] = parseColor(props.backgroundColor);
+  if (props.fontFamily)         variables['--font-family'] = parseFontFamily(props.fontFamily);
+  if (props.fontSize)           variables['--font-size'] = parseFontSize(props.fontSize);
+  if (props.fontWeight)         variables['--font-weight'] = parseFontWeight(props.fontWeight);
+  if (props.boxShadow)          variables['--box-shadow'] = parseShadow(props.boxShadow);
+  if (props.borderRadius)       variables['--border-radius'] = parseLayout(props.borderRadius);
+  if (props.margin)             variables['--margin'] = parseLayout(props.margin);
+  if (props.marginHorizontal)   variables['--margin-horizontal'] = parseLayout(props.marginHorizontal);
+  if (props.marginVertical)     variables['--margin-vertical'] = parseLayout(props.marginVertical);
+  if (props.padding)            variables['--padding'] = parseLayout(props.padding);
+  if (props.paddingHorizontal)  variables['--padding-horizontal'] = parseLayout(props.paddingHorizontal);
+  if (props.paddingVertical)    variables['--padding-vertical'] = parseLayout(props.paddingVertical);
+  if (props.color)              variables['--color'] = parseColor(props.color);
+  if (props.backgroundColor)    variables['--background-color'] = parseColor(props.backgroundColor);
   return variables;
 }
 
