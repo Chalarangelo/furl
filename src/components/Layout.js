@@ -35,7 +35,10 @@ const Layout = ({
         {headerEl}
         {sidebarEl}
         {contentEl}
-        <SidebarTab open={sidebarVisible} onClick={() => setSidebarVisible(!sidebarVisible)} />
+        {
+          sidebarEl &&
+          <SidebarTab open={sidebarVisible} onClick={() => setSidebarVisible(!sidebarVisible)} />
+        }
       </div>
     </>
   );
