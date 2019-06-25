@@ -30,7 +30,7 @@ const DocPageTemplate = (props) => {
   return (
     <>
       <Meta 
-        title={`${post.frontmatter.title} - ${siteTitle}`}
+        title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt} 
       />
       <Layout>

@@ -33,11 +33,24 @@ const HomePage = (props) => {
           }
         }
       }
+      post: markdownRemark(frontmatter: { title: { eq: "Home" } }) {
+        id
+        fields {
+          slug
+        }
+        excerpt(pruneLength: 160)
+        html
+        frontmatter {
+          title
+          date(formatString: "MMMM DD, YYYY")
+          description
+        }
+      }
     }
   `);
   return(
     <>
-      <Meta title='furl' />
+      <Meta title='Home' />
       <Layout contentSize={1.0}>
         <Header outline='border-bottom'>
           <Grid>
@@ -74,7 +87,7 @@ const HomePage = (props) => {
           </Grid>
         </Header>
         <Content>
-          <p>Lorem ipsum dolor sit amet...</p>
+          <div dangerouslySetInnerHTML={{ __html: data.post.html }} />
         </Content>
       </Layout>
     </>
