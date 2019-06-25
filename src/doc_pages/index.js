@@ -13,6 +13,7 @@ import {
   Hyperlink
 } from '../lib';
 import Meta from '../doc_components/Meta';
+import HtmlMapper from '../doc_components/HtmlMapper';
 
 const HomePage = (props) => {
   const data = useStaticQuery(graphql`
@@ -59,7 +60,6 @@ const HomePage = (props) => {
                 <Hyperlink href='/' style={{border: 'none'}} paddingVertical='1px' >
                   <Image 
                     src={data.logo.childImageSharp.fixed.src} 
-                    
                     alt='furl'
                   />
                 </Hyperlink>
@@ -87,7 +87,7 @@ const HomePage = (props) => {
           </Grid>
         </Header>
         <Content>
-          <div dangerouslySetInnerHTML={{ __html: data.post.html }} />
+          <HtmlMapper html={data.post.html} />
         </Content>
       </Layout>
     </>

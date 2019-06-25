@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactHtmlParser from 'react-html-parser';
+import ReactHtmlParser from 'html-react-parser';
 import { Paragraph, Title, Text } from '../lib';
 
 const tagMappings = {
@@ -17,7 +17,6 @@ const tagMappings = {
 };
 
 const transformer = ({ type, name, children, next, prev, parent, data }, index) => {
-  console.log(type, name, data);
   if (type === 'tag') {
     if (!tagMappings[name])
       return undefined;

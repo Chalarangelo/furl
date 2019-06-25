@@ -1,4 +1,4 @@
-[![Logo](/splash.png)](https://github.com/Chalarangelo/furl)
+[![Logo](/docs/assets/splash.png)](https://github.com/Chalarangelo/furl)
 
 <p align="center">
   <img src="https://img.shields.io/npm/dm/furl-components.svg?style=for-the-badge" alt="npm"/>

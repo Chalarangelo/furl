@@ -3,16 +3,14 @@ title: Home
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 
+![furl](../assets/splash.png)
+
 ## Getting started
 
 Install **furl** via npm or yarn:
 
 ```bash
-npm install furl-components
-
-OR
-
-yarn add furl-components
+$ npm install furl-components
 ```
 
 You should import the fonts into your project yourself, by adding the following line in your HTML `<head>` element:
