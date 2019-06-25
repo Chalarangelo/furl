@@ -36,7 +36,7 @@ const NotFoundPage = (props) => {
                 </Hyperlink>
               </Col>
               <Col />
-              <Col size={6}>
+              <Col size={['calc(91% - 50px)', 'calc(91% - 50px)', 6, 6]}>
                 <Menu type='horizontal' highlight='bottom'>
                   <MenuItem href='/#getting-started'>Getting started</MenuItem>
                   <MenuItem href='/design'>Design</MenuItem>
@@ -45,11 +45,12 @@ const NotFoundPage = (props) => {
               </Col>
               <Col size={1} style={{textAlign: 'right'}}>
                 <Button 
-                  fill='link' 
+                  fill='link' type='link'
                   href='https://github.com/Chalarangelo/furl' 
                   target='external' 
                   size='small'
-                  margin='calc(var(--ls-25p) + 3.5px)'
+                  marginVertical='calc(var(--ls-25p) + 3.5px)'
+                  marginHorizontal='0'
                 >
                   <Icon name='github' height={18} width={18}/>
                 </Button>
