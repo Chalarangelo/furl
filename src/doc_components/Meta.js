@@ -67,7 +67,9 @@ const Meta = ({ description = '', lang = 'en', meta = [], title }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i|Roboto+Mono:300,300i,400,400i,500,500i|Roboto:300,300i,400,400i,500,500i&display=swap" rel="stylesheet" />
+    </Helmet>
   );
 }
 

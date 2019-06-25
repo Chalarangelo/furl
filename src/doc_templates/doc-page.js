@@ -19,7 +19,6 @@ const DocPageTemplate = (props) => {
   const post = props.data.markdownRemark;
   const currentFolder = post.fields.slug.split('/').filter(Boolean)[0].toLowerCase().trim();
   const siteTitle = props.data.site.siteMetadata.title;
-  const { previous, next } = props.pageContext;
   const logo = props.data.logo;
   const pageList = props.data.allMarkdownRemark.edges.map(v => ({
     title: v.node.frontmatter.title,
@@ -31,7 +30,7 @@ const DocPageTemplate = (props) => {
   return (
     <>
       <Meta 
-        title={post.frontmatter.title}
+        title={`${post.frontmatter.title} - ${siteTitle}`}
         description={post.frontmatter.description || post.excerpt} 
       />
       <Layout>
@@ -42,7 +41,6 @@ const DocPageTemplate = (props) => {
                 <Hyperlink href='/' style={{border: 'none'}} paddingVertical='1px' >
                   <Image 
                     src={logo.childImageSharp.fixed.src} 
-                    
                     alt='furl'
                   />
                 </Hyperlink>
@@ -51,8 +49,8 @@ const DocPageTemplate = (props) => {
               <Col size={6}>
                 <Menu type='horizontal' highlight='bottom'>
                   <MenuItem href='/#getting-started'>Getting started</MenuItem>
-                  <MenuItem href='/design'>Design</MenuItem>
-                  <MenuItem href='/components'>Components</MenuItem>
+                  <MenuItem href='/design' selected={currentFolder === 'design'}>Design</MenuItem>
+                  <MenuItem href='/components' selected={currentFolder === 'components'}>Components</MenuItem>
                 </Menu>
               </Col>
               <Col size={1} style={{textAlign: 'right'}}>
