@@ -60,7 +60,7 @@ const LayoutStyle = (layoutName, headerSize, sidebarSize, contentSize) => {
     : `.${layoutName} .layout-header {
         ${headerSize[0] === 'top' ? 'top: 0;' : 'bottom: 0;'}
       }`
-}
+    }
     ${sidebarSize[0] === 'none' ? ''
     : `.${layoutName} .layout-sidebar {
         ${sidebarWidth[0] === 0
@@ -103,6 +103,11 @@ const LayoutStyle = (layoutName, headerSize, sidebarSize, contentSize) => {
     .${layoutName} {
       grid-template-areas: ${gridAreas[1]};
       grid-template-columns: ${gridColumns[1]};
+    }
+    ${headerSize[1] === 'none' ? ''
+      : `.${layoutName} .layout-header {
+        ${headerSize[1] === 'top' ? 'top: 0;' : 'bottom: 0;'}
+      }`
     }
     ${sidebarSize[1] === 'none' ? ''
     : `.${layoutName} .layout-sidebar {
@@ -147,6 +152,11 @@ const LayoutStyle = (layoutName, headerSize, sidebarSize, contentSize) => {
       grid-template-areas: ${gridAreas[2]};
       grid-template-columns: ${gridColumns[2]};
     }
+    ${headerSize[2] === 'none' ? ''
+      : `.${layoutName} .layout-header {
+        ${headerSize[2] === 'top' ? 'top: 0;' : 'bottom: 0;'}
+      }`
+    }
     ${sidebarSize[2] === 'none' ? ''
     : `.${layoutName} .layout-sidebar {
       ${sidebarWidth[2] === 0
@@ -183,6 +193,11 @@ const LayoutStyle = (layoutName, headerSize, sidebarSize, contentSize) => {
     .${layoutName} {
       grid-template-areas: ${gridAreas[3]};
       grid-template-columns: ${gridColumns[3]};
+    }
+    ${headerSize[3] === 'none' ? ''
+      : `.${layoutName} .layout-header {
+        ${headerSize[3] === 'top' ? 'top: 0;' : 'bottom: 0;'}
+      }`
     }
     ${sidebarSize[3] === 'none' ? ''
     : `.${layoutName} .layout-sidebar {
