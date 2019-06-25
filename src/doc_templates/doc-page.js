@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import ReactHtmlParser from 'react-html-parser';
 
 import '../styles/index.scss';
 import { 
@@ -14,6 +15,7 @@ import {
   Title
 } from '../lib';
 import Meta from '../doc_components/Meta';
+import HtmlMapper from '../doc_components/HtmlMapper';
 
 const DocPageTemplate = (props) => {
   const post = props.data.markdownRemark;
@@ -26,6 +28,7 @@ const DocPageTemplate = (props) => {
     selected: v.node.fields.slug === post.fields.slug,
     folder: v.node.fields.slug.split('/').filter(Boolean)[0].toLowerCase().trim()
   }));
+
 
   return (
     <>
@@ -101,7 +104,7 @@ const DocPageTemplate = (props) => {
         </Sidebar>
         <Content>
           <Title level={2}>{post.frontmatter.title}</Title>
-          <div dangerouslySetInnerHTML={{__html: post.html }} />
+          <HtmlMapper html={post.html} />
         </Content>
       </Layout>
     </>
