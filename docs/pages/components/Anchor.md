@@ -33,9 +33,11 @@ ReactDOM.render(
     </tr>
   </thead>
   <tbody>
-    <td class="font-c">href</td>
-    <td colspan="3">target of the anchor</td>
-    <td>string</td>
-    <td></td>
+    <tr>
+      <td class="font-c">href</td>
+      <td colspan="3">anchor target</td>
+      <td>string</td>
+      <td class='font-c'></td>
+    </tr>
   </tbody>
 </table>

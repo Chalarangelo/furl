@@ -113,7 +113,7 @@ const DocPageTemplate = (props) => {
           <Grid width='100%'>
             <Row>
               <Col />
-              <Col size={[12, 12, '800px', '900px']}>
+              <Col size='800px'>
                 <Title level={2}>{post.frontmatter.title}</Title>
                 <HtmlMapper html={post.html} />
               </Col>

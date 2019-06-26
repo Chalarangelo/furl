@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactHtmlParser from 'html-react-parser';
 import { Paragraph, Title, Text, Alert, Hyperlink } from '../lib';
-import { AnchorExamples } from '../doc_examples';
+import { AnchorExamples, HyperlinkExamples } from '../doc_examples';
 
 const tagMappings = {
   'a': Hyperlink,
@@ -11,7 +11,8 @@ const tagMappings = {
   'i': Text,
   'em': Text,
   'alert': Alert,
-  'anchorexamples': AnchorExamples
+  'anchorexamples': AnchorExamples,
+  'hyperlinkexamples': HyperlinkExamples
 };
 
 const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {

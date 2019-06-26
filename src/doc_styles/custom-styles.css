@@ -26,3 +26,7 @@
   font-size: var(--ts-25p);
 }
 
+.gatsby-highlight {
+  max-width: calc(100vw - 2 * var(--margin-horizontal));
+}
+
