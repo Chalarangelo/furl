@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import ReactHtmlParser from 'react-html-parser';
 
 import '../styles/index.scss';
 import { 
