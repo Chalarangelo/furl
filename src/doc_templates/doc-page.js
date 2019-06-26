@@ -25,7 +25,8 @@ const DocPageTemplate = (props) => {
     title: v.node.frontmatter.title,
     slug: v.node.fields.slug,
     selected: v.node.fields.slug === post.fields.slug,
-    folder: v.node.fields.slug.split('/').filter(Boolean)[0].toLowerCase().trim()
+    folder: v.node.fields.slug.split('/').filter(Boolean)[0].toLowerCase().trim(),
+    path: v.node.fileAbsolutePath
   }));
 
 
@@ -73,9 +74,12 @@ const DocPageTemplate = (props) => {
         <Sidebar outline='border-right'>
           <Menu type='vertical' highlight='left'>
             <MenuItem>
-              <Dropdown text='Design' open>
+              <Dropdown text='Design' open={currentFolder === 'design'}>
                 {
-                  pageList.filter(v => v.folder === 'design').map(i => (
+                  pageList
+                    .filter(v => v.folder === 'design')
+                    .sort((a, b) =>  b.path.endsWith('index.md') ? 1 : -1)
+                    .map(i => (
                     <MenuItem 
                       href={`${i.slug}`} 
                       selected={i.selected} 
@@ -87,9 +91,12 @@ const DocPageTemplate = (props) => {
               </Dropdown>            
             </MenuItem>
             <MenuItem>
-              <Dropdown text='Components' open>
+              <Dropdown text='Components' open={currentFolder === 'components'}>
                 {
-                  pageList.filter(v => v.folder === 'components').map(i => (
+                  pageList
+                    .filter(v => v.folder === 'components')
+                    .sort((a, b) => b.path.endsWith('index.md') ? 1 : -1)
+                    .map(i => (
                     <MenuItem 
                       href={`${i.slug}`} 
                       selected={i.selected} 
@@ -143,6 +150,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          fileAbsolutePath
           frontmatter {
             title
           }

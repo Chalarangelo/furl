@@ -6,12 +6,6 @@ import { AnchorExamples } from '../doc_examples';
 const tagMappings = {
   'a': Hyperlink,
   'p': Paragraph,
-  'h1': Title,
-  'h2': Title,
-  'h3': Title,
-  'h4': Title,
-  'h5': Title,
-  'h6': Title,
   'b': Text,
   'strong': Text,
   'i': Text,
@@ -32,13 +26,6 @@ const transformer = ({ type, name, children, attribs, next, prev, parent, data }
       return undefined;
 
     const TagName = tagMappings[name];
-    if (['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(name)) {
-      return (
-        <TagName level={name.slice(1)}>
-          {children.map(transformer)}
-        </TagName>
-      );
-    }
     if (['strong', 'b', 'i', 'em'].includes(name)) {
       return (
         <TagName textStyle={(name === 'strong' || name === 'b') ? 'bold' : 'italics'}>
