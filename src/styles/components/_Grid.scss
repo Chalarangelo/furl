@@ -11,19 +11,16 @@
   --col-sm-size: auto;
   --col-md-size: auto;
   --col-lg-size: auto;
-  flex: 0 0 var(--col-xs-size);
+  flex: 0 0 auto;
   max-width: var(--col-xs-size);
   @media screen and (min-width: 600px) {
     flex: 0 0 var(--col-sm-size);
-    max-width: var(--col-sm-size);
   }
   @media screen and (min-width: 900px) {
     flex: 0 0 var(--col-md-size);
-    max-width: var(--col-md-size);  
   }
   @media screen and (min-width: 1200px) {
     flex: 0 0 var(--col-lg-size);
-    max-width: var(--col-lg-size);   
   }
 }
 
