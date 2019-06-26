@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactHtmlParser from 'html-react-parser';
 import { Paragraph, Title, Text, Alert, Hyperlink } from '../lib';
+import { AnchorExamples } from '../doc_examples';
 
 const tagMappings = {
   'a': Hyperlink,
@@ -15,10 +16,17 @@ const tagMappings = {
   'strong': Text,
   'i': Text,
   'em': Text,
-  'alert': Alert
+  'alert': Alert,
+  'anchorexamples': AnchorExamples
 };
 
 const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {
+  if (type === 'tag' && name === 'p' && children.length === 1 && children[0].name && children[0].name.indexOf('example') !== -1) 
+    return (
+      <>
+        {children.map(transformer)}
+      </>
+    );
   if (type === 'tag') {
     if (!tagMappings[name])
       return undefined;
@@ -44,7 +52,6 @@ const transformer = ({ type, name, children, attribs, next, prev, parent, data }
       </TagName>
     );
   }
-  console.log(type, name);
   return data;
 }
 

@@ -1,0 +1,28 @@
+.example-wrapper {
+  border: 1px solid var(--interface-gray-200);
+  border-radius: var(--ls-25p);
+  --margin-horizontal: var(--ls-75p);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.example-wrapper + .gatsby-highlight pre {
+  position: relative;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.example-wrapper + .gatsby-highlight pre::before {
+  position: absolute;
+  top: var(--ls-25p);
+  right: 0;
+  content: 'JSX';
+  display: block;
+  background: transparent;
+  color: var(--interface-gray-200);
+  --padding-horizontal: var(--ls-100p);
+  text-transform: uppercase;
+  font-family: var(--font-b);
+  font-size: var(--ts-25p);
+}
+
