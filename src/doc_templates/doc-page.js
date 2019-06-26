@@ -103,8 +103,16 @@ const DocPageTemplate = (props) => {
           </Menu>
         </Sidebar>
         <Content>
-          <Title level={2}>{post.frontmatter.title}</Title>
-          <HtmlMapper html={post.html} />
+          <Grid width='100%'>
+            <Row>
+              <Col />
+              <Col size={[12, 12, '800px', '900px']}>
+                <Title level={2}>{post.frontmatter.title}</Title>
+                <HtmlMapper html={post.html} />
+              </Col>
+              <Col />
+            </Row>
+          </Grid>
         </Content>
       </Layout>
     </>

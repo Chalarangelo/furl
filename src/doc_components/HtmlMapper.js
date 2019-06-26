@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactHtmlParser from 'html-react-parser';
-import { Paragraph, Title, Text } from '../lib';
+import { Paragraph, Title, Text, Alert, Hyperlink } from '../lib';
 
 const tagMappings = {
+  'a': Hyperlink,
   'p': Paragraph,
   'h1': Title,
   'h2': Title,
@@ -14,9 +15,10 @@ const tagMappings = {
   'strong': Text,
   'i': Text,
   'em': Text,
+  'alert': Alert
 };
 
-const transformer = ({ type, name, children, next, prev, parent, data }, index) => {
+const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {
   if (type === 'tag') {
     if (!tagMappings[name])
       return undefined;
@@ -37,14 +39,15 @@ const transformer = ({ type, name, children, next, prev, parent, data }, index) 
       );
     }
     return (
-      <TagName>
+      <TagName {...attribs}>
         {children.map(transformer)}
       </TagName>
     );
   }
+  console.log(type, name);
   return data;
 }
 
-const HtmlMapper = ({ html }) => ReactHtmlParser(html, { transform: transformer });
+const HtmlMapper = ({ html }) => ReactHtmlParser(html, { replace: transformer });
 
 export default HtmlMapper;
