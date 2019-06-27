@@ -74,11 +74,11 @@ const DocPageTemplate = (props) => {
         <Sidebar outline='border-right'>
           <Menu type='vertical' highlight='left'>
             <MenuItem>
-              <Dropdown text='Design' open={currentFolder === 'design'}>
+              <Dropdown text='Design' open>
                 {
                   pageList
                     .filter(v => v.folder === 'design')
-                    .sort((a, b) =>  b.path.endsWith('index.md') ? 1 : -1)
+                    .sort((a, b) => b.path.endsWith('index.md') ? 1 : a.path.endsWith('index.md') ? -1 : b.path - a.path)
                     .map(i => (
                     <MenuItem 
                       href={`${i.slug}`} 
@@ -91,11 +91,11 @@ const DocPageTemplate = (props) => {
               </Dropdown>            
             </MenuItem>
             <MenuItem>
-              <Dropdown text='Components' open={currentFolder === 'components'}>
+              <Dropdown text='Components' open>
                 {
                   pageList
                     .filter(v => v.folder === 'components')
-                    .sort((a, b) => b.path.endsWith('index.md') ? 1 : -1)
+                    .sort((a, b) => b.path.endsWith('index.md') ? 1 : a.path.endsWith('index.md') ? -1 : b.path - a.path)
                     .map(i => (
                     <MenuItem 
                       href={`${i.slug}`} 
