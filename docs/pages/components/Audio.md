@@ -93,5 +93,4 @@ ReactDOM.render(
 
 * It is highly recommended you specify a descriptive value for `alt` to make your audio accessible to screen-readers. This is why we already provide a default value instead of using an empty string or `undefined`.
 * If you provide `withCaption`, the component will render a `<figure>` and a `<figcaption>` accompanying the `<audio>` element. The value of `alt` will be used for the `<figcaption>`.
-* `width` and `height` accept any valid CSS value, including CSS variables.
 * For more information on the `<audio>` element itself, visit <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio" target="_blank">MDN Web Docs</a>.
