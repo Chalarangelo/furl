@@ -10,7 +10,6 @@ const Video = ({
   controls = true,
   loop = false,
   muted = false,
-  preload = true,
   alt = 'A video',
   withCaption = false,
   ...rest
@@ -27,7 +26,6 @@ const Video = ({
         controls={controls} 
         loop={loop} 
         muted={muted}
-        preload={`${preload}`} 
         style={combineStyles(rest, rest.style)}
         {...omitProps(rest)}
       />
@@ -45,7 +43,6 @@ const Video = ({
         controls={controls} 
         loop={loop} 
         muted={muted} 
-        preload={preload}
         style={combineStyles(rest, rest.style)}
         {...omitProps(rest)}
       />);

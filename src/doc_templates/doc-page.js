@@ -78,7 +78,7 @@ const DocPageTemplate = (props) => {
                 {
                   pageList
                     .filter(v => v.folder === 'design')
-                    .sort((a, b) => b.path.endsWith('index.md') ? 1 : a.path.endsWith('index.md') ? -1 : b.path - a.path)
+                    .sort((a, b) => b.path.endsWith('index.md') ? 1 : a.path.endsWith('index.md') ? -1 : a.path.localeCompare(b.path))
                     .map(i => (
                     <MenuItem 
                       href={`${i.slug}`} 
@@ -95,7 +95,7 @@ const DocPageTemplate = (props) => {
                 {
                   pageList
                     .filter(v => v.folder === 'components')
-                    .sort((a, b) => b.path.endsWith('index.md') ? 1 : a.path.endsWith('index.md') ? -1 : b.path - a.path)
+                    .sort((a, b) => b.path.endsWith('index.md') ? 1 : a.path.endsWith('index.md') ? -1 : a.path.localeCompare(b.path))
                     .map(i => (
                     <MenuItem 
                       href={`${i.slug}`} 

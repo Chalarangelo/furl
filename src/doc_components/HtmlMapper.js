@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactHtmlParser from 'html-react-parser';
 import { Paragraph, Title, Text, Alert, Hyperlink } from '../lib';
-import { AnchorExamples, HyperlinkExamples, ImageExamples, VideoExamples } from '../doc_examples';
+import { AnchorExamples, HyperlinkExamples, ImageExamples, VideoExamples, AudioExamples } from '../doc_examples';
 
 const tagMappings = {
   'anchorexamples': AnchorExamples,
   'hyperlinkexamples': HyperlinkExamples,
   'imageexamples': ImageExamples,
   'videoexamples': VideoExamples,
+  'audioexamples': AudioExamples
 };
 
 const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {    
