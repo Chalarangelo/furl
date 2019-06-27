@@ -57,7 +57,7 @@ const HomePage = (props) => {
           <Grid>
             <Row paddingHorizontal='ls-50p'>
               <Col size='50px' style={{height: '47px'}}>
-                <Hyperlink href='/' style={{border: 'none'}} paddingVertical='1px' >
+                <Hyperlink href='/' style={{border: 'none'}} paddingVertical='1px'>
                   <Image 
                     src={data.logo.childImageSharp.fixed.src} 
                     alt='furl'
@@ -88,7 +88,15 @@ const HomePage = (props) => {
           </Grid>
         </Header>
         <Content>
-          <HtmlMapper html={data.post.html} />
+          <Grid width='100%'>
+            <Row>
+              <Col />
+              <Col size='800px'>
+                <HtmlMapper html={data.post.html} />
+              </Col>
+              <Col />
+            </Row>
+          </Grid>
         </Content>
       </Layout>
     </>
