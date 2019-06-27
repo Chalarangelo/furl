@@ -7,7 +7,7 @@ const Video = ({
   className,
   src,
   autoplay = false,
-  controls = false,
+  controls = true,
   loop = false,
   muted = false,
   preload = true,
