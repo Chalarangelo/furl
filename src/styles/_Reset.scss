@@ -58,7 +58,9 @@ audio, canvas, iframe, img, svg, video {
   vertical-align: middle;
   // Make media elements responsive
   display: block;
-  height: auto;
+  &:not([height]) {
+    height: auto;
+  }
   max-width: calc(100% - 2 * var(--margin-horizontal));
 }
 
