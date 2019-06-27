@@ -45,9 +45,13 @@ ReactDOM.render(
     </tr>
     <tr>
       <td class="font-c">openIn</td>
-      <td colspan="3">target of the anchor<br>possible values: <span class="font-c">'self', 'blank', 'external'</span></td>
+      <td colspan="3">target of the anchor></td>
       <td>string</td>
       <td class='font-c'>'self'</td>
     </tr>
   </tbody>
 </table>
+
+### Notes
+
+* `openIn` accepts the following values: <span class="font-c">'self', 'blank', 'external'</span>.

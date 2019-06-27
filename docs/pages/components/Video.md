@@ -12,10 +12,10 @@ Videos provide captivating multimedia content for your users.
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Image } from 'furl-components';
+import { Video } from 'furl-components';
 
 ReactDOM.render(
-  <Image
+  <Video
     src="./wasp-movie.mp4"
     alt="Wasp Movie HD"
     withCaption
