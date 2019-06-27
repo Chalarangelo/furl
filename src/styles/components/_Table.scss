@@ -4,6 +4,7 @@ table {
   width: calc(100% - 2 * var(--margin-horizontal));
   --margin-horizontal: var(--ls-75p);
   --margin-vertical: var(--ls-150p);
+  table-layout:fixed;
   & caption {
     --font-size: var(--ts-400p);
     --margin-vertical: var(--ls-50p);

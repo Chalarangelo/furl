@@ -26,22 +26,22 @@
 
 @media screen and (max-width: 599px) {
   [class*='grid-col-xs-p']:not([class*='grid-col-xs-pcalc']) {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
   }
 }
 @media screen and (min-width: 600px) and (max-width: 899px) {
   [class*='grid-col-sm-p']:not([class*='grid-col-sm-pcalc']) {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
   }
 }
 @media screen and (min-width: 900px) and (max-width: 1199px) {
   [class*='grid-col-md-p']:not([class*='grid-col-md-pcalc']) {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
   }
 }
 @media screen and (min-width: 1200px) {
   [class*='grid-col-lg-p']:not([class*='grid-col-lg-pcalc']) {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
   }
 }
 
