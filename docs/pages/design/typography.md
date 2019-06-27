@@ -43,9 +43,9 @@ Furl relies upon a 3-font system to provide a great user experience, well-tailor
   <tbody>
 </table>
 
-<alert color='warning' size='large'>
+<div class="alert warning large">
 <p>Note: The default fonts will not be loaded automatically. Instead, it's the developer's responsibility to load all the necessary fonts (including the default ones) in their application. Please see the <a href="/#getting-started">getting started</a> section for more information.</p>
-</alert>
+</div>
 
 ### Type Scale
 
@@ -131,6 +131,6 @@ Furl uses a 11-step typographic scale with handcrafted defaults that work for an
   </tbody>
 </table>
 
-<alert color='primary' size='large'>
+<div class="alert primary large">
 <p>Note: The default step values above correspond to the calculated values of converting the <code>rem</code> value of each step to pixels.</p>
-</alert>
+</div>

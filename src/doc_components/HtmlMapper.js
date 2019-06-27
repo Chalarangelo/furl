@@ -4,7 +4,6 @@ import { Paragraph, Title, Text, Alert, Hyperlink } from '../lib';
 import { AnchorExamples, HyperlinkExamples } from '../doc_examples';
 
 const tagMappings = {
-  'alert': Alert,
   'anchorexamples': AnchorExamples,
   'hyperlinkexamples': HyperlinkExamples
 };
