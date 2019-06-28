@@ -1,21 +1,21 @@
 ---
-title: Something
-description: furl's Something component.
+title: Avatar
+description: furl's Avatar component.
 ---
 
-Intro ...
+Avatars display a user's profile picture.
 
 ### Examples
 
-<examples></examples>
+<avatarexamples></avatarexamples>
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Something } from 'furl-components';
+import { Avatar } from 'furl-components';
 
 ReactDOM.render(
-  <Something></Something>, 
+  <Avatar src='user.src' shape='rounded' size='small' />, 
   document.getElementById('root')
 );
 ```
@@ -23,7 +23,7 @@ ReactDOM.render(
 ### API
 
 <table>
-  <caption>Component props</caption>
+  <caption>Avatar props</caption>
   <thead>
     <tr>
       <th>Property</th>
@@ -34,10 +34,28 @@ ReactDOM.render(
   </thead>
   <tbody>
     <tr>
-      <td class="font-c"></td>
-      <td colspan="3"></td>
-      <td></td>
+      <td class="font-c">src</td>
+      <td colspan="3">avatar source url</td>
+      <td>string</td>
       <td class='font-c'></td>
+    </tr>
+    <tr>
+      <td class="font-c">size</td>
+      <td colspan="3">avatar size</td>
+      <td>string</td>
+      <td class='font-c'>'medium'</td>
+    </tr>
+    <tr>
+      <td class="font-c">shape</td>
+      <td colspan="3">avatar shape</td>
+      <td>string</td>
+      <td class='font-c'>'circle'</td>
     </tr>
   </tbody>
 </table>
+
+
+### Notes
+
+* `size` can be one of the following: `'extra-small'`, `'small'`, `'medium'`, `'large'` or `'extra-large'`.
+* `shape` can be one of the following: `'circle'`, `'rounded'` or  `'square'`.

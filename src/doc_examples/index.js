@@ -4,6 +4,7 @@ import ImageExamples from './ImageExamples';
 import VideoExamples from './VideoExamples';
 import AudioExamples from './AudioExamples';
 import AlertExamples from './AlertExamples';
+import AvatarExamples from './AvatarExamples';
 
 export {
   AnchorExamples,
@@ -11,5 +12,6 @@ export {
   ImageExamples,
   VideoExamples,
   AudioExamples,
-  AlertExamples
+  AlertExamples,
+  AvatarExamples
 };
