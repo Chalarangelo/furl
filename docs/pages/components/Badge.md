@@ -1,21 +1,23 @@
 ---
-title: Something
-description: furl's Something component.
+title: Badge
+description: furl's Badge component.
 ---
 
-Intro ...
+Badges help you present tags, categories or other short-form content.
 
 ### Examples
 
-<examples></examples>
+<badgeexamples></badgeexamples>
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Something } from 'furl-components';
+import { Badge } from 'furl-components';
 
 ReactDOM.render(
-  <Something></Something>, 
+  <Badge color='secondary' size='large' shape='rounded' fill='outline'>
+    Rockstar
+  </Badge>, 
   document.getElementById('root')
 );
 ```
@@ -23,7 +25,7 @@ ReactDOM.render(
 ### API
 
 <table>
-  <caption>Component props</caption>
+  <caption>Badge props</caption>
   <thead>
     <tr>
       <th>Property</th>
@@ -34,10 +36,43 @@ ReactDOM.render(
   </thead>
   <tbody>
     <tr>
-      <td class="font-c"></td>
-      <td colspan="3"></td>
-      <td></td>
-      <td class='font-c'></td>
+      <td class="font-c">color</td>
+      <td colspan="3">badge color</td>
+      <td>string</td>
+      <td class='font-c'>'plain'</td>
+    </tr>
+    <tr>
+      <td class="font-c">size</td>
+      <td colspan="3">badge size</td>
+      <td>string</td>
+      <td class='font-c'>'flat'</td>
+    </tr>
+    <tr>
+      <td class="font-c">fill</td>
+      <td colspan="3">fill style</td>
+      <td>string</td>
+      <td class='font-c'>'normal'</td>
+    </tr>
+    <tr>
+      <td class="font-c">shape</td>
+      <td colspan="3">badge shape</td>
+      <td>string</td>
+      <td class='font-c'>'normal'</td>
+    </tr>
+    <tr>
+      <td class="font-c">text</td>
+      <td colspan="3">badge text transformaton</td>
+      <td>string</td>
+      <td class='font-c'>'normal'</td>
     </tr>
   </tbody>
 </table>
+
+
+### Notes
+
+* `color` can be any of the predefined color palettes (`'plain'`, `'primary'`, `'secondary'`, `'success'`, `'warning'` or `'danger'`).
+* `size` can be either `'normal'` or `'large'`.
+* `fill` can be one of the following: `'flat'`, `'outline'` or `'light'`.
+* `shape` can be either `'normal'` or `'rounded'`.
+* `text` can be either `'normal'` or `'uppercase'`.

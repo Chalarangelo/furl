@@ -5,6 +5,7 @@ import VideoExamples from './VideoExamples';
 import AudioExamples from './AudioExamples';
 import AlertExamples from './AlertExamples';
 import AvatarExamples from './AvatarExamples';
+import BadgeExamples from './BadgeExamples';
 
 export {
   AnchorExamples,
@@ -13,5 +14,6 @@ export {
   VideoExamples,
   AudioExamples,
   AlertExamples,
-  AvatarExamples
+  AvatarExamples,
+  BadgeExamples
 };

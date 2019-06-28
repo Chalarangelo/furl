@@ -8,7 +8,7 @@
 
 .badge {
   --background-color: var(--interface-gray-200);
-  --secondary-color: var(--interface-gray-100);
+  --secondary-background-color: var(--interface-gray-100);
   --font-size: var(--ts-50p);
   font-size: var(--font-size);
   --font-weight: 500;
@@ -20,10 +20,6 @@
   --border-radius: var(--ls-25p);
   
   // Size variants
-  &.small {
-    --padding-horizontal: var(--ls-75p);
-    --padding-vertical: var(--ls-25p);
-  }
   &.large {
     --padding-horizontal: var(--ls-100p);
     --padding-vertical: var(--ls-25p);
@@ -37,9 +33,6 @@
     background: transparent;
     border: 1px solid var(--background-color);
   }
-  &.gradient {
-    background: #{'linear-gradient(var(--secondary-background-color), var(--background-color))'};
-  }
   &.light {
     background: var(--secondary-background-color);
     border: 1px solid var(--background-color);
@@ -48,9 +41,6 @@
   // Shape variants
   &.rounded {
     border-radius: 20%/50%;
-  }
-  &.circle {
-    border-radius: 100%;
   }
 
   @include define-badge-color-variant('danger', 'danger-red');
