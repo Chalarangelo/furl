@@ -7,6 +7,7 @@ import AlertExamples from './AlertExamples';
 import AvatarExamples from './AvatarExamples';
 import BadgeExamples from './BadgeExamples';
 import DividerExamples from './DividerExamples';
+import TooltipExamples from './TooltipExamples';
 
 export {
   AnchorExamples,
@@ -17,5 +18,6 @@ export {
   AlertExamples,
   AvatarExamples,
   BadgeExamples,
-  DividerExamples
+  DividerExamples,
+  TooltipExamples
 };

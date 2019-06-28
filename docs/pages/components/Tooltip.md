@@ -1,21 +1,23 @@
 ---
-title: Something
-description: furl's Something component.
+title: Tooltip
+description: furl's Tooltip component.
 ---
 
-Intro ...
+Tooltips provide additional information when hovering over content.
 
 ### Examples
 
-<examples></examples>
+<tooltipexamples></tooltipexamples>
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Something } from 'furl-components';
+import { Tooltip, Paragraph } from 'furl-components';
 
 ReactDOM.render(
-  <Something></Something>, 
+  <Paragraph>
+    A cappuccino is an <Tooltip content='A type of coffee.' position='right'>espresso</Tooltip>-based coffee drink that originated in Italy, and is traditionally prepared with steamed milk foam (microfoam).
+  </Paragraph>, 
   document.getElementById('root')
 );
 ```
@@ -34,10 +36,20 @@ ReactDOM.render(
   </thead>
   <tbody>
     <tr>
-      <td class="font-c"></td>
-      <td colspan="3"></td>
-      <td></td>
+      <td class="font-c">content</td>
+      <td colspan="3">tooltip content</td>
+      <td>string</td>
       <td class='font-c'></td>
+    </tr>
+    <tr>
+      <td class="font-c">position</td>
+      <td colspan="3">tooltip position</td>
+      <td>string</td>
+      <td class='font-c'>'top'</td>
     </tr>
   </tbody>
 </table>
+
+### Notes
+
+* `position` can be one of the following: `'top'`, `'bottom'`, `'left'` or `'right'`.
