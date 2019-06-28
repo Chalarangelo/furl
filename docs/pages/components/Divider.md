@@ -1,20 +1,25 @@
 ---
-title: Something
-description: furl's Something component.
+title: Divider
+description: furl's Divider component.
 ---
 
-Intro ...
+Dividers separate different content.
 
 ### Examples
 
-<examples></examples>
+<dividerexamples></dividerexamples>
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Something } from 'furl-components';
+import { Divider, Paragraph } from 'furl-components';
 
 ReactDOM.render(
+  <>
+    <Paragraph>This is some content <Divider vertical /> This is some other content</Paragraph>
+    <Divider />
+    <Paragraph>This is some entirely different content.</Paragraph>
+  </>
   <Something></Something>, 
   document.getElementById('root')
 );
@@ -23,7 +28,7 @@ ReactDOM.render(
 ### API
 
 <table>
-  <caption>Component props</caption>
+  <caption>Divider props</caption>
   <thead>
     <tr>
       <th>Property</th>
@@ -34,10 +39,10 @@ ReactDOM.render(
   </thead>
   <tbody>
     <tr>
-      <td class="font-c"></td>
-      <td colspan="3"></td>
-      <td></td>
-      <td class='font-c'></td>
+      <td class="font-c">vertical</td>
+      <td colspan="3">divider alignment</td>
+      <td>boolean</td>
+      <td class='font-c'>false</td>
     </tr>
   </tbody>
 </table>

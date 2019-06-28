@@ -6,6 +6,7 @@ import AudioExamples from './AudioExamples';
 import AlertExamples from './AlertExamples';
 import AvatarExamples from './AvatarExamples';
 import BadgeExamples from './BadgeExamples';
+import DividerExamples from './DividerExamples';
 
 export {
   AnchorExamples,
@@ -15,5 +16,6 @@ export {
   AudioExamples,
   AlertExamples,
   AvatarExamples,
-  BadgeExamples
+  BadgeExamples,
+  DividerExamples
 };

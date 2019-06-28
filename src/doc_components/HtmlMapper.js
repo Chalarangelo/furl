@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactHtmlParser from 'html-react-parser';
-import { AnchorExamples, HyperlinkExamples, ImageExamples, VideoExamples, AudioExamples, AlertExamples, AvatarExamples, BadgeExamples } from '../doc_examples';
+import { AnchorExamples, HyperlinkExamples, ImageExamples, VideoExamples, AudioExamples, AlertExamples, AvatarExamples, BadgeExamples, DividerExamples } from '../doc_examples';
 
 const tagMappings = {
   'anchorexamples': AnchorExamples,
@@ -10,7 +10,8 @@ const tagMappings = {
   'audioexamples': AudioExamples,
   'alertexamples': AlertExamples,
   'avatarexamples': AvatarExamples,
-  'badgeexamples': BadgeExamples
+  'badgeexamples': BadgeExamples,
+  'dividerexamples': DividerExamples
 };
 
 const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {    
