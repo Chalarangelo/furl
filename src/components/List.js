@@ -1,14 +1,8 @@
 import React from 'react';
 import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
-const ListItem = ({ className, children, ...rest }) => (
-  <li 
-    className={className} 
-    style={combineStyles(rest, rest.style)}
-    {...omitProps(rest)}
-  >
-    {children}
-  </li>
+const ListItem = ({ children, ...rest }) => (
+  <li style={combineStyles(rest, rest.style)} {...omitProps(rest)}>{ children }</li>
 );
 
 const List = ({
