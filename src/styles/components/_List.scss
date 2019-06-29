@@ -7,6 +7,9 @@ ol, ul {
 
 li {
   --padding-horizontal: var(--ls-50p);
+  &::before {
+    background: transparent;
+  }
 }
 
 ul {
