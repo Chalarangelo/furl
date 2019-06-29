@@ -13,6 +13,7 @@ import ButtonExamples from './ButtonExamples';
 import LoaderExamples from './LoaderExamples';
 import ProgressExamples from './ProgressExamples';
 import GraphExamples from './GraphExamples';
+import CollapseExamples from './CollapseExamples';
 
 export {
   AnchorExamples,
@@ -29,5 +30,6 @@ export {
   ButtonExamples,
   LoaderExamples,
   ProgressExamples,
-  GraphExamples
+  GraphExamples,
+  CollapseExamples
 };

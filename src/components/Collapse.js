@@ -6,7 +6,7 @@ const Collapse = ({
   isOpen = false,
   fill = 'solid',
   onClick,
-  title,
+  title='Show/hide content',
   className,
   children,
   ...rest }) => {
