@@ -172,3 +172,7 @@ pre.line-numbers > code {
 	padding-right: 0.8em;
 	text-align: right;
 }
+
+pre[class*="language-"] * {
+  color: #ABB2BF;
+}

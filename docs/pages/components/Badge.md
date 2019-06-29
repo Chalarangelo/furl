@@ -45,13 +45,13 @@ ReactDOM.render(
       <td class="font-c">size</td>
       <td colspan="3">badge size</td>
       <td>string</td>
-      <td class='font-c'>'flat'</td>
+      <td class='font-c'>'normal'</td>
     </tr>
     <tr>
       <td class="font-c">fill</td>
       <td colspan="3">fill style</td>
       <td>string</td>
-      <td class='font-c'>'normal'</td>
+      <td class='font-c'>'flat'</td>
     </tr>
     <tr>
       <td class="font-c">shape</td>

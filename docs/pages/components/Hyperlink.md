@@ -45,7 +45,7 @@ ReactDOM.render(
     </tr>
     <tr>
       <td class="font-c">openIn</td>
-      <td colspan="3">target of the anchor></td>
+      <td colspan="3">target of the hyperlink></td>
       <td>string</td>
       <td class='font-c'>'self'</td>
     </tr>

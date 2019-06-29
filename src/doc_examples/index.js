@@ -9,6 +9,7 @@ import BadgeExamples from './BadgeExamples';
 import DividerExamples from './DividerExamples';
 import TooltipExamples from './TooltipExamples';
 import PopoverExamples from './PopoverExamples';
+import ButtonExamples from './ButtonExamples';
 
 export {
   AnchorExamples,
@@ -21,5 +22,6 @@ export {
   BadgeExamples,
   DividerExamples,
   TooltipExamples,
-  PopoverExamples
+  PopoverExamples,
+  ButtonExamples
 };
