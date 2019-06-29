@@ -31,7 +31,7 @@
   max-width: calc(100vw - 2 * var(--margin-horizontal));
 }
 
-:not(.example-wrapper) ul li {
+:not(.example-wrapper) > ul li {
   list-style: disc;
 }
 
