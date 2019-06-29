@@ -8,7 +8,9 @@ const ProgressExamples = (props) => (
     <Progress value={50} max={100} color='secondary' />
     <Progress value={65} max={100} color='success' />
     <Progress value={80} max={100} color='warning' />
-    <Progress value={100} max={100} color='danger' />
+    <Progress value={90} max={100} color='danger' />
+    <Progress value={100} max={100} size='large'/>
+
   </div>
 );
 
