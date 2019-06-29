@@ -1,13 +1,13 @@
 ---
-title: Something
-description: furl's Something component.
+title: Progress
+description: furl's Progress component.
 ---
 
 Intro ...
 
 ### Examples
 
-<examples></examples>
+<progressexamples></progressexamples>
 
 ```jsx
 import React from 'react';
@@ -23,7 +23,7 @@ ReactDOM.render(
 ### API
 
 <table>
-  <caption>Component props</caption>
+  <caption>Progress props</caption>
   <thead>
     <tr>
       <th>Property</th>

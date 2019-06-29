@@ -1,21 +1,21 @@
 ---
-title: Something
-description: furl's Something component.
+title: Loader
+description: furl's Loader component.
 ---
 
-Intro ...
+Loaders inform users that something is loading.
 
 ### Examples
 
-<examples></examples>
+<loaderexamples></loaderexamples>
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Something } from 'furl-components';
+import { Loader } from 'furl-components';
 
 ReactDOM.render(
-  <Something></Something>, 
+  <Loader color='secondary' size='large' />, 
   document.getElementById('root')
 );
 ```
@@ -23,7 +23,7 @@ ReactDOM.render(
 ### API
 
 <table>
-  <caption>Component props</caption>
+  <caption>Loader props</caption>
   <thead>
     <tr>
       <th>Property</th>
@@ -34,10 +34,21 @@ ReactDOM.render(
   </thead>
   <tbody>
     <tr>
-      <td class="font-c"></td>
-      <td colspan="3"></td>
-      <td></td>
-      <td class='font-c'></td>
+      <td class="font-c">color</td>
+      <td colspan="3">loader color</td>
+      <td>string</td>
+      <td class='font-c'>'plain'</td>
+    </tr>
+    <tr>
+      <td class="font-c">size</td>
+      <td colspan="3">loader size</td>
+      <td>string</td>
+      <td class='font-c'>'normal'</td>
     </tr>
   </tbody>
 </table>
+
+### Notes
+
+* `color` can be any of the predefined color palettes (`'plain'`, `'primary'`, `'secondary'`, `'success'`, `'warning'` or `'danger'`).
+* `size` can be either `'normal'` or `'large'`.

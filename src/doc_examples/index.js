@@ -10,6 +10,8 @@ import DividerExamples from './DividerExamples';
 import TooltipExamples from './TooltipExamples';
 import PopoverExamples from './PopoverExamples';
 import ButtonExamples from './ButtonExamples';
+import LoaderExamples from './LoaderExamples';
+import ProgressExamples from './ProgressExamples';
 
 export {
   AnchorExamples,
@@ -23,5 +25,7 @@ export {
   DividerExamples,
   TooltipExamples,
   PopoverExamples,
-  ButtonExamples
+  ButtonExamples,
+  LoaderExamples,
+  ProgressExamples
 };
