@@ -11,10 +11,10 @@ const Loader = ({
   <Icon
     role='progressbar'
     name='circle'
-    width={size === 'large' ? 48 : 24}
-    height={size === 'large' ? 48 : 24}
+    width={48}
+    height={48}
     className={combineClassNames(['loader', color !== 'normal' ? color : '', size !== 'normal' ? size : '', className])}
-    style={combineStyles(rest, rest.style)}
+    style={combineStyles(rest, rest.style, size === 'normal' ? {transform: 'scale(0.75)'} : {})}
     {...omitProps(rest)}
   />
 );
