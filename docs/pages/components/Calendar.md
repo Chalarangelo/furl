@@ -1,21 +1,25 @@
 ---
-title: Something
-description: furl's Something component.
+title: Calendar
+description: furl's Calendar component.
 ---
 
-Intro ...
+Calendars provide a visual representation of dates on a grid.
 
 ### Examples
 
-<examples></examples>
+<calendarexamples></calendarexamples>
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Something } from 'furl-components';
+import { Calendar } from 'furl-components';
 
 ReactDOM.render(
-  <Something></Something>, 
+  <Calendar 
+    date={new Date('01/01/2020')} 
+    fill='solid'
+    onDateChanged={(date) => console.log(date)}
+  />, 
   document.getElementById('root')
 );
 ```
@@ -23,7 +27,7 @@ ReactDOM.render(
 ### API
 
 <table>
-  <caption>Component props</caption>
+  <caption>Calendar props</caption>
   <thead>
     <tr>
       <th>Property</th>
@@ -34,10 +38,29 @@ ReactDOM.render(
   </thead>
   <tbody>
     <tr>
-      <td class="font-c"></td>
-      <td colspan="3"></td>
-      <td></td>
+      <td class="font-c">date</td>
+      <td colspan="3">calendar selected date</td>
+      <td>Date</td>
+      <td class='font-c'></td>
+    </tr>
+    <tr>
+      <td class="font-c">fill</td>
+      <td colspan="3">fill style</td>
+      <td>string</td>
+      <td class='font-c'>'flat'</td>
+    </tr>
+    <tr>
+      <td class="font-c" style='font-size: 14px'>onDateChanged</td>
+      <td colspan="3">calendar ondatechanged event</td>
+      <td>function</td>
       <td class='font-c'></td>
     </tr>
   </tbody>
 </table>
+
+### Notes
+
+* If `date` is not of type `Date`, the component will try to convert it to a usable `Date` object.
+* If `date` is not provided, the component will use the current date.
+* `fill` can be either `'flat'` or `'solid'`.
+* `onDateChanged` does not behave exactly like a normal event. Instead, the callback function will only be passed one argument, the value of the newly selected date.
