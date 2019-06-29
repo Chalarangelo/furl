@@ -16,6 +16,7 @@ import GraphExamples from './GraphExamples';
 import CollapseExamples from './CollapseExamples';
 import CalendarExamples from './CalendarExamples';
 import ListExamples from './ListExamples';
+import IframeExamples from './IframeExamples';
 
 export {
   AnchorExamples,
@@ -35,5 +36,6 @@ export {
   GraphExamples,
   CollapseExamples,
   CalendarExamples,
+  IframeExamples,
   ListExamples
 };

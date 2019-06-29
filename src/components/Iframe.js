@@ -6,7 +6,7 @@ const Iframe = ({
   height = 'auto',
   className,
   src,
-  alt = 'An image',
+  alt = 'An embed',
   withCaption = false,
   allowFullScreen = false,
   children,
