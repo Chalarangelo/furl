@@ -3,7 +3,7 @@ import ReactHtmlParser from 'html-react-parser';
 import { 
   AnchorExamples, HyperlinkExamples, ImageExamples, VideoExamples, AudioExamples, AlertExamples, 
   AvatarExamples, BadgeExamples, DividerExamples, TooltipExamples, PopoverExamples, ButtonExamples,
-  LoaderExamples, ProgressExamples
+  LoaderExamples, ProgressExamples, GraphExamples
 } from '../doc_examples';
 
 const tagMappings = {
@@ -20,7 +20,8 @@ const tagMappings = {
   'popoverexamples': PopoverExamples,
   'buttonexamples': ButtonExamples,
   'loaderexamples': LoaderExamples,
-  'progressexamples': ProgressExamples
+  'progressexamples': ProgressExamples,
+  'graphexamples': GraphExamples
 };
 
 const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {    

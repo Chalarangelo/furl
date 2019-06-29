@@ -12,6 +12,7 @@ import PopoverExamples from './PopoverExamples';
 import ButtonExamples from './ButtonExamples';
 import LoaderExamples from './LoaderExamples';
 import ProgressExamples from './ProgressExamples';
+import GraphExamples from './GraphExamples';
 
 export {
   AnchorExamples,
@@ -27,5 +28,6 @@ export {
   PopoverExamples,
   ButtonExamples,
   LoaderExamples,
-  ProgressExamples
+  ProgressExamples,
+  GraphExamples
 };
