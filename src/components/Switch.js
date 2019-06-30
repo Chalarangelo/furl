@@ -4,7 +4,6 @@ import { combineClassNames, omitProps, combineStyles } from '../utilities/utils'
 const Switch = ({
   color = 'plain',
   disabled = false,
-  required = false,
   name,
   checked,
   onChange,
@@ -18,7 +17,6 @@ const Switch = ({
         type='checkbox'
         className={combineClassNames(classNames)}
         disabled={disabled}
-        required={required}
         checked={checked}
         name={name}
         onChange={onChange}
