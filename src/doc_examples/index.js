@@ -17,6 +17,7 @@ import CollapseExamples from './CollapseExamples';
 import CalendarExamples from './CalendarExamples';
 import ListExamples from './ListExamples';
 import IframeExamples from './IframeExamples';
+import FooterExamples from './FooterExamples';
 
 export {
   AnchorExamples,
@@ -37,5 +38,6 @@ export {
   CollapseExamples,
   CalendarExamples,
   IframeExamples,
-  ListExamples
+  ListExamples,
+  FooterExamples
 };

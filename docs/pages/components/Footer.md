@@ -1,21 +1,23 @@
 ---
-title: Something
-description: furl's Something component.
+title: Footer
+description: furl's Footer component.
 ---
 
-Intro ...
+Footers provide a footer section for a document.
 
 ### Examples
 
-<examples></examples>
+<footerexamples></footerexamples>
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Something } from 'furl-components';
+import { Footer, Paragraph } from 'furl-components';
 
 ReactDOM.render(
-  <Something></Something>, 
+  <Footer>
+    <Paragraph>Some website &copy; 2019</Paragraph>
+  </Footer>, 
   document.getElementById('root')
 );
 ```
