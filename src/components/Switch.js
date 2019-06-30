@@ -25,7 +25,7 @@ const Switch = ({
         style={combineStyles(rest, rest.style)}
         {...omitProps(rest)}
       />
-      {children}
+      &nbsp;{children}
     </label>
   );
 };

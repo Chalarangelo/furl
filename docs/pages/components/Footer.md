@@ -25,7 +25,7 @@ ReactDOM.render(
 ### API
 
 <table>
-  <caption>Component props</caption>
+  <caption>Footer props</caption>
   <thead>
     <tr>
       <th>Property</th>

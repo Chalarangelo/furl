@@ -34,7 +34,7 @@
   &:checked:before {
     position: absolute;
     top: 1px;
-    left: calc(100% - var(--ls-75p) - 2px);
+    left: calc(100% - var(--ls-75p) - 1px);
     content: '';
     width: var(--ls-75p);
     height: var(--ls-75p);

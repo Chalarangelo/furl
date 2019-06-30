@@ -18,6 +18,7 @@ import CalendarExamples from './CalendarExamples';
 import ListExamples from './ListExamples';
 import IframeExamples from './IframeExamples';
 import FooterExamples from './FooterExamples';
+import SwitchExamples from './SwitchExamples';
 
 export {
   AnchorExamples,
@@ -39,5 +40,6 @@ export {
   CalendarExamples,
   IframeExamples,
   ListExamples,
-  FooterExamples
+  FooterExamples,
+  SwitchExamples
 };

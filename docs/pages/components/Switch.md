@@ -1,21 +1,21 @@
 ---
-title: Something
-description: furl's Something component.
+title: Switch
+description: furl's Switch component.
 ---
 
-Intro ...
+Switches provide a simple visual toggler.
 
 ### Examples
 
-<examples></examples>
+<switchexamples></switchexamples>
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Something } from 'furl-components';
+import { Switch } from 'furl-components';
 
 ReactDOM.render(
-  <Something></Something>, 
+  <Switch color='primary'>Turn lights on/off</Switch>, 
   document.getElementById('root')
 );
 ```
@@ -23,7 +23,7 @@ ReactDOM.render(
 ### API
 
 <table>
-  <caption>Component props</caption>
+  <caption>Switch props</caption>
   <thead>
     <tr>
       <th>Property</th>
@@ -34,10 +34,39 @@ ReactDOM.render(
   </thead>
   <tbody>
     <tr>
-      <td class="font-c"></td>
-      <td colspan="3"></td>
-      <td></td>
+      <td class="font-c">color</td>
+      <td colspan="3">switch color</td>
+      <td>string</td>
+      <td class='font-c'>'plain'</td>
+    </tr>
+    <tr>
+      <td class="font-c">disabled</td>
+      <td colspan="3">switch disabled state</td>
+      <td>boolean</td>
+      <td class='font-c'>false</td>
+    </tr>
+    <tr>
+      <td class="font-c">checked</td>
+      <td colspan="3">switch checked state</td>
+      <td>boolean</td>
+      <td class='font-c'></td>
+    </tr>
+    <tr>
+      <td class="font-c">name</td>
+      <td colspan="3">switch name</td>
+      <td>string</td>
+      <td class='font-c'></td>
+    </tr>
+    <tr>
+      <td class="font-c">onChange</td>
+      <td colspan="3">switch onchange event></td>
+      <td>function</td>
       <td class='font-c'></td>
     </tr>
   </tbody>
 </table>
+
+
+### Notes
+
+* `color` can be any of the predefined color palettes (`'plain'`, `'primary'`, `'secondary'`, `'success'`, `'warning'` or `'danger'`).
