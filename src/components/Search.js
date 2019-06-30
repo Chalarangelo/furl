@@ -6,7 +6,6 @@ import Icon from './Icon';
 const Search = ({
   size = 'normal',
   disabled = false,
-  required = false,
   placeholder,
   name,
   onChange,
@@ -20,7 +19,7 @@ const Search = ({
       <InputBase
         type='search' placeholder={placeholder}
         className={combineClassNames(['with-search-icon', className])} size={size} disabled={disabled}
-        required={required} name={name} onChange={onChange} 
+        name={name} onChange={onChange} 
         style={combineStyles(rest, rest.style)}
         {...omitProps(rest)}
       />
@@ -34,7 +33,7 @@ const Search = ({
       <InputBase
         type='search' placeholder={placeholder}
         className={className} size={size} disabled={disabled}
-        required={required} name={name} onChange={onChange} 
+        name={name} onChange={onChange} 
         style={combineStyles(rest, rest.style)}
         {...omitProps(rest)}
       />
