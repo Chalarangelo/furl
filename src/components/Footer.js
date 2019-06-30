@@ -1,10 +1,9 @@
 import React from 'react';
 import { omitProps, combineStyles } from '../utilities/utils';
 
-const Footer = ({ className, children, ...rest }) => {
+const Footer = ({ children, ...rest }) => {
   return (
     <footer
-      className={className}
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
     >
