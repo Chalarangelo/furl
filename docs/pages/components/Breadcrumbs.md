@@ -3,7 +3,7 @@ title: Breadcrumbs
 description: furl's Breadcrumbs component.
 ---
 
-Breadcrumbs create hierearchical representation and navigation.
+Breadcrumbs create hierarchical representation and navigation.
 
 ### Examples
 
@@ -17,7 +17,9 @@ import { Breadcrumbs, Breadcrumb, Hyperlink } from 'furl-components';
 ReactDOM.render(
   <div>
     <Breadcrumbs separator='>'>
-      <Breadcrumb><Hyperlink href='/my-files'>My files</Hyperlink></Breadcrumb>
+      <Breadcrumb>
+        <Hyperlink href='/my-files'>My files</Hyperlink>
+      </Breadcrumb>
       <Breadcrumb>My documents</Breadcrumb>
     </Breadcrumbs>
     <Breadcrumbs data={[

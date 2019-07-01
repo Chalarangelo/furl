@@ -21,6 +21,7 @@ import FooterExamples from './FooterExamples';
 import SwitchExamples from './SwitchExamples';
 import SearchExamples from './SearchExamples';
 import BreadcrumbExamples from './BreadcrumbExamples';
+import StepExamples from './StepExamples';
 
 export {
   AnchorExamples,
@@ -45,5 +46,6 @@ export {
   FooterExamples,
   SwitchExamples,
   SearchExamples,
-  BreadcrumbExamples
+  BreadcrumbExamples,
+  StepExamples
 };
