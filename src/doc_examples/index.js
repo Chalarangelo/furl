@@ -20,6 +20,7 @@ import IframeExamples from './IframeExamples';
 import FooterExamples from './FooterExamples';
 import SwitchExamples from './SwitchExamples';
 import SearchExamples from './SearchExamples';
+import BreadcrumbExamples from './BreadcrumbExamples';
 
 export {
   AnchorExamples,
@@ -43,5 +44,6 @@ export {
   ListExamples,
   FooterExamples,
   SwitchExamples,
-  SearchExamples
+  SearchExamples,
+  BreadcrumbExamples
 };
