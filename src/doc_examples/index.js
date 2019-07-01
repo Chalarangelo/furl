@@ -22,6 +22,7 @@ import SwitchExamples from './SwitchExamples';
 import SearchExamples from './SearchExamples';
 import BreadcrumbExamples from './BreadcrumbExamples';
 import StepExamples from './StepExamples';
+import IconExamples from './IconExamples';
 
 export {
   AnchorExamples,
@@ -47,5 +48,6 @@ export {
   SwitchExamples,
   SearchExamples,
   BreadcrumbExamples,
-  StepExamples
+  StepExamples,
+  IconExamples
 };
