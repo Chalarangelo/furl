@@ -24,6 +24,7 @@ import BreadcrumbExamples from './BreadcrumbExamples';
 import StepExamples from './StepExamples';
 import IconExamples from './IconExamples';
 import ContextButtonExamples from './ContextButtonExamples';
+import ModalExamples from './ModalExamples';
 
 export {
   AnchorExamples,
@@ -51,5 +52,6 @@ export {
   BreadcrumbExamples,
   StepExamples,
   IconExamples,
-  ContextButtonExamples
+  ContextButtonExamples,
+  ModalExamples
 };
