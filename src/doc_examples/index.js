@@ -23,6 +23,7 @@ import SearchExamples from './SearchExamples';
 import BreadcrumbExamples from './BreadcrumbExamples';
 import StepExamples from './StepExamples';
 import IconExamples from './IconExamples';
+import ContextButtonExamples from './ContextButtonExamples';
 
 export {
   AnchorExamples,
@@ -49,5 +50,6 @@ export {
   SearchExamples,
   BreadcrumbExamples,
   StepExamples,
-  IconExamples
+  IconExamples,
+  ContextButtonExamples
 };
