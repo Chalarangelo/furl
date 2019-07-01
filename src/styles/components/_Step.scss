@@ -26,10 +26,10 @@
     &.selected {
       & > .step-content {
         --color: var(--interface-gray-900);
-        --font-weight: 600;
+        --font-weight: 500;
       }
       &::before {
-        --font-weight: 600;
+        --font-weight: 500;
         --background-color: var(--focus-blue-400);
       }
     }
