@@ -26,6 +26,7 @@ import IconExamples from './IconExamples';
 import ContextButtonExamples from './ContextButtonExamples';
 import ModalExamples from './ModalExamples';
 import CardExamples from './CardExamples';
+import MediaObjectExamples from './MediaObjectExamples';
 
 export {
   AnchorExamples,
@@ -55,5 +56,6 @@ export {
   IconExamples,
   ContextButtonExamples,
   ModalExamples,
-  CardExamples
+  CardExamples,
+  MediaObjectExamples
 };

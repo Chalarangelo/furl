@@ -9,7 +9,7 @@ const MediaObjectHOC = ({
   mediaHeight = 'ls-200p',
   className,
   style,
-  mediaClassNames,
+  mediaClassName,
   ...rest
 }) => {
   if (isUndefined(media))
@@ -24,7 +24,7 @@ const MediaObjectHOC = ({
   return (
     <div className={_className} style={_style} {...rest}>
       <div
-        className={combineClassNames(['media-image', mediaClassNames])}
+        className={combineClassNames(['media-image', mediaClassName])}
         style={{
           width: _width,
           height: _height,

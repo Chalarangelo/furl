@@ -5,7 +5,7 @@ import {
   AvatarExamples, BadgeExamples, DividerExamples, TooltipExamples, PopoverExamples, ButtonExamples,
   LoaderExamples, ProgressExamples, GraphExamples, CollapseExamples, CalendarExamples, ListExamples,
   IframeExamples, FooterExamples, SwitchExamples, SearchExamples, BreadcrumbExamples, StepExamples,
-  IconExamples, ContextButtonExamples, ModalExamples, CardExamples
+  IconExamples, ContextButtonExamples, ModalExamples, CardExamples, MediaObjectExamples
 } from '../doc_examples';
 
 const tagMappings = {
@@ -36,7 +36,8 @@ const tagMappings = {
   'iconexamples': IconExamples,
   'contextbuttonexamples': ContextButtonExamples,
   'modalexamples': ModalExamples,
-  'cardexamples': CardExamples
+  'cardexamples': CardExamples,
+  'mediaobjectexamples': MediaObjectExamples
 };
 
 const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {    

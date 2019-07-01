@@ -5,9 +5,9 @@ const ModalExamples = (props) => {
   const modalCenterRef = React.createRef();
 
   return (
-    <div className="example-wrapper" style={{textAlign: 'center'}}>
+    <div className="example-wrapper">
       <ModalCenter ref={modalCenterRef} />
-      <Button color='primary' onClick={() => {
+      <Button style={{margin: 'var(--margin-vertical) auto'}} color='primary' onClick={() => {
         modalCenterRef.current.setContent(
           <Modal>
             <ModalSection>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardSection, Button } from '../lib';
 
 const CardExamples = (props) => (
-  <div className="example-wrapper" style={{textAlign: 'center'}}>
+  <div className="example-wrapper">
     <Card width={320} style={{margin: 'var(--margin-vertical) auto'}}>
       <CardSection>
         <h5>Cool mountains<small>Just look at them</small></h5>
