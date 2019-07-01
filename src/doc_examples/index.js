@@ -25,6 +25,7 @@ import StepExamples from './StepExamples';
 import IconExamples from './IconExamples';
 import ContextButtonExamples from './ContextButtonExamples';
 import ModalExamples from './ModalExamples';
+import CardExamples from './CardExamples';
 
 export {
   AnchorExamples,
@@ -53,5 +54,6 @@ export {
   StepExamples,
   IconExamples,
   ContextButtonExamples,
-  ModalExamples
+  ModalExamples,
+  CardExamples
 };
