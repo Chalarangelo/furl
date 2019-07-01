@@ -1,21 +1,24 @@
 ---
-title: Something
-description: furl's Something component.
+title: Search
+description: furl's Search component.
 ---
 
-Intro ...
+Search helps users find the content they are looking for.
 
 ### Examples
 
-<examples></examples>
+<searchexamples></searchexamples>
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Something } from 'furl-components';
+import { Search, Paragraph, Title } from 'furl-components';
 
 ReactDOM.render(
-  <Something></Something>, 
+  <Search placeholder='Search...' withIcon size='large'>
+    <Title level={4}>Search Results</Title>
+    <Paragraph>Found 6 results...</Paragraph>
+  </Search>, 
   document.getElementById('root')
 );
 ```
@@ -23,7 +26,7 @@ ReactDOM.render(
 ### API
 
 <table>
-  <caption>Component props</caption>
+  <caption>Search props</caption>
   <thead>
     <tr>
       <th>Property</th>
@@ -34,10 +37,45 @@ ReactDOM.render(
   </thead>
   <tbody>
     <tr>
-      <td class="font-c"></td>
-      <td colspan="3"></td>
-      <td></td>
+      <td class="font-c">size</td>
+      <td colspan="3">search size</td>
+      <td>string</td>
+      <td class='font-c'>'normal'</td>
+    </tr>
+    <tr>
+      <td class="font-c">withIcon</td>
+      <td colspan="3">render with icon</td>
+      <td>boolean</td>
+      <td class='font-c'>false</td>
+    </tr>
+    <tr>
+      <td class="font-c">disabled</td>
+      <td colspan="3">search disabled state</td>
+      <td>boolean</td>
+      <td class='font-c'>false</td>
+    </tr>
+    <tr>
+      <td class="font-c">placeholder</td>
+      <td colspan="3">search placeholder text</td>
+      <td>string</td>
+      <td class='font-c'></td>
+    </tr>
+    <tr>
+      <td class="font-c">name</td>
+      <td colspan="3">search name</td>
+      <td>string</td>
+      <td class='font-c'></td>
+    </tr>
+    <tr>
+      <td class="font-c">onChange</td>
+      <td colspan="3">search onchange event></td>
+      <td>function</td>
       <td class='font-c'></td>
     </tr>
   </tbody>
 </table>
+
+
+### Notes
+
+* `size` can be one of the following: `'small'`, `'normal'` or `'large'`.

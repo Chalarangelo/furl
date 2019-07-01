@@ -19,6 +19,7 @@ import ListExamples from './ListExamples';
 import IframeExamples from './IframeExamples';
 import FooterExamples from './FooterExamples';
 import SwitchExamples from './SwitchExamples';
+import SearchExamples from './SearchExamples';
 
 export {
   AnchorExamples,
@@ -41,5 +42,6 @@ export {
   IframeExamples,
   ListExamples,
   FooterExamples,
-  SwitchExamples
+  SwitchExamples,
+  SearchExamples
 };
