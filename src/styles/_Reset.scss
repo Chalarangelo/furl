@@ -28,6 +28,7 @@ body {
 }
 
 * {
+  position: relative;
   // Reset border of everything
   border: 0;
   // Immediately complete animations if "prefers reduced motion" is enabled
