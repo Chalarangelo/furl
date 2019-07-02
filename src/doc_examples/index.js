@@ -30,6 +30,7 @@ import MediaObjectExamples from './MediaObjectExamples';
 import DropdownExamples from './DropdownExamples';
 import ItemExamples from './ItemExamples';
 import MenuExamples from './MenuExamples';
+import TypographyExamples from './TypographyExamples';
 
 export {
   AnchorExamples,
@@ -63,5 +64,6 @@ export {
   MediaObjectExamples,
   DropdownExamples,
   ItemExamples,
-  MenuExamples
+  MenuExamples,
+  TypographyExamples
 };
