@@ -66,7 +66,7 @@ ReactDOM.render(
     </tr>
     <tr>
       <td class="font-c">fill</td>
-      <td colspan="3">fill style</td>
+      <td colspan="3">button fill style</td>
       <td>string</td>
       <td class='font-c'>'flat'</td>
     </tr>
@@ -78,7 +78,7 @@ ReactDOM.render(
     </tr>
     <tr>
       <td class="font-c">text</td>
-      <td colspan="3">button text transformaton</td>
+      <td colspan="3">button text transformation</td>
       <td>string</td>
       <td class='font-c'>'normal'</td>
     </tr>
