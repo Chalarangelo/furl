@@ -4,7 +4,7 @@ import { combineClassNames, omitProps, combineStyles } from '../utilities/utils'
 
 const Dropdown = ({
   isOpen = false,
-  text,
+  title,
   reverse = false,
   className,
   children,
@@ -17,7 +17,7 @@ const Dropdown = ({
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
     >
-      <summary>{text}
+      <summary>{title}
         {reverse
           ? <Icon name='chevron-up' width={16} height={16} />
           : <Icon name='chevron-down' width={16} height={16} />
