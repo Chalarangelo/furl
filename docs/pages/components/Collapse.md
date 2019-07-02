@@ -55,7 +55,7 @@ ReactDOM.render(
     </tr>
     <tr>
       <td class="font-c">onClick</td>
-      <td colspan="3">collapse onclick event></td>
+      <td colspan="3">collapse onclick event</td>
       <td>function</td>
       <td class='font-c'></td>
     </tr>

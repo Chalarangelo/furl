@@ -1,21 +1,25 @@
 ---
-title: Something
-description: furl's Something component.
+title: Dropdown
+description: furl's Dropdown component.
 ---
 
-Intro ...
+Dropdowns toggle the display of a list of items.
 
 ### Examples
 
-<examples></examples>
+<dropdownexamples></dropdownexamples>
 
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Something } from 'furl-components';
+import { Dropdown, Hyperlink } from 'furl-components';
 
 ReactDOM.render(
-  <Something></Something>, 
+  <Dropdown title='Reverse dropdown' reverse>
+    <Hyperlink href='#one'>Item 1</Hyperlink>
+    <Hyperlink href='#two'>Item 2</Hyperlink>
+    <Hyperlink href='#three'>Item 3</Hyperlink>
+  </Dropdown>, 
   document.getElementById('root')
 );
 ```
@@ -23,7 +27,7 @@ ReactDOM.render(
 ### API
 
 <table>
-  <caption>Component props</caption>
+  <caption>Dropdown props</caption>
   <thead>
     <tr>
       <th>Property</th>
@@ -34,10 +38,22 @@ ReactDOM.render(
   </thead>
   <tbody>
     <tr>
-      <td class="font-c"></td>
-      <td colspan="3"></td>
-      <td></td>
-      <td class='font-c'></td>
+      <td class="font-c">title</td>
+      <td colspan="3">dropdown title</td>
+      <td>string</td>
+      <td class='font-c'>'Show/hide content'</td>
+    </tr>
+    <tr>
+      <td class="font-c">isOpen</td>
+      <td colspan="3">dropdown open state</td>
+      <td>boolean</td>
+      <td class='font-c'>false</td>
+    </tr>
+    <tr>
+      <td class="font-c">reverse</td>
+      <td colspan="3">dropdown reverse style</td>
+      <td>boolean</td>
+      <td class='font-c'>false</td>
     </tr>
   </tbody>
 </table>

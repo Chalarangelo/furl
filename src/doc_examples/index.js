@@ -27,6 +27,7 @@ import ContextButtonExamples from './ContextButtonExamples';
 import ModalExamples from './ModalExamples';
 import CardExamples from './CardExamples';
 import MediaObjectExamples from './MediaObjectExamples';
+import DropdownExamples from './DropdownExamples';
 
 export {
   AnchorExamples,
@@ -57,5 +58,6 @@ export {
   ContextButtonExamples,
   ModalExamples,
   CardExamples,
-  MediaObjectExamples
+  MediaObjectExamples,
+  DropdownExamples
 };

@@ -4,7 +4,7 @@ import { combineClassNames, omitProps, combineStyles } from '../utilities/utils'
 
 const Dropdown = ({
   isOpen = false,
-  title,
+  title ='Show/hide content',
   reverse = false,
   className,
   children,

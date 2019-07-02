@@ -634,7 +634,7 @@ storiesOf('Dropdown', module)
             <Menu type='horizontal' highlight='top'>
               <MenuItem>Item 1</MenuItem>
               <MenuItem selected href='#'>Item 2</MenuItem>
-              <MenuItem><Dropdown text='DropD' reverse>
+              <MenuItem><Dropdown title='DropD' reverse>
                 <MenuItem>Item 3.1</MenuItem>
                 <MenuItem selected>Item 3.2</MenuItem>
                 <MenuItem>Item 3.3</MenuItem>
@@ -648,22 +648,22 @@ storiesOf('Dropdown', module)
     <Sidebar outline='border-right'><Menu type='vertical' highlight='left'>
       <MenuItem selected>Item 1</MenuItem>
       <MenuItem>Item 2</MenuItem>
-      <MenuItem><Dropdown text='DropD'>
+      <MenuItem><Dropdown title='DropD'>
         <MenuItem>Item 3.1</MenuItem>
         <MenuItem selected>Item 3.2</MenuItem>
         <MenuItem>Item 3.3</MenuItem>
       </Dropdown></MenuItem>
       <MenuItem>Item 4</MenuItem>
     </Menu></Sidebar>
-    <Content><p>Lorem ipsum dolor sit amet...</p><Button><Dropdown text="Don't do it">
+    <Content><p>Lorem ipsum dolor sit amet...</p><Button><Dropdown title="Don't do it">
       <Hyperlink href='#'>Item 3.1</Hyperlink>
       <Hyperlink href='#'>Item 3.2</Hyperlink>
       <Hyperlink href='#'>Item 3.3</Hyperlink>
-    </Dropdown></Button><br /><Dropdown text='DropD'>
+    </Dropdown></Button><br /><Dropdown title='DropD'>
         <Hyperlink href='#'>Item 3.1</Hyperlink>
         <Hyperlink href='#'>Item 3.2</Hyperlink>
         <Hyperlink href='#'>Item 3.3</Hyperlink>
-      </Dropdown><br /><Dropdown text='DropD' reverse>
+      </Dropdown><br /><Dropdown title='DropD' reverse>
         <Hyperlink href='#'>Item 3.1</Hyperlink>
         <Hyperlink href='#'>Item 3.2</Hyperlink>
         <Hyperlink href='#'>Item 3.3</Hyperlink>
