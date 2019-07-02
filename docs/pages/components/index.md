@@ -3,9 +3,11 @@ title: Components
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 ---
 
+**furl** provides you with a multitude of components that suit various needs of a modern web application, ranging from data display and presentation to interactivity, navigation and data input.
+
 ### API
 
-All of **furl**'s components support all the common HTML/React props. However, a common API is provided for all components to make things easier.
+All of the provided components support all of the common HTML/React props. However, a common API is provided for all components to make things easier.
 
 <table>
   <caption>Common props</caption>
