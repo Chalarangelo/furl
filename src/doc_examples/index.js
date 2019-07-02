@@ -32,6 +32,7 @@ import ItemExamples from './ItemExamples';
 import MenuExamples from './MenuExamples';
 import TypographyExamples from './TypographyExamples';
 import TableExamples from './TableExamples';
+import AccordionExamples from './AccordionExamples';
 
 export {
   AnchorExamples,
@@ -67,5 +68,6 @@ export {
   ItemExamples,
   MenuExamples,
   TypographyExamples,
-  TableExamples
+  TableExamples,
+  AccordionExamples
 };

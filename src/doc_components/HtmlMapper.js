@@ -6,7 +6,8 @@ import {
   LoaderExamples, ProgressExamples, GraphExamples, CollapseExamples, CalendarExamples, ListExamples,
   IframeExamples, FooterExamples, SwitchExamples, SearchExamples, BreadcrumbExamples, StepExamples,
   IconExamples, ContextButtonExamples, ModalExamples, CardExamples, MediaObjectExamples,
-  DropdownExamples, ItemExamples, MenuExamples, TypographyExamples, TableExamples
+  DropdownExamples, ItemExamples, MenuExamples, TypographyExamples, TableExamples, AccordionExamples,
+
 } from '../doc_examples';
 
 const tagMappings = {
@@ -43,7 +44,8 @@ const tagMappings = {
   'itemexamples': ItemExamples,
   'menuexamples': MenuExamples,
   'typographyexamples': TypographyExamples,
-  'tableexamples': TableExamples
+  'tableexamples': TableExamples,
+  'accordionexamples': AccordionExamples
 };
 
 const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {    
