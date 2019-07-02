@@ -64,7 +64,7 @@ ReactDOM.render(
     </tr>
     <tr>
       <td class="font-c">fill</td>
-      <td colspan="3">list style</td>
+      <td colspan="3">accordion fill style</td>
       <td>string</td>
       <td class='font-c'>'solid'</td>
     </tr>
