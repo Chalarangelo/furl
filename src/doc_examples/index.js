@@ -31,6 +31,7 @@ import DropdownExamples from './DropdownExamples';
 import ItemExamples from './ItemExamples';
 import MenuExamples from './MenuExamples';
 import TypographyExamples from './TypographyExamples';
+import TableExamples from './TableExamples';
 
 export {
   AnchorExamples,
@@ -65,5 +66,6 @@ export {
   DropdownExamples,
   ItemExamples,
   MenuExamples,
-  TypographyExamples
+  TypographyExamples,
+  TableExamples
 };
