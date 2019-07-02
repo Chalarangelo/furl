@@ -7,7 +7,7 @@ import {
   IframeExamples, FooterExamples, SwitchExamples, SearchExamples, BreadcrumbExamples, StepExamples,
   IconExamples, ContextButtonExamples, ModalExamples, CardExamples, MediaObjectExamples,
   DropdownExamples, ItemExamples, MenuExamples, TypographyExamples, TableExamples, AccordionExamples,
-  ButtonGroupExamples
+  ButtonGroupExamples, TabExamples
 } from '../doc_examples';
 
 const tagMappings = {
@@ -46,7 +46,8 @@ const tagMappings = {
   'typographyexamples': TypographyExamples,
   'tableexamples': TableExamples,
   'accordionexamples': AccordionExamples,
-  'buttongroupexamples': ButtonGroupExamples
+  'buttongroupexamples': ButtonGroupExamples,
+  'tabexamples': TabExamples
 };
 
 const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {    

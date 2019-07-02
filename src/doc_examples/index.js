@@ -34,6 +34,7 @@ import TypographyExamples from './TypographyExamples';
 import TableExamples from './TableExamples';
 import AccordionExamples from './AccordionExamples';
 import ButtonGroupExamples from './ButtonGroupExamples';
+import TabExamples from './TabExamples';
 
 export {
   AnchorExamples,
@@ -71,5 +72,6 @@ export {
   TypographyExamples,
   TableExamples,
   AccordionExamples,
-  ButtonGroupExamples
+  ButtonGroupExamples,
+  TabExamples
 };
