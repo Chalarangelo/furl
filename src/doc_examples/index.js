@@ -28,6 +28,7 @@ import ModalExamples from './ModalExamples';
 import CardExamples from './CardExamples';
 import MediaObjectExamples from './MediaObjectExamples';
 import DropdownExamples from './DropdownExamples';
+import ItemExamples from './ItemExamples';
 
 export {
   AnchorExamples,
@@ -59,5 +60,6 @@ export {
   ModalExamples,
   CardExamples,
   MediaObjectExamples,
-  DropdownExamples
+  DropdownExamples,
+  ItemExamples
 };

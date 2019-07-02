@@ -6,7 +6,7 @@ import {
   LoaderExamples, ProgressExamples, GraphExamples, CollapseExamples, CalendarExamples, ListExamples,
   IframeExamples, FooterExamples, SwitchExamples, SearchExamples, BreadcrumbExamples, StepExamples,
   IconExamples, ContextButtonExamples, ModalExamples, CardExamples, MediaObjectExamples,
-  DropdownExamples
+  DropdownExamples, ItemExamples
 } from '../doc_examples';
 
 const tagMappings = {
@@ -39,7 +39,8 @@ const tagMappings = {
   'modalexamples': ModalExamples,
   'cardexamples': CardExamples,
   'mediaobjectexamples': MediaObjectExamples,
-  'dropdownexamples': DropdownExamples
+  'dropdownexamples': DropdownExamples,
+  'itemexamples': ItemExamples
 };
 
 const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {    
