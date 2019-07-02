@@ -19,7 +19,7 @@ const ItemHOC = ({
   let [_data, _usesData] = !isUndefined(data) ? [data, true] : [children, false];
 
   return (
-    <MediaObject media={media} {...rest} mediaClassNames='avatar circle medium'>
+    <MediaObject media={media} {...rest} mediaClassName='avatar circle medium'>
       <Title 
         className='item-author' 
         level={6} 
