@@ -5,7 +5,6 @@ import Dropdown from './Dropdown';
 
 const MenuItem = ({
   selected = false,
-  disabled = false,
   openIn,
   href,
   onClick,
@@ -19,7 +18,6 @@ const MenuItem = ({
       className={combineClassNames(classNames)}
       fill='' size='normal' text='normal' color=''
       type={href !== undefined ? 'link' : 'button'}
-      disabled={disabled}
       openIn={openIn}
       onClick={onClick}
       href={href}
