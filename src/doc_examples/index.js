@@ -29,6 +29,7 @@ import CardExamples from './CardExamples';
 import MediaObjectExamples from './MediaObjectExamples';
 import DropdownExamples from './DropdownExamples';
 import ItemExamples from './ItemExamples';
+import MenuExamples from './MenuExamples';
 
 export {
   AnchorExamples,
@@ -61,5 +62,6 @@ export {
   CardExamples,
   MediaObjectExamples,
   DropdownExamples,
-  ItemExamples
+  ItemExamples,
+  MenuExamples
 };
