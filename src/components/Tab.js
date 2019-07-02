@@ -15,7 +15,6 @@ const TabItem = ({ className, children, ...rest }) => (
 const Tab = ({
   openIndex = 0,
   controlStyle = 'normal',
-  id,
   className,
   children,
   ...rest
@@ -51,7 +50,6 @@ const Tab = ({
   let classNames = [className, 'tab-container'];
   return (
     <div 
-      id={id} 
       className={combineClassNames(classNames)}
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
