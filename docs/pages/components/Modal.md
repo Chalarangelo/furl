@@ -14,6 +14,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ModalCenter, Modal, ModalSection, Button } from 'furl-components';
 
+const modalCenterRef = React.createRef();
+
 ReactDOM.render(
   <div>
     <ModalCenter ref={modalCenterRef} />
