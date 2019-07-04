@@ -10,7 +10,12 @@ import {
   Image,
   Button,
   Icon,
-  Hyperlink
+  Hyperlink,
+  Title,
+  Footer,
+  Paragraph,
+  Text,
+  Divider
 } from '../lib';
 import Meta from '../doc_components/Meta';
 import HtmlMapper from '../doc_components/HtmlMapper';
@@ -93,6 +98,15 @@ const HomePage = (props) => {
               <Col />
               <Col size='800px'>
                 <HtmlMapper html={data.post.html} />
+              </Col>
+              <Col />
+            </Row>
+            <Row style={{borderTop: '1px solid var(--interface-gray-100)', marginTop: 'var(--ls-200p)'}}>
+              <Col />
+              <Col size='800px' style={{flex: '1 0 800px'}}>
+                <Footer>
+                  <Paragraph><Text textStyle='small'><Text textStyle='bold'>furl</Text> was designed and developed by <Hyperlink openIn='external' href='https://github.com/Chalarangelo'>Angelos Chalaris</Hyperlink> &copy; 2019<br/> Documentation generated using <Hyperlink openIn='external' href='https://www.gatsbyjs.org/'>Gatsby</Hyperlink>, hosting by <Hyperlink openIn='external' href='https://www.netlify.com/'>Netlify</Hyperlink></Text></Paragraph>
+                </Footer>
               </Col>
               <Col />
             </Row>
