@@ -35,6 +35,7 @@ import TableExamples from './TableExamples';
 import AccordionExamples from './AccordionExamples';
 import ButtonGroupExamples from './ButtonGroupExamples';
 import TabExamples from './TabExamples';
+import NotificationExamples from './NotificationExamples';
 
 export {
   AnchorExamples,
@@ -73,5 +74,6 @@ export {
   TableExamples,
   AccordionExamples,
   ButtonGroupExamples,
-  TabExamples
+  TabExamples,
+  NotificationExamples
 };
