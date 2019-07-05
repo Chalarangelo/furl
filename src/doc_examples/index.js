@@ -36,6 +36,7 @@ import AccordionExamples from './AccordionExamples';
 import ButtonGroupExamples from './ButtonGroupExamples';
 import TabExamples from './TabExamples';
 import NotificationExamples from './NotificationExamples';
+import PaginationExamples from './PaginationExamples';
 
 export {
   AnchorExamples,
@@ -75,5 +76,6 @@ export {
   AccordionExamples,
   ButtonGroupExamples,
   TabExamples,
-  NotificationExamples
+  NotificationExamples,
+  PaginationExamples
 };
