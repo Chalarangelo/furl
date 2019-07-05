@@ -8,7 +8,7 @@ import {
   IconExamples, ContextButtonExamples, ModalExamples, CardExamples, MediaObjectExamples,
   DropdownExamples, ItemExamples, MenuExamples, TypographyExamples, TableExamples, AccordionExamples,
   ButtonGroupExamples, TabExamples, NotificationExamples, PaginationExamples, GridExamples, 
-  LayoutExamples
+  LayoutExamples, FormExamples
 } from '../doc_examples';
 
 const tagMappings = {
@@ -52,7 +52,8 @@ const tagMappings = {
   'notificationexamples': NotificationExamples,
   'paginationexamples': PaginationExamples,
   'gridexamples': GridExamples,
-  'layoutexamples': LayoutExamples
+  'layoutexamples': LayoutExamples,
+  'formexamples': FormExamples
 };
 
 const transformer = ({ type, name, children, attribs, next, prev, parent, data }, index) => {    

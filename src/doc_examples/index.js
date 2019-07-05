@@ -39,6 +39,7 @@ import NotificationExamples from './NotificationExamples';
 import PaginationExamples from './PaginationExamples';
 import GridExamples from './GridExamples';
 import LayoutExamples from './LayoutExamples';
+import FormExamples from './FormExamples';
 
 export {
   AnchorExamples,
@@ -81,5 +82,6 @@ export {
   NotificationExamples,
   PaginationExamples,
   GridExamples,
-  LayoutExamples
+  LayoutExamples,
+  FormExamples
 };
