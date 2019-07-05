@@ -38,6 +38,7 @@ import TabExamples from './TabExamples';
 import NotificationExamples from './NotificationExamples';
 import PaginationExamples from './PaginationExamples';
 import GridExamples from './GridExamples';
+import LayoutExamples from './LayoutExamples';
 
 export {
   AnchorExamples,
@@ -79,5 +80,6 @@ export {
   TabExamples,
   NotificationExamples,
   PaginationExamples,
-  GridExamples
+  GridExamples,
+  LayoutExamples
 };

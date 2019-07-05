@@ -3,7 +3,7 @@ import { Grid, Row, Column as Col } from '../lib';
 
 const GridExamples = (props) => (
   <div className="example-wrapper" style={{textAlign: 'center'}}>
-    <style>{`.box-colored {background: #0277bd;border-radius: 0.125rem;padding: 0.875rem;margin: 0.1rem;margin-bottom: 0.5rem;min-height: 0.875rem;color: #f8f8f8;}`}</style>
+    <style>{`.box-colored {background: #2C8CF1;border-radius: 0.125rem;padding: 0.875rem;margin: 0.1rem;margin-bottom: 0.5rem;min-height: 0.875rem;color: #f8f8f8;}`}</style>
     <Grid>
       <Row>
         <Col size={1}><div className='box-colored'>1</div></Col>
