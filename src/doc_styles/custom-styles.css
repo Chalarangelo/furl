@@ -35,3 +35,20 @@
   list-style: disc;
 }
 
+.splash-img {
+  width: auto; 
+  margin: auto;
+}
+@media screen and (min-width: 500px) {
+  .splash-img {
+    width: 480px;
+  }
+}
+
+/* max-width: 480px; 
+width: auto; 
+margin: auto */
+
+body {
+  overflow-x: hidden;
+}

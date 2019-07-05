@@ -78,7 +78,7 @@ const DocPageTemplate = (props) => {
         <Sidebar outline='border-right'>
           <Menu type='vertical' highlight='left'>
             <MenuItem>
-              <Dropdown text='Design' open>
+              <Dropdown title='Design' open>
                 {
                   pageList
                     .filter(v => v.folder === 'design')
@@ -95,7 +95,7 @@ const DocPageTemplate = (props) => {
               </Dropdown>            
             </MenuItem>
             <MenuItem>
-              <Dropdown text='Components' open>
+              <Dropdown title='Components' open>
                 {
                   pageList
                     .filter(v => v.folder === 'components')

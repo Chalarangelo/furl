@@ -13,10 +13,6 @@ const LayoutExamples = (props) => (
         <Col size={9}><div className='box-colored content' style={{height: '200px', paddingTop: '92px'}}>Content</div></Col>
       </Row>
     </Grid>
-      {/* <Header><div className='box-colored top'>Header</div></Header>
-      <Sidebar style={{position: 'absolute'}}><div className='box-colored'>Sidebar</div></Sidebar>
-      <Content><div className='box-colored'>Content</div></Content>
-    </Layout> */}
   </div>
 );
 
