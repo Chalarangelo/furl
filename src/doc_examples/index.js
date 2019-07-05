@@ -37,6 +37,7 @@ import ButtonGroupExamples from './ButtonGroupExamples';
 import TabExamples from './TabExamples';
 import NotificationExamples from './NotificationExamples';
 import PaginationExamples from './PaginationExamples';
+import GridExamples from './GridExamples';
 
 export {
   AnchorExamples,
@@ -77,5 +78,6 @@ export {
   ButtonGroupExamples,
   TabExamples,
   NotificationExamples,
-  PaginationExamples
+  PaginationExamples,
+  GridExamples
 };
