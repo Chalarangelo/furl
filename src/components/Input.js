@@ -533,7 +533,7 @@ const SliderInput = ({
           value={inputValue} min={min} max={max} style={{
             background: `linear-gradient(to right, var(--background-color) 0%, var(--background-color) ${(lowInputValue - min) / (max - min) * 100}%, var(--secondary-background-color) ${(lowInputValue - min) / (max - min)}%,  var(--secondary-background-color) ${(inputValue - min) / (max - min) * 100}%, var(--background-color) ${(inputValue - min) / (max - min) * 100}%)`
           }}
-          {...rest}
+          {...omitProps(rest)}
         />
         <InputBase
           type='range' placeholder={placeholder}
@@ -546,7 +546,7 @@ const SliderInput = ({
           value={lowInputValue} min={min} max={max} style={{
             background: `transparent`
           }}
-          {...rest}
+          {...omitProps(rest)}
         />
       </>
       : <InputBase
@@ -556,7 +556,7 @@ const SliderInput = ({
         value={inputValue} min={min} max={max} style={{
           background: `linear-gradient(to right, var(--secondary-background-color) 0%, var(--secondary-background-color) ${(inputValue - min) / (max - min) * 100}%, var(--background-color) ${(inputValue - min) / (max - min) * 100}%)`
         }}
-        {...rest}
+        {...omitProps(rest)}
       />
   );
 };
