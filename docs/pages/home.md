@@ -5,6 +5,8 @@ description: This is a custom description for SEO and Open Graph purposes, rathe
 
 ![furl](../assets/splash.png)
 
+**furl** is a library of components written entirely in a functional style, utilizing the hooks API provided by React.
+
 ## Getting started
 
 Install **furl** via npm or yarn:

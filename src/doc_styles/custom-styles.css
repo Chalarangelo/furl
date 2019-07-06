@@ -52,3 +52,8 @@ margin: auto */
 body {
   overflow-x: hidden;
 }
+
+li code[class*="language-"] {
+  background: transparent;
+  color: var(--interface-gray-1000);
+}
