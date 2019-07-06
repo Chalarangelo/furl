@@ -9,7 +9,7 @@ Typography presets are fully customizable via the use of variables. You can easi
 
 ### Fonts
 
-Furl relies upon a 3-font system to provide a great user experience, well-tailored for any type of device and content. Apart from customizable fonts, a native font stack is used as a fallback.
+**furl** relies upon a 3-font system to provide a great user experience, well-tailored for any type of device and content. Apart from customizable fonts, a native font stack is used as a fallback.
 
 <table>
   <caption>Font variables</caption>
@@ -49,7 +49,7 @@ Furl relies upon a 3-font system to provide a great user experience, well-tailor
 
 ### Type Scale
 
-Furl uses a 11-step typographic scale with handcrafted defaults that work for any type of content.
+**furl** uses a 11-step typographic scale with handcrafted defaults that work for any type of content.
 
 <table class='fixed-table'>
   <caption>Type scale variables</caption>
