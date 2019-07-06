@@ -109,6 +109,7 @@ input[type=number] {
   --secondary-color: var(--interface-gray-600);
   --padding-horizontal: var(--ls-0p);
   --padding-vertical: var(--ls-25p);
+  z-index: 2;
   &:hover, &:focus {
     color: var(--secondary-color);
   }
@@ -142,6 +143,7 @@ input[type=number] {
   --secondary-color: var(--interface-gray-600);
   --padding-horizontal: var(--ls-0p);
   --padding-vertical: var(--ls-25p);
+  z-index: 2;
   &:hover, &:focus {
     color: var(--secondary-color);
   }
