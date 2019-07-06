@@ -23,7 +23,7 @@ const InputHOC = ({
   ...rest
 }) => {
   let _id = !isUndefined(id) ? id :generateUniqueId('input');
-  let _title = !isUndefined(title) ? title : !isUndefined(name) ? name : generateUniqueId('');
+  let _title = !isUndefined(title) ? title : !isUndefined(name) ? name : '';
   let _style = combineStyles(rest, style, !isUndefined(icon) ? generateBackgroundIcon({ name: icon, stroke: '#6e7e8c', height: 18, width: 18 }) : {});
   let classNames = [className, !isUndefined(icon) ? 'with-icon' : ''];
 

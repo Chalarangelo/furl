@@ -34,7 +34,7 @@ const InputBase = ({
       name={name}
       onChange={onChange}
       defaultValue={defaultValue}
-      title={rest.title ? rest.title : name ? name : id ? id : ''}
+      title={rest.title ? rest.title : name ? name : ''}
       style={combineStyles(rest, rest.style)}
       {...omitProps(rest)}
     />
