@@ -197,7 +197,7 @@ const NumberInput = ({
       <Button disabled={disabled} readOnly={readOnly} onClick={(e) => {
         if (readOnly || disabled) return;
         setInputValue(+inputValue + step);
-        onChange(e);
+        typeof onChange === 'function' && onChange(e);
       }} className='number-input-plus' aria-label='Increment value'>
         <Icon name='plus' width={16} height={16} title='Increment value' />&zwnj;
       </Button>
