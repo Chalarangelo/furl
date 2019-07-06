@@ -40,6 +40,7 @@ import PaginationExamples from './PaginationExamples';
 import GridExamples from './GridExamples';
 import LayoutExamples from './LayoutExamples';
 import FormExamples from './FormExamples';
+import InputExamples from './InputExamples';
 
 export {
   AnchorExamples,
@@ -83,5 +84,6 @@ export {
   PaginationExamples,
   GridExamples,
   LayoutExamples,
-  FormExamples
+  FormExamples,
+  InputExamples
 };
