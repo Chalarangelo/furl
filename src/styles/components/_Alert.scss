@@ -3,6 +3,17 @@
     --background-color: var(--#{$color-name}-100);
     --secondary-color: var(--#{$color-name}-200);
     --color: var(--#{$color-name}-800);
+    a {
+      &:link{
+        --color: var(--#{$color-name}-600);
+      }
+      &:visited {
+        --color: var(--#{$color-name}-700);
+      }
+      &:hover, &:focus {
+        border-bottom: 2px solid var(--#{$color-name}-300);
+      }
+    }
   }
 }
 
