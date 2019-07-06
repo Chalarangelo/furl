@@ -31,7 +31,7 @@ const RadioGroupHOC = ({
         let content = hasKey(val, 'title') ? val.title : hasKey(val, 'value') ? val.value : val;
         let value = hasKey(val, 'value') ? val.value : hasKey(val, 'title') ? val.title : val;
         return (
-          <Radio key={`i_${i}_${value}`} value={value} name={name} {...omitProps(val, ['title', 'value'])}>
+          <Radio key={`i_${i}_${value}`} value={value} name={_name} {...omitProps(val, ['title', 'value'])}>
             {content}
           </Radio>
         )
