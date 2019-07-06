@@ -561,7 +561,7 @@ input[type='range'] {
 }
 
 .search-result-box {
-  z-index: 1;
+  z-index: 5;
   position: absolute;
   width: calc(100% - var(--ls-150p));
   border: 1px solid var(--interface-gray-200);
