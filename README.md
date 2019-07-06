@@ -18,4 +18,5 @@ npm install furl-components furl-styles
 // yarn
 yarn add furl-components furl-styles
 ```
------
+
+Visit the [website](https://furl.netlify.com/) for more information.
