@@ -125,7 +125,7 @@ const DocPageTemplate = (props) => {
             </Row>
             <Row style={{borderTop: '1px solid var(--interface-gray-100)', marginTop: 'var(--ls-200p)'}}>
               <Col />
-              <Col size='800px' style={{flex: '1 0 800px'}}>
+              <Col size='800px' style={{flex: '0 1 800px'}}>
                 <Footer>
                   <Paragraph><Text textStyle='small'><Text textStyle='bold'>furl</Text> was designed and developed by <Hyperlink openIn='external' href='https://github.com/Chalarangelo'>Angelos Chalaris</Hyperlink> &copy; 2019<br/> Documentation generated using <Hyperlink openIn='external' href='https://www.gatsbyjs.org/'>Gatsby</Hyperlink>, hosting by <Hyperlink openIn='external' href='https://www.netlify.com/'>Netlify</Hyperlink></Text></Paragraph>
                 </Footer>
