@@ -45,10 +45,6 @@
   }
 }
 
-/* max-width: 480px; 
-width: auto; 
-margin: auto */
-
 body {
   overflow-x: hidden;
 }
@@ -56,4 +52,19 @@ body {
 li code[class*="language-"] {
   background: transparent;
   color: var(--interface-gray-1000);
+}
+
+@media screen and (max-width: 600px) {
+  .menu.horizontal a {
+    font-size: var(--ts-25p);
+    padding-bottom: var(--ls-50p);
+    hyphens: auto;
+    word-break: break-all;
+    word-wrap: break-word;
+    min-width: 33%;
+    --padding-horizontal: var(--ls-25p);
+  }
+  header .button.link.small {
+    padding: calc(1.5 * var(--padding-vertical)) 0 0 0;
+  }
 }
