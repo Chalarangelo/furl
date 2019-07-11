@@ -21,7 +21,7 @@ const Tab = ({
 }) => {
   const [openTab, setOpenTab] = React.useState(openIndex);
   const [tabsId, setTabsId] = React.useState(generateUniqueId('tab'));
-  let tabs = normalizeChildren(children).filter(item => TabItem.name === item.type.name);
+  let tabs = normalizeChildren(children).filter(item => item.type && item.type.name && TabItem.name === item.type.name);
   let tabsButtons = tabs.map((v, i) => {
     let _tB = Object.assign({}, (<Button key={`${tabsId}-b-${i}`}>{v.props.title}</Button>));
     _tB.props = Object.assign({

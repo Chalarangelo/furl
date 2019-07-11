@@ -37,7 +37,7 @@ const TableCell = ({ heading = false, className, colSpan = 1, rowSpan = 1, child
 };
 
 const TableRow = ({ className, children, ...rest }) => {
-  const cells = normalizeChildren(children).filter(item => TableCell.name === item.type.name);
+  const cells = normalizeChildren(children).filter(item => item.type && item.type.name && TableCell.name === item.type.name);
   return (
     <tr 
       className={className}
@@ -50,7 +50,7 @@ const TableRow = ({ className, children, ...rest }) => {
 };
 
 const TableHead = ({ className, children, ...rest }) => {
-  const headItems = normalizeChildren(children).filter(item => TableRow.name === item.type.name);
+  const headItems = normalizeChildren(children).filter(item => item.type && item.type.name && TableRow.name === item.type.name);
   return (
     <thead 
       className={className}
@@ -63,7 +63,7 @@ const TableHead = ({ className, children, ...rest }) => {
 };
 
 const TableBody = ({ className, children, ...rest }) => {
-  const bodyItems = normalizeChildren(children).filter(item => TableRow.name === item.type.name);
+  const bodyItems = normalizeChildren(children).filter(item => item.type && item.type.name && TableRow.name === item.type.name);
   return (
     <tbody 
       className={className}
@@ -81,7 +81,7 @@ const Table = ({
   children,
   ...rest
 }) => {
-  const tableItems = normalizeChildren(children).filter(item => TableHead.name === item.type.name || TableBody.name === item.type.name || TableCaption.name === item.type.name);
+  const tableItems = normalizeChildren(children).filter(item => item.type && item.type.name && (TableHead.name === item.type.name || TableBody.name === item.type.name || TableCaption.name === item.type.name));
   let classNames = [tableStyle !== 'none' ? tableStyle : '', className];
   return (
     <table 

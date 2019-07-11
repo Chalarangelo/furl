@@ -25,7 +25,7 @@ const Pagination = ({
   children,
   ...rest
 }) => {
-  const buttons = normalizeChildren(children).filter(item => Button.name === item.type.name || PaginationItem.name === item.type.name)
+  const buttons = normalizeChildren(children).filter(item => item.type && item.type.name && (Button.name === item.type.name || PaginationItem.name === item.type.name))
     .map(b => {
       let _b = Object.assign({}, b);
       _b.props = Object.assign({

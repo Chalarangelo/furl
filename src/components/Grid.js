@@ -4,7 +4,7 @@ import Row from './Row';
 import Column from './Column';
 
 const Grid = ({ justify = 'start', align = 'start', className, children, ...rest }) => {
-  const rows = normalizeChildren(children).filter(item => Row.name === item.type.name);
+  const rows = normalizeChildren(children).filter(item => item.type && item.type.name && Row.name === item.type.name);
   return (
     <div
       className={combineClassNames(['grid-container', className, `align-${align}`, `justify-${justify}`])}

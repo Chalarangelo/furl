@@ -3,7 +3,7 @@ import { normalizeChildren, combineClassNames, omitProps, combineStyles } from '
 import Column from './Column';
 
 const Row = ({ className, children, ...rest }) => {
-  const columns = normalizeChildren(children).filter(item => Column.name === item.type.name);
+  const columns = normalizeChildren(children).filter(item => item.type && item.type.name && Column.name === item.type.name);
   return (
     <div 
       className={combineClassNames([className, 'grid-row'])}

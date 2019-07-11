@@ -14,7 +14,7 @@ const RadioGroupHOC = ({
     hasKey(rest, 'id') ? rest.id :
     generateUniqueId('radio-group');
   if(isUndefined(data)) {
-    const radios = normalizeChildren(children).filter(item => Radio.name === item.type.name)
+    const radios = normalizeChildren(children).filter(item => item.type && item.type.name && Radio.name === item.type.name)
       .map(r => {
         let _r = Object.assign({}, r);
         _r.props = Object.assign({

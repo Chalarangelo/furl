@@ -231,7 +231,7 @@ const SelectInput = ({
   children,
   ...rest
 }) => {
-  let options = normalizeChildren(children).filter(item => Option.name === item.type.name);
+  let options = normalizeChildren(children).filter(item => item.type && item.type.name && Option.name === item.type.name);
   let defaultValue = options
     .filter(v => v.props.selected)
     .map(v => v.props.value !== undefined ? v.props.value : `${v.props.children}`);
@@ -285,7 +285,7 @@ const ComboboxInput = ({
   ...rest
 }) => {
   const [optionsId, setOptionsId] = React.useState(generateUniqueId('combo-input'));
-  let options = normalizeChildren(children).filter(item => Option.name === item.type.name);
+  let options = normalizeChildren(children).filter(item => item.type && item.type.name && Option.name === item.type.name);
   let defaultValue = options
     .filter(v => v.props.selected)
     .map(v => v.props.value !== undefined ? v.props.value : `${v.props.children}`);

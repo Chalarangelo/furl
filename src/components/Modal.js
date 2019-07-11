@@ -46,13 +46,13 @@ const Modal = ({
 
 const ModalCenter = React.forwardRef(
   ({isOpen = false, className, children, ...rest}, ref) => {
-    const modal = normalizeChildren(children).filter(item => Modal.name === item.type.name);
+    const modal = normalizeChildren(children).filter(item => item.type && item.type.name && Modal.name === item.type.name);
     let [__isOpen, __setIsOpen] = React.useState(isOpen);
     let [__content, __setContent] = React.useState(modal);
     /* istanbul ignore next */
     React.useImperativeHandle(ref, () => ({
       setContent: (content) => {
-        const modal = normalizeChildren(content).filter(item => Modal.name === item.type.name);
+        const modal = normalizeChildren(content).filter(item => item.type && item.type.name && Modal.name === item.type.name);
         __setContent(modal);
       },
       show: () => {

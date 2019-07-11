@@ -18,7 +18,7 @@ const Breadcrumb = ({
   ...rest
 }) => {
   const [breadcrumbsId, setBreadcrumbsId] = React.useState(generateUniqueId('breadcrumb'));
-  let breadcrumbs = normalizeChildren(children).filter(item => BreadcrumbItem.name === item.type.name);
+  let breadcrumbs = normalizeChildren(children).filter(item => item.type && item.type.name && BreadcrumbItem.name === item.type.name);
   breadcrumbs = breadcrumbs.reduce((acc, v, i) => {
     acc.push(v);
     if (i !== breadcrumbs.length - 1) acc.push(<span className='breadcrumb-separator' key={`${breadcrumbsId}-${i}`}>{separator}</span>);
