@@ -1,6 +1,6 @@
 *, ::before, ::after {
   // Define the font family and the maximum line length
-  font-family: var(--font-a), var(--system-font-stack);
+  font-family: var(--font-family), var(--system-font-stack);
   // Define the font size for all elements
   font-size: var(--font-size);
   font-weight: var(--font-weight);
@@ -25,15 +25,15 @@ h1, h2, h3, h4, h5, h6, .title1, .title2, .title3, .title4, .title5, .title6 {
 
 // Define a class for elements using the primary font
 .font-a {
-  font-family: var(--font-b), var(--system-font-stack) !important;
+  --font-family: var(--font-a) !important;
 }
 // Define a class for elements using the secondary font
 .font-b {
-  font-family: var(--font-b), var(--system-font-stack) !important;
+  --font-family: var(--font-b) !important;
 }
 // Define a class for elements using the code font
 .font-c {
-  font-family: var(--font-c), var(--system-font-stack) !important;
+  --font-family: var(--font-c) !important;
 }
 
 .lighter {

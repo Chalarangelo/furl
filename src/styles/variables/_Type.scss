@@ -35,7 +35,8 @@
   --font-a: Roboto;
   --font-b: "Open Sans";
   --font-c: "Roboto Mono";
-  // Define the font size and weight variables
+  // Define the font family, size and weight variables
+  --font-family: var(--font-a);
   --font-size: var(--ts-100p);
   --font-weight: 400;
 }
