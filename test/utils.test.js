@@ -10,11 +10,11 @@ test('parseVariablesFromProps returns a valid object with the correct list of pr
     boxShadow: 100,
     borderRadius: '200p',
     margin: '200p',
-    marginRight: '200p',
-    marginLeft: '200p',
+    marginHorizontal: '200p',
+    marginVertical: '200p',
     padding: '200p',
-    paddingRight: '200p',
-    paddingLeft: '200p',
+    paddingHorizontal: '200p',
+    paddingVertical: '200p',
     color: 'interface-gray-900',
     backgroundColor: 'interface-gray-100'
   });
@@ -25,11 +25,11 @@ test('parseVariablesFromProps returns a valid object with the correct list of pr
   expect(typeof returnValue['--box-shadow']).toBe('string');
   expect(typeof returnValue['--border-radius']).toBe('string');
   expect(typeof returnValue['--margin']).toBe('string');
-  expect(typeof returnValue['--margin-right']).toBe('string');
-  expect(typeof returnValue['--margin-left']).toBe('string');
+  expect(typeof returnValue['--margin-horizontal']).toBe('string');
+  expect(typeof returnValue['--margin-vertical']).toBe('string');
   expect(typeof returnValue['--padding']).toBe('string');
-  expect(typeof returnValue['--padding-right']).toBe('string');
-  expect(typeof returnValue['--padding-left']).toBe('string');
+  expect(typeof returnValue['--padding-horizontal']).toBe('string');
+  expect(typeof returnValue['--padding-vertical']).toBe('string');
   expect(typeof returnValue['--color']).toBe('string');
   expect(typeof returnValue['--background-color']).toBe('string');
 });

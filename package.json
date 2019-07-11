@@ -48,7 +48,7 @@
     "build-docs": "gatsby build",
     "start-storybook": "start-storybook -p 9009 -c .storybook",
     "start-docs": "gatsby develop",
-    "test": "NODE_ENV=test jest --coverage"
+    "test": "NODE_ENV=test jest ./test --coverage"
   },
   "browserslist": [
     "> 1%",
