@@ -17,29 +17,27 @@ const Column = ({
       return acc;
     } else if (+v < 1) {
       switch (i) {
-        case 0:
-          return acc + `.grid-col-xs-c${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-xs-size: ${v * 100}%; } `;
-        case 1:
-          return acc + `.grid-col-sm-c${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-sm-size: ${v * 100}%; } `;
-        case 2:
-          return acc + `.grid-col-md-c${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-md-size: ${v * 100}%; } `;
         case 3:
           return acc + `.grid-col-lg-c${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-lg-size: ${v * 100}%; } `;
+        case 2:
+          return acc + `.grid-col-md-c${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-md-size: ${v * 100}%; } `;
+        case 1:
+          return acc + `.grid-col-sm-c${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-sm-size: ${v * 100}%; } `;
+        case 0:
         default:
-          return acc;
+          return acc + `.grid-col-xs-c${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-xs-size: ${v * 100}%; } `;
       }
     } else {
       switch (i) {
-        case 0:
-          return acc + `.grid-col-xs-p${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-xs-size: ${v}; } `;
-        case 1:
-          return acc + `.grid-col-sm-p${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-sm-size: ${v}; } `;
-        case 2:
-          return acc + `.grid-col-md-p${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-md-size: ${v}; } `;
         case 3:
           return acc + `.grid-col-lg-p${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-lg-size: ${v}; } `;
+        case 2:
+          return acc + `.grid-col-md-p${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-md-size: ${v}; } `;
+        case 1:
+          return acc + `.grid-col-sm-p${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-sm-size: ${v}; } `;
+        case 0:
         default:
-          return acc;
+          return acc + `.grid-col-xs-p${`${v}`.replace(/\(|\)|\.|\s|%/g, '')} { --col-xs-size: ${v}; } `;
       }
     }
   }, '');
