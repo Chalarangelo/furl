@@ -58,9 +58,6 @@ li code[class*="language-"] {
   .menu.horizontal a {
     font-size: var(--ts-25p);
     padding-bottom: var(--ls-50p);
-    hyphens: auto;
-    word-break: break-all;
-    word-wrap: break-word;
     min-width: 33%;
     --padding-horizontal: var(--ls-25p);
   }
