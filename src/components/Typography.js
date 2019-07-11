@@ -55,111 +55,6 @@ const Kbd = ({ className, children, ...rest }) => {
 
 const Title = ({ level = 1, semantic = true, className, children, ...rest }) => {
   switch (level) {
-    case 1:
-      if (semantic) 
-        return (
-          <h1 
-            className={className}
-            style={combineStyles(rest, rest.style)}
-            {...omitProps(rest)}
-          >
-            {children}
-          </h1>
-        );
-      else 
-        return (
-          <span 
-            className={combineClassNames(['title1', className])}
-            style={combineStyles(rest, rest.style)}
-            {...omitProps(rest)}
-          >
-            {children}
-          </span>
-        );
-    case 2:
-      if (semantic) 
-        return (
-          <h2 
-            className={className}
-            style={combineStyles(rest, rest.style)}
-            {...omitProps(rest)}
-          >
-            {children}
-          </h2>
-        );
-      else 
-        return (
-          <span 
-            className={combineClassNames(['title2', className])}
-            style={combineStyles(rest, rest.style)}
-            {...omitProps(rest)}
-          >
-            {children}
-          </span>
-        );
-    case 3:
-      if (semantic) 
-        return (
-          <h3 
-            className={className}
-            style={combineStyles(rest, rest.style)}
-            {...omitProps(rest)}
-          >
-            {children}
-          </h3>
-        );
-      else 
-        return (
-          <span 
-            className={combineClassNames(['title3', className])}
-            style={combineStyles(rest, rest.style)}
-            {...omitProps(rest)}
-          >
-            {children}
-          </span>
-        );
-    case 4:
-      if (semantic) 
-        return (
-          <h4 
-            className={className}
-            style={combineStyles(rest, rest.style)}
-            {...omitProps(rest)}
-          >
-            {children}
-          </h4>
-        );
-      else 
-        return (
-          <span 
-            className={combineClassNames(['title4', className])}
-            style={combineStyles(rest, rest.style)}
-            {...omitProps(rest)}
-          >
-            {children}
-          </span>
-        );
-    case 5:
-      if (semantic) 
-        return (
-          <h5 
-            className={className}
-            style={combineStyles(rest, rest.style)}
-            {...omitProps(rest)}
-          >
-            {children}
-          </h5>
-        );
-      else 
-        return (
-          <span 
-            className={combineClassNames(['title5', className])}
-            style={combineStyles(rest, rest.style)}
-            {...omitProps(rest)}
-          >
-            {children}
-          </span>
-        );
     case 6:
       if (semantic) 
         return (
@@ -181,20 +76,105 @@ const Title = ({ level = 1, semantic = true, className, children, ...rest }) => 
             {children}
           </span>
         );
-    default:
-      if (semantic) 
+    case 5:
+      if (semantic)
         return (
-          <h1 
+          <h5
             className={className}
             style={combineStyles(rest, rest.style)}
             {...omitProps(rest)}
           >
-          {children}
+            {children}
+          </h5>
+        );
+      else
+        return (
+          <span
+            className={combineClassNames(['title5', className])}
+            style={combineStyles(rest, rest.style)}
+            {...omitProps(rest)}
+          >
+            {children}
+          </span>
+        );
+    case 4:
+      if (semantic)
+        return (
+          <h4
+            className={className}
+            style={combineStyles(rest, rest.style)}
+            {...omitProps(rest)}
+          >
+            {children}
+          </h4>
+        );
+      else
+        return (
+          <span
+            className={combineClassNames(['title4', className])}
+            style={combineStyles(rest, rest.style)}
+            {...omitProps(rest)}
+          >
+            {children}
+          </span>
+        );
+    case 3:
+      if (semantic)
+        return (
+          <h3
+            className={className}
+            style={combineStyles(rest, rest.style)}
+            {...omitProps(rest)}
+          >
+            {children}
+          </h3>
+        );
+      else
+        return (
+          <span
+            className={combineClassNames(['title3', className])}
+            style={combineStyles(rest, rest.style)}
+            {...omitProps(rest)}
+          >
+            {children}
+          </span>
+        );
+    case 2:
+      if (semantic)
+        return (
+          <h2
+            className={className}
+            style={combineStyles(rest, rest.style)}
+            {...omitProps(rest)}
+          >
+            {children}
+          </h2>
+        );
+      else
+        return (
+          <span
+            className={combineClassNames(['title2', className])}
+            style={combineStyles(rest, rest.style)}
+            {...omitProps(rest)}
+          >
+            {children}
+          </span>
+        );
+    case 1:
+    default:
+      if (semantic)
+        return (
+          <h1
+            className={className}
+            style={combineStyles(rest, rest.style)}
+            {...omitProps(rest)}
+          >
+            {children}
           </h1>
         );
-      else 
+      else
         return (
-          <span 
+          <span
             className={combineClassNames(['title1', className])}
             style={combineStyles(rest, rest.style)}
             {...omitProps(rest)}
