@@ -20,6 +20,9 @@
   &.shadow {
     --box-shadow: var(--shadow-100);
   }
+  button, .button, a.button {
+    max-height: calc(var(--ls-250p) - 1px);
+  }
 }
 
 .sidebar-visible .layout-sidebar {
