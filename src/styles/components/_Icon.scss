@@ -8,6 +8,8 @@ button, .button, a.button, .badge {
     transition: 0.3s all ease;
     & > svg {
       background: transparent;
+      min-width: var(--ts-25p);
+      min-height: var(--ts-25p);
     }
     vertical-align: text-bottom;
     --padding-horizontal: var(--ls-25p);
