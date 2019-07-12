@@ -23,7 +23,7 @@ import HtmlMapper from '../doc_components/HtmlMapper';
 const HomePage = (props) => {
   const data = useStaticQuery(graphql`
     query HomeQuery {
-      logo: file(absolutePath: {regex: "/logo_md.png/"}) {
+      logo: file(absolutePath: {regex: "/logo_reverse_md.png/"}) {
         id
         childImageSharp {
           fixed(height: 45, width: 45) {

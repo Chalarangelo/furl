@@ -143,7 +143,7 @@ export default DocPageTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    logo: file(absolutePath: {regex: "/logo_md.png/"}) {
+    logo: file(absolutePath: {regex: "/logo_reverse_md.png/"}) {
       id
       childImageSharp {
         fixed(height: 45, width: 45) {

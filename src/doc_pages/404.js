@@ -71,7 +71,7 @@ export default NotFoundPage;
 
 export const pageQuery = graphql`
   query {
-    logo: file(absolutePath: {regex: "/logo_md.png/"}) {
+    logo: file(absolutePath: {regex: "/logo_reverse_md.png/"}) {
       id
       childImageSharp {
         fixed(height: 45, width: 45) {
