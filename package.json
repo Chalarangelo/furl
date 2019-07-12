@@ -1,6 +1,6 @@
 {
   "name": "furl-components",
-  "version": "0.1.4-alpha",
+  "version": "1.0.0-beta",
   "description": "Functional react.js components. ",
   "files": [
     "dist",
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/Chalarangelo/furl#readme",
   "dependencies": {
-    "feather-icons": "^4.21.0",
+    "feather-icons": "^4.22.0",
     "react-text-mask": "^5.4.3",
     "react-timy": "^1.0.0"
   },
