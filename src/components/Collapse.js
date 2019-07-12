@@ -1,5 +1,6 @@
 import React from 'react';
 import Icon from './Icon';
+import { Paragraph } from './Typography';
 import { combineClassNames, omitProps, combineStyles } from '../utilities/utils';
 
 const Collapse = ({
@@ -22,7 +23,7 @@ const Collapse = ({
         <Icon name='chevron-down' width={16} height={16} />
       </summary>
       <div className='collapse-content'>
-        {children}
+        {typeof children === 'string' ? <Paragraph>{children}</Paragraph>: children}
       </div>
     </details>
   );
