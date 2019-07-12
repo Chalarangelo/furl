@@ -21,9 +21,10 @@ const Button = ({
   if (size !== 'normal') classNames.push(size);
   if (color !== 'plain') classNames.push(color);
   if (shape !== 'normal') classNames.push(shape);
-  if (className && typeof className.indexOf === 'function' && className.indexOf('with-dropdown') !== -1)
-    type = 'with-dropdown';
-  switch (type) {
+  let _type = 
+    (className && typeof className.indexOf === 'function' && className.indexOf('with-dropdown') !== -1) 
+    ? 'with-dropdown' : href ? 'link' : 'button';
+  switch (_type) {
     case 'link':
       return (['external', '_external'].includes(openIn)
         ? <a
