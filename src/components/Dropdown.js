@@ -19,8 +19,8 @@ const Dropdown = ({
     >
       <summary>{title}
         {reverse
-          ? <Icon name='chevron-up' width={16} height={16} />
-          : <Icon name='chevron-down' width={16} height={16} />
+          ? <Icon name='chevron-up' width={18} height={18} />
+          : <Icon name='chevron-down' width={18} height={18} />
         }
       </summary>
       <div className='dropdown-content'>
