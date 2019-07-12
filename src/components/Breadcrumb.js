@@ -7,7 +7,9 @@ const BreadcrumbItem = ({ className, children, ...rest }) => (
     style={combineStyles(rest, rest.style)}
     {...omitProps(rest)}
   >
-    {children}
+    {rest.href ? (
+      <Hyperlink href={rest.href}>{children}</Hyperlink>
+    ) : children}
   </span>
 );
 
