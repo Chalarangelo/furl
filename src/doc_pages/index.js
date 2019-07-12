@@ -72,7 +72,7 @@ const HomePage = (props) => {
               <Col />
               <Col size={['calc(91% - 50px)', 'calc(91% - 50px)',6,6]}>
                 <Menu type='horizontal' highlight='bottom'>
-                  <MenuItem href='#getting-started'>Getting started</MenuItem>
+                  <MenuItem href='#getting-started' selected>Getting started</MenuItem>
                   <MenuItem href='/design'>Design</MenuItem>
                   <MenuItem href='/components'>Components</MenuItem>
                 </Menu>

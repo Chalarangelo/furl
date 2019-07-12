@@ -65,3 +65,7 @@ li code[class*="language-"] {
     padding: calc(1.5 * var(--padding-vertical)) 0 0 0;
   }
 }
+
+.gatsby-resp-image-link:hover, .gatsby-resp-image-link:focus {
+  border-bottom: 2px solid transparent;
+}
