@@ -7,7 +7,7 @@ Consistent color palettes can make designs look natural and avoid creating visua
 
 Color palettes are fully customizable via the use of variables. You can easily alter them as desired.
 
-### Spacing Scale
+### Color presets
 
 **furl** provides 6 handcrafted color palettes by default, which work for the most common web application use-cases.
 
