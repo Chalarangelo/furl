@@ -44,8 +44,6 @@ const InputBase = ({
 const TextInput = ({
   size = 'normal',
   shape = 'normal',
-  disabled = false,
-  required = false,
   placeholder,
   multiline = false,
   rows = 5,
@@ -61,8 +59,6 @@ const TextInput = ({
       id={id}
       className={className}
       size={size} shape={shape}
-      disabled={disabled}
-      required={required}
       placeholder={placeholder}
       name={name}
       onChange={onChange}
@@ -74,8 +70,8 @@ const TextInput = ({
   ) : (
     <InputBase
       type='text' id={id} placeholder={placeholder} shape={shape}
-      className={className} size={size} disabled={disabled}
-      required={required} name={name} onChange={onChange}
+      className={className} size={size}
+      name={name} onChange={onChange}
       {...rest}
     />
   );
@@ -83,8 +79,6 @@ const TextInput = ({
 const EmailInput = ({
   size = 'normal',
   shape = 'normal',
-  disabled = false,
-  required = false,
   placeholder,
   pattern = '.+@.+\..+',
   name,
@@ -94,16 +88,14 @@ const EmailInput = ({
 }) => (
   <InputBase
     type='email' placeholder={placeholder} pattern={pattern}
-    className={className} size={size} disabled={disabled} shape={shape}
-    required={required} name={name} onChange={onChange} {...rest}
+    className={className} size={size} shape={shape}
+    name={name} onChange={onChange} {...rest}
   />
 );
 
 const UrlInput = ({
   size = 'normal',
   shape = 'normal',
-  disabled = false,
-  required = false,
   placeholder,
   pattern = 'https?://.+',
   name,
@@ -113,8 +105,8 @@ const UrlInput = ({
 }) => (
   <InputBase
     type='url' placeholder={placeholder} pattern={pattern}
-    className={className} size={size} disabled={disabled} shape={shape}
-    required={required} name={name} onChange={onChange} {...rest}
+    className={className} size={size} shape={shape}
+    name={name} onChange={onChange} {...rest}
   />
 );
 
@@ -123,7 +115,6 @@ const PasswordInput = ({
   shape = 'normal',
   disabled = false,
   readOnly = false,
-  required = false,
   placeholder,
   name,
   withRevealer = false,
@@ -138,7 +129,7 @@ const PasswordInput = ({
       <InputBase
         type={passwordVisible ? 'text' : 'password'} placeholder={placeholder}
         className={combineClassNames(['revealer', className])} size={size} disabled={disabled} readOnly={readOnly}
-        required={required} name={name} onChange={onChange} shape={shape} {...rest}
+        name={name} onChange={onChange} shape={shape} {...rest}
       />
       <Button disabled={disabled} readOnly={readOnly} aria-label={passwordVisible ? 'Hide password' : 'Show password'} onClick={() => {
         if (disabled || readOnly) return;
@@ -152,7 +143,7 @@ const PasswordInput = ({
       <InputBase
         type='password' placeholder={placeholder}
         className={className} size={size} disabled={disabled}
-        required={required} name={name} onChange={onChange}
+        name={name} onChange={onChange}
         {...rest}
       />
     );
@@ -167,7 +158,6 @@ const NumberInput = ({
   step = 1,
   disabled = false,
   readOnly = false,
-  required = false,
   placeholder,
   name,
   onChange,
@@ -187,7 +177,7 @@ const NumberInput = ({
       <InputBase
         type='number' placeholder={placeholder} readOnly={readOnly}
         className={className} size={size} shape={shape} disabled={disabled}
-        required={required} name={name} onChange={(e) => {
+        name={name} onChange={(e) => {
           if (readOnly || disabled) return;
           setInputValue(e.target.value);
           typeof onChange === 'function' && onChange(e);
@@ -205,10 +195,10 @@ const NumberInput = ({
   );
 };
 
-const Option = ({ disabled, selected, value, className, children, ...rest }) => (
+const Option = ({ selected, value, className, children, ...rest }) => (
   <option
     className={className}
-    value={value !== undefined ? value : `${children}`} disabled={disabled}
+    value={value !== undefined ? value : `${children}`}
     style={combineStyles(rest, rest.style)}
     {...omitProps(rest)}
   >
@@ -219,8 +209,6 @@ const Option = ({ disabled, selected, value, className, children, ...rest }) => 
 const SelectInput = ({
   size = 'normal',
   shape = 'normal',
-  disabled = false,
-  required = false,
   placeholder,
   name,
   multiple,
@@ -239,8 +227,6 @@ const SelectInput = ({
     return (<select
       id={id}
       className={combineClassNames([size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className])}
-      disabled={disabled}
-      required={required}
       placeholder={placeholder}
       name={name}
       onChange={onChange}
@@ -255,8 +241,6 @@ const SelectInput = ({
     return (<><select
       id={id}
       className={combineClassNames([size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className])}
-      disabled={disabled}
-      required={required}
       placeholder={placeholder}
       name={name}
       onChange={onChange}
@@ -275,8 +259,6 @@ const SelectInput = ({
 const ComboboxInput = ({
   size = 'normal',
   shape = 'normal',
-  disabled = false,
-  required = false,
   placeholder,
   name,
   onChange,
@@ -297,8 +279,8 @@ const ComboboxInput = ({
       </datalist>
       <InputBase
         placeholder={placeholder} list={optionsId}
-        className={combineClassNames([size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className])} size={size} disabled={disabled}
-        required={required} name={name} onChange={onChange} {...rest} defaultValue={defaultValue[0]}
+        className={combineClassNames([size !== 'normal' ? size : '', shape !== 'normal' ? shape : '', className])} size={size}
+        name={name} onChange={onChange} {...rest} defaultValue={defaultValue[0]}
       />
       <Button aria-label='Show/Hide options'>
         <Icon name='chevron-down' width={16} height={16} />&zwnj;
@@ -500,7 +482,6 @@ const SliderInput = ({
   size = 'normal',
   disabled = false,
   readOnly = false,
-  required = false,
   range = false,
   min = 0,
   max = 100,
@@ -525,7 +506,7 @@ const SliderInput = ({
         <InputBase
           type='range' placeholder={placeholder}
           className={className} size={size} disabled={disabled} readOnly={readOnly}
-          required={required} name={name} onChange={(e) => {
+          name={name} onChange={(e) => {
             if (disabled || readOnly) return;
             if (e.target.value > lowInputValue) setInputValue(e.target.value);
             typeof onChange === 'function' && onChange(e);
@@ -538,7 +519,7 @@ const SliderInput = ({
         <InputBase
           type='range' placeholder={placeholder}
           className={'low'} size={size} disabled={disabled} readOnly={readOnly}
-          required={required} name={name} onChange={(e) => {
+          name={name} onChange={(e) => {
             if (disabled || readOnly) return;
             if (e.target.value < inputValue) setLowInputValue(e.target.value);
             typeof onChange === 'function' && onChange(e);
@@ -552,7 +533,7 @@ const SliderInput = ({
       : <InputBase
         type='range' placeholder={placeholder}
         className={className} size={size} disabled={disabled} readOnly={readOnly}
-        required={required} name={name} onChange={(e) => { if (disabled || readOnly) return; setInputValue(e.target.value); typeof onChange === 'function' && onChange(e); }}
+        name={name} onChange={(e) => { if (disabled || readOnly) return; setInputValue(e.target.value); typeof onChange === 'function' && onChange(e); }}
         value={inputValue} min={min} max={max} style={{
           background: `linear-gradient(to right, var(--secondary-background-color) 0%, var(--secondary-background-color) ${(inputValue - min) / (max - min) * 100}%, var(--background-color) ${(inputValue - min) / (max - min) * 100}%)`
         }}

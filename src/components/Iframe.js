@@ -11,36 +11,27 @@ const Iframe = ({
   allowFullScreen = false,
   children,
   ...rest
-}) =>
-  withCaption ? (
+}) => {
+  let _iframe = (
+    <iframe
+      className={className}
+      height={height}
+      width={width}
+      src={src}
+      title={alt}
+      allowFullScreen={allowFullScreen}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    >
+      {children}
+    </iframe>
+  );
+  return withCaption ? (
     <figure>
-      <iframe
-        className={className}
-        height={height}
-        width={width}
-        src={src}
-        title={alt}
-        allowFullScreen={allowFullScreen}
-        style={combineStyles(rest, rest.style)}
-        {...omitProps(rest)}
-      >
-        {children}
-      </iframe>
+      {_iframe}
       <figcaption>{alt}</figcaption>
     </figure>
-  )
-    : (
-      <iframe
-        className={className}
-        height={height}
-        width={width}
-        src={src}
-        title={alt}
-        allowFullScreen={allowFullScreen}
-        style={combineStyles(rest, rest.style)}
-        {...omitProps(rest)}
-      >
-        {children}
-      </iframe>);
+  ) : _iframe;
+};
 
 export default Iframe;

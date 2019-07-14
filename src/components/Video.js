@@ -13,38 +13,28 @@ const Video = ({
   alt = 'A video',
   withCaption = false,
   ...rest
-}) =>
-  withCaption ? (
+}) => {
+  let _video = (
+    <video
+      className={className}
+      height={height}
+      width={width}
+      src={src}
+      title={alt}
+      autoPlay={autoplay} 
+      controls={controls} 
+      loop={loop} 
+      muted={muted}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    />
+  );
+  return withCaption ? (
     <figure>
-      <video
-        className={className}
-        height={height}
-        width={width}
-        src={src}
-        title={alt}
-        autoPlay={autoplay} 
-        controls={controls} 
-        loop={loop} 
-        muted={muted}
-        style={combineStyles(rest, rest.style)}
-        {...omitProps(rest)}
-      />
+      {_video}
       <figcaption>{alt}</figcaption>
     </figure>
-  )
-    : (
-      <video
-        className={className}
-        height={height}
-        width={width}
-        src={src}
-        title={alt}
-        autoPlay={autoplay} 
-        controls={controls} 
-        loop={loop} 
-        muted={muted} 
-        style={combineStyles(rest, rest.style)}
-        {...omitProps(rest)}
-      />);
+  ) : _video;
+};
 
 export default Video;

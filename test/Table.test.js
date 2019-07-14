@@ -34,9 +34,11 @@ test('Table does not render direct children other than Table*.', () => {
 });
 
 test('TableHead renders a <thead> element.', () => {
-  const wrapper = shallow(
-    <TableHead>
-    </TableHead>
+  const wrapper = mount(
+    <Table>
+      <TableHead>
+      </TableHead>
+    </Table>
   );
 
   expect(wrapper).toContainMatchingElement('thead');
@@ -44,19 +46,23 @@ test('TableHead renders a <thead> element.', () => {
 
 test('TableHead does not render direct children other than TableRows.', () => {
   const wrapper = mount(
-    <TableHead>
-      <TableRow></TableRow>
-      <Button></Button>
-    </TableHead>
+    <Table>
+      <TableHead>
+        <TableRow></TableRow>
+        <Button></Button>
+      </TableHead>
+    </Table>
   );
 
   expect(wrapper).not.toContainMatchingElement('button');
 });
 
 test('TableBody renders a <tbody> element.', () => {
-  const wrapper = shallow(
-    <TableBody>
-    </TableBody>
+  const wrapper = mount(
+    <Table>
+      <TableBody>
+      </TableBody>
+    </Table>
   );
 
   expect(wrapper).toContainMatchingElement('tbody');
@@ -64,19 +70,24 @@ test('TableBody renders a <tbody> element.', () => {
 
 test('TableBody does not render direct children other than TableRows.', () => {
   const wrapper = mount(
-    <TableBody>
-      <TableRow></TableRow>
-      <Button></Button>
-    </TableBody>
+    <Table>
+      <TableBody>
+        <TableRow></TableRow>
+        <Button></Button>
+      </TableBody>
+    </Table>
   );
 
   expect(wrapper).not.toContainMatchingElement('button');
 });
 
 test('TableRow renders a <tr> element.', () => {
-  const wrapper = shallow(
-    <TableRow>
-    </TableRow>
+  const wrapper = mount(
+    <Table>
+      <TableBody>
+        <TableRow></TableRow>
+      </TableBody>
+    </Table>
   );
 
   expect(wrapper).toContainMatchingElement('tr');
@@ -84,37 +95,53 @@ test('TableRow renders a <tr> element.', () => {
 
 test('TableRow does not render direct children other than TableCells.', () => {
   const wrapper = mount(
-    <TableRow>
-      <TableCell></TableCell>
-      <Button></Button>
-    </TableRow>
+    <Table>
+      <TableBody>
+        <TableRow>
+          <TableCell></TableCell>
+          <Button></Button>
+        </TableRow>
+      </TableBody>
+    </Table>
   );
 
   expect(wrapper).not.toContainMatchingElement('button');
 });
 
 test('TableCaption renders a <caption> element.', () => {
-  const wrapper = shallow(
-    <TableCaption>
-    </TableCaption>
+  const wrapper = mount(
+    <Table>
+      <TableCaption>
+      </TableCaption>
+    </Table>
   );
 
   expect(wrapper).toContainMatchingElement('caption');
 });
 
 test('TableCell renders a <td> element.', () => {
-  const wrapper = shallow(
-    <TableCell>
-    </TableCell>
+  const wrapper = mount(
+    <Table>
+      <TableBody>
+        <TableRow>
+          <TableCell></TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
   );
 
   expect(wrapper).toContainMatchingElement('td');
 });
 
 test('TableCell renders a <th> element when given the heading prop.', () => {
-  const wrapper = shallow(
-    <TableCell heading>
-    </TableCell>
+  const wrapper = mount(
+    <Table>
+      <TableBody>
+        <TableRow>
+          <TableCell heading></TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
   );
 
   expect(wrapper).toContainMatchingElement('th');

@@ -26,10 +26,7 @@ const Form = ({
   fill = 'flat',
   size = 'normal',
   color = 'normal',
-  action,
-  method,
   name,
-  enctype,
   autocomplete,
   openIn = 'self',
   className,
@@ -40,11 +37,8 @@ const Form = ({
   if (color !== 'normal') classNames.push(color);
   return (
     <form
-      encType={enctype} 
       target={['blank', '_blank'].includes(openIn) ? '_blank' : '_self'}
-      action={action} 
       autoComplete={autocomplete ? 'on' : 'off'} 
-      method={method} 
       name={name}
       className={combineClassNames(classNames)}
       style={combineStyles(rest, rest.style)}

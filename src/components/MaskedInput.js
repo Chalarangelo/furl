@@ -44,8 +44,6 @@ const MaskedInputBase = ({
 
 const CreditCardInput = ({
   size = 'normal',
-  disabled = false,
-  required = false,
   placeholder,
   name,
   onChange,
@@ -55,15 +53,13 @@ const CreditCardInput = ({
   <MaskedInputBase
     type='text' placeholder={placeholder}
     mask={[/\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/, /\d/]}
-    className={className} size={size} disabled={disabled}
-    required={required} name={name} onChange={onChange} {...rest}
+    className={className} size={size}
+    name={name} onChange={onChange} {...rest}
   />
 );
 
 const PhoneInput = ({
   size = 'normal',
-  disabled = false,
-  required = false,
   placeholder,
   name,
   onChange,
@@ -73,15 +69,13 @@ const PhoneInput = ({
   <MaskedInputBase
     type='tel' placeholder={placeholder}
     mask={['+', /\d/, /\d/, ' ', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
-    className={className} size={size} disabled={disabled}
-    required={required} name={name} onChange={onChange} {...rest}
+    className={className} size={size}
+    name={name} onChange={onChange} {...rest}
   />
 );
 
 const CurrencyInput = ({
   size = 'normal',
-  disabled = false,
-  required = false,
   currencySymbol = '$',
   placeholder,
   name,
@@ -95,15 +89,13 @@ const CurrencyInput = ({
       prefix: `${currencySymbol} `,
       allowDecimal: true
     })}
-    className={className} size={size} disabled={disabled}
-    required={required} name={name} onChange={onChange} {...rest}
+    className={className} size={size}
+    name={name} onChange={onChange} {...rest}
   />
 );
 
 const TimeInput = ({
   size = 'normal',
-  disabled = false,
-  required = false,
   displayHours = true,
   displaySeconds = true,
   placeholder,
@@ -131,8 +123,8 @@ const TimeInput = ({
       type='text' placeholder={placeholder}
       mask={mask} keepCharPositions
       pipe={createAutoCorrectedDatePipe(pipeFormat)}
-      className={className} size={size} disabled={disabled}
-      required={required} name={name} onChange={onChange}
+      className={className} size={size}
+      name={name} onChange={onChange}
       {...rest}
     />
   );
@@ -142,7 +134,6 @@ const DateInput = ({
   size = 'normal',
   disabled = false,
   readOnly = false,
-  required = false,
   monthBeforeDay = false,
   separator = '/',
   minYear = 1,
@@ -177,8 +168,8 @@ const DateInput = ({
         type='text' placeholder={placeholder}
         mask={mask} keepCharPositions
         pipe={pipe}
-        className={[className, 'date'].join(' ').trim()} size={size} disabled={disabled} readOnly={readOnly}
-        required={required} name={name} value={inputValue === undefined ? '' : inputValue} onChange={(e) => { setInputValue(e.target.value); typeof onChange === 'function' && onChange(e); }}
+        className={[className, 'date'].join(' ').trim()} size={size} readOnly={readOnly}
+        name={name} value={inputValue === undefined ? '' : inputValue} onChange={(e) => { setInputValue(e.target.value); typeof onChange === 'function' && onChange(e); }}
         __ref={inputRef} {...rest}
       />
       <Button disabled={disabled} readOnly={readOnly} onClick={() => {
@@ -213,7 +204,6 @@ const ColorInput = ({
   size = 'normal',
   disabled = false,
   readOnly = false,
-  required = false,
   placeholder,
   name,
   onChange,
@@ -228,8 +218,8 @@ const ColorInput = ({
       <MaskedInputBase
         type='text' id={id} placeholder={placeholder}
         mask={['#', /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/, /[A-Fa-f0-9]/]}
-        className={combineClassNames(['color-input', className])} size={size} disabled={disabled} readOnly={readOnly}
-        required={required} name={name}
+        className={combineClassNames(['color-input', className])} 
+        size={size} readOnly={readOnly} name={name}
         onChange={(e) => {
           if (readOnly || disabled) return;
           setInputValue(e.target.value);

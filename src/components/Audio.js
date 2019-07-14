@@ -12,36 +12,27 @@ const Audio = ({
   alt = 'An audio clip',
   withCaption = false,
   ...rest
-}) =>
-  withCaption ? (
+}) => {
+  let _audio = (
+    <audio
+      className={className}
+      src={src}
+      title={alt}
+      autoPlay={autoplay} 
+      controls={controls} 
+      loop={loop} 
+      muted={muted} 
+      volume={volume}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    />
+  );
+  return withCaption ? (
     <figure>
-      <audio
-        className={className}
-        src={src}
-        title={alt}
-        autoPlay={autoplay} 
-        controls={controls} 
-        loop={loop} 
-        muted={muted} 
-        volume={volume}
-        style={combineStyles(rest, rest.style)}
-        {...omitProps(rest)}
-      />
+      {_audio}
       <figcaption>{alt}</figcaption>
     </figure>
-  )
-    : (
-      <audio
-        className={className}
-        src={src}
-        title={alt}
-        autoPlay={autoplay} 
-        controls={controls} 
-        loop={loop} 
-        muted={muted} 
-        volume={volume}
-        style={combineStyles(rest, rest.style)}
-        {...omitProps(rest)}
-      />);
+  ) : _audio;
+};
 
 export default Audio;

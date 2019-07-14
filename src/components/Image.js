@@ -9,30 +9,24 @@ const Image = ({
   alt = 'An image',
   withCaption = false,
   ...rest
-}) =>
-  withCaption ? (
+}) => {
+  let _image = (
+    <img
+      className={className}
+      height={height}
+      width={width}
+      src={src}
+      alt={alt}
+      style={combineStyles(rest, rest.style)}
+      {...omitProps(rest)}
+    />
+  );
+  return withCaption ? (
     <figure>
-      <img
-        className={className}
-        height={height}
-        width={width}
-        src={src}
-        alt={alt}
-        style={combineStyles(rest, rest.style)}
-        {...omitProps(rest)}
-      />
+      {_image}
       <figcaption>{alt}</figcaption>
     </figure>
-  )
-    : (
-      <img
-        className={className}
-        height={height}
-        width={width}
-        src={src}
-        alt={alt}
-        style={combineStyles(rest, rest.style)}
-        {...omitProps(rest)}
-      />);
+  ) : _image;
+};
 
 export default Image;
