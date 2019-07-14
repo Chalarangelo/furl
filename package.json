@@ -1,6 +1,6 @@
 {
   "name": "furl-components",
-  "version": "1.0.0-beta",
+  "version": "1.0.0-beta1",
   "description": "Functional react.js components. ",
   "files": [
     "dist",
